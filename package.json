@@ -2,7 +2,7 @@
   "name": "webcomponenten-vl-ui",
   "version": "0.0.0",
   "description": "Webcomponenten demo",
-  "main": "vl-util.js",
+  "main": "index.html",
   "author": "DIDM",
   "license": "MIT",
   "repository": {

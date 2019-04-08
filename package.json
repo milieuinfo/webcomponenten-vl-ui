@@ -1,0 +1,41 @@
+{
+  "name": "webcomponenten-vl-ui",
+  "version": "0.0.0",
+  "description": "Webcomponenten demo",
+  "main": "vl-util.js",
+  "author": "DIDM",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponenten-vl-ui.git"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponenten-vl-ui#readme",
+  "publishConfig": {
+    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+  },
+  "scripts": {
+    "prepare": "npm run analyze",
+    "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
+    "analyze:prepare": "replace '.src.js' '.js' ./demo/vl*.html",
+    "analyze:copy": "npm run analyze:copy:webcomponent && npm run analyze:copy:demo",
+    "analyze:copy:webcomponent": "copyfiles -f node_modules/**/vl-*.js .",
+    "analyze:copy:demo": "copyfiles -f node_modules/**/demo/vl-*.html ./demo",
+    "analyze:generate": "polymer analyze ./vl-*.src.js > analysis.json"
+  },
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponenten-vl-ui/issues"
+  },
+  "devDependencies": {
+    "copyfiles": "2.1.0",
+    "replace": "1.0.0"
+  },
+  "dependencies": {
+    "@polymer/iron-component-page": "4.0.1",
+    "@polymer/iron-demo-helpers": "3.0.2",
+    "vl-ui-button": "1.0.1",
+    "vl-ui-checkbox": "1.0.2",
+    "vl-ui-icon": "1.0.1",
+    "vl-ui-alert": "1.0.2",
+    "vl-ui-titles": "1.0.1"
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: vl-alert.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: vl-alert.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
+
+/**
+ * vl-alert
+ * Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.
+ * 
+ * ### Attributen
+ * Attribuut | Uitleg | Waarde
+ * ----------|--------|--------
+ * `title` | De titel van de waarschuwing. | { string } 
+ * `closable` | Voegt de optie toe om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek. | { boolean }
+ * `small` | Een variant van de waarschuwing maar kleiner | { boolean }
+ * `type` | Het type bepaald de soort van waarschuwing, foutmelding, probleemmelding of succesmelding | {string} success - warning - error
+ *
+ * ### Slots
+ * Slot | Uitleg 
+ * -----|--------
+ * `default` | De content van het default slot wordt toegevoegd als content van de waarschuwing.
+ * 
+ * @demo demo/vl-alert.html
+ */
+export class VlAlert extends VlElement(HTMLElement) {
+    constructor() {
+        super(`
+            &lt;style>
+                @import "../style.css";
+            &lt;/style>
+            &lt;div class="vl-alert" role="alert">
+                &lt;div class="vl-alert__content">
+                    &lt;p class="vl-alert__title">&lt;/p>
+                    &lt;div class="vl-alert__message">
+                        &lt;slot>&lt;/slot>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        `);
+    }
+
+    static get _observedAttributes() {
+        return ['icon', 'title', 'closable', 'type', 'size'];
+    }
+
+    get _classPrefix() {
+        return 'vl-alert--';
+    }
+
+    get _titelElement() {
+        return this._element.querySelector(".vl-alert__title");
+    }
+
+    get _iconElement() {
+        return this._element.querySelector('.vl-alert__icon');
+    }
+
+    get _closeButtonElement() {
+        return this._element.querySelector('.vl-alert__close');
+    }
+
+    _getIconTemplate(newValue) {
+        return this._template(`
+            &lt;div class="vl-alert__icon">
+                &lt;i class="vl-vi vl-vi-${newValue}" aria-hidden="true">&lt;/i>
+                &lt;vl-icon icon="calendar">&lt;/vl-icon>
+            &lt;/div>
+        `);
+    };
+
+    _getCloseButtonTemplate() {
+        return this._template(`
+            &lt;button class="vl-alert__close" type="button">
+                &lt;i class="vl-vi vl-vi-cross" aria-hidden="true">&lt;/i>
+                &lt;span class="vl-u-visually-hidden">Melding sluiten&lt;/span>
+            &lt;/button>
+        `);
+    }
+
+    _iconChangedCallback(oldValue, newValue) {
+        if (this._iconElement) {
+            this._iconElement.remove();
+        }
+
+        if (newValue != undefined) {
+            this._element.insertBefore(this._getIconTemplate(newValue), this._element.firstChild);
+        }
+    };
+
+    _titleChangedCallback(oldValue, newValue) {
+        this._titelElement.textContent = newValue;
+    };
+
+    _closableChangedCallback(oldValue, newValue) {
+        if (this._closeButtonElement) {
+            this._closeButtonElement.remove();
+        }
+
+        if (newValue != undefined) {
+            const closeButtonTemplate = this._getCloseButtonTemplate();
+            closeButtonTemplate.querySelector('button').addEventListener('click', () => this.remove());
+            this._element.appendChild(closeButtonTemplate);
+        }
+    }
+
+    _typeChangedCallback(oldValue, newValue) {
+        if (["success", "warning", "error"].indexOf(newValue) >= 0) {
+            this._changeClass(this._element, oldValue, newValue);
+        } else {
+            this._element.classList.remove(this._classPrefix + oldValue);
+        }
+    }
+
+    _sizeChangedCallback(oldValue, newValue) {
+        if (["large", "small"].indexOf(newValue) >= 0) {
+            this._changeClass(this._element, oldValue, newValue);
+        } else {
+            this._element.classList.remove(this._classPrefix + oldValue);
+        }
+    }
+}
+
+customElements.define('vl-alert', VlAlert);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlTitle.html">VlTitle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Apr 10 2019 11:28:17 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

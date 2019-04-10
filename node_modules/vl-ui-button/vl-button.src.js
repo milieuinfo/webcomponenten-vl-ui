@@ -35,6 +35,10 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
     get _classPrefix() {
         return 'vl-button--';
     }
+
+    get _stylePath() {
+        return '../style.css';
+    }
 }
 
 customElements.define('vl-button', VlButton, {extends: 'button'});

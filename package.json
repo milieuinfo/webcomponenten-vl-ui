@@ -25,7 +25,7 @@
     "analyze:generate": "polymer analyze src/vl-*.src.js > analysis.json",
     "doc": "npm run doc:generate && npm run doc:commit",
     "doc:generate": "node_modules/jsdoc/jsdoc.js src/vl-*src.js README.md --destination doc",
-    "doc:commit": "git add -f * && git commit --amend --no-edit && git pull",
+    "doc:commit": "git add * && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo"
   },
   "bugs": {

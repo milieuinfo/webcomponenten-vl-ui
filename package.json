@@ -21,7 +21,8 @@
     "analyze:copy:webcomponent": "copyfiles -f node_modules/**/vl-*.js ./src",
     "analyze:copy:demo": "copyfiles -f node_modules/**/demo/vl-*.html ./demo",
     "analyze:generate": "polymer analyze src/vl-*.src.js > analysis.json",
-    "doc": "node_modules/jsdoc/jsdoc.js src/vl-*src.js README.md --destination doc"
+    "doc": "node_modules/jsdoc/jsdoc.js src/vl-*src.js README.md --destination doc",
+    "release:testless": "np --yolo"
   },
   "bugs": {
     "url": "https://github.com/milieuinfo/webcomponenten-vl-ui/issues"
@@ -29,7 +30,8 @@
   "devDependencies": {
     "copyfiles": "2.1.0",
     "replace": "1.0.0",
-    "jsdoc": "3.5.5"
+    "jsdoc": "3.5.5",
+    "np": "3.0.4"
   },
   "dependencies": {
     "@polymer/iron-component-page": "4.0.1",

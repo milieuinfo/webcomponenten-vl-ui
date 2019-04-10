@@ -29,9 +29,10 @@
   },
   "devDependencies": {
     "copyfiles": "2.1.0",
-    "replace": "1.0.0",
     "jsdoc": "3.5.5",
-    "np": "3.0.4"
+    "np": "3.0.4",
+    "polymer-cli": "^1.9.8",
+    "replace": "1.0.0"
   },
   "dependencies": {
     "@polymer/iron-component-page": "4.0.1",

@@ -39,7 +39,7 @@
   "dependencies": {
     "@polymer/iron-component-page": "4.0.1",
     "@polymer/iron-demo-helpers": "3.0.2",
-    "vl-ui-alert": "1.0.0",
+    "vl-ui-alert": "1.0.1",
     "vl-ui-button": "1.0.1",
     "vl-ui-checkbox": "1.0.1",
     "vl-ui-icon": "1.0.1",

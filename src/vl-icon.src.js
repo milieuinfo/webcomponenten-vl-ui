@@ -14,7 +14,7 @@ import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * `90deg` | Wordt gebruikt om het icoon 90 graden te roteren. | { boolean }
  * `180deg` | Wordt gebruikt om het icoon 180 graden te roteren. | { boolean }
  *
- * @demo demo/vl-icon.html
+ * @demo ../demo/vl-icon.html
  */
 export class VlIcon extends VlElement(HTMLElement) {
     static get _observedAttributes() {

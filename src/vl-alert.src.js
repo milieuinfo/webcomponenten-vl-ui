@@ -17,7 +17,7 @@ import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * -----|--------
  * `default` | De content van het default slot wordt toegevoegd als content van de waarschuwing.
  * 
- * @demo demo/vl-alert.html
+ * @demo ../demo/vl-alert.html
  */
 export class VlAlert extends VlElement(HTMLElement) {
     constructor() {

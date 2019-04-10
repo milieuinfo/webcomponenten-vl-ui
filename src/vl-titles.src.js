@@ -12,7 +12,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * `alt` | Wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel. | { boolean }
  
  *
- * @demo demo/vl-titles.html
+ * @demo ../demo/vl-titles.html
  */
 export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
 

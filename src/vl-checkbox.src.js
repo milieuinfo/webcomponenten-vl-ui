@@ -13,7 +13,7 @@ import { VlElement } from '/node_modules/vl-ui-core/vl-core.src.js';
  * `single` | Wordt gebruikt om alleen een checkbox te tonen zonder label. | { boolean }
  * `switch` | Een checkbox variant met de stijl van een switch. | { boolean }
  * 
- * @demo demo/vl-checkbox.html
+ * @demo ../demo/vl-checkbox.html
  */
 export class VlCheckbox extends VlElement(HTMLElement) {
     static get _observedAttributes() {

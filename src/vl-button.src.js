@@ -3,7 +3,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 /**
  * VlButton
  * @class
- * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram. <a href="demo/vl-button.html">Demo</a>.
+ * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram. <a href="../demo/vl-button.html">Demo</a>.
  * 
  * @extends NativeVlElement
  * 

@@ -14,7 +14,7 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "package": "npm run analyze && npm run doc",
+    "install": "npm run analyze && npm run doc",
     "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
     "analyze:prepare": "npm run analyze:prepare:src && npm run analyze:prepare:demo",
     "analyze:prepare:src": "replace 'demo/' '../demo/' ./vl*.src.js",

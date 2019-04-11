@@ -8,7 +8,7 @@ WORKDIR /app
 RUN npm install
 RUN rm -rf /root/.npmrc
 
-COPY ./src/ /src/
+COPY ./src/ ./src/
 COPY README.md README.md
 
 ENTRYPOINT [ "npm", "run", "package" ]

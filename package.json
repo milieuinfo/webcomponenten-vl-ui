@@ -14,7 +14,7 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "install": "npm run analyze && npm run doc",
+    "package": "npm run analyze && npm run doc",
     "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
     "analyze:prepare": "npm run analyze:prepare:src && npm run analyze:prepare:demo",
     "analyze:prepare:src": "replace 'demo/' '../demo/' ./vl*.src.js",
@@ -34,6 +34,7 @@
     "copyfiles": "2.1.0",
     "jsdoc": "3.5.5",
     "np": "3.0.4",
+    "polymer-cli": "1.9.8",
     "replace": "1.0.0"
   },
   "dependencies": {

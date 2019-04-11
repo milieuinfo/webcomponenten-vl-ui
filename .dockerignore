@@ -1,0 +1,11 @@
+node_modules
+demo
+doc
+.idea
+.dockerignore
+.gitignore
+analysis.json
+build.Dockerfile
+docker-compose.yml
+package-lock.json
+release.Dockerfile

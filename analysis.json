@@ -2,9 +2,9 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "vl-alert\nGebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.\n\n### Attributen\nAttribuut | Uitleg | Waarde\n----------|--------|--------\n`title` | De titel van de waarschuwing. | { string }\n`closable` | Voegt de optie toe om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek. | { boolean }\n`small` | Een variant van de waarschuwing maar kleiner | { boolean }\n`type` | Het type bepaald de soort van waarschuwing, foutmelding, probleemmelding of succesmelding | {string} success - warning - error\n\n### Slots\nSlot | Uitleg\n-----|--------\n`default` | De content van het default slot wordt toegevoegd als content van de waarschuwing.",
+      "description": "VlAlert",
       "summary": "",
-      "path": "src/vl-alert.src.js",
+      "path": "vl-alert.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -13,11 +13,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 42,
+              "line": 35,
               "column": 4
             },
             "end": {
-              "line": 44,
+              "line": 37,
               "column": 5
             }
           },
@@ -28,17 +28,40 @@
           }
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_titelElement",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 46,
+              "line": 39,
               "column": 4
             },
             "end": {
-              "line": 48,
+              "line": 41,
               "column": 5
             }
           },
@@ -55,11 +78,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 50,
+              "line": 43,
               "column": 4
             },
             "end": {
-              "line": 52,
+              "line": 45,
               "column": 5
             }
           },
@@ -76,11 +99,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 54,
+              "line": 47,
               "column": 4
             },
             "end": {
-              "line": 56,
+              "line": 49,
               "column": 5
             }
           },
@@ -93,16 +116,247 @@
       ],
       "methods": [
         {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_getIconTemplate",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 58,
+              "line": 51,
               "column": 4
             },
             "end": {
-              "line": 65,
+              "line": 58,
               "column": 5
             }
           },
@@ -119,11 +373,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 67,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 74,
+              "line": 67,
               "column": 5
             }
           },
@@ -136,11 +390,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 76,
+              "line": 69,
               "column": 4
             },
             "end": {
-              "line": 84,
+              "line": 77,
               "column": 5
             }
           },
@@ -163,11 +417,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 79,
               "column": 4
             },
             "end": {
-              "line": 88,
+              "line": 81,
               "column": 5
             }
           },
@@ -190,11 +444,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 90,
+              "line": 83,
               "column": 4
             },
             "end": {
-              "line": 100,
+              "line": 93,
               "column": 5
             }
           },
@@ -217,11 +471,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 95,
               "column": 4
             },
             "end": {
-              "line": 108,
+              "line": 101,
               "column": 5
             }
           },
@@ -244,11 +498,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 110,
+              "line": 103,
               "column": 4
             },
             "end": {
-              "line": 116,
+              "line": 109,
               "column": 5
             }
           },
@@ -267,25 +521,20 @@
         }
       ],
       "staticMethods": [],
-      "demos": [
-        {
-          "url": "demo/vl-alert.html",
-          "description": ""
-        }
-      ],
+      "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 21,
+          "line": 14,
           "column": 7
         },
         "end": {
-          "line": 117,
+          "line": 110,
           "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
+      "superclass": "VlElement",
       "name": "VlAlert",
       "attributes": [],
       "events": [],
@@ -297,10 +546,33 @@
       "tagname": "vl-alert"
     },
     {
-      "description": "`vl-button``\nGebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.\n\n### Attributen\nAttribuut | Uitleg | Waarde\n----------|--------|--------\n`disabled` | Wordt gebruikt om aan de gebruiker aan te duiden dat de functionaliteit niet actief is. | { boolean }\n`error` | Wordt gebruikt om het belang of de gevolgen van een actie te benadrukken. | { boolean }\n`block` | Wordt gebruikt om ervoor te zorgen dat de knop getoond wordt als een block element en bijgevol de breedte van de parent zal aannemen. | { boolean }\n`large` | Wordt gebruikt om de aandacht van de gebruiker te trekken door de font-size te vergroten. | { boolean }\n`wide` | Zorgt ervoor dat de knop breder op het scherm zal getoond worden. | { boolean }\n`narrow` | Zorgt ervoor dat de knop smaller op het scherm zal getoond worden. | { boolean }\n`loading` | Wordt gebruikt om aan de gebruiker aan te geven dat zijn actie momenteel verwerkt wordt. | { boolean }\n`secondary` | Wordt gebruikt in combinatie met een gewone knop om alternatieve acties te voorzien. | { boolean }\n`tertiary` | Wordt gebruikt in combinatie met gewone en secondary knoppen om alternatieve acties te voorzien. | { boolean }",
+      "description": "VlButton",
       "summary": "",
-      "path": "src/vl-button.src.js",
+      "path": "vl-button.src.js",
       "properties": [
+        {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 3259
+            },
+            "end": {
+              "line": 0,
+              "column": 3286
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "NativeVlElement"
+        },
         {
           "name": "_classPrefix",
           "type": "?",
@@ -308,11 +580,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 34,
+              "line": 32,
               "column": 4
             },
             "end": {
-              "line": 36,
+              "line": 34,
               "column": 5
             }
           },
@@ -329,11 +601,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 38,
+              "line": 36,
               "column": 4
             },
             "end": {
-              "line": 40,
+              "line": 38,
               "column": 5
             }
           },
@@ -351,11 +623,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 30,
+              "line": 28,
               "column": 4
             },
             "end": {
-              "line": 32,
+              "line": 30,
               "column": 5
             }
           },
@@ -367,25 +639,20 @@
         }
       ],
       "staticMethods": [],
-      "demos": [
-        {
-          "url": "demo/vl-button.html",
-          "description": ""
-        }
-      ],
+      "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 21,
+          "line": 19,
           "column": 7
         },
         "end": {
-          "line": 41,
+          "line": 39,
           "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
+      "superclass": "NativeVlElement",
       "name": "VlButton",
       "attributes": [],
       "events": [],
@@ -397,9 +664,9 @@
       "tagname": "vl-button"
     },
     {
-      "description": "`vl-checkbox``\nDe checkbox laat de gebruiker toe om een of meerdere opties te selecteren uit een lijst. Gebruik de checkbox in formulieren.\n\n### Attributen\nAttribuut | Uitleg | Waarde\n----------|--------|--------\n`block` | Wordt gebruikt om ervoor te zorgen dat de checkbox getoond wordt als een block element en bijgevol de breedte van de parent zal aannemen. | { boolean }\n`error` | Wordt gebruikt om aan te duiden dat de checkbox verplicht is. | { boolean }\n`disabled` | Wordt gebruikt om te voorkomen dat de gebruiker de checkbox kan selecteren. | { boolean }\n`single` | Wordt gebruikt om alleen een checkbox te tonen zonder label. | { boolean }\n`switch` | Een checkbox variant met de stijl van een switch. | { boolean }",
+      "description": "VlCheckbox",
       "summary": "",
-      "path": "src/vl-checkbox.src.js",
+      "path": "vl-checkbox.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -408,11 +675,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 45,
+              "line": 43,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 45,
               "column": 5
             }
           },
@@ -423,17 +690,40 @@
           }
         },
         {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 116,
+              "column": 8
+            },
+            "end": {
+              "line": 118,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_inputElement",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 49,
+              "line": 47,
               "column": 4
             },
             "end": {
-              "line": 51,
+              "line": 49,
               "column": 5
             }
           },
@@ -450,11 +740,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 53,
+              "line": 51,
               "column": 4
             },
             "end": {
-              "line": 55,
+              "line": 53,
               "column": 5
             }
           },
@@ -467,16 +757,264 @@
       ],
       "methods": [
         {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 75,
+              "column": 8
+            },
+            "end": {
+              "line": 98,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 127,
+              "column": 8
+            },
+            "end": {
+              "line": 131,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 143,
+              "column": 8
+            },
+            "end": {
+              "line": 151,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 162,
+              "column": 8
+            },
+            "end": {
+              "line": 168,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "Voegt een stijl link tag toe aan de header",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 176,
+              "column": 8
+            },
+            "end": {
+              "line": 181,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 189,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 194,
+              "column": 8
+            },
+            "end": {
+              "line": 202,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "start": {
+              "line": 207,
+              "column": 8
+            },
+            "end": {
+              "line": 218,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "connectedCallback",
           "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 41,
+              "line": 39,
               "column": 4
             },
             "end": {
-              "line": 43,
+              "line": 41,
               "column": 5
             }
           },
@@ -492,11 +1030,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 62,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 64,
+              "line": 62,
               "column": 5
             }
           },
@@ -512,11 +1050,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 66,
+              "line": 64,
               "column": 4
             },
             "end": {
-              "line": 82,
+              "line": 80,
               "column": 5
             }
           },
@@ -532,11 +1070,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 84,
+              "line": 82,
               "column": 4
             },
             "end": {
-              "line": 87,
+              "line": 85,
               "column": 5
             }
           },
@@ -559,11 +1097,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 89,
+              "line": 87,
               "column": 4
             },
             "end": {
-              "line": 91,
+              "line": 89,
               "column": 5
             }
           },
@@ -586,11 +1124,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 91,
               "column": 4
             },
             "end": {
-              "line": 105,
+              "line": 103,
               "column": 5
             }
           },
@@ -613,11 +1151,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 107,
+              "line": 105,
               "column": 4
             },
             "end": {
-              "line": 109,
+              "line": 107,
               "column": 5
             }
           },
@@ -640,11 +1178,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 109,
               "column": 4
             },
             "end": {
-              "line": 117,
+              "line": 115,
               "column": 5
             }
           },
@@ -660,11 +1198,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 119,
+              "line": 117,
               "column": 4
             },
             "end": {
-              "line": 121,
+              "line": 119,
               "column": 5
             }
           },
@@ -681,11 +1219,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 123,
+              "line": 121,
               "column": 4
             },
             "end": {
-              "line": 125,
+              "line": 123,
               "column": 5
             }
           },
@@ -701,25 +1239,20 @@
         }
       ],
       "staticMethods": [],
-      "demos": [
-        {
-          "url": "demo/vl-checkbox.html",
-          "description": ""
-        }
-      ],
+      "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 17,
+          "line": 15,
           "column": 7
         },
         "end": {
-          "line": 126,
+          "line": 124,
           "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
+      "superclass": "VlElement",
       "name": "VlCheckbox",
       "attributes": [],
       "events": [],
@@ -731,9 +1264,9 @@
       "tagname": "vl-checkbox"
     },
     {
-      "description": "vl-icon\nDe wrapper class \"vl-icon-wrapper\" wordt NIET in deze Web Component geïmplementeerd\n### Attributen\nAttribuut | Uitleg | Waarde\n----------|--------|--------\n`icoon` | Wordt gebruikt om aan te geven welk icoon getoond moet worden. | { string }\n`size` | Wordt gebruikt om het icoon te verkleinen (80%) of te vergroten (120%) ten opzichte van de parent. | { string } small - large\n`ligt`| Wordt gebruikt om het icoon een lichte kleur te geven? | { boolean }\n`before` | Wordt gebruikt wanneer het icoon voor een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden. | { boolean }\n`after` | Wordt gebruikt wanneer het icoon achter een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden. | { boolean }\n`90deg` | Wordt gebruikt om het icoon 90 graden te roteren. | { boolean }\n`180deg` | Wordt gebruikt om het icoon 180 graden te roteren. | { boolean }",
+      "description": "VlIcon",
       "summary": "",
-      "path": "src/vl-icon.src.js",
+      "path": "vl-icon.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -742,11 +1275,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 40,
+              "line": 39,
               "column": 4
             },
             "end": {
-              "line": 42,
+              "line": 41,
               "column": 5
             }
           },
@@ -755,20 +1288,274 @@
               "readOnly": true
             }
           }
+        },
+        {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
         }
       ],
       "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
         {
           "name": "_iconChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 44,
+              "line": 43,
               "column": 4
             },
             "end": {
-              "line": 46,
+              "line": 45,
               "column": 5
             }
           },
@@ -791,11 +1578,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 48,
+              "line": 47,
               "column": 4
             },
             "end": {
-              "line": 54,
+              "line": 53,
               "column": 5
             }
           },
@@ -818,11 +1605,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 55,
               "column": 4
             },
             "end": {
-              "line": 58,
+              "line": 57,
               "column": 5
             }
           },
@@ -845,11 +1632,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 60,
+              "line": 59,
               "column": 4
             },
             "end": {
-              "line": 62,
+              "line": 61,
               "column": 5
             }
           },
@@ -868,25 +1655,20 @@
         }
       ],
       "staticMethods": [],
-      "demos": [
-        {
-          "url": "demo/vl-icon.html",
-          "description": ""
-        }
-      ],
+      "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 18,
+          "line": 17,
           "column": 7
         },
         "end": {
-          "line": 63,
+          "line": 62,
           "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
+      "superclass": "VlElement",
       "name": "VlIcon",
       "attributes": [],
       "events": [],
@@ -900,7 +1682,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -909,11 +1691,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -925,17 +1707,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -947,17 +1752,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 37,
+          "line": 34,
           "column": 31
         },
         "end": {
-          "line": 37,
+          "line": 34,
           "column": 54
         }
       },
@@ -975,7 +2012,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -984,11 +2021,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -1000,17 +2037,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -1022,17 +2082,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 38,
+          "line": 35,
           "column": 31
         },
         "end": {
-          "line": 38,
+          "line": 35,
           "column": 54
         }
       },
@@ -1050,7 +2342,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -1059,11 +2351,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -1075,17 +2367,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -1097,17 +2412,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 39,
+          "line": 36,
           "column": 31
         },
         "end": {
-          "line": 39,
+          "line": 36,
           "column": 54
         }
       },
@@ -1125,7 +2672,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -1134,11 +2681,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -1150,17 +2697,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -1172,17 +2742,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 40,
+          "line": 37,
           "column": 31
         },
         "end": {
-          "line": 40,
+          "line": 37,
           "column": 54
         }
       },
@@ -1200,7 +3002,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -1209,11 +3011,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -1225,17 +3027,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -1247,17 +3072,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 41,
+          "line": 38,
           "column": 31
         },
         "end": {
-          "line": 41,
+          "line": 38,
           "column": 54
         }
       },
@@ -1275,7 +3332,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -1284,11 +3341,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
@@ -1300,17 +3357,40 @@
           "inheritedFrom": "VlTitle"
         },
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
           "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
@@ -1322,17 +3402,249 @@
           "inheritedFrom": "VlTitle"
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 42,
+          "line": 39,
           "column": 31
         },
         "end": {
-          "line": 42,
+          "line": 39,
           "column": 54
         }
       },
@@ -1351,16 +3663,16 @@
   "functions": [
     {
       "name": "VlElement",
-      "description": "`VlElement`\nDe root element class voor custom HTML elementen.\n ",
+      "description": "",
       "summary": "",
       "sourceRange": {
-        "file": "src/vl-core.src.js",
+        "file": "vl-core.src.js",
         "start": {
-          "line": 25,
+          "line": 21,
           "column": 25
         },
         "end": {
-          "line": 204,
+          "line": 222,
           "column": 1
         }
       },
@@ -1369,16 +3681,16 @@
     },
     {
       "name": "NativeVlElement",
-      "description": "`NativeVlElement`\nDe root element class voor native HTML elementen.\n ",
+      "description": "",
       "summary": "",
       "sourceRange": {
-        "file": "src/vl-core.src.js",
+        "file": "vl-core.src.js",
         "start": {
-          "line": 210,
+          "line": 224,
           "column": 31
         },
         "end": {
-          "line": 229,
+          "line": 254,
           "column": 1
         }
       },
@@ -1388,40 +3700,40 @@
   ],
   "classes": [
     {
-      "description": "",
+      "description": "VlElement",
       "summary": "",
-      "path": "src/vl-core.src.js",
+      "path": "vl-core.src.js",
       "properties": [
         {
           "name": "_classPrefix",
-          "type": "?",
+          "type": "void",
           "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 100,
-              "column": 4
+              "line": 106,
+              "column": 8
             },
             "end": {
-              "line": 102,
-              "column": 5
+              "line": 108,
+              "column": 9
             }
           },
           "metadata": {}
         },
         {
           "name": "_element",
-          "type": "?",
+          "type": "Element",
           "description": "DOM element getter.",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 109,
-              "column": 4
+              "line": 116,
+              "column": 8
             },
             "end": {
-              "line": 111,
-              "column": 5
+              "line": 118,
+              "column": 9
             }
           },
           "metadata": {}
@@ -1434,12 +3746,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
-              "column": 4
+              "line": 75,
+              "column": 8
             },
             "end": {
-              "line": 93,
-              "column": 5
+              "line": 98,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1464,12 +3776,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 119,
-              "column": 4
+              "line": 127,
+              "column": 8
             },
             "end": {
-              "line": 123,
-              "column": 5
+              "line": 131,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1479,7 +3791,10 @@
               "type": "Literal",
               "description": "HTML literal"
             }
-          ]
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          }
         },
         {
           "name": "_changeClass",
@@ -1487,12 +3802,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 134,
-              "column": 4
+              "line": 143,
+              "column": 8
             },
             "end": {
-              "line": 142,
-              "column": 5
+              "line": 151,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1528,12 +3843,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 152,
-              "column": 4
+              "line": 162,
+              "column": 8
             },
             "end": {
-              "line": 158,
-              "column": 5
+              "line": 168,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1557,17 +3872,236 @@
           }
         },
         {
-          "name": "__changeAttribute",
-          "description": "Wijzigt het class attribuut van het HTML element als de oude en nieuwe waarde van het attribuut niet identiek zijn. Indien de nieuwe waarde bestaat zal een class toegevoegd worden op basis van deze waarde, anders zal de bestaande class op basis van de oude waarde verwijderd worden.",
+          "name": "_addStyleLink",
+          "description": "Voegt een stijl link tag toe aan de header",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 176,
+              "column": 8
+            },
+            "end": {
+              "line": 181,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__shadow",
+          "description": "",
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 170,
-              "column": 4
+              "line": 186,
+              "column": 8
             },
             "end": {
-              "line": 178,
-              "column": 5
+              "line": 189,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 194,
+              "column": 8
+            },
+            "end": {
+              "line": 202,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 207,
+              "column": 8
+            },
+            "end": {
+              "line": 218,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 27,
+          "column": 4
+        },
+        "end": {
+          "line": 219,
+          "column": 5
+        }
+      },
+      "privacy": "public",
+      "superclass": "SuperClass",
+      "name": "VlElement"
+    },
+    {
+      "description": "NativeVlElement",
+      "summary": "",
+      "path": "vl-core.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 8
+            },
+            "end": {
+              "line": 108,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 248,
+              "column": 8
+            },
+            "end": {
+              "line": 250,
+              "column": 9
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 75,
+              "column": 8
+            },
+            "end": {
+              "line": 98,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 127,
+              "column": 8
+            },
+            "end": {
+              "line": 131,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 143,
+              "column": 8
+            },
+            "end": {
+              "line": 151,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1588,11 +4122,6 @@
               "description": "nieuwe waarde"
             },
             {
-              "name": "attribute",
-              "type": "String",
-              "description": "attribuut naam"
-            },
-            {
               "name": "classPrefix",
               "type": "String",
               "description": "class prefix"
@@ -1600,27 +4129,64 @@
           ],
           "return": {
             "type": "void"
-          }
+          },
+          "inheritedFrom": "VlElement"
         },
         {
-          "name": "_addStyleLink",
-          "description": "",
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 180,
-              "column": 4
+              "line": 162,
+              "column": 8
             },
             "end": {
-              "line": 185,
-              "column": 5
+              "line": 168,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "Voegt een stijl link tag toe aan de header",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 176,
+              "column": 8
+            },
+            "end": {
+              "line": 181,
+              "column": 9
             }
           },
           "metadata": {},
           "params": [],
           "return": {
             "type": "void"
-          }
+          },
+          "inheritedFrom": "VlElement"
         },
         {
           "name": "__shadow",
@@ -1628,12 +4194,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 187,
-              "column": 4
+              "line": 186,
+              "column": 8
             },
             "end": {
-              "line": 190,
-              "column": 5
+              "line": 189,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1644,7 +4210,45 @@
           ],
           "return": {
             "type": "void"
-          }
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 194,
+              "column": 8
+            },
+            "end": {
+              "line": 202,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
         },
         {
           "name": "__generateStyleLink",
@@ -1652,12 +4256,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 192,
-              "column": 4
+              "line": 207,
+              "column": 8
             },
             "end": {
-              "line": 203,
-              "column": 5
+              "line": 218,
+              "column": 9
             }
           },
           "metadata": {},
@@ -1665,7 +4269,8 @@
             {
               "name": "id"
             }
-          ]
+          ],
+          "inheritedFrom": "VlElement"
         }
       ],
       "staticMethods": [],
@@ -1673,60 +4278,22 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 25,
-          "column": 41
+          "line": 232,
+          "column": 4
         },
         "end": {
-          "line": 204,
-          "column": 1
+          "line": 251,
+          "column": 5
         }
       },
       "privacy": "public",
-      "superclass": "SuperClass"
+      "superclass": "VlElement",
+      "name": "NativeVlElement"
     },
     {
-      "description": "",
+      "description": "VlTitle",
       "summary": "",
-      "path": "src/vl-core.src.js",
-      "properties": [
-        {
-          "name": "_element",
-          "type": "?",
-          "description": "DOM element getter.",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 226,
-              "column": 4
-            },
-            "end": {
-              "line": 228,
-              "column": 5
-            }
-          },
-          "metadata": {}
-        }
-      ],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 210,
-          "column": 47
-        },
-        "end": {
-          "line": 229,
-          "column": 1
-        }
-      },
-      "privacy": "public"
-    },
-    {
-      "description": "vl-title\nGebruik de vl-title om titels en subtitels als leidraad voor de gebruiker om door de content te gaan.\n\n### Attributen\nAttribuut | Uitleg | Waarde\n----------|--------|--------\n`sans` | Wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans. | { boolean }\n`has-border` | Voegt een subtiele lijn toe onder de titel. | { boolean }\n`alt` | Wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel. | { boolean }",
-      "summary": "",
-      "path": "src/vl-titles.src.js",
+      "path": "vl-titles.src.js",
       "properties": [
         {
           "name": "_classPrefix",
@@ -1735,15 +4302,34 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 27,
               "column": 5
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1719
+            },
+            "end": {
+              "line": 0,
+              "column": 1771
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
         },
         {
           "name": "_stylePath",
@@ -1752,41 +4338,265 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 29,
               "column": 4
             },
             "end": {
-              "line": 34,
+              "line": 31,
               "column": 5
             }
           },
           "metadata": {}
         }
       ],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [
+      "methods": [
         {
-          "url": "demo/vl-titles.html",
-          "description": ""
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 758
+            },
+            "end": {
+              "line": 0,
+              "column": 1657
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
         },
         {
-          "url": "demo/vl-titles.html",
-          "description": ""
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1771
+            },
+            "end": {
+              "line": 0,
+              "column": 1885
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1885
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2300
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2300
+            },
+            "end": {
+              "line": 0,
+              "column": 2454
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2454
+            },
+            "end": {
+              "line": 0,
+              "column": 2543
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2543
+            },
+            "end": {
+              "line": 0,
+              "column": 2819
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2819
+            },
+            "end": {
+              "line": 0,
+              "column": 3103
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
         }
       ],
+      "staticMethods": [],
+      "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 16,
+          "line": 13,
           "column": 7
         },
         "end": {
-          "line": 35,
+          "line": 32,
           "column": 1
         }
       },
       "privacy": "public",
+      "superclass": "VlElement",
       "name": "VlTitle"
     }
   ]

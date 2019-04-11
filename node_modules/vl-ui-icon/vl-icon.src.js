@@ -1,20 +1,19 @@
 import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
- * vl-icon
- * De wrapper class "vl-icon-wrapper" wordt NIET in deze Web Component geïmplementeerd
- * ### Attributen
- * Attribuut | Uitleg | Waarde
- * ----------|--------|--------
- * `icoon` | Wordt gebruikt om aan te geven welk icoon getoond moet worden. | { string }
- * `size` | Wordt gebruikt om het icoon te verkleinen (80%) of te vergroten (120%) ten opzichte van de parent. | { string } small - large
- * `ligt`| Wordt gebruikt om het icoon een lichte kleur te geven? | { boolean }
- * `before` | Wordt gebruikt wanneer het icoon voor een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden. | { boolean }
- * `after` | Wordt gebruikt wanneer het icoon achter een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden. | { boolean }
- * `90deg` | Wordt gebruikt om het icoon 90 graden te roteren. | { boolean }
- * `180deg` | Wordt gebruikt om het icoon 180 graden te roteren. | { boolean }
- *
- * @demo demo/vl-icon.html
+ * VlIcon
+ * @class
+ * @classdesc Gebruik de vl-icon om een extra visueel element toe te voegen. <a href="demo/vl-icon.html">Demo</a>.
+ * 
+ * @extends VlElement
+ * 
+ * @property {string} icoon - Attribuut wordt gebruikt om aan te geven welk icoon getoond moet worden.
+ * @property {(small | large)} size - Attribuut wordt gebruikt om het icoon te verkleinen (80%) of te vergroten (120%) ten opzichte van de parent.
+ * @property {boolean} light - Attribuut wordt gebruikt om het icoon een lichte kleur te geven.
+ * @property {boolean} before - Attribuut wordt gebruikt wanneer het icoon voor een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden.
+ * @property {boolean} after - Attribuut wordt gebruikt wanneer het icoon achter een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden.
+ * @property {boolean} 90deg - Attribuut wordt gebruikt om het icoon 90 graden te roteren.
+ * @property {boolean} 180deg - Attribuut wordt gebruikt om het icoon 180 graden te roteren.
  */
 export class VlIcon extends VlElement(HTMLElement) {
     static get _observedAttributes() {

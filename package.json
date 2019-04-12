@@ -40,6 +40,7 @@
   "dependencies": {
     "@polymer/iron-component-page": "4.0.1",
     "@polymer/iron-demo-helpers": "3.0.2",
+    "prismjs": "1.16.0",
     "vl-ui-alert": "1.0.2",
     "vl-ui-button": "1.0.2",
     "vl-ui-checkbox": "1.0.2",
@@ -53,6 +54,7 @@
     "vl-ui-checkbox",
     "vl-ui-icon",
     "vl-ui-titles",
-    "vl-ui-core"
+    "vl-ui-core",
+    "prismjs"
   ]
 }

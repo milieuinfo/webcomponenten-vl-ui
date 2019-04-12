@@ -4,102 +4,203 @@
     </head>
 
     <script type="module" src="../vl-alert.src.js"></script>
-
-    <style>
-        body {
-            padding: 1.5rem !important;
-        }
-
-        body > *:not(:first-child) {
-            margin-top: 1.5rem;
-        }
-    </style>
+    <script type="module" src="demo.js"></script>
 
     <body>
-        <h1>vl-alert demo</h1>
+        <h1>vl-ui-alert demo</h1>
+        <p>
+        <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-alert">
+            Meer voorbeelden en documentatie</a>.
+        </p>
 
-        <h2>Webuniversum alert: </h2>
-
-        <div class="vl-alert" role="alert">
-            <div class="vl-alert__icon">
-                <i class="vl-vi vl-vi-info" aria-hidden="true"></i>
+        <div>
+            <h2>Alert zonder attributen of inhoud</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert>&lt;/vl-alert>
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert></vl-alert>
             </div>
-            <div class="vl-alert__content">
-                <p class="vl-alert__title">Voorbeeld</p>
-                <div class="vl-alert__message">
-                    <p>Dit is een voorbeeld van een "alert" component van het Webuniversum.</p>
-                    <p><a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-alert">Meer
-                            voorbeelden en documentatie</a>.</p>
-                </div>
-            </div>
-            <button class="vl-alert__close" type="button">
-                <i class="vl-vi vl-vi-cross" aria-hidden="true"></i>
-                <span class="vl-u-visually-hidden">Sluiten</span>
-            </button>
         </div>
 
+        <div>
+            <h2>Alert met pictogram en titel</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" title="Dit is een melding met pictogram en titel. Een titel kan enkel tekst bevatten."&gt;&lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" title="Dit is een melding met pictogram en titel. Een titel kan enkel tekst bevatten."></vl-alert>
+            </div>
+        </div>
 
-        <h2>Web Component alert:</h2>
-        <p>vl-alert zonder attributen of inhoud:</p>
-        <vl-alert></vl-alert>
+        <div>
+            <h2>Alert met pictogram en boodschap</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info"&gt;
+                        &lt;p&gt;Dit is een melding met pictogram en boodschap.&lt;/p&gt;
+                        &lt;p&gt;De boodschap bestaat uit standaard HTML.&lt;/p&gt;
+                        &lt;p&gt;De boodschap kan dus uit meerdere paragrafen bestaan en &lt;a href="#"&gt;links&lt;/a&gt; en andere HTML elementen bevatten.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info">
+                    <p>Dit is een melding met pictogram en boodschap.</p>
+                    <p>De boodschap bestaat uit standaard HTML.</p>
+                    <p>De boodschap kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen bevatten.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met pictogram en titel:</p>
-        <vl-alert icon="info" title="Dit is een melding met pictogram en titel. Een titel kan enkel tekst bevatten."></vl-alert>
+        <div>
+            <h2>Alert met pictogram, titel en boodschap</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" title="Dit is een melding met pictogram, titel en boodschap."&gt;
+                        &lt;p&gt;De titel is vetgedrukte tekst.&lt;/p&gt;
+                        &lt;p&gt;Het bericht bestaat uit standaard HTML.&lt;/p&gt;
+                        &lt;p&gt;Het bericht kan dus uit meerdere paragrafen bestaan en &lt;a href="#"&gt;links&lt;/a&gt; en andere HTML elementen bevatten.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" title="Dit is een melding met pictogram, titel en boodschap.">
+                    <p>De titel is vetgedrukte tekst.</p>
+                    <p>Het bericht bestaat uit standaard HTML.</p>
+                    <p>Het bericht kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen bevatten.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met pictogram en boodschap:</p>
-        <vl-alert icon="info">
-            <p>Dit is een melding met pictogram en boodschap.</p>
-            <p>De boodschap bestaat uit standaard HTML.</p>
-            <p>De boodschap kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen bevatten.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert sluitbaar</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" title="Sluitbare melding" closable&gt;
+                        &lt;p&gt;Deze melding kan worden gesloten door middel van het knopje rechtsboven.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" title="Sluitbare melding" closable>
+                    <p>Deze melding kan worden gesloten door middel van het knopje rechtsboven.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met pictogram, titel en boodschap:</p>
-        <vl-alert icon="info" title="Dit is een melding met pictogram, titel en boodschap.">
-            <p>De titel is vetgedrukte tekst.</p>
-            <p>Het bericht bestaat uit standaard HTML.</p>
-            <p>Het bericht kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen bevatten.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert success</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert type="success" icon="check" title="Gelukt!"&gt;
+                        &lt;p&gt;Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert type="success" icon="check" title="Gelukt!">
+                    <p>Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">sluitbare vl-alert:</p>
-        <vl-alert icon="info" title="Sluitbare melding" closable>
-            <p>Deze melding kan worden gesloten door middel van het knopje rechtsboven.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert warning</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert type="warning" icon="alert-triangle" title="Technische storing"&gt;
+                        &lt;p&gt;Door een technische storing is dit loket tijdelijk niet beschikbaar.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert type="warning" icon="alert-triangle" title="Technische storing">
+                    <p>Door een technische storing is dit loket tijdelijk niet beschikbaar.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert van type="success":</p>
-        <vl-alert type="success" icon="check" title="Gelukt!">
-            <p>Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert error</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert type="error" icon="warning" title="Error!"&gt;
+                        &lt;p&gt;Er is een fout opgetreden.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert type="error" icon="warning" title="Error!">
+                    <p>Er is een fout opgetreden.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met type="warning":</p>
-        <vl-alert type="warning" icon="alert-triangle" title="Technische storing">
-            <p>Door een technische storing is dit loket tijdelijk niet beschikbaar.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert small</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" size="small"&gt;
+                        &lt;p&gt;Dit is een kleine melding zonder titel.&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" size="small">
+                    <p>Dit is een kleine melding zonder titel.</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met type="error":</p>
-        <vl-alert type="error" icon="warning" title="Error!">
-            <p>Er is een fout opgetreden.</p>
-        </vl-alert>
+        <div>
+            <h2>Alert small met titel</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" size="small" title="Kleine melding met titel"&gt;&lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" size="small" title="Kleine melding met titel"></vl-alert>
+            </div>
+        </div>
 
+        <div>
+            <h2>Alert small met titel en inhoud</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" size="small" title="Kleine melding met titel en inhoud"&gt;
+                        &lt;p&gt;Dit is een kleine melding met titel en inhoud&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" size="small" title="Kleine melding met titel en inhoud">
+                    <p>Dit is een kleine melding met titel en inhoud</p>
+                </vl-alert>
+            </div>
+        </div>
 
-        <p class="">vl-alert met size="small":</p>
-        <vl-alert icon="info" size="small">
-            <p>Dit is een kleine melding zonder titel.</p>
-        </vl-alert>
-
-
-        <p class="">vl-alert met size="small" en titel:</p>
-        <vl-alert icon="info" size="small" title="Kleine melding met titel">
-        </vl-alert>
-
-        <p class="">vl-alert met size="small" en met titel en inhoud:</p>
-        <vl-alert icon="info" size="small" title="Kleine melding met titel en inhoud">
-            <p>Dit is een kleine melding met titel en inhoud</p>
-        </vl-alert>
-
-        <p class="">vl-alert met size="large":</p>
-        <vl-alert icon="info" title="Grote melding" size="large">
-            <p>De grote melding is vooral ruimer opgezet, met extra padding.</p>
-            <p>De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geï</p>
-        </vl-alert>
+        <div>
+            <h2>Alert large</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-alert icon="info" title="Grote melding" size="large"&gt;
+                        &lt;p&gt;De grote melding is vooral ruimer opgezet, met extra padding.&lt;/p&gt;
+                        &lt;p&gt;De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geï&lt;/p&gt;
+                    &lt;/vl-alert&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-alert icon="info" title="Grote melding" size="large">
+                    <p>De grote melding is vooral ruimer opgezet, met extra padding.</p>
+                    <p>De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geï</p>
+                </vl-alert>
+            </div>
+        </div>
     </body>
 </html>

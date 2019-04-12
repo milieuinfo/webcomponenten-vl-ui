@@ -691,18 +691,18 @@
         },
         {
           "name": "_element",
-          "type": "Element",
-          "description": "DOM element getter.",
+          "type": "?",
+          "description": "",
           "privacy": "protected",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 116,
-              "column": 8
+              "line": 0,
+              "column": 1719
             },
             "end": {
-              "line": 118,
-              "column": 9
+              "line": 0,
+              "column": 1771
             }
           },
           "metadata": {
@@ -761,14 +761,14 @@
           "description": "",
           "privacy": "public",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 75,
-              "column": 8
+              "line": 0,
+              "column": 758
             },
             "end": {
-              "line": 98,
-              "column": 9
+              "line": 0,
+              "column": 1657
             }
           },
           "metadata": {},
@@ -790,68 +790,55 @@
         },
         {
           "name": "_template",
-          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "description": "",
           "privacy": "protected",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 127,
-              "column": 8
+              "line": 0,
+              "column": 1771
             },
             "end": {
-              "line": 131,
-              "column": 9
+              "line": 0,
+              "column": 1885
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "html",
-              "type": "Literal",
-              "description": "HTML literal"
+              "name": "html"
             }
           ],
-          "return": {
-            "type": "HTMLTemplateElement"
-          },
           "inheritedFrom": "VlElement"
         },
         {
           "name": "_changeClass",
-          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "description": "",
           "privacy": "protected",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 143,
-              "column": 8
+              "line": 0,
+              "column": 1885
             },
             "end": {
-              "line": 151,
-              "column": 9
+              "line": 0,
+              "column": 2169
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "element",
-              "type": "Element",
-              "description": "HTML element"
+              "name": "element"
             },
             {
-              "name": "oldValue",
-              "type": "Object",
-              "description": "oude waarde"
+              "name": "oldValue"
             },
             {
-              "name": "newValue",
-              "type": "Object",
-              "description": "nieuwe waarde"
+              "name": "newValue"
             },
             {
-              "name": "classPrefix",
-              "type": "String",
-              "description": "class prefix"
+              "name": "classPrefix"
             }
           ],
           "return": {
@@ -861,30 +848,26 @@
         },
         {
           "name": "_toggleClass",
-          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "description": "",
           "privacy": "protected",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 162,
-              "column": 8
+              "line": 0,
+              "column": 2169
             },
             "end": {
-              "line": 168,
-              "column": 9
+              "line": 0,
+              "column": 2300
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "element",
-              "type": "Element",
-              "description": "HTML element"
+              "name": "element"
             },
             {
-              "name": "value",
-              "type": "Object",
-              "description": "attribuut waarde"
+              "name": "value"
             },
             {
               "name": "clazz"
@@ -897,17 +880,17 @@
         },
         {
           "name": "_addStyleLink",
-          "description": "Voegt een stijl link tag toe aan de header",
+          "description": "",
           "privacy": "protected",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 176,
-              "column": 8
+              "line": 0,
+              "column": 2300
             },
             "end": {
-              "line": 181,
-              "column": 9
+              "line": 0,
+              "column": 2454
             }
           },
           "metadata": {},
@@ -922,14 +905,14 @@
           "description": "",
           "privacy": "private",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 186,
-              "column": 8
+              "line": 0,
+              "column": 2454
             },
             "end": {
-              "line": 189,
-              "column": 9
+              "line": 0,
+              "column": 2543
             }
           },
           "metadata": {},
@@ -948,14 +931,14 @@
           "description": "",
           "privacy": "private",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 194,
-              "column": 8
+              "line": 0,
+              "column": 2543
             },
             "end": {
-              "line": 202,
-              "column": 9
+              "line": 0,
+              "column": 2819
             }
           },
           "metadata": {},
@@ -986,14 +969,14 @@
           "description": "",
           "privacy": "private",
           "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
+            "file": "node_modules/vl-ui-core/vl-core.js",
             "start": {
-              "line": 207,
-              "column": 8
+              "line": 0,
+              "column": 2819
             },
             "end": {
-              "line": 218,
-              "column": 9
+              "line": 0,
+              "column": 3103
             }
           },
           "metadata": {},

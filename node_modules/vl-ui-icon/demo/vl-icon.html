@@ -4,49 +4,164 @@
     </head>
 
     <script type="module" src="../vl-icon.src.js"></script>
+    <script type="module" src="demo.js"></script>
 
-    <style>
-        body {
-            padding: 1.5rem !important;
-        }
-
-        body > *:not(:first-child) {
-            margin-top: 1.5rem;
-        }
-    </style>
-    
 	<body>
-        <h1>vl-icon demo</h1>
+        <h1>vl-ui-icon demo</h1>
         <p>
-            Klein, standaard, licht en groot icoon:
-            <vl-icon icon="calendar" size="small"></vl-icon>
-            <vl-icon icon="calendar"></vl-icon>
-            <vl-icon icon="calendar" light></vl-icon>
-            <vl-icon icon="calendar" size="large"></vl-icon>
-            <vl-icon icon="calendar" 90deg></vl-icon>
-            <vl-icon icon="calendar" 180deg></vl-icon>
+        <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon">
+            Meer voorbeelden en documentatie</a>.
         </p>
-        <p>
-            <vl-icon icon="calendar"></vl-icon>Icoon voor tekst zonder "before" attribuut
-        </p>
-        <p>
-            <vl-icon icon="calendar" before></vl-icon>Icoon voor tekst met "before" attribuut
-        </p>
-        <p>
-            Icoon na tekst zonder "after" attribuut:<vl-icon icon="calendar"></vl-icon>
-        </p>
-        <p>
-            Icoon na tekst met "after" attribuut:<vl-icon icon="calendar" after></vl-icon>
-        </p>
-        <p style="display: flex;">
-            Icoon na tekst met "after" attribuut en display:flex op container:<vl-icon icon="calendar" after></vl-icon>
-        </p>
-        <p style="display: flex; align-items: center">
-            Klein, standaard en groot icoon, met display:flex en align-items:center op container:
-            <vl-icon icon="calendar" size="small"></vl-icon>
-            <vl-icon icon="calendar" ></vl-icon>
-            <vl-icon icon="calendar" size="large"></vl-icon>
-        </p>
+
+        <div>
+            <h2>Icon klein</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" size="small"&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>
+                <vl-icon icon="calendar" size="small"></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon licht</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" light&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>
+                <vl-icon icon="calendar" light></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon large</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" size="large"&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>
+                <vl-icon icon="calendar" size="large"></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon 90 deg</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" 90deg&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>
+                <vl-icon icon="calendar" 90deg></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon 180 deg</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" 180deg&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>
+                <vl-icon icon="calendar" 180deg></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon zonder before attribuut</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;Icoon voor tekst zonder "before" attribuut
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar"></vl-icon>Icoon voor tekst zonder "before" attribuut
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon met before attribuut</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar" before&gt;&lt;/vl-icon&gt;Icoon voor tekst met "before" attribuut
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar" before></vl-icon>Icoon voor tekst met "before" attribuut
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon na tekst zonder after attribuut</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    Icoon na tekst zonder "after" attribuut:&lt;vl-icon icon="calendar"&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                Icoon na tekst zonder "after" attribuut:<vl-icon icon="calendar"></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon na tekst zonder after attribuut</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    Icoon na tekst met "after" attribuut:&lt;vl-icon icon="calendar" after&gt;&lt;/vl-icon&gt; 
+                </code>
+            </pre>
+            <div class="demo">
+                Icoon na tekst met "after" attribuut:<vl-icon icon="calendar" after></vl-icon>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon na tekst met after attribuut en display flex</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;p style="display: flex;"&gt;
+                        Icoon na tekst met "after" attribuut en display:flex op container:&lt;vl-icon icon="calendar" after&gt;&lt;/vl-icon&gt;
+                    &lt;/p&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <p style="display: flex;">
+                    Icoon na tekst met "after" attribuut en display:flex op container:<vl-icon icon="calendar" after></vl-icon>
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Icon klein, standaard en groot icoon, met display:flex en align-items:center op container</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-icon icon="calendar" size="small"&gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" &gt;&lt;/vl-icon&gt;
+                    &lt;vl-icon icon="calendar" size="large"&gt;&lt;/vl-icon&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-icon icon="calendar" size="small"></vl-icon>
+                <vl-icon icon="calendar" ></vl-icon>
+                <vl-icon icon="calendar" size="large"></vl-icon>
+            </div>
+        </div>
     </body>
 
 </html>

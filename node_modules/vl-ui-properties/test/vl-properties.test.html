@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../vl-properties.src.js"></script>
+</head>
+
+<body>
+  <test-fixture id="vl-properties-fixture">
+    <template>
+      <vl-properties></vl-properties>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-properties-column-fixture">
+    <template>
+      <div is="vl-properties-column"></div>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-properties-list-fixture">
+    <template>
+      <dl is="vl-properties-list"></dl>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-properties-title-fixture">
+    <template>
+      <h1 is="vl-properties-title"></h1>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-properties-term-fixture">
+    <template>
+      <dt is="vl-property-term"></dt>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-properties-value-fixture">
+    <template>
+      <dd is="vl-property-value"></dd>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('vl-properties', () => {
+      const should = chai.should();
+
+      test('bevat een div element met daarin de slot content', () => {
+        const element = fixture('vl-properties-fixture');
+        const content = document.createElement('span');
+        content.innerText = "Dit is de slot content";
+        element.appendChild(content);
+        should.exist(element.shadowRoot.querySelector('.vl-properties'));
+        assert.equal(element.shadowRoot.querySelector('.vl-properties slot').assignedElements()[0], content);
+      });
+    });
+
+    suite('vl-properties-column', () => {
+      test('heeft de vl-properties__column class', () => {
+        const element = fixture('vl-properties-column-fixture');
+        assert.isTrue(element.classList.contains('vl-properties__column'));
+      });
+
+      test('krijgt de juiste class wanneer het properties een attribuut bevat', () => {
+        const button = fixture('vl-properties-column-fixture');
+        ['full'].forEach((attribuut) => {
+          assert.isFalse(button.classList.contains('vl-properties__column--' + attribuut));
+          button.setAttribute(attribuut, '');
+          assert.isTrue(button.classList.contains('vl-properties__column--' + attribuut));
+          button.removeAttribute(attribuut);
+          assert.isFalse(button.classList.contains('vl-properties__column--' + attribuut));
+        });
+      });
+    });
+
+    suite('vl-properties-list', () => {
+      test('heeft de vl-properties__list class', () => {
+        const element = fixture('vl-properties-list-fixture');
+        assert.isTrue(element.classList.contains('vl-properties__list'));
+      });
+    });
+
+    suite('vl-properties-title', () => {
+      test('heeft de vl-properties__title class', () => {
+        const element = fixture('vl-properties-title-fixture');
+        assert.isTrue(element.classList.contains('vl-properties__title'));
+      });
+    });
+
+    suite('vl-properties-term', () => {
+      test('heeft de vl-properties__label class', () => {
+        const element = fixture('vl-properties-term-fixture');
+        assert.isTrue(element.classList.contains('vl-properties__label'));
+      });
+    });
+
+    suite('vl-properties-value', () => {
+      test('heeft de vl-properties__data class', () => {
+        const element = fixture('vl-properties-value-fixture');
+        assert.isTrue(element.classList.contains('vl-properties__data'));
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: vl-properties.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: vl-properties.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { VlElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+
+/**
+ * VlProperties
+ * @class
+ * @classdesc De properties webcomponent vormt de container van een lijst van kenmerken van een onderwerp. Deze component wordt meestal gebruikt om informatie te tonen dat ingevuld werd in een formulier. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ */
+export class VlProperties extends VlElement(HTMLElement) {
+    constructor() {
+        super(`
+            &lt;style>
+                @import '../style.css';
+            &lt;/style>
+
+            &lt;div class="vl-properties">
+                &lt;slot>&lt;/slot>
+            &lt;/div>
+        `);
+    }
+}
+
+/**
+ * VlPropertiesColumn
+ * @class
+ * @classdesc De properties kolom webcomponent wordt gebruikt om lijsten van kenmerken van een onderwerp te verdelen in verschillende kolommen. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ *
+ * @property {boolean} full - Attribuut wordt gebruikt om de kolom de volledige breedte te laten innemen.
+ */
+export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
+    static get _observedClassAttributes() {
+        return ['full'];
+    }
+
+    connectedCallback() {
+        this.classList.add('vl-properties__column');
+    }
+
+    get _classPrefix() {
+        return 'vl-properties__column--';
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+/**
+ * VlPropertiesList
+ * @class
+ * @classdesc De properties lijst webcomponent toont een lijst van kenmerken van een onderwerp. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ */
+export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
+    connectedCallback() {
+        this.classList.add('vl-properties__list');
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+/**
+ * VlPropertiesTitle
+ * @class
+ * @classdesc De property titel webcomponent wordt gebruikt om een title toe te voegen aan een lijst van kenmerken. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ */
+export class VlPropertiesTitle extends NativeVlElement(HTMLHeadingElement) {
+    connectedCallback() {
+        this.classList.add('vl-properties__title');
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+/**
+ * VlPropertyTerm
+ * @class
+ * @classdesc De property kenmerk webcomponent toont de beschrijving van een onderwerp kenmerk. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ */
+export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
+    connectedCallback() {
+        this.classList.add('vl-properties__label');
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+/**
+ * VlPropertyValue
+ * @class
+ * @classdesc De property waarde webcomponent toont de waarde van een onderwerp kenmerk. &lt;a href="../demo/vl-properties.html">Demo&lt;/a>.
+ * 
+ * @extends VlElement
+ */
+export class VlPropertyValue extends NativeVlElement(HTMLElement) {
+    connectedCallback() {
+        this.classList.add('vl-properties__data');
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+customElements.define('vl-properties', VlProperties);
+customElements.define('vl-properties-column', VlPropertiesColumn, {extends: 'div'});
+customElements.define('vl-properties-list', VlPropertiesList, {extends: 'dl'});
+customElements.define('vl-properties-title', VlPropertiesTitle, {extends: 'h1'});
+customElements.define('vl-property-term', VlPropertyTerm, {extends: 'dt'});
+customElements.define('vl-property-value', VlPropertyValue, {extends: 'dd'});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertiesTitle.html">VlPropertiesTitle</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlTitle.html">VlTitle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 15 2019 14:59:25 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

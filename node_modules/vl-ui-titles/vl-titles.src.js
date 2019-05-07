@@ -5,7 +5,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * @class
  * @classdesc Gebruik de vl-title om titels en subtitels als leidraad voor de gebruiker om door de content te gaan. <a href="demo/vl-titles.html">Demo</a>.
  * 
- * @extends VlElement
+ * @extends NativeVlElement
  * 
  * @property {boolean} sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
  * @property {boolean} has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
@@ -17,8 +17,7 @@ export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
         return ['sans','has-border','alt'];
     }
 
-    constructor() {
-        super();
+    connectedCallback() {
         this.classList.add("vl-title");
         this.classList.add("vl-title--"+this.tagName.toLowerCase());
     }

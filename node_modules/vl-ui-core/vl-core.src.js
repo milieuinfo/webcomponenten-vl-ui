@@ -1,3 +1,5 @@
+import '/node_modules/document-register-element/build/document-register-element.js';
+
 (() => {
     const id = 'vl-core-style';
     addStyle();
@@ -115,7 +117,11 @@ export const VlElement = (SuperClass) => {
          * @returns {Element}
          */
         get _element() {
-            return this._shadow.lastElementChild;
+            if (this._shadow) {
+                return this._shadow.lastElementChild;
+            } else {
+                return this;
+            }
         }
     
         /**
@@ -239,8 +245,8 @@ export const NativeVlElement = (SuperClass) => {
         constructor() {
             super();
             this._addStyleLink();
-        }  
-        
+        }
+
         /**
          * DOM element getter.
          * 

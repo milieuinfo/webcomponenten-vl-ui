@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../vl-form-message.src.js"></script>
+  <title>vl-form-message test</title>
+</head>
+
+<body>
+<test-fixture id="vl-form-message-fixture">
+  <template>
+    <label id="label" is="vl-form-message"></label>
+  </template>
+</test-fixture>
+
+<script>
+  suite('<vl-form-message>', () => {
+
+    test('heeft de vl-form-message class', () => {
+      const label = fixture('vl-form-message-fixture');
+      assert.isTrue(label.classList.contains('vl-form__label'));
+    });
+
+    test('krijgt de juiste class wanneer het label een attribuut bevat', () => {
+      const label = fixture('vl-form-message-fixture');
+      ['light', 'block'].forEach((attribuut) => {
+        assert.isFalse(label.classList.contains('vl-form__label--' + attribuut));
+        label.setAttribute(attribuut, '');
+        assert.isTrue(label.classList.contains('vl-form__label--' + attribuut));
+        label.removeAttribute(attribuut);
+        assert.isFalse(label.classList.contains('vl-form__label--' + attribuut));
+      });
+    });
+
+  });
+</script>
+</body>
+
+</html>

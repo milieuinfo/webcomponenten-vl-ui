@@ -83,9 +83,11 @@
 
             test('met een link attribuut past de class attributen aan om de stjil te garanderen', () => {
                 const icon = fixture('vl-icon-fixture-link');
-                ['vl-icon', 'vl-icon--small', 'vl-icon--light', 'vl-icon--before'].forEach((value) => {
-                    assert.isTrue(icon[0].classList.contains(value));
-                    assert.isTrue(icon[1].classList.contains(value.replace('-icon', '-link__icon')));
+                setTimeout(() => {
+                    ['vl-icon', 'vl-icon--small', 'vl-icon--light', 'vl-icon--before'].forEach((value) => {
+                        assert.isTrue(icon[0].classList.contains(value));
+                        assert.isTrue(icon[1].classList.contains(value.replace('-icon', '-link__icon')));
+                    });
                 });
             });
         });

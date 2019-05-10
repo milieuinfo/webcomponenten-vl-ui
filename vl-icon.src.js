@@ -25,8 +25,7 @@ export class VlIcon extends NativeVlElement(HTMLSpanElement) {
         return ['before', 'after', 'light'];
     }
 
-    constructor() {
-        super();
+    connectedCallback() {
         this.classList.add('vl-icon');
         this.classList.add('vl-vi');
         this.setAttribute('aria-hidden', true);
@@ -61,15 +60,17 @@ export class VlIcon extends NativeVlElement(HTMLSpanElement) {
     }
 
     _linkChangedCallback(oldValue, newValue) {
-        if (newValue != undefined) {
-            this._element.classList.forEach((value) => {
-                this._element.classList.replace(value, value.replace('-icon', '-link__icon'));
-            });
-        } else {
-            this._element.classList.forEach((value) => {
-                this._element.classList.replace(value, value.replace('-link__icon', '-icon'));
-            });
-        }
+        setTimeout(() => {
+            if (newValue != undefined) {
+                this._element.classList.forEach((value) => {
+                    this._element.classList.replace(value, value.replace('-icon', '-link__icon'));
+                });
+            } else {
+                this._element.classList.forEach((value) => {
+                    this._element.classList.replace(value, value.replace('-link__icon', '-icon'));
+                });
+            }
+        });
     }
 }
 

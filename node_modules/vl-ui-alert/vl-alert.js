@@ -1,4 +1,4 @@
-import{VlElement}from"/node_modules/vl-ui-core/vl-core.js";export class VlAlert extends VlElement(HTMLElement){constructor(){super(`
+import{VlElement}from"/node_modules/vl-ui-core/vl-core.js";import"/node_modules/vl-ui-icon/vl-icon.js";export class VlAlert extends VlElement(HTMLElement){constructor(){super(`
             <style>
                 @import "/node_modules/vl-ui-alert/style.css";
             </style>
@@ -12,8 +12,7 @@ import{VlElement}from"/node_modules/vl-ui-core/vl-core.js";export class VlAlert 
             </div>
         `)}static get _observedAttributes(){return["icon","title","closable","type","size"]}get _classPrefix(){return"vl-alert--"}get _titelElement(){return this._element.querySelector(".vl-alert__title")}get _iconElement(){return this._element.querySelector(".vl-alert__icon")}get _closeButtonElement(){return this._element.querySelector(".vl-alert__close")}_getIconTemplate(newValue){return this._template(`
             <div class="vl-alert__icon">
-                <i class="vl-vi vl-vi-${newValue}" aria-hidden="true"></i>
-                <vl-icon icon="calendar"></vl-icon>
+                <span is="vl-icon" icon="${newValue}"></span>
             </div>
         `)}_getCloseButtonTemplate(){return this._template(`
             <button class="vl-alert__close" type="button">

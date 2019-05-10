@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>vl-link voorbeeld</title>
+    </head>
+
+    <script type="module" src="../vl-link.src.js"></script>
+    <script type="module" src="/node_modules/vl-ui-icon/vl-icon.js"></script>
+    <script type="module" src="demo.js"></script>
+
+	<body>
+        <h1>vl-ui-link demo</h1>
+        <p>
+            <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-link">Meer voorbeelden en documentatie</a>.
+        </p>
+
+        <div>
+            <h2>Link</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#"&gt;Terug naar overzicht&lt;/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#">Terug naar overzicht</a>
+            </div>
+        </div>
+
+        <div>
+            <h2>Link block</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#" block&gt;Terug naar overzicht&lt;/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#" block>Terug naar overzicht</a>
+            </div>
+        </div>
+
+        <div>
+            <h2>Link met icoon voor tekst</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#"&gt;&lt;span icon="arrow-right-fat" before&gt;&lt;/span&gt;Terug naar overzicht&lt;/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#"><span is="vl-icon" icon="arrow-right-fat" before></span>Terug naar overzicht</a>
+            </div>
+        </div>
+
+        <div>
+            <h2>Link met icoon na tekst</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#"&gt;Terug naar overzicht&lt;span is="vl-icon" icon="arrow-right-fat" after&gt;&lt;/vl-icon&gt;&lt;/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#">Terug naar overzicht<span is="vl-icon" icon="arrow-right-fat" after></span></a>
+            </div>
+        </div>
+
+        <div>
+            <h2>Link extern</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#"&gt;Ga naar Vlaanderen.be&lt;vl-icon icon="external" after light&gt;&lt;/vl-icon&gt;&lt;/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#">Ga naar Vlaanderen.be<span is="vl-icon" icon="external" after light></span></a>
+            </div>
+        </div>
+
+        <div>
+            <h2>Link sluiten</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;a is="vl-link" href="#"&gt;&lt;aspan is="vl-icon" icon="cross" before&gt;&lt;a/span&gt;Venster sluiten&lt;a/span&gt;&lt;a/a&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <a is="vl-link" href="#"><span is="vl-icon" icon="cross" before></span>Venster sluiten</span></a>
+            </div>
+        </div>
+	</body>
+</html>

@@ -4467,4 +4467,7 @@ mark,
     .vl-u-hidden--xs {
       display: none !important; } }
 
+.vl-icon {
+  vertical-align: text-top; }
+
 /*# sourceMappingURL=style.css.map */

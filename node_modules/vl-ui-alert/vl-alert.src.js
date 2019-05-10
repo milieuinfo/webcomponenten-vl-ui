@@ -1,4 +1,5 @@
 import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import '/node_modules/vl-ui-icon/vl-icon.js';
 
 /**
  * VlAlert
@@ -52,8 +53,7 @@ export class VlAlert extends VlElement(HTMLElement) {
     _getIconTemplate(newValue) {
         return this._template(`
             <div class="vl-alert__icon">
-                <i class="vl-vi vl-vi-${newValue}" aria-hidden="true"></i>
-                <vl-icon icon="calendar"></vl-icon>
+                <span is="vl-icon" icon="${newValue}"></span>
             </div>
         `);
     };

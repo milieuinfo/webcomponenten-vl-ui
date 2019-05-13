@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "prismjs": "1.16.0",
+    "vl-ui-accordion": "0.1.0",
     "vl-ui-alert": "1.0.4",
     "vl-ui-button": "1.0.3",
     "vl-ui-checkbox": "1.0.3",
@@ -55,6 +56,7 @@
   },
   "bundledDependencies": [
     "prismjs",
+    "vl-ui-accordion",
     "vl-ui-alert",
     "vl-ui-button",
     "vl-ui-checkbox",

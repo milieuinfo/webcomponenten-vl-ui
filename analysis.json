@@ -59,27 +59,6 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 57,
-              "column": 4
-            },
-            "end": {
-              "line": 59,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_titleElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
               "line": 61,
               "column": 4
             },
@@ -95,7 +74,7 @@
           }
         },
         {
-          "name": "_openToggleTextAttribute",
+          "name": "_titleElement",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -116,7 +95,7 @@
           }
         },
         {
-          "name": "_closeToggleTextAttribute",
+          "name": "_openToggleTextAttribute",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -127,6 +106,27 @@
             },
             "end": {
               "line": 71,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          }
+        },
+        {
+          "name": "_closeToggleTextAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 73,
+              "column": 4
+            },
+            "end": {
+              "line": 75,
               "column": 5
             }
           },
@@ -371,15 +371,15 @@
         },
         {
           "name": "dress",
-          "description": "",
+          "description": "Activeer de accordion functionaliteit.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 73,
+              "line": 82,
               "column": 4
             },
             "end": {
-              "line": 75,
+              "line": 84,
               "column": 5
             }
           },
@@ -395,11 +395,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 77,
+              "line": 86,
               "column": 4
             },
             "end": {
-              "line": 79,
+              "line": 88,
               "column": 5
             }
           },
@@ -415,11 +415,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 90,
               "column": 4
             },
             "end": {
-              "line": 83,
+              "line": 92,
               "column": 5
             }
           },
@@ -442,11 +442,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 94,
               "column": 4
             },
             "end": {
-              "line": 88,
+              "line": 97,
               "column": 5
             }
           },
@@ -469,11 +469,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 90,
+              "line": 99,
               "column": 4
             },
             "end": {
-              "line": 93,
+              "line": 102,
               "column": 5
             }
           },
@@ -496,11 +496,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 95,
+              "line": 104,
               "column": 4
             },
             "end": {
-              "line": 100,
+              "line": 109,
               "column": 5
             }
           },
@@ -516,11 +516,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 31,
+          "line": 35,
           "column": 7
         },
         "end": {
-          "line": 101,
+          "line": 110,
           "column": 1
         }
       },

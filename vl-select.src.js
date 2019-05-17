@@ -1,4 +1,4 @@
-import {NativeVlElement} from '/node_modules/vl-ui-core/vl-core.js';
+import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 (() => {
   loadScript('util.js',
@@ -131,4 +131,6 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 }
 
-customElements.define('vl-select', VlSelect, {extends: 'select'});
+VlRegisterElement(() => {
+  customElements.define('vl-select', VlSelect, {extends: 'select'});
+});

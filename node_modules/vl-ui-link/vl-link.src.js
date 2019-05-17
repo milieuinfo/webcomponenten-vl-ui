@@ -1,4 +1,4 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlButton
@@ -29,11 +29,17 @@ export class VlLink extends NativeVlElement(HTMLAnchorElement) {
         return '../style.css';
     }
 
+    get _iconElementen() {
+        return this.querySelectorAll('[is="vl-icon"]');
+    }
+
     _setIconLinkAttribute() {
-        this.querySelectorAll('[is="vl-icon"]').forEach((icon) => {
+        this._iconElementen.forEach((icon) => {
             icon.setAttribute('link', '');
         });
     }
 }
 
-customElements.define('vl-link', VlLink, {extends: 'a'});
+VlRegisterElement(() => {
+    customElements.define('vl-link', VlLink, {extends: 'a'});
+});

@@ -24,9 +24,17 @@
         </template>
     </test-fixture>
 
-    <script>
+    <script type="module">
+        import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+
         suite('<vl-link>', () => {
             const should = chai.should();
+
+            suiteSetup((done) => {
+                VlRegisterElement(() => {
+                    done();
+                });
+            });
 
             test('heeft de vl-link class', () => {
                 const link = fixture('vl-link-fixture');

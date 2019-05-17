@@ -14,8 +14,15 @@
   </template>
 </test-fixture>
 
-<script>
+<script type="module">
+  import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+
   suite('vl-input-field', () => {
+    suiteSetup((done) => {
+      VlRegisterElement(() => {
+        done();
+      });
+    });
 
     test('heeft de vl-input-field class', () => {
       const button = fixture('vl-input-field-fixture');

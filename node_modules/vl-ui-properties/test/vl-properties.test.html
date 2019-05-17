@@ -46,9 +46,17 @@
     </template>
   </test-fixture>
 
-  <script>
+  <script type="module">
+    import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+    
     suite('vl-properties', () => {
       const should = chai.should();
+
+      suiteSetup((done) => {
+        VlRegisterElement(() => {
+          done();
+        });
+      });
 
       test('bevat een div element met daarin de slot content', () => {
         const element = fixture('vl-properties-fixture');

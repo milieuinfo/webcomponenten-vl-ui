@@ -41,9 +41,18 @@
     </template>
 </test-fixture>
 
-<script>
+<script type="module">
+    import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+
     suite('<vl-title>', () => {
         const should = chai.should();
+
+        suiteSetup((done) => {
+            VlRegisterElement(() => {
+                done();
+            });
+        });
+
         ['h1','h2','h3','h4','h5','h6'].forEach((level) => {
 
             const title = fixture('vl-'+level+'-fixture');

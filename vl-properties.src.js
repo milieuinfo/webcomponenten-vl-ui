@@ -1,4 +1,4 @@
-import { VlElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlRegisterElement, VlElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlProperties
@@ -116,9 +116,11 @@ export class VlPropertyValue extends NativeVlElement(HTMLElement) {
     }
 }
 
-customElements.define('vl-properties', VlProperties);
-customElements.define('vl-properties-column', VlPropertiesColumn, {extends: 'div'});
-customElements.define('vl-properties-list', VlPropertiesList, {extends: 'dl'});
-customElements.define('vl-properties-title', VlPropertiesTitle, {extends: 'h1'});
-customElements.define('vl-property-term', VlPropertyTerm, {extends: 'dt'});
-customElements.define('vl-property-value', VlPropertyValue, {extends: 'dd'});
+VlRegisterElement(() => {
+    customElements.define('vl-properties', VlProperties);
+    customElements.define('vl-properties-column', VlPropertiesColumn, {extends: 'div'});
+    customElements.define('vl-properties-list', VlPropertiesList, {extends: 'dl'});
+    customElements.define('vl-properties-title', VlPropertiesTitle, {extends: 'h1'});
+    customElements.define('vl-property-term', VlPropertyTerm, {extends: 'dt'});
+    customElements.define('vl-property-value', VlPropertyValue, {extends: 'dd'});
+});

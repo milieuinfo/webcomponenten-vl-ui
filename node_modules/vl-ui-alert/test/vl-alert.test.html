@@ -14,9 +14,17 @@
             </template>
         </test-fixture>
 
-        <script>
+        <script type="module">
+            import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+
             suite('<vl-alert>', () => {
                 const should = chai.should();
+
+                suiteSetup((done) => {
+                    VlRegisterElement(() => {
+                        done();
+                    });
+                });
 
                 // Te testen attributen: icon, title, closable, type, size
                 // Te testen acties: sluiten van de alert

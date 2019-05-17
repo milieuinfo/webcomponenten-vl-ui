@@ -17,8 +17,16 @@
   </template>
 </test-fixture>
 
-<script>
+<script type="module">
+  import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
+
   suite('<vl-form-message>', () => {
+
+    suiteSetup((done) => {
+      VlRegisterElement(() => {
+        done();
+      });
+    });
 
     test('heeft de vl-form-message class', () => {
       const label = fixture('vl-form-message-fixture');

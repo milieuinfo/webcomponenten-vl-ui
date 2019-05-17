@@ -1,4 +1,4 @@
-import {NativeVlElement} from '/node_modules/vl-ui-core/vl-core.js';
+import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
  /**
  * VlInputField
@@ -26,4 +26,6 @@ export class VlInputField extends NativeVlElement(HTMLInputElement) {
   }
 }
 
-customElements.define('vl-input-field', VlInputField, {extends: 'input'});
+VlRegisterElement(() => {
+  customElements.define('vl-input-field', VlInputField, {extends: 'input'});
+});

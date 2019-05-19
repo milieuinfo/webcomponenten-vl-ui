@@ -6,6 +6,7 @@
     <script src="../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
+    <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module" src="../vl-icon.src.js"></script>
 </head>
 
@@ -30,17 +31,9 @@
         </template>
     </test-fixture>
 
-    <script type="module">
-        import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
-
+    <script>
         suite('<vl-icon>', () => {
             const should = chai.should();
-
-            suiteSetup((done) => {
-                VlRegisterElement(() => {
-                    done();
-                });
-            });
 
             test('heeft de vl-icon en vl-vi class', () => {
                 const icon = fixture('vl-icon-fixture');

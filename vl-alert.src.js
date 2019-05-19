@@ -1,4 +1,4 @@
-import { VlRegisterElement, VlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
 import '/node_modules/vl-ui-icon/vl-icon.js';
 
 /**
@@ -110,6 +110,4 @@ export class VlAlert extends VlElement(HTMLElement) {
     }
 }
 
-VlRegisterElement(() => {
-    customElements.define('vl-alert', VlAlert);
-});
+customElements.define('vl-alert', VlAlert); 

@@ -1,4 +1,4 @@
-import { VlRegisterElement, VlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
 * VlInputGroup
@@ -20,6 +20,4 @@ export class VlInputGroup extends VlElement(HTMLElement) {
   }
 }
 
-VlRegisterElement(() => {
-  customElements.define('vl-input-group', VlInputGroup);
-});
+customElements.define('vl-input-group', VlInputGroup);

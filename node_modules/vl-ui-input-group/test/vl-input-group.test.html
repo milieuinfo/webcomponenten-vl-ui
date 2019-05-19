@@ -17,16 +17,8 @@
   </template>
 </test-fixture>
 
-<script type="module">
-  import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
-
+<script>
   suite('<vl-input-group>', () => {
-    suiteSetup((done) => {
-      VlRegisterElement(() => {
-        done();
-      });
-    });
-
     test('heeft een div met de vl-input-group class', () => {
       const group = fixture('vl-input-group-fixture');
       assert.isTrue(group.shadowRoot.querySelector('div').classList.contains('vl-input-group'));

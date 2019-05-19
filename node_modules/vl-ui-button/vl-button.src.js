@@ -1,4 +1,4 @@
-import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlButton
@@ -39,6 +39,4 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
     }
 }
 
-VlRegisterElement(() => {
-    customElements.define('vl-button', VlButton, {extends: 'button'});
-});
+customElements.define('vl-button', VlButton, {extends: 'button'});

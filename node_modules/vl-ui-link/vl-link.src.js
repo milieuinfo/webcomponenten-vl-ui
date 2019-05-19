@@ -1,4 +1,4 @@
-import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlButton
@@ -40,6 +40,4 @@ export class VlLink extends NativeVlElement(HTMLAnchorElement) {
     }
 }
 
-VlRegisterElement(() => {
-    customElements.define('vl-link', VlLink, {extends: 'a'});
-});
+customElements.define('vl-link', VlLink, {extends: 'a'});

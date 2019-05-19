@@ -1,4 +1,4 @@
-import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlFormMessage
@@ -29,6 +29,4 @@ export class VlFormMessage extends NativeVlElement(HTMLLabelElement) {
   }
 }
 
-VlRegisterElement(() => {
-  customElements.define('vl-form-message', VlFormMessage, {extends: 'label'});
-});
+customElements.define('vl-form-message', VlFormMessage, {extends: 'label'});

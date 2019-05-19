@@ -1,4 +1,4 @@
-import { VlRegisterElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlIcon
@@ -74,6 +74,4 @@ export class VlIcon extends NativeVlElement(HTMLSpanElement) {
     }
 }
 
-VlRegisterElement(() => {
-    customElements.define('vl-icon', VlIcon, {extends: 'span'});
-});
+customElements.define('vl-icon', VlIcon, {extends: 'span'});

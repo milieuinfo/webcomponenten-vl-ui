@@ -14,16 +14,8 @@
   </template>
 </test-fixture>
 
-<script type="module">
-  import { VlRegisterElement } from '/node_modules/vl-ui-core/vl-core.js';
-
+<script>
   suite('vl-input-field', () => {
-    suiteSetup((done) => {
-      VlRegisterElement(() => {
-        done();
-      });
-    });
-
     test('heeft de vl-input-field class', () => {
       const button = fixture('vl-input-field-fixture');
       assert.isTrue(button.classList.contains('vl-input-field'));

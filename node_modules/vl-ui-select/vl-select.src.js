@@ -1,15 +1,11 @@
 import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 (() => {
-  loadScript('util.js',
-      '../node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
-        loadScript('core.js',
-            '../node_modules/@govflanders/vl-ui-core/dist/js/core.min.js',
-            () => {
-              loadScript('select.js',
-                  '../node_modules/@govflanders/vl-ui-select/dist/js/select.js');
-            });
-      });
+  loadScript('util.js', '../node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
+    loadScript('core.js', '../node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
+      loadScript('select.js', '../dist/select.js');
+    });
+  });
 
   function loadScript(id, src, onload) {
     if (!document.head.querySelector('#' + id)) {
@@ -33,6 +29,10 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
  * @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
  * @property {boolean} disabled - Attribuut wordt gebruikt om te voorkomen dat de gebruiker iets kan kiezen uit het select element.
+ * @property {boolean} data-vl-select - Attribuut zorgt ervoor dat de zoek functionaliteit geïnitialiseerd wordt.
+ * @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
+ * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
+ * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
  */
 
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {
@@ -43,6 +43,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 
   connectedCallback() {
     this.classList.add('vl-select');
+    this.dress();
   }
 
   get _classPrefix() {
@@ -62,12 +63,21 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 
   /**
+   * Zet de mogelijkheden die gekozen kunnen worden.
+   * 
+   * @param {Object[]} choices met value en label attribuut
+   */
+  set choices(choices) {
+    this._choices.setChoices(choices, 'value', 'label', true);
+  }
+
+  /**
    * Geef de `Choices` instantie.
    *
    * @see https://www.npmjs.com/package/choices.js
    * @returns {Choices} de `Choices` instantie of `null` als de component nog niet geinitialiseerd is door `dress()`
    */
-  get choices() {
+  get _choices() {
     let choices = null;
     vl.util.each(vl.select.selectInstances, instance => {
       if (instance.element === this) {
@@ -85,7 +95,12 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   dress(params) {
     if (!this._dressed) {
-      vl.select.dress(this, params);
+      (async () => {
+        while(!window.vl || !window.vl.select) {
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        vl.select.dress(this, params);
+      })();
     }
   }
 
@@ -96,7 +111,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   undress() {
     if (this._dressed) {
-      vl.select.undress(this.choices);
+      vl.select.undress(this._choices);
     }
   }
 

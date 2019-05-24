@@ -43,7 +43,9 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 
   connectedCallback() {
     this.classList.add('vl-select');
-    this.dress();
+    if (this._dataVlSelectAttribute != undefined) {
+      this.dress();
+    }
   }
 
   get _classPrefix() {
@@ -56,6 +58,10 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 
   get _dressed() {
     return !!this.getAttribute(VlSelect._dressedAttributeName);
+  }
+
+  get _dataVlSelectAttribute() {
+    return this.getAttribute('data-vl-select');
   }
 
   static get _dressedAttributeName() {
@@ -94,14 +100,15 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    * @param params object with callbackFn: function(select) with return value the items for `setChoices`
    */
   dress(params) {
-    if (!this._dressed) {
-      (async () => {
-        while(!window.vl || !window.vl.select) {
-          await new Promise(resolve => setTimeout(resolve, 100));
-        }
+    (async () => {
+      while(!window.vl || !window.vl.select) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+      
+      if (!this._dressed) {
         vl.select.dress(this, params);
-      })();
-    }
+      }
+    })();
   }
 
   /**
@@ -111,7 +118,11 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   undress() {
     if (this._dressed) {
-      vl.select.undress(this._choices);
+      try {
+        vl.select.undress(this._choices);
+      } catch(exception) {
+        console.error("er liep iets fout bij de undress functie, controleer dat het vl-select element een id bevat! Foutmelding: " + exception);
+      }
     }
   }
 

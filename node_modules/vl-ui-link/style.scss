@@ -17,3 +17,7 @@
 // Util
 // ==========================================================================
 @import "vl-ui-util/src/scss/util";
+
+[is='vl-link'] {
+    align-items: center;
+}

@@ -49,6 +49,10 @@
     function createCommonjsModule(fn, module) {
         return module = { exports: {} }, fn(module, module.exports), module.exports;
     }
+
+    function activeElement(element) {
+      return element.shadowRoot ? activeElement(element.shadowRoot.activeElement) : element;
+    }
   
     var choices_min = createCommonjsModule(function (module, exports) {
       /*! choices.js v3.0.3 | (c) 2018 Josh Johnson | https://github.com/jshjohnson/Choices#readme */
@@ -460,14 +464,14 @@
                 var s = this.dropdown.getBoundingClientRect(),
                     o = Math.ceil(s.top + window.scrollY + this.dropdown.offsetHeight),
                     r = !1;
-                return "auto" === this.config.position ? r = o >= n : "top" === this.config.position && (r = !0), r && this.containerOuter.classList.add(this.config.classNames.flippedState), e && this.canSearch && document.activeElement !== this.input && this.input.focus(), (0, v.triggerEvent)(this.passedElement, "showDropdown", {}), this;
+                return "auto" === this.config.position ? r = o >= n : "top" === this.config.position && (r = !0), r && this.containerOuter.classList.add(this.config.classNames.flippedState), e && this.canSearch && activeElement(document.activeElement) !== this.input && this.input.focus(), (0, v.triggerEvent)(this.passedElement, "showDropdown", {}), this;
               }
             }, {
               key: "hideDropdown",
               value: function value() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
                     t = this.containerOuter.classList.contains(this.config.classNames.flippedState);
-                return this.containerOuter.classList.remove(this.config.classNames.openState), this.containerOuter.setAttribute("aria-expanded", "false"), this.dropdown.classList.remove(this.config.classNames.activeState), this.dropdown.setAttribute("aria-expanded", "false"), t && this.containerOuter.classList.remove(this.config.classNames.flippedState), e && this.canSearch && document.activeElement === this.input && this.input.blur(), (0, v.triggerEvent)(this.passedElement, "hideDropdown", {}), this;
+                return this.containerOuter.classList.remove(this.config.classNames.openState), this.containerOuter.setAttribute("aria-expanded", "false"), this.dropdown.classList.remove(this.config.classNames.activeState), this.dropdown.setAttribute("aria-expanded", "false"), t && this.containerOuter.classList.remove(this.config.classNames.flippedState), e && this.canSearch && activeElement(document.activeElement) === this.input && this.input.blur(), (0, v.triggerEvent)(this.passedElement, "hideDropdown", {}), this;
               }
             }, {
               key: "toggleDropdown",
@@ -616,7 +620,7 @@
                   var s = t.getAttribute("data-id");
                   e.forEach(function (e) {
                     e.id !== parseInt(s, 10) || e.highlighted ? n || e.highlighted && i.unhighlightItem(e) : i.highlightItem(e);
-                  }), document.activeElement !== this.input && this.input.focus();
+                  }), activeElement(document.activeElement) !== this.input && this.input.focus();
                 }
               }
             }, {
@@ -716,7 +720,7 @@
                       i = t.some(function (e) {
                     return !e.active;
                   });
-                  if (this.input === document.activeElement) if (e && e.length >= this.config.searchFloor) {
+                  if (this.input === activeElement(document.activeElement)) if (e && e.length >= this.config.searchFloor) {
                     var n = 0;
                     this.config.searchChoices && (n = this._searchChoices(e)), (0, v.triggerEvent)(this.passedElement, "search", {
                       value: e,
@@ -749,7 +753,7 @@
                 if (e.target === this.input || this.containerOuter.contains(e.target)) {
                   var n = e.target,
                       o = this.store.getItemsFilteredByActive(),
-                      r = this.input === document.activeElement,
+                      r = this.input === activeElement(document.activeElement),
                       a = this.dropdown.classList.contains(this.config.classNames.activeState),
                       c = this.itemList && this.itemList.children,
                       l = String.fromCharCode(e.keyCode),
@@ -766,7 +770,7 @@
                   this.isTextElement || !/[a-zA-Z0-9-_ ]/.test(l) || a || this.showDropdown(!0), this.canSearch = this.config.searchEnabled;
   
                   var _ = function _() {
-                    E && c && (i.canSearch = !1, i.config.removeItems && !i.input.value && i.input === document.activeElement && i.highlightAll());
+                    E && c && (i.canSearch = !1, i.config.removeItems && !i.input.value && i.input === activeElement(document.activeElement) && i.highlightAll());
                   },
                       S = function S() {
                     if (i.isTextElement && n.value) {
@@ -850,7 +854,7 @@
               value: function value(e) {
                 var t = e.target || e.touches[0].target,
                     i = this.dropdown.classList.contains(this.config.classNames.activeState);
-                this.wasTap === !0 && this.containerOuter.contains(t) && (t !== this.containerOuter && t !== this.containerInner || this.isSelectOneElement || (this.isTextElement ? document.activeElement !== this.input && this.input.focus() : i || this.showDropdown(!0)), e.stopPropagation()), this.wasTap = !0;
+                this.wasTap === !0 && this.containerOuter.contains(t) && (t !== this.containerOuter && t !== this.containerInner || this.isSelectOneElement || (this.isTextElement ? activeElement(document.activeElement) !== this.input && this.input.focus() : i || this.showDropdown(!0)), e.stopPropagation()), this.wasTap = !0;
               }
             }, {
               key: "_onMouseDown",
@@ -870,7 +874,7 @@
                 var t = e.target,
                     i = this.dropdown.classList.contains(this.config.classNames.activeState),
                     n = this.store.getItemsFilteredByActive();
-                if (this.containerOuter.contains(t)) t.hasAttribute("data-button") && this._handleButtonAction(n, t), i ? this.isSelectOneElement && t !== this.input && !this.dropdown.contains(t) && this.hideDropdown(!0) : this.isTextElement ? document.activeElement !== this.input && this.input.focus() : this.canSearch ? this.showDropdown(!0) : (this.showDropdown(), this.containerOuter.focus());else {
+                if (this.containerOuter.contains(t)) t.hasAttribute("data-button") && this._handleButtonAction(n, t), i ? this.isSelectOneElement && t !== this.input && !this.dropdown.contains(t) && this.hideDropdown(!0) : this.isTextElement ? activeElement(document.activeElement) !== this.input && this.input.focus() : this.canSearch ? this.showDropdown(!0) : (this.showDropdown(), this.containerOuter.focus());else {
                   var s = n.some(function (e) {
                     return e.highlighted;
                   });

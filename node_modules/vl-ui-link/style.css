@@ -4496,4 +4496,7 @@ mark,
     .vl-u-hidden--xs {
       display: none !important; } }
 
+[is='vl-link'] {
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */

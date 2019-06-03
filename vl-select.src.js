@@ -1,8 +1,8 @@
 import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 (() => {
-  loadScript('util.js', '../node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
-    loadScript('core.js', '../node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
+  loadScript('util.js', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
+    loadScript('core.js', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
       loadScript('select.js', '../dist/select.js');
     });
   });

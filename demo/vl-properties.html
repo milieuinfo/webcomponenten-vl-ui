@@ -4,6 +4,7 @@
 		<title>vl-properties voorbeeld</title>
         <script type="module" src="demo.js"></script>
         <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="module" src="/node_modules/vl-ui-titles/vl-titles.js"></script>
         <script type="module" src="../vl-properties.js"></script>
     </head>
 
@@ -67,27 +68,44 @@
         </div>
 
         <div>
-            <h2>Properties titels</h2>
+          <h2>Properties titel</h2>
+          <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-properties&gt;
+                        &lt;h1 is="vl-h1"&gt;Title&lt;/h1&gt;
+                    &lt;/vl-properties&gt;
+                </code>
+            </pre>
+          <div class="demo">
+            <vl-properties>
+              <h1 is="vl-h1">Title</h1>
+            </vl-properties>
+          </div>
+        </div>
+
+        <div>
+          <h2>Gebruik fancy vl-title als properties title</h2>
+          <p></p>
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;vl-properties&gt;
-                        &lt;h1 is="vl-properties-title"&gt;Titel&lt;/h1&gt;
+                        &lt;h1 is="vl-h1" sans has-border&gt;Title&lt;/h1&gt;
                     &lt;/vl-properties&gt;
                 </code>
             </pre>
             <div class="demo">
                 <vl-properties>
-                    <h1 is="vl-properties-title">Titel</h1>
+                  <h1 is="vl-h1" sans has-border>Title</h1>
                 </vl-properties>
             </div>
         </div>
 
         <div>
-            <h2>Properties met titel</h2>
+          <h2>Properties met title</h2>
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;vl-properties&gt;
-                        &lt;h1 is="vl-properties-title"&gt;Gegevens&lt;/h1&gt;
+                        &lt;h1 is="vl-h1" &gt;Gegevens&lt;/h1&gt;
                         &lt;dl is="vl-properties-list"&gt;
                             &lt;dt is="vl-property-term"&gt;Voornaam&lt;/dt&gt;
                             &lt;dd is="vl-property-value"&gt;Koen&lt;/dd&gt;
@@ -101,7 +119,7 @@
             </pre>
             <div class="demo">
                 <vl-properties>
-                    <h1 is="vl-properties-title">Gegevens</h1>
+                    <h1 is="vl-h1">Gegevens</h1>
                     <dl is="vl-properties-list">
                         <dt is="vl-property-term">Voornaam</dt>
                         <dd is="vl-property-value">Koen</dd>
@@ -119,7 +137,7 @@
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;vl-properties&gt;
-                        &lt;h1 is="vl-properties-title"&gt;Gegevens&lt;/h1&gt;
+                        &lt;h1 is="vl-h1"&gt;Gegevens&lt;/h1&gt;
                         &lt;div is="vl-properties-column"&gt;
                             &lt;dl is="vl-properties-list"&gt;
                                 &lt;dt is="vl-property-term"&gt;Voornaam&lt;/dt&gt;
@@ -145,7 +163,7 @@
             </pre>
             <div class="demo">
                 <vl-properties>
-                    <h1 is="vl-properties-title">Gegevens</h1>
+                    <h1 is="vl-h1">Gegevens</h1>
                     <div is="vl-properties-column">
                         <dl is="vl-properties-list">
                             <dt is="vl-property-term">Voornaam</dt>
@@ -175,7 +193,7 @@
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;vl-properties&gt;
-                        &lt;h1 is="vl-properties-title"&gt;Gegevens&lt;/h1&gt;
+                        &lt;h1 is="vl-h1"&gt;Gegevens&lt;/h1&gt;
                         &lt;div is="vl-properties-column"&gt;
                             &lt;dl is="vl-properties-list"&gt;
                                 &lt;dt is="vl-property-term"&gt;Voornaam&lt;/dt&gt;
@@ -214,7 +232,7 @@
             </pre>
             <div class="demo">
                 <vl-properties>
-                    <h1 is="vl-properties-title">Gegevens</h1>
+                  <h1 is="vl-h1">Gegevens</h1>
                     <div is="vl-properties-column">
                         <dl is="vl-properties-list">
                             <dt is="vl-property-term">Voornaam</dt>

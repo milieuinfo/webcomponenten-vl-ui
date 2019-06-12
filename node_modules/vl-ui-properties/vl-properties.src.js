@@ -1,4 +1,4 @@
-import { VlElement, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import {NativeVlElement, VlElement} from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlProperties
@@ -19,6 +19,20 @@ export class VlProperties extends VlElement(HTMLElement) {
             </div>
         `);
     }
+
+  connectedCallback() {
+    this._setPropertiesTitle();
+  }
+
+  get _titles() {
+    return this.querySelectorAll("h1,h2,h3,h4,h5,h6");
+  }
+
+  _setPropertiesTitle() {
+    this._titles.forEach(title => {
+      title.classList.add("vl-properties__title");
+    });
+  }
 }
 
 /**
@@ -66,23 +80,6 @@ export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
 }
 
 /**
- * VlPropertiesTitle
- * @class
- * @classdesc De property titel webcomponent wordt gebruikt om een title toe te voegen aan een lijst van kenmerken. <a href="demo/vl-properties.html">Demo</a>.
- * 
- * @extends VlElement
- */
-export class VlPropertiesTitle extends NativeVlElement(HTMLHeadingElement) {
-    connectedCallback() {
-        this.classList.add('vl-properties__title');
-    }
-
-    get _stylePath() {
-        return '../style.css';
-    }
-}
-
-/**
  * VlPropertyTerm
  * @class
  * @classdesc De property kenmerk webcomponent toont de beschrijving van een onderwerp kenmerk. <a href="demo/vl-properties.html">Demo</a>.
@@ -119,6 +116,5 @@ export class VlPropertyValue extends NativeVlElement(HTMLElement) {
 customElements.define('vl-properties', VlProperties);
 customElements.define('vl-properties-column', VlPropertiesColumn, {extends: 'div'});
 customElements.define('vl-properties-list', VlPropertiesList, {extends: 'dl'});
-customElements.define('vl-properties-title', VlPropertiesTitle, {extends: 'h1'});
 customElements.define('vl-property-term', VlPropertyTerm, {extends: 'dt'});
 customElements.define('vl-property-value', VlPropertyValue, {extends: 'dd'});

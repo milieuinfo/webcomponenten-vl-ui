@@ -11,9 +11,9 @@
 </head>
 
 <body>
-<test-fixture id="vl-form-message-fixture">
+<test-fixture id="vl-form-label-fixture">
   <template>
-    <label id="label" is="vl-form-message"></label>
+    <label id="label" is="vl-form-label"></label>
   </template>
 </test-fixture>
 
@@ -21,12 +21,12 @@
   suite('<vl-form-message>', () => {
 
     test('heeft de vl-form-message class', () => {
-      const label = fixture('vl-form-message-fixture');
+      const label = fixture('vl-form-label-fixture');
       assert.isTrue(label.classList.contains('vl-form__label'));
     });
 
     test('krijgt de juiste class wanneer het label een attribuut bevat', () => {
-      const label = fixture('vl-form-message-fixture');
+      const label = fixture('vl-form-label-fixture');
       ['light', 'block'].forEach((attribuut) => {
         assert.isFalse(label.classList.contains('vl-form__label--' + attribuut));
         label.setAttribute(attribuut, '');

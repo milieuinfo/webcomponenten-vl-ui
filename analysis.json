@@ -1901,7 +1901,7 @@
       "tagname": "vl-checkbox"
     },
     {
-      "description": "VlFormMessage",
+      "description": "VlFormLabel",
       "summary": "",
       "path": "vl-form-message.src.js",
       "properties": [
@@ -2239,7 +2239,7 @@
       },
       "privacy": "public",
       "superclass": "VlElement",
-      "name": "VlFormMessage",
+      "name": "VlFormLabel",
       "attributes": [],
       "events": [],
       "styling": {
@@ -2247,7 +2247,7 @@
         "selectors": []
       },
       "slots": [],
-      "tagname": "vl-form-message"
+      "tagname": "vl-form-label"
     },
     {
       "description": "VlIcon",
@@ -7869,11 +7869,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 253
+              "column": 251
             },
             "end": {
               "line": 0,
-              "column": 297
+              "column": 295
             }
           },
           "metadata": {
@@ -7890,11 +7890,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 297
+              "column": 295
             },
             "end": {
               "line": 0,
-              "column": 365
+              "column": 363
             }
           },
           "metadata": {
@@ -7912,11 +7912,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 196
+              "column": 194
             },
             "end": {
               "line": 0,
-              "column": 253
+              "column": 251
             }
           },
           "metadata": {},
@@ -7936,12 +7936,12 @@
         },
         "end": {
           "line": 0,
-          "column": 366
+          "column": 364
         }
       },
       "privacy": "public",
       "superclass": "HTMLElement",
-      "name": "VlFormMessage",
+      "name": "VlFormLabel",
       "attributes": [],
       "events": [],
       "styling": {
@@ -7949,7 +7949,7 @@
         "selectors": []
       },
       "slots": [],
-      "tagname": "vl-form-message"
+      "tagname": "vl-form-label"
     },
     {
       "description": "",

@@ -3622,16 +3622,36 @@
           }
         },
         {
+          "name": "open",
+          "description": "Handmatig openen van modal.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 100,
+              "column": 2
+            },
+            "end": {
+              "line": 109,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
           "name": "_getCloseButtonTemplate",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 97,
+              "line": 111,
               "column": 2
             },
             "end": {
-              "line": 104,
+              "line": 118,
               "column": 3
             }
           },
@@ -3644,11 +3664,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 106,
+              "line": 120,
               "column": 2
             },
             "end": {
-              "line": 108,
+              "line": 122,
               "column": 3
             }
           },
@@ -3671,11 +3691,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 110,
+              "line": 124,
               "column": 2
             },
             "end": {
-              "line": 112,
+              "line": 126,
               "column": 3
             }
           },
@@ -3698,11 +3718,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 114,
+              "line": 128,
               "column": 2
             },
             "end": {
-              "line": 116,
+              "line": 130,
               "column": 3
             }
           },
@@ -3725,11 +3745,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 118,
+              "line": 132,
               "column": 2
             },
             "end": {
-              "line": 129,
+              "line": 143,
               "column": 3
             }
           },
@@ -3756,7 +3776,7 @@
           "column": 7
         },
         "end": {
-          "line": 131,
+          "line": 145,
           "column": 1
         }
       },
@@ -11858,9 +11878,9 @@
           }
         },
         {
-          "name": "_getCloseButtonTemplate",
+          "name": "open",
           "description": "",
-          "privacy": "protected",
+          "privacy": "public",
           "sourceRange": {
             "start": {
               "line": 0,
@@ -11868,7 +11888,27 @@
             },
             "end": {
               "line": 0,
-              "column": 2779
+              "column": 2600
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getCloseButtonTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2600
+            },
+            "end": {
+              "line": 0,
+              "column": 2946
             }
           },
           "metadata": {},
@@ -11881,20 +11921,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2779
+              "column": 2946
             },
             "end": {
               "line": 0,
-              "column": 2821
+              "column": 2988
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "l"
             },
             {
-              "name": "l"
+              "name": "e"
             }
           ],
           "return": {
@@ -11908,20 +11948,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2821
+              "column": 2988
             },
             "end": {
               "line": 0,
-              "column": 2879
+              "column": 3046
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "l"
             },
             {
-              "name": "l"
+              "name": "e"
             }
           ],
           "return": {
@@ -11935,20 +11975,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2879
+              "column": 3046
             },
             "end": {
               "line": 0,
-              "column": 2941
+              "column": 3108
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "l"
             },
             {
-              "name": "l"
+              "name": "e"
             }
           ],
           "return": {
@@ -11962,20 +12002,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2941
+              "column": 3108
             },
             "end": {
               "line": 0,
-              "column": 3266
+              "column": 3433
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "l"
             },
             {
-              "name": "l"
+              "name": "e"
             }
           ],
           "return": {
@@ -11993,7 +12033,7 @@
         },
         "end": {
           "line": 0,
-          "column": 3267
+          "column": 3434
         }
       },
       "privacy": "public",

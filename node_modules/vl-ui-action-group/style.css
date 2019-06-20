@@ -1,0 +1,157 @@
+.vl-vi::before, .vl-vi::after {
+  font-family: "vlaanderen-icon" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  display: inline-block;
+}
+.vl-vi.vl-vi-u-180deg::before {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.vl-vi-u-xs::before {
+  font-size: 0.8rem;
+}
+
+.vl-vi-u-s::before {
+  font-size: 1.3rem;
+}
+
+.vl-vi-u-m::before {
+  font-size: 1.7rem;
+}
+
+.vl-vi-u-l::before {
+  font-size: 2rem;
+}
+
+.vl-vi-u-xl::before {
+  font-size: 2.2rem;
+}
+
+.vl-vi-u-90deg::before {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.vl-vi-u-180deg::before {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.vl-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.vl-action-group a,
+.vl-action-group button,
+.vl-action-group .vl-button,
+.vl-action-group ::slotted(.vl-button) {
+  margin-right: 1.4rem;
+}
+.vl-action-group a:last-child,
+.vl-action-group button:last-child,
+.vl-action-group .vl-button:last-child,
+.vl-action-group :last-child::slotted(.vl-button) {
+  margin-right: 0;
+}
+.vl-action-group--align-right {
+  justify-content: flex-end;
+}
+.vl-action-group--align-center {
+  justify-content: center;
+}
+.vl-action-group--space-between {
+  justify-content: space-between;
+}
+.vl-action-group .vl-link {
+  white-space: nowrap;
+}
+.vl-action-group--bordered .vl-link,
+.vl-action-group--bordered .vl-link--icon {
+  padding-right: 1.4rem;
+  border-right: 1px solid #cbd2da;
+}
+.vl-action-group--bordered .vl-link:last-child,
+.vl-action-group--bordered .vl-link--icon:last-child {
+  border: 0;
+}
+.vl-action-group--bordered .vl-link:not(:last-child) {
+  margin-right: 1.4rem;
+}
+@media screen and (min-width: 1023.1px) {
+  .vl-action-group--collapse--l {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vl-action-group--collapse--l .vl-button:not(:last-of-type), .vl-action-group--collapse--l .vl-action-group :not(:last-of-type)::slotted(.vl-button), .vl-action-group .vl-action-group--collapse--l :not(:last-of-type)::slotted(.vl-button) {
+    margin-bottom: 1rem;
+  }
+  .vl-action-group--collapse--l .vl-link {
+    border-right: 0;
+    display: block;
+    padding-right: 0;
+    text-align: left;
+    flex: 1 0 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .vl-action-group--collapse--m {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vl-action-group--collapse--m .vl-button:not(:last-of-type), .vl-action-group--collapse--m .vl-action-group :not(:last-of-type)::slotted(.vl-button), .vl-action-group .vl-action-group--collapse--m :not(:last-of-type)::slotted(.vl-button) {
+    margin-bottom: 1rem;
+  }
+  .vl-action-group--collapse--m .vl-link {
+    border-right: 0;
+    display: block;
+    padding-right: 0;
+    text-align: left;
+    flex: 1 0 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .vl-action-group--collapse--s {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vl-action-group--collapse--s .vl-button:not(:last-of-type), .vl-action-group--collapse--s .vl-action-group :not(:last-of-type)::slotted(.vl-button), .vl-action-group .vl-action-group--collapse--s :not(:last-of-type)::slotted(.vl-button) {
+    margin-bottom: 1rem;
+  }
+  .vl-action-group--collapse--s .vl-link {
+    border-right: 0;
+    display: block;
+    padding-right: 0;
+    text-align: left;
+    flex: 1 0 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .vl-action-group--collapse--xs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vl-action-group--collapse--xs .vl-button:not(:last-of-type), .vl-action-group--collapse--xs .vl-action-group :not(:last-of-type)::slotted(.vl-button), .vl-action-group .vl-action-group--collapse--xs :not(:last-of-type)::slotted(.vl-button) {
+    margin-bottom: 1rem;
+  }
+  .vl-action-group--collapse--xs .vl-link {
+    border-right: 0;
+    display: block;
+    padding-right: 0;
+    text-align: left;
+    flex: 1 0 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -54,7 +54,8 @@
     "vl-ui-select": "1.1.4",
     "vl-ui-textarea": "1.0.2",
     "vl-ui-titles": "1.0.6",
-    "vl-ui-tooltip": "1.0.4"
+    "vl-ui-tooltip": "1.0.4",
+    "vl-ui-modal": "0.0.2"
   },
   "bundledDependencies": [
     "prismjs",
@@ -73,6 +74,7 @@
     "vl-ui-select",
     "vl-ui-textarea",
     "vl-ui-titles",
-    "vl-ui-tooltip"
+    "vl-ui-tooltip",
+    "vl-ui-modal"
   ]
 }

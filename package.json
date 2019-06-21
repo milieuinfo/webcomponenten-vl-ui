@@ -55,7 +55,7 @@
     "vl-ui-textarea": "1.0.2",
     "vl-ui-titles": "1.0.6",
     "vl-ui-tooltip": "1.0.4",
-    "vl-ui-modal": "0.0.3"
+    "vl-ui-modal": "0.0.4"
   },
   "bundledDependencies": [
     "prismjs",

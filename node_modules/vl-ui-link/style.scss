@@ -20,4 +20,8 @@
 
 [is='vl-link'] {
     align-items: center;
+
+    .vl-link__icon {
+        margin-bottom: 0px;
+    }
 }

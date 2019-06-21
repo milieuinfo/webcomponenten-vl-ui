@@ -4498,5 +4498,7 @@ mark,
 
 [is='vl-link'] {
   align-items: center; }
+  [is='vl-link'] .vl-link__icon {
+    margin-bottom: 0px; }
 
 /*# sourceMappingURL=style.css.map */

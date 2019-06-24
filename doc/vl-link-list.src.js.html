@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: vl-form-message.src.js</title>
+    <title>JSDoc: Source: vl-link-list.src.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: vl-form-message.src.js</h1>
+    <h1 class="page-title">Source: vl-link-list.src.js</h1>
 
     
 
@@ -26,38 +26,61 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+            <pre class="prettyprint source linenums"><code>import '/node_modules/vl-ui-icon/vl-icon.js';
+import {NativeVlElement} from "/node_modules/vl-ui-core/vl-core.js";
 
 /**
- * VlFormLabel
+ * VlLinkList
  * @class
- * @classdesc Gebruik de vl-form-message om labels toe te voegen aan een formulier. &lt;a href="../demo/vl-form-message.html">Demo&lt;/a>.
- * 
- * @extends VlElement
- * 
- * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
- * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ * @classdesc Class die een lijst van links kan weergeven. &lt;a href="../demo/vl-link-list.html">Demo&lt;/a>.
+ * @extends NativeVlElement
  */
-export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
-
-  static get _observedClassAttributes() {
-    return ['light', 'block'];
+export class VlLinkList extends NativeVlElement(HTMLUListElement) {
+  connectedCallback() {
+    this.classList.add("vl-link-list")
   }
 
-  connectedCallback() {
-    this.classList.add('vl-form__label');
+  static get _observedClassAttributes() {
+    return ["small", "inline", "bordered"]
   }
 
   get _classPrefix() {
-    return 'vl-form__label--';
+    return "vl-link-list--"
   }
-  
+
   get _stylePath() {
-    return '../style.css';
+    return "../style.css"
   }
 }
 
-customElements.define('vl-form-label', VlFormLabel, {extends: 'label'});</code></pre>
+/**
+ * VlLinkListItem
+ * @class
+ * @classdesc Class die een item uit de {@link VlLinkList} weergeeft. &lt;a href="../demo/vl-link-list.html">Demo&lt;/a>.
+ * @extends NativeVlElement
+ */
+export class VlLinkListItem extends NativeVlElement(HTMLLIElement) {
+  connectedCallback() {
+    this.classList.add("vl-link-list__item");
+    this._links.forEach(link => {
+      link.insertAdjacentHTML("afterBegin",
+          '&lt;span is="vl-icon" icon="nav-right" before>&lt;/span>')
+    })
+  }
+
+  get _stylePath() {
+    return "../style.css"
+  }
+
+  get _links() {
+    return this.querySelectorAll("[is='vl-link']")
+  }
+}
+
+customElements.define("vl-link-list", VlLinkList,
+    {extends: "ul"});
+customElements.define("vl-link-list-item", VlLinkListItem,
+    {extends: "li"});</code></pre>
         </article>
     </section>
 

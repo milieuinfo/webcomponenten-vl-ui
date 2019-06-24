@@ -3,7 +3,7 @@ import {VlGrid, VlColumn} from "/node_modules/vl-ui-grid/vl-grid.js";
 /**
  * VlFormGrid
  * @class
- * @classdesc Class die een grid layout mogelijk maakt in een formulier.
+ * @classdesc Class die een grid layout mogelijk maakt in een formulier. <a href="../demo/vl-form-grid.html">Demo</a>.
  * @extends VlGrid
  */
 export class VlFormGrid extends VlGrid {
@@ -19,7 +19,7 @@ export class VlFormGrid extends VlGrid {
 /**
  * VlFormColumn
  * @class
- * @classdesc Class die een kolom in een formulier grid layout representeert.
+ * @classdesc Class die een kolom in een formulier grid layout representeert. <a href="../demo/vl-form-grid.html">Demo</a>.
  * @extends VlColumn
  */
 export class VlFormColumn extends VlColumn {

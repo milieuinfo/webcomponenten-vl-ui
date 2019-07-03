@@ -44,7 +44,7 @@
     "vl-ui-alert": "1.0.6",
     "vl-ui-button": "1.0.7",
     "vl-ui-checkbox": "1.0.6",
-    "vl-ui-core": "1.4.1",
+    "vl-ui-core": "1.4.2",
     "vl-ui-form-grid": "1.0.2",
     "vl-ui-form-message": "2.0.0",
     "vl-ui-grid": "1.0.1",
@@ -60,6 +60,7 @@
     "vl-ui-titles": "1.0.6",
     "vl-ui-tooltip": "1.0.4",
     "vl-ui-modal": "0.0.6",
+    "vl-ui-upload": "0.0.3",
     "vl-ui-data-table": "0.0.1"
   },
   "bundledDependencies": [
@@ -85,6 +86,7 @@
     "vl-ui-titles",
     "vl-ui-tooltip",
     "vl-ui-modal",
-    "vl-ui-data-table"
+    "vl-ui-data-table",
+    "vl-ui-upload"
   ]
 }

@@ -34,7 +34,7 @@
   "devDependencies": {
     "copyfiles": "2.1.0",
     "jsdoc": "^3.6.2",
-    "np": "^5.0.3",
+    "np": "3.0.4",
     "replace": "^1.1.0"
   },
   "dependencies": {

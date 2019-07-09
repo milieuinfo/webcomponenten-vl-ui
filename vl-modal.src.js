@@ -1,7 +1,7 @@
-import {VlElement} from '/node_modules/vl-ui-core/vl-core.js';
-import {VlLink} from '/node_modules/vl-ui-link/vl-link.js';
+import {VlElement, define} from '/node_modules/vl-ui-core/vl-core.js';
 import {VlIcon} from '/node_modules/vl-ui-icon/vl-icon.js';
-import {VlActionGroup} from '/node_modules/vl-ui-action-group/vl-action-group.src.js';
+import {VlButton} from '/node_modules/vl-ui-button/vl-button.js';
+import {VlActionGroup} from '/node_modules/vl-ui-action-group/vl-action-group.js';
 
 (() => {
   loadScript('util.js',
@@ -30,12 +30,13 @@ import {VlActionGroup} from '/node_modules/vl-ui-action-group/vl-action-group.sr
  *
  * @extends VlElement
  *
+ * @property {boolean} data-title - Attribuut wordt gebruikt om de titel (in een h2) te zetten. Indien leeg of weggelaten, wordt er geen titel element gezet.
  * @property {boolean} open - Attribuut wordt gebruikt om aan te duiden dat de modal onmiddellijk geopend moet worden na het renderen.
  * @property {boolean} closable - Attribuut wordt gebruikt om aan te duiden dat de modal sluitbaar is.
  */
 export class VlModal extends VlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['id', 'title', 'closable', 'open'];
+    return ['id', 'data-title', 'closable', 'cancellable', 'open'];
   }
 
   constructor() {
@@ -45,20 +46,20 @@ export class VlModal extends VlElement(HTMLElement) {
                 @import '/node_modules/vl-ui-icon/style.css';
                 @import '/node_modules/vl-ui-link/style.css';
                 @import '/node_modules/vl-ui-action-group/style.css';
+                @import '/node_modules/vl-ui-button/style.css';
             </style>
 
             <div class="vl-modal">
                 <dialog class="vl-modal-dialog" data-vl-modal tabindex="-1" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-toggle-1-title" aria-describedby="modal-toggle-1-description">
-                    <h2 class="vl-modal-dialog__title" id="modal-toggle-1-title">Modal titel</h2>
                     <div class="vl-modal-dialog__content" id="modal-toggle-1-description">
                         <slot name="content">Modal content</slot>
                     </div>
-                    <div is="vl-action-group">
+                      <div is="vl-action-group" id="modal-action-group">
                         <slot name="button"></slot>
-                        <a href="#" is="vl-link" data-vl-modal-close>
+                        <button is="vl-button-link" data-vl-modal-close id="modal-toggle-1-cancellable">
                             <span is="vl-icon" icon="cross" before data-vl-modal-close></span>Annuleer
-                        </a>
-                    </div>
+                        </button>
+                      </div>
                 </dialog>
             </div>
         `);
@@ -68,12 +69,20 @@ export class VlModal extends VlElement(HTMLElement) {
     this.dress();
   }
 
-  get _dialog() {
+  get _dialogElement() {
     return this._element.querySelector('dialog');
   }
 
   get _titleElement() {
     return this._element.querySelector('#modal-toggle-1-title');
+  }
+
+  get _actionGroupElement() {
+    return this._element.querySelector('#modal-action-group');
+  }
+
+  get _cancelElement() {
+    return this._element.querySelector('#modal-toggle-1-cancellable');
   }
 
   get _dressed() {
@@ -90,7 +99,7 @@ export class VlModal extends VlElement(HTMLElement) {
       }
 
       if (!this._dressed) {
-        vl.modal.dress(this._dialog);
+        vl.modal.dress(this._dialogElement);
       }
     })();
   }
@@ -99,31 +108,28 @@ export class VlModal extends VlElement(HTMLElement) {
    * Handmatig openen van modal.
    */
   open() {
-    (async () => {
-      while (!window.vl || !window.vl.modal) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-
-      vl.modal.lastClickedToggle = this._dialog;
-      if (!this._dialog.hasAttribute("open")) {
-        vl.modal.toggle(this._dialog);
-      }
-    })();
+    vl.modal.lastClickedToggle = this._dialogElement;
+    if (!this._dialogElement.hasAttribute("open")) {
+      vl.modal.toggle(this._dialogElement);
+    }
   }
 
   /**
    * Handmatig sluiten van modal.
    */
   close() {
-    (async () => {
-      while (!window.vl || !window.vl.modal) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
+    if (this._dialogElement.hasAttribute("open")) {
+      vl.modal.toggle(this._dialogElement);
+    }
+  }
 
-      if (this._dialog.hasAttribute("open")) {
-        vl.modal.toggle(this._dialog);
-      }
-    })();
+  /**
+   * Mogelijkheid om functies toe te voegen op events die op de dialog voorkomen.
+   * @param event
+   * @param callback
+   */
+  on(event, callback) {
+    this._dialogElement.addEventListener(event, callback);
   }
 
   _getCloseButtonTemplate() {
@@ -135,31 +141,62 @@ export class VlModal extends VlElement(HTMLElement) {
         `);
   }
 
-  _idChangedCallback(oldValue, newValue) {
-    this._dialog.id = newValue;
+  _getTitleTemplate(titel) {
+    return this._template(`
+      <h2 class="vl-modal-dialog__title" id="modal-toggle-1-title">${titel}</h2>
+        `);
   }
 
-  _titleChangedCallback(oldValue, newValue) {
-    this._titleElement.innerText = newValue;
+  _getCancelTemplate() {
+    return this._template(`
+        <button is="vl-button-link" data-vl-modal-close id="modal-toggle-1-cancellable">
+            <span is="vl-icon" icon="cross" before data-vl-modal-close></span>Annuleer
+        </button>`);
+  }
+
+  _idChangedCallback(oldValue, newValue) {
+    this._dialogElement.id = newValue;
+  }
+
+  _data_titleChangedCallback(oldValue, newValue) {
+    if (newValue) {
+      if (this._titleElement) {
+        this._titleElement.innerText = newValue;
+      } else {
+        this._dialogElement.prepend(this._getTitleTemplate(newValue));
+      }
+    } else {
+      if (this._titleElement) {
+        this._titleElement.remove();
+      }
+    }
+  }
+
+  _cancellableChangedCallback(oldValue, newValue) {
+    if (newValue !== "true" && this._cancelElement) {
+      this._cancelElement.remove();
+    } else if (newValue === "true" || newValue === null) {
+      this._actionGroupElement.append(this._getCancelTemplate());
+    }
   }
 
   _openChangedCallback(oldValue, newValue) {
-    this._dialog.setAttribute('open', newValue);
+    this._dialogElement.setAttribute('open', newValue);
   }
 
   _closableChangedCallback(oldValue, newValue) {
     if (newValue !== undefined) {
       this._closeButtonElement = this._getCloseButtonTemplate();
-      this._dialog.setAttribute('data-vl-modal-closable', '');
-      this._dialog.appendChild(this._closeButtonElement);
+      this._dialogElement.setAttribute('data-vl-modal-closable', '');
+      this._dialogElement.appendChild(this._closeButtonElement);
     } else {
       if (this._closeButtonElement) {
         this._closeButtonElement.remove();
-        this._dialog.removeAttribute('data-vl-modal-closable', '');
+        this._dialogElement.removeAttribute('data-vl-modal-closable');
       }
     }
   }
 
-};
+}
 
-customElements.define('vl-modal', VlModal);
+define('vl-modal', VlModal);

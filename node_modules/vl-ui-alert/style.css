@@ -2510,7 +2510,7 @@ body {
     border: 0;
     border-top: 0.3rem solid #05c; }
   .vl-alert--error {
-    background-color: #fae6e6; }
+    background-color: #fbe6e6; }
     .vl-alert--error .vl-alert__icon {
       background-color: #db3434;
       color: #fff; }

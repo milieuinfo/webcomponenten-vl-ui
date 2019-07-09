@@ -1,4 +1,4 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 
 export const VlLinkElement = (SuperClass) => {
     return class extends NativeVlElement(SuperClass) {
@@ -33,7 +33,7 @@ export const VlLinkElement = (SuperClass) => {
             });
         }
     }
-}
+};
 
 /**
  * VlLink
@@ -44,4 +44,4 @@ export const VlLinkElement = (SuperClass) => {
  */
 export class VlLink extends VlLinkElement(HTMLAnchorElement) {}
 
-customElements.define('vl-link', VlLink, {extends: 'a'});
+define('vl-link', VlLink, {extends: 'a'});

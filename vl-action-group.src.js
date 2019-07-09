@@ -1,4 +1,4 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 
 
 /**
@@ -37,4 +37,4 @@ export class VlActionGroup extends NativeVlElement(HTMLDivElement) {
 
 }
 
-customElements.define('vl-action-group', VlActionGroup,{extends: 'div'});
+define('vl-action-group', VlActionGroup,{extends: 'div'});

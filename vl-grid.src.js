@@ -1,4 +1,41 @@
-import {NativeVlElement} from "/node_modules/vl-ui-core/vl-core.js";
+import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
+
+export class VlRegion extends NativeVlElement(HTMLElement) {
+
+  static get _observedClassAttributes() {
+    return ['no-space', 'no-space-bottom', 'no-space-top', 'alt', 'small', 'medium', 'bordered'];
+  }
+
+  connectedCallback() {
+    this.classList.add('vl-region');
+  }
+
+  get _classPrefix() {
+    return 'vl-region--';
+  }
+
+  get _stylePath() {
+    return '../style.css';
+  }
+}
+
+export class VlLayout extends NativeVlElement(HTMLDivElement) {
+  static get _observedClassAttributes() {
+    return [];
+  }
+
+  connectedCallback() {
+    this.classList.add('vl-layout');
+  }
+
+  get _classPrefix() {
+    return 'vl-layout--';
+  }
+
+  get _stylePath() {
+    return '../style.css';
+  }
+}
 
 /**
  * VlGrid
@@ -100,5 +137,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 }
 
-customElements.define('vl-grid', VlGrid, {extends: 'div'});
-customElements.define('vl-column', VlColumn, {extends: 'div'});
+define('vl-region', VlRegion, {extends: 'section'});
+define('vl-layout', VlLayout, {extends: 'div'});
+define('vl-grid', VlGrid, {extends: 'div'});
+define('vl-column', VlColumn, {extends: 'div'});

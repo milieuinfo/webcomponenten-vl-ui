@@ -1,4 +1,5 @@
 import {VlGrid, VlColumn} from "/node_modules/vl-ui-grid/vl-grid.js";
+import {define} from "/node_modules/vl-ui-core/vl-core.js";
 
 /**
  * VlFormGrid
@@ -38,5 +39,5 @@ export class VlFormColumn extends VlColumn {
 
 }
 
-customElements.define('vl-form-grid', VlFormGrid, {extends: 'div'});
-customElements.define('vl-form-column', VlFormColumn, {extends: 'div'});
+define('vl-form-grid', VlFormGrid, {extends: 'div'});
+define('vl-form-column', VlFormColumn, {extends: 'div'});

@@ -35,6 +35,15 @@ export class VlUpload extends VlElement(HTMLElement) {
       'error-message-maxfiles', 'max-files', 'max-size', 'accepted-files', 'full-body-drop', 'autoprocess'];
   }
 
+  static get _observedChildClassAttributes() {
+    return ['error'];
+  }
+
+  get _classPrefix() {
+    return 'vl-upload--';
+  }
+
+
   constructor() {
     super(`
             <style>
@@ -57,6 +66,34 @@ export class VlUpload extends VlElement(HTMLElement) {
 
   get _dressed() {
     return !!this.getAttribute('data-vl-upload-dressed');
+  }
+
+  get _dropzone() {
+    return vl.upload.dropzoneInstances.filter(dropzone => dropzone.element === this._element)[0];
+  }
+
+  /**
+   * Haal de geaccepteerde bestanden (zonder error) op, die toegevoegd zijn aan de dropzone.
+   * @returns {File[]}
+   */
+  get acceptedFiles() {
+    return this._dropzone.getAcceptedFiles();
+  }
+
+  /**
+   * Haal de niet-geaccepteerde bestanden (met error) op, die toegevoegd zijn aan de dropzone.
+   * @returns {File[]}
+   */
+  get rejectedFiles() {
+    return this._dropzone.getRejectedFiles();
+  }
+
+  /**
+   * Haal alle bestanden op die toegevoegd zijn aan de dropzone.
+   * @returns {File[]}
+   */
+  get files() {
+    return this._dropzone.files;
   }
 
   get _templates() {
@@ -128,11 +165,34 @@ export class VlUpload extends VlElement(HTMLElement) {
         document.body.appendChild(this._templates)
         vl.upload.dress(this._upload);
       }
-
-      this.addEventListener("success", (file) => {
-        console.log("succes", file)
-      })
     })();
+  }
+
+  /**
+   * Handmatig de upload aanroepen. Indien een url gegeven is, laad op naar die url.
+   * @param url
+   */
+  upload(url) {
+    if (url) {
+      this._dropzone.options.url = url;
+    }
+    this._dropzone.processQueue();
+  }
+
+  /**
+   * Verwijder alle files in de dropzone.
+   */
+  clear() {
+    this._dropzone.removeAllFiles();
+  }
+
+  /**
+   * Wrapper om alle events te kunnen catchen van de upload (zoals vl.upload.hook.fileChange)
+   * @param event
+   * @param callback
+   */
+  on(event, callback) {
+    this._element.addEventListener(event, callback);
   }
 
   _urlChangedCallback(oldValue, newValue) {
@@ -176,6 +236,6 @@ export class VlUpload extends VlElement(HTMLElement) {
     this._element.setAttribute(this._prefix+'autoprocess', newValue);
   }
 
-};
+}
 
 define('vl-upload', VlUpload);

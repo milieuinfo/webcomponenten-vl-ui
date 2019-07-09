@@ -56,14 +56,28 @@ module.exports = function(options) {
         eval('replaceFunc = ' + fs.readFileSync(options.funcFile, "utf-8"));
     }
 
-    for (var i = 0; i < options.paths.length; i++) {
-        if (options.async) {
-            replacizeFile(options.paths[i]);
-        }
-        else {
-            replacizeFileSync(options.paths[i]);
+    if(options.z) {
+          process.stdin.resume();
+          _input = "";
+          process.stdin.on("data", function (input) {
+            _input += input;
+          });
+          
+          process.stdin.on("end", function () {
+              const text = replacizeText(_input);
+              process.stdout.write(text);
+          });
+    } else {
+        for (var i = 0; i < options.paths.length; i++) {
+            if (options.async) {
+                replacizeFile(options.paths[i]);
+            }
+            else {
+                replacizeFileSync(options.paths[i]);
+            }
         }
     }
+
 
     function canSearch(file, isFile) {
       var inIncludes = includes && includes.some(function(include) {
@@ -149,7 +163,7 @@ module.exports = function(options) {
             return null;
         }
 
-        if (!options.silent) {
+        if (!options.silent && file) {
             var printout = options.noColor ? file : file[options.fileColor] || file;
             if (options.count) {
                 var count = " (" + match.length + ")";
@@ -173,7 +187,8 @@ module.exports = function(options) {
                       replacement = replacement[options.color];
                     }
                     line = line.replace(regex, replaceFunc || replacement);
-                    console.log(" " + (i + 1) + ": " + line.slice(0, limit));
+                    // only console log if file not stdin
+                    file && console.log(" " + (i + 1) + ": " + line.slice(0, limit));
                 }
             }
         }

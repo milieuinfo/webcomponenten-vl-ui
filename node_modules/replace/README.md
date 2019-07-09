@@ -57,6 +57,12 @@ Preview the replacements without modifying any files:
 replace 'foo' 'bar' . -r --preview
 ```
 
+Replace using stdin:
+
+```
+echo "asd" | replace "asd" "dsa" -z
+```
+
 See all the options:
 
 ```

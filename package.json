@@ -40,12 +40,11 @@
   "dependencies": {
     "prismjs": "1.16.0",
     "vl-ui-accordion": "^1.0.4",
-    "vl-ui-action-group": "^1.0.8",
+    "vl-ui-action-group": "^1.0.9",
     "vl-ui-alert": "^1.0.8",
     "vl-ui-button": "^1.0.10",
     "vl-ui-checkbox": "^1.0.7",
     "vl-ui-core": "^1.4.3",
-    "vl-ui-data-table": "0.0.1",
     "vl-ui-form-grid": "^1.0.4",
     "vl-ui-form-message": "^2.1.1",
     "vl-ui-grid": "^1.0.4",
@@ -55,13 +54,12 @@
     "vl-ui-link": "^1.1.2",
     "vl-ui-link-list": "^1.0.4",
     "vl-ui-map": "^1.0.13",
-    "vl-ui-modal": "0.0.15",
+    "vl-ui-modal": "^1.0.0",
     "vl-ui-properties": "^2.0.2",
     "vl-ui-select": "^1.1.5",
     "vl-ui-textarea": "^1.0.4",
     "vl-ui-titles": "^1.0.8",
-    "vl-ui-tooltip": "^1.0.5",
-    "vl-ui-upload": "0.0.12"
+    "vl-ui-tooltip": "^1.0.5"
   },
   "bundledDependencies": [
     "prismjs",
@@ -85,8 +83,6 @@
     "vl-ui-textarea",
     "vl-ui-titles",
     "vl-ui-tooltip",
-    "vl-ui-modal",
-    "vl-ui-data-table",
-    "vl-ui-upload"
+    "vl-ui-modal"
   ]
 }

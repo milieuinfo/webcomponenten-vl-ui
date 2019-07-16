@@ -4,13 +4,11 @@ import {VlButton} from '/node_modules/vl-ui-button/vl-button.js';
 import {VlActionGroup} from '/node_modules/vl-ui-action-group/vl-action-group.js';
 
 (() => {
-  loadScript('util.js',
-      '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
-        loadScript('core.js',
-            '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
-              loadScript('modal.js', '../dist/modal.js');
-            });
-      });
+  loadScript('util.js', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
+    loadScript('core.js', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
+      loadScript('modal.js', '../dist/modal.js');
+    });
+  });
 
   function loadScript(id, src, onload) {
     if (!document.head.querySelector('#' + id)) {
@@ -33,12 +31,13 @@ import {VlActionGroup} from '/node_modules/vl-ui-action-group/vl-action-group.js
  * @property {boolean} data-title - Attribuut wordt gebruikt om de titel (in een h2) te zetten. Indien leeg of weggelaten, wordt er geen titel element gezet.
  * @property {boolean} open - Attribuut wordt gebruikt om aan te duiden dat de modal onmiddellijk geopend moet worden na het renderen.
  * @property {boolean} closable - Attribuut wordt gebruikt om aan te duiden dat de modal sluitbaar is.
+ * @property {boolean} not-cancellable - Attribuut wordt gebruikt om aan te duiden dat de modal annuleerbaar is.
  */
 export class VlModal extends VlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['id', 'data-title', 'closable', 'cancellable', 'open'];
+    return ['id', 'data-title', 'closable', 'not-cancellable', 'open'];
   }
-
+  
   constructor() {
     super(`
             <style>
@@ -50,16 +49,16 @@ export class VlModal extends VlElement(HTMLElement) {
             </style>
 
             <div class="vl-modal">
-                <dialog class="vl-modal-dialog" data-vl-modal tabindex="-1" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-toggle-1-title" aria-describedby="modal-toggle-1-description">
-                    <div class="vl-modal-dialog__content" id="modal-toggle-1-description">
-                        <slot name="content">Modal content</slot>
-                    </div>
-                      <div is="vl-action-group" id="modal-action-group">
-                        <slot name="button"></slot>
-                        <button is="vl-button-link" data-vl-modal-close id="modal-toggle-1-cancellable">
-                            <span is="vl-icon" icon="cross" before data-vl-modal-close></span>Annuleer
-                        </button>
-                      </div>
+                <dialog class="vl-modal-dialog" data-vl-modal tabindex="-1" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-toggle-title" aria-describedby="modal-toggle-description">
+                  <div class="vl-modal-dialog__content" id="modal-toggle-description">
+                      <slot name="content">Modal content</slot>
+                  </div>
+                  <div is="vl-action-group" id="modal-action-group">
+                    <slot name="button" data-vl-modal-close></slot>
+                    <button is="vl-button-link" id="modal-toggle-cancellable" data-vl-modal-close>
+                        <span is="vl-icon" icon="cross" before></span>Annuleer
+                    </button>
+                  </div>
                 </dialog>
             </div>
         `);
@@ -74,7 +73,7 @@ export class VlModal extends VlElement(HTMLElement) {
   }
 
   get _titleElement() {
-    return this._element.querySelector('#modal-toggle-1-title');
+    return this._element.querySelector('#modal-toggle-title');
   }
 
   get _actionGroupElement() {
@@ -82,7 +81,7 @@ export class VlModal extends VlElement(HTMLElement) {
   }
 
   get _cancelElement() {
-    return this._element.querySelector('#modal-toggle-1-cancellable');
+    return this._element.querySelector('#modal-toggle-cancellable');
   }
 
   get _dressed() {
@@ -134,22 +133,22 @@ export class VlModal extends VlElement(HTMLElement) {
 
   _getCloseButtonTemplate() {
     return this._template(`
-            <button type="button" class="vl-modal-dialog__close" data-vl-modal-close>
-                <i class="vl-modal-dialog__close__icon vl-vi vl-vi-cross" aria-hidden="true"></i>
-                <span class="vl-u-visually-hidden">Venster sluiten</span>
-            </button>
+          <button type="button" class="vl-modal-dialog__close" data-vl-modal-close>
+            <i class="vl-modal-dialog__close__icon vl-vi vl-vi-cross" aria-hidden="true"></i>
+            <span class="vl-u-visually-hidden">Venster sluiten</span>
+          </button>
         `);
   }
 
   _getTitleTemplate(titel) {
     return this._template(`
-      <h2 class="vl-modal-dialog__title" id="modal-toggle-1-title">${titel}</h2>
+      <h2 class="vl-modal-dialog__title" id="modal-toggle-title">${titel}</h2>
         `);
   }
 
   _getCancelTemplate() {
     return this._template(`
-        <button is="vl-button-link" data-vl-modal-close id="modal-toggle-1-cancellable">
+        <button is="vl-button-link" data-vl-modal-close id="modal-toggle-cancellable">
             <span is="vl-icon" icon="cross" before data-vl-modal-close></span>Annuleer
         </button>`);
   }
@@ -172,11 +171,11 @@ export class VlModal extends VlElement(HTMLElement) {
     }
   }
 
-  _cancellableChangedCallback(oldValue, newValue) {
-    if (newValue !== "true" && this._cancelElement) {
-      this._cancelElement.remove();
-    } else if (newValue === "true" || newValue === null) {
+  _not_cancellableChangedCallback(oldValue, newValue) {
+    if (newValue === undefined && !this._cancelElement) {
       this._actionGroupElement.append(this._getCancelTemplate());
+    } else if (newValue !== undefined && this._cancelElement) {
+      this._cancelElement.remove();
     }
   }
 
@@ -196,7 +195,6 @@ export class VlModal extends VlElement(HTMLElement) {
       }
     }
   }
-
 }
 
 define('vl-modal', VlModal);

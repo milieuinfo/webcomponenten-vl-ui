@@ -42,39 +42,52 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
  */
 export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
+  static get _observedAttributes() {
+    return ['block', 'success'];
+  }
 
   static get _observedClassAttributes() {
-    return ['block'];
+    return ['error', 'success'];
   }
 
-  get _type() {
-    if (this.hasAttribute("success")) {
-      return "success"
-    }
-    return "error";
+  get success() {
+    return this.getAttribute('success') != undefined;
   }
 
-  connectedCallback() {
-    this.classList.add(`vl-form__${this._type}`);
-    this._addCheckIfSuccess();
+  get error() {
+    return this.getAttribute('error') != undefined;
+  }
+
+  get _validationType() {
+    return this.success ? 'success' : 'error';
+  }
+
+  get _checkElement() {
+    return this._element.querySelector('.vl-vi-check');
   }
 
   _getCheckTemplate() {
     return this._template('<span class="vl-vi vl-vi-check" aria-hidden="true"></span>');
   }
 
-  _addCheckIfSuccess() {
-    if (this._type === 'success') {
-      this._element.append(this._getCheckTemplate());
-    }
-  }
-
   get _classPrefix() {
-    return `vl-form__${this._type}--`;
+    return `vl-form__`;
   }
 
   get _stylePath() {
     return '../style.css';
+  }
+
+  _successChangedCallback(oldValue, newValue) {
+    if (newValue != undefined) {
+      this._element.append(this._getCheckTemplate());
+    } else if (this._checkElement) {
+      this._checkElement.remove();
+    }
+  }
+
+  _blockChangedCallback(oldValue, newValue) {
+    this._toggleClass(this, newValue, this._classPrefix + this._validationType + '--block');
   }
 }
 

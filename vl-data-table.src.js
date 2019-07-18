@@ -3,7 +3,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 /**
  * VlDataTable
  * @class
- * @classdesc Gebruik een data table om op een gestructureerde manier (grote hoeveelheden) relationele data te tonen. <a href="../../../../../demo/vl-data-table.html">Demo</a>.
+ * @classdesc Gebruik een data table om op een gestructureerde manier (grote hoeveelheden) relationele data te tonen. <a href="../demo/vl-data-table.html">Demo</a>.
  *
  * @extends NativeVlElement
  *

@@ -9132,17 +9132,68 @@
           "inheritedFrom": "NativeVlElement"
         },
         {
-          "name": "_type",
+          "name": "success",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "error",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_validationType",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 49,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 54,
+              "line": 62,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_checkElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 64,
+              "column": 2
+            },
+            "end": {
+              "line": 66,
               "column": 3
             }
           },
@@ -9155,11 +9206,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 71,
+              "line": 72,
               "column": 2
             },
             "end": {
-              "line": 73,
+              "line": 74,
               "column": 3
             }
           },
@@ -9172,11 +9223,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 75,
+              "line": 76,
               "column": 2
             },
             "end": {
-              "line": 77,
+              "line": 78,
               "column": 3
             }
           },
@@ -9185,36 +9236,16 @@
       ],
       "methods": [
         {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 56,
-              "column": 2
-            },
-            "end": {
-              "line": 59,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
           "name": "_getCheckTemplate",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 61,
+              "line": 68,
               "column": 2
             },
             "end": {
-              "line": 63,
+              "line": 70,
               "column": 3
             }
           },
@@ -9222,21 +9253,55 @@
           "params": []
         },
         {
-          "name": "_addCheckIfSuccess",
+          "name": "_successChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 65,
+              "line": 80,
               "column": 2
             },
             "end": {
-              "line": 69,
+              "line": 86,
               "column": 3
             }
           },
           "metadata": {},
-          "params": [],
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_blockChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 2
+            },
+            "end": {
+              "line": 90,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
           "return": {
             "type": "void"
           }
@@ -9251,7 +9316,7 @@
           "column": 7
         },
         "end": {
-          "line": 78,
+          "line": 91,
           "column": 1
         }
       },
@@ -9290,11 +9355,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 100,
+              "line": 113,
               "column": 2
             },
             "end": {
-              "line": 102,
+              "line": 115,
               "column": 3
             }
           },
@@ -9307,11 +9372,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 117,
               "column": 2
             },
             "end": {
-              "line": 106,
+              "line": 119,
               "column": 3
             }
           },
@@ -9325,11 +9390,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 96,
+              "line": 109,
               "column": 2
             },
             "end": {
-              "line": 98,
+              "line": 111,
               "column": 3
             }
           },
@@ -9345,11 +9410,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 90,
+          "line": 103,
           "column": 7
         },
         "end": {
-          "line": 107,
+          "line": 120,
           "column": 1
         }
       },
@@ -21693,11 +21758,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 316
+              "column": 317
             },
             "end": {
               "line": 0,
-              "column": 359
+              "column": 360
             }
           },
           "metadata": {}
@@ -21710,11 +21775,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 359
+              "column": 360
             },
             "end": {
               "line": 0,
-              "column": 425
+              "column": 426
             }
           },
           "metadata": {}
@@ -21728,11 +21793,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 260
+              "column": 261
             },
             "end": {
               "line": 0,
-              "column": 316
+              "column": 317
             }
           },
           "metadata": {},
@@ -21752,7 +21817,7 @@
         },
         "end": {
           "line": 0,
-          "column": 426
+          "column": 427
         }
       },
       "privacy": "public",
@@ -22280,18 +22345,69 @@
       "path": "vl-form-message.js",
       "properties": [
         {
-          "name": "_type",
+          "name": "success",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 571
+            },
+            "end": {
+              "line": 0,
+              "column": 632
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "error",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 632
+            },
+            "end": {
+              "line": 0,
+              "column": 689
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_validationType",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 502
+              "column": 689
             },
             "end": {
               "line": 0,
-              "column": 577
+              "column": 749
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_checkElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 749
+            },
+            "end": {
+              "line": 0,
+              "column": 820
             }
           },
           "metadata": {}
@@ -22304,11 +22420,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 868
+              "column": 924
             },
             "end": {
               "line": 0,
-              "column": 920
+              "column": 961
             }
           },
           "metadata": {}
@@ -22321,11 +22437,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 920
+              "column": 961
             },
             "end": {
               "line": 0,
-              "column": 988
+              "column": 1029
             }
           },
           "metadata": {}
@@ -22333,58 +22449,72 @@
       ],
       "methods": [
         {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 577
-            },
-            "end": {
-              "line": 0,
-              "column": 668
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
           "name": "_getCheckTemplate",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 668
+              "column": 820
             },
             "end": {
               "line": 0,
-              "column": 772
+              "column": 924
             }
           },
           "metadata": {},
           "params": []
         },
         {
-          "name": "_addCheckIfSuccess",
+          "name": "_successChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 772
+              "column": 1029
             },
             "end": {
               "line": 0,
-              "column": 868
+              "column": 1200
             }
           },
           "metadata": {},
-          "params": [],
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_blockChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1200
+            },
+            "end": {
+              "line": 0,
+              "column": 1323
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
           "return": {
             "type": "void"
           }
@@ -22400,7 +22530,7 @@
         },
         "end": {
           "line": 0,
-          "column": 989
+          "column": 1324
         }
       },
       "privacy": "public",
@@ -22419,11 +22549,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1182
+              "column": 1517
             },
             "end": {
               "line": 0,
-              "column": 1231
+              "column": 1566
             }
           },
           "metadata": {}
@@ -22436,11 +22566,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1231
+              "column": 1566
             },
             "end": {
               "line": 0,
-              "column": 1299
+              "column": 1634
             }
           },
           "metadata": {}
@@ -22454,11 +22584,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1120
+              "column": 1455
             },
             "end": {
               "line": 0,
-              "column": 1182
+              "column": 1517
             }
           },
           "metadata": {},
@@ -22474,11 +22604,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 997
+          "column": 1332
         },
         "end": {
           "line": 0,
-          "column": 1300
+          "column": 1635
         }
       },
       "privacy": "public",

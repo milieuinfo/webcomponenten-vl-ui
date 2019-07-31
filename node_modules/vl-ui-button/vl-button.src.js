@@ -1,5 +1,6 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import { VlLinkElement } from "/node_modules/vl-ui-link/vl-link.js";
+import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
 
 /**
  * VlButton
@@ -42,5 +43,19 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 
 export class VlButtonLink extends VlLinkElement(HTMLButtonElement) {}
 
+export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElement)) {
+    constructor() {
+        super();
+        this.classList.add('vl-pill');
+        this.classList.add('vl-pill--clickable');
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+}
+
+
 define('vl-button', VlButton, {extends: 'button'});
 define('vl-button-link', VlButtonLink, {extends: 'button'});
+define('vl-button-pill', VlButtonPill, {extends: 'button'});

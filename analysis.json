@@ -6229,6 +6229,24 @@
       "params": []
     },
     {
+      "name": "VlPillElement",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "vl-pill.src.js",
+        "start": {
+          "line": 2,
+          "column": 29
+        },
+        "end": {
+          "line": 20,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
       "name": "VlLinkElement",
       "description": "",
       "summary": "",
@@ -6241,6 +6259,24 @@
         "end": {
           "line": 0,
           "column": 593
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "VlPillElement",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "vl-pill.js",
+        "start": {
+          "line": 0,
+          "column": 109
+        },
+        "end": {
+          "line": 0,
+          "column": 387
         }
       },
       "privacy": "public",
@@ -6920,11 +6956,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 33,
+              "line": 34,
               "column": 4
             },
             "end": {
-              "line": 35,
+              "line": 36,
               "column": 5
             }
           },
@@ -6937,11 +6973,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 37,
+              "line": 38,
               "column": 4
             },
             "end": {
-              "line": 39,
+              "line": 40,
               "column": 5
             }
           },
@@ -6955,11 +6991,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 29,
+              "line": 30,
               "column": 4
             },
             "end": {
-              "line": 31,
+              "line": 32,
               "column": 5
             }
           },
@@ -6975,11 +7011,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 20,
+          "line": 21,
           "column": 7
         },
         "end": {
-          "line": 40,
+          "line": 41,
           "column": 1
         }
       },
@@ -6998,16 +7034,56 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 42,
+          "line": 43,
           "column": 7
         },
         "end": {
-          "line": 42,
+          "line": 43,
           "column": 69
         }
       },
       "privacy": "public",
       "name": "VlButtonLink"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-button.src.js",
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 4
+            },
+            "end": {
+              "line": 54,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 45,
+          "column": 7
+        },
+        "end": {
+          "line": 55,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "VlButtonPill"
     },
     {
       "description": "VlCheckbox",
@@ -17442,6 +17518,523 @@
       "name": "VlModal"
     },
     {
+      "description": "",
+      "summary": "",
+      "path": "vl-pill.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 8,
+              "column": 4
+            },
+            "end": {
+              "line": 10,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_typeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 12,
+              "column": 4
+            },
+            "end": {
+              "line": 18,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 3,
+          "column": 9
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      },
+      "privacy": "public"
+    },
+    {
+      "description": "VlPill",
+      "summary": "",
+      "path": "vl-pill.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1740
+            },
+            "end": {
+              "line": 0,
+              "column": 1802
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1802
+            },
+            "end": {
+              "line": 0,
+              "column": 1889
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 841
+            },
+            "end": {
+              "line": 0,
+              "column": 1740
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1889
+            },
+            "end": {
+              "line": 0,
+              "column": 2003
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2003
+            },
+            "end": {
+              "line": 0,
+              "column": 2287
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2287
+            },
+            "end": {
+              "line": 0,
+              "column": 2418
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2418
+            },
+            "end": {
+              "line": 0,
+              "column": 2572
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2572
+            },
+            "end": {
+              "line": 0,
+              "column": 2661
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2661
+            },
+            "end": {
+              "line": 0,
+              "column": 2937
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2937
+            },
+            "end": {
+              "line": 0,
+              "column": 3221
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_getPillTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 2
+            },
+            "end": {
+              "line": 57,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getClosablePillTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 59,
+              "column": 2
+            },
+            "end": {
+              "line": 68,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_closableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 70,
+              "column": 2
+            },
+            "end": {
+              "line": 72,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 33,
+          "column": 7
+        },
+        "end": {
+          "line": 73,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlPill"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-pill.src.js",
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 2
+            },
+            "end": {
+              "line": 90,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_inputElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 92,
+              "column": 2
+            },
+            "end": {
+              "line": 94,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_inputStyleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 96,
+              "column": 2
+            },
+            "end": {
+              "line": 100,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 2
+            },
+            "end": {
+              "line": 86,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 75,
+          "column": 7
+        },
+        "end": {
+          "line": 101,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "VlLabelPill"
+    },
+    {
       "description": "VlProperties",
       "summary": "",
       "path": "vl-properties.src.js",
@@ -21350,11 +21943,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 424
+              "column": 487
             },
             "end": {
               "line": 0,
-              "column": 463
+              "column": 526
             }
           },
           "metadata": {}
@@ -21367,11 +21960,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 463
+              "column": 526
             },
             "end": {
               "line": 0,
-              "column": 525
+              "column": 588
             }
           },
           "metadata": {}
@@ -21385,11 +21978,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 372
+              "column": 435
             },
             "end": {
               "line": 0,
-              "column": 424
+              "column": 487
             }
           },
           "metadata": {},
@@ -21405,11 +21998,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 142
+          "column": 205
         },
         "end": {
           "line": 0,
-          "column": 526
+          "column": 589
         }
       },
       "privacy": "public",
@@ -21427,15 +22020,55 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 534
+          "column": 597
         },
         "end": {
           "line": 0,
-          "column": 595
+          "column": 658
         }
       },
       "privacy": "public",
       "name": "VlButtonLink"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-button.js",
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 836
+            },
+            "end": {
+              "line": 0,
+              "column": 898
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 666
+        },
+        "end": {
+          "line": 0,
+          "column": 899
+        }
+      },
+      "privacy": "public",
+      "name": "VlButtonPill"
     },
     {
       "description": "",
@@ -24170,6 +24803,252 @@
       },
       "privacy": "public",
       "name": "VlModal"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-pill.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 189
+            },
+            "end": {
+              "line": 0,
+              "column": 226
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_typeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 226
+            },
+            "end": {
+              "line": 0,
+              "column": 385
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "l"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 113
+        },
+        "end": {
+          "line": 0,
+          "column": 386
+        }
+      },
+      "privacy": "public"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-pill.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "_getPillTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 788
+            },
+            "end": {
+              "line": 0,
+              "column": 850
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getClosablePillTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 850
+            },
+            "end": {
+              "line": 0,
+              "column": 1134
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_closableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1134
+            },
+            "end": {
+              "line": 0,
+              "column": 1271
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "l"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 395
+        },
+        "end": {
+          "line": 0,
+          "column": 1272
+        }
+      },
+      "privacy": "public",
+      "name": "VlPill"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-pill.js",
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1601
+            },
+            "end": {
+              "line": 0,
+              "column": 1661
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_inputElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1661
+            },
+            "end": {
+              "line": 0,
+              "column": 1725
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_inputStyleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1725
+            },
+            "end": {
+              "line": 0,
+              "column": 1786
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1378
+            },
+            "end": {
+              "line": 0,
+              "column": 1601
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 1280
+        },
+        "end": {
+          "line": 0,
+          "column": 1787
+        }
+      },
+      "privacy": "public",
+      "name": "VlLabelPill"
     },
     {
       "description": "",

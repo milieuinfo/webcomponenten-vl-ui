@@ -26,6 +26,7 @@
     "analyze:generate": "polymer analyze --sources [vl-*.src.js,src/vl-*.js] > analysis.json",
     "doc": "npm run doc:generate",
     "doc:generate": "node_modules/jsdoc/jsdoc.js vl-*src.js src/vl-*.js README.md --destination doc",
+    "release:prepare": "echo tjiek tsjak vollen bak",
     "release:testless": "np --yolo"
   },
   "bugs": {

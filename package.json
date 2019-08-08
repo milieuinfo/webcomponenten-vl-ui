@@ -61,7 +61,7 @@
     "vl-ui-select": "^1.1.6",
     "vl-ui-textarea": "^1.0.5",
     "vl-ui-titles": "^1.0.9",
-    "vl-ui-toaster": "^1.0.0",
+    "vl-ui-toaster": "^1.0.1",
     "vl-ui-tooltip": "^1.0.7"
   },
   "bundledDependencies": [

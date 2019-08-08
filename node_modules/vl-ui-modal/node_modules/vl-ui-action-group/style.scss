@@ -20,7 +20,7 @@
 // ==========================================================================
 @import "vl-ui-action-group/src/scss/action-group";
 
-:host(vl-modal) .vl-action-group ::slotted([is^="vl-button"]),
-:not(:host(vl-modal)) .vl-action-group > * {
+.vl-action-group > *,
+.vl-action-group > ::slotted(*) {
   @extend .vl-button
 }

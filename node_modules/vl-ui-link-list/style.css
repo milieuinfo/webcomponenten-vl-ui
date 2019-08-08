@@ -228,7 +228,9 @@
   .vl-popover--closable .vl-link-list__item:first-child {
     max-width: calc(100% - 4.5rem); }
 
-.vl-popover .vl-link-list, .vl-popover__link-list, .vl-link-list {
+.vl-popover .vl-link-list,
+.vl-popover__link-list,
+.vl-link-list {
   padding: .5rem 0;
   max-height: inherit;
   overflow-y: auto; }
@@ -236,9 +238,9 @@
   .vl-popover__link-list li .vl-link,
   .vl-link-list li .vl-link {
     padding: .8rem 1.5rem; }
-  .vl-popover--closable .vl-popover .vl-link-list li:first-child,
-  .vl-popover--closable .vl-popover__link-list li:first-child,
-  .vl-popover--closable .vl-link-list li:first-child {
+  .vl-popover--closable .vl-popover .vl-link-list li:first-child, .vl-popover--closable
+  .vl-popover__link-list li:first-child, .vl-popover--closable
+  .vl-link-list li:first-child {
     max-width: calc(100% - 4.5rem); }
   .vl-popover .vl-link-list__separator,
   .vl-popover__link-list__separator,
@@ -255,19 +257,29 @@
     padding: 1.1rem 1.5rem; }
   .vl-popover .vl-link-list--bordered .vl-popover .vl-link-list__item:not(:last-of-type) .vl-link,
   .vl-popover__link-list--bordered .vl-popover .vl-link-list__item:not(:last-of-type) .vl-link,
-  .vl-link-list--bordered .vl-popover .vl-link-list__item:not(:last-of-type) .vl-link,
-  .vl-popover .vl-link-list--bordered .vl-popover__link-list__item:not(:last-of-type) .vl-link,
-  .vl-popover__link-list--bordered .vl-popover__link-list__item:not(:last-of-type) .vl-link,
-  .vl-link-list--bordered .vl-popover__link-list__item:not(:last-of-type) .vl-link,
-  .vl-popover .vl-link-list--bordered .vl-link-list__item:not(:last-of-type) .vl-link,
-  .vl-popover__link-list--bordered .vl-link-list__item:not(:last-of-type) .vl-link,
-  .vl-link-list--bordered .vl-link-list__item:not(:last-of-type) .vl-link {
+  .vl-link-list--bordered .vl-popover .vl-link-list__item:not(:last-of-type) .vl-link, .vl-popover .vl-link-list--bordered
+  .vl-popover__link-list__item:not(:last-of-type) .vl-link,
+  .vl-popover__link-list--bordered
+  .vl-popover__link-list__item:not(:last-of-type) .vl-link,
+  .vl-link-list--bordered
+  .vl-popover__link-list__item:not(:last-of-type) .vl-link, .vl-popover .vl-link-list--bordered
+  .vl-link-list__item:not(:last-of-type) .vl-link,
+  .vl-popover__link-list--bordered
+  .vl-link-list__item:not(:last-of-type) .vl-link,
+  .vl-link-list--bordered
+  .vl-link-list__item:not(:last-of-type) .vl-link {
     position: relative; }
-  .vl-popover .vl-link-list .vl-link, .vl-popover__link-list .vl-link, .vl-link-list .vl-link {
+  .vl-popover .vl-link-list .vl-link,
+  .vl-popover__link-list .vl-link,
+  .vl-link-list .vl-link {
     font-size: 1.5rem;
     line-height: 1.2;
     text-decoration: none; }
-    .vl-popover .vl-link-list .vl-link:hover, .vl-popover .vl-link-list .vl-link:focus, .vl-popover__link-list .vl-link:hover, .vl-popover__link-list .vl-link:focus, .vl-link-list .vl-link:hover, .vl-link-list .vl-link:focus {
+    .vl-popover .vl-link-list .vl-link:hover, .vl-popover .vl-link-list .vl-link:focus,
+    .vl-popover__link-list .vl-link:hover,
+    .vl-popover__link-list .vl-link:focus,
+    .vl-link-list .vl-link:hover,
+    .vl-link-list .vl-link:focus {
       text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

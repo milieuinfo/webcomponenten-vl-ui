@@ -4245,7 +4245,6 @@ mark,
 .vl-alert {
   opacity: 1;
   transition: opacity 0.3s;
-  margin: 1rem;
 }
 
 .vl-alert--fade-out {

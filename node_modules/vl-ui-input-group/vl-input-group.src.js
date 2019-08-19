@@ -6,6 +6,8 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 * @classdesc Gebruik vl-ui-input-group om een 'input field' en een 'input add-on' te combineren. Bijvoorbeeld: de 'vl-datepicker' component combineert een 'input field' en een 'input add-on' in een 'input group'. <a href="demo/vl-input-group.html">Demo</a>.
 * 
 * @extends VlElement
+*
+* @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-input-group/releases/latest">Release notes</a>
 */
 export class VlInputGroup extends VlElement(HTMLElement) {
   constructor() {

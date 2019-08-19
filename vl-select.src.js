@@ -33,6 +33,8 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
  * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
  * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest">Release notes</a>
  */
 
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {

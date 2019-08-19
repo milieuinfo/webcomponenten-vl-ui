@@ -10,6 +10,8 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * @property {boolean} sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
  * @property {boolean} has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
  * @property {boolean} alt - Attribuut wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel.
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest">Release notes</a>
  */
 export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
     static get _observedClassAttributes() {

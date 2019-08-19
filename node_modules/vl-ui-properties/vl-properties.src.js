@@ -6,6 +6,8 @@ import {NativeVlElement, VlElement, define} from '/node_modules/vl-ui-core/vl-co
  * @classdesc De properties webcomponent vormt de container van een lijst van kenmerken van een onderwerp. Deze component wordt meestal gebruikt om informatie te tonen dat ingevuld werd in een formulier. <a href="demo/vl-properties.html">Demo</a>.
  * 
  * @extends VlElement
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest">Release notes</a>
  */
 export class VlProperties extends VlElement(HTMLElement) {
     constructor() {
@@ -43,6 +45,8 @@ export class VlProperties extends VlElement(HTMLElement) {
  * @extends VlElement
  *
  * @property {boolean} full - Attribuut wordt gebruikt om de kolom de volledige breedte te laten innemen.
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest">Release notes</a>
  */
 export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
     static get _observedClassAttributes() {
@@ -68,6 +72,8 @@ export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
  * @classdesc De properties lijst webcomponent toont een lijst van kenmerken van een onderwerp. <a href="demo/vl-properties.html">Demo</a>.
  * 
  * @extends VlElement
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest">Release notes</a>
  */
 export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
     connectedCallback() {
@@ -85,6 +91,8 @@ export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
  * @classdesc De property kenmerk webcomponent toont de beschrijving van een onderwerp kenmerk. <a href="demo/vl-properties.html">Demo</a>.
  * 
  * @extends VlElement
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest">Release notes</a>
  */
 export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
     connectedCallback() {
@@ -102,6 +110,8 @@ export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
  * @classdesc De property waarde webcomponent toont de waarde van een onderwerp kenmerk. <a href="demo/vl-properties.html">Demo</a>.
  * 
  * @extends VlElement
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest">Release notes</a>
  */
 export class VlPropertyValue extends NativeVlElement(HTMLElement) {
     connectedCallback() {

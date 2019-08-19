@@ -9,6 +9,8 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ *
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest">Release notes</a>
  */
 export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
 
@@ -40,6 +42,8 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  * @property {boolean} error - Attribuut wordt gebruikt om foutboodschap te tonen bij validatiefouten.
  * @property {boolean} success - Attribuut wordt gebruikt om boodschap te tonen bij een succesvolle validatie.
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ *
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest">Release notes</a>
  */
 export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
   static get _observedAttributes() {
@@ -100,6 +104,8 @@ export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
  * @extends NativeVlElement
  *
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest">Release notes</a>
  */
 export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 

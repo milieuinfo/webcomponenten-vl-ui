@@ -6,6 +6,8 @@ import {define} from "/node_modules/vl-ui-core/vl-core.js";
  * @class
  * @classdesc Class die een grid layout mogelijk maakt in een formulier. <a href="../demo/vl-form-grid.html">Demo</a>.
  * @extends VlGrid
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/releases/latest">Release notes</a>
  */
 export class VlFormGrid extends VlGrid {
   connectedCallback() {
@@ -22,6 +24,8 @@ export class VlFormGrid extends VlGrid {
  * @class
  * @classdesc Class die een kolom in een formulier grid layout representeert. <a href="../demo/vl-form-grid.html">Demo</a>.
  * @extends VlColumn
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/releases/latest">Release notes</a>
  */
 export class VlFormColumn extends VlColumn {
 

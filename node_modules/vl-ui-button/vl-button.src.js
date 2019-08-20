@@ -19,7 +19,7 @@ import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
  * @property {boolean} secondary - Attribuut wordt gebruikt in combinatie met een gewone knop om alternatieve acties te voorzien.
  * @property {boolean} tertiary - Attribuut wordt gebruikt in combinatie met gewone en secondary knoppen om alternatieve acties te voorzien.
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-accordion/releases/latest">Release notes</a>
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-button/releases/latest">Release notes</a>
  */
 export class VlButton extends NativeVlElement(HTMLButtonElement) {
     static get _observedAttributes() {

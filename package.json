@@ -25,7 +25,7 @@
     "analyze:copy:demo": "copyfiles -f node_modules/vl-*/demo/* ./demo",
     "analyze:generate": "polymer analyze --sources [vl-*.src.js,src/vl-*.js] > analysis.json",
     "doc": "npm run doc:generate",
-    "doc:generate": "node_modules/jsdoc/jsdoc.js vl-*src.js src/vl-*.js README.md --destination doc",
+    "doc:generate": "node_modules/jsdoc/jsdoc.js vl-*src.js src/vl-*.js README.md --destination docs",
     "release:prepare": "echo tjiek tsjak vollen bak",
     "release:testless": "np --yolo"
   },

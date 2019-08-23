@@ -7,7 +7,8 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 * 
 * @extends VlElement
 *
-* @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-input-group/releases/latest">Release notes</a>
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-group/releases/latest|Release notes}
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-group/issues|Issues}
 */
 export class VlInputGroup extends VlElement(HTMLElement) {
   constructor() {

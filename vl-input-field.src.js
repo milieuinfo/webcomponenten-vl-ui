@@ -7,7 +7,8 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @extends NativeVlElement
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/issues|Issues}
  */
 export class VlInputField extends NativeVlElement(HTMLInputElement) {
 

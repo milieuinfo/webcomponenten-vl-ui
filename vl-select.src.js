@@ -34,7 +34,8 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
  * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
  */
 
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {

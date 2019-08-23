@@ -1,4 +1,4 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlIcon
@@ -74,4 +74,4 @@ export class VlIcon extends NativeVlElement(HTMLSpanElement) {
     }
 }
 
-customElements.define('vl-icon', VlIcon, {extends: 'span'});
+define('vl-icon', VlIcon, {extends: 'span'});

@@ -11,7 +11,8 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * @property {boolean} has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
  * @property {boolean} alt - Attribuut wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel.
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/issues|Issues}
  */
 export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
     static get _observedClassAttributes() {

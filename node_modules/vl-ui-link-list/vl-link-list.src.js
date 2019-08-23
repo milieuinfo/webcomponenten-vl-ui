@@ -7,7 +7,8 @@ import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
  * @classdesc Class die een lijst van links kan weergeven. <a href="demo/vl-link-list.html">Demo</a>.
  * @extends NativeVlElement
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/issues|Issues}
  */
 export class VlLinkList extends NativeVlElement(HTMLUListElement) {
   connectedCallback() {
@@ -33,7 +34,8 @@ export class VlLinkList extends NativeVlElement(HTMLUListElement) {
  * @classdesc Class die een item uit de {@link VlLinkList} weergeeft. <a href="demo/vl-link-list.html">Demo</a>.
  * @extends NativeVlElement
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link-list/issues|Issues}
  */
 export class VlLinkListItem extends NativeVlElement(HTMLLIElement) {
   connectedCallback() {

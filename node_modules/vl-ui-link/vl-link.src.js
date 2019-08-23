@@ -42,7 +42,8 @@ export const VlLinkElement = (SuperClass) => {
  * 
  * @extends NativeVlElement
  * 
- * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest">Release notes</a>
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
  */
 export class VlLink extends VlLinkElement(HTMLAnchorElement) {}
 

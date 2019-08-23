@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: vl-icon.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: vl-icon.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+
+/**
+ * VlIcon
+ * @class
+ * @classdesc Gebruik de vl-icon om een extra visueel element toe te voegen. &lt;a href="../demo/vl-icon.html">Demo&lt;/a>.
+ * 
+ * @extends NativeVlElement
+ * 
+ * @property {string} icon - Attribuut wordt gebruikt om aan te geven welk icoon getoond moet worden.
+ * @property {(small | large)} size - Attribuut wordt gebruikt om het icoon te verkleinen (80%) of te vergroten (120%) ten opzichte van de parent.
+ * @property {boolean} light - Attribuut wordt gebruikt om het icoon een lichte kleur te geven.
+ * @property {boolean} before - Attribuut wordt gebruikt wanneer het icoon voor een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden.
+ * @property {boolean} after - Attribuut wordt gebruikt wanneer het icoon achter een tekst staat en er wat ruimte tussen het icoon en de tekst getoond moet worden.
+ * @property {boolean} 90deg - Attribuut wordt gebruikt om het icoon 90 graden te roteren.
+ * @property {boolean} 180deg - Attribuut wordt gebruikt om het icoon 180 graden te roteren.
+ * @property {boolean} link - Attribuut moet gebruikt worden wanneer het icoon binnen een a tag gebruikt wordt zodat de stijl goed is.
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-icon/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-icon/issues|Issues}
+ */
+export class VlIcon extends NativeVlElement(HTMLSpanElement) {
+    static get _observedAttributes() {
+        return ['icon', 'size', '90deg', '180deg', 'link'];
+    }
+
+    static get _observedChildClassAttributes() {
+        return ['before', 'after', 'light'];
+    }
+
+    connectedCallback() {
+        this.classList.add('vl-icon');
+        this.classList.add('vl-vi');
+        this.setAttribute('aria-hidden', true);
+    }
+
+    get _classPrefix() {
+        return 'vl-icon--';
+    }
+
+    get _stylePath() {
+        return '../style.css';
+    }
+
+    _iconChangedCallback(oldValue, newValue) {
+        this._changeClass(this._element, oldValue, newValue, 'vl-vi-');
+    };
+
+    _sizeChangedCallback(oldValue, newValue) {
+        if (['small', 'large'].indexOf(newValue) >= 0) {
+            this._changeClass(this._element, oldValue, newValue);
+        } else {
+            this._element.classList.remove(this._prefix + oldValue);
+        }
+    };
+
+    _90degChangedCallback(oldValue, newValue) {
+        this._toggleClass(this._element, newValue, 'vl-vi-u-90deg');
+    }
+
+    _180degChangedCallback(oldValue, newValue) {
+        this._toggleClass(this._element, newValue, 'vl-vi-u-180deg');
+    }
+
+    _linkChangedCallback(oldValue, newValue) {
+        setTimeout(() => {
+            if (newValue != undefined) {
+                this._element.classList.forEach((value) => {
+                    this._element.classList.replace(value, value.replace('-icon', '-link__icon'));
+                });
+            } else {
+                this._element.classList.forEach((value) => {
+                    this._element.classList.replace(value, value.replace('-link__icon', '-icon'));
+                });
+            }
+        });
+    }
+}
+
+define('vl-icon', VlIcon, {extends: 'span'});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li></ul><h3>Global</h3><ul><li><a href="global.html#define">define</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Aug 23 2019 16:43:13 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

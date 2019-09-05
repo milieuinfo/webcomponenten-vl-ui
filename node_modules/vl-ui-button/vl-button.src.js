@@ -5,7 +5,7 @@ import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
 /**
  * VlButton
  * @class
- * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram. <a href="demo/vl-button.html">Demo</a>.
+ * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
  * 
  * @extends NativeVlElement
  * 
@@ -21,6 +21,7 @@ import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-button.html|Demo}
  */
 export class VlButton extends NativeVlElement(HTMLButtonElement) {
     static get _observedAttributes() {

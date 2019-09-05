@@ -3,12 +3,13 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  /**
  * VlInputField
  * @class
- * @classdesc Het input field laat de gebruiker toe om een informatie in te vullen in uw applicatie: bijvoorbeeld een email adres of een wachtwoord. <a href="demo/vl-input-field.html">Demo</a>.
+ * @classdesc Het input field laat de gebruiker toe om een informatie in te vullen in uw applicatie: bijvoorbeeld een email adres of een wachtwoord.
  * 
  * @extends NativeVlElement
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-input-field.html|Demo}
  */
 export class VlInputField extends NativeVlElement(HTMLInputElement) {
 

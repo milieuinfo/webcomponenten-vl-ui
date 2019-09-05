@@ -4,7 +4,7 @@ import '/node_modules/vl-ui-icon/vl-icon.js';
 /**
  * VlAlert
  * @class
- * @classdesc Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie. <a href="demo/vl-alert.html">Demo</a>.
+ * @classdesc Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.
  * 
  * @extends VlElement
  * 
@@ -15,6 +15,7 @@ import '/node_modules/vl-ui-icon/vl-icon.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-alert.html|Demo}
  */
 export class VlAlert extends VlElement(HTMLElement) {
     constructor() {

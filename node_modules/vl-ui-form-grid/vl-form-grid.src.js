@@ -4,11 +4,12 @@ import {define} from "/node_modules/vl-ui-core/vl-core.js";
 /**
  * VlFormGrid
  * @class
- * @classdesc Class die een grid layout mogelijk maakt in een formulier. <a href="demo/vl-form-grid.html">Demo</a>.
+ * @classdesc Class die een grid layout mogelijk maakt in een formulier.
  * @extends VlGrid
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-form-grid.html|Demo}
  */
 export class VlFormGrid extends VlGrid {
   connectedCallback() {
@@ -23,11 +24,12 @@ export class VlFormGrid extends VlGrid {
 /**
  * VlFormColumn
  * @class
- * @classdesc Class die een kolom in een formulier grid layout representeert. <a href="demo/vl-form-grid.html">Demo</a>.
+ * @classdesc Class die een kolom in een formulier grid layout representeert.
  * @extends VlColumn
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-form-grid.html|Demo}
  */
 export class VlFormColumn extends VlColumn {
 

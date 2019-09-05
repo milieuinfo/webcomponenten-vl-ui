@@ -9,7 +9,7 @@ import {NativeVlElement, VlElement, define} from '/node_modules/vl-ui-core/vl-co
  * 
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-properties.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlProperties extends VlElement(HTMLElement) {
     constructor() {
@@ -50,7 +50,7 @@ export class VlProperties extends VlElement(HTMLElement) {
  * 
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-properties.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
     static get _observedClassAttributes() {
@@ -79,7 +79,7 @@ export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
  * 
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-properties.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
     connectedCallback() {
@@ -100,7 +100,7 @@ export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
  * 
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-properties.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
     connectedCallback() {
@@ -121,7 +121,7 @@ export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
  * 
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-properties.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlPropertyValue extends NativeVlElement(HTMLElement) {
     connectedCallback() {

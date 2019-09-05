@@ -12,11 +12,14 @@ module.exports = function(options) {
         options.paths[0] === sharedOptions.paths.default[0] &&
         !options.hasOwnProperty('recursive')) {
         options.paths = ['.'];
-        options.recursive = true;
     }
 
     var lineCount = 0,
         limit = 400; // chars per line
+
+    if (options.r) {
+        options.recursive = true;
+    }
 
     if (!options.color) {
         options.color = "cyan";

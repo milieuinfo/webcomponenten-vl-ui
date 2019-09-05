@@ -38,12 +38,13 @@ export const VlLinkElement = (SuperClass) => {
 /**
  * VlLink
  * @class
- * @classdesc Gebruik de vl-link om de gebruiker door te verwijzen naar een andere URL, bijvoorbeeld een nieuwe pagina of een document. <a href="demo/vl-link.html">Demo</a>.
+ * @classdesc Gebruik de vl-link om de gebruiker door te verwijzen naar een andere URL, bijvoorbeeld een nieuwe pagina of een document.
  * 
  * @extends NativeVlElement
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-link.html|Demo}
  */
 export class VlLink extends VlLinkElement(HTMLAnchorElement) {}
 

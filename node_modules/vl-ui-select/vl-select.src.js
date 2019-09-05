@@ -21,7 +21,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  /**
  * VlSelect
  * @class
- * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component. <a href="demo/vl-select.html">Demo</a>.
+ * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
  * 
  * @extends NativeVlElement
  * 
@@ -36,6 +36,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-select.html|Demo}
  */
 
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {

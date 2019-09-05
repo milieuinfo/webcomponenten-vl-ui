@@ -4,7 +4,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 /**
  * VLActionGroup
  * @class
- * @classdesc Toon meerdere knoppen of links. De groep zorgt ervoor dat ze correct zijn uitgelijnd. <a href="demo/vl-action-group.html">Demo</a>.
+ * @classdesc Toon meerdere knoppen of links. De groep zorgt ervoor dat ze correct zijn uitgelijnd.
  *
  * @extends NativeVlElement
  *
@@ -14,6 +14,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-action-group/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-action-group/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-action-group.html|Demo}
  */
 export class VlActionGroup extends NativeVlElement(HTMLDivElement) {
 

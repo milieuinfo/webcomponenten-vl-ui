@@ -15,7 +15,7 @@ import '/node_modules/vl-ui-icon/vl-icon.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-ui-alert.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-alert.html|Demo}
  */
 export class VlAlert extends VlElement(HTMLElement) {
     constructor() {

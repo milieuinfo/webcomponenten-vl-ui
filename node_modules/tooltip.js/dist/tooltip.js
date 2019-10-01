@@ -1,6 +1,6 @@
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.3.1
+ * @version 1.3.2
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -251,12 +251,12 @@ class Tooltip {
     });
 
     this._popperOptions.modifiers = _extends({}, this._popperOptions.modifiers, {
-      arrow: {
-        element: this.options.arrowSelector
-      },
-      offset: {
+      arrow: _extends({}, this._popperOptions.modifiers && this._popperOptions.modifiers.arrow, {
+        element: options.arrowSelector
+      }),
+      offset: _extends({}, this._popperOptions.modifiers && this._popperOptions.modifiers.offset, {
         offset: options.offset
-      }
+      })
     });
 
     if (options.boundariesElement) {
@@ -401,8 +401,8 @@ class Tooltip {
     this._isOpening = false;
     // defaults to 0
     const computedDelay = delay && delay.hide || delay || 0;
+    window.clearTimeout(this._showTimeout);
     window.setTimeout(() => {
-      window.clearTimeout(this._showTimeout);
       if (this._isOpen === false) {
         return;
       }
@@ -433,7 +433,7 @@ class Tooltip {
       }
       return;
     }
-    const titleNode = this._tooltipNode.parentNode.querySelector(this.options.innerSelector);
+    const titleNode = this._tooltipNode.querySelector(this.options.innerSelector);
     this._clearTitleContent(titleNode, this.options.html, this.reference.getAttribute('title') || this.options.title);
     this._addTitleContent(this.reference, title, this.options.html, titleNode);
     this.options.title = title;

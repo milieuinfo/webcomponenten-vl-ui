@@ -68,7 +68,7 @@
       border: 0; }
   .vl-action-group--bordered .vl-link:not(:last-child) {
     margin-right: 1.4rem; }
-  @media screen and (min-width: 1023.1px) {
+  @media screen and (min-width: 1023px) {
     .vl-action-group--collapse--l {
       flex-direction: column;
       align-items: flex-start; }

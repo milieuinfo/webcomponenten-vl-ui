@@ -1502,11 +1502,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1340
+              "column": 1322
             },
             "end": {
               "line": 0,
-              "column": 1422
+              "column": 1404
             }
           },
           "metadata": {
@@ -1523,11 +1523,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1422
+              "column": 1404
             },
             "end": {
               "line": 0,
-              "column": 1488
+              "column": 1470
             }
           },
           "metadata": {
@@ -1544,11 +1544,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1488
+              "column": 1470
             },
             "end": {
               "line": 0,
-              "column": 1577
+              "column": 1559
             }
           },
           "metadata": {
@@ -1565,11 +1565,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1577
+              "column": 1559
             },
             "end": {
               "line": 0,
-              "column": 1653
+              "column": 1635
             }
           },
           "metadata": {
@@ -1586,11 +1586,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1653
+              "column": 1635
             },
             "end": {
               "line": 0,
-              "column": 1731
+              "column": 1713
             }
           },
           "metadata": {
@@ -1607,11 +1607,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1731
+              "column": 1713
             },
             "end": {
               "line": 0,
-              "column": 1809
+              "column": 1791
             }
           },
           "metadata": {
@@ -1629,11 +1629,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1809
+              "column": 1791
             },
             "end": {
               "line": 0,
-              "column": 1970
+              "column": 1952
             }
           },
           "metadata": {},
@@ -1649,11 +1649,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1970
+              "column": 1952
             },
             "end": {
               "line": 0,
-              "column": 2019
+              "column": 2001
             }
           },
           "metadata": {},
@@ -1669,11 +1669,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2019
+              "column": 2001
             },
             "end": {
               "line": 0,
-              "column": 2070
+              "column": 2052
             }
           },
           "metadata": {},
@@ -1689,11 +1689,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2070
+              "column": 2052
             },
             "end": {
               "line": 0,
-              "column": 2123
+              "column": 2105
             }
           },
           "metadata": {},
@@ -1709,11 +1709,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2123
+              "column": 2105
             },
             "end": {
               "line": 0,
-              "column": 2176
+              "column": 2158
             }
           },
           "metadata": {},
@@ -1729,11 +1729,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2176
+              "column": 2158
             },
             "end": {
               "line": 0,
-              "column": 2220
+              "column": 2202
             }
           },
           "metadata": {},
@@ -1746,11 +1746,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2220
+              "column": 2202
             },
             "end": {
               "line": 0,
-              "column": 2286
+              "column": 2268
             }
           },
           "metadata": {},
@@ -1773,11 +1773,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2286
+              "column": 2268
             },
             "end": {
               "line": 0,
-              "column": 2455
+              "column": 2437
             }
           },
           "metadata": {},
@@ -1800,11 +1800,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2455
+              "column": 2437
             },
             "end": {
               "line": 0,
-              "column": 2626
+              "column": 2608
             }
           },
           "metadata": {},
@@ -1827,11 +1827,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2626
+              "column": 2608
             },
             "end": {
               "line": 0,
-              "column": 2809
+              "column": 2791
             }
           },
           "metadata": {},
@@ -1847,11 +1847,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 516
+          "column": 498
         },
         "end": {
           "line": 0,
-          "column": 2810
+          "column": 2792
         }
       },
       "privacy": "public",
@@ -4282,11 +4282,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 31993
+              "column": 31991
             },
             "end": {
               "line": 0,
-              "column": 32024
+              "column": 32022
             }
           },
           "metadata": {
@@ -4303,11 +4303,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32051
+              "column": 32049
             },
             "end": {
               "line": 0,
-              "column": 32102
+              "column": 32100
             }
           },
           "metadata": {
@@ -4409,11 +4409,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32370
+              "column": 32368
             },
             "end": {
               "line": 0,
-              "column": 32499
+              "column": 32497
             }
           },
           "metadata": {},
@@ -4479,11 +4479,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32102
+              "column": 32100
             },
             "end": {
               "line": 0,
-              "column": 32172
+              "column": 32170
             }
           },
           "metadata": {},
@@ -4503,11 +4503,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32172
+              "column": 32170
             },
             "end": {
               "line": 0,
-              "column": 32233
+              "column": 32231
             }
           },
           "metadata": {},
@@ -4523,11 +4523,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32233
+              "column": 32231
             },
             "end": {
               "line": 0,
-              "column": 32290
+              "column": 32288
             }
           },
           "metadata": {},
@@ -4547,11 +4547,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32290
+              "column": 32288
             },
             "end": {
               "line": 0,
-              "column": 32319
+              "column": 32317
             }
           },
           "metadata": {},
@@ -4571,11 +4571,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32319
+              "column": 32317
             },
             "end": {
               "line": 0,
-              "column": 32370
+              "column": 32368
             }
           },
           "metadata": {},
@@ -4614,7 +4614,7 @@
         },
         "end": {
           "line": 0,
-          "column": 32500
+          "column": 32498
         }
       },
       "privacy": "public",
@@ -4642,11 +4642,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32577
+              "column": 32575
             },
             "end": {
               "line": 0,
-              "column": 32649
+              "column": 32647
             }
           },
           "metadata": {
@@ -4663,11 +4663,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32649
+              "column": 32647
             },
             "end": {
               "line": 0,
-              "column": 32712
+              "column": 32710
             }
           },
           "metadata": {
@@ -4684,11 +4684,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32712
+              "column": 32710
             },
             "end": {
               "line": 0,
-              "column": 32775
+              "column": 32773
             }
           },
           "metadata": {
@@ -4705,11 +4705,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32775
+              "column": 32773
             },
             "end": {
               "line": 0,
-              "column": 32838
+              "column": 32836
             }
           },
           "metadata": {
@@ -4726,11 +4726,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32838
+              "column": 32836
             },
             "end": {
               "line": 0,
-              "column": 32962
+              "column": 32960
             }
           },
           "metadata": {
@@ -4748,11 +4748,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32532
+              "column": 32530
             },
             "end": {
               "line": 0,
-              "column": 32577
+              "column": 32575
             }
           },
           "metadata": {},
@@ -4768,11 +4768,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32962
+              "column": 32960
             },
             "end": {
               "line": 0,
-              "column": 33066
+              "column": 33064
             }
           },
           "metadata": {},
@@ -4789,11 +4789,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33066
+              "column": 33064
             },
             "end": {
               "line": 0,
-              "column": 33136
+              "column": 33134
             }
           },
           "metadata": {},
@@ -4810,11 +4810,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33136
+              "column": 33134
             },
             "end": {
               "line": 0,
-              "column": 33180
+              "column": 33178
             }
           },
           "metadata": {},
@@ -4831,11 +4831,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33180
+              "column": 33178
             },
             "end": {
               "line": 0,
-              "column": 33221
+              "column": 33219
             }
           },
           "metadata": {},
@@ -4852,11 +4852,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33221
+              "column": 33219
             },
             "end": {
               "line": 0,
-              "column": 33271
+              "column": 33269
             }
           },
           "metadata": {},
@@ -4873,11 +4873,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33271
+              "column": 33269
             },
             "end": {
               "line": 0,
-              "column": 33356
+              "column": 33354
             }
           },
           "metadata": {},
@@ -4890,11 +4890,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 32500
+          "column": 32498
         },
         "end": {
           "line": 0,
-          "column": 33357
+          "column": 33355
         }
       },
       "privacy": "public",
@@ -4922,11 +4922,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32577
+              "column": 32575
             },
             "end": {
               "line": 0,
-              "column": 32649
+              "column": 32647
             }
           },
           "metadata": {
@@ -4944,11 +4944,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32649
+              "column": 32647
             },
             "end": {
               "line": 0,
-              "column": 32712
+              "column": 32710
             }
           },
           "metadata": {
@@ -4966,11 +4966,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32712
+              "column": 32710
             },
             "end": {
               "line": 0,
-              "column": 32775
+              "column": 32773
             }
           },
           "metadata": {
@@ -4988,11 +4988,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32775
+              "column": 32773
             },
             "end": {
               "line": 0,
-              "column": 32838
+              "column": 32836
             }
           },
           "metadata": {
@@ -5010,11 +5010,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33720
+              "column": 33718
             },
             "end": {
               "line": 0,
-              "column": 34597
+              "column": 34595
             }
           },
           "metadata": {
@@ -5031,11 +5031,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33375
+              "column": 33373
             },
             "end": {
               "line": 0,
-              "column": 33422
+              "column": 33420
             }
           },
           "metadata": {
@@ -5052,11 +5052,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33422
+              "column": 33420
             },
             "end": {
               "line": 0,
-              "column": 33501
+              "column": 33499
             }
           },
           "metadata": {
@@ -5073,11 +5073,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33501
+              "column": 33499
             },
             "end": {
               "line": 0,
-              "column": 33561
+              "column": 33559
             }
           },
           "metadata": {
@@ -5094,11 +5094,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33561
+              "column": 33559
             },
             "end": {
               "line": 0,
-              "column": 33639
+              "column": 33637
             }
           },
           "metadata": {
@@ -5115,11 +5115,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33639
+              "column": 33637
             },
             "end": {
               "line": 0,
-              "column": 33720
+              "column": 33718
             }
           },
           "metadata": {
@@ -5137,11 +5137,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32532
+              "column": 32530
             },
             "end": {
               "line": 0,
-              "column": 32577
+              "column": 32575
             }
           },
           "metadata": {},
@@ -5158,11 +5158,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 32962
+              "column": 32960
             },
             "end": {
               "line": 0,
-              "column": 33066
+              "column": 33064
             }
           },
           "metadata": {},
@@ -5180,11 +5180,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33066
+              "column": 33064
             },
             "end": {
               "line": 0,
-              "column": 33136
+              "column": 33134
             }
           },
           "metadata": {},
@@ -5202,11 +5202,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33136
+              "column": 33134
             },
             "end": {
               "line": 0,
-              "column": 33180
+              "column": 33178
             }
           },
           "metadata": {},
@@ -5224,11 +5224,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33180
+              "column": 33178
             },
             "end": {
               "line": 0,
-              "column": 33221
+              "column": 33219
             }
           },
           "metadata": {},
@@ -5246,11 +5246,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33221
+              "column": 33219
             },
             "end": {
               "line": 0,
-              "column": 33271
+              "column": 33269
             }
           },
           "metadata": {},
@@ -5268,11 +5268,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 33271
+              "column": 33269
             },
             "end": {
               "line": 0,
-              "column": 33356
+              "column": 33354
             }
           },
           "metadata": {},
@@ -5286,11 +5286,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 33357
+          "column": 33355
         },
         "end": {
           "line": 0,
-          "column": 34598
+          "column": 34596
         }
       },
       "privacy": "public",
@@ -5318,11 +5318,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 34990
+              "column": 34988
             },
             "end": {
               "line": 0,
-              "column": 35034
+              "column": 35032
             }
           },
           "metadata": {
@@ -5339,11 +5339,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35034
+              "column": 35032
             },
             "end": {
               "line": 0,
-              "column": 35083
+              "column": 35081
             }
           },
           "metadata": {
@@ -5360,11 +5360,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35083
+              "column": 35081
             },
             "end": {
               "line": 0,
-              "column": 35132
+              "column": 35130
             }
           },
           "metadata": {
@@ -5381,11 +5381,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35132
+              "column": 35130
             },
             "end": {
               "line": 0,
-              "column": 35197
+              "column": 35195
             }
           },
           "metadata": {
@@ -5402,11 +5402,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35197
+              "column": 35195
             },
             "end": {
               "line": 0,
-              "column": 35265
+              "column": 35263
             }
           },
           "metadata": {
@@ -5424,11 +5424,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 34908
+              "column": 34906
             },
             "end": {
               "line": 0,
-              "column": 34990
+              "column": 34988
             }
           },
           "metadata": {},
@@ -5444,11 +5444,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35265
+              "column": 35263
             },
             "end": {
               "line": 0,
-              "column": 35630
+              "column": 35628
             }
           },
           "metadata": {},
@@ -5464,11 +5464,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 35630
+              "column": 35628
             },
             "end": {
               "line": 0,
-              "column": 36189
+              "column": 36187
             }
           },
           "metadata": {},
@@ -5484,11 +5484,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 36189
+              "column": 36187
             },
             "end": {
               "line": 0,
-              "column": 36399
+              "column": 36397
             }
           },
           "metadata": {},
@@ -5504,11 +5504,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 34598
+          "column": 34596
         },
         "end": {
           "line": 0,
-          "column": 36400
+          "column": 36398
         }
       },
       "privacy": "public",
@@ -19861,6 +19861,25 @@
       "path": "vl-textarea.src.js",
       "properties": [
         {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 3377
+            },
+            "end": {
+              "line": 0,
+              "column": 3404
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "NativeVlElement"
+        },
+        {
           "name": "_classPrefix",
           "type": "?",
           "description": "",
@@ -19876,25 +19895,6 @@
             }
           },
           "metadata": {}
-        },
-        {
-          "name": "_element",
-          "type": "Element",
-          "description": "DOM element getter.",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 257,
-              "column": 8
-            },
-            "end": {
-              "line": 259,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "inheritedFrom": "NativeVlElement"
         },
         {
           "name": "_stylePath",
@@ -19915,254 +19915,6 @@
         }
       ],
       "methods": [
-        {
-          "name": "attributeChangedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 80,
-              "column": 8
-            },
-            "end": {
-              "line": 103,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "attr"
-            },
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "_template",
-          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 136,
-              "column": 8
-            },
-            "end": {
-              "line": 140,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "html",
-              "type": "Literal",
-              "description": "HTML literal"
-            }
-          ],
-          "return": {
-            "type": "HTMLTemplateElement"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "_changeClass",
-          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 152,
-              "column": 8
-            },
-            "end": {
-              "line": 160,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "element",
-              "type": "Element",
-              "description": "HTML element"
-            },
-            {
-              "name": "oldValue",
-              "type": "Object",
-              "description": "oude waarde"
-            },
-            {
-              "name": "newValue",
-              "type": "Object",
-              "description": "nieuwe waarde"
-            },
-            {
-              "name": "classPrefix",
-              "type": "String",
-              "description": "class prefix"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "_toggleClass",
-          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 171,
-              "column": 8
-            },
-            "end": {
-              "line": 177,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "element",
-              "type": "Element",
-              "description": "HTML element"
-            },
-            {
-              "name": "value",
-              "type": "Object",
-              "description": "attribuut waarde"
-            },
-            {
-              "name": "clazz"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "_addStyleLink",
-          "description": "Voegt een stijl link tag toe aan de header",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 185,
-              "column": 8
-            },
-            "end": {
-              "line": 190,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "__shadow",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 195,
-              "column": 8
-            },
-            "end": {
-              "line": 198,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "html"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "__changeAttribute",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 203,
-              "column": 8
-            },
-            "end": {
-              "line": 211,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "element"
-            },
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            },
-            {
-              "name": "attribute"
-            },
-            {
-              "name": "classPrefix"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlElement"
-        },
-        {
-          "name": "__generateStyleLink",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "node_modules/vl-ui-core/vl-core.src.js",
-            "start": {
-              "line": 216,
-              "column": 8
-            },
-            "end": {
-              "line": 227,
-              "column": 9
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "id"
-            }
-          ],
-          "inheritedFrom": "VlElement"
-        },
         {
           "name": "connectedCallback",
           "description": "",
@@ -21105,6 +20857,842 @@
       },
       "privacy": "public",
       "name": "VlToaster"
+    },
+    {
+      "description": "VlUpload",
+      "summary": "",
+      "path": "vl-upload.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1802
+            },
+            "end": {
+              "line": 0,
+              "column": 1889
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_upload",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 76,
+              "column": 2
+            },
+            "end": {
+              "line": 78,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 2
+            },
+            "end": {
+              "line": 82,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dropzone",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 84,
+              "column": 2
+            },
+            "end": {
+              "line": 87,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "acceptedFiles",
+          "type": "Array.<File>",
+          "description": "Haal de geaccepteerde bestanden (zonder error) op, die toegevoegd zijn aan de dropzone.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 93,
+              "column": 2
+            },
+            "end": {
+              "line": 95,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "rejectedFiles",
+          "type": "Array.<File>",
+          "description": "Haal de niet-geaccepteerde bestanden (met error) op, die toegevoegd zijn aan de dropzone.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 101,
+              "column": 2
+            },
+            "end": {
+              "line": 103,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "files",
+          "type": "Array.<File>",
+          "description": "Haal alle bestanden op die toegevoegd zijn aan de dropzone.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 109,
+              "column": 2
+            },
+            "end": {
+              "line": 111,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_templates",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 113,
+              "column": 2
+            },
+            "end": {
+              "line": 163,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_prefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 165,
+              "column": 2
+            },
+            "end": {
+              "line": 167,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 841
+            },
+            "end": {
+              "line": 0,
+              "column": 1740
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 1889
+            },
+            "end": {
+              "line": 0,
+              "column": 2003
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2003
+            },
+            "end": {
+              "line": 0,
+              "column": 2287
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2287
+            },
+            "end": {
+              "line": 0,
+              "column": 2418
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "clazz"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_addStyleLink",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2418
+            },
+            "end": {
+              "line": 0,
+              "column": 2572
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__shadow",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2572
+            },
+            "end": {
+              "line": 0,
+              "column": 2661
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2661
+            },
+            "end": {
+              "line": 0,
+              "column": 2937
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__generateStyleLink",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/vl-core.js",
+            "start": {
+              "line": 0,
+              "column": 2937
+            },
+            "end": {
+              "line": 0,
+              "column": 3221
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "id"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 72,
+              "column": 2
+            },
+            "end": {
+              "line": 74,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "dress",
+          "description": "Initialiseer de modal config.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 173,
+              "column": 2
+            },
+            "end": {
+              "line": 184,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "desc": "void"
+          }
+        },
+        {
+          "name": "upload",
+          "description": "Handmatig de upload aanroepen. Indien een url gegeven is, laad op naar die url.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 191,
+              "column": 2
+            },
+            "end": {
+              "line": 196,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "url"
+            }
+          ],
+          "return": {
+            "desc": "void"
+          }
+        },
+        {
+          "name": "clear",
+          "description": "Verwijder alle files in de dropzone.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 202,
+              "column": 2
+            },
+            "end": {
+              "line": 204,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "desc": "void"
+          }
+        },
+        {
+          "name": "on",
+          "description": "Wrapper om alle events te kunnen catchen van de upload (zoals vl.upload.hook.fileChange alsook de events van [DropZoneJs]{@link https://www.dropzonejs.com/#event-list})",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 212,
+              "column": 2
+            },
+            "end": {
+              "line": 214,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            },
+            {
+              "name": "callback"
+            }
+          ],
+          "return": {
+            "desc": "void"
+          }
+        },
+        {
+          "name": "_urlChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 216,
+              "column": 2
+            },
+            "end": {
+              "line": 218,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_input_nameChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 220,
+              "column": 2
+            },
+            "end": {
+              "line": 222,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_filesizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 224,
+              "column": 2
+            },
+            "end": {
+              "line": 227,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_accepted_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 229,
+              "column": 2
+            },
+            "end": {
+              "line": 232,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_maxfilesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 234,
+              "column": 2
+            },
+            "end": {
+              "line": 237,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 239,
+              "column": 2
+            },
+            "end": {
+              "line": 241,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 243,
+              "column": 2
+            },
+            "end": {
+              "line": 245,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_accepted_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 247,
+              "column": 2
+            },
+            "end": {
+              "line": 250,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_full_body_dropChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 252,
+              "column": 2
+            },
+            "end": {
+              "line": 254,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_autoprocessChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 256,
+              "column": 2
+            },
+            "end": {
+              "line": 258,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_disallow_duplicatesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 260,
+              "column": 2
+            },
+            "end": {
+              "line": 262,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 44,
+          "column": 7
+        },
+        "end": {
+          "line": 264,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlUpload"
     },
     {
       "description": "",
@@ -25934,6 +26522,591 @@
       },
       "privacy": "public",
       "name": "VlToaster"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-upload.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 869
+            },
+            "end": {
+              "line": 0,
+              "column": 908
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_upload",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1317
+            },
+            "end": {
+              "line": 0,
+              "column": 1352
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1352
+            },
+            "end": {
+              "line": 0,
+              "column": 1419
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dropzone",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1419
+            },
+            "end": {
+              "line": 0,
+              "column": 1510
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "acceptedFiles",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1510
+            },
+            "end": {
+              "line": 0,
+              "column": 1571
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "rejectedFiles",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1571
+            },
+            "end": {
+              "line": 0,
+              "column": 1632
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "files",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1632
+            },
+            "end": {
+              "line": 0,
+              "column": 1672
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_templates",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1672
+            },
+            "end": {
+              "line": 0,
+              "column": 3635
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_prefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3635
+            },
+            "end": {
+              "line": 0,
+              "column": 3673
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1284
+            },
+            "end": {
+              "line": 0,
+              "column": 1317
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "dress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3673
+            },
+            "end": {
+              "line": 0,
+              "column": 3862
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "upload",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3862
+            },
+            "end": {
+              "line": 0,
+              "column": 3936
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "clear",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3936
+            },
+            "end": {
+              "line": 0,
+              "column": 3976
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "on",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3976
+            },
+            "end": {
+              "line": 0,
+              "column": 4020
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_urlChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4020
+            },
+            "end": {
+              "line": 0,
+              "column": 4094
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_input_nameChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4094
+            },
+            "end": {
+              "line": 0,
+              "column": 4182
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_filesizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4182
+            },
+            "end": {
+              "line": 0,
+              "column": 4294
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_accepted_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4294
+            },
+            "end": {
+              "line": 0,
+              "column": 4418
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_maxfilesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4418
+            },
+            "end": {
+              "line": 0,
+              "column": 4530
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4530
+            },
+            "end": {
+              "line": 0,
+              "column": 4616
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4616
+            },
+            "end": {
+              "line": 0,
+              "column": 4700
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_accepted_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4700
+            },
+            "end": {
+              "line": 0,
+              "column": 4835
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_full_body_dropChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4835
+            },
+            "end": {
+              "line": 0,
+              "column": 4932
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_autoprocessChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4932
+            },
+            "end": {
+              "line": 0,
+              "column": 5022
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_disallow_duplicatesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 5022
+            },
+            "end": {
+              "line": 0,
+              "column": 5128
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            },
+            {
+              "name": "t"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 529
+        },
+        "end": {
+          "line": 0,
+          "column": 5129
+        }
+      },
+      "privacy": "public",
+      "name": "VlUpload"
     }
   ]
 }

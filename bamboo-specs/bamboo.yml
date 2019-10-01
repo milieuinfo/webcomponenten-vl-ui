@@ -3,7 +3,7 @@ version: 2
 plan:
   project-key: WEBCO
   key: VLUI
-  name: webcomponent-vl-ui
+  name: webcomponenten-vl-ui
 
 triggers:
   - polling: 130

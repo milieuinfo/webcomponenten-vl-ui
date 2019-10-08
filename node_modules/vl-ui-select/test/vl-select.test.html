@@ -19,7 +19,7 @@
   suite('vl-select', () => {
     let field, choices;
 
-    setup(() => {
+    setup((done) => {
       field = fixture('vl-select-fixture');
       choices = {
         element: field,
@@ -40,6 +40,8 @@
           }
         }
       };
+
+      customElements.whenDefined('vl-select').then(done);
     });
 
     test('heeft de vl-select class', () => {

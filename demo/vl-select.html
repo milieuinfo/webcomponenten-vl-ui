@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <script type="module" src="demo.js"></script>
   <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>
   <script type="module" src="../vl-select.js"></script>
 </head>
 
@@ -268,7 +269,7 @@
         &lt;option placeholder&gt;Selecteer item&lt;/option&gt;
       &lt;/select&gt;
 
-      &lt;button onclick="laadDynamisch()" type="button"&gt;Activeer dynamische data&lt;/button&gt;
+      &lt;button is="vl-button" onclick="laadDynamisch()" type="button"&gt;Activeer dynamische data&lt;/button&gt;
 
       &lt;script type="text/javascript"&gt;
         function laadDynamisch() {
@@ -292,7 +293,7 @@
       <option placeholder>Selecteer item</option>
     </select>
 
-    <button onclick="laadDynamisch()" type="button">Activeer dynamische data</button>
+    <button is="vl-button" onclick="laadDynamisch()" type="button">Activeer dynamische data</button>
 
     <script type="text/javascript">
       function laadDynamisch() {
@@ -322,12 +323,12 @@
         &lt;option value="Frankrijk"&gt;Frankrijk&lt;/option&gt;
       &lt;/select&gt;
   
-      &lt;button onclick="methodSelectDress()" type="button"&gt;dress()&lt;/button&gt;
-      &lt;button onclick="methodSelectUndress()" type="button"&gt;undress()&lt;/button&gt;
-      &lt;button onclick="methodSelectEnable()" type="button"&gt;enable()&lt;/button&gt;
-      &lt;button onclick="methodSelectDisable()" type="button"&gt;disable()&lt;/button&gt;
-      &lt;button onclick="methodSelectSetValueByChoice()" type="button"&gt;setValueByChoice('Duitsland')&lt;/button&gt;
-      &lt;button onclick="methodSelectRemoveActive()" type="button"&gt;removeActive()&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectDress()" type="button"&gt;dress&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectUndress()" type="button"&gt;undress&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectEnable()" type="button"&gt;enable&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectDisable()" type="button"&gt;disable&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectSetValueByChoice()" type="button"&gt;set value by choice&lt;/button&gt;
+      &lt;button is="vl-button" onclick="methodSelectRemoveActive()" type="button"&gt;remove active&lt;/button&gt;
   
       &lt;script type="text/javascript"&gt;
         function methodSelectDress() {
@@ -365,12 +366,12 @@
       <option value="Frankrijk">Frankrijk</option>
     </select>
 
-    <button onclick="methodSelectDress()" type="button">dress()</button>
-    <button onclick="methodSelectUndress()" type="button">undress()</button>
-    <button onclick="methodSelectEnable()" type="button">enable()</button>
-    <button onclick="methodSelectDisable()" type="button">disable()</button>
-    <button onclick="methodSelectSetValueByChoice()" type="button">setValueByChoice('Duitsland')</button>
-    <button onclick="methodSelectRemoveActive()" type="button">removeActive()</button>
+    <button is="vl-button" onclick="methodSelectDress()" type="button">dress</button>
+    <button is="vl-button" onclick="methodSelectUndress()" type="button">undress</button>
+    <button is="vl-button" onclick="methodSelectEnable()" type="button">enable</button>
+    <button is="vl-button" onclick="methodSelectDisable()" type="button">disable</button>
+    <button is="vl-button" onclick="methodSelectSetValueByChoice()" type="button">set value by choice</button>
+    <button is="vl-button" onclick="methodSelectRemoveActive()" type="button">remove active</button>
 
     <script type="text/javascript">
       function methodSelectDress() {

@@ -1,22 +1,11 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define, awaitScript, awaitUntil } from '/node_modules/vl-ui-core/vl-core.src.js';
 
-(() => {
-  loadScript('util.js', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js', () => {
-    loadScript('core.js', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js', () => {
-      loadScript('select.js', '../dist/select.js');
-    });
-  });
-
-  function loadScript(id, src, onload) {
-    if (!document.head.querySelector('#' + id)) {
-      let script = document.createElement('script');
-      script.setAttribute('id', id);
-      script.setAttribute('src', src);
-      script.onload = onload;
-      document.head.appendChild(script);
-    }
-  }
-})();
+Promise.all([
+  awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
+  awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
+  awaitScript('select', '../dist/select.js'),
+  awaitUntil(() => window.vl && window.vl.select)]
+).then(() => define('vl-select', VlSelect, {extends: 'select'}));
 
  /**
  * VlSelect
@@ -104,15 +93,9 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    * @param params object with callbackFn: function(select) with return value the items for `setChoices`
    */
   dress(params) {
-    (async () => {
-      while(!window.vl || !window.vl.select) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-      
-      if (!this._dressed) {
-        vl.select.dress(this, params);
-      }
-    })();
+    if (!this._dressed) {
+      vl.select.dress(this, params);
+    }
   }
 
   /**
@@ -160,5 +143,3 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     vl.select.setValueByChoice(this, value);
   }
 }
-
-customElements.define('vl-select', VlSelect, {extends: 'select'});

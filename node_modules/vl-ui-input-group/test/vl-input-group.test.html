@@ -19,9 +19,9 @@
 
 <script>
   suite('<vl-input-group>', () => {
-    test('heeft een div met de vl-input-group class', () => {
+    test('heeft de vl-input-group class', () => {
       const group = fixture('vl-input-group-fixture');
-      assert.isTrue(group.shadowRoot.querySelector('div').classList.contains('vl-input-group'));
+      assert.isTrue(group.classList.contains('vl-input-group'));
     });
   });
 </script>

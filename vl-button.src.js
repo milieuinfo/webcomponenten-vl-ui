@@ -1,6 +1,7 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import { VlLinkElement } from "/node_modules/vl-ui-link/vl-link.js";
 import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
+import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.src.js";
 
 /**
  * VlButton
@@ -34,6 +35,9 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 
     connectedCallback() {
         this.classList.add('vl-button');
+        setTimeout(() => {
+            this._setIconClass();
+        });
     }
 
     get _classPrefix() {
@@ -42,6 +46,22 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 
     get _stylePath() {
         return '../style.css';
+    }
+
+    _setIconClass() {
+        const icon = this.querySelector('[is="vl-icon"]');
+        if (icon) {
+            let suffix = '';
+            suffix += icon.hasAttribute('before') ? '-before' : '';
+            suffix += icon.hasAttribute('after') ? '-after' : '';
+            this.classList.add(this._classPrefix + 'icon' + suffix);
+            icon.classList.add('vl-button__icon');
+            if (suffix) {
+                icon.classList.add('vl-button__icon-' + suffix);
+            }
+            icon.classList.remove('vl-icon--before');
+            icon.classList.remove('vl-icon--after');
+        }
     }
 }
 
@@ -59,7 +79,11 @@ export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElemen
     }
 }
 
+export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
+    
+} 
 
 define('vl-button', VlButton, {extends: 'button'});
 define('vl-button-link', VlButtonLink, {extends: 'button'});
 define('vl-button-pill', VlButtonPill, {extends: 'button'});
+define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});

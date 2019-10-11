@@ -19,12 +19,14 @@
     </p>
 
     <div>
-      <h2>Input group met tekst add-on links</h2>
+      <h2>Input group met input-addon links</h2>
       <pre>
         <code class="line-numbers language-markup">
           &lt;label is="vl-form-message" for="demo-1"&gt;Gemeente&lt;/label&gt;
           &lt;vl-input-group&gt;
-            &lt;button is="vl-button"&gt;Locatie kiezen&lt;/button&gt;
+            &lt;button is="vl-button-input-addon" type="button"&gt;
+              &lt;span is="vl-icon" icon="location"&gt;&lt;/span&gt;
+            &lt;/button&gt;
             &lt;input is="vl-input-field" type="text" id="demo-1" block&gt;
           &lt;/vl-input-group&gt;
         </code>
@@ -32,8 +34,54 @@
       <div class="demo">
         <label is="vl-form-message" for="demo-1">Gemeente</label>
         <vl-input-group>
-          <button is="vl-button">Locatie kiezen</button>
+          <button is="vl-button-input-addon" type="button">
+            <span is="vl-icon" icon="location"></span>
+          </button>
           <input is="vl-input-field" type="text" id="demo-1" block>
+        </vl-input-group>
+      </div>
+    </div>
+
+    <div>
+      <h2>Input group met input-addon rechts</h2>
+      <pre>
+        <code class="line-numbers language-markup">
+          &lt;label is="vl-form-message" for="demo-1"&gt;Gemeente&lt;/label&gt;
+          &lt;vl-input-group&gt;
+            &lt;input is="vl-input-field" type="text" id="demo-1" block&gt;
+            &lt;button is="vl-button-input-addon" type="button"&gt;
+              &lt;span is="vl-icon" icon="location"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/vl-input-group&gt;
+        </code>
+      </pre>
+      <div class="demo">
+        <label is="vl-form-message" for="demo-1">Gemeente</label>
+        <vl-input-group>
+          <input is="vl-input-field" type="text" id="demo-1" block>
+          <button is="vl-button-input-addon" type="button">
+            <span is="vl-icon" icon="location"></span>
+          </button>
+        </vl-input-group>
+      </div>
+    </div>
+
+    <div>
+      <h2>Input group met tekst add-on links</h2>
+      <pre>
+        <code class="line-numbers language-markup">
+          &lt;label is="vl-form-message" for="demo-2"&gt;Gemeente&lt;/label&gt;
+          &lt;vl-input-group&gt;
+            &lt;button is="vl-button" type="button"&gt;Locatie kiezen&lt;/button&gt;
+            &lt;input is="vl-input-field" type="text" id="demo-2" block&gt;
+          &lt;/vl-input-group&gt;
+        </code>
+      </pre>
+      <div class="demo">
+        <label is="vl-form-message" for="demo-2">Gemeente</label>
+        <vl-input-group>
+          <button is="vl-button" type="button">Locatie kiezen</button>
+          <input is="vl-input-field" type="text" id="demo-2" block>
         </vl-input-group>
       </div>
     </div>
@@ -42,18 +90,42 @@
       <h2>Input group met tekst add-on rechts</h2>
       <pre>
         <code class="line-numbers language-markup">
-          &lt;label is="vl-form-message" for="demo-2"&gt;Gemeente&lt;/label&gt;
+          &lt;label is="vl-form-message" for="demo-3"&gt;Gemeente&lt;/label&gt;
           &lt;vl-input-group&gt;
-            &lt;input is="vl-input-field" type="text" id="demo-2" block&gt;
-            &lt;button is="vl-button"&gt;&lt;/button&gt;
+            &lt;input is="vl-input-field" type="text" id="demo-3" block&gt;
+            &lt;button is="vl-button" type="button"&gt;&lt;/button&gt;
           &lt;/vl-input-group&gt;
         </code>
       </pre>
       <div class="demo">
-        <label is="vl-form-message" for="demo-2">Gemeente</label>
+        <label is="vl-form-message" for="demo-3">Gemeente</label>
         <vl-input-group>
-          <input is="vl-input-field" type="text" id="demo-2" block>
-          <button is="vl-button">Locatie kiezen</span></button>
+          <input is="vl-input-field" type="text" id="demo-3" block>
+          <button is="vl-button" type="button">Locatie kiezen</span></button>
+        </vl-input-group>
+      </div>
+    </div>
+
+    <div>
+      <h2>Input group met button input-addon links</h2>
+      <pre>
+        <code class="line-numbers language-markup">
+          &lt;label is="vl-form-message" for="demo-1"&gt;Gemeente&lt;/label&gt;
+          &lt;vl-input-group&gt;
+            &lt;button is="vl-button-input-addon" type="button"&gt;
+              &lt;span is="vl-icon" icon="location"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;input is="vl-input-field" type="text" id="demo-1" block&gt;
+          &lt;/vl-input-group&gt;
+        </code>
+      </pre>
+      <div class="demo">
+        <label is="vl-form-message" for="demo-1">Gemeente</label>
+        <vl-input-group>
+          <button is="vl-button" type="button">
+            <span is="vl-icon" icon="location"></span>
+          </button>
+          <input is="vl-input-field" type="text" id="demo-1" block>
         </vl-input-group>
       </div>
     </div>

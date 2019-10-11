@@ -2,383 +2,6 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "VlAccordion",
-      "summary": "",
-      "path": "vl-accordion.src.js",
-      "properties": [
-        {
-          "name": "_accordionElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 62,
-              "column": 4
-            },
-            "end": {
-              "line": 64,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_buttonElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 66,
-              "column": 4
-            },
-            "end": {
-              "line": 68,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_titleElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 70,
-              "column": 4
-            },
-            "end": {
-              "line": 72,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_openToggleTextAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 74,
-              "column": 4
-            },
-            "end": {
-              "line": 76,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_closeToggleTextAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 78,
-              "column": 4
-            },
-            "end": {
-              "line": 80,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_dressedAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 82,
-              "column": 4
-            },
-            "end": {
-              "line": 84,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "dress",
-          "description": "Activeer de accordion functionaliteit.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 91,
-              "column": 4
-            },
-            "end": {
-              "line": 100,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "open",
-          "description": "Opent de accordion.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 107,
-              "column": 4
-            },
-            "end": {
-              "line": 109,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "close",
-          "description": "Sluit de accordion.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 116,
-              "column": 4
-            },
-            "end": {
-              "line": 118,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "toggle",
-          "description": "Opent of sluit de accordion afhankelijk van de huidige status (open of gesloten) van de accordion.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 125,
-              "column": 4
-            },
-            "end": {
-              "line": 127,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 129,
-              "column": 4
-            },
-            "end": {
-              "line": 132,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_isDressed",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 134,
-              "column": 4
-            },
-            "end": {
-              "line": 136,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 138,
-              "column": 4
-            },
-            "end": {
-              "line": 140,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_open_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 142,
-              "column": 4
-            },
-            "end": {
-              "line": 145,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_close_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 147,
-              "column": 4
-            },
-            "end": {
-              "line": 150,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__setClasses",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 152,
-              "column": 4
-            },
-            "end": {
-              "line": 157,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 36,
-          "column": 7
-        },
-        "end": {
-          "line": 158,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlAccordion",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-accordion"
-    },
-    {
       "description": "VlTooltip",
       "summary": "",
       "path": "vl-tooltip.src.js",
@@ -625,383 +248,6 @@
       },
       "slots": [],
       "tagname": "vl-tooltip"
-    },
-    {
-      "description": "",
-      "summary": "",
-      "path": "vl-accordion.js",
-      "properties": [
-        {
-          "name": "_accordionElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1322
-            },
-            "end": {
-              "line": 0,
-              "column": 1404
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_buttonElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1404
-            },
-            "end": {
-              "line": 0,
-              "column": 1470
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_titleElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1470
-            },
-            "end": {
-              "line": 0,
-              "column": 1559
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_openToggleTextAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1559
-            },
-            "end": {
-              "line": 0,
-              "column": 1635
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_closeToggleTextAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1635
-            },
-            "end": {
-              "line": 0,
-              "column": 1713
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_dressedAttribute",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1713
-            },
-            "end": {
-              "line": 0,
-              "column": 1791
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "dress",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1791
-            },
-            "end": {
-              "line": 0,
-              "column": 1952
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "open",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 1952
-            },
-            "end": {
-              "line": 0,
-              "column": 2001
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "close",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2001
-            },
-            "end": {
-              "line": 0,
-              "column": 2052
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "toggle",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2052
-            },
-            "end": {
-              "line": 0,
-              "column": 2105
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2105
-            },
-            "end": {
-              "line": 0,
-              "column": 2158
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_isDressed",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2158
-            },
-            "end": {
-              "line": 0,
-              "column": 2202
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2202
-            },
-            "end": {
-              "line": 0,
-              "column": 2268
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "t"
-            },
-            {
-              "name": "e"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_open_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2268
-            },
-            "end": {
-              "line": 0,
-              "column": 2437
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "t"
-            },
-            {
-              "name": "e"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_close_toggle_textChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2437
-            },
-            "end": {
-              "line": 0,
-              "column": 2608
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "t"
-            },
-            {
-              "name": "e"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__setClasses",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 2608
-            },
-            "end": {
-              "line": 0,
-              "column": 2791
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 0,
-          "column": 498
-        },
-        "end": {
-          "line": 0,
-          "column": 2792
-        }
-      },
-      "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "VlAccordion",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-accordion"
     },
     {
       "description": "",
@@ -5243,6 +4489,351 @@
   ],
   "classes": [
     {
+      "description": "VlAccordion",
+      "summary": "",
+      "path": "vl-accordion.src.js",
+      "properties": [
+        {
+          "name": "_accordionElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 4
+            },
+            "end": {
+              "line": 54,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_buttonElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 4
+            },
+            "end": {
+              "line": 58,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_titleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 4
+            },
+            "end": {
+              "line": 62,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_openToggleTextAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 66,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_closeToggleTextAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressedAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 72,
+              "column": 4
+            },
+            "end": {
+              "line": 74,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "dress",
+          "description": "Activeer de accordion functionaliteit.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 81,
+              "column": 4
+            },
+            "end": {
+              "line": 85,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "open",
+          "description": "Opent de accordion.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 92,
+              "column": 4
+            },
+            "end": {
+              "line": 94,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "close",
+          "description": "Sluit de accordion.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 101,
+              "column": 4
+            },
+            "end": {
+              "line": 103,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "toggle",
+          "description": "Opent of sluit de accordion afhankelijk van de huidige status (open of gesloten) van de accordion.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 110,
+              "column": 4
+            },
+            "end": {
+              "line": 112,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 114,
+              "column": 4
+            },
+            "end": {
+              "line": 117,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_isDressed",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 119,
+              "column": 4
+            },
+            "end": {
+              "line": 121,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 4
+            },
+            "end": {
+              "line": 125,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_open_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 127,
+              "column": 4
+            },
+            "end": {
+              "line": 130,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_close_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 4
+            },
+            "end": {
+              "line": 135,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__setClasses",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 137,
+              "column": 4
+            },
+            "end": {
+              "line": 142,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 26,
+          "column": 7
+        },
+        "end": {
+          "line": 143,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlAccordion"
+    },
+    {
       "description": "VLActionGroup",
       "summary": "",
       "path": "vl-action-group.src.js",
@@ -5774,11 +5365,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 38,
+              "line": 42,
               "column": 4
             },
             "end": {
-              "line": 40,
+              "line": 44,
               "column": 5
             }
           },
@@ -5791,11 +5382,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 42,
+              "line": 46,
               "column": 4
             },
             "end": {
-              "line": 44,
+              "line": 48,
               "column": 5
             }
           },
@@ -5809,11 +5400,31 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 34,
+              "line": 35,
               "column": 4
             },
             "end": {
-              "line": 36,
+              "line": 40,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setIconClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 50,
+              "column": 4
+            },
+            "end": {
+              "line": 64,
               "column": 5
             }
           },
@@ -5829,11 +5440,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 25,
+          "line": 26,
           "column": 7
         },
         "end": {
-          "line": 45,
+          "line": 65,
           "column": 1
         }
       },
@@ -5852,11 +5463,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 47,
+          "line": 67,
           "column": 7
         },
         "end": {
-          "line": 47,
+          "line": 67,
           "column": 69
         }
       },
@@ -5875,11 +5486,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 76,
               "column": 4
             },
             "end": {
-              "line": 58,
+              "line": 78,
               "column": 5
             }
           },
@@ -5892,16 +5503,38 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 49,
+          "line": 69,
           "column": 7
         },
         "end": {
-          "line": 59,
+          "line": 79,
           "column": 1
         }
       },
       "privacy": "public",
       "name": "VlButtonPill"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-button.src.js",
+      "properties": [],
+      "methods": [],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 81,
+          "column": 7
+        },
+        "end": {
+          "line": 83,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "VlButtonInputAddon"
     },
     {
       "description": "VlCheckbox",
@@ -7195,29 +6828,12 @@
       "name": "VlDataTable"
     },
     {
-      "description": "vl-datepicker\n\n### Custom attributen\nAttribuut | Type | Toelichting | Default en mogelijke waarden\n----------|------|-------------|-----------------------------\ntype | {string} | bepaalt het soort picker | 'range', 'time' en 'date-time'\nformat | {string} | bepaalt het formaat van de datum/tijd waarde | default 'd.m.Y' (-> 31.12.2019)\nvisual-format | {string} | bepaalt het visueel formaat van de datum/tijd waarde\nselected-date | {string} | een vooringestelde datum | conform het ingestelde format (bv. '03-10-2019') of 'today' voor vandaag\nmin-date | {string} | een minimum datum | conform het ingestelde format (bv. '01-01-2019') of 'today' voor vandaag\nmax-date | {string} | een maximum datum | conform het ingestelde format (bv. '31-12-2019') of 'today' voor vandaag\nmin-time | {string} | conform het ingestelde format (bv. 09:00)\nmax-time | {string} | conform het ingestelde format (bv. 17:00)\nam-pm | {boolean} | optie om de 12-uurs AM/PM timepicker te gebruiken ipv de (standaard) 24-uurs timepicker | [geen waarde]",
+      "description": "VlDatepicker",
       "summary": "",
       "path": "vl-datepicker.src.js",
       "properties": [
         {
           "name": "_stylePath",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 70,
-              "column": 4
-            },
-            "end": {
-              "line": 72,
-              "column": 5
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_attributePrefix",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -7232,6 +6848,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_attributePrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 78,
+              "column": 4
+            },
+            "end": {
+              "line": 80,
+              "column": 5
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -7241,11 +6874,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 52,
+              "line": 56,
               "column": 4
             },
             "end": {
-              "line": 54,
+              "line": 58,
               "column": 5
             }
           },
@@ -7261,11 +6894,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 85,
               "column": 4
             },
             "end": {
-              "line": 85,
+              "line": 89,
               "column": 5
             }
           },
@@ -7281,34 +6914,7 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 87,
-              "column": 4
-            },
-            "end": {
-              "line": 104,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_formatChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 106,
+              "line": 91,
               "column": 4
             },
             "end": {
@@ -7330,7 +6936,7 @@
           }
         },
         {
-          "name": "_visual_formatChangedCallback",
+          "name": "_formatChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7357,7 +6963,7 @@
           }
         },
         {
-          "name": "_selected_dateChangedCallback",
+          "name": "_visual_formatChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7384,7 +6990,7 @@
           }
         },
         {
-          "name": "_min_dateChangedCallback",
+          "name": "_selected_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7411,7 +7017,7 @@
           }
         },
         {
-          "name": "_max_dateChangedCallback",
+          "name": "_min_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7438,7 +7044,7 @@
           }
         },
         {
-          "name": "_min_timeChangedCallback",
+          "name": "_max_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7465,7 +7071,7 @@
           }
         },
         {
-          "name": "_max_timeChangedCallback",
+          "name": "_min_timeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7492,7 +7098,7 @@
           }
         },
         {
-          "name": "_am_pmChangedCallback",
+          "name": "_max_timeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -7502,6 +7108,33 @@
             },
             "end": {
               "line": 136,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_am_pmChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 138,
+              "column": 4
+            },
+            "end": {
+              "line": 140,
               "column": 5
             }
           },
@@ -7528,11 +7161,12 @@
           "column": 7
         },
         "end": {
-          "line": 137,
+          "line": 141,
           "column": 1
         }
       },
       "privacy": "public",
+      "superclass": "VlElement",
       "name": "VlDatepicker"
     },
     {
@@ -9258,7 +8892,28 @@
       "summary": "",
       "path": "vl-input-group.src.js",
       "properties": [],
-      "methods": [],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 23,
+              "column": 2
+            },
+            "end": {
+              "line": 25,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
@@ -9268,7 +8923,7 @@
           "column": 7
         },
         "end": {
-          "line": 24,
+          "line": 26,
           "column": 1
         }
       },
@@ -11935,11 +11590,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 74,
+              "line": 63,
               "column": 2
             },
             "end": {
-              "line": 76,
+              "line": 65,
               "column": 3
             }
           },
@@ -11952,11 +11607,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 78,
+              "line": 67,
               "column": 2
             },
             "end": {
-              "line": 80,
+              "line": 69,
               "column": 3
             }
           },
@@ -11969,11 +11624,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 82,
+              "line": 71,
               "column": 2
             },
             "end": {
-              "line": 84,
+              "line": 73,
               "column": 3
             }
           },
@@ -11986,11 +11641,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 75,
               "column": 2
             },
             "end": {
-              "line": 88,
+              "line": 77,
               "column": 3
             }
           },
@@ -12003,11 +11658,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 90,
+              "line": 79,
               "column": 2
             },
             "end": {
-              "line": 92,
+              "line": 81,
               "column": 3
             }
           },
@@ -12021,11 +11676,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 59,
               "column": 2
             },
             "end": {
-              "line": 72,
+              "line": 61,
               "column": 3
             }
           },
@@ -12041,11 +11696,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 97,
+              "line": 86,
               "column": 2
             },
             "end": {
-              "line": 107,
+              "line": 90,
               "column": 3
             }
           },
@@ -12061,11 +11716,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 112,
+              "line": 95,
               "column": 2
             },
             "end": {
-              "line": 117,
+              "line": 100,
               "column": 3
             }
           },
@@ -12081,11 +11736,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 105,
               "column": 2
             },
             "end": {
-              "line": 126,
+              "line": 109,
               "column": 3
             }
           },
@@ -12101,11 +11756,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 133,
+              "line": 116,
               "column": 2
             },
             "end": {
-              "line": 135,
+              "line": 118,
               "column": 3
             }
           },
@@ -12128,11 +11783,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 137,
+              "line": 120,
               "column": 2
             },
             "end": {
-              "line": 144,
+              "line": 127,
               "column": 3
             }
           },
@@ -12145,11 +11800,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 146,
+              "line": 129,
               "column": 2
             },
             "end": {
-              "line": 150,
+              "line": 133,
               "column": 3
             }
           },
@@ -12166,11 +11821,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 152,
+              "line": 135,
               "column": 2
             },
             "end": {
-              "line": 157,
+              "line": 140,
               "column": 3
             }
           },
@@ -12183,11 +11838,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 159,
+              "line": 142,
               "column": 2
             },
             "end": {
-              "line": 161,
+              "line": 144,
               "column": 3
             }
           },
@@ -12210,11 +11865,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 163,
+              "line": 146,
               "column": 2
             },
             "end": {
-              "line": 175,
+              "line": 158,
               "column": 3
             }
           },
@@ -12237,11 +11892,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 177,
+              "line": 160,
               "column": 2
             },
             "end": {
-              "line": 183,
+              "line": 166,
               "column": 3
             }
           },
@@ -12264,11 +11919,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 185,
+              "line": 168,
               "column": 2
             },
             "end": {
-              "line": 187,
+              "line": 170,
               "column": 3
             }
           },
@@ -12291,11 +11946,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 189,
+              "line": 172,
               "column": 2
             },
             "end": {
-              "line": 200,
+              "line": 183,
               "column": 3
             }
           },
@@ -12318,11 +11973,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 39,
+          "line": 28,
           "column": 7
         },
         "end": {
-          "line": 201,
+          "line": 184,
           "column": 1
         }
       },
@@ -13856,11 +13511,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 57,
+              "line": 44,
               "column": 2
             },
             "end": {
-              "line": 59,
+              "line": 46,
               "column": 3
             }
           },
@@ -13873,11 +13528,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 61,
+              "line": 48,
               "column": 2
             },
             "end": {
-              "line": 63,
+              "line": 50,
               "column": 3
             }
           },
@@ -13890,11 +13545,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 65,
+              "line": 52,
               "column": 2
             },
             "end": {
-              "line": 67,
+              "line": 54,
               "column": 3
             }
           },
@@ -13907,11 +13562,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 69,
+              "line": 56,
               "column": 2
             },
             "end": {
-              "line": 71,
+              "line": 58,
               "column": 3
             }
           },
@@ -13925,11 +13580,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 52,
+              "line": 39,
               "column": 2
             },
             "end": {
-              "line": 55,
+              "line": 42,
               "column": 3
             }
           },
@@ -13945,11 +13600,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 80,
+              "line": 67,
               "column": 2
             },
             "end": {
-              "line": 83,
+              "line": 70,
               "column": 3
             }
           },
@@ -13969,11 +13624,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 91,
+              "line": 78,
               "column": 2
             },
             "end": {
-              "line": 96,
+              "line": 83,
               "column": 3
             }
           },
@@ -13993,11 +13648,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 98,
+              "line": 85,
               "column": 2
             },
             "end": {
-              "line": 104,
+              "line": 91,
               "column": 3
             }
           },
@@ -14020,11 +13675,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 106,
+              "line": 93,
               "column": 2
             },
             "end": {
-              "line": 115,
+              "line": 97,
               "column": 3
             }
           },
@@ -14040,11 +13695,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 39,
+          "line": 26,
           "column": 7
         },
         "end": {
-          "line": 116,
+          "line": 98,
           "column": 1
         }
       },
@@ -14063,11 +13718,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 44,
               "column": 2
             },
             "end": {
-              "line": 58,
+              "line": 46,
               "column": 3
             }
           },
@@ -14080,11 +13735,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 76,
+              "line": 64,
               "column": 2
             },
             "end": {
-              "line": 78,
+              "line": 66,
               "column": 3
             }
           },
@@ -14097,11 +13752,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 80,
+              "line": 68,
               "column": 2
             },
             "end": {
-              "line": 82,
+              "line": 70,
               "column": 3
             }
           },
@@ -14114,11 +13769,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 84,
+              "line": 72,
               "column": 2
             },
             "end": {
-              "line": 87,
+              "line": 75,
               "column": 3
             }
           },
@@ -14131,11 +13786,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 81,
               "column": 2
             },
             "end": {
-              "line": 95,
+              "line": 83,
               "column": 3
             }
           },
@@ -14148,11 +13803,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 101,
+              "line": 89,
               "column": 2
             },
             "end": {
-              "line": 103,
+              "line": 91,
               "column": 3
             }
           },
@@ -14165,11 +13820,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 109,
+              "line": 97,
               "column": 2
             },
             "end": {
-              "line": 111,
+              "line": 99,
               "column": 3
             }
           },
@@ -14182,11 +13837,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 101,
               "column": 2
             },
             "end": {
-              "line": 163,
+              "line": 151,
               "column": 3
             }
           },
@@ -14199,11 +13854,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 165,
+              "line": 153,
               "column": 2
             },
             "end": {
-              "line": 167,
+              "line": 155,
               "column": 3
             }
           },
@@ -14217,11 +13872,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 72,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 74,
+              "line": 62,
               "column": 3
             }
           },
@@ -14237,11 +13892,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 173,
+              "line": 161,
               "column": 2
             },
             "end": {
-              "line": 184,
+              "line": 166,
               "column": 3
             }
           },
@@ -14257,11 +13912,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 191,
+              "line": 173,
               "column": 2
             },
             "end": {
-              "line": 196,
+              "line": 178,
               "column": 3
             }
           },
@@ -14281,11 +13936,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 202,
+              "line": 184,
               "column": 2
             },
             "end": {
-              "line": 204,
+              "line": 186,
               "column": 3
             }
           },
@@ -14301,11 +13956,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 212,
+              "line": 194,
               "column": 2
             },
             "end": {
-              "line": 214,
+              "line": 196,
               "column": 3
             }
           },
@@ -14328,11 +13983,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 216,
+              "line": 198,
               "column": 2
             },
             "end": {
-              "line": 218,
+              "line": 200,
               "column": 3
             }
           },
@@ -14355,11 +14010,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 220,
+              "line": 202,
               "column": 2
             },
             "end": {
-              "line": 222,
+              "line": 204,
               "column": 3
             }
           },
@@ -14382,7 +14037,115 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 224,
+              "line": 206,
+              "column": 2
+            },
+            "end": {
+              "line": 209,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_accepted_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 211,
+              "column": 2
+            },
+            "end": {
+              "line": 214,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_error_message_maxfilesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 216,
+              "column": 2
+            },
+            "end": {
+              "line": 219,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_filesChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 221,
+              "column": 2
+            },
+            "end": {
+              "line": 223,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 225,
               "column": 2
             },
             "end": {
@@ -14404,7 +14167,7 @@
           }
         },
         {
-          "name": "_error_message_accepted_filesChangedCallback",
+          "name": "_accepted_filesChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -14431,7 +14194,7 @@
           }
         },
         {
-          "name": "_error_message_maxfilesChangedCallback",
+          "name": "_full_body_dropChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -14440,115 +14203,7 @@
               "column": 2
             },
             "end": {
-              "line": 237,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_max_filesChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 239,
-              "column": 2
-            },
-            "end": {
-              "line": 241,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_max_sizeChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 243,
-              "column": 2
-            },
-            "end": {
-              "line": 245,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_accepted_filesChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 247,
-              "column": 2
-            },
-            "end": {
-              "line": 250,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_full_body_dropChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 252,
-              "column": 2
-            },
-            "end": {
-              "line": 254,
+              "line": 236,
               "column": 3
             }
           },
@@ -14571,11 +14226,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 256,
+              "line": 238,
               "column": 2
             },
             "end": {
-              "line": 258,
+              "line": 240,
               "column": 3
             }
           },
@@ -14598,11 +14253,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 260,
+              "line": 242,
               "column": 2
             },
             "end": {
-              "line": 262,
+              "line": 244,
               "column": 3
             }
           },
@@ -14625,17 +14280,361 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 44,
+          "line": 32,
           "column": 7
         },
         "end": {
-          "line": 264,
+          "line": 246,
           "column": 1
         }
       },
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlUpload"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-accordion.js",
+      "properties": [
+        {
+          "name": "_accordionElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1270
+            },
+            "end": {
+              "line": 0,
+              "column": 1352
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_buttonElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1352
+            },
+            "end": {
+              "line": 0,
+              "column": 1418
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_titleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1418
+            },
+            "end": {
+              "line": 0,
+              "column": 1507
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_openToggleTextAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1507
+            },
+            "end": {
+              "line": 0,
+              "column": 1583
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_closeToggleTextAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1583
+            },
+            "end": {
+              "line": 0,
+              "column": 1661
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressedAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1661
+            },
+            "end": {
+              "line": 0,
+              "column": 1739
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "dress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1739
+            },
+            "end": {
+              "line": 0,
+              "column": 1806
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "open",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1806
+            },
+            "end": {
+              "line": 0,
+              "column": 1855
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "close",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1855
+            },
+            "end": {
+              "line": 0,
+              "column": 1906
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "toggle",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1906
+            },
+            "end": {
+              "line": 0,
+              "column": 1959
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1959
+            },
+            "end": {
+              "line": 0,
+              "column": 2012
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_isDressed",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2012
+            },
+            "end": {
+              "line": 0,
+              "column": 2056
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2056
+            },
+            "end": {
+              "line": 0,
+              "column": 2122
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "t"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_open_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2122
+            },
+            "end": {
+              "line": 0,
+              "column": 2291
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "t"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_close_toggle_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2291
+            },
+            "end": {
+              "line": 0,
+              "column": 2462
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "t"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__setClasses",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2462
+            },
+            "end": {
+              "line": 0,
+              "column": 2645
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 446
+        },
+        "end": {
+          "line": 0,
+          "column": 2646
+        }
+      },
+      "privacy": "public",
+      "name": "VlAccordion"
     },
     {
       "description": "",
@@ -15168,11 +15167,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 487
+              "column": 613
             },
             "end": {
               "line": 0,
-              "column": 526
+              "column": 652
             }
           },
           "metadata": {}
@@ -15185,11 +15184,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 526
+              "column": 652
             },
             "end": {
               "line": 0,
-              "column": 588
+              "column": 714
             }
           },
           "metadata": {}
@@ -15203,11 +15202,31 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 435
+              "column": 522
             },
             "end": {
               "line": 0,
-              "column": 487
+              "column": 613
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setIconClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 714
+            },
+            "end": {
+              "line": 0,
+              "column": 1126
             }
           },
           "metadata": {},
@@ -15223,11 +15242,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 205
+          "column": 292
         },
         "end": {
           "line": 0,
-          "column": 589
+          "column": 1127
         }
       },
       "privacy": "public",
@@ -15245,11 +15264,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 597
+          "column": 1135
         },
         "end": {
           "line": 0,
-          "column": 658
+          "column": 1196
         }
       },
       "privacy": "public",
@@ -15268,11 +15287,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 836
+              "column": 1374
             },
             "end": {
               "line": 0,
-              "column": 898
+              "column": 1436
             }
           },
           "metadata": {}
@@ -15285,15 +15304,37 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 666
+          "column": 1204
         },
         "end": {
           "line": 0,
-          "column": 899
+          "column": 1437
         }
       },
       "privacy": "public",
       "name": "VlButtonPill"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-button.js",
+      "properties": [],
+      "methods": [],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 1445
+        },
+        "end": {
+          "line": 0,
+          "column": 1535
+        }
+      },
+      "privacy": "public",
+      "name": "VlButtonInputAddon"
     },
     {
       "description": "",
@@ -15693,11 +15734,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 185
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 251
             }
           },
@@ -15710,11 +15751,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 251
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 302
             }
           },
@@ -15728,11 +15769,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 11
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 44
             }
           },
@@ -15748,11 +15789,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 302
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 365
             }
           },
@@ -15768,11 +15809,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 365
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 828
             }
           },
@@ -15795,11 +15836,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 828
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 938
             }
           },
@@ -15822,11 +15863,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 938
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1062
             }
           },
@@ -15849,11 +15890,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1062
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1186
             }
           },
@@ -15876,11 +15917,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1186
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1300
             }
           },
@@ -15903,11 +15944,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1300
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1414
             }
           },
@@ -15930,11 +15971,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1414
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1528
             }
           },
@@ -15957,11 +15998,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1528
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1642
             }
           },
@@ -15984,11 +16025,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 13,
+              "line": 17,
               "column": 1642
             },
             "end": {
-              "line": 13,
+              "line": 17,
               "column": 1765
             }
           },
@@ -16015,7 +16056,7 @@
           "column": 652
         },
         "end": {
-          "line": 13,
+          "line": 17,
           "column": 1766
         }
       },
@@ -17737,7 +17778,28 @@
       "summary": "",
       "path": "vl-input-group.js",
       "properties": [],
-      "methods": [],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 7
+            },
+            "end": {
+              "line": 5,
+              "column": 64
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
@@ -17747,8 +17809,8 @@
           "column": 73
         },
         "end": {
-          "line": 7,
-          "column": 8
+          "line": 5,
+          "column": 65
         }
       },
       "privacy": "public",
@@ -18059,11 +18121,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2116
+              "column": 2048
             },
             "end": {
               "line": 0,
-              "column": 2182
+              "column": 2114
             }
           },
           "metadata": {}
@@ -18076,11 +18138,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2182
+              "column": 2114
             },
             "end": {
               "line": 0,
-              "column": 2260
+              "column": 2192
             }
           },
           "metadata": {}
@@ -18093,11 +18155,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2260
+              "column": 2192
             },
             "end": {
               "line": 0,
-              "column": 2344
+              "column": 2276
             }
           },
           "metadata": {}
@@ -18110,11 +18172,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2344
+              "column": 2276
             },
             "end": {
               "line": 0,
-              "column": 2429
+              "column": 2361
             }
           },
           "metadata": {}
@@ -18127,11 +18189,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2429
+              "column": 2361
             },
             "end": {
               "line": 0,
-              "column": 2495
+              "column": 2427
             }
           },
           "metadata": {}
@@ -18145,11 +18207,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2083
+              "column": 2015
             },
             "end": {
               "line": 0,
-              "column": 2116
+              "column": 2048
             }
           },
           "metadata": {},
@@ -18165,11 +18227,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2495
+              "column": 2427
             },
             "end": {
               "line": 0,
-              "column": 2644
+              "column": 2486
             }
           },
           "metadata": {},
@@ -18185,11 +18247,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2644
+              "column": 2486
             },
             "end": {
               "line": 0,
-              "column": 2777
+              "column": 2619
             }
           },
           "metadata": {},
@@ -18205,11 +18267,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2777
+              "column": 2619
             },
             "end": {
               "line": 0,
-              "column": 2864
+              "column": 2706
             }
           },
           "metadata": {},
@@ -18225,11 +18287,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2864
+              "column": 2706
             },
             "end": {
               "line": 0,
-              "column": 2914
+              "column": 2756
             }
           },
           "metadata": {},
@@ -18252,11 +18314,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2914
+              "column": 2756
             },
             "end": {
               "line": 0,
-              "column": 3248
+              "column": 3090
             }
           },
           "metadata": {},
@@ -18269,11 +18331,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3248
+              "column": 3090
             },
             "end": {
               "line": 0,
-              "column": 3381
+              "column": 3223
             }
           },
           "metadata": {},
@@ -18290,11 +18352,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3381
+              "column": 3223
             },
             "end": {
               "line": 0,
-              "column": 3623
+              "column": 3465
             }
           },
           "metadata": {},
@@ -18307,11 +18369,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3623
+              "column": 3465
             },
             "end": {
               "line": 0,
-              "column": 3672
+              "column": 3514
             }
           },
           "metadata": {},
@@ -18334,11 +18396,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3672
+              "column": 3514
             },
             "end": {
               "line": 0,
-              "column": 3859
+              "column": 3701
             }
           },
           "metadata": {},
@@ -18361,11 +18423,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3859
+              "column": 3701
             },
             "end": {
               "line": 0,
-              "column": 4049
+              "column": 3891
             }
           },
           "metadata": {},
@@ -18388,11 +18450,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4049
+              "column": 3891
             },
             "end": {
               "line": 0,
-              "column": 4118
+              "column": 3960
             }
           },
           "metadata": {},
@@ -18415,11 +18477,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4118
+              "column": 3960
             },
             "end": {
               "line": 0,
-              "column": 4461
+              "column": 4303
             }
           },
           "metadata": {},
@@ -18442,11 +18504,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 679
+          "column": 611
         },
         "end": {
           "line": 0,
-          "column": 4462
+          "column": 4304
         }
       },
       "privacy": "public",
@@ -19969,11 +20031,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 812
+              "column": 763
             },
             "end": {
               "line": 0,
-              "column": 852
+              "column": 803
             }
           },
           "metadata": {}
@@ -19986,11 +20048,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 852
+              "column": 803
             },
             "end": {
               "line": 0,
-              "column": 915
+              "column": 866
             }
           },
           "metadata": {}
@@ -20003,11 +20065,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 915
+              "column": 866
             },
             "end": {
               "line": 0,
-              "column": 965
+              "column": 916
             }
           },
           "metadata": {}
@@ -20020,11 +20082,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 965
+              "column": 916
             },
             "end": {
               "line": 0,
-              "column": 1039
+              "column": 990
             }
           },
           "metadata": {}
@@ -20038,11 +20100,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 745
+              "column": 696
             },
             "end": {
               "line": 0,
-              "column": 812
+              "column": 763
             }
           },
           "metadata": {},
@@ -20058,11 +20120,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1039
+              "column": 990
             },
             "end": {
               "line": 0,
-              "column": 1096
+              "column": 1047
             }
           },
           "metadata": {},
@@ -20082,11 +20144,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1096
+              "column": 1047
             },
             "end": {
               "line": 0,
-              "column": 1198
+              "column": 1149
             }
           },
           "metadata": {},
@@ -20106,11 +20168,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1198
+              "column": 1149
             },
             "end": {
               "line": 0,
-              "column": 1349
+              "column": 1300
             }
           },
           "metadata": {},
@@ -20133,11 +20195,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1349
+              "column": 1300
             },
             "end": {
               "line": 0,
-              "column": 1489
+              "column": 1347
             }
           },
           "metadata": {},
@@ -20153,11 +20215,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 472
+          "column": 423
         },
         "end": {
           "line": 0,
-          "column": 1490
+          "column": 1348
         }
       },
       "privacy": "public",
@@ -20176,11 +20238,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 869
+              "column": 804
             },
             "end": {
               "line": 0,
-              "column": 908
+              "column": 843
             }
           },
           "metadata": {}
@@ -20193,11 +20255,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1317
+              "column": 1252
             },
             "end": {
               "line": 0,
-              "column": 1352
+              "column": 1287
             }
           },
           "metadata": {}
@@ -20210,11 +20272,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1352
+              "column": 1287
             },
             "end": {
               "line": 0,
-              "column": 1419
+              "column": 1354
             }
           },
           "metadata": {}
@@ -20227,11 +20289,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1419
+              "column": 1354
             },
             "end": {
               "line": 0,
-              "column": 1510
+              "column": 1445
             }
           },
           "metadata": {}
@@ -20244,11 +20306,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1510
+              "column": 1445
             },
             "end": {
               "line": 0,
-              "column": 1571
+              "column": 1506
             }
           },
           "metadata": {}
@@ -20261,11 +20323,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1571
+              "column": 1506
             },
             "end": {
               "line": 0,
-              "column": 1632
+              "column": 1567
             }
           },
           "metadata": {}
@@ -20278,11 +20340,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1632
+              "column": 1567
             },
             "end": {
               "line": 0,
-              "column": 1672
+              "column": 1607
             }
           },
           "metadata": {}
@@ -20295,11 +20357,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1672
+              "column": 1607
             },
             "end": {
               "line": 0,
-              "column": 3635
+              "column": 3570
             }
           },
           "metadata": {}
@@ -20312,11 +20374,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3635
+              "column": 3570
             },
             "end": {
               "line": 0,
-              "column": 3673
+              "column": 3608
             }
           },
           "metadata": {}
@@ -20330,11 +20392,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1284
+              "column": 1219
             },
             "end": {
               "line": 0,
-              "column": 1317
+              "column": 1252
             }
           },
           "metadata": {},
@@ -20350,11 +20412,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3673
+              "column": 3608
             },
             "end": {
               "line": 0,
-              "column": 3862
+              "column": 3706
             }
           },
           "metadata": {},
@@ -20370,11 +20432,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3862
+              "column": 3706
             },
             "end": {
               "line": 0,
-              "column": 3936
+              "column": 3780
             }
           },
           "metadata": {},
@@ -20394,11 +20456,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3936
+              "column": 3780
             },
             "end": {
               "line": 0,
-              "column": 3976
+              "column": 3820
             }
           },
           "metadata": {},
@@ -20414,11 +20476,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3976
+              "column": 3820
             },
             "end": {
               "line": 0,
-              "column": 4020
+              "column": 3864
             }
           },
           "metadata": {},
@@ -20441,11 +20503,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4020
+              "column": 3864
             },
             "end": {
               "line": 0,
-              "column": 4094
+              "column": 3938
             }
           },
           "metadata": {},
@@ -20468,11 +20530,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4094
+              "column": 3938
             },
             "end": {
               "line": 0,
-              "column": 4182
+              "column": 4026
             }
           },
           "metadata": {},
@@ -20495,11 +20557,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4182
+              "column": 4026
             },
             "end": {
               "line": 0,
-              "column": 4294
+              "column": 4138
             }
           },
           "metadata": {},
@@ -20522,11 +20584,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4294
+              "column": 4138
             },
             "end": {
               "line": 0,
-              "column": 4418
+              "column": 4262
             }
           },
           "metadata": {},
@@ -20549,11 +20611,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4418
+              "column": 4262
             },
             "end": {
               "line": 0,
-              "column": 4530
+              "column": 4374
             }
           },
           "metadata": {},
@@ -20576,11 +20638,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4530
+              "column": 4374
             },
             "end": {
               "line": 0,
-              "column": 4616
+              "column": 4460
             }
           },
           "metadata": {},
@@ -20603,11 +20665,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4616
+              "column": 4460
             },
             "end": {
               "line": 0,
-              "column": 4700
+              "column": 4544
             }
           },
           "metadata": {},
@@ -20630,11 +20692,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4700
+              "column": 4544
             },
             "end": {
               "line": 0,
-              "column": 4835
+              "column": 4679
             }
           },
           "metadata": {},
@@ -20657,11 +20719,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4835
+              "column": 4679
             },
             "end": {
               "line": 0,
-              "column": 4932
+              "column": 4776
             }
           },
           "metadata": {},
@@ -20684,11 +20746,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 4932
+              "column": 4776
             },
             "end": {
               "line": 0,
-              "column": 5022
+              "column": 4866
             }
           },
           "metadata": {},
@@ -20711,11 +20773,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 5022
+              "column": 4866
             },
             "end": {
               "line": 0,
-              "column": 5128
+              "column": 4972
             }
           },
           "metadata": {},
@@ -20738,11 +20800,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 529
+          "column": 464
         },
         "end": {
           "line": 0,
-          "column": 5129
+          "column": 4973
         }
       },
       "privacy": "public",

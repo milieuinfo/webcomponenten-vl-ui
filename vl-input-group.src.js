@@ -17,10 +17,12 @@ export class VlInputGroup extends VlElement(HTMLElement) {
       <style>
         @import "../style.css";
       </style>
-      <div class="vl-input-group">
-        <slot></slot>
-      </div>
+      <slot></slot>
     `);
+  }
+
+  connectedCallback() {
+      this.classList.add('vl-input-group');
   }
 }
 

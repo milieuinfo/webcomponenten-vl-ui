@@ -11579,413 +11579,6 @@
       "name": "VlMapSearch"
     },
     {
-      "description": "VlModal",
-      "summary": "",
-      "path": "vl-modal.src.js",
-      "properties": [
-        {
-          "name": "_dialogElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 63,
-              "column": 2
-            },
-            "end": {
-              "line": 65,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_titleElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 67,
-              "column": 2
-            },
-            "end": {
-              "line": 69,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_actionGroupElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 71,
-              "column": 2
-            },
-            "end": {
-              "line": 73,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_cancelElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 75,
-              "column": 2
-            },
-            "end": {
-              "line": 77,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_dressed",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 79,
-              "column": 2
-            },
-            "end": {
-              "line": 81,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 59,
-              "column": 2
-            },
-            "end": {
-              "line": 61,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "dress",
-          "description": "Initialiseer de modal config.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 86,
-              "column": 2
-            },
-            "end": {
-              "line": 90,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "open",
-          "description": "Handmatig openen van modal.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 95,
-              "column": 2
-            },
-            "end": {
-              "line": 100,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "close",
-          "description": "Handmatig sluiten van modal.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 105,
-              "column": 2
-            },
-            "end": {
-              "line": 109,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "on",
-          "description": "Mogelijkheid om functies toe te voegen op events die op de dialog voorkomen.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 116,
-              "column": 2
-            },
-            "end": {
-              "line": 118,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            },
-            {
-              "name": "callback"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_getCloseButtonTemplate",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 120,
-              "column": 2
-            },
-            "end": {
-              "line": 127,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_getTitleTemplate",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 129,
-              "column": 2
-            },
-            "end": {
-              "line": 133,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "titel"
-            }
-          ]
-        },
-        {
-          "name": "_getCancelTemplate",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 135,
-              "column": 2
-            },
-            "end": {
-              "line": 140,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_idChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 142,
-              "column": 2
-            },
-            "end": {
-              "line": 144,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_data_titleChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 146,
-              "column": 2
-            },
-            "end": {
-              "line": 158,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_not_cancellableChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 160,
-              "column": 2
-            },
-            "end": {
-              "line": 166,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_openChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 168,
-              "column": 2
-            },
-            "end": {
-              "line": 170,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_closableChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 172,
-              "column": 2
-            },
-            "end": {
-              "line": 183,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 28,
-          "column": 7
-        },
-        "end": {
-          "line": 184,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlModal"
-    },
-    {
       "description": "",
       "summary": "",
       "path": "vl-pill.src.js",
@@ -14305,11 +13898,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1270
+              "column": 1274
             },
             "end": {
               "line": 0,
-              "column": 1352
+              "column": 1356
             }
           },
           "metadata": {}
@@ -14322,11 +13915,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1352
+              "column": 1356
             },
             "end": {
               "line": 0,
-              "column": 1418
+              "column": 1422
             }
           },
           "metadata": {}
@@ -14339,11 +13932,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1418
+              "column": 1422
             },
             "end": {
               "line": 0,
-              "column": 1507
+              "column": 1511
             }
           },
           "metadata": {}
@@ -14356,11 +13949,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1507
+              "column": 1511
             },
             "end": {
               "line": 0,
-              "column": 1583
+              "column": 1587
             }
           },
           "metadata": {}
@@ -14373,11 +13966,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1583
+              "column": 1587
             },
             "end": {
               "line": 0,
-              "column": 1661
+              "column": 1665
             }
           },
           "metadata": {}
@@ -14390,11 +13983,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1661
+              "column": 1665
             },
             "end": {
               "line": 0,
-              "column": 1739
+              "column": 1743
             }
           },
           "metadata": {}
@@ -14408,11 +14001,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1739
+              "column": 1743
             },
             "end": {
               "line": 0,
-              "column": 1806
+              "column": 1810
             }
           },
           "metadata": {},
@@ -14428,11 +14021,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1806
+              "column": 1810
             },
             "end": {
               "line": 0,
-              "column": 1855
+              "column": 1859
             }
           },
           "metadata": {},
@@ -14448,11 +14041,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1855
+              "column": 1859
             },
             "end": {
               "line": 0,
-              "column": 1906
+              "column": 1910
             }
           },
           "metadata": {},
@@ -14468,11 +14061,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1906
+              "column": 1910
             },
             "end": {
               "line": 0,
-              "column": 1959
+              "column": 1963
             }
           },
           "metadata": {},
@@ -14488,11 +14081,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1959
+              "column": 1963
             },
             "end": {
               "line": 0,
-              "column": 2012
+              "column": 2016
             }
           },
           "metadata": {},
@@ -14508,11 +14101,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2012
+              "column": 2016
             },
             "end": {
               "line": 0,
-              "column": 2056
+              "column": 2060
             }
           },
           "metadata": {},
@@ -14525,11 +14118,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2056
+              "column": 2060
             },
             "end": {
               "line": 0,
-              "column": 2122
+              "column": 2126
             }
           },
           "metadata": {},
@@ -14552,11 +14145,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2122
+              "column": 2126
             },
             "end": {
               "line": 0,
-              "column": 2291
+              "column": 2295
             }
           },
           "metadata": {},
@@ -14579,11 +14172,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2291
+              "column": 2295
             },
             "end": {
               "line": 0,
-              "column": 2462
+              "column": 2466
             }
           },
           "metadata": {},
@@ -14606,11 +14199,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2462
+              "column": 2466
             },
             "end": {
               "line": 0,
-              "column": 2645
+              "column": 2649
             }
           },
           "metadata": {},
@@ -14626,11 +14219,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 446
+          "column": 450
         },
         "end": {
           "line": 0,
-          "column": 2646
+          "column": 2650
         }
       },
       "privacy": "public",
@@ -18121,11 +17714,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2048
+              "column": 2188
             },
             "end": {
               "line": 0,
-              "column": 2114
+              "column": 2254
             }
           },
           "metadata": {}
@@ -18138,11 +17731,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2114
+              "column": 2254
             },
             "end": {
               "line": 0,
-              "column": 2192
+              "column": 2332
             }
           },
           "metadata": {}
@@ -18155,11 +17748,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2192
+              "column": 2332
             },
             "end": {
               "line": 0,
-              "column": 2276
+              "column": 2416
             }
           },
           "metadata": {}
@@ -18172,11 +17765,28 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2276
+              "column": 2416
             },
             "end": {
               "line": 0,
-              "column": 2361
+              "column": 2501
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_slotButtonElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2501
+            },
+            "end": {
+              "line": 0,
+              "column": 2584
             }
           },
           "metadata": {}
@@ -18189,11 +17799,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2361
+              "column": 2584
             },
             "end": {
               "line": 0,
-              "column": 2427
+              "column": 2650
             }
           },
           "metadata": {}
@@ -18207,11 +17817,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2015
+              "column": 2155
             },
             "end": {
               "line": 0,
-              "column": 2048
+              "column": 2188
             }
           },
           "metadata": {},
@@ -18227,11 +17837,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2427
+              "column": 2650
             },
             "end": {
               "line": 0,
-              "column": 2486
+              "column": 2709
             }
           },
           "metadata": {},
@@ -18247,11 +17857,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2486
+              "column": 2709
             },
             "end": {
               "line": 0,
-              "column": 2619
+              "column": 2842
             }
           },
           "metadata": {},
@@ -18267,11 +17877,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2619
+              "column": 2842
             },
             "end": {
               "line": 0,
-              "column": 2706
+              "column": 2929
             }
           },
           "metadata": {},
@@ -18287,20 +17897,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2706
+              "column": 2929
             },
             "end": {
               "line": 0,
-              "column": 2756
+              "column": 2979
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
-              "name": "t"
+              "name": "e"
             }
           ],
           "return": {
@@ -18314,11 +17924,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2756
+              "column": 2979
             },
             "end": {
               "line": 0,
-              "column": 3090
+              "column": 3293
             }
           },
           "metadata": {},
@@ -18331,17 +17941,17 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3090
+              "column": 3293
             },
             "end": {
               "line": 0,
-              "column": 3223
+              "column": 3416
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             }
           ]
         },
@@ -18352,11 +17962,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3223
+              "column": 3416
             },
             "end": {
               "line": 0,
-              "column": 3465
+              "column": 3652
             }
           },
           "metadata": {},
@@ -18369,20 +17979,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3465
+              "column": 3652
             },
             "end": {
               "line": 0,
-              "column": 3514
+              "column": 3701
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
-              "name": "t"
+              "name": "e"
             }
           ],
           "return": {
@@ -18396,20 +18006,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3514
+              "column": 3701
             },
             "end": {
               "line": 0,
-              "column": 3701
+              "column": 3888
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
-              "name": "t"
+              "name": "e"
             }
           ],
           "return": {
@@ -18423,20 +18033,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3701
+              "column": 3888
             },
             "end": {
               "line": 0,
-              "column": 3891
+              "column": 4072
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
-              "name": "t"
+              "name": "e"
             }
           ],
           "return": {
@@ -18450,20 +18060,20 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3891
+              "column": 4072
             },
             "end": {
               "line": 0,
-              "column": 3960
+              "column": 4141
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
-              "name": "t"
+              "name": "e"
             }
           ],
           "return": {
@@ -18477,20 +18087,47 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 3960
+              "column": 4141
             },
             "end": {
               "line": 0,
-              "column": 4303
+              "column": 4485
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "e"
+              "name": "t"
             },
             {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_not_auto_closableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 4485
+            },
+            "end": {
+              "line": 0,
+              "column": 4797
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
               "name": "t"
+            },
+            {
+              "name": "e"
             }
           ],
           "return": {
@@ -18508,11 +18145,505 @@
         },
         "end": {
           "line": 0,
-          "column": 4304
+          "column": 4798
         }
       },
       "privacy": "public",
       "name": "VlModal"
+    },
+    {
+      "description": "VlModal",
+      "summary": "",
+      "path": "vl-modal.src.js",
+      "properties": [
+        {
+          "name": "_dialogElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 72,
+              "column": 2
+            },
+            "end": {
+              "line": 74,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_titleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 76,
+              "column": 2
+            },
+            "end": {
+              "line": 78,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_actionGroupElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 2
+            },
+            "end": {
+              "line": 82,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_cancelElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 84,
+              "column": 2
+            },
+            "end": {
+              "line": 86,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_slotButtonElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 2
+            },
+            "end": {
+              "line": 90,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 92,
+              "column": 2
+            },
+            "end": {
+              "line": 94,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 2
+            },
+            "end": {
+              "line": 70,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "dress",
+          "description": "Initialiseer de modal config.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 2
+            },
+            "end": {
+              "line": 103,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "open",
+          "description": "Handmatig openen van modal.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 108,
+              "column": 2
+            },
+            "end": {
+              "line": 113,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "close",
+          "description": "Handmatig sluiten van modal.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 118,
+              "column": 2
+            },
+            "end": {
+              "line": 122,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "on",
+          "description": "Mogelijkheid om functies toe te voegen op events die op de dialog voorkomen.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 129,
+              "column": 2
+            },
+            "end": {
+              "line": 131,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            },
+            {
+              "name": "callback"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getCloseButtonTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 133,
+              "column": 2
+            },
+            "end": {
+              "line": 140,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getTitleTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 142,
+              "column": 2
+            },
+            "end": {
+              "line": 145,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "titel"
+            }
+          ]
+        },
+        {
+          "name": "_getCancelTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 147,
+              "column": 2
+            },
+            "end": {
+              "line": 152,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_idChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 154,
+              "column": 2
+            },
+            "end": {
+              "line": 156,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_titleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 158,
+              "column": 2
+            },
+            "end": {
+              "line": 170,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_not_cancellableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 172,
+              "column": 2
+            },
+            "end": {
+              "line": 178,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_openChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 180,
+              "column": 2
+            },
+            "end": {
+              "line": 182,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_closableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 184,
+              "column": 2
+            },
+            "end": {
+              "line": 195,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_not_auto_closableChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 197,
+              "column": 2
+            },
+            "end": {
+              "line": 203,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 29,
+          "column": 7
+        },
+        "end": {
+          "line": 204,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlModal"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "demo/vl-modal-test.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "open",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 20,
+              "column": 2
+            },
+            "end": {
+              "line": 22,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 5,
+          "column": 7
+        },
+        "end": {
+          "line": 23,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "VlModalTest"
     },
     {
       "description": "",

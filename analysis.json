@@ -250,23 +250,23 @@
       "tagname": "vl-tooltip"
     },
     {
-      "description": "",
+      "description": "VlMap",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "map",
           "type": "?",
-          "description": "",
+          "description": "Geeft de OpenLayers map terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24361
+              "line": 70,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24388
+              "line": 72,
+              "column": 5
             }
           },
           "metadata": {
@@ -282,12 +282,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24388
+              "line": 74,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24464
+              "line": 76,
+              "column": 5
             }
           },
           "metadata": {
@@ -303,12 +303,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24464
+              "line": 78,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24556
+              "line": 83,
+              "column": 5
             }
           },
           "metadata": {
@@ -324,12 +324,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24556
+              "line": 85,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24616
+              "line": 87,
+              "column": 5
             }
           },
           "metadata": {
@@ -345,12 +345,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24616
+              "line": 89,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24705
+              "line": 94,
+              "column": 5
             }
           },
           "metadata": {
@@ -366,12 +366,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24705
+              "line": 96,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 24752
+              "line": 98,
+              "column": 5
             }
           },
           "metadata": {
@@ -388,12 +388,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 24752
+              "line": 100,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25113
+              "line": 116,
+              "column": 5
             }
           },
           "metadata": {},
@@ -404,22 +404,23 @@
         },
         {
           "name": "addAction",
-          "description": "",
+          "description": "Voegt een kaartactie toe aan de kaart.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25113
+              "line": 123,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25149
+              "line": 125,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "action",
+              "type": "ol.interaction"
             }
           ],
           "return": {
@@ -428,22 +429,23 @@
         },
         {
           "name": "zoomTo",
-          "description": "",
+          "description": "Zoomt op de kaart naar de bounding box.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25149
+              "line": 132,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25185
+              "line": 134,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "boundingbox",
+              "type": "Array.<Number>"
             }
           ],
           "return": {
@@ -456,12 +458,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25185
+              "line": 136,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25264
+              "line": 141,
+              "column": 5
             }
           },
           "metadata": {},
@@ -476,12 +478,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25264
+              "line": 143,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25379
+              "line": 147,
+              "column": 5
             }
           },
           "metadata": {},
@@ -496,12 +498,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25379
+              "line": 149,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25493
+              "line": 151,
+              "column": 5
             }
           },
           "metadata": {},
@@ -516,12 +518,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25493
+              "line": 153,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25591
+              "line": 155,
+              "column": 5
             }
           },
           "metadata": {},
@@ -536,21 +538,21 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25591
+              "line": 157,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25661
+              "line": 162,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "title"
             },
             {
-              "name": "e"
+              "name": "layers"
             }
           ]
         },
@@ -560,12 +562,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 25661
+              "line": 164,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 25934
+              "line": 166,
+              "column": 5
             }
           },
           "metadata": {},
@@ -580,17 +582,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 23989
+          "line": 46,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 25935
+          "line": 167,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "t",
+      "superclass": "VlElement",
+      "name": "VlMap",
       "attributes": [],
       "events": [],
       "styling": {
@@ -601,23 +603,23 @@
       "tagname": "vl-map"
     },
     {
-      "description": "",
+      "description": "VlMapLayer",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "layer",
-          "type": "?",
-          "description": "",
+          "type": "ol.layer.Layer",
+          "description": "Geeft de OpenLayers kaartlaag.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26315
+              "line": 216,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26346
+              "line": 218,
+              "column": 5
             }
           },
           "metadata": {
@@ -628,17 +630,17 @@
         },
         {
           "name": "source",
-          "type": "?",
-          "description": "",
+          "type": "ol.source",
+          "description": "Geeft de OpenLayers kaartlaag source.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26346
+              "line": 225,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26379
+              "line": 227,
+              "column": 5
             }
           },
           "metadata": {
@@ -649,17 +651,17 @@
         },
         {
           "name": "features",
-          "type": "?",
-          "description": "",
+          "type": "object",
+          "description": "Geeft de OpenLayers features collectie van de kaartlaag terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26379
+              "line": 234,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26475
+              "line": 237,
+              "column": 5
             }
           },
           "metadata": {
@@ -670,17 +672,17 @@
         },
         {
           "name": "style",
-          "type": "?",
-          "description": "",
+          "type": "ol.style",
+          "description": "Geeft de OpenLayers kaartlaag stijl.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26539
+              "line": 253,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26596
+              "line": 257,
+              "column": 5
             }
           },
           "metadata": {
@@ -696,12 +698,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26647
+              "line": 269,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26705
+              "line": 271,
+              "column": 5
             }
           },
           "metadata": {
@@ -717,12 +719,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26705
+              "line": 273,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26769
+              "line": 275,
+              "column": 5
             }
           },
           "metadata": {
@@ -738,12 +740,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26769
+              "line": 277,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26826
+              "line": 279,
+              "column": 5
             }
           },
           "metadata": {
@@ -759,12 +761,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26826
+              "line": 281,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26894
+              "line": 283,
+              "column": 5
             }
           },
           "metadata": {
@@ -780,12 +782,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26894
+              "line": 285,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26951
+              "line": 289,
+              "column": 5
             }
           },
           "metadata": {
@@ -802,12 +804,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26133
+              "line": 198,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 26231
+              "line": 201,
+              "column": 5
             }
           },
           "metadata": {},
@@ -818,16 +820,16 @@
         },
         {
           "name": "verwijderFeatureStijlen",
-          "description": "",
+          "description": "Verwijdert de stijl van al de kaartlaag features.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 26951
+              "line": 294,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27077
+              "line": 300,
+              "column": 5
             }
           },
           "metadata": {},
@@ -838,16 +840,16 @@
         },
         {
           "name": "rerender",
-          "description": "",
+          "description": "Rendert de kaart opnieuw.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27077
+              "line": 305,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27118
+              "line": 309,
+              "column": 5
             }
           },
           "metadata": {},
@@ -858,43 +860,45 @@
         },
         {
           "name": "getFeature",
-          "description": "",
+          "description": "Geeft de feature terug op basis van het id attribuut.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27118
+              "line": 316,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27238
+              "line": 322,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "id",
+              "type": "number"
             }
           ]
         },
         {
           "name": "getCluster",
-          "description": "",
+          "description": "Geeft de cluster terug op basis van het id attribuut.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27238
+              "line": 329,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27390
+              "line": 342,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "id",
+              "type": "number"
             }
           ]
         },
@@ -904,21 +908,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27390
+              "line": 344,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27445
+              "line": 346,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "oldValue"
             },
             {
-              "name": "e"
+              "name": "newValue"
             }
           ],
           "return": {
@@ -931,21 +935,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27445
+              "line": 348,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27592
+              "line": 355,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "oldValue"
             },
             {
-              "name": "e"
+              "name": "newValue"
             }
           ],
           "return": {
@@ -958,12 +962,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27592
+              "line": 357,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27686
+              "line": 361,
+              "column": 5
             }
           },
           "metadata": {},
@@ -978,21 +982,21 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27686
+              "line": 363,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 27860
+              "line": 372,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "title"
             },
             {
-              "name": "e"
+              "name": "features"
             }
           ]
         },
@@ -1002,18 +1006,18 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 27860
+              "line": 374,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28001
+              "line": 379,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ]
         },
@@ -1023,18 +1027,18 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28001
+              "line": 381,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28206
+              "line": 394,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "source"
             }
           ]
         },
@@ -1044,12 +1048,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28206
+              "line": 396,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28320
+              "line": 402,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1061,12 +1065,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28320
+              "line": 404,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28353
+              "line": 406,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1078,12 +1082,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28353
+              "line": 408,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28451
+              "line": 413,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1098,17 +1102,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 25935
+          "line": 186,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 28452
+          "line": 414,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "o",
+      "superclass": "VlElement",
+      "name": "VlMapLayer",
       "attributes": [],
       "events": [],
       "styling": {
@@ -1119,23 +1123,23 @@
       "tagname": "vl-map-layer"
     },
     {
-      "description": "",
+      "description": "VlMapBaseLayer",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "type",
           "type": "?",
-          "description": "",
+          "description": "Geeft het kaartlaag type terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28525
+              "line": 442,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28577
+              "line": 444,
+              "column": 5
             }
           },
           "metadata": {
@@ -1147,16 +1151,16 @@
         {
           "name": "url",
           "type": "?",
-          "description": "",
+          "description": "Geeft de kaartlaag URL terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28577
+              "line": 451,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28619
+              "line": 453,
+              "column": 5
             }
           },
           "metadata": {
@@ -1168,16 +1172,16 @@
         {
           "name": "layer",
           "type": "?",
-          "description": "",
+          "description": "Geeft de kaartlaag identifier terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28619
+              "line": 460,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28665
+              "line": 462,
+              "column": 5
             }
           },
           "metadata": {
@@ -1189,16 +1193,16 @@
         {
           "name": "title",
           "type": "?",
-          "description": "",
+          "description": "Geeft de kaartlaag titel terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28665
+              "line": 469,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28711
+              "line": 471,
+              "column": 5
             }
           },
           "metadata": {
@@ -1214,12 +1218,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28711
+              "line": 473,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28768
+              "line": 477,
+              "column": 5
             }
           },
           "metadata": {
@@ -1235,12 +1239,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28768
+              "line": 479,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28840
+              "line": 483,
+              "column": 5
             }
           },
           "metadata": {
@@ -1256,12 +1260,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28840
+              "line": 485,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28942
+              "line": 488,
+              "column": 5
             }
           },
           "metadata": {
@@ -1277,12 +1281,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28942
+              "line": 490,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 29075
+              "line": 493,
+              "column": 5
             }
           },
           "metadata": {
@@ -1299,12 +1303,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 28484
+              "line": 433,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 28525
+              "line": 435,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1319,12 +1323,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 29075
+              "line": 495,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 29192
+              "line": 499,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1339,12 +1343,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 29192
+              "line": 501,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 29640
+              "line": 524,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1356,12 +1360,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 29640
+              "line": 526,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 29855
+              "line": 537,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1373,12 +1377,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 29855
+              "line": 539,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 30199
+              "line": 561,
+              "column": 5
             }
           },
           "metadata": {},
@@ -1390,17 +1394,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 28452
+          "line": 432,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 30200
+          "line": 562,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "r",
+      "superclass": "VlElement",
+      "name": "VlMapBaseLayer",
       "attributes": [],
       "events": [],
       "styling": {
@@ -1411,301 +1415,27 @@
       "tagname": "vl-map-baselayer"
     },
     {
-      "description": "",
+      "description": "VlMapBaseLayerGRBGray",
       "summary": "",
       "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "type",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28525
-            },
-            "end": {
-              "line": 0,
-              "column": 28577
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "url",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28577
-            },
-            "end": {
-              "line": 0,
-              "column": 28619
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "layer",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28619
-            },
-            "end": {
-              "line": 0,
-              "column": 28665
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "title",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28665
-            },
-            "end": {
-              "line": 0,
-              "column": 28711
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28711
-            },
-            "end": {
-              "line": 0,
-              "column": 28768
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_projection",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28768
-            },
-            "end": {
-              "line": 0,
-              "column": 28840
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_WMTSSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28840
-            },
-            "end": {
-              "line": 0,
-              "column": 28942
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_vectorSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28942
-            },
-            "end": {
-              "line": 0,
-              "column": 29075
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28484
-            },
-            "end": {
-              "line": 0,
-              "column": 28525
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_configureMap",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29075
-            },
-            "end": {
-              "line": 0,
-              "column": 29192
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createWMTSSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29192
-            },
-            "end": {
-              "line": 0,
-              "column": 29640
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createVectorSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29640
-            },
-            "end": {
-              "line": 0,
-              "column": 29855
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createBaseLayer",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29855
-            },
-            "end": {
-              "line": 0,
-              "column": 30199
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        }
-      ],
+      "properties": [],
+      "methods": [],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 30200
+          "line": 575,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 30424
+          "line": 582,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "r",
-      "name": "i",
+      "superclass": "VlElement",
+      "name": "VlMapBaseLayerGRBGray",
       "attributes": [],
       "events": [],
       "styling": {
@@ -1716,301 +1446,27 @@
       "tagname": "vl-map-baselayer-grb-gray"
     },
     {
-      "description": "",
+      "description": "VlMapBaseLayerGRB",
       "summary": "",
       "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "type",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28525
-            },
-            "end": {
-              "line": 0,
-              "column": 28577
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "url",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28577
-            },
-            "end": {
-              "line": 0,
-              "column": 28619
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "layer",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28619
-            },
-            "end": {
-              "line": 0,
-              "column": 28665
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "title",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28665
-            },
-            "end": {
-              "line": 0,
-              "column": 28711
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28711
-            },
-            "end": {
-              "line": 0,
-              "column": 28768
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_projection",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28768
-            },
-            "end": {
-              "line": 0,
-              "column": 28840
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_WMTSSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28840
-            },
-            "end": {
-              "line": 0,
-              "column": 28942
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_vectorSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28942
-            },
-            "end": {
-              "line": 0,
-              "column": 29075
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28484
-            },
-            "end": {
-              "line": 0,
-              "column": 28525
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_configureMap",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29075
-            },
-            "end": {
-              "line": 0,
-              "column": 29192
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createWMTSSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29192
-            },
-            "end": {
-              "line": 0,
-              "column": 29640
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createVectorSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29640
-            },
-            "end": {
-              "line": 0,
-              "column": 29855
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createBaseLayer",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29855
-            },
-            "end": {
-              "line": 0,
-              "column": 30199
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        }
-      ],
+      "properties": [],
+      "methods": [],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 30424
+          "line": 595,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 30636
+          "line": 602,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "r",
-      "name": "l",
+      "superclass": "VlElement",
+      "name": "VlMapBaseLayerGRB",
       "attributes": [],
       "events": [],
       "styling": {
@@ -2021,301 +1477,27 @@
       "tagname": "vl-map-baselayer-grb"
     },
     {
-      "description": "",
+      "description": "VlMapBaseLayerGRBOrtho",
       "summary": "",
       "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "type",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28525
-            },
-            "end": {
-              "line": 0,
-              "column": 28577
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "url",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28577
-            },
-            "end": {
-              "line": 0,
-              "column": 28619
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "layer",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28619
-            },
-            "end": {
-              "line": 0,
-              "column": 28665
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "title",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28665
-            },
-            "end": {
-              "line": 0,
-              "column": 28711
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28711
-            },
-            "end": {
-              "line": 0,
-              "column": 28768
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_projection",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28768
-            },
-            "end": {
-              "line": 0,
-              "column": 28840
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_WMTSSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28840
-            },
-            "end": {
-              "line": 0,
-              "column": 28942
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_vectorSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28942
-            },
-            "end": {
-              "line": 0,
-              "column": 29075
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "r"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 28484
-            },
-            "end": {
-              "line": 0,
-              "column": 28525
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_configureMap",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29075
-            },
-            "end": {
-              "line": 0,
-              "column": 29192
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createWMTSSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29192
-            },
-            "end": {
-              "line": 0,
-              "column": 29640
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createVectorSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29640
-            },
-            "end": {
-              "line": 0,
-              "column": 29855
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        },
-        {
-          "name": "_createBaseLayer",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 29855
-            },
-            "end": {
-              "line": 0,
-              "column": 30199
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "r"
-        }
-      ],
+      "properties": [],
+      "methods": [],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 30636
+          "line": 615,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 30851
+          "line": 622,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "r",
-      "name": "c",
+      "superclass": "VlElement",
+      "name": "VlMapBaseLayerGRBOrtho",
       "attributes": [],
       "events": [],
       "styling": {
@@ -2326,23 +1508,23 @@
       "tagname": "vl-map-baselayer-grb-ortho"
     },
     {
-      "description": "",
+      "description": "VlMapAction",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "layer",
-          "type": "?",
-          "description": "",
+          "type": "ol.layer.Layer",
+          "description": "Geeft de kaartlaag.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31041
+              "line": 660,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31072
+              "line": 662,
+              "column": 5
             }
           },
           "metadata": {
@@ -2353,17 +1535,17 @@
         },
         {
           "name": "action",
-          "type": "?",
-          "description": "",
+          "type": "ol.interaction",
+          "description": "Geeft de kaart actie.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31128
+              "line": 679,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31161
+              "line": 681,
+              "column": 5
             }
           },
           "metadata": {
@@ -2379,12 +1561,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31161
+              "line": 683,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31218
+              "line": 687,
+              "column": 5
             }
           },
           "metadata": {
@@ -2401,12 +1583,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 30883
+              "line": 638,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 30945
+              "line": 640,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2417,16 +1599,16 @@
         },
         {
           "name": "activateAction",
-          "description": "",
+          "description": "Activeer de kaart actie op de kaart.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31218
+              "line": 692,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31311
+              "line": 697,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2437,16 +1619,16 @@
         },
         {
           "name": "actionChanged",
-          "description": "",
+          "description": "Stuurt een event om te laten weten dat de actieve kaart actie gewijzigd werd",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31311
+              "line": 702,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31406
+              "line": 705,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2461,12 +1643,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31406
+              "line": 707,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31472
+              "line": 709,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2481,12 +1663,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31472
+              "line": 711,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31548
+              "line": 713,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2501,21 +1683,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31548
+              "line": 715,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31674
+              "line": 723,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "map"
             },
             {
-              "name": "e"
+              "name": "kaartlaag"
             }
           ],
           "return": {
@@ -2528,12 +1710,12 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31674
+              "line": 725,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 31855
+              "line": 729,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2550,12 +1732,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 30945
+              "line": 642,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 30977
+              "line": 644,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2566,17 +1748,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 30851
+          "line": 637,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 31856
+          "line": 730,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "s",
+      "superclass": "VlElement",
+      "name": "VlMapAction",
       "attributes": [],
       "events": [],
       "styling": {
@@ -2587,76 +1769,10 @@
       "tagname": "vl-map-action"
     },
     {
-      "description": "",
+      "description": "VlMapSelectAction",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
-        {
-          "name": "layer",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31041
-            },
-            "end": {
-              "line": 0,
-              "column": 31072
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": false
-            }
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "action",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31128
-            },
-            "end": {
-              "line": 0,
-              "column": 31161
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31161
-            },
-            "end": {
-              "line": 0,
-              "column": 31218
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "s"
-        },
         {
           "name": "style",
           "type": "?",
@@ -2664,12 +1780,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 31975
+              "line": 753,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32006
+              "line": 755,
+              "column": 5
             }
           },
           "metadata": {
@@ -2685,12 +1801,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32033
+              "line": 761,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32084
+              "line": 763,
+              "column": 5
             }
           },
           "metadata": {
@@ -2702,177 +1818,23 @@
       ],
       "methods": [
         {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 30883
-            },
-            "end": {
-              "line": 0,
-              "column": 30945
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "activateAction",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31218
-            },
-            "end": {
-              "line": 0,
-              "column": 31311
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "actionChanged",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31311
-            },
-            "end": {
-              "line": 0,
-              "column": 31406
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "_layerChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31406
-            },
-            "end": {
-              "line": 0,
-              "column": 31472
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "_createAction",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 32352
-            },
-            "end": {
-              "line": 0,
-              "column": 32481
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "n"
-            }
-          ]
-        },
-        {
-          "name": "_computeAction",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31548
-            },
-            "end": {
-              "line": 0,
-              "column": 31674
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "n"
-            },
-            {
-              "name": "e"
-            }
-          ],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
-          "name": "__registerMapActionChangedCallback",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 0,
-              "column": 31674
-            },
-            "end": {
-              "line": 0,
-              "column": 31855
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "s"
-        },
-        {
           "name": "mark",
           "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32084
+              "line": 765,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32154
+              "line": 769,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "id"
             }
           ],
           "return": {
@@ -2885,12 +1847,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32154
+              "line": 771,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32215
+              "line": 775,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2905,18 +1867,18 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32215
+              "line": 777,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32272
+              "line": 781,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "feature"
             }
           ],
           "return": {
@@ -2929,18 +1891,18 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32272
+              "line": 783,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32301
+              "line": 785,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "callback"
             }
           ],
           "return": {
@@ -2953,12 +1915,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32301
+              "line": 787,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32352
+              "line": 791,
+              "column": 5
             }
           },
           "metadata": {},
@@ -2966,43 +1928,45 @@
           "return": {
             "type": "void"
           }
-        }
-      ],
-      "staticMethods": [
+        },
         {
-          "name": "isVlMapAction",
+          "name": "_createAction",
           "description": "",
-          "privacy": "public",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 30945
+              "line": 793,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 30977
+              "line": 798,
+              "column": 5
             }
           },
           "metadata": {},
-          "params": [],
-          "inheritedFrom": "s"
+          "params": [
+            {
+              "name": "layer"
+            }
+          ]
         }
       ],
+      "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 31856
+          "line": 745,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 32482
+          "line": 799,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "s",
-      "name": "a",
+      "superclass": "VlElement",
+      "name": "VlMapSelectAction",
       "attributes": [],
       "events": [],
       "styling": {
@@ -3013,23 +1977,23 @@
       "tagname": "vl-map-select-action"
     },
     {
-      "description": "",
+      "description": "VlMapLayerStyle",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "color",
           "type": "?",
-          "description": "",
+          "description": "Geeft de color van de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32559
+              "line": 827,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32631
+              "line": 829,
+              "column": 5
             }
           },
           "metadata": {
@@ -3041,16 +2005,16 @@
         {
           "name": "textColor",
           "type": "?",
-          "description": "",
+          "description": "Geeft de tekstkleur van de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32631
+              "line": 836,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32694
+              "line": 838,
+              "column": 5
             }
           },
           "metadata": {
@@ -3062,16 +2026,16 @@
         {
           "name": "textOffsetX",
           "type": "?",
-          "description": "",
+          "description": "Geeft de offset op de x-as van de tekst terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32694
+              "line": 845,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32757
+              "line": 847,
+              "column": 5
             }
           },
           "metadata": {
@@ -3083,16 +2047,16 @@
         {
           "name": "textOffsetY",
           "type": "?",
-          "description": "",
+          "description": "Geeft de offset op de y-as van de tekst terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32757
+              "line": 854,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32820
+              "line": 856,
+              "column": 5
             }
           },
           "metadata": {
@@ -3104,16 +2068,16 @@
         {
           "name": "style",
           "type": "?",
-          "description": "",
+          "description": "Geeft de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32820
+              "line": 863,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32944
+              "line": 866,
+              "column": 5
             }
           },
           "metadata": {
@@ -3130,12 +2094,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32514
+              "line": 818,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32559
+              "line": 820,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3150,18 +2114,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32944
+              "line": 868,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33048
+              "line": 871,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ]
         },
@@ -3171,18 +2135,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33048
+              "line": 873,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33118
+              "line": 875,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ]
         },
@@ -3192,18 +2156,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33118
+              "line": 877,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33162
+              "line": 881,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ]
         },
@@ -3213,18 +2177,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33162
+              "line": 883,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33203
+              "line": 885,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "objects"
             }
           ]
         },
@@ -3234,18 +2198,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33203
+              "line": 887,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33253
+              "line": 889,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "objects"
             }
           ]
         },
@@ -3255,12 +2219,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33253
+              "line": 891,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33338
+              "line": 895,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3272,17 +2236,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 32482
+          "line": 817,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 33339
+          "line": 896,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "p",
+      "superclass": "VlElement",
+      "name": "VlMapLayerStyle",
       "attributes": [],
       "events": [],
       "styling": {
@@ -3293,23 +2257,23 @@
       "tagname": "vl-map-layer-style"
     },
     {
-      "description": "",
+      "description": "VlMapLayerCircleStyle",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
         {
           "name": "color",
           "type": "?",
-          "description": "",
+          "description": "Geeft de color van de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32559
+              "line": 827,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32631
+              "line": 829,
+              "column": 5
             }
           },
           "metadata": {
@@ -3317,21 +2281,21 @@
               "readOnly": true
             }
           },
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "textColor",
           "type": "?",
-          "description": "",
+          "description": "Geeft de tekstkleur van de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32631
+              "line": 836,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32694
+              "line": 838,
+              "column": 5
             }
           },
           "metadata": {
@@ -3339,21 +2303,21 @@
               "readOnly": true
             }
           },
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "textOffsetX",
           "type": "?",
-          "description": "",
+          "description": "Geeft de offset op de x-as van de tekst terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32694
+              "line": 845,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32757
+              "line": 847,
+              "column": 5
             }
           },
           "metadata": {
@@ -3361,21 +2325,21 @@
               "readOnly": true
             }
           },
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "textOffsetY",
           "type": "?",
-          "description": "",
+          "description": "Geeft de offset op de y-as van de tekst terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32757
+              "line": 854,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32820
+              "line": 856,
+              "column": 5
             }
           },
           "metadata": {
@@ -3383,21 +2347,21 @@
               "readOnly": true
             }
           },
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "style",
           "type": "?",
-          "description": "",
+          "description": "Geeft de stijl terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33702
+              "line": 966,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 34579
+              "line": 1017,
+              "column": 5
             }
           },
           "metadata": {
@@ -3409,16 +2373,16 @@
         {
           "name": "size",
           "type": "?",
-          "description": "",
+          "description": "Geeft de grootte van de cirkels terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33357
+              "line": 921,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33404
+              "line": 923,
+              "column": 5
             }
           },
           "metadata": {
@@ -3430,16 +2394,16 @@
         {
           "name": "borderColor",
           "type": "?",
-          "description": "",
+          "description": "Geeft de randkleur van de cirkels terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33404
+              "line": 930,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33483
+              "line": 932,
+              "column": 5
             }
           },
           "metadata": {
@@ -3451,16 +2415,16 @@
         {
           "name": "borderSize",
           "type": "?",
-          "description": "",
+          "description": "Geeft de size van de rand van de cirkels terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33483
+              "line": 939,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33543
+              "line": 941,
+              "column": 5
             }
           },
           "metadata": {
@@ -3472,16 +2436,16 @@
         {
           "name": "clusterTextColor",
           "type": "?",
-          "description": "",
+          "description": "Geeft de kleur van de tekst bij het clusteren van features terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33543
+              "line": 948,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33621
+              "line": 950,
+              "column": 5
             }
           },
           "metadata": {
@@ -3493,16 +2457,16 @@
         {
           "name": "clusterColor",
           "type": "?",
-          "description": "",
+          "description": "Geeft de kleur bij het clusteren van features terug.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33621
+              "line": 957,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33702
+              "line": 959,
+              "column": 5
             }
           },
           "metadata": {
@@ -3519,12 +2483,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32514
+              "line": 818,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 32559
+              "line": 820,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3532,7 +2496,7 @@
           "return": {
             "type": "void"
           },
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_hasUniqueStyles",
@@ -3540,21 +2504,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 32944
+              "line": 868,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33048
+              "line": 871,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_containsStyle",
@@ -3562,21 +2526,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33048
+              "line": 873,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33118
+              "line": 875,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_getStyles",
@@ -3584,21 +2548,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33118
+              "line": 877,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33162
+              "line": 881,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "features"
             }
           ],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_containsObject",
@@ -3606,21 +2570,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33162
+              "line": 883,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33203
+              "line": 885,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "objects"
             }
           ],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_areIdentical",
@@ -3628,21 +2592,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33203
+              "line": 887,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33253
+              "line": 889,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "n"
+              "name": "objects"
             }
           ],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         },
         {
           "name": "_setStyleOnParent",
@@ -3650,17 +2614,17 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 33253
+              "line": 891,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 33338
+              "line": 895,
+              "column": 5
             }
           },
           "metadata": {},
           "params": [],
-          "inheritedFrom": "p"
+          "inheritedFrom": "VlMapLayerStyle"
         }
       ],
       "staticMethods": [],
@@ -3668,17 +2632,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 33339
+          "line": 915,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 34580
+          "line": 1018,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "p",
-      "name": "h",
+      "superclass": "VlMapLayerStyle",
+      "name": "VlMapLayerCircleStyle",
       "attributes": [],
       "events": [],
       "styling": {
@@ -3689,7 +2653,7 @@
       "tagname": "vl-map-layer-circle-style"
     },
     {
-      "description": "",
+      "description": "VlMapSearch",
       "summary": "",
       "path": "vl-map.js",
       "properties": [
@@ -3700,12 +2664,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 34972
+              "line": 1047,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35016
+              "line": 1049,
+              "column": 5
             }
           },
           "metadata": {
@@ -3721,12 +2685,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35016
+              "line": 1051,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35065
+              "line": 1053,
+              "column": 5
             }
           },
           "metadata": {
@@ -3742,12 +2706,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35065
+              "line": 1055,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35114
+              "line": 1057,
+              "column": 5
             }
           },
           "metadata": {
@@ -3763,12 +2727,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35114
+              "line": 1059,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35179
+              "line": 1061,
+              "column": 5
             }
           },
           "metadata": {
@@ -3784,12 +2748,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35179
+              "line": 1063,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35247
+              "line": 1067,
+              "column": 5
             }
           },
           "metadata": {
@@ -3806,12 +2770,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 34890
+              "line": 1042,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 34972
+              "line": 1045,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3826,12 +2790,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35247
+              "line": 1069,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 35612
+              "line": 1091,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3846,12 +2810,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 35612
+              "line": 1093,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 36171
+              "line": 1109,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3866,12 +2830,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 0,
-              "column": 36171
+              "line": 1111,
+              "column": 4
             },
             "end": {
-              "line": 0,
-              "column": 36381
+              "line": 1118,
+              "column": 5
             }
           },
           "metadata": {},
@@ -3886,17 +2850,17 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 0,
-          "column": 34580
+          "line": 1031,
+          "column": 0
         },
         "end": {
-          "line": 0,
-          "column": 36382
+          "line": 1119,
+          "column": 1
         }
       },
       "privacy": "public",
-      "superclass": "HTMLElement",
-      "name": "g",
+      "superclass": "VlElement",
+      "name": "VlMapSearch",
       "attributes": [],
       "events": [],
       "styling": {
@@ -10356,11 +9320,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 38,
+              "line": 37,
               "column": 4
             },
             "end": {
-              "line": 40,
+              "line": 39,
               "column": 5
             }
           },
@@ -10373,11 +9337,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 57,
+              "line": 56,
               "column": 4
             },
             "end": {
-              "line": 59,
+              "line": 58,
               "column": 5
             }
           },
@@ -10390,11 +9354,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 61,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 65,
+              "line": 64,
               "column": 5
             }
           },
@@ -10408,11 +9372,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 16,
+              "line": 15,
               "column": 4
             },
             "end": {
-              "line": 18,
+              "line": 17,
               "column": 5
             }
           },
@@ -10428,11 +9392,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 69,
               "column": 4
             },
             "end": {
-              "line": 75,
+              "line": 74,
               "column": 5
             }
           },
@@ -10448,11 +9412,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 80,
+              "line": 79,
               "column": 4
             },
             "end": {
-              "line": 83,
+              "line": 82,
               "column": 5
             }
           },
@@ -10468,11 +9432,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 84,
               "column": 4
             },
             "end": {
-              "line": 87,
+              "line": 86,
               "column": 5
             }
           },
@@ -10488,11 +9452,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 89,
+              "line": 88,
               "column": 4
             },
             "end": {
-              "line": 91,
+              "line": 90,
               "column": 5
             }
           },
@@ -10508,11 +9472,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 92,
               "column": 4
             },
             "end": {
-              "line": 101,
+              "line": 100,
               "column": 5
             }
           },
@@ -10535,11 +9499,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 103,
+              "line": 102,
               "column": 4
             },
             "end": {
-              "line": 107,
+              "line": 106,
               "column": 5
             }
           },
@@ -10557,11 +9521,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 20,
+              "line": 19,
               "column": 4
             },
             "end": {
-              "line": 22,
+              "line": 21,
               "column": 5
             }
           },
@@ -10573,11 +9537,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 15,
+          "line": 14,
           "column": 7
         },
         "end": {
-          "line": 108,
+          "line": 107,
           "column": 1
         }
       },
@@ -10789,11 +9753,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 27,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 29,
               "column": 5
             }
           },
@@ -10806,11 +9770,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 37,
+              "line": 36,
               "column": 4
             },
             "end": {
-              "line": 39,
+              "line": 38,
               "column": 5
             }
           },
@@ -10823,11 +9787,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 46,
+              "line": 45,
               "column": 4
             },
             "end": {
-              "line": 48,
+              "line": 47,
               "column": 5
             }
           },
@@ -10840,11 +9804,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 54,
               "column": 4
             },
             "end": {
-              "line": 57,
+              "line": 56,
               "column": 5
             }
           },
@@ -10857,11 +9821,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 64,
+              "line": 63,
               "column": 4
             },
             "end": {
-              "line": 67,
+              "line": 66,
               "column": 5
             }
           },
@@ -10875,11 +9839,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 19,
+              "line": 18,
               "column": 4
             },
             "end": {
-              "line": 21,
+              "line": 20,
               "column": 5
             }
           },
@@ -10895,11 +9859,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 69,
+              "line": 68,
               "column": 4
             },
             "end": {
-              "line": 72,
+              "line": 71,
               "column": 5
             }
           },
@@ -10916,11 +9880,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 74,
+              "line": 73,
               "column": 4
             },
             "end": {
-              "line": 76,
+              "line": 75,
               "column": 5
             }
           },
@@ -10937,11 +9901,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 78,
+              "line": 77,
               "column": 4
             },
             "end": {
-              "line": 82,
+              "line": 81,
               "column": 5
             }
           },
@@ -10958,11 +9922,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 84,
+              "line": 83,
               "column": 4
             },
             "end": {
-              "line": 86,
+              "line": 85,
               "column": 5
             }
           },
@@ -10979,11 +9943,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 88,
+              "line": 87,
               "column": 4
             },
             "end": {
-              "line": 90,
+              "line": 89,
               "column": 5
             }
           },
@@ -11000,11 +9964,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 91,
               "column": 4
             },
             "end": {
-              "line": 96,
+              "line": 95,
               "column": 5
             }
           },
@@ -11017,11 +9981,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 18,
+          "line": 17,
           "column": 7
         },
         "end": {
-          "line": 97,
+          "line": 96,
           "column": 1
         }
       },
@@ -11042,11 +10006,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 28,
+              "line": 27,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 29,
               "column": 5
             }
           },
@@ -11061,11 +10025,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 37,
+              "line": 36,
               "column": 4
             },
             "end": {
-              "line": 39,
+              "line": 38,
               "column": 5
             }
           },
@@ -11080,11 +10044,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 46,
+              "line": 45,
               "column": 4
             },
             "end": {
-              "line": 48,
+              "line": 47,
               "column": 5
             }
           },
@@ -11099,11 +10063,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 55,
+              "line": 54,
               "column": 4
             },
             "end": {
-              "line": 57,
+              "line": 56,
               "column": 5
             }
           },
@@ -11221,11 +10185,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 19,
+              "line": 18,
               "column": 4
             },
             "end": {
-              "line": 21,
+              "line": 20,
               "column": 5
             }
           },
@@ -11243,11 +10207,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 69,
+              "line": 68,
               "column": 4
             },
             "end": {
-              "line": 72,
+              "line": 71,
               "column": 5
             }
           },
@@ -11266,11 +10230,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 74,
+              "line": 73,
               "column": 4
             },
             "end": {
-              "line": 76,
+              "line": 75,
               "column": 5
             }
           },
@@ -11289,11 +10253,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 78,
+              "line": 77,
               "column": 4
             },
             "end": {
-              "line": 82,
+              "line": 81,
               "column": 5
             }
           },
@@ -11312,11 +10276,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 84,
+              "line": 83,
               "column": 4
             },
             "end": {
-              "line": 86,
+              "line": 85,
               "column": 5
             }
           },
@@ -11335,11 +10299,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 88,
+              "line": 87,
               "column": 4
             },
             "end": {
-              "line": 90,
+              "line": 89,
               "column": 5
             }
           },
@@ -11358,11 +10322,11 @@
           "sourceRange": {
             "file": "vl-map-layer-style.js",
             "start": {
-              "line": 92,
+              "line": 91,
               "column": 4
             },
             "end": {
-              "line": 96,
+              "line": 95,
               "column": 5
             }
           },

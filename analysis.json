@@ -12850,6 +12850,362 @@
       "name": "VlUpload"
     },
     {
+      "description": "VlMultiSelect",
+      "summary": "",
+      "path": "vl-multiselect.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 692
+            },
+            "end": {
+              "line": 0,
+              "column": 731
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 2
+            },
+            "end": {
+              "line": 37,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 793
+            },
+            "end": {
+              "line": 0,
+              "column": 866
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_dataVlSelectAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 2
+            },
+            "end": {
+              "line": 41,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "choices",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1004
+            },
+            "end": {
+              "line": 0,
+              "column": 1066
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_choices",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1066
+            },
+            "end": {
+              "line": 0,
+              "column": 1170
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 28,
+              "column": 2
+            },
+            "end": {
+              "line": 33,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "dress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1170
+            },
+            "end": {
+              "line": 0,
+              "column": 1218
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "undress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1218
+            },
+            "end": {
+              "line": 0,
+              "column": 1418
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "enable",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1418
+            },
+            "end": {
+              "line": 0,
+              "column": 1450
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "disable",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1450
+            },
+            "end": {
+              "line": 0,
+              "column": 1484
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "removeActive",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1484
+            },
+            "end": {
+              "line": 0,
+              "column": 1528
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "setValueByChoice",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1528
+            },
+            "end": {
+              "line": 0,
+              "column": 1583
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 27,
+          "column": 7
+        },
+        "end": {
+          "line": 42,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlSelect",
+      "name": "VlMultiSelect"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "demo/lit-element-demo.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "firstUpdated",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 13,
+              "column": 2
+            },
+            "end": {
+              "line": 25,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "render",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 2
+            },
+            "end": {
+              "line": 29,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 7,
+          "column": 7
+        },
+        "end": {
+          "line": 30,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "LitElement",
+      "name": "LitElementDemo"
+    },
+    {
       "description": "",
       "summary": "",
       "path": "vl-accordion.js",
@@ -17608,6 +17964,301 @@
       },
       "privacy": "public",
       "name": "VlModalTest"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-multiselect.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 692
+            },
+            "end": {
+              "line": 0,
+              "column": 731
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 740
+            },
+            "end": {
+              "line": 0,
+              "column": 807
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 793
+            },
+            "end": {
+              "line": 0,
+              "column": 866
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_dataVlSelectAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 807
+            },
+            "end": {
+              "line": 0,
+              "column": 884
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "choices",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1004
+            },
+            "end": {
+              "line": 0,
+              "column": 1066
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "_choices",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1066
+            },
+            "end": {
+              "line": 0,
+              "column": 1170
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlSelect"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 573
+            },
+            "end": {
+              "line": 0,
+              "column": 740
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "dress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1170
+            },
+            "end": {
+              "line": 0,
+              "column": 1218
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "undress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1218
+            },
+            "end": {
+              "line": 0,
+              "column": 1418
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "enable",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1418
+            },
+            "end": {
+              "line": 0,
+              "column": 1450
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "disable",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1450
+            },
+            "end": {
+              "line": 0,
+              "column": 1484
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "removeActive",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1484
+            },
+            "end": {
+              "line": 0,
+              "column": 1528
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        },
+        {
+          "name": "setValueByChoice",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-select/vl-select.js",
+            "start": {
+              "line": 0,
+              "column": 1528
+            },
+            "end": {
+              "line": 0,
+              "column": 1583
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlSelect"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 536
+        },
+        "end": {
+          "line": 0,
+          "column": 885
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlSelect",
+      "name": "VlMultiSelect"
     },
     {
       "description": "",

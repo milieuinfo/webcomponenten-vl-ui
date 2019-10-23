@@ -250,2627 +250,6 @@
       "tagname": "vl-tooltip"
     },
     {
-      "description": "VlMap",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "map",
-          "type": "?",
-          "description": "Geeft de OpenLayers map terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 70,
-              "column": 4
-            },
-            "end": {
-              "line": 72,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "disableEscapeKey",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 74,
-              "column": 4
-            },
-            "end": {
-              "line": 76,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_geoJSON",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 78,
-              "column": 4
-            },
-            "end": {
-              "line": 83,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_mapElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 85,
-              "column": 4
-            },
-            "end": {
-              "line": 87,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_projection",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 89,
-              "column": 4
-            },
-            "end": {
-              "line": 94,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_extent",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 96,
-              "column": 4
-            },
-            "end": {
-              "line": 98,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 100,
-              "column": 4
-            },
-            "end": {
-              "line": 116,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "addAction",
-          "description": "Voegt een kaartactie toe aan de kaart.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 123,
-              "column": 4
-            },
-            "end": {
-              "line": 125,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "action",
-              "type": "ol.interaction"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "zoomTo",
-          "description": "Zoomt op de kaart naar de bounding box.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 132,
-              "column": 4
-            },
-            "end": {
-              "line": 134,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "boundingbox",
-              "type": "Array.<Number>"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__updateMapSize",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 136,
-              "column": 4
-            },
-            "end": {
-              "line": 141,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__updateOverviewMapSize",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 143,
-              "column": 4
-            },
-            "end": {
-              "line": 147,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__updateOverviewMapSizeOnLoad",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 149,
-              "column": 4
-            },
-            "end": {
-              "line": 151,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__updateMapSizeOnLoad",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 153,
-              "column": 4
-            },
-            "end": {
-              "line": 155,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__createLayerGroup",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 157,
-              "column": 4
-            },
-            "end": {
-              "line": 162,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "title"
-            },
-            {
-              "name": "layers"
-            }
-          ]
-        },
-        {
-          "name": "__initializeCoordinateSystem",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 164,
-              "column": 4
-            },
-            "end": {
-              "line": 166,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 46,
-          "column": 0
-        },
-        "end": {
-          "line": 167,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMap",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map"
-    },
-    {
-      "description": "VlMapLayer",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "layer",
-          "type": "ol.layer.Layer",
-          "description": "Geeft de OpenLayers kaartlaag.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 216,
-              "column": 4
-            },
-            "end": {
-              "line": 218,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "source",
-          "type": "ol.source",
-          "description": "Geeft de OpenLayers kaartlaag source.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 225,
-              "column": 4
-            },
-            "end": {
-              "line": 227,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "features",
-          "type": "object",
-          "description": "Geeft de OpenLayers features collectie van de kaartlaag terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 234,
-              "column": 4
-            },
-            "end": {
-              "line": 237,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": false
-            }
-          }
-        },
-        {
-          "name": "style",
-          "type": "ol.style",
-          "description": "Geeft de OpenLayers kaartlaag stijl.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 253,
-              "column": 4
-            },
-            "end": {
-              "line": 257,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": false
-            }
-          }
-        },
-        {
-          "name": "_name",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 269,
-              "column": 4
-            },
-            "end": {
-              "line": 271,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_autoExtent",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 273,
-              "column": 4
-            },
-            "end": {
-              "line": 275,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_cluster",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 277,
-              "column": 4
-            },
-            "end": {
-              "line": 279,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_clusterDistance",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 281,
-              "column": 4
-            },
-            "end": {
-              "line": 283,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 285,
-              "column": 4
-            },
-            "end": {
-              "line": 289,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 198,
-              "column": 4
-            },
-            "end": {
-              "line": 201,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "verwijderFeatureStijlen",
-          "description": "Verwijdert de stijl van al de kaartlaag features.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 294,
-              "column": 4
-            },
-            "end": {
-              "line": 300,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "rerender",
-          "description": "Rendert de kaart opnieuw.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 305,
-              "column": 4
-            },
-            "end": {
-              "line": 309,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "getFeature",
-          "description": "Geeft de feature terug op basis van het id attribuut.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 316,
-              "column": 4
-            },
-            "end": {
-              "line": 322,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "id",
-              "type": "number"
-            }
-          ]
-        },
-        {
-          "name": "getCluster",
-          "description": "Geeft de cluster terug op basis van het id attribuut.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 329,
-              "column": 4
-            },
-            "end": {
-              "line": 342,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "id",
-              "type": "number"
-            }
-          ]
-        },
-        {
-          "name": "_auto_extentChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 344,
-              "column": 4
-            },
-            "end": {
-              "line": 346,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_featuresChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 348,
-              "column": 4
-            },
-            "end": {
-              "line": 355,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__zoomToExtent",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 357,
-              "column": 4
-            },
-            "end": {
-              "line": 361,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__createLayer",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 363,
-              "column": 4
-            },
-            "end": {
-              "line": 372,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "title"
-            },
-            {
-              "name": "features"
-            }
-          ]
-        },
-        {
-          "name": "__createSource",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 374,
-              "column": 4
-            },
-            "end": {
-              "line": 379,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ]
-        },
-        {
-          "name": "__createClusterSource",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 381,
-              "column": 4
-            },
-            "end": {
-              "line": 394,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "source"
-            }
-          ]
-        },
-        {
-          "name": "__getBoundingbox",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 396,
-              "column": 4
-            },
-            "end": {
-              "line": 402,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "__negeerClustering",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 404,
-              "column": 4
-            },
-            "end": {
-              "line": 406,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_configureMap",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 408,
-              "column": 4
-            },
-            "end": {
-              "line": 413,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 186,
-          "column": 0
-        },
-        "end": {
-          "line": 414,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapLayer",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-layer"
-    },
-    {
-      "description": "VlMapBaseLayer",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "type",
-          "type": "?",
-          "description": "Geeft het kaartlaag type terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 442,
-              "column": 4
-            },
-            "end": {
-              "line": 444,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "url",
-          "type": "?",
-          "description": "Geeft de kaartlaag URL terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 451,
-              "column": 4
-            },
-            "end": {
-              "line": 453,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "layer",
-          "type": "?",
-          "description": "Geeft de kaartlaag identifier terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 460,
-              "column": 4
-            },
-            "end": {
-              "line": 462,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "title",
-          "type": "?",
-          "description": "Geeft de kaartlaag titel terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 469,
-              "column": 4
-            },
-            "end": {
-              "line": 471,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 473,
-              "column": 4
-            },
-            "end": {
-              "line": 477,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_projection",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 479,
-              "column": 4
-            },
-            "end": {
-              "line": 483,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_WMTSSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 485,
-              "column": 4
-            },
-            "end": {
-              "line": 488,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_vectorSource",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 490,
-              "column": 4
-            },
-            "end": {
-              "line": 493,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 433,
-              "column": 4
-            },
-            "end": {
-              "line": 435,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_configureMap",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 495,
-              "column": 4
-            },
-            "end": {
-              "line": 499,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_createWMTSSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 501,
-              "column": 4
-            },
-            "end": {
-              "line": 524,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_createVectorSource",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 526,
-              "column": 4
-            },
-            "end": {
-              "line": 537,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_createBaseLayer",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 539,
-              "column": 4
-            },
-            "end": {
-              "line": 561,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 432,
-          "column": 0
-        },
-        "end": {
-          "line": 562,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapBaseLayer",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-baselayer"
-    },
-    {
-      "description": "VlMapBaseLayerGRBGray",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 575,
-          "column": 0
-        },
-        "end": {
-          "line": 582,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapBaseLayerGRBGray",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-baselayer-grb-gray"
-    },
-    {
-      "description": "VlMapBaseLayerGRB",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 595,
-          "column": 0
-        },
-        "end": {
-          "line": 602,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapBaseLayerGRB",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-baselayer-grb"
-    },
-    {
-      "description": "VlMapBaseLayerGRBOrtho",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 615,
-          "column": 0
-        },
-        "end": {
-          "line": 622,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapBaseLayerGRBOrtho",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-baselayer-grb-ortho"
-    },
-    {
-      "description": "VlMapAction",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "layer",
-          "type": "ol.layer.Layer",
-          "description": "Geeft de kaartlaag.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 660,
-              "column": 4
-            },
-            "end": {
-              "line": 662,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": false
-            }
-          }
-        },
-        {
-          "name": "action",
-          "type": "ol.interaction",
-          "description": "Geeft de kaart actie.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 679,
-              "column": 4
-            },
-            "end": {
-              "line": 681,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_map",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 683,
-              "column": 4
-            },
-            "end": {
-              "line": 687,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 638,
-              "column": 4
-            },
-            "end": {
-              "line": 640,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "activateAction",
-          "description": "Activeer de kaart actie op de kaart.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 692,
-              "column": 4
-            },
-            "end": {
-              "line": 697,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "actionChanged",
-          "description": "Stuurt een event om te laten weten dat de actieve kaart actie gewijzigd werd",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 702,
-              "column": 4
-            },
-            "end": {
-              "line": 705,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_layerChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 707,
-              "column": 4
-            },
-            "end": {
-              "line": 709,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_createAction",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 711,
-              "column": 4
-            },
-            "end": {
-              "line": 713,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_computeAction",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 715,
-              "column": 4
-            },
-            "end": {
-              "line": 723,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "map"
-            },
-            {
-              "name": "kaartlaag"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "__registerMapActionChangedCallback",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "start": {
-              "line": 725,
-              "column": 4
-            },
-            "end": {
-              "line": 729,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [
-        {
-          "name": "isVlMapAction",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 642,
-              "column": 4
-            },
-            "end": {
-              "line": 644,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        }
-      ],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 637,
-          "column": 0
-        },
-        "end": {
-          "line": 730,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapAction",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-action"
-    },
-    {
-      "description": "VlMapSelectAction",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "style",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 753,
-              "column": 4
-            },
-            "end": {
-              "line": 755,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": false
-            }
-          }
-        },
-        {
-          "name": "_cluster",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 761,
-              "column": 4
-            },
-            "end": {
-              "line": 763,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "mark",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 765,
-              "column": 4
-            },
-            "end": {
-              "line": 769,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "id"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "removeMarks",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 771,
-              "column": 4
-            },
-            "end": {
-              "line": 775,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "select",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 777,
-              "column": 4
-            },
-            "end": {
-              "line": 781,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "feature"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "onSelect",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 783,
-              "column": 4
-            },
-            "end": {
-              "line": 785,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "callback"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "reset",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 787,
-              "column": 4
-            },
-            "end": {
-              "line": 791,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_createAction",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 793,
-              "column": 4
-            },
-            "end": {
-              "line": 798,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "layer"
-            }
-          ]
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 745,
-          "column": 0
-        },
-        "end": {
-          "line": 799,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapSelectAction",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-select-action"
-    },
-    {
-      "description": "VlMapLayerStyle",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "color",
-          "type": "?",
-          "description": "Geeft de color van de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 827,
-              "column": 4
-            },
-            "end": {
-              "line": 829,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "textColor",
-          "type": "?",
-          "description": "Geeft de tekstkleur van de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 836,
-              "column": 4
-            },
-            "end": {
-              "line": 838,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "textOffsetX",
-          "type": "?",
-          "description": "Geeft de offset op de x-as van de tekst terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 845,
-              "column": 4
-            },
-            "end": {
-              "line": 847,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "textOffsetY",
-          "type": "?",
-          "description": "Geeft de offset op de y-as van de tekst terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 854,
-              "column": 4
-            },
-            "end": {
-              "line": 856,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "style",
-          "type": "?",
-          "description": "Geeft de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 863,
-              "column": 4
-            },
-            "end": {
-              "line": 866,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 818,
-              "column": 4
-            },
-            "end": {
-              "line": 820,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_hasUniqueStyles",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 868,
-              "column": 4
-            },
-            "end": {
-              "line": 871,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ]
-        },
-        {
-          "name": "_containsStyle",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 873,
-              "column": 4
-            },
-            "end": {
-              "line": 875,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ]
-        },
-        {
-          "name": "_getStyles",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 877,
-              "column": 4
-            },
-            "end": {
-              "line": 881,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ]
-        },
-        {
-          "name": "_containsObject",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 883,
-              "column": 4
-            },
-            "end": {
-              "line": 885,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "objects"
-            }
-          ]
-        },
-        {
-          "name": "_areIdentical",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 887,
-              "column": 4
-            },
-            "end": {
-              "line": 889,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "objects"
-            }
-          ]
-        },
-        {
-          "name": "_setStyleOnParent",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 891,
-              "column": 4
-            },
-            "end": {
-              "line": 895,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 817,
-          "column": 0
-        },
-        "end": {
-          "line": 896,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapLayerStyle",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-layer-style"
-    },
-    {
-      "description": "VlMapLayerCircleStyle",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "color",
-          "type": "?",
-          "description": "Geeft de color van de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 827,
-              "column": 4
-            },
-            "end": {
-              "line": 829,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "textColor",
-          "type": "?",
-          "description": "Geeft de tekstkleur van de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 836,
-              "column": 4
-            },
-            "end": {
-              "line": 838,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "textOffsetX",
-          "type": "?",
-          "description": "Geeft de offset op de x-as van de tekst terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 845,
-              "column": 4
-            },
-            "end": {
-              "line": 847,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "textOffsetY",
-          "type": "?",
-          "description": "Geeft de offset op de y-as van de tekst terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 854,
-              "column": 4
-            },
-            "end": {
-              "line": 856,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "style",
-          "type": "?",
-          "description": "Geeft de stijl terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 966,
-              "column": 4
-            },
-            "end": {
-              "line": 1017,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "size",
-          "type": "?",
-          "description": "Geeft de grootte van de cirkels terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 921,
-              "column": 4
-            },
-            "end": {
-              "line": 923,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "borderColor",
-          "type": "?",
-          "description": "Geeft de randkleur van de cirkels terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 930,
-              "column": 4
-            },
-            "end": {
-              "line": 932,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "borderSize",
-          "type": "?",
-          "description": "Geeft de size van de rand van de cirkels terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 939,
-              "column": 4
-            },
-            "end": {
-              "line": 941,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "clusterTextColor",
-          "type": "?",
-          "description": "Geeft de kleur van de tekst bij het clusteren van features terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 948,
-              "column": 4
-            },
-            "end": {
-              "line": 950,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "clusterColor",
-          "type": "?",
-          "description": "Geeft de kleur bij het clusteren van features terug.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 957,
-              "column": 4
-            },
-            "end": {
-              "line": 959,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 818,
-              "column": 4
-            },
-            "end": {
-              "line": 820,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_hasUniqueStyles",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 868,
-              "column": 4
-            },
-            "end": {
-              "line": 871,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ],
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_containsStyle",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 873,
-              "column": 4
-            },
-            "end": {
-              "line": 875,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ],
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_getStyles",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 877,
-              "column": 4
-            },
-            "end": {
-              "line": 881,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "features"
-            }
-          ],
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_containsObject",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 883,
-              "column": 4
-            },
-            "end": {
-              "line": 885,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "objects"
-            }
-          ],
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_areIdentical",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 887,
-              "column": 4
-            },
-            "end": {
-              "line": 889,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "objects"
-            }
-          ],
-          "inheritedFrom": "VlMapLayerStyle"
-        },
-        {
-          "name": "_setStyleOnParent",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 891,
-              "column": 4
-            },
-            "end": {
-              "line": 895,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "inheritedFrom": "VlMapLayerStyle"
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 915,
-          "column": 0
-        },
-        "end": {
-          "line": 1018,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlMapLayerStyle",
-      "name": "VlMapLayerCircleStyle",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-layer-circle-style"
-    },
-    {
-      "description": "VlMapSearch",
-      "summary": "",
-      "path": "vl-map.js",
-      "properties": [
-        {
-          "name": "url",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 1047,
-              "column": 4
-            },
-            "end": {
-              "line": 1049,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "searchUrl",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 1051,
-              "column": 4
-            },
-            "end": {
-              "line": 1053,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "locationUrl",
-          "type": "?",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 1055,
-              "column": 4
-            },
-            "end": {
-              "line": 1057,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_selectElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 1059,
-              "column": 4
-            },
-            "end": {
-              "line": 1061,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        },
-        {
-          "name": "_parentElement",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 1063,
-              "column": 4
-            },
-            "end": {
-              "line": 1067,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 1042,
-              "column": 4
-            },
-            "end": {
-              "line": 1045,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_addSearchEventListener",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 1069,
-              "column": 4
-            },
-            "end": {
-              "line": 1091,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_addChoiceEventListener",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 1093,
-              "column": 4
-            },
-            "end": {
-              "line": 1109,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_configure",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 1111,
-              "column": 4
-            },
-            "end": {
-              "line": 1118,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 1031,
-          "column": 0
-        },
-        "end": {
-          "line": 1119,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlElement",
-      "name": "VlMapSearch",
-      "attributes": [],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "vl-map-search"
-    },
-    {
       "description": "",
       "summary": "",
       "path": "vl-tooltip.js",
@@ -8202,11 +5581,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 40,
+              "line": 41,
               "column": 4
             },
             "end": {
-              "line": 42,
+              "line": 43,
               "column": 5
             }
           },
@@ -8219,11 +5598,28 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 44,
+              "line": 45,
               "column": 4
             },
             "end": {
-              "line": 46,
+              "line": 47,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "disableRotation",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 49,
+              "column": 4
+            },
+            "end": {
+              "line": 51,
               "column": 5
             }
           },
@@ -8236,11 +5632,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 48,
+              "line": 53,
               "column": 4
             },
             "end": {
-              "line": 53,
+              "line": 58,
               "column": 5
             }
           },
@@ -8253,11 +5649,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 57,
+              "line": 62,
               "column": 5
             }
           },
@@ -8270,11 +5666,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 64,
               "column": 4
             },
             "end": {
-              "line": 64,
+              "line": 69,
               "column": 5
             }
           },
@@ -8287,11 +5683,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 66,
+              "line": 71,
               "column": 4
             },
             "end": {
-              "line": 68,
+              "line": 73,
               "column": 5
             }
           },
@@ -8305,11 +5701,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 75,
               "column": 4
             },
             "end": {
-              "line": 86,
+              "line": 92,
               "column": 5
             }
           },
@@ -8325,11 +5721,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 99,
               "column": 4
             },
             "end": {
-              "line": 95,
+              "line": 101,
               "column": 5
             }
           },
@@ -8350,11 +5746,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 108,
               "column": 4
             },
             "end": {
-              "line": 104,
+              "line": 110,
               "column": 5
             }
           },
@@ -8375,11 +5771,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 106,
+              "line": 112,
               "column": 4
             },
             "end": {
-              "line": 111,
+              "line": 117,
               "column": 5
             }
           },
@@ -8395,11 +5791,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 119,
               "column": 4
             },
             "end": {
-              "line": 117,
+              "line": 123,
               "column": 5
             }
           },
@@ -8415,11 +5811,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 119,
+              "line": 125,
               "column": 4
             },
             "end": {
-              "line": 121,
+              "line": 127,
               "column": 5
             }
           },
@@ -8435,11 +5831,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 123,
+              "line": 129,
               "column": 4
             },
             "end": {
-              "line": 125,
+              "line": 131,
               "column": 5
             }
           },
@@ -8455,11 +5851,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 127,
+              "line": 133,
               "column": 4
             },
             "end": {
-              "line": 132,
+              "line": 138,
               "column": 5
             }
           },
@@ -8479,11 +5875,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 140,
               "column": 4
             },
             "end": {
-              "line": 136,
+              "line": 142,
               "column": 5
             }
           },
@@ -8499,17 +5895,99 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 16,
+          "line": 17,
           "column": 7
         },
         "end": {
-          "line": 137,
+          "line": 143,
           "column": 1
         }
       },
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlMap"
+    },
+    {
+      "description": "VlMap",
+      "summary": "",
+      "path": "src/vl-map-overview-map.js",
+      "properties": [
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 18,
+              "column": 4
+            },
+            "end": {
+              "line": 22,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 14,
+              "column": 4
+            },
+            "end": {
+              "line": 16,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 24,
+              "column": 4
+            },
+            "end": {
+              "line": 31,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 13,
+          "column": 7
+        },
+        "end": {
+          "line": 32,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlMapOverviewMap"
     },
     {
       "description": "VlMapLayer",
@@ -17020,6 +14498,3367 @@
       },
       "privacy": "public",
       "name": "VlLink"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "map",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24342
+            },
+            "end": {
+              "line": 0,
+              "column": 24369
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "disableEscapeKey",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24369
+            },
+            "end": {
+              "line": 0,
+              "column": 24445
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "disableRotation",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24445
+            },
+            "end": {
+              "line": 0,
+              "column": 24518
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_geoJSON",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24518
+            },
+            "end": {
+              "line": 0,
+              "column": 24610
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_mapElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24610
+            },
+            "end": {
+              "line": 0,
+              "column": 24670
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_projection",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24670
+            },
+            "end": {
+              "line": 0,
+              "column": 24759
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_extent",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24759
+            },
+            "end": {
+              "line": 0,
+              "column": 24806
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 24806
+            },
+            "end": {
+              "line": 0,
+              "column": 25204
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addAction",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25204
+            },
+            "end": {
+              "line": 0,
+              "column": 25240
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "zoomTo",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25240
+            },
+            "end": {
+              "line": 0,
+              "column": 25276
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__updateMapSize",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25276
+            },
+            "end": {
+              "line": 0,
+              "column": 25355
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__updateOverviewMapSize",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25355
+            },
+            "end": {
+              "line": 0,
+              "column": 25470
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__updateOverviewMapSizeOnLoad",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25470
+            },
+            "end": {
+              "line": 0,
+              "column": 25584
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__updateMapSizeOnLoad",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25584
+            },
+            "end": {
+              "line": 0,
+              "column": 25682
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__createLayerGroup",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25682
+            },
+            "end": {
+              "line": 0,
+              "column": 25752
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ]
+        },
+        {
+          "name": "__initializeCoordinateSystem",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 25752
+            },
+            "end": {
+              "line": 0,
+              "column": 26025
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 23970
+        },
+        "end": {
+          "line": 0,
+          "column": 26026
+        }
+      },
+      "privacy": "public",
+      "name": "r"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26099
+            },
+            "end": {
+              "line": 0,
+              "column": 26156
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26058
+            },
+            "end": {
+              "line": 0,
+              "column": 26099
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26156
+            },
+            "end": {
+              "line": 0,
+              "column": 26326
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 26026
+        },
+        "end": {
+          "line": 0,
+          "column": 26327
+        }
+      },
+      "privacy": "public",
+      "name": "i"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26707
+            },
+            "end": {
+              "line": 0,
+              "column": 26738
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "source",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26738
+            },
+            "end": {
+              "line": 0,
+              "column": 26771
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "features",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26771
+            },
+            "end": {
+              "line": 0,
+              "column": 26867
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "style",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26931
+            },
+            "end": {
+              "line": 0,
+              "column": 26988
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_name",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27039
+            },
+            "end": {
+              "line": 0,
+              "column": 27097
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_autoExtent",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27097
+            },
+            "end": {
+              "line": 0,
+              "column": 27161
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_cluster",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27161
+            },
+            "end": {
+              "line": 0,
+              "column": 27218
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_clusterDistance",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27218
+            },
+            "end": {
+              "line": 0,
+              "column": 27286
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27286
+            },
+            "end": {
+              "line": 0,
+              "column": 27343
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 26525
+            },
+            "end": {
+              "line": 0,
+              "column": 26623
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "verwijderFeatureStijlen",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27343
+            },
+            "end": {
+              "line": 0,
+              "column": 27469
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "rerender",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27469
+            },
+            "end": {
+              "line": 0,
+              "column": 27510
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "getFeature",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27510
+            },
+            "end": {
+              "line": 0,
+              "column": 27630
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "getCluster",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27630
+            },
+            "end": {
+              "line": 0,
+              "column": 27782
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_auto_extentChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27782
+            },
+            "end": {
+              "line": 0,
+              "column": 27837
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_featuresChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27837
+            },
+            "end": {
+              "line": 0,
+              "column": 27984
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__zoomToExtent",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 27984
+            },
+            "end": {
+              "line": 0,
+              "column": 28078
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__createLayer",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28078
+            },
+            "end": {
+              "line": 0,
+              "column": 28252
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ]
+        },
+        {
+          "name": "__createSource",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28252
+            },
+            "end": {
+              "line": 0,
+              "column": 28393
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "__createClusterSource",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28393
+            },
+            "end": {
+              "line": 0,
+              "column": 28598
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "__getBoundingbox",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28598
+            },
+            "end": {
+              "line": 0,
+              "column": 28712
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__negeerClustering",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28712
+            },
+            "end": {
+              "line": 0,
+              "column": 28745
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28745
+            },
+            "end": {
+              "line": 0,
+              "column": 28843
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 26327
+        },
+        "end": {
+          "line": 0,
+          "column": 28844
+        }
+      },
+      "privacy": "public",
+      "name": "l"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "type",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28917
+            },
+            "end": {
+              "line": 0,
+              "column": 28969
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "url",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28969
+            },
+            "end": {
+              "line": 0,
+              "column": 29011
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29011
+            },
+            "end": {
+              "line": 0,
+              "column": 29057
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "title",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29057
+            },
+            "end": {
+              "line": 0,
+              "column": 29103
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29103
+            },
+            "end": {
+              "line": 0,
+              "column": 29160
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_projection",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29160
+            },
+            "end": {
+              "line": 0,
+              "column": 29232
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_WMTSSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29232
+            },
+            "end": {
+              "line": 0,
+              "column": 29334
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_vectorSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29334
+            },
+            "end": {
+              "line": 0,
+              "column": 29467
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28876
+            },
+            "end": {
+              "line": 0,
+              "column": 28917
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29467
+            },
+            "end": {
+              "line": 0,
+              "column": 29584
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_createWMTSSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29584
+            },
+            "end": {
+              "line": 0,
+              "column": 30032
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_createVectorSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30032
+            },
+            "end": {
+              "line": 0,
+              "column": 30247
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_createBaseLayer",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30247
+            },
+            "end": {
+              "line": 0,
+              "column": 30591
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 28844
+        },
+        "end": {
+          "line": 0,
+          "column": 30592
+        }
+      },
+      "privacy": "public",
+      "name": "c"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "type",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28917
+            },
+            "end": {
+              "line": 0,
+              "column": 28969
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "url",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28969
+            },
+            "end": {
+              "line": 0,
+              "column": 29011
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29011
+            },
+            "end": {
+              "line": 0,
+              "column": 29057
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "title",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29057
+            },
+            "end": {
+              "line": 0,
+              "column": 29103
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29103
+            },
+            "end": {
+              "line": 0,
+              "column": 29160
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_projection",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29160
+            },
+            "end": {
+              "line": 0,
+              "column": 29232
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_WMTSSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29232
+            },
+            "end": {
+              "line": 0,
+              "column": 29334
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_vectorSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29334
+            },
+            "end": {
+              "line": 0,
+              "column": 29467
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28876
+            },
+            "end": {
+              "line": 0,
+              "column": 28917
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29467
+            },
+            "end": {
+              "line": 0,
+              "column": 29584
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createWMTSSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29584
+            },
+            "end": {
+              "line": 0,
+              "column": 30032
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createVectorSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30032
+            },
+            "end": {
+              "line": 0,
+              "column": 30247
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createBaseLayer",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30247
+            },
+            "end": {
+              "line": 0,
+              "column": 30591
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 30592
+        },
+        "end": {
+          "line": 0,
+          "column": 30816
+        }
+      },
+      "privacy": "public",
+      "superclass": "c",
+      "name": "s"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "type",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28917
+            },
+            "end": {
+              "line": 0,
+              "column": 28969
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "url",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28969
+            },
+            "end": {
+              "line": 0,
+              "column": 29011
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29011
+            },
+            "end": {
+              "line": 0,
+              "column": 29057
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "title",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29057
+            },
+            "end": {
+              "line": 0,
+              "column": 29103
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29103
+            },
+            "end": {
+              "line": 0,
+              "column": 29160
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_projection",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29160
+            },
+            "end": {
+              "line": 0,
+              "column": 29232
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_WMTSSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29232
+            },
+            "end": {
+              "line": 0,
+              "column": 29334
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_vectorSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29334
+            },
+            "end": {
+              "line": 0,
+              "column": 29467
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28876
+            },
+            "end": {
+              "line": 0,
+              "column": 28917
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29467
+            },
+            "end": {
+              "line": 0,
+              "column": 29584
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createWMTSSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29584
+            },
+            "end": {
+              "line": 0,
+              "column": 30032
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createVectorSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30032
+            },
+            "end": {
+              "line": 0,
+              "column": 30247
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createBaseLayer",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30247
+            },
+            "end": {
+              "line": 0,
+              "column": 30591
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 30816
+        },
+        "end": {
+          "line": 0,
+          "column": 31028
+        }
+      },
+      "privacy": "public",
+      "superclass": "c",
+      "name": "a"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "type",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28917
+            },
+            "end": {
+              "line": 0,
+              "column": 28969
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "url",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28969
+            },
+            "end": {
+              "line": 0,
+              "column": 29011
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29011
+            },
+            "end": {
+              "line": 0,
+              "column": 29057
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "title",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29057
+            },
+            "end": {
+              "line": 0,
+              "column": 29103
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29103
+            },
+            "end": {
+              "line": 0,
+              "column": 29160
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_projection",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29160
+            },
+            "end": {
+              "line": 0,
+              "column": 29232
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_WMTSSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29232
+            },
+            "end": {
+              "line": 0,
+              "column": 29334
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_vectorSource",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29334
+            },
+            "end": {
+              "line": 0,
+              "column": 29467
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "c"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 28876
+            },
+            "end": {
+              "line": 0,
+              "column": 28917
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_configureMap",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29467
+            },
+            "end": {
+              "line": 0,
+              "column": 29584
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createWMTSSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 29584
+            },
+            "end": {
+              "line": 0,
+              "column": 30032
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createVectorSource",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30032
+            },
+            "end": {
+              "line": 0,
+              "column": 30247
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        },
+        {
+          "name": "_createBaseLayer",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 30247
+            },
+            "end": {
+              "line": 0,
+              "column": 30591
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "c"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 31028
+        },
+        "end": {
+          "line": 0,
+          "column": 31243
+        }
+      },
+      "privacy": "public",
+      "superclass": "c",
+      "name": "p"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31433
+            },
+            "end": {
+              "line": 0,
+              "column": 31464
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "action",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31520
+            },
+            "end": {
+              "line": 0,
+              "column": 31553
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31553
+            },
+            "end": {
+              "line": 0,
+              "column": 31610
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31275
+            },
+            "end": {
+              "line": 0,
+              "column": 31337
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "activateAction",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31610
+            },
+            "end": {
+              "line": 0,
+              "column": 31703
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "actionChanged",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31703
+            },
+            "end": {
+              "line": 0,
+              "column": 31798
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_layerChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31798
+            },
+            "end": {
+              "line": 0,
+              "column": 31864
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_createAction",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31864
+            },
+            "end": {
+              "line": 0,
+              "column": 31940
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_computeAction",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31940
+            },
+            "end": {
+              "line": 0,
+              "column": 32066
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__registerMapActionChangedCallback",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32066
+            },
+            "end": {
+              "line": 0,
+              "column": 32247
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [
+        {
+          "name": "isVlMapAction",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31337
+            },
+            "end": {
+              "line": 0,
+              "column": 31369
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 31243
+        },
+        "end": {
+          "line": 0,
+          "column": 32248
+        }
+      },
+      "privacy": "public",
+      "name": "h"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "layer",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31433
+            },
+            "end": {
+              "line": 0,
+              "column": 31464
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "action",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31520
+            },
+            "end": {
+              "line": 0,
+              "column": 31553
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "_map",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31553
+            },
+            "end": {
+              "line": 0,
+              "column": 31610
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "style",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32367
+            },
+            "end": {
+              "line": 0,
+              "column": 32398
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_cluster",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32425
+            },
+            "end": {
+              "line": 0,
+              "column": 32476
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31275
+            },
+            "end": {
+              "line": 0,
+              "column": 31337
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "activateAction",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31610
+            },
+            "end": {
+              "line": 0,
+              "column": 31703
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "actionChanged",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31703
+            },
+            "end": {
+              "line": 0,
+              "column": 31798
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "_layerChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31798
+            },
+            "end": {
+              "line": 0,
+              "column": 31864
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "_createAction",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32744
+            },
+            "end": {
+              "line": 0,
+              "column": 32873
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_computeAction",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31940
+            },
+            "end": {
+              "line": 0,
+              "column": 32066
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            },
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "__registerMapActionChangedCallback",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32066
+            },
+            "end": {
+              "line": 0,
+              "column": 32247
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "h"
+        },
+        {
+          "name": "mark",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32476
+            },
+            "end": {
+              "line": 0,
+              "column": 32546
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "removeMarks",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32546
+            },
+            "end": {
+              "line": 0,
+              "column": 32607
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "select",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32607
+            },
+            "end": {
+              "line": 0,
+              "column": 32664
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "onSelect",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32664
+            },
+            "end": {
+              "line": 0,
+              "column": 32693
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "reset",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32693
+            },
+            "end": {
+              "line": 0,
+              "column": 32744
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [
+        {
+          "name": "isVlMapAction",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 31337
+            },
+            "end": {
+              "line": 0,
+              "column": 31369
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "h"
+        }
+      ],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 32248
+        },
+        "end": {
+          "line": 0,
+          "column": 32874
+        }
+      },
+      "privacy": "public",
+      "superclass": "h",
+      "name": "g"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "color",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32951
+            },
+            "end": {
+              "line": 0,
+              "column": 33023
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "textColor",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33023
+            },
+            "end": {
+              "line": 0,
+              "column": 33086
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "textOffsetX",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33086
+            },
+            "end": {
+              "line": 0,
+              "column": 33149
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "textOffsetY",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33149
+            },
+            "end": {
+              "line": 0,
+              "column": 33212
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "style",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33212
+            },
+            "end": {
+              "line": 0,
+              "column": 33336
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32906
+            },
+            "end": {
+              "line": 0,
+              "column": 32951
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_hasUniqueStyles",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33336
+            },
+            "end": {
+              "line": 0,
+              "column": 33440
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_containsStyle",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33440
+            },
+            "end": {
+              "line": 0,
+              "column": 33510
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_getStyles",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33510
+            },
+            "end": {
+              "line": 0,
+              "column": 33554
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_containsObject",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33554
+            },
+            "end": {
+              "line": 0,
+              "column": 33595
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_areIdentical",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33595
+            },
+            "end": {
+              "line": 0,
+              "column": 33645
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ]
+        },
+        {
+          "name": "_setStyleOnParent",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33645
+            },
+            "end": {
+              "line": 0,
+              "column": 33730
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 32874
+        },
+        "end": {
+          "line": 0,
+          "column": 33731
+        }
+      },
+      "privacy": "public",
+      "name": "b"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "color",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32951
+            },
+            "end": {
+              "line": 0,
+              "column": 33023
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "textColor",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33023
+            },
+            "end": {
+              "line": 0,
+              "column": 33086
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "textOffsetX",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33086
+            },
+            "end": {
+              "line": 0,
+              "column": 33149
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "textOffsetY",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33149
+            },
+            "end": {
+              "line": 0,
+              "column": 33212
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "style",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 34094
+            },
+            "end": {
+              "line": 0,
+              "column": 34971
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "size",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33749
+            },
+            "end": {
+              "line": 0,
+              "column": 33796
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "borderColor",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33796
+            },
+            "end": {
+              "line": 0,
+              "column": 33875
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "borderSize",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33875
+            },
+            "end": {
+              "line": 0,
+              "column": 33935
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "clusterTextColor",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33935
+            },
+            "end": {
+              "line": 0,
+              "column": 34013
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "clusterColor",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 34013
+            },
+            "end": {
+              "line": 0,
+              "column": 34094
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 32906
+            },
+            "end": {
+              "line": 0,
+              "column": 32951
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_hasUniqueStyles",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33336
+            },
+            "end": {
+              "line": 0,
+              "column": 33440
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_containsStyle",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33440
+            },
+            "end": {
+              "line": 0,
+              "column": 33510
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_getStyles",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33510
+            },
+            "end": {
+              "line": 0,
+              "column": 33554
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_containsObject",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33554
+            },
+            "end": {
+              "line": 0,
+              "column": 33595
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_areIdentical",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33595
+            },
+            "end": {
+              "line": 0,
+              "column": 33645
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "n"
+            }
+          ],
+          "inheritedFrom": "b"
+        },
+        {
+          "name": "_setStyleOnParent",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 33645
+            },
+            "end": {
+              "line": 0,
+              "column": 33730
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "b"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 33731
+        },
+        "end": {
+          "line": 0,
+          "column": 34972
+        }
+      },
+      "privacy": "public",
+      "superclass": "b",
+      "name": "u"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-map.js",
+      "properties": [
+        {
+          "name": "url",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35389
+            },
+            "end": {
+              "line": 0,
+              "column": 35433
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "searchUrl",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35433
+            },
+            "end": {
+              "line": 0,
+              "column": 35482
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "locationUrl",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35482
+            },
+            "end": {
+              "line": 0,
+              "column": 35531
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_selectElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35531
+            },
+            "end": {
+              "line": 0,
+              "column": 35596
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_parentElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35596
+            },
+            "end": {
+              "line": 0,
+              "column": 35664
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35307
+            },
+            "end": {
+              "line": 0,
+              "column": 35389
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_addSearchEventListener",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 35664
+            },
+            "end": {
+              "line": 0,
+              "column": 36029
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_addChoiceEventListener",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 36029
+            },
+            "end": {
+              "line": 0,
+              "column": 36588
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_configure",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 36588
+            },
+            "end": {
+              "line": 0,
+              "column": 36798
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 34972
+        },
+        "end": {
+          "line": 0,
+          "column": 36799
+        }
+      },
+      "privacy": "public",
+      "name": "y"
     },
     {
       "description": "",

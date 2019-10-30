@@ -1,6 +1,6 @@
 {
   "name": "webcomponenten-vl-ui",
-  "version": "1.0.60",
+  "version": "1.0.59",
   "description": "Webcomponenten demo",
   "main": "index.html",
   "author": "DIDM",
@@ -63,6 +63,7 @@
     "vl-ui-pill": "^1.0.8",
     "vl-ui-properties": "^2.0.9",
     "vl-ui-select": "1.1.13",
+    "vl-ui-side-sheet": "1.0.0",
     "vl-ui-textarea": "^1.0.10",
     "vl-ui-titles": "^1.0.13",
     "vl-ui-toaster": "^1.0.7",
@@ -94,6 +95,7 @@
     "vl-ui-pill",
     "vl-ui-properties",
     "vl-ui-select",
+    "vl-ui-side-sheet",
     "vl-ui-textarea",
     "vl-ui-titles",
     "vl-ui-toaster",

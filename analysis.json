@@ -722,6 +722,24 @@
       ]
     },
     {
+      "name": "VlFormValidation",
+      "description": "VlFormValidation",
+      "summary": "",
+      "sourceRange": {
+        "file": "vl-form-validation.src.js",
+        "start": {
+          "line": 19,
+          "column": 32
+        },
+        "end": {
+          "line": 39,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
       "name": "VlInputAddonElement",
       "description": "",
       "summary": "",
@@ -770,6 +788,24 @@
         "end": {
           "line": 20,
           "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "VlFormValidation",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "vl-form-validation.js",
+        "start": {
+          "line": 0,
+          "column": 371
+        },
+        "end": {
+          "line": 0,
+          "column": 550
         }
       },
       "privacy": "public",
@@ -4309,6 +4345,75 @@
     {
       "description": "",
       "summary": "",
+      "path": "vl-form-validation.src.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "dress",
+          "description": "Initialiseer de form validatie.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 8
+            },
+            "end": {
+              "line": 37,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "HTMLElement"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [
+        {
+          "name": "awaitUntilReady",
+          "description": "Wacht tot de form validatie initialisatie klaar is.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 8
+            },
+            "end": {
+              "line": 28,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "Promise"
+          }
+        }
+      ],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 20,
+          "column": 11
+        },
+        "end": {
+          "line": 38,
+          "column": 5
+        }
+      },
+      "privacy": "public",
+      "superclass": "SuperClass"
+    },
+    {
+      "description": "",
+      "summary": "",
       "path": "vl-grid.src.js",
       "properties": [
         {
@@ -5163,11 +5268,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 23,
+              "line": 28,
               "column": 2
             },
             "end": {
-              "line": 25,
+              "line": 30,
               "column": 3
             }
           },
@@ -5180,11 +5285,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 27,
+              "line": 32,
               "column": 2
             },
             "end": {
-              "line": 29,
+              "line": 34,
               "column": 3
             }
           },
@@ -5198,11 +5303,31 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 19,
+              "line": 23,
               "column": 2
             },
             "end": {
-              "line": 21,
+              "line": 26,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_dress",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 36,
+              "column": 2
+            },
+            "end": {
+              "line": 42,
               "column": 3
             }
           },
@@ -5218,11 +5343,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 13,
+          "line": 18,
           "column": 7
         },
         "end": {
-          "line": 30,
+          "line": 44,
           "column": 1
         }
       },
@@ -13517,6 +13642,71 @@
     {
       "description": "",
       "summary": "",
+      "path": "vl-form-validation.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "dress",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 500
+            },
+            "end": {
+              "line": 0,
+              "column": 548
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [
+        {
+          "name": "awaitUntilReady",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 416
+            },
+            "end": {
+              "line": 0,
+              "column": 500
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 391
+        },
+        "end": {
+          "line": 0,
+          "column": 549
+        }
+      },
+      "privacy": "public",
+      "superclass": "SuperClass"
+    },
+    {
+      "description": "",
+      "summary": "",
       "path": "vl-grid.js",
       "properties": [
         {
@@ -14368,11 +14558,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 293
+              "column": 541
             },
             "end": {
               "line": 0,
-              "column": 337
+              "column": 585
             }
           },
           "metadata": {}
@@ -14385,11 +14575,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 337
+              "column": 585
             },
             "end": {
               "line": 0,
-              "column": 404
+              "column": 652
             }
           },
           "metadata": {}
@@ -14403,11 +14593,31 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 236
+              "column": 470
             },
             "end": {
               "line": 0,
-              "column": 293
+              "column": 541
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_dress",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 652
+            },
+            "end": {
+              "line": 0,
+              "column": 832
             }
           },
           "metadata": {},
@@ -14423,11 +14633,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 79
+          "column": 295
         },
         "end": {
           "line": 0,
-          "column": 405
+          "column": 833
         }
       },
       "privacy": "public",

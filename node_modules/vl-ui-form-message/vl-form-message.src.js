@@ -35,9 +35,9 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
 
 
 /**
- * VlFormValidation
+ * VlFormValidationMessage
  * @class
- * @classdesc Gebruik de vl-form-validation om een validatie boodschap toe te voegen aan een formulier.
+ * @classdesc Gebruik de vl-form-validation-message om een validatie boodschap toe te voegen aan een formulier.
  *
  * @extends NativeVlElement
  *
@@ -49,7 +49,7 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
-export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
+export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElement) {
   static get _observedAttributes() {
     return ['block', 'success'];
   }
@@ -133,5 +133,5 @@ export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 }
 
 define('vl-form-label', VlFormLabel, {extends: 'label'});
-define('vl-form-validation', VlFormValidation, {extends: 'p'});
+define('vl-form-validation-message', VlFormValidationMessage, {extends: 'p'});
 define('vl-form-annotation', VlFormAnnotation, {extends: 'p'});

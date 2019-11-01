@@ -17,15 +17,15 @@
   </template>
 </test-fixture>
 
-<test-fixture id="vl-form-validation-error-fixture">
+<test-fixture id="vl-form-validation-message-error-fixture">
   <template>
-    <p id="error" is="vl-form-validation" error></p>
+    <p id="error" is="vl-form-validation-message" error></p>
   </template>
 </test-fixture>
 
-<test-fixture id="vl-form-validation-success-fixture">
+<test-fixture id="vl-form-validation-message-success-fixture">
   <template>
-    <p id="success" is="vl-form-validation" success></p>
+    <p id="success" is="vl-form-validation-message" success></p>
   </template>
 </test-fixture>
 
@@ -59,36 +59,36 @@
     });
 
     test('form error heeft de vl-form__error class', () => {
-      const error = fixture('vl-form-validation-error-fixture');
+      const error = fixture('vl-form-validation-message-error-fixture');
       assert.isTrue(error.classList.contains('vl-form__error'));
     });
 
     test('form error krijgt de juiste class wanneer het een attribuut bevat', () => {
-      const error = fixture('vl-form-validation-error-fixture');
+      const error = fixture('vl-form-validation-message-error-fixture');
       ['block'].forEach((attribuut) => {
         valideerAttribuut(error, 'vl-form__error--', attribuut);
       });
     });
 
     test('form success heeft de vl-form__success class', () => {
-      const success = fixture('vl-form-validation-success-fixture');
+      const success = fixture('vl-form-validation-message-success-fixture');
       assert.isTrue(success.classList.contains('vl-form__success'));
     });
 
     test('form success krijgt de juiste class wanneer het een attribuut bevat', () => {
-      const success = fixture('vl-form-validation-success-fixture');
+      const success = fixture('vl-form-validation-message-success-fixture');
       ['block'].forEach((attribuut) => {
         valideerAttribuut(success, 'vl-form__success--', attribuut);
       });
     });
 
     test('form success heeft een check', () => {
-      const success = fixture('vl-form-validation-success-fixture');
+      const success = fixture('vl-form-validation-message-success-fixture');
       assert.isTrue(success.querySelector("span").classList.contains('vl-vi-check'));
     });
 
     test('form error heeft geen check', () => {
-      const error = fixture('vl-form-validation-error-fixture');
+      const error = fixture('vl-form-validation-message-error-fixture');
       assert.isNull(error.querySelector("span"));
     });
 

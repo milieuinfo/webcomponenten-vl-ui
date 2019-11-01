@@ -4066,7 +4066,7 @@
       "name": "VlFormLabel"
     },
     {
-      "description": "VlFormValidation",
+      "description": "VlFormValidationMessage",
       "summary": "",
       "path": "vl-form-message.src.js",
       "properties": [
@@ -4261,7 +4261,7 @@
       },
       "privacy": "public",
       "superclass": "NativeVlElement",
-      "name": "VlFormValidation"
+      "name": "VlFormValidationMessage"
     },
     {
       "description": "VlFormAnnotation",
@@ -13377,11 +13377,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 571
+              "column": 578
             },
             "end": {
               "line": 0,
-              "column": 632
+              "column": 639
             }
           },
           "metadata": {}
@@ -13394,11 +13394,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 632
+              "column": 639
             },
             "end": {
               "line": 0,
-              "column": 689
+              "column": 696
             }
           },
           "metadata": {}
@@ -13411,11 +13411,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 689
+              "column": 696
             },
             "end": {
               "line": 0,
-              "column": 749
+              "column": 756
             }
           },
           "metadata": {}
@@ -13428,11 +13428,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 749
+              "column": 756
             },
             "end": {
               "line": 0,
-              "column": 820
+              "column": 827
             }
           },
           "metadata": {}
@@ -13445,11 +13445,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 924
+              "column": 931
             },
             "end": {
               "line": 0,
-              "column": 961
+              "column": 968
             }
           },
           "metadata": {}
@@ -13462,11 +13462,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 961
+              "column": 968
             },
             "end": {
               "line": 0,
-              "column": 1029
+              "column": 1036
             }
           },
           "metadata": {}
@@ -13480,11 +13480,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 820
+              "column": 827
             },
             "end": {
               "line": 0,
-              "column": 924
+              "column": 931
             }
           },
           "metadata": {},
@@ -13497,11 +13497,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1029
+              "column": 1036
             },
             "end": {
               "line": 0,
-              "column": 1200
+              "column": 1207
             }
           },
           "metadata": {},
@@ -13524,11 +13524,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1200
+              "column": 1207
             },
             "end": {
               "line": 0,
-              "column": 1323
+              "column": 1330
             }
           },
           "metadata": {},
@@ -13555,11 +13555,11 @@
         },
         "end": {
           "line": 0,
-          "column": 1324
+          "column": 1331
         }
       },
       "privacy": "public",
-      "name": "VlFormValidation"
+      "name": "VlFormValidationMessage"
     },
     {
       "description": "",
@@ -13574,11 +13574,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1517
+              "column": 1524
             },
             "end": {
               "line": 0,
-              "column": 1566
+              "column": 1573
             }
           },
           "metadata": {}
@@ -13591,11 +13591,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1566
+              "column": 1573
             },
             "end": {
               "line": 0,
-              "column": 1634
+              "column": 1641
             }
           },
           "metadata": {}
@@ -13609,11 +13609,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1455
+              "column": 1462
             },
             "end": {
               "line": 0,
-              "column": 1517
+              "column": 1524
             }
           },
           "metadata": {},
@@ -13629,11 +13629,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 1332
+          "column": 1339
         },
         "end": {
           "line": 0,
-          "column": 1635
+          "column": 1642
         }
       },
       "privacy": "public",

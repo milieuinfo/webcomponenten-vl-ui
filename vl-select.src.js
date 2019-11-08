@@ -1,4 +1,4 @@
-import { NativeVlElement, define, awaitScript, awaitUntil } from '/node_modules/vl-ui-core/vl-core.src.js';
+import {awaitScript, awaitUntil, define, NativeVlElement} from '/node_modules/vl-ui-core/vl-core.js';
 
 Promise.all([
   awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
@@ -11,7 +11,7 @@ Promise.all([
  * VlSelect
  * @class
  * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
- * 
+ *
  * @extends NativeVlElement
  * 
  * @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
@@ -22,21 +22,23 @@ Promise.all([
  * @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
  * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
  * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
- * 
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
  */
-
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {
+  static get _observedAttributes() {
+    return ['error', 'success'];
+  }
 
   static get _observedChildClassAttributes() {
-    return ['block', 'error', 'success', 'disabled'];
+    return ['block', 'disabled'];
   }
 
   connectedCallback() {
     this.classList.add('vl-select');
-    if (this._dataVlSelectAttribute != undefined) {
+    if (this._dataVlSelectAttribute != null) {
       this.dress();
     }
   }
@@ -61,6 +63,80 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     return 'data-vl-select-dressed';
   }
 
+  _successChangedCallback(oldValue, newValue) {
+    this.__stateChangedCallback(newValue, 'success');
+  }
+
+  _errorChangedCallback(oldValue, newValue) {
+    this.__stateChangedCallback(newValue, 'error');
+  }
+
+  __stateChangedCallback(newValue, type) {
+    if (newValue != null) {
+      (async () => {
+        if (this._dataVlSelectAttribute != null) {
+          while (!this._dressed) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+          }
+          this.__wrap();
+          this._wrapperElement.parentNode.classList.add('vl-select--' + type);
+        } else {
+          this.classList.add('vl-select--' + type);
+        }
+      })();
+    } else {
+      if (this._dataVlSelectAttribute != null) {
+        this.__unwrap();
+      } else {
+        this.classList.remove('vl-select--' + type);
+      }
+    }
+  }
+
+  /**
+   * Extra wrapper rond de js-vl-select div om CSS classes op te zetten. Dit
+   * is om de CSS hiearchy van web universum niet te breken.
+   * @private
+   */
+  __wrap() {
+    const wrapper = document.createElement('div');
+    this._wrapperElement.parentNode.insertBefore(wrapper, this._wrapperElement);
+    wrapper.appendChild(this._wrapperElement);
+  }
+
+  __unwrap() {
+    const wrapper = this._wrapperElement;
+    const parent = wrapper.parentNode;
+    parent.parentNode.insertBefore(wrapper, parent);
+    parent.remove();
+  }
+
+  /**
+   * Override van de __changeAttribute om rekening te houden dat de select
+   * component geinitialiseerd kan worden met de 'dress()' functie.
+   *  - wanneer de component geinitialiseerd is, moet de CSS class op de parent van de js-vl-select div komen
+   *  - wanneer de component native is, moet de CSS class op de select zelf komen
+   * @private
+   */
+  __changeAttribute(element, oldValue, newValue, attribute, classPrefix) {
+    const el = this.__lookupElement(element);
+    super.__changeAttribute(el, oldValue, newValue, attribute, classPrefix);
+  }
+
+  /**
+   * Afhankelijk of de component dressed is, moet de CSS class op een ander
+   * element toegevoegd worden.
+   * @param element
+   * @return {HTMLElement|*} element waar de CSS class toegevoegd moet worden.
+   * @private
+   */
+  __lookupElement(element) {
+    if (this._dressed) {
+      return this._wrapperElement.parentElement;
+    }
+    return element;
+  }
+
   /**
    * Zet de mogelijkheden die gekozen kunnen worden.
    * 
@@ -71,19 +147,33 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 
   /**
+   * Zet sorteer functie voor de mogelijke keuzes.
+   *
+   * @param {function(T, T)} fn bi-functie die de mogelijke keuzes sorteert.
+   */
+  set sortFilter(fn) {
+    this._choices.config.sortFilter = fn;
+  }
+
+  /**
    * Geef de `Choices` instantie.
    *
    * @see https://www.npmjs.com/package/choices.js
-   * @returns {Choices} de `Choices` instantie of `null` als de component nog niet geinitialiseerd is door `dress()`
+   * @returns {Choices} de `Choices` instantie of `null` als de component nog niet geïnitialiseerd is door `dress()`
    */
   get _choices() {
-    let choices = null;
-    vl.util.each(vl.select.selectInstances, instance => {
-      if (instance.element === this) {
-        choices = instance;
-      }
+    return vl.select.selectInstances.find((instance) => {
+      return instance.element === this;
     });
-    return choices;
+  }
+
+  /**
+   * Geef de 'js-vl-select' wrapper terug dat door de dress functie wordt gegenereerd
+   * wordt.
+   * @return {null|*|Element} geeft 'js-vl-select' div terug of 'null' als de component nog niet geinitialiseerd is door 'dress()'
+   */
+  get _wrapperElement() {
+    return this._element.closest('.js-vl-select');
   }
 
   /**
@@ -93,9 +183,11 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    * @param params object with callbackFn: function(select) with return value the items for `setChoices`
    */
   dress(params) {
-    if (!this._dressed) {
-      vl.select.dress(this, params);
-    }
+    setTimeout(() => {
+      if (!this._dressed) {
+        vl.select.dress(this, params);
+      }
+    });
   }
 
   /**
@@ -141,5 +233,19 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   setValueByChoice(value) {
     vl.select.setValueByChoice(this, value);
+  }
+
+  /**
+   * Toon de dropdown met de mogelijke keuzes.
+   */
+  showDropdown() {
+    vl.select.showDropdown(this);
+  }
+
+  /**
+   * Verberg de dropdown met de mogelijke keuzes.
+   */
+  hideDropdown() {
+    vl.select.hideDropdown(this);
   }
 }

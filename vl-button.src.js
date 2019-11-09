@@ -1,7 +1,7 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import { VlLinkElement } from "/node_modules/vl-ui-link/vl-link.js";
 import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
-import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.src.js";
+import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.js";
 
 /**
  * VlButton

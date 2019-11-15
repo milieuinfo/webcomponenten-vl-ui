@@ -732,7 +732,7 @@
           "column": 32
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 1
         }
       },
@@ -805,7 +805,7 @@
         },
         "end": {
           "line": 0,
-          "column": 550
+          "column": 601
         }
       },
       "privacy": "public",
@@ -1927,11 +1927,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 47,
+              "line": 48,
               "column": 4
             },
             "end": {
-              "line": 49,
+              "line": 50,
               "column": 5
             }
           },
@@ -1944,11 +1944,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 51,
+              "line": 52,
               "column": 4
             },
             "end": {
-              "line": 53,
+              "line": 54,
               "column": 5
             }
           },
@@ -1961,11 +1961,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 56,
               "column": 4
             },
             "end": {
-              "line": 57,
+              "line": 58,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "Geeft de waarde van de checkbox terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 74,
+              "column": 4
+            },
+            "end": {
+              "line": 76,
               "column": 5
             }
           },
@@ -1983,7 +2000,7 @@
               "column": 4
             },
             "end": {
-              "line": 45,
+              "line": 46,
               "column": 5
             }
           },
@@ -1999,11 +2016,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 64,
+              "line": 65,
               "column": 4
             },
             "end": {
-              "line": 66,
+              "line": 67,
               "column": 5
             }
           },
@@ -2019,16 +2036,20 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 68,
+              "line": 78,
               "column": 4
             },
             "end": {
-              "line": 84,
+              "line": 95,
               "column": 5
             }
           },
           "metadata": {},
-          "params": [],
+          "params": [
+            {
+              "name": "event"
+            }
+          ],
           "return": {
             "type": "void"
           }
@@ -2039,11 +2060,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 97,
               "column": 4
             },
             "end": {
-              "line": 89,
+              "line": 100,
               "column": 5
             }
           },
@@ -2066,11 +2087,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 91,
+              "line": 102,
               "column": 4
             },
             "end": {
-              "line": 93,
+              "line": 104,
               "column": 5
             }
           },
@@ -2093,11 +2114,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 95,
+              "line": 106,
               "column": 4
             },
             "end": {
-              "line": 107,
+              "line": 118,
               "column": 5
             }
           },
@@ -2120,11 +2141,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 109,
+              "line": 120,
               "column": 4
             },
             "end": {
-              "line": 111,
+              "line": 122,
               "column": 5
             }
           },
@@ -2147,11 +2168,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 124,
               "column": 4
             },
             "end": {
-              "line": 119,
+              "line": 130,
               "column": 5
             }
           },
@@ -2167,11 +2188,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 121,
+              "line": 132,
               "column": 4
             },
             "end": {
-              "line": 123,
+              "line": 134,
               "column": 5
             }
           },
@@ -2188,11 +2209,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 125,
+              "line": 136,
               "column": 4
             },
             "end": {
-              "line": 127,
+              "line": 138,
               "column": 5
             }
           },
@@ -2216,7 +2237,7 @@
           "column": 7
         },
         "end": {
-          "line": 128,
+          "line": 139,
           "column": 1
         }
       },
@@ -4358,7 +4379,7 @@
               "column": 8
             },
             "end": {
-              "line": 37,
+              "line": 39,
               "column": 9
             }
           },
@@ -4404,7 +4425,7 @@
           "column": 11
         },
         "end": {
-          "line": 38,
+          "line": 40,
           "column": 5
         }
       },
@@ -12679,12 +12700,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 72
+              "line": 0,
+              "column": 871
             },
             "end": {
-              "line": 11,
-              "column": 113
+              "line": 0,
+              "column": 912
             }
           },
           "metadata": {}
@@ -12696,12 +12717,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 113
+              "line": 0,
+              "column": 912
             },
             "end": {
-              "line": 11,
-              "column": 177
+              "line": 0,
+              "column": 976
             }
           },
           "metadata": {}
@@ -12713,12 +12734,29 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 177
+              "line": 0,
+              "column": 976
             },
             "end": {
-              "line": 11,
-              "column": 263
+              "line": 0,
+              "column": 1062
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1098
+            },
+            "end": {
+              "line": 0,
+              "column": 1146
             }
           },
           "metadata": {}
@@ -12731,12 +12769,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 11
+              "line": 0,
+              "column": 758
             },
             "end": {
-              "line": 11,
-              "column": 72
+              "line": 0,
+              "column": 871
             }
           },
           "metadata": {},
@@ -12751,12 +12789,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 263
+              "line": 0,
+              "column": 1062
             },
             "end": {
-              "line": 11,
-              "column": 299
+              "line": 0,
+              "column": 1098
             }
           },
           "metadata": {},
@@ -12771,16 +12809,20 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 299
+              "line": 0,
+              "column": 1146
             },
             "end": {
-              "line": 11,
-              "column": 767
+              "line": 0,
+              "column": 1539
             }
           },
           "metadata": {},
-          "params": [],
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
           "return": {
             "type": "void"
           }
@@ -12791,21 +12833,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 767
+              "line": 0,
+              "column": 1539
             },
             "end": {
-              "line": 11,
-              "column": 876
+              "line": 0,
+              "column": 1627
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "oldValue"
+              "name": "e"
             },
             {
-              "name": "newValue"
+              "name": "t"
             }
           ],
           "return": {
@@ -12818,21 +12860,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 876
+              "line": 0,
+              "column": 1627
             },
             "end": {
-              "line": 11,
-              "column": 951
+              "line": 0,
+              "column": 1681
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "oldValue"
+              "name": "e"
             },
             {
-              "name": "newValue"
+              "name": "t"
             }
           ],
           "return": {
@@ -12845,21 +12887,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 951
+              "line": 0,
+              "column": 1681
             },
             "end": {
-              "line": 11,
-              "column": 1260
+              "line": 0,
+              "column": 1939
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "oldValue"
+              "name": "e"
             },
             {
-              "name": "newValue"
+              "name": "t"
             }
           ],
           "return": {
@@ -12872,21 +12914,21 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 1260
+              "line": 0,
+              "column": 1939
             },
             "end": {
-              "line": 11,
-              "column": 1352
+              "line": 0,
+              "column": 2005
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "oldValue"
+              "name": "e"
             },
             {
-              "name": "newValue"
+              "name": "t"
             }
           ],
           "return": {
@@ -12899,12 +12941,12 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 1352
+              "line": 0,
+              "column": 2005
             },
             "end": {
-              "line": 11,
-              "column": 1630
+              "line": 0,
+              "column": 2271
             }
           },
           "metadata": {},
@@ -12919,18 +12961,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 1630
+              "line": 0,
+              "column": 2271
             },
             "end": {
-              "line": 11,
-              "column": 1673
+              "line": 0,
+              "column": 2308
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "node"
+              "name": "e"
             }
           ]
         },
@@ -12940,18 +12982,18 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 11,
-              "column": 1673
+              "line": 0,
+              "column": 2308
             },
             "end": {
-              "line": 11,
-              "column": 1705
+              "line": 0,
+              "column": 2334
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "node"
+              "name": "e"
             }
           ],
           "return": {
@@ -12968,8 +13010,8 @@
           "column": 73
         },
         "end": {
-          "line": 11,
-          "column": 1706
+          "line": 0,
+          "column": 2335
         }
       },
       "privacy": "public",
@@ -14202,7 +14244,7 @@
             },
             "end": {
               "line": 0,
-              "column": 548
+              "column": 599
             }
           },
           "metadata": {},
@@ -14244,7 +14286,7 @@
         },
         "end": {
           "line": 0,
-          "column": 549
+          "column": 600
         }
       },
       "privacy": "public",
@@ -19843,6 +19885,49 @@
       },
       "privacy": "public",
       "name": "VlModalTest"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "demo/vl-modal-test.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "open",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 2
+            },
+            "end": {
+              "line": 37,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 25,
+          "column": 7
+        },
+        "end": {
+          "line": 38,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "VlModalContainerTest"
     },
     {
       "description": "",

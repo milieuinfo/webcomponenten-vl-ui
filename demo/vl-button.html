@@ -12,18 +12,18 @@
 	<body>
         <h1>vl-ui-button demo</h1>
         <p>
-            <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-button">Meer voorbeelden en documentatie</a>.
+            <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-button">Meer voorbeelden en documentatie</a>.
         </p>
 
         <div>
             <h2>Button primary</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                    &lt;button is="vl-button" type="button"&gt;Gegevens opslaan&lt;/button&gt;
+                    &lt;button is="vl-button" id="button-primary" type="button"&gt;Gegevens opslaan&lt;/button&gt;
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button">Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-primary" onclick="getElementById('button-primary').innerHTML = 'Klik geregistreerd'">Gegevens opslaan</button>
             </div>
         </div>
 
@@ -31,11 +31,11 @@
             <h2>Button disabled</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                    &lt;button is="vl-button" type="button" disabled&gt;Gegevens opslaan&lt;/button>
+                    &lt;button is="vl-button" type="button" id="button-disabled" disabled&gt;Gegevens opslaan&lt;/button>
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" disabled type="button">Gegevens opslaan</button>
+                <button is="vl-button" type="button" disabled type="button" id="button-disabled" onclick="getElementById('button-disabled').innerHTML = 'Klik geregistreerd'">Gegevens opslaan</button>
             </div>
         </div>
 
@@ -47,7 +47,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" error type="button">Gegevens opslaan</button>
+                <button is="vl-button" type="button" error type="button" id="button-error">Gegevens opslaan</button>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button">Contactpersoon opslaan<span is="vl-icon" icon="location" after></span></button>
+                <button is="vl-button" type="button" id="button-icon-after">Contactpersoon opslaan<span is="vl-icon" icon="location" after></span></button>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button"><span is="vl-icon" icon="location" before></span>Contactpersoon opslaan</button>
+                <button is="vl-button" type="button" id="button-icon-before"><span is="vl-icon" icon="location" before ></span>Contactpersoon opslaan</button>
             </div>
         </div>
 
@@ -83,7 +83,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" block>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-block" block>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -95,7 +95,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" large>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-large" large>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -107,7 +107,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" wide>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-wide" wide>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -119,7 +119,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" narrow>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-narrow" narrow>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -131,7 +131,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" loading disabled>Gegevens verwerken</button>
+                <button is="vl-button" type="button" id="button-loading" loading disabled>Gegevens verwerken</button>
             </div>
         </div>
 
@@ -143,7 +143,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" secondary>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-secondary" secondary>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -155,7 +155,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" secondary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-secondary-voor" secondary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -167,7 +167,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" secondary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-secondary-error" secondary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -179,7 +179,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" secondary error><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-secondary-error-voor" secondary error><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -191,7 +191,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" tertiary>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-tertiary" tertiary>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -203,7 +203,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" tertiary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
+                <button is="vl-button" type="button" id="button-tertiary-icon-voor" tertiary><span is="vl-icon" icon="location" before></span>Gegevens opslaan</button>
             </div>
         </div>
 
@@ -215,7 +215,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button" tertiary error>Gegevens verwerken</button>
+                <button is="vl-button" type="button" id="button-tertiary-error" tertiary error>Gegevens verwerken</button>
             </div>
         </div>
 
@@ -227,7 +227,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button" type="button"><span is="vl-icon" icon="location"></span><span class="vl-u-hidden"></span></button>
+                <button is="vl-button" type="button" id="button-icon"><span is="vl-icon" icon="location"></span><span class="vl-u-hidden"></span></button>
             </div>
         </div>
 
@@ -240,8 +240,8 @@
                 </code>
             </pre>
             <div class="demo">
-                <a is="vl-link" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</a>
-                <button is="vl-button-link" type="button" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</button>
+                <a is="vl-link" id="button-a-link" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</a>
+                <button is="vl-button-link" type="button" id="button-link" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</button>
             </div>
         </div>
 
@@ -255,25 +255,25 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button-pill" type="button">
+                <button is="vl-button-pill" id="button-pill" type="button">
                     Optie 1
                 </button>
             </div>
         </div>
 
         <div>
-            <h2>Pill clickable warning</h2>
+            <h2>Pill clickable types</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                  &lt;button is="vl-button-pill" type="warning"&gt;
-                    Optie 1
-                  &lt;/button&gt;
+                    &lt;button is="vl-button-pill" type="success"&gt;Optie 1&lt;/button&gt;
+                    &lt;button is="vl-button-pill" type="warning"&gt;Optie 1&lt;/button&gt;
+                    &lt;button is="vl-button-pill" type="error"&gt;Optie 1&lt;/button&gt;
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button-pill" type="warning">
-                    Optie 1
-                </button>
+                <button is="vl-button-pill" id="button-pill-success" type="success" data-vl-type="success">Optie 1</button>
+                <button is="vl-button-pill" id="button-pill-warning" type="warning" data-vl-type="warning">Optie 1</button>
+                <button is="vl-button-pill" id="button-pill-error" type="error" data-vl-type="error">Optie 1</button>
             </div>
         </div>
 
@@ -287,7 +287,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button-input-addon" type="button">
+                <button is="vl-button-input-addon" id="button-input-addon" type="button">
                     <span is="vl-icon" icon="location"></span>
                 </button>
             </div>

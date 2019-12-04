@@ -55,6 +55,8 @@ Promise.all([
  * @property {string} min-time - Attribuut voor een minimum tijd conform het ingestelde formaat (bv. '09:00').
  * @property {string} max-time - Attribuut voor een maximum tijd conform het ingestelde format (bv. '17:00').
  * @property {boolean} am-pm - Attribuut om de 12-uurs AM/PM timepicker te activeren.
+ * @property {boolean} error - Attribuut om aan te geven dat de datepicker een error bevat.
+ * @property {boolean} success - Attribuut om aan te geven dat de datepicker geen error bevat.
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-datepicker/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-datepicker/issues|Issues}
@@ -96,8 +98,27 @@ export class VlDatepicker extends VlElement(HTMLElement) {
             'max-date',
             'min-time',
             'max-time',
-            'am-pm'
+            'am-pm',
+            'error',
+            'success'
         ];
+    }
+
+    /**
+     * Initialiseer de datepicker config.
+     */
+    dress() {
+        if (!this._dressed) {
+            vl.datepicker.dress(this._element);
+        }
+    }
+
+    get value() {
+        return this._inputElement.value;
+    }
+
+    set value(value) {
+        this._inputElement._flatpickr.setDate(value, false, this._format);
     }
 
     get _stylePath() {
@@ -108,13 +129,12 @@ export class VlDatepicker extends VlElement(HTMLElement) {
         return 'data-vl-datepicker-';
     }
 
-    /**
-     * Initialiseer de datepicker config.
-     */
-    dress() {
-        if (!this._dressed) {
-            vl.datepicker.dress(this._element);
-        }
+    get _inputElement() {
+        return this._element.querySelector('#input');
+    }
+
+    get _format() {
+        return this.getAttribute('format');
     }
 
     _typeChangedCallback(oldValue, newValue) {
@@ -167,6 +187,22 @@ export class VlDatepicker extends VlElement(HTMLElement) {
     _am_pmChangedCallback(oldValue, newValue) {
         this._element.setAttribute(this._attributePrefix + '24hr-time', (newValue == undefined));
     }
+
+    _errorChangedCallback(oldValue, newValue) {
+        if (newValue != undefined) {
+            this._inputElement.setAttribute('error', '');
+        } else {
+            this._inputElement.removeAttribute('error');
+        }
+    }
+
+    _successChangedCallback(oldValue, newValue) {
+        if (newValue != undefined) {
+            this._inputElement.setAttribute('success', '');
+        } else {
+            this._inputElement.removeAttribute('success');
+        }
+    }
 }</code></pre>
         </article>
     </section>
@@ -177,13 +213,13 @@ export class VlDatepicker extends VlElement(HTMLElement) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Events</h3><ul><li><a href="VlMultiSelect.html#event:VlMultiSelectReady-Readyeventwordtverstuurdwanneerveiligeinteractiemetdewebcomponentmogelijkis.">VlMultiSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.</a></li><li><a href="VlSelect.html#event:VlSelectReady-Readyeventwordtverstuurdwanneerveiligeinteractiemetdewebcomponentmogelijkis.">VlSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Nov 15 2019 17:21:39 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Dec 04 2019 17:03:10 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

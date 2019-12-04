@@ -1,33 +1,44 @@
-import {awaitScript, awaitUntil, define, NativeVlElement} from '/node_modules/vl-ui-core/vl-core.js';
+import { awaitScript, awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 Promise.all([
   awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
   awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
   awaitScript('select', '../dist/select.js'),
   awaitUntil(() => window.vl && window.vl.select)]
-).then(() => define('vl-select', VlSelect, {extends: 'select'}));
+).then(() => define('vl-select', VlSelect, { extends: 'select' }));
 
- /**
- * VlSelect
- * @class
- * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
- *
- * @extends NativeVlElement
- * 
- * @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
- * @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
- * @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
- * @property {boolean} disabled - Attribuut wordt gebruikt om te voorkomen dat de gebruiker iets kan kiezen uit het select element.
- * @property {boolean} data-vl-select - Attribuut zorgt ervoor dat de zoek functionaliteit geïnitialiseerd wordt.
- * @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
- * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
- * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
- *
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
- */
+/**
+* VlSelect
+* @class
+* @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
+*
+* @extends NativeVlElement
+* 
+* @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
+* @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
+* @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
+* @property {boolean} disabled - Attribuut wordt gebruikt om te voorkomen dat de gebruiker iets kan kiezen uit het select element.
+* @property {boolean} data-vl-select - Attribuut zorgt ervoor dat de zoek functionaliteit geïnitialiseerd wordt.
+* @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
+* @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
+* @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
+*
+* @event VlSelect#VlSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.
+*
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
+* @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
+*/
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {
+  /**
+   * Geeft de ready event naam.
+   * 
+   * @returns {string}
+   */
+  static get readyEvent() {
+    return 'VlSelectReady';
+  }
+
   static get _observedAttributes() {
     return ['error', 'success'];
   }
@@ -41,6 +52,15 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (this._dataVlSelectAttribute != null) {
       this.dress();
     }
+  }
+
+  /**
+   * Geeft de ready event naam.
+   * 
+   * @returns {string}
+   */
+  get readyEvent() {
+    return VlSelect.readyEvent;
   }
 
   get _classPrefix() {
@@ -75,9 +95,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (newValue != null) {
       (async () => {
         if (this._dataVlSelectAttribute != null) {
-          while (!this._dressed) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-          }
+          await awaitUntil(() => this._dressed);
           this.__wrap();
           this._wrapperElement.parentNode.classList.add('vl-select--' + type);
         } else {
@@ -140,7 +158,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**
    * Zet de mogelijkheden die gekozen kunnen worden.
    * 
-   * @param {Object[]} choices met value en label attribuut
+   * @param {Object[]} choices met value en label attribuut.
    */
   set choices(choices) {
     this._choices.setChoices(choices, 'value', 'label', true);
@@ -153,6 +171,24 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   set sortFilter(fn) {
     this._choices.config.sortFilter = fn;
+  }
+
+  /**
+   * Zet het geselecteerd option element op basis van de option value.
+   *
+   * @param {string} de option value van het option element dat gekozen moet worden.
+   */
+  set value(value) {
+    vl.select.setValueByChoice(this, value);
+  }
+
+  /**
+   * Geeft de waarde van het eerst geselecteerde option element indien deze er is, anders een lege string.
+   *
+   * @returns {void}
+   */
+  get value() {
+    return this.selectedOptions[0] ? this.selectedOptions[0].value : '';
   }
 
   /**
@@ -186,8 +222,22 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     setTimeout(() => {
       if (!this._dressed) {
         vl.select.dress(this, params);
+
+        (async () => {
+          await this.ready();
+          this.dispatchEvent(new CustomEvent(this.readyEvent));
+        })();
       }
     });
+  }
+
+  /**
+   * Geeft een promise die 'resolved' wanneer de select initialisatie klaar is.
+   *
+   * @returns {Promise} De promise
+   */
+  async ready() {
+    await awaitUntil(() => this._dressed === true);
   }
 
   /**
@@ -199,7 +249,8 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (this._dressed) {
       try {
         vl.select.undress(this._choices);
-      } catch(exception) {
+        vl.select.selectInstances.splice(vl.select.selectInstances.indexOf(this._choices));
+      } catch (exception) {
         console.error("er liep iets fout bij de undress functie, controleer dat het vl-select element een id bevat! Foutmelding: " + exception);
       }
     }
@@ -224,15 +275,6 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   removeActive() {
     vl.select.removeActive(this);
-  }
-
-  /**
-   * Zet de actieve optie door een waarde.
-   *
-   * @param value de gekozen waarde om actief te zijn voor deze component
-   */
-  setValueByChoice(value) {
-    vl.select.setValueByChoice(this, value);
   }
 
   /**

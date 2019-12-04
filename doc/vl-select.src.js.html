@@ -26,36 +26,47 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import {awaitScript, awaitUntil, define, NativeVlElement} from '/node_modules/vl-ui-core/vl-core.js';
+            <pre class="prettyprint source linenums"><code>import { awaitScript, awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 Promise.all([
   awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
   awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
   awaitScript('select', '../dist/select.js'),
   awaitUntil(() => window.vl &amp;&amp; window.vl.select)]
-).then(() => define('vl-select', VlSelect, {extends: 'select'}));
+).then(() => define('vl-select', VlSelect, { extends: 'select' }));
 
- /**
- * VlSelect
- * @class
- * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
- *
- * @extends NativeVlElement
- * 
- * @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
- * @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
- * @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
- * @property {boolean} disabled - Attribuut wordt gebruikt om te voorkomen dat de gebruiker iets kan kiezen uit het select element.
- * @property {boolean} data-vl-select - Attribuut zorgt ervoor dat de zoek functionaliteit geïnitialiseerd wordt.
- * @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
- * @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
- * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
- *
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
- */
+/**
+* VlSelect
+* @class
+* @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
+*
+* @extends NativeVlElement
+* 
+* @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
+* @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
+* @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
+* @property {boolean} disabled - Attribuut wordt gebruikt om te voorkomen dat de gebruiker iets kan kiezen uit het select element.
+* @property {boolean} data-vl-select - Attribuut zorgt ervoor dat de zoek functionaliteit geïnitialiseerd wordt.
+* @property {boolean} data-vl-select-search-empty-text - Attribuut bepaalt de tekst die getoond wordt wanneer er geen resultaten gevonden zijn.
+* @property {boolean} data-vl-select-search - Attribuut om de zoek functionaliteit te activeren of deactiveren.
+* @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
+*
+* @event VlSelect#VlSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.
+*
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
+* @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
+* @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
+*/
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {
+  /**
+   * Geeft de ready event naam.
+   * 
+   * @returns {string}
+   */
+  static get readyEvent() {
+    return 'VlSelectReady';
+  }
+
   static get _observedAttributes() {
     return ['error', 'success'];
   }
@@ -69,6 +80,15 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (this._dataVlSelectAttribute != null) {
       this.dress();
     }
+  }
+
+  /**
+   * Geeft de ready event naam.
+   * 
+   * @returns {string}
+   */
+  get readyEvent() {
+    return VlSelect.readyEvent;
   }
 
   get _classPrefix() {
@@ -103,9 +123,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (newValue != null) {
       (async () => {
         if (this._dataVlSelectAttribute != null) {
-          while (!this._dressed) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-          }
+          await awaitUntil(() => this._dressed);
           this.__wrap();
           this._wrapperElement.parentNode.classList.add('vl-select--' + type);
         } else {
@@ -168,7 +186,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**
    * Zet de mogelijkheden die gekozen kunnen worden.
    * 
-   * @param {Object[]} choices met value en label attribuut
+   * @param {Object[]} choices met value en label attribuut.
    */
   set choices(choices) {
     this._choices.setChoices(choices, 'value', 'label', true);
@@ -181,6 +199,24 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    */
   set sortFilter(fn) {
     this._choices.config.sortFilter = fn;
+  }
+
+  /**
+   * Zet het geselecteerd option element op basis van de option value.
+   *
+   * @param {string} de option value van het option element dat gekozen moet worden.
+   */
+  set value(value) {
+    vl.select.setValueByChoice(this, value);
+  }
+
+  /**
+   * Geeft de waarde van het eerst geselecteerde option element indien deze er is, anders een lege string.
+   *
+   * @returns {void}
+   */
+  get value() {
+    return this.selectedOptions[0] ? this.selectedOptions[0].value : '';
   }
 
   /**
@@ -214,8 +250,22 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     setTimeout(() => {
       if (!this._dressed) {
         vl.select.dress(this, params);
+
+        (async () => {
+          await this.ready();
+          this.dispatchEvent(new CustomEvent(this.readyEvent));
+        })();
       }
     });
+  }
+
+  /**
+   * Geeft een promise die 'resolved' wanneer de select initialisatie klaar is.
+   *
+   * @returns {Promise} De promise
+   */
+  async ready() {
+    await awaitUntil(() => this._dressed === true);
   }
 
   /**
@@ -227,7 +277,8 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     if (this._dressed) {
       try {
         vl.select.undress(this._choices);
-      } catch(exception) {
+        vl.select.selectInstances.splice(vl.select.selectInstances.indexOf(this._choices));
+      } catch (exception) {
         console.error("er liep iets fout bij de undress functie, controleer dat het vl-select element een id bevat! Foutmelding: " + exception);
       }
     }
@@ -255,15 +306,6 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 
   /**
-   * Zet de actieve optie door een waarde.
-   *
-   * @param value de gekozen waarde om actief te zijn voor deze component
-   */
-  setValueByChoice(value) {
-    vl.select.setValueByChoice(this, value);
-  }
-
-  /**
    * Toon de dropdown met de mogelijke keuzes.
    */
   showDropdown() {
@@ -287,13 +329,13 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Events</h3><ul><li><a href="VlMultiSelect.html#event:VlMultiSelectReady-Readyeventwordtverstuurdwanneerveiligeinteractiemetdewebcomponentmogelijkis.">VlMultiSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.</a></li><li><a href="VlSelect.html#event:VlSelectReady-Readyeventwordtverstuurdwanneerveiligeinteractiemetdewebcomponentmogelijkis.">VlSelectReady - Ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Nov 15 2019 17:21:39 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Dec 04 2019 17:03:10 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

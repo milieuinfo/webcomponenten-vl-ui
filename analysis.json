@@ -2246,6 +2246,890 @@
       "name": "VlCheckbox"
     },
     {
+      "description": "VlCookieConsentOptIn",
+      "summary": "",
+      "path": "vl-cookie-consent.src.js",
+      "properties": [
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 48,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_checkboxElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 50,
+              "column": 4
+            },
+            "end": {
+              "line": 52,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_descriptionElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 54,
+              "column": 4
+            },
+            "end": {
+              "line": 56,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_getDescriptionTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 62,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "description"
+            }
+          ]
+        },
+        {
+          "name": "_data_vl_labelChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 66,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_descriptionChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 4
+            },
+            "end": {
+              "line": 78,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_checkedChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 4
+            },
+            "end": {
+              "line": 84,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_mandatoryChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 86,
+              "column": 4
+            },
+            "end": {
+              "line": 91,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 29,
+          "column": 7
+        },
+        "end": {
+          "line": 92,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlCookieConsentOptIn"
+    },
+    {
+      "description": "VlCookieConsent",
+      "summary": "",
+      "path": "vl-cookie-consent.src.js",
+      "properties": [
+        {
+          "name": "_isAutoOpenDisabled",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 244,
+              "column": 4
+            },
+            "end": {
+              "line": 246,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_isFunctionalOptInDisabled",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 248,
+              "column": 4
+            },
+            "end": {
+              "line": 250,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_cookiePrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 252,
+              "column": 4
+            },
+            "end": {
+              "line": 254,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_modalElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 256,
+              "column": 4
+            },
+            "end": {
+              "line": 258,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_formGridElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 260,
+              "column": 4
+            },
+            "end": {
+              "line": 262,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_optInElementen",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 264,
+              "column": 4
+            },
+            "end": {
+              "line": 266,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "open",
+          "description": "Opent de cookie-consent ook al werd deze eerder getoond aan de gebruiker.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 165,
+              "column": 4
+            },
+            "end": {
+              "line": 167,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "close",
+          "description": "Sluit de cookie-consent.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 173,
+              "column": 4
+            },
+            "end": {
+              "line": 178,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "reset",
+          "description": "Verwijdert al de cookies en herstelt de opt-in waarden naar de initiële toestand.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 184,
+              "column": 4
+            },
+            "end": {
+              "line": 194,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptIn",
+          "description": "Voeg een opt-in toe.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 209,
+              "column": 4
+            },
+            "end": {
+              "line": 211,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn",
+              "type": "object",
+              "description": "De opt-in optie met attributen."
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptInActivatedCallback",
+          "description": "Voegt aan een opt-in een callback toe die aangeroepen wordt wanneer de opt-in geactiveerd wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 218,
+              "column": 4
+            },
+            "end": {
+              "line": 222,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "De opt-in optie naam."
+            },
+            {
+              "name": "callback",
+              "type": "function",
+              "description": "Callback functie."
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptInDeactivatedCallback",
+          "description": "Voegt aan een opt-in een callback toe die aangeroepen wordt wanneer de opt-in gedeactiveerd wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 229,
+              "column": 4
+            },
+            "end": {
+              "line": 233,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "De opt-in optie naam."
+            },
+            {
+              "name": "callback",
+              "type": "function",
+              "description": "Callback functie."
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "isOptInActive",
+          "description": "Bepaalt of een opt-in actief is of niet op basis van de naam.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 240,
+              "column": 4
+            },
+            "end": {
+              "line": 242,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "De opt-in optie naam."
+            }
+          ],
+          "return": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "_getButtonTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 268,
+              "column": 4
+            },
+            "end": {
+              "line": 277,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getOptInTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 279,
+              "column": 4
+            },
+            "end": {
+              "line": 294,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn"
+            }
+          ]
+        },
+        {
+          "name": "_open",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 296,
+              "column": 4
+            },
+            "end": {
+              "line": 300,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "forced"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_resetOptInValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 302,
+              "column": 4
+            },
+            "end": {
+              "line": 309,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processOptIns",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 311,
+              "column": 4
+            },
+            "end": {
+              "line": 321,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 323,
+              "column": 4
+            },
+            "end": {
+              "line": 342,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "{\n  name,\n  label,\n  description,\n  value,\n  mandatory,\n  callback: {\n    activated,\n    deactivated\n  } = {}\n}"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_submitOptIns",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 344,
+              "column": 4
+            },
+            "end": {
+              "line": 359,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_bevatOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 361,
+              "column": 4
+            },
+            "end": {
+              "line": 363,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "_addFunctionalOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 365,
+              "column": 4
+            },
+            "end": {
+              "line": 373,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_addAnalytics",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 375,
+              "column": 4
+            },
+            "end": {
+              "line": 379,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 381,
+              "column": 4
+            },
+            "end": {
+              "line": 397,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "_getCookieConsentCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 399,
+              "column": 4
+            },
+            "end": {
+              "line": 401,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getCookieConsentDateCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 403,
+              "column": 4
+            },
+            "end": {
+              "line": 405,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_setCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 407,
+              "column": 4
+            },
+            "end": {
+              "line": 409,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_deleteCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 411,
+              "column": 4
+            },
+            "end": {
+              "line": 413,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_heeftCookieConsentDateCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 415,
+              "column": 4
+            },
+            "end": {
+              "line": 417,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_isCookieConsentCookieGeldig",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 419,
+              "column": 4
+            },
+            "end": {
+              "line": 421,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_data_vl_analyticsChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 423,
+              "column": 4
+            },
+            "end": {
+              "line": 431,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 110,
+          "column": 7
+        },
+        "end": {
+          "line": 432,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlCookieConsent"
+    },
+    {
       "description": "",
       "summary": "",
       "path": "vl-core.js",
@@ -13197,6 +14081,873 @@
       },
       "privacy": "public",
       "name": "VlCheckbox"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-cookie-consent.js",
+      "properties": [
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 8,
+              "column": 11
+            },
+            "end": {
+              "line": 8,
+              "column": 62
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_checkboxElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 8,
+              "column": 62
+            },
+            "end": {
+              "line": 8,
+              "column": 135
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_descriptionElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 8,
+              "column": 135
+            },
+            "end": {
+              "line": 8,
+              "column": 212
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_getDescriptionTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 8,
+              "column": 212
+            },
+            "end": {
+              "line": 10,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "description"
+            }
+          ]
+        },
+        {
+          "name": "_data_vl_labelChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 10,
+              "column": 11
+            },
+            "end": {
+              "line": 10,
+              "column": 113
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_descriptionChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 10,
+              "column": 113
+            },
+            "end": {
+              "line": 10,
+              "column": 368
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_checkedChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 10,
+              "column": 368
+            },
+            "end": {
+              "line": 10,
+              "column": 493
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_data_vl_mandatoryChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 10,
+              "column": 493
+            },
+            "end": {
+              "line": 10,
+              "column": 670
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 469
+        },
+        "end": {
+          "line": 10,
+          "column": 671
+        }
+      },
+      "privacy": "public",
+      "name": "VlCookieConsentOptIn"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-cookie-consent.js",
+      "properties": [
+        {
+          "name": "_isAutoOpenDisabled",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1211
+            },
+            "end": {
+              "line": 34,
+              "column": 1328
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_isFunctionalOptInDisabled",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1328
+            },
+            "end": {
+              "line": 34,
+              "column": 1465
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_cookiePrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1465
+            },
+            "end": {
+              "line": 34,
+              "column": 1512
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_modalElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1512
+            },
+            "end": {
+              "line": 34,
+              "column": 1553
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_formGridElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1553
+            },
+            "end": {
+              "line": 34,
+              "column": 1634
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_optInElementen",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1634
+            },
+            "end": {
+              "line": 34,
+              "column": 1713
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "open",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 365
+            },
+            "end": {
+              "line": 34,
+              "column": 389
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "close",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 389
+            },
+            "end": {
+              "line": 34,
+              "column": 569
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "reset",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 569
+            },
+            "end": {
+              "line": 34,
+              "column": 864
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptIn",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 864
+            },
+            "end": {
+              "line": 34,
+              "column": 906
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptInActivatedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 906
+            },
+            "end": {
+              "line": 34,
+              "column": 1018
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "callback"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "addOptInDeactivatedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1018
+            },
+            "end": {
+              "line": 34,
+              "column": 1134
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "callback"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "isOptInActive",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1134
+            },
+            "end": {
+              "line": 34,
+              "column": 1211
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "_getButtonTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1713
+            },
+            "end": {
+              "line": 36,
+              "column": 105
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getOptInTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 36,
+              "column": 105
+            },
+            "end": {
+              "line": 40,
+              "column": 213
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn"
+            }
+          ]
+        },
+        {
+          "name": "_open",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 213
+            },
+            "end": {
+              "line": 40,
+              "column": 375
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "forced"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_resetOptInValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 375
+            },
+            "end": {
+              "line": 40,
+              "column": 576
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "optIn"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processOptIns",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 576
+            },
+            "end": {
+              "line": 40,
+              "column": 980
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 980
+            },
+            "end": {
+              "line": 40,
+              "column": 1524
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "{\n  name: name,\n  label: label,\n  description: description,\n  value: value,\n  mandatory: mandatory,\n  callback: {\n    activated: activated,\n    deactivated: deactivated\n  } = {}\n}"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_submitOptIns",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 1524
+            },
+            "end": {
+              "line": 40,
+              "column": 1809
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_bevatOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 1809
+            },
+            "end": {
+              "line": 40,
+              "column": 1854
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "_addFunctionalOptIn",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 1854
+            },
+            "end": {
+              "line": 40,
+              "column": 2242
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_addAnalytics",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2242
+            },
+            "end": {
+              "line": 40,
+              "column": 2352
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2352
+            },
+            "end": {
+              "line": 40,
+              "column": 2717
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "_getCookieConsentCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2717
+            },
+            "end": {
+              "line": 40,
+              "column": 2797
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getCookieConsentDateCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2797
+            },
+            "end": {
+              "line": 40,
+              "column": 2885
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_setCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2885
+            },
+            "end": {
+              "line": 40,
+              "column": 2988
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_deleteCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 2988
+            },
+            "end": {
+              "line": 40,
+              "column": 3098
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "name"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_heeftCookieConsentDateCookie",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 3098
+            },
+            "end": {
+              "line": 40,
+              "column": 3183
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_isCookieConsentCookieGeldig",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 3183
+            },
+            "end": {
+              "line": 40,
+              "column": 3338
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_data_vl_analyticsChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 3338
+            },
+            "end": {
+              "line": 40,
+              "column": 3595
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 10,
+          "column": 679
+        },
+        "end": {
+          "line": 40,
+          "column": 3596
+        }
+      },
+      "privacy": "public",
+      "name": "VlCookieConsent"
     },
     {
       "description": "",

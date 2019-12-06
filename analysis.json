@@ -11197,11 +11197,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 76,
+              "line": 77,
               "column": 2
             },
             "end": {
-              "line": 78,
+              "line": 79,
               "column": 3
             }
           },
@@ -11233,11 +11233,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 80,
+              "line": 81,
               "column": 2
             },
             "end": {
-              "line": 82,
+              "line": 83,
               "column": 3
             }
           },
@@ -11340,16 +11340,16 @@
         },
         {
           "name": "values",
-          "type": "void",
-          "description": "Geeft de waarde van het eerst geselecteerde option element indien deze er is, anders een lege string.",
+          "type": "Array.<string>",
+          "description": "Geeft de waarde van de geselecteerde option elementen.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 71,
               "column": 2
             },
             "end": {
-              "line": 74,
+              "line": 75,
               "column": 3
             }
           },
@@ -11756,7 +11756,7 @@
           "column": 7
         },
         "end": {
-          "line": 83,
+          "line": 84,
           "column": 1
         }
       },

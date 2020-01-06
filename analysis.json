@@ -2246,6 +2246,262 @@
       "name": "VlCheckbox"
     },
     {
+      "description": "VlContentHeader",
+      "summary": "",
+      "path": "vl-content-header.src.js",
+      "properties": [
+        {
+          "name": "pictureElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 43,
+              "column": 1
+            },
+            "end": {
+              "line": 45,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "pictureSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 1
+            },
+            "end": {
+              "line": 49,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "contextElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 51,
+              "column": 1
+            },
+            "end": {
+              "line": 53,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "contextSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 1
+            },
+            "end": {
+              "line": 57,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "titleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 59,
+              "column": 1
+            },
+            "end": {
+              "line": 61,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "titleSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 63,
+              "column": 1
+            },
+            "end": {
+              "line": 65,
+              "column": 2
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 1
+            },
+            "end": {
+              "line": 37,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 1
+            },
+            "end": {
+              "line": 41,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 67,
+              "column": 1
+            },
+            "end": {
+              "line": 75,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__clearChildren",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 77,
+              "column": 1
+            },
+            "end": {
+              "line": 81,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlot",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 83,
+              "column": 1
+            },
+            "end": {
+              "line": 88,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "container"
+            },
+            {
+              "name": "slotElement"
+            }
+          ]
+        },
+        {
+          "name": "__observeSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 90,
+              "column": 1
+            },
+            "end": {
+              "line": 94,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 14,
+          "column": 7
+        },
+        "end": {
+          "line": 95,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlContentHeader"
+    },
+    {
       "description": "VlCookieConsentOptIn",
       "summary": "",
       "path": "vl-cookie-consent.src.js",
@@ -4559,6 +4815,126 @@
       "name": "VlDatepicker"
     },
     {
+      "description": "VlFooter",
+      "summary": "",
+      "path": "vl-footer.src.js",
+      "properties": [
+        {
+          "name": "_widgetURL",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_widgetUUID",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 37,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "getFooterTemplate",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 43,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__addFooterElement",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 45,
+              "column": 4
+            },
+            "end": {
+              "line": 54,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__executeCode",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 4
+            },
+            "end": {
+              "line": 61,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "code"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 17,
+          "column": 7
+        },
+        "end": {
+          "line": 62,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlFooter"
+    },
+    {
       "description": "VlFormGrid",
       "summary": "",
       "path": "vl-form-grid.src.js",
@@ -5968,6 +6344,126 @@
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlColumn"
+    },
+    {
+      "description": "VlHeader",
+      "summary": "",
+      "path": "vl-header.src.js",
+      "properties": [
+        {
+          "name": "_widgetURL",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_widgetUUID",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 37,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "getHeaderTemplate",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 43,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__addHeaderElement",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 45,
+              "column": 4
+            },
+            "end": {
+              "line": 54,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__executeCode",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 4
+            },
+            "end": {
+              "line": 61,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "code"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 17,
+          "column": 7
+        },
+        "end": {
+          "line": 62,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlHeader"
     },
     {
       "description": "VlIcon",
@@ -9171,6 +9667,751 @@
       "name": "VlMapSearch"
     },
     {
+      "description": "VlPager",
+      "summary": "",
+      "path": "vl-pager.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 61,
+              "column": 2
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "totalPages",
+          "type": "Number",
+          "description": "Geeft het aantal pagina's terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 70,
+              "column": 2
+            },
+            "end": {
+              "line": 72,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "totalItems",
+          "type": "Number",
+          "description": "Geeft het totaal aantal items terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 79,
+              "column": 2
+            },
+            "end": {
+              "line": 81,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "currentPage",
+          "type": "Number",
+          "description": "Geeft het huidige pagina nummer terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 88,
+              "column": 2
+            },
+            "end": {
+              "line": 95,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "itemsPerPage",
+          "type": "Number",
+          "description": "Geeft het aantal items per pagina terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 102,
+              "column": 2
+            },
+            "end": {
+              "line": 104,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_firstItemNumberOfPage",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 2
+            },
+            "end": {
+              "line": 112,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_lastItemNumberOfPage",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 114,
+              "column": 2
+            },
+            "end": {
+              "line": 117,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_isPagination",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 119,
+              "column": 2
+            },
+            "end": {
+              "line": 121,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_boundsElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 2
+            },
+            "end": {
+              "line": 125,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pagesListElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 127,
+              "column": 2
+            },
+            "end": {
+              "line": 129,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pagesElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 131,
+              "column": 2
+            },
+            "end": {
+              "line": 133,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageBackLink",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 135,
+              "column": 2
+            },
+            "end": {
+              "line": 137,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageForwardLink",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 139,
+              "column": 2
+            },
+            "end": {
+              "line": 141,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageBackListItem",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 143,
+              "column": 2
+            },
+            "end": {
+              "line": 145,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageForwardListItem",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 147,
+              "column": 2
+            },
+            "end": {
+              "line": 149,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_totalItemsElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 151,
+              "column": 2
+            },
+            "end": {
+              "line": 153,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_itemsPerPageElementen",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 155,
+              "column": 2
+            },
+            "end": {
+              "line": 159,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_getBoundsTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 2
+            },
+            "end": {
+              "line": 166,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getPageTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 168,
+              "column": 2
+            },
+            "end": {
+              "line": 180,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "__getActivePageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 182,
+              "column": 2
+            },
+            "end": {
+              "line": 188,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "__getSkippedPageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 190,
+              "column": 2
+            },
+            "end": {
+              "line": 196,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__getPagesTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 198,
+              "column": 2
+            },
+            "end": {
+              "line": 202,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__getPageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 204,
+              "column": 2
+            },
+            "end": {
+              "line": 212,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "_getItemsPerPageContentTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 214,
+              "column": 2
+            },
+            "end": {
+              "line": 216,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_items_per_pageChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 218,
+              "column": 2
+            },
+            "end": {
+              "line": 220,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_total_itemsChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 222,
+              "column": 2
+            },
+            "end": {
+              "line": 229,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_current_pageChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 231,
+              "column": 2
+            },
+            "end": {
+              "line": 233,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_pagination_disabledChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 235,
+              "column": 2
+            },
+            "end": {
+              "line": 241,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_hide",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 243,
+              "column": 2
+            },
+            "end": {
+              "line": 245,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_show",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 247,
+              "column": 2
+            },
+            "end": {
+              "line": 249,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_update",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 251,
+              "column": 2
+            },
+            "end": {
+              "line": 255,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updateInfoElement",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 257,
+              "column": 2
+            },
+            "end": {
+              "line": 262,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updatePagination",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 264,
+              "column": 2
+            },
+            "end": {
+              "line": 277,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updateListItems",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 279,
+              "column": 2
+            },
+            "end": {
+              "line": 282,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__generatePagination",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 284,
+              "column": 2
+            },
+            "end": {
+              "line": 299,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "currentPage"
+            },
+            {
+              "name": "pageCount"
+            }
+          ]
+        },
+        {
+          "name": "__addPageBackLinkListener",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 301,
+              "column": 2
+            },
+            "end": {
+              "line": 307,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__addPageForwardLinkListener",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 309,
+              "column": 2
+            },
+            "end": {
+              "line": 315,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 23,
+          "column": 7
+        },
+        "end": {
+          "line": 316,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlPager"
+    },
+    {
       "description": "",
       "summary": "",
       "path": "vl-pill.src.js",
@@ -9763,6 +11004,146 @@
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlPropertyValue"
+    },
+    {
+      "description": "VlSearchFilter",
+      "summary": "",
+      "path": "vl-search-filter.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 48,
+              "column": 2
+            },
+            "end": {
+              "line": 50,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_elementPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_elementName",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 2
+            },
+            "end": {
+              "line": 62,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_data_vl_titleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 2
+            },
+            "end": {
+              "line": 36,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 2
+            },
+            "end": {
+              "line": 46,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 17,
+          "column": 7
+        },
+        "end": {
+          "line": 64,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlSearchFilter"
     },
     {
       "description": "VlSelect",
@@ -11446,6 +12827,131 @@
       },
       "privacy": "public",
       "name": "VlToaster"
+    },
+    {
+      "description": "VlTypography",
+      "summary": "",
+      "path": "vl-typography.src.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 25,
+              "column": 4
+            },
+            "end": {
+              "line": 27,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 29,
+              "column": 1
+            },
+            "end": {
+              "line": 31,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 33,
+              "column": 4
+            },
+            "end": {
+              "line": 36,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__clearChildren",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 1
+            },
+            "end": {
+              "line": 42,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__observeSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 44,
+              "column": 1
+            },
+            "end": {
+              "line": 48,
+              "column": 2
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 14,
+          "column": 7
+        },
+        "end": {
+          "line": 49,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlTypography"
     },
     {
       "description": "VlUpload",
@@ -14085,6 +15591,261 @@
     {
       "description": "",
       "summary": "",
+      "path": "vl-content-header.js",
+      "properties": [
+        {
+          "name": "pictureElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 183
+            },
+            "end": {
+              "line": 15,
+              "column": 250
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "pictureSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 250
+            },
+            "end": {
+              "line": 15,
+              "column": 322
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "contextElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 322
+            },
+            "end": {
+              "line": 15,
+              "column": 389
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "contextSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 389
+            },
+            "end": {
+              "line": 15,
+              "column": 466
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "titleElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 466
+            },
+            "end": {
+              "line": 15,
+              "column": 529
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "titleSlotElement",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 529
+            },
+            "end": {
+              "line": 15,
+              "column": 602
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 7
+            },
+            "end": {
+              "line": 15,
+              "column": 132
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 132
+            },
+            "end": {
+              "line": 15,
+              "column": 183
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 602
+            },
+            "end": {
+              "line": 15,
+              "column": 968
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__clearChildren",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 968
+            },
+            "end": {
+              "line": 15,
+              "column": 1053
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlot",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 1053
+            },
+            "end": {
+              "line": 15,
+              "column": 1216
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "container"
+            },
+            {
+              "name": "slotElement"
+            }
+          ]
+        },
+        {
+          "name": "__observeSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 1216
+            },
+            "end": {
+              "line": 15,
+              "column": 1398
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 73
+        },
+        "end": {
+          "line": 15,
+          "column": 1399
+        }
+      },
+      "privacy": "public",
+      "name": "VlContentHeader"
+    },
+    {
+      "description": "",
+      "summary": "",
       "path": "vl-cookie-consent.js",
       "properties": [
         {
@@ -15472,6 +17233,125 @@
       },
       "privacy": "public",
       "name": "VlDatepicker"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-footer.js",
+      "properties": [
+        {
+          "name": "_widgetURL",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 386
+            },
+            "end": {
+              "line": 0,
+              "column": 504
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_widgetUUID",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 504
+            },
+            "end": {
+              "line": 0,
+              "column": 555
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "getFooterTemplate",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 555
+            },
+            "end": {
+              "line": 0,
+              "column": 656
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__addFooterElement",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 656
+            },
+            "end": {
+              "line": 0,
+              "column": 863
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__executeCode",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 863
+            },
+            "end": {
+              "line": 0,
+              "column": 1061
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "code"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 196
+        },
+        "end": {
+          "line": 0,
+          "column": 1062
+        }
+      },
+      "privacy": "public",
+      "name": "VlFooter"
     },
     {
       "description": "",
@@ -16874,6 +18754,125 @@
       },
       "privacy": "public",
       "name": "VlColumn"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-header.js",
+      "properties": [
+        {
+          "name": "_widgetURL",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 385
+            },
+            "end": {
+              "line": 0,
+              "column": 503
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_widgetUUID",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 503
+            },
+            "end": {
+              "line": 0,
+              "column": 554
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "getHeaderTemplate",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 554
+            },
+            "end": {
+              "line": 2,
+              "column": 10
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__addHeaderElement",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 2,
+              "column": 10
+            },
+            "end": {
+              "line": 2,
+              "column": 266
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__executeCode",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 2,
+              "column": 266
+            },
+            "end": {
+              "line": 2,
+              "column": 488
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "code"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 196
+        },
+        "end": {
+          "line": 2,
+          "column": 489
+        }
+      },
+      "privacy": "public",
+      "name": "VlHeader"
     },
     {
       "description": "",
@@ -22584,6 +24583,750 @@
     {
       "description": "",
       "summary": "",
+      "path": "vl-pager.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 76
+            },
+            "end": {
+              "line": 21,
+              "column": 114
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "totalPages",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 114
+            },
+            "end": {
+              "line": 21,
+              "column": 183
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "totalItems",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 183
+            },
+            "end": {
+              "line": 21,
+              "column": 250
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "currentPage",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 250
+            },
+            "end": {
+              "line": 21,
+              "column": 425
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "itemsPerPage",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 425
+            },
+            "end": {
+              "line": 21,
+              "column": 497
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_firstItemNumberOfPage",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 497
+            },
+            "end": {
+              "line": 21,
+              "column": 609
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_lastItemNumberOfPage",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 609
+            },
+            "end": {
+              "line": 21,
+              "column": 775
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_isPagination",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 775
+            },
+            "end": {
+              "line": 21,
+              "column": 854
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_boundsElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 854
+            },
+            "end": {
+              "line": 21,
+              "column": 923
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pagesListElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 923
+            },
+            "end": {
+              "line": 21,
+              "column": 1003
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pagesElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1003
+            },
+            "end": {
+              "line": 21,
+              "column": 1070
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageBackLink",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1070
+            },
+            "end": {
+              "line": 21,
+              "column": 1146
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageForwardLink",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1146
+            },
+            "end": {
+              "line": 21,
+              "column": 1228
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageBackListItem",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1228
+            },
+            "end": {
+              "line": 21,
+              "column": 1313
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pageForwardListItem",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1313
+            },
+            "end": {
+              "line": 21,
+              "column": 1404
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_totalItemsElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1404
+            },
+            "end": {
+              "line": 21,
+              "column": 1481
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_itemsPerPageElementen",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1481
+            },
+            "end": {
+              "line": 21,
+              "column": 1670
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_getBoundsTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 21,
+              "column": 1670
+            },
+            "end": {
+              "line": 24,
+              "column": 6
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getPageTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 24,
+              "column": 6
+            },
+            "end": {
+              "line": 24,
+              "column": 254
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "__getActivePageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 24,
+              "column": 254
+            },
+            "end": {
+              "line": 28,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "__getSkippedPageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 28,
+              "column": 7
+            },
+            "end": {
+              "line": 32,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__getPagesTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 32,
+              "column": 7
+            },
+            "end": {
+              "line": 34,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "__getPageTemplate",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 34,
+              "column": 7
+            },
+            "end": {
+              "line": 38,
+              "column": 121
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number"
+            }
+          ]
+        },
+        {
+          "name": "_getItemsPerPageContentTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 121
+            },
+            "end": {
+              "line": 38,
+              "column": 190
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_items_per_pageChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 190
+            },
+            "end": {
+              "line": 38,
+              "column": 255
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_total_itemsChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 255
+            },
+            "end": {
+              "line": 38,
+              "column": 399
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_current_pageChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 399
+            },
+            "end": {
+              "line": 38,
+              "column": 462
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_pagination_disabledChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 462
+            },
+            "end": {
+              "line": 38,
+              "column": 685
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_hide",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 685
+            },
+            "end": {
+              "line": 38,
+              "column": 720
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_show",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 720
+            },
+            "end": {
+              "line": 38,
+              "column": 756
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_update",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 756
+            },
+            "end": {
+              "line": 38,
+              "column": 841
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updateInfoElement",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 841
+            },
+            "end": {
+              "line": 38,
+              "column": 1017
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updatePagination",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 1017
+            },
+            "end": {
+              "line": 38,
+              "column": 1402
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_updateListItems",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 1402
+            },
+            "end": {
+              "line": 38,
+              "column": 1621
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__generatePagination",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 1621
+            },
+            "end": {
+              "line": 38,
+              "column": 1953
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "currentPage"
+            },
+            {
+              "name": "pageCount"
+            }
+          ]
+        },
+        {
+          "name": "__addPageBackLinkListener",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 1953
+            },
+            "end": {
+              "line": 38,
+              "column": 2115
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__addPageForwardLinkListener",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 38,
+              "column": 2115
+            },
+            "end": {
+              "line": 38,
+              "column": 2296
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 73
+        },
+        "end": {
+          "line": 38,
+          "column": 2297
+        }
+      },
+      "privacy": "public",
+      "name": "VlPager"
+    },
+    {
+      "description": "",
+      "summary": "",
       "path": "vl-pill.js",
       "properties": [
         {
@@ -23168,6 +25911,145 @@
       },
       "privacy": "public",
       "name": "VlPropertyValue"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-search-filter.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1332
+            },
+            "end": {
+              "line": 0,
+              "column": 1381
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_elementPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1381
+            },
+            "end": {
+              "line": 0,
+              "column": 1432
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_elementName",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1432
+            },
+            "end": {
+              "line": 0,
+              "column": 1476
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1476
+            },
+            "end": {
+              "line": 0,
+              "column": 1545
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "_data_vl_titleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 249
+            },
+            "end": {
+              "line": 0,
+              "column": 611
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 611
+            },
+            "end": {
+              "line": 0,
+              "column": 1332
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 79
+        },
+        "end": {
+          "line": 0,
+          "column": 1546
+        }
+      },
+      "privacy": "public",
+      "name": "VlSearchFilter"
     },
     {
       "description": "",
@@ -24837,6 +27719,130 @@
       },
       "privacy": "public",
       "name": "VlToaster"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "vl-typography.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 87
+            },
+            "end": {
+              "line": 5,
+              "column": 136
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 136
+            },
+            "end": {
+              "line": 5,
+              "column": 187
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__processSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 187
+            },
+            "end": {
+              "line": 5,
+              "column": 324
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__clearChildren",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 324
+            },
+            "end": {
+              "line": 5,
+              "column": 414
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__observeSlotElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 5,
+              "column": 414
+            },
+            "end": {
+              "line": 5,
+              "column": 596
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 0,
+          "column": 73
+        },
+        "end": {
+          "line": 5,
+          "column": 597
+        }
+      },
+      "privacy": "public",
+      "name": "VlTypography"
     },
     {
       "description": "",

@@ -305,7 +305,7 @@ global.select = factory();
                   y = [].concat(o(p), o(m));
               this.isSearching ? g = c : l > 0 && !n && (g = l);
 
-              for (var b = 0; b < g; b++) {
+              for (var b = 0; b < Math.min(g,y.length); b++) {
                 y[b] && u(y[b]);
               }
 
@@ -2774,20 +2774,22 @@ global.select = factory();
       sMultiDressedAtt = "".concat(sMultiSelectorAtt, "-dressed"),
       sSearchAtt = "".concat(sSelectorAtt, "-search"),
       sdeletableAtt = "".concat(sSelectorAtt, "-deletable"),
-      sSearchEmptyAtt = "".concat(sSelectorAtt, "-search-empty-text");
+      sSearchEmptyAtt = "".concat(sSelectorAtt, "-search-empty-text"),
+      sSearchResultLimitAtt = "".concat(sSelectorAtt, "-search-result-limit"),
+      sSearchNoResultLimitAtt = "".concat(sSelectorAtt, "-search-no-result-limit");
 
   var _prepareChoisesConfig = function _prepareChoisesConfig(element) {
     var obj = {},
         searchEnabled = true,
         removeItemButton = false,
         searchPlaceholderValue = vl.i18n.t('select.search_placeholder_value'),
+        searchResultLimit = 4,
         placeholderValue = vl.i18n.t('select.placeholder_value'),
         disabled = false; // Select has search - default behavior
 
     if (element.hasAttribute(sSearchAtt)) {
       searchEnabled = element.getAttribute(sSearchAtt) === 'true';
     } // Select is disabled
-
 
     disabled = element.disabled; // Select has empty-search-text attribute
 
@@ -2799,8 +2801,17 @@ global.select = factory();
       removeItemButton = true;
     }
 
+    if (element.hasAttribute(sSearchResultLimitAtt)) {
+      searchResultLimit = element.getAttribute(sSearchResultLimitAtt);
+    }
+
+    if (element.hasAttribute(sSearchNoResultLimitAtt)) {
+      searchResultLimit = 1000;
+    }
+
     obj.searchEnabled = searchEnabled;
     obj.removeItemButton = removeItemButton;
+    obj.searchResultLimit = searchResultLimit;
     obj.searchPlaceholderValue = searchPlaceholderValue;
     obj.placeholderValue = placeholderValue;
     obj.disabled = disabled;

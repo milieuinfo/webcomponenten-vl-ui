@@ -511,7 +511,7 @@
         },
         "end": {
           "line": 0,
-          "column": 2579
+          "column": 2581
         }
       },
       "privacy": "public",
@@ -525,11 +525,11 @@
         "file": "vl-core.js",
         "start": {
           "line": 0,
-          "column": 2609
+          "column": 2611
         },
         "end": {
           "line": 0,
-          "column": 2720
+          "column": 2722
         }
       },
       "privacy": "public",
@@ -543,11 +543,11 @@
         "file": "vl-core.js",
         "start": {
           "line": 0,
-          "column": 2741
+          "column": 2743
         },
         "end": {
           "line": 0,
-          "column": 2866
+          "column": 2868
         }
       },
       "privacy": "public",
@@ -564,11 +564,11 @@
         "file": "vl-core.js",
         "start": {
           "line": 0,
-          "column": 2892
+          "column": 2894
         },
         "end": {
           "line": 0,
-          "column": 3200
+          "column": 3202
         }
       },
       "privacy": "public",
@@ -582,11 +582,11 @@
         "file": "vl-core.js",
         "start": {
           "line": 0,
-          "column": 3225
+          "column": 3227
         },
         "end": {
           "line": 0,
-          "column": 3308
+          "column": 3310
         }
       },
       "privacy": "public",
@@ -603,7 +603,7 @@
           "column": 25
         },
         "end": {
-          "line": 231,
+          "line": 235,
           "column": 1
         }
       },
@@ -617,11 +617,11 @@
       "sourceRange": {
         "file": "vl-core.src.js",
         "start": {
-          "line": 233,
+          "line": 237,
           "column": 31
         },
         "end": {
-          "line": 263,
+          "line": 267,
           "column": 1
         }
       },
@@ -635,11 +635,11 @@
       "sourceRange": {
         "file": "vl-core.src.js",
         "start": {
-          "line": 273,
+          "line": 277,
           "column": 22
         },
         "end": {
-          "line": 279,
+          "line": 283,
           "column": 1
         }
       },
@@ -672,11 +672,11 @@
       "sourceRange": {
         "file": "vl-core.src.js",
         "start": {
-          "line": 288,
+          "line": 292,
           "column": 27
         },
         "end": {
-          "line": 306,
+          "line": 310,
           "column": 1
         }
       },
@@ -704,11 +704,11 @@
       "sourceRange": {
         "file": "vl-core.src.js",
         "start": {
-          "line": 313,
+          "line": 317,
           "column": 26
         },
         "end": {
-          "line": 320,
+          "line": 324,
           "column": 1
         }
       },
@@ -2040,16 +2040,12 @@
               "column": 4
             },
             "end": {
-              "line": 95,
+              "line": 94,
               "column": 5
             }
           },
           "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            }
-          ],
+          "params": [],
           "return": {
             "type": "void"
           }
@@ -2060,11 +2056,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 97,
+              "line": 96,
               "column": 4
             },
             "end": {
-              "line": 100,
+              "line": 99,
               "column": 5
             }
           },
@@ -2087,11 +2083,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 101,
               "column": 4
             },
             "end": {
-              "line": 104,
+              "line": 103,
               "column": 5
             }
           },
@@ -2114,11 +2110,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 106,
+              "line": 105,
               "column": 4
             },
             "end": {
-              "line": 118,
+              "line": 117,
               "column": 5
             }
           },
@@ -2141,11 +2137,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 120,
+              "line": 119,
               "column": 4
             },
             "end": {
-              "line": 122,
+              "line": 121,
               "column": 5
             }
           },
@@ -2168,11 +2164,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 124,
+              "line": 123,
               "column": 4
             },
             "end": {
-              "line": 130,
+              "line": 129,
               "column": 5
             }
           },
@@ -2188,11 +2184,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 132,
+              "line": 131,
               "column": 4
             },
             "end": {
-              "line": 134,
+              "line": 133,
               "column": 5
             }
           },
@@ -2209,11 +2205,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 136,
+              "line": 135,
               "column": 4
             },
             "end": {
-              "line": 138,
+              "line": 137,
               "column": 5
             }
           },
@@ -2237,7 +2233,7 @@
           "column": 7
         },
         "end": {
-          "line": 139,
+          "line": 138,
           "column": 1
         }
       },
@@ -3398,11 +3394,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1480
+              "column": 1479
             },
             "end": {
               "line": 0,
-              "column": 1542
+              "column": 1541
             }
           },
           "metadata": {}
@@ -3415,11 +3411,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1542
+              "column": 1541
             },
             "end": {
               "line": 0,
-              "column": 1612
+              "column": 1613
             }
           },
           "metadata": {}
@@ -3433,11 +3429,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 786
+              "column": 785
             },
             "end": {
               "line": 0,
-              "column": 1480
+              "column": 1479
             }
           },
           "metadata": {},
@@ -3463,11 +3459,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1612
+              "column": 1613
             },
             "end": {
               "line": 0,
-              "column": 1699
+              "column": 1700
             }
           },
           "metadata": {},
@@ -3484,11 +3480,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1699
+              "column": 1700
             },
             "end": {
               "line": 0,
-              "column": 1865
+              "column": 1866
             }
           },
           "metadata": {},
@@ -3517,11 +3513,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1865
+              "column": 1866
             },
             "end": {
               "line": 0,
-              "column": 1937
+              "column": 1938
             }
           },
           "metadata": {},
@@ -3547,11 +3543,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1937
+              "column": 1938
             },
             "end": {
               "line": 0,
-              "column": 2083
+              "column": 2084
             }
           },
           "metadata": {},
@@ -3561,17 +3557,17 @@
           }
         },
         {
-          "name": "__shadow",
+          "name": "_shadow",
           "description": "",
-          "privacy": "private",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2083
+              "column": 2084
             },
             "end": {
               "line": 0,
-              "column": 2166
+              "column": 2168
             }
           },
           "metadata": {},
@@ -3591,11 +3587,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2166
+              "column": 2168
             },
             "end": {
               "line": 0,
-              "column": 2317
+              "column": 2319
             }
           },
           "metadata": {},
@@ -3627,11 +3623,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2317
+              "column": 2319
             },
             "end": {
               "line": 0,
-              "column": 2577
+              "column": 2579
             }
           },
           "metadata": {},
@@ -3652,7 +3648,7 @@
         },
         "end": {
           "line": 0,
-          "column": 2578
+          "column": 2580
         }
       },
       "privacy": "public",
@@ -3671,11 +3667,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2691
+              "column": 2693
             },
             "end": {
               "line": 0,
-              "column": 2718
+              "column": 2720
             }
           },
           "metadata": {}
@@ -3688,11 +3684,11 @@
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 2620
+          "column": 2622
         },
         "end": {
           "line": 0,
-          "column": 2719
+          "column": 2721
         }
       },
       "privacy": "public"
@@ -3862,7 +3858,9 @@
               "description": "attribuut waarde"
             },
             {
-              "name": "clazz"
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
             }
           ],
           "return": {
@@ -3890,23 +3888,25 @@
           }
         },
         {
-          "name": "__shadow",
-          "description": "",
-          "privacy": "private",
+          "name": "_shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 195,
+              "line": 199,
               "column": 8
             },
             "end": {
-              "line": 198,
+              "line": 202,
               "column": 9
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "html"
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
             }
           ],
           "return": {
@@ -3919,11 +3919,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 203,
+              "line": 207,
               "column": 8
             },
             "end": {
-              "line": 211,
+              "line": 215,
               "column": 9
             }
           },
@@ -3955,11 +3955,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 216,
+              "line": 220,
               "column": 8
             },
             "end": {
-              "line": 227,
+              "line": 231,
               "column": 9
             }
           },
@@ -3980,7 +3980,7 @@
           "column": 4
         },
         "end": {
-          "line": 228,
+          "line": 232,
           "column": 5
         }
       },
@@ -4018,11 +4018,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 257,
+              "line": 261,
               "column": 8
             },
             "end": {
-              "line": 259,
+              "line": 263,
               "column": 9
             }
           },
@@ -4157,7 +4157,9 @@
               "description": "attribuut waarde"
             },
             {
-              "name": "clazz"
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
             }
           ],
           "return": {
@@ -4187,23 +4189,25 @@
           "inheritedFrom": "VlElement"
         },
         {
-          "name": "__shadow",
-          "description": "",
-          "privacy": "private",
+          "name": "_shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 195,
+              "line": 199,
               "column": 8
             },
             "end": {
-              "line": 198,
+              "line": 202,
               "column": 9
             }
           },
           "metadata": {},
           "params": [
             {
-              "name": "html"
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
             }
           ],
           "return": {
@@ -4217,11 +4221,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 203,
+              "line": 207,
               "column": 8
             },
             "end": {
-              "line": 211,
+              "line": 215,
               "column": 9
             }
           },
@@ -4254,11 +4258,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 216,
+              "line": 220,
               "column": 8
             },
             "end": {
-              "line": 227,
+              "line": 231,
               "column": 9
             }
           },
@@ -4276,11 +4280,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 241,
+          "line": 245,
           "column": 4
         },
         "end": {
-          "line": 260,
+          "line": 264,
           "column": 5
         }
       },
@@ -4965,11 +4969,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 886
+              "column": 1012
             },
             "end": {
               "line": 0,
-              "column": 951
+              "column": 1077
             }
           },
           "metadata": {},
@@ -5029,11 +5033,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1111
+              "column": 1279
             },
             "end": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             }
           },
           "metadata": {},
@@ -5048,11 +5052,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             },
             "end": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             }
           },
           "metadata": {},
@@ -5067,11 +5071,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             },
             "end": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             }
           },
           "metadata": {},
@@ -5086,11 +5090,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             },
             "end": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             }
           },
           "metadata": {},
@@ -5105,11 +5109,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             },
             "end": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             }
           },
           "metadata": {},
@@ -5124,11 +5128,106 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             },
             "end": {
               "line": 0,
-              "column": 1515
+              "column": 1683
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extraSmallSizeAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1683
+            },
+            "end": {
+              "line": 0,
+              "column": 1781
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extraSmallMaxSizeAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1781
+            },
+            "end": {
+              "line": 0,
+              "column": 1886
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_columnClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1886
+            },
+            "end": {
+              "line": 0,
+              "column": 1928
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_pushClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1928
+            },
+            "end": {
+              "line": 0,
+              "column": 1969
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1969
+            },
+            "end": {
+              "line": 0,
+              "column": 2034
             }
           },
           "metadata": {},
@@ -5167,28 +5266,67 @@
             }
           },
           "metadata": {}
-        },
+        }
+      ],
+      "methods": [
         {
-          "name": "_stylePath",
-          "type": "?",
+          "name": "__changeColumnClass",
           "description": "",
-          "privacy": "protected",
+          "privacy": "private",
           "sourceRange": {
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1587
+              "column": 2169
             },
             "end": {
               "line": 0,
-              "column": 1652
+              "column": 2274
             }
           },
           "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "VlColumn"
-        }
-      ],
-      "methods": [
+        },
+        {
+          "name": "__changePushClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 2274
+            },
+            "end": {
+              "line": 0,
+              "column": 2375
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
         {
           "name": "_sizeChangedCallback",
           "description": "",
@@ -5197,11 +5335,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1652
+              "column": 2375
             },
             "end": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             }
           },
           "metadata": {},
@@ -5226,11 +5364,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             },
             "end": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             }
           },
           "metadata": {},
@@ -5255,11 +5393,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             },
             "end": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             }
           },
           "metadata": {},
@@ -5284,11 +5422,69 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             },
             "end": {
               "line": 0,
-              "column": 2320
+              "column": 3275
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extra_small_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 3275
+            },
+            "end": {
+              "line": 0,
+              "column": 3531
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extra_small_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 3531
+            },
+            "end": {
+              "line": 0,
+              "column": 3785
             }
           },
           "metadata": {},
@@ -5313,11 +5509,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 2320
+              "column": 3785
             },
             "end": {
               "line": 0,
-              "column": 2473
+              "column": 3957
             }
           },
           "metadata": {},
@@ -5355,7 +5551,37 @@
           }
         }
       ],
-      "staticMethods": [],
+      "staticMethods": [
+        {
+          "name": "__sizeClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 2034
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "minSize"
+            },
+            {
+              "name": "maxSize"
+            },
+            {
+              "name": "responsiveModifier"
+            }
+          ],
+          "inheritedFrom": "VlColumn"
+        }
+      ],
       "demos": [],
       "metadata": {},
       "sourceRange": {
@@ -5798,7 +6024,7 @@
       "superclass": "SuperClass"
     },
     {
-      "description": "",
+      "description": "VlRegion",
       "summary": "",
       "path": "vl-grid.src.js",
       "properties": [
@@ -5809,11 +6035,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 12,
+              "line": 33,
               "column": 2
             },
             "end": {
-              "line": 14,
+              "line": 35,
               "column": 3
             }
           },
@@ -5826,11 +6052,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 16,
+              "line": 37,
               "column": 2
             },
             "end": {
-              "line": 18,
+              "line": 39,
               "column": 3
             }
           },
@@ -5844,11 +6070,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 8,
+              "line": 29,
               "column": 2
             },
             "end": {
-              "line": 10,
+              "line": 31,
               "column": 3
             }
           },
@@ -5864,119 +6090,25 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 2,
+          "line": 23,
           "column": 7
         },
         "end": {
-          "line": 19,
+          "line": 40,
           "column": 1
         }
       },
       "privacy": "public",
+      "superclass": "VlElement",
       "name": "VlRegion"
     },
     {
-      "description": "",
+      "description": "VlLayout",
       "summary": "",
       "path": "vl-grid.src.js",
       "properties": [
         {
           "name": "_classPrefix",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 30,
-              "column": 2
-            },
-            "end": {
-              "line": 32,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_stylePath",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 34,
-              "column": 2
-            },
-            "end": {
-              "line": 36,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 26,
-              "column": 2
-            },
-            "end": {
-              "line": 28,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          }
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 21,
-          "column": 7
-        },
-        "end": {
-          "line": 37,
-          "column": 1
-        }
-      },
-      "privacy": "public",
-      "name": "VlLayout"
-    },
-    {
-      "description": "VlGrid",
-      "summary": "",
-      "path": "vl-grid.src.js",
-      "properties": [
-        {
-          "name": "_classPrefix",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 60,
-              "column": 2
-            },
-            "end": {
-              "line": 62,
-              "column": 3
-            }
-          },
-          "metadata": {}
-        },
-        {
-          "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -5991,6 +6123,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 2
+            },
+            "end": {
+              "line": 70,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -6000,11 +6149,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 58,
+              "line": 62,
               "column": 3
             }
           },
@@ -6020,11 +6169,90 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 51,
+          "line": 55,
           "column": 7
         },
         "end": {
-          "line": 67,
+          "line": 71,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlLayout"
+    },
+    {
+      "description": "VlGrid",
+      "summary": "",
+      "path": "vl-grid.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 109,
+              "column": 2
+            },
+            "end": {
+              "line": 111,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 113,
+              "column": 2
+            },
+            "end": {
+              "line": 115,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 105,
+              "column": 2
+            },
+            "end": {
+              "line": 107,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 95,
+          "column": 7
+        },
+        "end": {
+          "line": 116,
           "column": 1
         }
       },
@@ -6044,11 +6272,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 90,
+              "line": 141,
               "column": 2
             },
             "end": {
-              "line": 92,
+              "line": 143,
               "column": 3
             }
           },
@@ -6061,11 +6289,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 94,
+              "line": 145,
               "column": 2
             },
             "end": {
-              "line": 96,
+              "line": 147,
               "column": 3
             }
           },
@@ -6078,11 +6306,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 98,
+              "line": 149,
               "column": 2
             },
             "end": {
-              "line": 100,
+              "line": 151,
               "column": 3
             }
           },
@@ -6095,11 +6323,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 153,
               "column": 2
             },
             "end": {
-              "line": 104,
+              "line": 155,
               "column": 3
             }
           },
@@ -6112,11 +6340,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 106,
+              "line": 157,
               "column": 2
             },
             "end": {
-              "line": 108,
+              "line": 159,
               "column": 3
             }
           },
@@ -6129,45 +6357,79 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 110,
+              "line": 161,
               "column": 2
             },
             "end": {
-              "line": 112,
+              "line": 163,
               "column": 3
             }
           },
           "metadata": {}
         },
         {
-          "name": "_classPrefix",
+          "name": "_extraSmallSizeAttribute",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 114,
+              "line": 165,
               "column": 2
             },
             "end": {
-              "line": 116,
+              "line": 167,
               "column": 3
             }
           },
           "metadata": {}
         },
         {
-          "name": "_pushPrefix",
+          "name": "_extraSmallMaxSizeAttribute",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 118,
+              "line": 169,
               "column": 2
             },
             "end": {
-              "line": 120,
+              "line": 171,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_columnClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 173,
+              "column": 2
+            },
+            "end": {
+              "line": 175,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pushClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 177,
+              "column": 2
+            },
+            "end": {
+              "line": 179,
               "column": 3
             }
           },
@@ -6180,11 +6442,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 181,
               "column": 2
             },
             "end": {
-              "line": 124,
+              "line": 183,
               "column": 3
             }
           },
@@ -6193,16 +6455,70 @@
       ],
       "methods": [
         {
+          "name": "__changeColumnClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 189,
+              "column": 2
+            },
+            "end": {
+              "line": 191,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__changePushClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 193,
+              "column": 2
+            },
+            "end": {
+              "line": 195,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
           "name": "_sizeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 126,
+              "line": 197,
               "column": 2
             },
             "end": {
-              "line": 128,
+              "line": 203,
               "column": 3
             }
           },
@@ -6225,11 +6541,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 130,
+              "line": 205,
               "column": 2
             },
             "end": {
-              "line": 132,
+              "line": 211,
               "column": 3
             }
           },
@@ -6252,11 +6568,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 213,
               "column": 2
             },
             "end": {
-              "line": 136,
+              "line": 219,
               "column": 3
             }
           },
@@ -6279,11 +6595,65 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 138,
+              "line": 221,
               "column": 2
             },
             "end": {
-              "line": 140,
+              "line": 227,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_extra_small_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 229,
+              "column": 2
+            },
+            "end": {
+              "line": 235,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_extra_small_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 237,
+              "column": 2
+            },
+            "end": {
+              "line": 243,
               "column": 3
             }
           },
@@ -6306,11 +6676,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 142,
+              "line": 245,
               "column": 2
             },
             "end": {
-              "line": 144,
+              "line": 250,
               "column": 3
             }
           },
@@ -6328,16 +6698,44 @@
           }
         }
       ],
-      "staticMethods": [],
+      "staticMethods": [
+        {
+          "name": "__sizeClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 185,
+              "column": 2
+            },
+            "end": {
+              "line": 187,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "minSize"
+            },
+            {
+              "name": "maxSize"
+            },
+            {
+              "name": "responsiveModifier"
+            }
+          ]
+        }
+      ],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 85,
+          "line": 136,
           "column": 7
         },
         "end": {
-          "line": 145,
+          "line": 251,
           "column": 1
         }
       },
@@ -12281,11 +12679,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 61,
               "column": 2
             },
             "end": {
-              "line": 61,
+              "line": 63,
               "column": 3
             }
           },
@@ -12298,11 +12696,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 63,
+              "line": 65,
               "column": 2
             },
             "end": {
-              "line": 65,
+              "line": 67,
               "column": 3
             }
           },
@@ -12315,11 +12713,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 67,
+              "line": 69,
               "column": 2
             },
             "end": {
-              "line": 69,
+              "line": 71,
               "column": 3
             }
           },
@@ -12332,11 +12730,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 71,
+              "line": 73,
               "column": 2
             },
             "end": {
-              "line": 73,
+              "line": 75,
               "column": 3
             }
           },
@@ -12349,11 +12747,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 75,
+              "line": 77,
               "column": 2
             },
             "end": {
-              "line": 77,
+              "line": 79,
               "column": 3
             }
           },
@@ -12366,11 +12764,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 160,
+              "line": 162,
               "column": 2
             },
             "end": {
-              "line": 162,
+              "line": 164,
               "column": 3
             }
           },
@@ -12383,11 +12781,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 169,
+              "line": 171,
               "column": 2
             },
             "end": {
-              "line": 171,
+              "line": 173,
               "column": 3
             }
           },
@@ -12400,11 +12798,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 187,
+              "line": 189,
               "column": 2
             },
             "end": {
-              "line": 189,
+              "line": 191,
               "column": 3
             }
           },
@@ -12417,11 +12815,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 197,
+              "line": 199,
               "column": 2
             },
             "end": {
-              "line": 201,
+              "line": 203,
               "column": 3
             }
           },
@@ -12434,11 +12832,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 208,
+              "line": 210,
               "column": 2
             },
             "end": {
-              "line": 210,
+              "line": 212,
               "column": 3
             }
           },
@@ -12452,11 +12850,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 47,
+              "line": 49,
               "column": 2
             },
             "end": {
-              "line": 52,
+              "line": 54,
               "column": 3
             }
           },
@@ -12472,11 +12870,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 83,
+              "line": 85,
               "column": 2
             },
             "end": {
-              "line": 85,
+              "line": 87,
               "column": 3
             }
           },
@@ -12499,11 +12897,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 89,
               "column": 2
             },
             "end": {
-              "line": 89,
+              "line": 91,
               "column": 3
             }
           },
@@ -12526,11 +12924,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 91,
+              "line": 93,
               "column": 2
             },
             "end": {
-              "line": 109,
+              "line": 111,
               "column": 3
             }
           },
@@ -12553,11 +12951,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 116,
+              "line": 118,
               "column": 2
             },
             "end": {
-              "line": 120,
+              "line": 122,
               "column": 3
             }
           },
@@ -12573,11 +12971,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 124,
               "column": 2
             },
             "end": {
-              "line": 127,
+              "line": 129,
               "column": 3
             }
           },
@@ -12593,11 +12991,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 136,
+              "line": 138,
               "column": 2
             },
             "end": {
-              "line": 139,
+              "line": 141,
               "column": 3
             }
           },
@@ -12629,11 +13027,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 148,
+              "line": 150,
               "column": 2
             },
             "end": {
-              "line": 153,
+              "line": 155,
               "column": 3
             }
           },
@@ -12654,11 +13052,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 219,
+              "line": 221,
               "column": 2
             },
             "end": {
-              "line": 230,
+              "line": 232,
               "column": 3
             }
           },
@@ -12679,11 +13077,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 239,
               "column": 2
             },
             "end": {
-              "line": 239,
+              "line": 241,
               "column": 3
             }
           },
@@ -12700,11 +13098,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 246,
+              "line": 248,
               "column": 2
             },
             "end": {
-              "line": 255,
+              "line": 257,
               "column": 3
             }
           },
@@ -12720,11 +13118,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 260,
+              "line": 262,
               "column": 2
             },
             "end": {
-              "line": 262,
+              "line": 264,
               "column": 3
             }
           },
@@ -12740,11 +13138,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 267,
+              "line": 269,
               "column": 2
             },
             "end": {
-              "line": 269,
+              "line": 271,
               "column": 3
             }
           },
@@ -12760,11 +13158,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 274,
+              "line": 276,
               "column": 2
             },
             "end": {
-              "line": 276,
+              "line": 278,
               "column": 3
             }
           },
@@ -12780,11 +13178,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 281,
+              "line": 283,
               "column": 2
             },
             "end": {
-              "line": 283,
+              "line": 285,
               "column": 3
             }
           },
@@ -12800,11 +13198,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 288,
+              "line": 290,
               "column": 2
             },
             "end": {
-              "line": 290,
+              "line": 292,
               "column": 3
             }
           },
@@ -12820,11 +13218,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 29,
+          "line": 31,
           "column": 7
         },
         "end": {
-          "line": 291,
+          "line": 293,
           "column": 1
         }
       },
@@ -16396,11 +16794,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 871
+              "column": 882
             },
             "end": {
               "line": 0,
-              "column": 912
+              "column": 923
             }
           },
           "metadata": {}
@@ -16413,11 +16811,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 912
+              "column": 923
             },
             "end": {
               "line": 0,
-              "column": 976
+              "column": 987
             }
           },
           "metadata": {}
@@ -16430,11 +16828,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 976
+              "column": 987
             },
             "end": {
               "line": 0,
-              "column": 1062
+              "column": 1073
             }
           },
           "metadata": {}
@@ -16447,11 +16845,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1098
+              "column": 1109
             },
             "end": {
               "line": 0,
-              "column": 1146
+              "column": 1157
             }
           },
           "metadata": {}
@@ -16465,11 +16863,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 758
+              "column": 769
             },
             "end": {
               "line": 0,
-              "column": 871
+              "column": 882
             }
           },
           "metadata": {},
@@ -16485,11 +16883,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1062
+              "column": 1073
             },
             "end": {
               "line": 0,
-              "column": 1098
+              "column": 1109
             }
           },
           "metadata": {},
@@ -16505,19 +16903,15 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1146
+              "column": 1157
             },
             "end": {
               "line": 0,
-              "column": 1539
+              "column": 1529
             }
           },
           "metadata": {},
-          "params": [
-            {
-              "name": "e"
-            }
-          ],
+          "params": [],
           "return": {
             "type": "void"
           }
@@ -16529,11 +16923,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1539
+              "column": 1529
             },
             "end": {
               "line": 0,
-              "column": 1627
+              "column": 1617
             }
           },
           "metadata": {},
@@ -16556,11 +16950,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1627
+              "column": 1617
             },
             "end": {
               "line": 0,
-              "column": 1681
+              "column": 1671
             }
           },
           "metadata": {},
@@ -16583,11 +16977,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1681
+              "column": 1671
             },
             "end": {
               "line": 0,
-              "column": 1939
+              "column": 1929
             }
           },
           "metadata": {},
@@ -16610,11 +17004,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1939
+              "column": 1929
             },
             "end": {
               "line": 0,
-              "column": 2005
+              "column": 1995
             }
           },
           "metadata": {},
@@ -16637,11 +17031,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2005
+              "column": 1995
             },
             "end": {
               "line": 0,
-              "column": 2271
+              "column": 2261
             }
           },
           "metadata": {},
@@ -16657,11 +17051,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2271
+              "column": 2261
             },
             "end": {
               "line": 0,
-              "column": 2308
+              "column": 2298
             }
           },
           "metadata": {},
@@ -16678,11 +17072,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2308
+              "column": 2298
             },
             "end": {
               "line": 0,
-              "column": 2334
+              "column": 2324
             }
           },
           "metadata": {},
@@ -16706,7 +17100,7 @@
         },
         "end": {
           "line": 0,
-          "column": 2335
+          "column": 2325
         }
       },
       "privacy": "public",
@@ -17580,7 +17974,7 @@
             },
             "end": {
               "line": 40,
-              "column": 1809
+              "column": 1826
             }
           },
           "metadata": {},
@@ -17596,11 +17990,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 1809
+              "column": 1826
             },
             "end": {
               "line": 40,
-              "column": 1854
+              "column": 1871
             }
           },
           "metadata": {},
@@ -17617,11 +18011,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 1854
+              "column": 1871
             },
             "end": {
               "line": 40,
-              "column": 2242
+              "column": 2258
             }
           },
           "metadata": {},
@@ -17637,11 +18031,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2242
+              "column": 2258
             },
             "end": {
               "line": 40,
-              "column": 2352
+              "column": 2368
             }
           },
           "metadata": {},
@@ -17657,11 +18051,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2352
+              "column": 2368
             },
             "end": {
               "line": 40,
-              "column": 2717
+              "column": 2733
             }
           },
           "metadata": {},
@@ -17678,11 +18072,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2717
+              "column": 2733
             },
             "end": {
               "line": 40,
-              "column": 2797
+              "column": 2813
             }
           },
           "metadata": {},
@@ -17695,11 +18089,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2797
+              "column": 2813
             },
             "end": {
               "line": 40,
-              "column": 2885
+              "column": 2901
             }
           },
           "metadata": {},
@@ -17712,11 +18106,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2885
+              "column": 2901
             },
             "end": {
               "line": 40,
-              "column": 2988
+              "column": 3004
             }
           },
           "metadata": {},
@@ -17739,11 +18133,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 2988
+              "column": 3004
             },
             "end": {
               "line": 40,
-              "column": 3098
+              "column": 3114
             }
           },
           "metadata": {},
@@ -17763,11 +18157,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 3098
+              "column": 3114
             },
             "end": {
               "line": 40,
-              "column": 3183
+              "column": 3199
             }
           },
           "metadata": {},
@@ -17780,11 +18174,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 3183
+              "column": 3199
             },
             "end": {
               "line": 40,
-              "column": 3338
+              "column": 3354
             }
           },
           "metadata": {},
@@ -17797,11 +18191,11 @@
           "sourceRange": {
             "start": {
               "line": 40,
-              "column": 3338
+              "column": 3354
             },
             "end": {
               "line": 40,
-              "column": 3595
+              "column": 3611
             }
           },
           "metadata": {},
@@ -17828,7 +18222,7 @@
         },
         "end": {
           "line": 40,
-          "column": 3596
+          "column": 3612
         }
       },
       "privacy": "public",
@@ -18508,11 +18902,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 886
+              "column": 1012
             },
             "end": {
               "line": 0,
-              "column": 951
+              "column": 1077
             }
           },
           "metadata": {},
@@ -18572,11 +18966,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1111
+              "column": 1279
             },
             "end": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             }
           },
           "metadata": {},
@@ -18591,11 +18985,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             },
             "end": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             }
           },
           "metadata": {},
@@ -18610,11 +19004,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             },
             "end": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             }
           },
           "metadata": {},
@@ -18629,11 +19023,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             },
             "end": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             }
           },
           "metadata": {},
@@ -18648,11 +19042,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             },
             "end": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             }
           },
           "metadata": {},
@@ -18667,11 +19061,106 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             },
             "end": {
               "line": 0,
-              "column": 1515
+              "column": 1683
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extraSmallSizeAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1683
+            },
+            "end": {
+              "line": 0,
+              "column": 1781
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extraSmallMaxSizeAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1781
+            },
+            "end": {
+              "line": 0,
+              "column": 1886
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_columnClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1886
+            },
+            "end": {
+              "line": 0,
+              "column": 1928
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_pushClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1928
+            },
+            "end": {
+              "line": 0,
+              "column": 1969
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 1969
+            },
+            "end": {
+              "line": 0,
+              "column": 2034
             }
           },
           "metadata": {},
@@ -18710,28 +19199,67 @@
             }
           },
           "metadata": {}
-        },
+        }
+      ],
+      "methods": [
         {
-          "name": "_stylePath",
-          "type": "?",
+          "name": "__changeColumnClass",
           "description": "",
-          "privacy": "protected",
+          "privacy": "private",
           "sourceRange": {
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1587
+              "column": 2169
             },
             "end": {
               "line": 0,
-              "column": 1652
+              "column": 2274
             }
           },
           "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "VlColumn"
-        }
-      ],
-      "methods": [
+        },
+        {
+          "name": "__changePushClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 2274
+            },
+            "end": {
+              "line": 0,
+              "column": 2375
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
         {
           "name": "_sizeChangedCallback",
           "description": "",
@@ -18740,11 +19268,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1652
+              "column": 2375
             },
             "end": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             }
           },
           "metadata": {},
@@ -18769,11 +19297,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             },
             "end": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             }
           },
           "metadata": {},
@@ -18798,11 +19326,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             },
             "end": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             }
           },
           "metadata": {},
@@ -18827,11 +19355,69 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             },
             "end": {
               "line": 0,
-              "column": 2320
+              "column": 3275
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extra_small_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 3275
+            },
+            "end": {
+              "line": 0,
+              "column": 3531
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlColumn"
+        },
+        {
+          "name": "_extra_small_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 3531
+            },
+            "end": {
+              "line": 0,
+              "column": 3785
             }
           },
           "metadata": {},
@@ -18856,11 +19442,11 @@
             "file": "node_modules/vl-ui-grid/vl-grid.js",
             "start": {
               "line": 0,
-              "column": 2320
+              "column": 3785
             },
             "end": {
               "line": 0,
-              "column": 2473
+              "column": 3957
             }
           },
           "metadata": {},
@@ -18898,7 +19484,37 @@
           }
         }
       ],
-      "staticMethods": [],
+      "staticMethods": [
+        {
+          "name": "__sizeClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-grid/vl-grid.js",
+            "start": {
+              "line": 0,
+              "column": 2034
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "minSize"
+            },
+            {
+              "name": "maxSize"
+            },
+            {
+              "name": "responsiveModifier"
+            }
+          ],
+          "inheritedFrom": "VlColumn"
+        }
+      ],
       "demos": [],
       "metadata": {},
       "sourceRange": {
@@ -19502,11 +20118,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 849
+              "column": 975
             },
             "end": {
               "line": 0,
-              "column": 886
+              "column": 1012
             }
           },
           "metadata": {}
@@ -19519,11 +20135,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 886
+              "column": 1012
             },
             "end": {
               "line": 0,
-              "column": 951
+              "column": 1077
             }
           },
           "metadata": {}
@@ -19537,11 +20153,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 799
+              "column": 925
             },
             "end": {
               "line": 0,
-              "column": 849
+              "column": 975
             }
           },
           "metadata": {},
@@ -19561,7 +20177,7 @@
         },
         "end": {
           "line": 0,
-          "column": 952
+          "column": 1078
         }
       },
       "privacy": "public",
@@ -19580,11 +20196,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1111
+              "column": 1279
             },
             "end": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             }
           },
           "metadata": {}
@@ -19597,11 +20213,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1143
+              "column": 1311
             },
             "end": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             }
           },
           "metadata": {}
@@ -19614,11 +20230,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1175
+              "column": 1343
             },
             "end": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             }
           },
           "metadata": {}
@@ -19631,11 +20247,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1251
+              "column": 1419
             },
             "end": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             }
           },
           "metadata": {}
@@ -19648,11 +20264,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1334
+              "column": 1502
             },
             "end": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             }
           },
           "metadata": {}
@@ -19665,45 +20281,79 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1421
+              "column": 1589
             },
             "end": {
               "line": 0,
-              "column": 1515
+              "column": 1683
             }
           },
           "metadata": {}
         },
         {
-          "name": "_classPrefix",
+          "name": "_extraSmallSizeAttribute",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1515
+              "column": 1683
             },
             "end": {
               "line": 0,
-              "column": 1551
+              "column": 1781
             }
           },
           "metadata": {}
         },
         {
-          "name": "_pushPrefix",
+          "name": "_extraSmallMaxSizeAttribute",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1551
+              "column": 1781
             },
             "end": {
               "line": 0,
-              "column": 1587
+              "column": 1886
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_columnClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1886
+            },
+            "end": {
+              "line": 0,
+              "column": 1928
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_pushClassPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 1928
+            },
+            "end": {
+              "line": 0,
+              "column": 1969
             }
           },
           "metadata": {}
@@ -19716,11 +20366,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1587
+              "column": 1969
             },
             "end": {
               "line": 0,
-              "column": 1652
+              "column": 2034
             }
           },
           "metadata": {}
@@ -19728,17 +20378,71 @@
       ],
       "methods": [
         {
+          "name": "__changeColumnClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2169
+            },
+            "end": {
+              "line": 0,
+              "column": 2274
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__changePushClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2274
+            },
+            "end": {
+              "line": 0,
+              "column": 2375
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
           "name": "_sizeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1652
+              "column": 2375
             },
             "end": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             }
           },
           "metadata": {},
@@ -19761,11 +20465,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1806
+              "column": 2589
             },
             "end": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             }
           },
           "metadata": {},
@@ -19788,11 +20492,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 1958
+              "column": 2801
             },
             "end": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             }
           },
           "metadata": {},
@@ -19815,11 +20519,65 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2140
+              "column": 3039
             },
             "end": {
               "line": 0,
-              "column": 2320
+              "column": 3275
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_extra_small_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3275
+            },
+            "end": {
+              "line": 0,
+              "column": 3531
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_extra_small_max_sizeChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 3531
+            },
+            "end": {
+              "line": 0,
+              "column": 3785
             }
           },
           "metadata": {},
@@ -19842,11 +20600,11 @@
           "sourceRange": {
             "start": {
               "line": 0,
-              "column": 2320
+              "column": 3785
             },
             "end": {
               "line": 0,
-              "column": 2473
+              "column": 3957
             }
           },
           "metadata": {},
@@ -19863,17 +20621,45 @@
           }
         }
       ],
-      "staticMethods": [],
+      "staticMethods": [
+        {
+          "name": "__sizeClass",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 0,
+              "column": 2034
+            },
+            "end": {
+              "line": 0,
+              "column": 2169
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "minSize"
+            },
+            {
+              "name": "maxSize"
+            },
+            {
+              "name": "responsiveModifier"
+            }
+          ]
+        }
+      ],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
           "line": 0,
-          "column": 960
+          "column": 1086
         },
         "end": {
           "line": 0,
-          "column": 2474
+          "column": 3958
         }
       },
       "privacy": "public",

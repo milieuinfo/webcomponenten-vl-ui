@@ -27,7 +27,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
     constructor() {
         super();
         this.appendChild(this.__createWysiwygElement());
-        this._shadow(`
+        this.shadow(`
             <style>
                 @import '../style.css';
                 @import '/node_modules/vl-ui-button/style.css';
@@ -116,7 +116,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
     static _getMessage(domain, code) {
         return VlProzaMessagePreloader.getMessage(domain, code).catch(error => {
                 if (VlProzaMessagePreloader.isPreloaded(domain)) {
-                    console.error(`Bericht voor {domein: ${domain}, code: ${code}} kon niet opgevraagd worden uit de preload cache`, error);
+                    console.warn(`Bericht voor {domein: ${domain}, code: ${code}} kon niet opgevraagd worden uit de preload cache`, error);
                 }
                 throw error;
             }).catch(() => VlProzaMessage._getSingleMessage(domain, code));

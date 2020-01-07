@@ -40,7 +40,7 @@ export const VlElement = (SuperClass) => {
         constructor(html) {
             super();
             if (html) {
-                this._shadow(html);
+                this.shadow(html);
             }
         }
 
@@ -120,8 +120,8 @@ export const VlElement = (SuperClass) => {
          * @returns {Element}
          */
         get _element() {
-            if (this.__shadow) {
-                return this.__shadow.lastElementChild;
+            if (this._shadow) {
+                return this._shadow.lastElementChild;
             } else {
                 return this;
             }
@@ -197,9 +197,9 @@ export const VlElement = (SuperClass) => {
          * @param {Literal} html - HTML literal
          * @returns {void}
          */
-        _shadow(html) {
-            this.__shadow = this.attachShadow({ mode: 'open' });
-            this.__shadow.innerHTML = html;
+        shadow(html) {
+            this._shadow = this.attachShadow({ mode: 'open' });
+            this._shadow.innerHTML = html;
         }
 
         /**

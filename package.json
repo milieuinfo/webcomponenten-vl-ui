@@ -39,6 +39,7 @@
     "replace": "1.1.1"
   },
   "dependencies": {
+    "fetch-mock": "^8.1.0",
     "prismjs": "1.17.1",
     "vl-ui-accordion": "^1.0.13",
     "vl-ui-action-group": "^1.0.18",
@@ -81,6 +82,7 @@
     "vl-ui-upload": "^1.0.1"
   },
   "bundledDependencies": [
+    "fetch-mock",
     "prismjs",
     "vl-ui-accordion",
     "vl-ui-action-group",

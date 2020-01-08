@@ -1,28 +1,28 @@
-# vl-typography
+# vl-ui-typography
 ![GitHub issues](https://img.shields.io/github/issues-raw/milieuinfo/webcomponent-vl-ui-typography) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/milieuinfo/webcomponent-vl-ui-typography) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/milieuinfo/webcomponent-vl-ui-typography)
 
 Gebruik de typograhpy component om de standaard elementen te visualiseren binnen een container. De typography component wordt voornamelijk gebruikt om de stijl van de inhoud van een wysiwyg-editor correct te renderen.
 
 ## Installatie
-```
-npm install --save vl-ui-typography
+``` bash
+$ npm install --save vl-ui-typography
 ```
 
 ## API
-De [API](https://webcomponenten.omgeving.vlaanderen.be/doc/Vltypography.html) bevat een overzicht van de ondersteunde attributen en een beschrijving van de beschikbare functies.
+De [API](https://webcomponenten.omgeving.vlaanderen.be/doc/VlTypography.html) bevat een overzicht van de ondersteunde attributen en een beschrijving van de beschikbare functies.
 
 ## Demo
 De [demo](https://webcomponenten.omgeving.vlaanderen.be/demo/vl-typography.html) pagina bevat een overzicht van de mogelijkheden met code voorbeelden. Lokaal opstarten kan met onderstaand [NPM](https://www.npmjs.com) script.
-```
-npm run demo
+``` bash
+$ npm run demo
 ```
 
 ## Testen
 De webcomponent bevat verschillende unit testen die bij elke commit geautomatiseerd in Chrome en Firefox draaien. Hierdoor kunnen we bij elke release een minimum aan kwaliteit garanderen. Later zullen er ook nog UI testen toegevoegd worden zodat al de functionaliteit uitgebreid getest wordt.
 
 De testen kunnen lokaal opgestart worden met onderstaand [NPM](https://www.npmjs.com) script.
-```
-npm run test
+``` bash
+$ npm run test
 ```
 
 ## Issues

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="js">
+	<head>
+        <title>vl-infoblock voorbeeld</title>
+        <script type="module" src="demo.js"></script>
+        <script type="module" src="../vl-infoblock.js"></script>
+    </head>
+	<body>
+        <h1>vl-ui-infoblock demo</h1>
+        <p>
+            <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-infoblock">Meer voorbeelden en documentatie</a>
+        </p>
+
+        <div>
+            <h2>Infoblock contact</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>contact</strong> om een adresboek icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Contactenlijst&quot; type=&quot;contact&quot;&gt;Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Contactenlijst" type="contact">Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock publications</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>publications</strong> om het book icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Contracten&quot; type=&quot;publications&quot;&gt;Hieronder bevindt zicht een overzicht van al uw contracten binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Contracten" type="publications">Hieronder bevindt zicht een overzicht van al uw contracten binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock FAQ</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>faq</strong> toe om het discussie icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Veelgestelde vragen&quot; type=&quot;faq&quot;&gt;Hieronder bevindt zicht een overzicht van alle veelgestelde vragen binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Veelgestelde vragen" type="faq">Hieronder bevindt zicht een overzicht van alle veelgestelde vragen binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock news</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>news</strong> toe om het newspaper icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Nieuwsberichten&quot; type=&quot;news&quot;&gt;Hieronder bevindt zicht een overzicht van alle nieuwsberichten binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Nieuwsberichten" type="news">Hieronder bevindt zicht een overzicht van alle nieuwsberichten binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock timeline</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>timeline</strong> toe om het reverse-clock icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Archief&quot; type=&quot;timeline&quot;&gt;Hieronder bevindt zicht een overzicht van alle gearchiveerde berichten binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Archief" type="timeline">Hieronder bevindt zicht een overzicht van alle gearchiveerde berichten binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock question</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>question</strong> toe om het question-mark icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Overheidsdiensten&quot; type=&quot;question&quot;&gt;Hieronder bevindt zicht een overzicht van alle overheidsdiensten binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Overheidsdiensten" type="question">Hieronder bevindt zicht een overzicht van alle overheidsdiensten binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+        
+        <div>
+            <h2>Infoblock custom icon</h2>
+            <p>Het is ook mogelijk om een willekeurig icoon, uit de <a href='https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon'>vl-ui-icon</a>, te tonen via het <strong>icon</strong> attribuut (bv. calendar)</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Evenementen&quot; icon=&quot;calendar&quot;&gt;Hieronder bevindt zicht een overzicht van alle evenementen binnen de Vlaamse Overheid.&lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title="Evenementen" icon="calendar">Hieronder bevindt zicht een overzicht van alle evenementen binnen de Vlaamse Overheid.</vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock titel via attribuut doorgeven</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>contact</strong> om een adresboek icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Titel via title attribuut&quot; type=&quot;contact&quot;&gt;
+                       Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
+                    &lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock title='Titel via title attribuut' type="contact">
+                    Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
+                </vl-infoblock>
+            </div>
+        </div>
+
+        <div>
+            <h2>Infoblock titel via slot doorgeven</h2>
+            <p>Voeg het attribuut <strong>type</strong> met waarde <strong>contact</strong> om een adresboek icoon te tonen.</p>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-infoblock title=&quot;Contactenlijst&quot; type=&quot;contact&quot;&gt;
+                      &lt;span slot=&quot;title&quot;&gt;Titel via slot&lt;/span&gt;
+                      Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
+                    &lt;/vl-infoblock&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-infoblock type="contact">
+                    <span slot='title'>Titel via slot</span>
+                    Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
+                </vl-infoblock>
+            </div>
+        </div>
+
+    </body>
+</html>

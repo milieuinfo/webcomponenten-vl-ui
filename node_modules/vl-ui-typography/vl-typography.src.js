@@ -18,7 +18,7 @@ export class VlTypography extends VlElement(HTMLElement) {
             <style>
                 @import '../style.css';
             </style>
-            <div class="vl-typography"></div>
+            <div id="content" class="vl-typography"></div>
         `);
         this._observer = this.__observeSlotElements(() => this.__processSlotElements());
     }

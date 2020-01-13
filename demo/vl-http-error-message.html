@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="js">
+	<head>
+        <title>vl-http-error-message voorbeeld</title>
+        <script type="module" src="demo.js"></script>
+        <script type="module" src="../vl-http-error-message.js"></script>
+    </head>
+
+	<body>
+        <h1>vl-ui-http-error-message demo</h1>
+
+        <div>
+            <h2>404 Not Found</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-http-404-message id=&quot;not-found-message&quot;&gt;&lt;/vl-http-404-message&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-http-404-message id="not-found-message"></vl-http-404-message>
+            </div>
+        </div>
+
+        <div>
+            <h2>Custom</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-http-error-message id=&quot;custom-message&quot; data-vl-title=&quot;Oeps, die pagina vonden we niet terug&quot; data-vl-image=&quot;page-not-found.svg&quot; data-vl-image-alt=&quot;Pagina niet gevonden&quot;&gt;
+                        &lt;p slot=&quot;text&quot;&gt;De pagina die u zoekt, vonden we niet terug.&lt;/p&gt;
+                        &lt;div slot=&quot;actions&quot;&gt;
+                            &lt;a is=&quot;vl-link-button&quot; href=&quot;#&quot;&gt;Terug naar de startpagina&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/vl-http-error-message&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-http-error-message id="custom-message" data-vl-title="Oeps, die pagina vonden we niet terug" data-vl-image="page-not-found.svg" data-vl-image-alt="Pagina niet gevonden">
+                    <p slot="text">De pagina die u zoekt, vonden we niet terug.</p>
+                    <div slot="actions">
+                        <a is="vl-link-button" href="#">Terug naar de startpagina</a>
+                    </div>
+                </vl-http-error-message>
+            </div>
+        </div>
+    </body>
+</html>

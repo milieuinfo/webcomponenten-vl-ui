@@ -69,13 +69,20 @@
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-infotext-lege-template-fixture">
+    <template>
+      <div>
+      </div>
+    </template>
+  </test-fixture>
+
   <script>
     suite('vl-infotext', () => {
       const should = chai.should();
       var sandbox = sinon.sandbox.create();
 
       setup(() => {
-         sandbox.stub(console, 'warn');
+        sandbox.stub(console, 'warn');
       });
 
       teardown(() => {
@@ -92,43 +99,34 @@
           expect(console.warn.calledWith('De infotext component mag slechts 1 child hebben (<div> of <a>)')).to.be.true;
         });
       });
-      
-      test('De inhoud van de infotext component wordt correct opgebouwd', () => {
-        const infotext = fixture('vl-infotext-met-inhoud-fixture');
-        expect(infotext.querySelector('div.vl-infotext')).to.not.be.null;
-        expect(infotext.__valueElement).to.not.be.null;
-        expect(infotext.__textElement).to.not.be.null;
+
+      test('Op het eerste child wordt een vl-infotext class gezet', () => {
+        ['vl-infotext-met-inhoud-fixture', 'vl-infotext-met-link-fixture'].forEach((id) => {
+          const infotext = fixture(id);
+          expect(infotext.firstElementChild.classList.contains('vl-infotext')).to.be.true;
+        });
       });
 
-      test('De inhoud van de infotext met een link wordt correct opgebouwd', () => {
-        const infotext = fixture('vl-infotext-met-link-fixture');
-        expect(infotext.querySelector('a.vl-infotext')).to.not.be.null;
-        expect(infotext.__valueElement).to.not.be.null;
-        expect(infotext.__textElement).to.not.be.null;
+      test('data-vl-[value/text] attributen krijgen de juiste klasse.', () => {
+        ['vl-infotext-met-inhoud-fixture', 'vl-infotext-met-link-fixture'].forEach((id) => {
+          const infotext = fixture(id);
+          expect(infotext.__valueElement.classList.contains('vl-infotext__value')).to.be.true;
+          expect(infotext.__textElement.classList.contains('vl-infotext__text')).to.be.true;
+        });
       });
 
-      test('Een infotext met data-vl-badge attribuut wordt correct opgebouwd', () => {
-        const infotext = fixture('vl-infotext-met-badge-fixture');
-        expect(infotext.querySelector('div.vl-infotext--badge')).to.not.be.null;
-        expect(infotext.__valueElement).to.not.be.null;
-        expect(infotext.__textElement).to.not.be.null;
+      test('Wanneer de infotext compontent een data-vl-badge attribuut heeft, wordt op het eerste child een vl-infotext-badge class gezet', () => {
+        ['vl-infotext-met-badge-fixture', 'vl-infotext-met-badge-en-link-fixture'].forEach((id) => {
+          const infotext = fixture(id);
+          expect(infotext.firstElementChild.classList.contains('vl-infotext--badge')).to.be.true;
+        })
       });
 
-      test('Van een infotext zonder data-vl-badge attribuut wordt geen badge gemaakt', () => {
-        const infotext = fixture('vl-infotext-met-inhoud-fixture');
-        expect(infotext.querySelector('div.vl-infotext--badge')).to.be.null;
-      });
-
-      test('Een infotext met data-vl-badge attribuut en link wordt correct opgebouwd', () => {
-        const infotext = fixture('vl-infotext-met-badge-en-link-fixture');
-        expect(infotext.querySelector('a.vl-infotext--badge')).to.not.be.null;
-        expect(infotext.__valueElement).to.not.be.null;
-        expect(infotext.__textElement).to.not.be.null;
-      });
-
-      test('Van een infotext met link zonder data-vl-badge attribuut wordt geen badge gemaakt', () => {
-        const infotext = fixture('vl-infotext-met-link-fixture');
-        expect(infotext.querySelector('a.vl-infotext--badge')).to.be.null;
+      test('Wanneer de infotext component geen data-vl-badge attribuut heeft, heef het eerste child geen vl-infotext-badge class.', () => {
+        ['vl-infotext-met-inhoud-fixture', 'vl-infotext-met-link-fixture'].forEach((id) => {
+          const infotext = fixture(id);
+          expect(infotext.firstElementChild.classList.contains('vl-infotext--badge')).to.be.false;
+        });
       });
 
       test('Aan een infotext met inhoud kan het data-vl-badge attribuut worden toegevoegd en verwijderd', () => {
@@ -146,6 +144,48 @@
           infotext.setAttribute('data-vl-badge', 'false');
         });
       });
+
+      test('Een infotext kan dynamisch aangemaakt worden', () => {
+        [false, true].forEach((link) => {
+          [false, true].forEach((badge) => {
+            const template = fixture('vl-infotext-lege-template-fixture');
+            let infotext = maakInfotextComponentDynamischAan(link, badge);
+
+            expect(infotext.firstElementChild.classList.contains('vl-infotext--badge')).to.equal(false);
+            expect(infotext.__valueElement.classList.contains('vl-infotext__value')).to.be.false;
+            expect(infotext.__textElement.classList.contains('vl-infotext__text')).to.be.false;
+
+            template.appendChild(infotext);
+
+            expect(template.querySelector(link ? 'a.vl-infotext' : 'div.vl-infotext')).to.not.be.null;
+            expect(infotext.firstElementChild.classList.contains('vl-infotext--badge')).to.equal(badge);
+            expect(infotext.__valueElement.classList.contains('vl-infotext__value')).to.true;
+            expect(infotext.__textElement.classList.contains('vl-infotext__text')).to.be.true;
+          });
+        });
+      });
+
+      function maakInfotextComponentDynamischAan(link, badge) {
+        const dataValue = document.createElement('div');
+        dataValue.setAttribute('data-vl-value', '');
+        dataValue.innerText = 3200;
+
+        const dataText = document.createElement('div');
+        dataText.setAttribute('data-vl-text', '');
+        dataText.innerText = "Bezoekers per dag";
+
+        const wrapper = document.createElement(link ? "a" : "div");
+        wrapper.appendChild(dataValue);
+        wrapper.appendChild(dataText);
+
+        const infotext = document.createElement('div', { is: 'vl-infotext' });
+        if (badge) {
+          infotext.setAttribute('data-vl-badge', '');
+        }
+        infotext.appendChild(wrapper);
+
+        return infotext;
+      }
     });
   </script>
 </body>

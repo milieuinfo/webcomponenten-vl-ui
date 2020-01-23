@@ -1,10 +1,15 @@
 const { VlElement } = require('vl-ui-core');
+const { By } = require('selenium-webdriver');
 
-class VLInfotext extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
+class VlInfotext extends VlElement {  
+
+    async getValue() {
+        return (await this.findElement(By.css('div[data-vl-value]'))).getText();
     }
 
+    async getText() {
+        return (await this.findElement(By.css('div[data-vl-text]'))).getText();
+    }
 }
 
-module.exports = VLInfotext;
+module.exports = VlInfotext;

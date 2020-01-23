@@ -18,11 +18,17 @@ export class VlDescriptionData extends NativeVlElement(HTMLDivElement) {
 		this.classList.add('vl-description-data');
 		this.__labels.forEach(label => {
 			label.classList.add("vl-description-data__label");
+			label.parentElement.classList.add("vl-description-data-block");
 		})
 		this.__values.forEach(label => {
 			label.classList.add("vl-description-data__value");
+			label.parentElement.classList.add("vl-description-data-block");
 		})
 	}	
+	
+	get __descriptionDataBlocks() {
+		return this.querySelectorAll(".vl-description-data-block");
+	}
 	
 	get __labels() {
 		return this.querySelectorAll("[data-vl-label]");

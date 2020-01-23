@@ -1,13 +1,13 @@
-const VLInfotext = require('../components/vl-infotext');
+const VlInfotext = require('../components/vl-infotext');
 const { Page, Config } = require('vl-ui-core');
 
 class VLInfotextPage extends Page {
-    async _getInfotext(selector) {
-        return new VlInfotext(this.driver, selector);
+    async getInfotext() {
+        return new VlInfotext(this.driver, '#infotext');
     }
 
     async load() {
-        await super.load(Config.baseUrl);
+        await super.load(Config.baseUrl + '/demo/vl-infotext.html');
     }
 }
 

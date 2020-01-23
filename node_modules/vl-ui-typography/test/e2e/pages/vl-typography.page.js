@@ -7,8 +7,12 @@ class VlTypographyPage extends Page {
         return new VlTypography(this.driver, selector);
     }
 
+    async getTypographyPTag() {
+    	return this._getTypography("#vl-typography-p-tag");
+    }
+    
     async load() {
-        await super.load(Config.baseUrl + '/demo/vl-typography.html');
+        return await super.load(Config.baseUrl + '/demo/vl-typography.html');
     }
 }
 

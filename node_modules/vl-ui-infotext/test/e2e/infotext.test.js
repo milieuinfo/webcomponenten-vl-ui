@@ -1,16 +1,24 @@
 
 const { assert, driver } = require('vl-ui-core').Test;
-const VLInfotextPage = require('./pages/vl-infotext.page');
+const VlInfotextPage = require('./pages/vl-infotext.page');
 
 describe('vl-infotext', async () => {
-    const VLInfotextPage = new VLInfotextPage(driver);
+    const vlInfotextPage = new VlInfotextPage(driver);
 
     before(() => {
-        return VLInfotextPage.load();
+        return vlInfotextPage.load();
     });
 
-    it('', async () => {
+    it('als gebruiker kan ik de value opvragen', async () => {
+        const infoText = await vlInfotextPage.getInfotext();
+        const value = await infoText.getValue();
+        assert.equal(value, '3200');
     });
 
-    after(() => driver && driver.quit());
+    it('als gebruiker kan ik de tekst opvragen', async () => {
+        const infoText = await vlInfotextPage.getInfotext();
+        const text = await infoText.getText();
+        assert.equal(text, 'Bezoekers per dag');
+    });
+
 });

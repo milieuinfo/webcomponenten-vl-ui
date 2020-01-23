@@ -2,6 +2,8 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import '/node_modules/vl-ui-button/vl-button.js';
 import '/node_modules/vl-ui-icon/vl-icon.js';
 import '/node_modules/vl-ui-typography/vl-typography.js';
+import '/node_modules/vl-ui-toaster/vl-toaster.js';
+import '/node_modules/vl-ui-alert/vl-alert.js';
 import '/node_modules/tinymce/tinymce.min.js';
 
 /**
@@ -13,6 +15,7 @@ import '/node_modules/tinymce/tinymce.min.js';
  *
  * @property {string} data-vl-domain - Het Proza domein waarin het Proza bericht zit.
  * @property {string} data-vl-code - De code die het Proza bericht identificeert.
+ * @property {string} data-vl-block - Attribuut om aan te duiden dat de inhoud van het Proza bericht een block element is.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/issues|Issues}
@@ -21,7 +24,7 @@ import '/node_modules/tinymce/tinymce.min.js';
  */
 export class VlProzaMessage extends VlElement(HTMLElement) {
     static get _observedAttributes() {
-        return ['data-vl-domain', 'data-vl-code'];
+        return ['data-vl-domain', 'data-vl-code', 'data-vl-block'];
     }
 
     constructor() {
@@ -37,6 +40,18 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
                 <slot></slot>
             </div>
         `);
+        this._toaster = this.__initProzaMessageToaster();
+    }
+    
+    __initProzaMessageToaster() {
+    	const id = "vl-proza-message-toaster";
+        if (document.getElementById(id) == null) {
+        	const toaster = document.createElement('div', {is: 'vl-toaster'});
+        	toaster.setAttribute("top-right", "");
+        	toaster.id = id;
+        	document.body.appendChild(toaster);
+        }
+        return document.getElementById(id);
     }
 
     connectedCallback() {
@@ -57,11 +72,11 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
 
     _getEditButtonTemplate() {
         const button = this._template(`
-            <button is="vl-button-link" type="button">
+            <button id="edit-button" is="vl-button-link" type="button">
                 <span is="vl-icon" icon="edit"></span>
             </button>
         `);
-        button.firstElementChild.addEventListener('click', () => this.__initWysiwyg());
+        button.firstElementChild.addEventListener('click', (event) => this.__initWysiwyg(event));
         return button;
     }
 
@@ -71,6 +86,15 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
 
     _data_vl_codeChangedCallback() {
         this._loadMessage();
+    }
+
+    _data_vl_blockChangedCallback(oldValue, newValue) {
+        const blockClass = 'vl-proza-message__block';
+        if (newValue != undefined) {
+            this.classList.add(blockClass)
+        } else {
+            this.classList.remove(blockClass);
+        }
     }
 
     get _domain() {
@@ -91,7 +115,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             quickbars_selection_toolbar: 'bold italic underline',
             powerpaste_word_import: 'clean',
             powerpaste_html_import: 'clean',
-            content_css: '/style.css',
+            content_css: '../style.css',
             verify_html: false,
             forced_root_block: '',
             suffix: '.min'
@@ -107,6 +131,9 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             VlProzaMessage._getMessage(this._domain, this._code).then(message => {
                 this._wysiwygElement.innerHTML = message;
                 this.__wrapWysiwygElement();
+                if (this.__containsBlockElement(message)) {
+                    this.setAttribute('data-vl-block', '');
+                }
             });
         } else {
             this._wysiwygElement.innerHTML = null;
@@ -114,20 +141,35 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
     }
 
     static _getMessage(domain, code) {
-        return VlProzaMessagePreloader.getMessage(domain, code).catch(error => {
-                if (VlProzaMessagePreloader.isPreloaded(domain)) {
-                    console.warn(`Bericht voor {domein: ${domain}, code: ${code}} kon niet opgevraagd worden uit de preload cache`, error);
-                }
-                throw error;
-            }).catch(() => VlProzaMessage._getSingleMessage(domain, code));
+    	const messageCache = VlProzaMessage.__getMessageCacheForDomain(domain);
+    	if (messageCache[code]) {
+    		return messageCache[code];
+    	} else {
+    		return VlProzaMessage.__getMessageFromPreloaderCache(domain, code).catch(() => { 
+    			return VlProzaMessage.__getSingleMessage(domain, code);
+    		});
+    	}
+    }
+    
+    static __getMessageFromPreloaderCache(domain, code) {
+    	return VlProzaMessagePreloader.getMessage(domain, code).catch(error => {
+			if (VlProzaMessagePreloader.isPreloaded(domain)) {
+				console.warn(`Bericht voor {domein: ${domain}, code: ${code}} kon niet opgevraagd worden uit de preload cache`, error);
+			}
+			throw error;
+		});
     }
 
-    static _getSingleMessage(domain, code) {
-        const messageCache = VlProzaMessage.__getMessageCacheForDomain(domain);
-        if (!messageCache[code]) {
-            messageCache[code] = ProzaRestClient.getMessage(domain, code);
-        }
-        return messageCache[code];
+    static __getSingleMessage(domain, code) {
+		const messageCache = VlProzaMessage.__getMessageCacheForDomain(domain);
+		if (!messageCache[code]) {
+			VlProzaMessage._putInCache(domain, code, ProzaRestClient.getMessage(domain, code));
+		}
+		return messageCache[code];
+    }
+    
+    static _putInCache(domain, code, messagePromise) {
+    	VlProzaMessage.__getMessageCacheForDomain(domain)[code] = messagePromise;
     }
 
     static _getToegelatenOperaties(domain) {
@@ -177,7 +219,8 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
         }
     }
 
-    __initWysiwyg() {
+    __initWysiwyg(event) {
+        event.stopPropagation();
         this.__unwrapWysiwygElement();
         tinyMCE.baseURL = '/node_modules/tinymce';
         tinyMCE.init(this._wysiwygConfig);
@@ -208,15 +251,46 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
 
     __processKeydownEvent(e) {
         if (this.__isEscapeKey(e)) {
-            this.__undoAllWysiwygChanges();
-            this.__stopWysiwyg();
+        	this.__cancel();
         }
         if (this.__isEnterKey(e) && !this.__isShiftKey(e)) {
-            this.__undoWysiwygChange();
-            this.__stopWysiwyg();
+            this.__undoWysiwygChange(); //enter verwijderen
+            this.__save();
         }
     }
 
+    __processBlurEvent() {
+    	this.__save();
+    }
+
+    __save() {
+    	ProzaRestClient.saveMessage(this._domain, this._code, this._activeWysiwygEditor.getContent()).then(message => {
+    		VlProzaMessage._putInCache(this._domain, this._code, Promise.resolve(message));
+    		this.__stopWysiwyg();
+    	}).catch((error) => {
+    		this.__showErrorAlert();
+    		this.__cancel();
+    	});
+    }
+
+    __showErrorAlert() {
+		const alert = this.__getProzaSaveErrorAlertTemplate().cloneNode(true);
+		this._toaster.push(alert.firstElementChild);
+    }
+    
+    __getProzaSaveErrorAlertTemplate() {
+    	return this._template(`
+			<vl-alert type="error" icon="alert-triangle" title="Technische storing" closable>
+          		<p>Uw wijziging kon niet bewaard worden. Probeer het later opnieuw of neem contact op met de helpdesk als het probleem zich blijft voordoen.</p>
+        	</vl-alert>
+    	`);
+    }
+    
+    __cancel() {
+        this.__undoAllWysiwygChanges();
+        this.__stopWysiwyg();
+    }
+    
     __isEscapeKey(e) {
         return e.keyCode === 27;
     }
@@ -241,10 +315,6 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
         while (editor.undoManager.hasUndo()) {
             editor.undoManager.undo();
         }
-    }
-
-    __processBlurEvent() {
-        this.__stopWysiwyg();
     }
 
     __stopWysiwyg() {
@@ -284,6 +354,12 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             this.appendChild(wysiwyg);
             typography.remove();
         }
+    }
+
+    __containsBlockElement() {
+        return [... this._wysiwygElement.children].some((element) => {
+            return ['block', 'inline-block', 'flex', 'grid', 'table'].includes(window.getComputedStyle(element)['display']);
+        });
     }
 }
 
@@ -392,15 +468,28 @@ export class VlProzaMessagePreloader extends VlElement(HTMLElement) {
 }
 
 class ProzaRestClient {
-    static getMessage(domain, code) {
-        return ProzaRestClient.__fetchJson(`proza/domein/${domain}/${code}`)
-            .then(message => message.tekst)
-            .catch(error => {
-                console.error(`Er is iets fout gelopen bij het ophalen van het Proza bericht voor {domein: ${domain}, code: ${code}}`, error);
-                return Promise.reject(error);
-            });
+    static saveMessage(domain, code, text) {
+    	return fetch(`proza/domein/${domain}/${code}`, {
+    		method: 'PUT',
+    		body: text
+    	})
+    	.then(response => ProzaRestClient.__handleError(response))
+    	.then(message => message.tekst)
+    	.catch(error => {
+    		console.error(`Er is iets fout gelopen bij het bewaren van het Proza bericht voor {domein: ${domain}, code: ${code}}`, error);
+    		return Promise.reject(error);
+    	});
     }
-
+    
+    static getMessage(domain, code) {
+    	return ProzaRestClient.__fetchJson(`proza/domein/${domain}/${code}`)
+    	.then(message => message.tekst)
+    	.catch(error => {
+    		console.error(`Er is iets fout gelopen bij het ophalen van het Proza bericht voor {domein: ${domain}, code: ${code}}`, error);
+    		return Promise.reject(error);
+    	});
+    }
+    
     static getMessages(domain) {
         return ProzaRestClient.__fetchJson(`proza/domein/${domain}`)
             .then(messages => Object.assign({}, ...(messages.map(message => ({ [message.code]: message.tekst })))))
@@ -418,13 +507,15 @@ class ProzaRestClient {
     }
 
     static __fetchJson(url) {
-        return fetch(url).then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw Error(`Response geeft aan dat er een fout is: ${response.statusText}`);
-            }
-        });
+        return fetch(url).then(ProzaRestClient.__handleError);
+    }
+    
+    static __handleError(response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw Error(`Response geeft aan dat er een fout is: ${response.statusText}`);
+        }
     }
 }
 

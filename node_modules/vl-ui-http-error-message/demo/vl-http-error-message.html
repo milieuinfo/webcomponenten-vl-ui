@@ -3,6 +3,7 @@
 	<head>
         <title>vl-http-error-message voorbeeld</title>
         <script type="module" src="demo.js"></script>
+        <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>
         <script type="module" src="../vl-http-error-message.src.js"></script>
     </head>
 
@@ -25,19 +26,19 @@
             <h2>Custom</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                    &lt;vl-http-error-message id=&quot;custom-message&quot; data-vl-title=&quot;Oeps, die pagina vonden we niet terug&quot; data-vl-image=&quot;page-not-found.svg&quot; data-vl-image-alt=&quot;Pagina niet gevonden&quot;&gt;
-                        &lt;p slot=&quot;text&quot;&gt;De pagina die u zoekt, vonden we niet terug.&lt;/p&gt;
-                        &lt;div slot=&quot;actions&quot;&gt;
-                            &lt;a is=&quot;vl-link-button&quot; href=&quot;#&quot;&gt;Terug naar de startpagina&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/vl-http-error-message&gt;
+	                &lt;vl-http-error-message id=&quot;custom-message&quot; data-vl-title=&quot;Niets gevonden hiervoor.&quot; data-vl-image=&quot;error-404.png&quot; data-vl-image-alt=&quot;Niets gevonden&quot;&gt;
+	                    &lt;p slot=&quot;text&quot;&gt;Sorry, er liep iets onverwachts mis.&lt;/p&gt;
+	                    &lt;div slot=&quot;actions&quot;&gt;
+	                        &lt;a is=&quot;vl-link-button&quot; href=&quot;#&quot;&gt;Opnieuw opstarten&lt;/a&gt;
+	                    &lt;/div&gt;
+	                &lt;/vl-http-error-message&gt;
                 </code>
             </pre>
             <div class="demo">
-                <vl-http-error-message id="custom-message" data-vl-title="Oeps, die pagina vonden we niet terug" data-vl-image="page-not-found.svg" data-vl-image-alt="Pagina niet gevonden">
-                    <p slot="text">De pagina die u zoekt, vonden we niet terug.</p>
+                <vl-http-error-message id="custom-message" data-vl-title="Niets gevonden hiervoor." data-vl-image="error-404.png" data-vl-image-alt="Niets gevonden">
+                    <p slot="text">Sorry, er liep iets onverwachts mis.</p>
                     <div slot="actions">
-                        <a is="vl-link-button" href="#">Terug naar de startpagina</a>
+                        <a is="vl-link-button" href="#demo">Opnieuw opstarten</a>
                     </div>
                 </vl-http-error-message>
             </div>

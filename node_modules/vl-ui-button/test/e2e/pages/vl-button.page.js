@@ -64,7 +64,7 @@ class VlButtonPage extends Page {
     }
 
     async getLinkButton() {
-        return this._getButton('#button-link');
+        return this._getButton('#button-a-link');
     }
 
     async getPillButton() {

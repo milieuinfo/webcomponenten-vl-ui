@@ -9,7 +9,7 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-typography/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-typography/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-typography.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-typography.html|Demo}
  * 
  */
 export class VlTypography extends VlElement(HTMLElement) {

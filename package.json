@@ -16,9 +16,7 @@
   "scripts": {
     "install": "npm run analyze && npm run doc",
     "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
-    "analyze:prepare": "npm run analyze:prepare:src && npm run analyze:prepare:demo",
-    "analyze:prepare:src": "replace 'demo/' '../demo/' ./vl-*.src.js && replace 'demo/' '../demo/' src/vl-*.js",
-    "analyze:prepare:demo": "replace '.src.js' '.js' ./demo/vl*.html",
+    "analyze:prepare": "replace '.src.js' '.js' ./demo/vl*.html",
     "analyze:copy": "npm run analyze:copy:webcomponent && npm run analyze:copy:webcomponent:src && npm run analyze:copy:demo",
     "analyze:copy:webcomponent": "copyfiles -f node_modules/*/vl-*.js .",
     "analyze:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",
@@ -39,7 +37,7 @@
     "replace": "1.1.1"
   },
   "dependencies": {
-    "fetch-mock": "^8.1.0",
+    "fetch-mock": "^8.3.2",
     "prismjs": "1.17.1",
     "vl-ui-accordion": "^1.0.13",
     "vl-ui-action-group": "^1.0.18",
@@ -76,9 +74,9 @@
     "vl-ui-properties": "^2.0.9",
     "vl-ui-proza-message": "^0.0.8",
     "vl-ui-search-filter": "^1.0.0",
-    "vl-ui-select": "^2.1.0",
+    "vl-ui-select": "^2.1.2",
     "vl-ui-side-sheet": "^1.0.0",
-    "vl-ui-template": "^1.0.0",
+    "vl-ui-template": "^1.0.1",
     "vl-ui-textarea": "^1.0.10",
     "vl-ui-titles": "^1.0.13",
     "vl-ui-toaster": "^1.0.9",

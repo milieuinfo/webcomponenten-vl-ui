@@ -4,14 +4,14 @@
 <head>
   <title>vl-template voorbeeld</title>
   <meta name="viewport" content="width=device-width">
-  <script type="module" src="../vl-template.src.js"></script>
-  <script type="module" src="../node_modules/vl-ui-header/vl-header.js"></script>
-  <script type="module" src="../node_modules/vl-ui-footer/vl-footer.js"></script>
-  <script type="module" src="../node_modules/vl-ui-grid/vl-grid.js"></script>
-  <script type="module" src="../node_modules/vl-ui-content-header/vl-content-header.js"></script>
-  <script type="module" src="../node_modules/vl-ui-image/vl-image.js"></script>
-  <script type="module" src="../node_modules/vl-ui-titles/vl-titles.js"></script>
-  <script type="module" src="../node_modules/vl-ui-typography/vl-typography.js"></script>
+  <script type="module" src="/vl-template.src.js"></script>
+  <script type="module" src="/node_modules/vl-ui-header/vl-header.js"></script>
+  <script type="module" src="/node_modules/vl-ui-footer/vl-footer.js"></script>
+  <script type="module" src="/node_modules/vl-ui-grid/vl-grid.js"></script>
+  <script type="module" src="/node_modules/vl-ui-content-header/vl-content-header.js"></script>
+  <script type="module" src="/node_modules/vl-ui-image/vl-image.js"></script>
+  <script type="module" src="/node_modules/vl-ui-titles/vl-titles.js"></script>
+  <script type="module" src="/node_modules/vl-ui-typography/vl-typography.js"></script>
   <script type="module" src="demo.js"></script>
   <script type="module" src="custom.js"></script>
 </head>
@@ -38,6 +38,8 @@
           <pre>
             <code class="line-numbers language-markup">
               &lt;vl-template&gt;
+                &lt;vl-footer id="footer" slot="footer" data-vl-identifier="0337f8dc-3266-4e7a-8f4a-95fd65189e5b"&gt;&lt;/vl-footer&gt;
+
                 &lt;vl-content-header&gt;
                   &lt;img is="vl-image" slot="image" src="img/default.jpg" srcset="img/mobile.jpg 320w, img/default.jpg 1024w, img/wide.jpg 1600w"&gt;
                   &lt;a slot="context-link" href="https://www.vlaanderen.be"&gt;Context&lt;/a&gt;
@@ -63,6 +65,7 @@
                     &lt;/vl-typography&gt;
                   &lt;/div&gt;
                 &lt;/section&gt;
+                &lt;vl-footer id="footer" slot="footer" data-vl-identifier="0337f8dc-3266-4e7a-8f4a-95fd65189e5b"&gt;&lt;/vl-footer&gt;
               &lt;/vl-template&gt;
             </code>
           </pre>

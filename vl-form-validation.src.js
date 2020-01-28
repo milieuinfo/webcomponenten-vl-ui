@@ -15,7 +15,7 @@ awaitScript('form-validation', '/node_modules/@govflanders/vl-ui-form-validation
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-validation/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-validation/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-form-validation.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-validation.html|Demo}
  */
 export const VlFormValidation = (SuperClass) => {
     return class extends SuperClass {

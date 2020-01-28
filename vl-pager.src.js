@@ -16,7 +16,7 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-pager/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-pager/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-pager.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-pager.html|Demo}
  *
  */
 export class VlPager extends VlElement(HTMLElement) {

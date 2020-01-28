@@ -13,7 +13,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-titles.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-titles.html|Demo}
  */
 export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
     static get _observedClassAttributes() {

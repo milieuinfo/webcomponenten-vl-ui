@@ -23,7 +23,7 @@ Promise.all([
  *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-multiselect/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-multiselect/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-multiselect.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-multiselect.html|Demo}
  */
 export class VlMultiSelect extends VlSelect {
   static get readyEvent() {

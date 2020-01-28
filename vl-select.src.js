@@ -3,7 +3,7 @@ import { awaitScript, awaitUntil, define, NativeVlElement } from '/node_modules/
 Promise.all([
   awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
   awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
-  awaitScript('select', '../dist/select.js'),
+  awaitScript('select', '../../dist/select.js'),
   awaitUntil(() => window.vl && window.vl.select)]
 ).then(() => define('vl-select', VlSelect, { extends: 'select' }));
 
@@ -27,7 +27,7 @@ Promise.all([
 *
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
-* @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-select.html|Demo}
+* @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-select.html|Demo}
 */
 export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**

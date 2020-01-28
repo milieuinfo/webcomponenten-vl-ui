@@ -9,7 +9,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-image/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-image/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-image.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-image.html|Demo}
  * 
  */
 export class VlImage extends NativeVlElement(HTMLImageElement) {

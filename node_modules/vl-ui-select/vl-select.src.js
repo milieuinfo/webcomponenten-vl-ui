@@ -3,7 +3,7 @@ import { awaitScript, awaitUntil, define, NativeVlElement } from '/node_modules/
 Promise.all([
   awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
   awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
-  awaitScript('select', '../dist/select.js'),
+  awaitScript('select', '../../dist/select.js'),
   awaitUntil(() => window.vl && window.vl.select)]
 ).then(() => define('vl-select', VlSelect, { extends: 'select' }));
 

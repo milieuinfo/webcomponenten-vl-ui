@@ -12,7 +12,7 @@ import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@go
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-header/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-header/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-header.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-header.html|Demo}
  * 
  */
 export class VlHeader extends VlElement(HTMLElement) {

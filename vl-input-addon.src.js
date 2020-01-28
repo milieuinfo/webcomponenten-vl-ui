@@ -21,7 +21,7 @@ export const VlInputAddonElement = (SuperClass) => {
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-input-addon.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-input-addon.html|Demo}
  * 
  */
 export class VlInputAddon extends VlInputAddonElement(HTMLParagraphElement) {}

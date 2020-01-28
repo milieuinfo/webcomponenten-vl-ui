@@ -19,7 +19,7 @@ import '/node_modules/tinymce/tinymce.min.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-proza-message.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-proza-message.html|Demo}
  *
  */
 export class VlProzaMessage extends VlElement(HTMLElement) {
@@ -374,7 +374,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-proza-message.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-proza-message.html|Demo}
  *
  */
 export class VlProzaMessagePreloader extends VlElement(HTMLElement) {

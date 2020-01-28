@@ -9,7 +9,7 @@ import { VlElement } from "/node_modules/vl-ui-core/vl-core.js";
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-map-overview-map.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-map-overview-map.html|Demo}
  */
 export class VlMapOverviewMap extends VlElement(HTMLElement) {
     connectedCallback() {

@@ -2806,7 +2806,7 @@ global.select = factory();
     }
 
     if (element.hasAttribute(sSearchNoResultLimitAtt)) {
-      searchResultLimit = 1000;
+      searchResultLimit = Number.MAX_VALUE;
     }
 
     obj.searchEnabled = searchEnabled;

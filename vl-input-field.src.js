@@ -14,7 +14,7 @@ Promise.all([
 * 
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/releases/latest|Release notes}
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-field/issues|Issues}
-* @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-input-field.html|Demo}
+* @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-input-field.html|Demo}
 */
 export class VlInputField extends VlFormValidation(NativeVlElement(HTMLInputElement)) {
   static get _observedChildClassAttributes() {

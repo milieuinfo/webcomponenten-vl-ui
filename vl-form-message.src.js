@@ -12,7 +12,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-form-message.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
 export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
 
@@ -47,7 +47,7 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-form-message.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
 export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElement) {
   static get _observedAttributes() {
@@ -111,7 +111,7 @@ export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElemen
  * 
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-form-message.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
 export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 

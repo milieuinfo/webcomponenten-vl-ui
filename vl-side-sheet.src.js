@@ -24,7 +24,7 @@ import swipeDetect from '/node_modules/swipe-detect/dist/index.js';
   }
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-side-sheet/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-side-sheet/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-side-sheet.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-side-sheet.html|Demo}
  *
  */
 export class VlSidesheet extends VlElement(HTMLElement) {

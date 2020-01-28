@@ -12,7 +12,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-filter/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-filter/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-search-filter.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-search-filter.html|Demo}
  *
  */
 export class VlSearchFilter extends NativeVlElement(HTMLDivElement) {

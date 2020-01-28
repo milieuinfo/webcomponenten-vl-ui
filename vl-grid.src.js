@@ -19,7 +19,7 @@ import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-grid.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlRegion extends NativeVlElement(HTMLElement) {
 
@@ -51,7 +51,7 @@ export class VlRegion extends NativeVlElement(HTMLElement) {
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-grid.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlLayout extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
@@ -91,7 +91,7 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-grid.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlGrid extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
@@ -132,7 +132,7 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/../demo/vl-grid.html|Demo}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {

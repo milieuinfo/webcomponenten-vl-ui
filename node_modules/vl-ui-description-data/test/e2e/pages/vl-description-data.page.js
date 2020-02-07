@@ -1,5 +1,5 @@
 const VlDescriptionData = require('../components/vl-description-data');
-const { Page, Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlDescriptionDataPage extends Page {
     async getVlDescriptionData() {

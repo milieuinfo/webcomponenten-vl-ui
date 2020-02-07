@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlImage': require('./test/e2e/components/vl-image')
+    Test: {
+        VlImage: require('./test/e2e/components/vl-image')
+    }
 }

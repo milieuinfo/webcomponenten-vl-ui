@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlContentHeader': require('./test/e2e/components/vl-content-header')
+    Test: {
+        VlContentHeader: require('./test/e2e/components/vl-content-header')
+    }
 }

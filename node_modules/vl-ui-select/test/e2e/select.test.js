@@ -1,5 +1,5 @@
 
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlSelectPage = require('./pages/vl-select.page');
 
 describe('vl-select', async () => {
@@ -140,4 +140,8 @@ describe('vl-select', async () => {
         const text = await select.getSelectedValue();
         assert.isTrue(text === 'Duitsland');
     });
+
+    after(async () => {
+        return driver.quit();
+    })
 });

@@ -1,6 +1,5 @@
 const VlContentHeader = require('../components/vl-content-header');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlContentHeaderPage extends Page {
     async _getContentHeader(selector) {

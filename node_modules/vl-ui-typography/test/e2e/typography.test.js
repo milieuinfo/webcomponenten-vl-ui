@@ -1,4 +1,4 @@
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlTypographyPage = require('./pages/vl-typography.page');
 
 describe('vl-typography', async () => {
@@ -6,6 +6,10 @@ describe('vl-typography', async () => {
 
     before(() => {
         return vlTypographyPage.load();
+    });
+
+    after(async () => { 
+        return driver.quit();
     });
 
     it('als gebruiker kan ik de inhoud van een vl-typography zien', async () => {

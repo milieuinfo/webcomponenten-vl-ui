@@ -2,8 +2,10 @@ acd.ol.MapWithActions = function (options) {
   var self = this;
   this.actions = [];
 
-  var disableRotation = options ? !options.disableRotation : true;
-  var interactions = ol.interaction.defaults({altShiftDragRotate: disableRotation, pinchRotate: disableRotation});
+  options = options || {};
+  var enableRotation = !options.disableRotation;
+  var enableMouseWheelZoom = !options.disableMouseWheelZoom;
+  var interactions = ol.interaction.defaults({altShiftDragRotate: enableRotation, pinchRotate: enableRotation, mouseWheelZoom: enableMouseWheelZoom});
   if(options && options.interactions){
     options.interactions.forEach(function(interaction) {interactions.push(interaction);});
   }

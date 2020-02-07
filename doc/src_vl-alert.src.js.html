@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/vl-alert.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/vl-alert.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import '/node_modules/vl-ui-icon/vl-icon.js';
+
+/**
+ * VlAlert
+ * @class
+ * @classdesc Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.
+ * 
+ * @extends VlElement
+ * 
+ * @property {string} title - Attribuut wordt gebruikt als titel van de waarschuwing.
+ * @property {boolean} closable - Attribuut wordt gebruikt om de optie toe te voegen om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek..
+ * @property {(small | large)} size - Attribuut activeert een variant van de waarschuwing maar kleiner.
+ * @property {(success | warning | error)} type - Attribuut bepaalt de soort van waarschuwing, foutmelding, probleemmelding of succesmelding.
+ *
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-alert.html|Demo}
+ */
+export class VlAlert extends VlElement(HTMLElement) {
+    constructor() {
+        super(`
+            &lt;style>
+                @import "../style.css";
+            &lt;/style>
+            &lt;div id="alert" class="vl-alert" role="alert">
+                &lt;div id="content" class="vl-alert__content">
+                    &lt;p id="title" class="vl-alert__title">&lt;/p>
+                    &lt;div id="message" class="vl-alert__message">
+                        &lt;slot>&lt;/slot>
+                    &lt;/div>
+                    &lt;div id="actions" class="vl-alert__actions">
+                        &lt;slot name="actions">&lt;/slot>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        `);
+    }
+
+    connectedCallback() {
+        this._actionsSlotElement.addEventListener('slotchange', (e) => {
+            if (this._actionsSlotElement) {
+                this._actionsSlotElement.assignedNodes().forEach(element => {
+                    if (element instanceof HTMLButtonElement) {
+                        element.classList.add("vl-button--narrow");
+                    }
+                });
+            }
+            this.__processActionsElementVisibility();
+        });
+        this.__processActionsElementVisibility();
+    }
+
+    static get _observedAttributes() {
+        return ['icon', 'title', 'closable', 'type', 'size'];
+    }
+
+    get _classPrefix() {
+        return 'vl-alert--';
+    }
+
+    get _titelElement() {
+        return this._element.querySelector(".vl-alert__title");
+    }
+
+    get _iconElement() {
+        return this._element.querySelector('.vl-alert__icon');
+    }
+
+    get _contentElement() {
+        return this._element.querySelector('.vl-alert__content');
+    }
+
+    get _closeButtonElement() {
+        return this._element.querySelector('.vl-alert__close');
+    }
+
+    get _actionsElement() {
+        return this._element.querySelector('.vl-alert__actions');
+    }
+
+    get _actionsSlotElement() {
+      return this._element.querySelector("slot[name='actions']");
+    }
+
+    /**
+     * Schakelt de werking van de close button uit zodat de alert niet gesloten kan worden.
+     * 
+     * @Return {void}
+     */
+    disableClosable() {
+        if (this._closeButtonElement) {
+            this._closeButtonElement.removeEventListener('click', this.__removeAlert);
+        }
+    }
+
+    _getIconTemplate(newValue) {
+        return this._template(`
+            &lt;div class="vl-alert__icon">
+                &lt;span is="vl-icon" icon="${newValue}">&lt;/span>
+            &lt;/div>
+        `);
+    };
+
+    _getCloseButtonTemplate() {
+        return this._template(`
+            &lt;button id="close" class="vl-alert__close" type="button">
+                &lt;i class="vl-vi vl-vi-cross" aria-hidden="true">&lt;/i>
+                &lt;span class="vl-u-visually-hidden">Melding sluiten&lt;/span>
+            &lt;/button>
+        `);
+    }
+
+    _getActionsTemplate() {
+        return this._template(`
+            &lt;div class="vl-alert__actions">&lt;/div>
+        `);
+    }
+
+    _iconChangedCallback(oldValue, newValue) {
+        if (this._iconElement) {
+            this._iconElement.remove();
+        }
+
+        if (newValue != undefined) {
+            this._element.insertBefore(this._getIconTemplate(newValue), this._element.firstChild);
+        }
+    };
+
+    _titleChangedCallback(oldValue, newValue) {
+        this._titelElement.textContent = newValue;
+    };
+
+    _closableChangedCallback(oldValue, newValue) {
+        if (this._closeButtonElement) {
+            this._closeButtonElement.remove();
+        }
+
+        if (newValue != undefined) {
+            const closeButtonTemplate = this._getCloseButtonTemplate();
+            closeButtonTemplate.querySelector('button').addEventListener('click', this.__removeAlert);
+            this._element.appendChild(closeButtonTemplate);
+        }
+    }
+
+    _typeChangedCallback(oldValue, newValue) {
+        if (["success", "warning", "error","cta"].indexOf(newValue) >= 0) {
+            this._changeClass(this._element, oldValue, newValue);
+        } else {
+            this._element.classList.remove(this._classPrefix + oldValue);
+        }
+    }
+
+    _sizeChangedCallback(oldValue, newValue) {
+        if (["large", "small"].indexOf(newValue) >= 0) {
+            this._changeClass(this._element, oldValue, newValue);
+        } else {
+            this._element.classList.remove(this._classPrefix + oldValue);
+        }
+    }
+
+    __processActionsElementVisibility() {
+        if (this._actionsSlotElement &amp;&amp; this._actionsSlotElement.assignedElements().length == 0) {
+            this._actionsElement.style.display = 'none';
+        } else {
+            this._actionsElement.style.display = 'block';
+        }
+    }
+
+    __removeAlert() {
+        this.getRootNode().host.remove();
+    }
+}
+
+define('vl-alert', VlAlert);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Feb 07 2020 11:59:30 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

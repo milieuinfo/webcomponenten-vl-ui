@@ -26,7 +26,13 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+            <pre class="prettyprint source linenums"><code>import { NativeVlElement, define, awaitScript, awaitUntil } from 'vl-ui-core';
+
+Promise.all([
+    awaitScript('util', 'vl-ui-ui-util/dist/js/util.min.js'),
+    awaitScript('infotext', 'vl-ui-ui-infotext/dist/js/infotext.min.js'),
+    awaitUntil(() => window.vl &amp;&amp; window.vl.infotext)]
+).then(() => define('vl-infotext', VlInfotext, { extends: 'div' }));
 
 /**
  * VlInfotext
@@ -46,27 +52,48 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
     static get _observedAttributes() {
         return ['data-vl-badge'];
     }
-   
+
     connectedCallback() {
         if (this.__hasOneChild()) {
             this.classList.add('vl-infotext-wrapper');
-            this.__addClass(this.firstElementChild, 'vl-infotext');
-            this.__addClass(this.__valueElement, 'vl-infotext__value');
-            this.__addClass(this.__textElement, 'vl-infotext__text');
-            this. _data_vl_badgeChangedCallback(null, this.getAttribute('data-vl-badge')); 
+            this.__setupChildClasses();
+            this._data_vl_badgeChangedCallback(null, this.getAttribute('data-vl-badge'));
+            this._childObserver = this.__observeChildElement((records) => this.__processChildElementChange(records));
+            this._childResizeObserver = this.__observeChildElementResize(() => this.__processChildElementResize());
         } else {
             console.warn('De infotext component mag slechts 1 child hebben (&lt;div> of &lt;a>)');
         }
     }
 
-    __hasOneChild() {
-        return this.children.length == 1;
+    disconnectedCallback() {
+        if (this._childObserver) {
+            this._childObserver.disconnect();
+        }
+
+        if (this._childResizeObserver) {
+            this._childResizeObserver.disconnect();
+        }
     }
 
-    __addClass(element, className) {
-        if (element) {
-            element.classList.add(className)
+    __setupChildClasses() {
+        if (this.firstElementChild) {
+            this.firstElementChild.classList.add('vl-infotext');
         }
+
+        if (this.__valueElement) {
+            this.__valueElement.classList.add('vl-infotext__value');
+            this.__valueElement.setAttribute('data-vl-infotext-value', '');
+            this.__valueElement.setAttribute('data-vl-js-dress', 'false');
+        }
+
+        if (this.__textElement) {
+            this.__textElement.classList.add('vl-infotext__text');
+            this.__textElement.setAttribute('data-vl-js-dress', 'false');
+        }
+    }
+
+    __hasOneChild() {
+        return this.children.length == 1;
     }
 
     get __valueElement() {
@@ -82,15 +109,54 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
     }
 
     _data_vl_badgeChangedCallback(oldValue, newValue) {
-        if (newValue != undefined) {
-            this.__addClass(this.firstElementChild, 'vl-infotext--badge');
-        } else {
-            this.firstElementChild.classList.remove('vl-infotext--badge');
+        if (this.firstElementChild) {
+            this._toggleClass(this.firstElementChild, newValue, 'vl-infotext--badge')
         }
     }
-}
 
-define('vl-infotext', VlInfotext, {extends: 'div'});
+    __observeChildElement(callback) {
+        const observer = new MutationObserver(callback);
+        observer.observe(this.firstElementChild, { childList: true, subtree: true });
+        return observer;
+    }
+
+    __observeChildElementResize(callback) {
+        const observer = new ResizeObserver(callback);
+        observer.observe(this.firstElementChild);
+        return observer;
+    }
+
+    __processChildElementChange(records) {
+        records.forEach(record => {
+            if (VlInfotext.__isMutationRecordOfTypeChildList(record) &amp;&amp; VlInfotext.__isMutationRecordTextContentChanged(record)) {
+                this.__dress();
+            }
+        });
+    }
+
+    __processChildElementResize() {
+        this.__dress();
+    }
+
+    __dress() {
+        vl.infotext.dress(this.__valueElement);
+        vl.infotext.dress(this.__textElement);
+    }
+
+    static __isMutationRecordOfTypeChildList(record) {
+        return record.type == 'childList';
+    }
+
+    static __hasMutationRecordOneChangedNode(record) {
+        const hasOneAddedNode = record.addedNodes &amp;&amp; record.addedNodes.length == 1;
+        const hasOneRemovedNode = record.removedNodes &amp;&amp; record.removedNodes.length == 1;
+        return hasOneAddedNode &amp;&amp; hasOneRemovedNode;
+    }
+
+    static __isMutationRecordTextContentChanged(record) {
+        return this.__hasMutationRecordOneChangedNode(record) &amp;&amp; record.addedNodes[0].textContent != record.removedNodes[0].textContent;
+    }
+}
 </code></pre>
         </article>
     </section>
@@ -107,7 +173,7 @@ define('vl-infotext', VlInfotext, {extends: 'div'});
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Jan 28 2020 08:58:07 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Feb 07 2020 11:59:30 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

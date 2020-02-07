@@ -1,1 +1,98 @@
-import{VlElement,define}from"/node_modules/vl-ui-core/vl-core.js";export class VlContentHeader extends(VlElement(HTMLElement)){constructor(){super('\n\t\t\t<style>\n\t\t\t\t@import \'/node_modules/vl-ui-content-header/style.css\';\n\t\t\t</style>\n\t\t\t<header class="vl-content-header vl-content-header--large vl-content-header--show-mobile vl-content-header--has-context">\n\t\t\t\t<div class="vl-content-header__wrapper">\n\t\t\t\t\t<picture id="picture" class="vl-content-header__bg"></picture>\n\t\t\t\t\t<div class="vl-layout">\n\t\t\t\t\t\t<div class="vl-content-header__content">\n\t\t\t\t\t\t\t<div id="context" class="vl-content-header__context vl-content-header__context--has-link"></div>\n\t\t\t\t\t\t\t<h2 id="title" class="vl-content-header__title vl-content-header__title--has-link"></h2>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</header>\n\t\t')}connectedCallback(){this.__processSlotElements(),this._observer=this.__observeSlotElements(()=>this.__processSlotElements())}disconnectedCallback(){this._observer.disconnect()}get pictureElement(){return this._shadow.querySelector("#picture")}get pictureSlotElement(){return this.querySelector('img[slot="image"]')}get contextElement(){return this._shadow.querySelector("#context")}get contextSlotElement(){return this.querySelector('a[slot="context-link"]')}get titleElement(){return this._shadow.querySelector("#title")}get titleSlotElement(){return this.querySelector('a[slot="title-link"]')}__processSlotElements(){this.__processSlot(this.pictureElement,this.pictureSlotElement),this.__processSlot(this.contextElement,this.contextSlotElement).classList.add("vl-content-header__context__link"),this.__processSlot(this.titleElement,this.titleSlotElement).classList.add("vl-content-header__title__link")}__clearChildren(t){for(;t.hasChildNodes();)t.firstChild.remove()}__processSlot(t,e){this.__clearChildren(t);const n=e.cloneNode(!0);return t.appendChild(n),n}__observeSlotElements(t){const e=new MutationObserver(t);return e.observe(this,{attributes:!0,childList:!0,characterData:!0,subtree:!0}),e}}define("vl-content-header",VlContentHeader);
+import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+
+/**
+ * VlContentHeader
+ * @class
+ * @classdesc 
+ * 
+ * @extends VlElement
+ * 
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-content-header/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-content-header/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-content-header.html|Demo}
+ * 
+ */
+export class VlContentHeader extends VlElement(HTMLElement) {
+	constructor() {
+		super(`
+			<style>
+				@import '/node_modules/vl-ui-content-header/style.css';
+			</style>
+			<header class="vl-content-header vl-content-header--large vl-content-header--show-mobile vl-content-header--has-context">
+				<div class="vl-content-header__wrapper">
+					<picture id="picture" class="vl-content-header__bg"></picture>
+					<div class="vl-layout">
+						<div class="vl-content-header__content">
+							<div id="context" class="vl-content-header__context vl-content-header__context--has-link"></div>
+							<h2 id="title" class="vl-content-header__title vl-content-header__title--has-link"></h2>
+						</div>
+					</div>
+				</div>
+			</header>
+		`);
+	}
+
+	connectedCallback() {
+		this.__processSlotElements();
+		this._observer = this.__observeSlotElements(() => this.__processSlotElements());
+	}
+
+	disconnectedCallback() {
+		this._observer.disconnect();
+	}
+
+	get pictureElement() {
+		return this._shadow.querySelector('#picture');
+	}
+
+	get pictureSlotElement() {
+		return this.querySelector('img[slot="image"]');
+	}
+
+	get contextElement() {
+		return this._shadow.querySelector('#context');
+	}
+
+	get contextSlotElement() {
+		return this.querySelector('a[slot="context-link"]');
+	}
+
+	get titleElement() {
+		return this._shadow.querySelector('#title');
+	}
+
+	get titleSlotElement() {
+		return this.querySelector('a[slot="title-link"]');
+	}
+
+	__processSlotElements() {
+		this.__processSlot(this.pictureElement, this.pictureSlotElement);
+		
+		const contextSlot = this.__processSlot(this.contextElement, this.contextSlotElement);
+		contextSlot.classList.add('vl-content-header__context__link');
+
+		const titleSlot = this.__processSlot(this.titleElement, this.titleSlotElement);
+		titleSlot.classList.add('vl-content-header__title__link');
+	}
+
+	__clearChildren(element) {
+		while (element.hasChildNodes()) {
+			element.firstChild.remove();
+		}
+	}
+	
+	__processSlot(container, slotElement) {
+		this.__clearChildren(container);
+		const slotClone = slotElement.cloneNode(true);
+		container.appendChild(slotClone);
+		return slotClone;
+	}
+
+	__observeSlotElements(callback) {
+		const observer = new MutationObserver(callback);
+		observer.observe(this, { attributes: true, childList: true, characterData: true, subtree: true });
+		return observer;
+	}
+}
+
+define('vl-content-header', VlContentHeader);

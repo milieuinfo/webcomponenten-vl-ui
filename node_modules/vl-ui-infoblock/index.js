@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlInfoblock': require('./test/e2e/components/vl-infoblock')
+    Test: {
+        'VlInfoblock': require('./test/e2e/components/vl-infoblock.js')
+    }
 }

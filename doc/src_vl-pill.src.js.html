@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/vl-pill.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/vl-pill.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { VlElement, NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+
+export const VlPillElement = (SuperClass) => {
+  return class extends VlElement(SuperClass) {
+    static get _observedAttributes() {
+      return ['type'];
+    }
+  
+    get _classPrefix() {
+      return 'vl-pill--';
+    }
+  
+    _typeChangedCallback(oldValue, newValue) {
+      if (["success", "warning", "error"].indexOf(newValue) >= 0) {
+        this._changeClass(this._element, oldValue, newValue);
+      } else {
+        this._element.classList.remove(this._classPrefix + oldValue);
+      }
+    }
+  }
+};
+
+/**
+ * VlPill
+ * @class
+ * @classdesc Gebruik de pill om keywoorden (filters of tags) te visualiseren.
+ *
+ * @extends VlElement
+ *
+ * @property {(success | warning | error)} type - Attribuut bepaalt de soort van pill: succes, probleem of fout.
+ * @property {closable} type - Attribuut bepaalt of de pill kan worden verwijderd.
+ * @property {checkable} type - Attribuut bepaalt of de pill aangechecked kan worden dmv een checkbox.
+ * 
+ * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-pill/releases/latest|Release notes}
+ * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-pill/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-pill.html|Demo}
+ */
+export class VlPill extends VlPillElement(HTMLElement) {
+  static get pillTemplate() {
+    return `
+      &lt;span class="vl-pill">
+        &lt;slot>&lt;/slot>
+      &lt;/span>
+    `;
+  }
+
+  constructor() {
+    super(`
+      &lt;style>
+          @import "../style.css";
+      &lt;/style>
+      ${VlPill.pillTemplate}
+    `);
+  }
+
+  static get _observedAttributes() {
+    return super._observedAttributes.concat(['closable']);
+  }
+
+  _getPillTemplate() {
+    return this._template(VlPill.pillTemplate);
+  }
+
+  _getClosablePillTemplate() {
+    return this._template(`
+      &lt;div class="vl-pill vl-pill--closable">
+          &lt;slot>&lt;/slot>
+        &lt;button class="vl-pill__close" type="button">
+          &lt;span class="vl-u-visually-hidden">Verwijderen&lt;/span>
+        &lt;/button>
+      &lt;/div>
+    `);
+  }
+
+  _closableChangedCallback(oldValue, newValue) {
+    this._shadow.lastElementChild.replaceWith((newValue != undefined ? this._getClosablePillTemplate() : this._getPillTemplate()));
+  }
+}
+
+export class VlLabelPill extends VlPillElement(NativeVlElement(HTMLLabelElement)) {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.classList.add('vl-pill');
+    this.classList.add('vl-pill--checkable');
+    const input = this._inputElement;
+    input.classList.add("vl-pill--checkable__checkbox");
+    input.insertAdjacentHTML('afterend', this._inputStyleElement);
+  }
+
+  get _inputElement() {
+    return this._element.querySelector('input');
+  }
+
+  get _inputStyleElement() {
+    return `
+      &lt;span>&lt;/span>
+    `;
+  }
+}
+
+define('vl-pill', VlPill);
+define('vl-label-pill', VlLabelPill, {extends: 'label'});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSidesheet.html">VlSidesheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Feb 07 2020 11:59:30 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

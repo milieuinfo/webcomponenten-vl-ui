@@ -1,5 +1,5 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
+import { VlElement, define } from 'vl-ui-core';
+import 'vl-ui-icon';
 
 /**
  * VlInfoblock
@@ -71,3 +71,4 @@ export class VlInfoblock extends VlElement(HTMLElement) {
 }
 
 define('vl-infoblock', VlInfoblock);
+

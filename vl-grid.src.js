@@ -1,4 +1,4 @@
-import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
+import {NativeVlElement, define} from "vl-ui-core";
 
 /**
  * VlRegion
@@ -255,3 +255,4 @@ define('vl-region', VlRegion, {extends: 'section'});
 define('vl-layout', VlLayout, {extends: 'div'});
 define('vl-grid', VlGrid, {extends: 'div'});
 define('vl-column', VlColumn, {extends: 'div'});
+

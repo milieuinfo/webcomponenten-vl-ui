@@ -1,6 +1,5 @@
 const VlInfoblock = require('../components/vl-infoblock');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlInfoblockPage extends Page {
     async _getInfoblock(selector) {

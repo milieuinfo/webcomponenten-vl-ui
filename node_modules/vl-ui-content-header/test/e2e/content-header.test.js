@@ -1,5 +1,5 @@
 
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlContentHeaderPage = require('./pages/vl-content-header.page');
 
 describe('vl-content-header', async () => {
@@ -28,4 +28,8 @@ describe('vl-content-header', async () => {
         const imageComponent = await header.getImageComponent();
         assert.isNotNull(imageComponent);
     });
+
+    after(async () => {
+        return driver.quit();
+    })
 });

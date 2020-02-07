@@ -1,7 +1,7 @@
 # vl-ui-input-field
 ![GitHub issues](https://img.shields.io/github/issues-raw/milieuinfo/webcomponent-vl-ui-input-field) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/milieuinfo/webcomponent-vl-ui-input-field) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/milieuinfo/webcomponent-vl-ui-input-field)
 
-De "input-field" UI component van Webuniversum Vlaanderen als Web Component
+Een input veld laat de gebruiker toe om informatie in te voeren in een applicatie.
 
 ## Installatie
 ``` bash

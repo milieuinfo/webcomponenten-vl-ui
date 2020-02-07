@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VlDescriptionData
@@ -45,3 +45,4 @@ export class VlDescriptionData extends NativeVlElement(HTMLDivElement) {
 }
 
 define('vl-description-data', VlDescriptionData, {extends: 'div'});
+

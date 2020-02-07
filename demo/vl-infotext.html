@@ -2,8 +2,10 @@
 <html>
 	<head>
         <title>vl-infotext voorbeeld</title>
+        <script type="module" src="/src/vl-infotext.js"></script>
         <script type="module" src="demo.js"></script>
-        <script type="module" src="../vl-infotext.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
     </head>
 
 	<body>
@@ -14,7 +16,6 @@
 
         <div>
             <h2>Infotext</h2>
-            <p>De infotext component bestaat uit een groot label bovenaan en een klein label onderaan. Het grote label bevat een getal. Het kleine label bevat een tekst dat het getal een context geeft.</p>
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;div is=&quot;vl-infotext&quot;&gt;
@@ -37,7 +38,6 @@
 
         <div>
             <h2>Infotext met link</h2>
-            <p>Door een link toe te voegen krijgen beide labels een andere kleur en kan er op geklikt worden.</p>
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;div is=&quot;vl-infotext&quot;&gt;
@@ -60,7 +60,6 @@
 
         <div>
             <h2>Infotext badge</h2>
-            <p>Beide labels komen in een ronde badge terecht.</p>
             <pre>
                 <code class="line-numbers language-markup">
                     &lt;div is=&quot;vl-infotext&quot data-vl-badge&gt;
@@ -83,7 +82,6 @@
 
         <div>
             <h2>Infotext badge met link</h2>
-            <p>Door een link toe te voegen krijgen beide labels een andere kleur en kan er op geklikt worden.</p>
             <pre>                
                 <code class="line-numbers language-markup">
                     &lt;div is=&quot;vl-infotext&quot data-vl-badge&gt;

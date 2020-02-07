@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 export const VlLinkElement = (SuperClass) => {
     return class extends NativeVlElement(SuperClass) {
@@ -17,10 +17,6 @@ export const VlLinkElement = (SuperClass) => {
     
         get _classPrefix() {
             return 'vl-link--';
-        }
-    
-        get _stylePath() {
-            return '../style.css';
         }
     
         get _iconElementen() {
@@ -63,3 +59,4 @@ export class VlButtonLink extends VlLinkElement(HTMLButtonElement) {}
 
 define('vl-link', VlLink, {extends: 'a'});
 define('vl-button-link', VlButtonLink, {extends: 'button'});
+

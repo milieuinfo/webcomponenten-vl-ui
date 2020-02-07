@@ -1,6 +1,5 @@
 const VlImage = require('../components/vl-image');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlImagePage extends Page {
     async getImage() {

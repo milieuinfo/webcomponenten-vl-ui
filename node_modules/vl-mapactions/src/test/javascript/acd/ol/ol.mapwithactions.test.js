@@ -236,4 +236,24 @@ describe('map with actions', function () {
     });
     expect(ol.Map.call).toHaveBeenCalledTimes(1);
   });
+
+  it('indien gewenst kan het zoomen met de mouse wheel afgezet worden', function() {
+    spyOn(ol.Map, 'call').and.callFake(function (map, options) {
+      expect(options.interactions.getLength()).toBe(8);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.DragRotate;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.DoubleClickZoom;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.KeyboardPan;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.KeyboardZoom;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.MouseWheelZoom;}).length).toBe(0);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.PinchZoom;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.PinchRotate;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.DragPan;}).length).toBe(1);
+      expect(options.interactions.getArray().filter(function (interaction) {return interaction instanceof ol.interaction.DragZoom;}).length).toBe(1);
+    });
+    var map = new acd.ol.MapWithActions({
+      actions: [],
+      disableMouseWheelZoom: true
+    });
+    expect(ol.Map.call).toHaveBeenCalledTimes(1);
+  });
 });

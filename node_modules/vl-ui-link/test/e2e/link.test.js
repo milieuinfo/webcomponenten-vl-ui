@@ -1,4 +1,4 @@
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlLinkPage = require('./pages/vl-link.page');
 
 describe('vl-link', async () => {
@@ -8,4 +8,10 @@ describe('vl-link', async () => {
         return vlLinkPage.load();
     });
 
+    after((done) => { 
+        if (driver) {
+            driver.quit();
+        }
+        done();
+    });
 });

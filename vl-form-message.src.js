@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VlFormLabel
@@ -135,3 +135,4 @@ export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 define('vl-form-label', VlFormLabel, {extends: 'label'});
 define('vl-form-validation-message', VlFormValidationMessage, {extends: 'p'});
 define('vl-form-annotation', VlFormAnnotation, {extends: 'p'});
+

@@ -1,6 +1,5 @@
 const VlTypography = require('../components/vl-typography');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlTypographyPage extends Page {
     async _getTypography(selector) {

@@ -1,6 +1,5 @@
 const VlLink = require('../components/vl-link');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlLinkPage extends Page {
     async _getLink(selector) {

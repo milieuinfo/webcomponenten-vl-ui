@@ -1,6 +1,5 @@
 const VlTemplate = require('../components/vl-template');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlTemplatePage extends Page {
     async getTemplate() {

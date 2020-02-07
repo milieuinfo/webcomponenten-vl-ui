@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlTemplate': require('./test/e2e/components/vl-template')
+    Test: {
+        'VlTemplate': require('./test/e2e/components/vl-template.js')
+    }
 }

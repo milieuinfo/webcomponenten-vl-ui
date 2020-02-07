@@ -1,6 +1,6 @@
-const { VlElement } = require('vl-ui-core');
-const { VlHeader } = require('vl-ui-header');
-const { VlFooter } = require('vl-ui-footer');
+const { VlElement } = require('vl-ui-core').Test;
+const { VlHeader } = require('vl-ui-header').Test;
+const { VlFooter } = require('vl-ui-footer').Test;
 const { By } = require('selenium-webdriver');
 
 class VlTemplate extends VlElement {  

@@ -1,6 +1,6 @@
-const { VlElement } = require('vl-ui-core');
-const { VlTypography } = require('vl-ui-typography');
-const { VlButton } = require('vl-ui-button');
+const { VlElement } = require('vl-ui-core').Test;
+const { VlTypography } = require('vl-ui-typography').Test;
+const { VlButton } = require('vl-ui-button').Test;
 const { By } = require('selenium-webdriver');
 
 class VlHttpErrorMessage extends VlElement {

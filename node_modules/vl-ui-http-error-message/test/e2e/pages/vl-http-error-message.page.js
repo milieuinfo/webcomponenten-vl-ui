@@ -1,5 +1,5 @@
 const VlHttpErrorMessage = require('../components/vl-http-error-message');
-const { Page, Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlHttpErrorMessagePage extends Page {
     async _getHttpErrorMessage(selector) {

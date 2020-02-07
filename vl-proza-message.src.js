@@ -1,10 +1,10 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-button/vl-button.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
-import '/node_modules/vl-ui-typography/vl-typography.js';
-import '/node_modules/vl-ui-toaster/vl-toaster.js';
-import '/node_modules/vl-ui-alert/vl-alert.js';
-import '/dist/tinymce.min.js';
+import { VlElement, define } from 'vl-ui-core';
+import 'vl-ui-button';
+import 'vl-ui-icon';
+import 'vl-ui-typography';
+import 'vl-ui-toaster';
+import 'vl-ui-alert';
+import 'vl-ui-proza-message/dist/tinymce.min.js';
 
 /**
  * VlProzaMessage
@@ -528,3 +528,4 @@ export class ProzaRestClient {
 
 define('vl-proza-message-preloader', VlProzaMessagePreloader);
 define('vl-proza-message', VlProzaMessage);
+

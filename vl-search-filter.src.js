@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VlSearchFilter
@@ -65,3 +65,4 @@ export class VlSearchFilter extends NativeVlElement(HTMLDivElement) {
 }
 
 define('vl-search-filter', VlSearchFilter, { extends: 'div' });
+

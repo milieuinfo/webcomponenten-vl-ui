@@ -1,11 +1,7 @@
 import { awaitScript, awaitUntil, define, NativeVlElement } from 'vl-ui-core';
-
-Promise.all([
-  awaitScript('util', 'vl-ui-ui-util/dist/js/util.min.js'),
-  awaitScript('core', 'vl-ui-ui-core/dist/js/core.min.js'),
-  awaitScript('select', '../../dist/select.js'),
-  awaitUntil(() => window.vl && window.vl.select)]
-).then(() => define('vl-select', VlSelect, { extends: 'select' }));
+import 'vl-ui-util/dist/js/util.min.js';
+import 'vl-ui-core/dist/js/core.min.js';
+import 'vl-ui-select/dist/select.js';
 
 /**
 * VlSelect
@@ -293,3 +289,4 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 }
 
+define('vl-select', VlSelect, { extends: 'select' });

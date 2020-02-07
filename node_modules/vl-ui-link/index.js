@@ -1,3 +1,5 @@
 module.exports = { 
-    VlLink: require('./test/e2e/components/vl-link')
+    Test: {
+        VlLink: require('./test/e2e/components/vl-link')
+    }
 }

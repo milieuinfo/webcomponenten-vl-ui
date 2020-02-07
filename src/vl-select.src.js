@@ -1,11 +1,7 @@
 import { awaitScript, awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
-
-Promise.all([
-  awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
-  awaitScript('core', '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js'),
-  awaitScript('select', '../../dist/select.js'),
-  awaitUntil(() => window.vl && window.vl.select)]
-).then(() => define('vl-select', VlSelect, { extends: 'select' }));
+import '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js';
+import '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js';
+import '/dist/select.js';
 
 /**
 * VlSelect
@@ -292,3 +288,5 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     vl.select.hideDropdown(this);
   }
 }
+
+define('vl-select', VlSelect, { extends: 'select' });

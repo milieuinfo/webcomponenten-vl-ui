@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
 * VlInputGroup
@@ -22,3 +22,4 @@ export class VlInputGroup extends NativeVlElement(HTMLDivElement) {
 }
 
 define('vl-input-group', VlInputGroup, {extends: 'div'});
+

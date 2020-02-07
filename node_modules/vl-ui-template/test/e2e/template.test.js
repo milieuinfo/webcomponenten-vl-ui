@@ -1,5 +1,5 @@
 
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlTemplatePage = require('./pages/vl-template.page');
 
 describe('vl-template', async () => {
@@ -7,6 +7,10 @@ describe('vl-template', async () => {
 
     before(() => {
         return vlTemplatePage.load();
+    });
+
+    after(async () => { 
+        return driver.quit();
     });
 
     it('de header word weergegeven', async () => {

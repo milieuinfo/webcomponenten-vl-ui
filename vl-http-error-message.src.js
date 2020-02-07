@@ -1,8 +1,8 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-grid/vl-grid.js';
-import '/node_modules/vl-ui-titles/vl-titles.js';
-import '/node_modules/vl-ui-typography/vl-typography.js';
-import '/node_modules/vl-ui-button/vl-button.js';
+import { VlElement, define } from 'vl-ui-core';
+import 'vl-ui-grid';
+import 'vl-ui-titles';
+import 'vl-ui-typography';
+import 'vl-ui-button';
 
 /**
  * VlHttpErrorMessage
@@ -205,3 +205,4 @@ define('vl-http-404-message', class extends VlHttpErrorMessage {
         });
     }
 });
+

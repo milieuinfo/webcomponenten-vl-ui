@@ -14,10 +14,14 @@ getWebcomponents() {
     echo $(ls "node_modules/" | grep -q "vl-ui-*")
 }
 
+getCssFiles() {
+    echo $(ls | grep -E "vl-ui-(\w)*(.)css")
+}
+
 DIRS=$(getWebcomponents)
 copyCssAndRenameCss $DIRS
 
-CSSFILES=$(ls | grep -E "vl-ui-(\w)*(.)css")
+CSSFILES=$(getCssFiles)
 
 HTMLFILES=()
 

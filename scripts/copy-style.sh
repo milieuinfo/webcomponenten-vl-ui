@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+################################################################################
+# Check every webcomponent present under node_modules for presence of style.css.
+# If found, copy the CSS-file to the root of the project.
+# Rename each CSS-file in the root of the project to match vl-ui-component.css.
+#
+# Based on the list of copied CSS-files, create a list of filenames with the
+# HTML-extension because there is no need to handle web components that do not 
+# have a style.css.
+# This new list is used to search in the demo-folder.
+#
+# If a HTML-file matching the web component name is found, the content of the
+# HTML-file is checked for an import of the classic style.css. If an import is
+# found, it will be replaced by the correct CSS-file. 
+# For example: style.css becomes vl-button.css
+################################################################################
+
 set -e
 
 copyCssAndRenameCss() {

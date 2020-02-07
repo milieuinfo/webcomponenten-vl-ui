@@ -56,7 +56,11 @@ for file in ${HTMLFILES[@]}; do
         if grep -q "$SEARCHSTRING" "demo/$file"; then 
             # change searchstring with new string which refers to correct css
             RESULTSTRING="<link rel=\"stylesheet\" type=\"text/css\" href=\"/${file::-4}css\"/>"
-            sed -i "" -e "s%${SEARCHSTRING}%${RESULTSTRING}%" "demo/"$file
+            if [[ "$OSTYPE" == "linux-gnu" ]]; then
+                sed -i -e "s%${SEARCHSTRING}%${RESULTSTRING}%" "demo/"$file
+            elif [[ "$OSTYPE" == "darwin"* ]]; then
+                sed -i "" -e "s%${SEARCHSTRING}%${RESULTSTRING}%" "demo/"$file
+            fi
             echo "Replaced path to style for file $file"
         fi
     fi

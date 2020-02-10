@@ -1,8 +1,7 @@
-import { awaitScript, awaitUntil } from 'vl-ui-core';
-
-awaitScript('util', 'vl-ui-ui-util/dist/js/util.min.js');
-awaitScript('core', 'vl-ui-ui-core/dist/js/core.min.js');
-awaitScript('form-validation', 'vl-ui-ui-form-validation/dist/js/form-validation.js');
+import { awaitUntil } from 'vl-ui-core';
+import '@govflanders/vl-ui-util/dist/js/util.min.js';
+import '@govflanders/vl-ui-core/dist/js/core.min.js';
+import '@govflanders/vl-ui-form-validation/dist/js/form-validation.js';
 
 /**
  * VlFormValidation

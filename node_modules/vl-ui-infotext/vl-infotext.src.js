@@ -1,10 +1,6 @@
-import { NativeVlElement, define, awaitScript, awaitUntil } from 'vl-ui-core';
-
-Promise.all([
-    awaitScript('util', 'vl-ui-ui-util/dist/js/util.min.js'),
-    awaitScript('infotext', 'vl-ui-ui-infotext/dist/js/infotext.min.js'),
-    awaitUntil(() => window.vl && window.vl.infotext)]
-).then(() => define('vl-infotext', VlInfotext, { extends: 'div' }));
+import { NativeVlElement, define } from 'vl-ui-core';
+import '@govflanders/vl-ui-util/dist/js/util.min.js';
+import '@govflanders/vl-ui-infotext/dist/js/infotext.min.js';
 
 /**
  * VlInfotext
@@ -129,3 +125,5 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
         return this.__hasMutationRecordOneChangedNode(record) && record.addedNodes[0].textContent != record.removedNodes[0].textContent;
     }
 }
+
+define('vl-infotext', VlInfotext, { extends: 'div' });

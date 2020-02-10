@@ -61,7 +61,7 @@ for file in ${HTMLFILES[@]}; do
             elif [[ "$OSTYPE" == "darwin"* ]]; then
                 sed -i "" -e "s%${SEARCHSTRING}%${RESULTSTRING}%" "demo/"$file
             fi
-            echo "Replaced path to style for file $file"
+            echo "replaced path to style for file $file"
         fi
     fi
 done

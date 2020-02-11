@@ -47,7 +47,7 @@ for file in $CSSFILES; do
     HTMLFILES+=($CLEANED)
 done
 
-SEARCHSTRING="<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"/>"
+SEARCHSTRING="<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">"
 
 for file in ${HTMLFILES[@]}; do
     # check if file exists (demo/vl-component.html)

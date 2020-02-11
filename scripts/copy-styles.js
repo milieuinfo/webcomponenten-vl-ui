@@ -9,7 +9,7 @@ function replace(file, search, replacement) {
     }
 }
 
-function getInstalledComponents() {
+function getInstalledWebcomponentsDirnames() {
     let installedComponents = [];
     fs.readdirSync('../node_modules').forEach((file) => {
         if (file.indexOf('vl-ui') > -1) {
@@ -21,16 +21,16 @@ function getInstalledComponents() {
 
 function getFileNames() {
     let fileNames = [];
-    getInstalledComponents().forEach((componentFilename) => {
+    getInstalledWebcomponentsDirnames().forEach((componentFilename) => {
         fileNames.push(componentFilename.replace('-ui', ''));
     });
     return fileNames;
 }
 
 function copyCss() {
-    getInstalledComponents().forEach((component) => {
-        const filename = component.replace('-ui', '');
-        const source = path.join(__dirname, '..', 'node_modules/' + component + '/style.css');
+    getInstalledWebcomponentsDirnames().forEach((dirname) => {
+        const filename = dirname.replace('-ui', '');
+        const source = path.join(__dirname, '..', 'node_modules/' + dirname + '/style.css');
         const destination = '../' + filename + '.css';
         if (fs.existsSync(source)) {
             fs.copyFileSync(source, destination);

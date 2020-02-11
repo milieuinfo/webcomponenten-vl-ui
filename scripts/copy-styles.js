@@ -19,7 +19,7 @@ function getInstalledComponents() {
     return installedComponents;
 }
 
-function getFilesNames() {
+function getFileNames() {
     let fileNames = [];
     getInstalledComponents().forEach((componentFilename) => {
         fileNames.push(componentFilename.replace('-ui', ''));
@@ -29,8 +29,9 @@ function getFilesNames() {
 
 function copyCss() {
     getInstalledComponents().forEach((component) => {
+        const filename = component.replace('-ui', '');
         const source = path.join(__dirname, '..', 'node_modules/' + component + '/style.css');
-        const destination = '../' + component + '.css';
+        const destination = '../' + filename + '.css';
         if (fs.existsSync(source)) {
             fs.copyFileSync(source, destination);
         }
@@ -38,7 +39,7 @@ function copyCss() {
 }
 
 copyCss();
-getFilesNames().forEach(component => {
+getFileNames().forEach(component => {
     replace('../demo/' + component + '.html', "/style.css", "/" + component + ".css");
 });
 

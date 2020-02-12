@@ -1,10 +1,10 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-button/vl-button.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
-import '/node_modules/vl-ui-typography/vl-typography.js';
-import '/node_modules/vl-ui-toaster/vl-toaster.js';
-import '/node_modules/vl-ui-alert/vl-alert.js';
-import '/node_modules/tinymce/tinymce.min.js';
+import { VlElement, define } from 'vl-ui-core';
+import 'vl-ui-button';
+import 'vl-ui-icon';
+import 'vl-ui-typography';
+import 'vl-ui-toaster';
+import 'vl-ui-alert';
+import 'vl-ui-proza-message/dist/tinymce.min.js';
 
 /**
  * VlProzaMessage
@@ -117,8 +117,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             powerpaste_html_import: 'clean',
             content_css: '../style.css',
             verify_html: false,
-            forced_root_block: '',
-            suffix: '.min'
+            forced_root_block: ''
         }
     }
 
@@ -215,19 +214,25 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
     async __processToegelatenOperaties() {
         const toegelatenOperaties = await VlProzaMessage._getToegelatenOperaties(this._domain);
         if (toegelatenOperaties.update) {
-            this._element.appendChild(this._getEditButtonTemplate());
+            this.__setupUpdatableMessage();
         }
+    }
+
+    __setupUpdatableMessage() {
+        this._element.classList.add('vl-proza-message--updatable');
+        this._element.appendChild(this._getEditButtonTemplate());
     }
 
     __initWysiwyg(event) {
         event.stopPropagation();
+        event.preventDefault();
         this.__unwrapWysiwygElement();
         tinyMCE.baseURL = '/node_modules/tinymce';
+        this.__hideWysiwygButton();
         tinyMCE.init(this._wysiwygConfig);
         this._activeWysiwygEditor.on('init', () => {
             this.__focusWysiwyg();
             this.__configureWysiwygStyle();
-            this.__hideWysiwygButton();
             this.__bindWysiwygEvents();
         });
     }
@@ -305,21 +310,23 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
 
     __undoWysiwygChange() {
         const editor = this._activeWysiwygEditor;
-        if (editor.undoManager.hasUndo()) {
+        if (editor && editor.undoManager.hasUndo()) {
             editor.undoManager.undo();
         }
     }
 
     __undoAllWysiwygChanges() {
         const editor = this._activeWysiwygEditor;
-        while (editor.undoManager.hasUndo()) {
+        while (editor && editor.undoManager.hasUndo()) {
             editor.undoManager.undo();
         }
     }
 
     __stopWysiwyg() {
         const editor = this._activeWysiwygEditor;
-        editor.destroy();
+        if (editor) {
+        	editor.destroy();
+        }
         this.__showWysiwygButton();
         this.__wrapWysiwygElement();
     }
@@ -467,7 +474,7 @@ export class VlProzaMessagePreloader extends VlElement(HTMLElement) {
     }
 }
 
-class ProzaRestClient {
+export class ProzaRestClient {
     static saveMessage(domain, code, text) {
     	return fetch(`proza/domein/${domain}/${code}`, {
     		method: 'PUT',
@@ -521,3 +528,4 @@ class ProzaRestClient {
 
 define('vl-proza-message-preloader', VlProzaMessagePreloader);
 define('vl-proza-message', VlProzaMessage);
+

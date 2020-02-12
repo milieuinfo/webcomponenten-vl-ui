@@ -1,4 +1,4 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement, define } from 'vl-ui-core';
 
 /**
  * VlTemplate
@@ -33,3 +33,4 @@ export class VlTemplate extends VlElement(HTMLElement) {
 }
 
 define('vl-template', VlTemplate);
+

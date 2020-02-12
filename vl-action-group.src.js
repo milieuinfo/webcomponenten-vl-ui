@@ -1,5 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VLActionGroup
@@ -17,7 +16,6 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-action-group.html|Demo}
  */
 export class VlActionGroup extends NativeVlElement(HTMLDivElement) {
-
   connectedCallback() {
     this.classList.add('vl-action-group');
   }
@@ -38,7 +36,7 @@ export class VlActionGroup extends NativeVlElement(HTMLDivElement) {
   _alignChangedCallback(oldValue, newValue) {
     this._changeClass(this, ('align-' + oldValue), ('align-' + newValue), this._classPrefix);
   }
-
 }
 
 define('vl-action-group', VlActionGroup, { extends: 'div' });
+

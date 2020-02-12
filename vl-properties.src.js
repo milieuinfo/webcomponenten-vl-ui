@@ -1,4 +1,4 @@
-import {NativeVlElement, VlElement, define} from '/node_modules/vl-ui-core/vl-core.js';
+import {NativeVlElement, VlElement, define} from 'vl-ui-core';
 
 /**
  * VlProperties
@@ -138,3 +138,4 @@ define('vl-properties-column', VlPropertiesColumn, {extends: 'div'});
 define('vl-properties-list', VlPropertiesList, {extends: 'dl'});
 define('vl-property-term', VlPropertyTerm, {extends: 'dt'});
 define('vl-property-value', VlPropertyValue, {extends: 'dd'});
+

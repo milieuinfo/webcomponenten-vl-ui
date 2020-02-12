@@ -1,5 +1,5 @@
-import '/node_modules/vl-ui-icon/vl-icon.js';
-import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
+import 'vl-ui-icon';
+import {NativeVlElement, define} from "vl-ui-core";
 
 /**
  * VlLinkList
@@ -59,3 +59,4 @@ export class VlLinkListItem extends NativeVlElement(HTMLLIElement) {
 
 define("vl-link-list", VlLinkList, {extends: "ul"});
 define("vl-link-list-item", VlLinkListItem, {extends: "li"});
+

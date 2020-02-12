@@ -1,4 +1,6 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
+import '@govflanders/vl-ui-util/dist/js/util.min.js';
+import '@govflanders/vl-ui-infotext/dist/js/infotext.min.js';
 
 /**
  * VlInfotext
@@ -18,27 +20,48 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
     static get _observedAttributes() {
         return ['data-vl-badge'];
     }
-   
+
     connectedCallback() {
         if (this.__hasOneChild()) {
             this.classList.add('vl-infotext-wrapper');
-            this.__addClass(this.firstElementChild, 'vl-infotext');
-            this.__addClass(this.__valueElement, 'vl-infotext__value');
-            this.__addClass(this.__textElement, 'vl-infotext__text');
-            this. _data_vl_badgeChangedCallback(null, this.getAttribute('data-vl-badge')); 
+            this.__setupChildClasses();
+            this._data_vl_badgeChangedCallback(null, this.getAttribute('data-vl-badge'));
+            this._childObserver = this.__observeChildElement((records) => this.__processChildElementChange(records));
+            this._childResizeObserver = this.__observeChildElementResize(() => this.__processChildElementResize());
         } else {
             console.warn('De infotext component mag slechts 1 child hebben (<div> of <a>)');
         }
     }
 
-    __hasOneChild() {
-        return this.children.length == 1;
+    disconnectedCallback() {
+        if (this._childObserver) {
+            this._childObserver.disconnect();
+        }
+
+        if (this._childResizeObserver) {
+            this._childResizeObserver.disconnect();
+        }
     }
 
-    __addClass(element, className) {
-        if (element) {
-            element.classList.add(className)
+    __setupChildClasses() {
+        if (this.firstElementChild) {
+            this.firstElementChild.classList.add('vl-infotext');
         }
+
+        if (this.__valueElement) {
+            this.__valueElement.classList.add('vl-infotext__value');
+            this.__valueElement.setAttribute('data-vl-infotext-value', '');
+            this.__valueElement.setAttribute('data-vl-js-dress', 'false');
+        }
+
+        if (this.__textElement) {
+            this.__textElement.classList.add('vl-infotext__text');
+            this.__textElement.setAttribute('data-vl-js-dress', 'false');
+        }
+    }
+
+    __hasOneChild() {
+        return this.children.length == 1;
     }
 
     get __valueElement() {
@@ -54,12 +77,53 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
     }
 
     _data_vl_badgeChangedCallback(oldValue, newValue) {
-        if (newValue != undefined) {
-            this.__addClass(this.firstElementChild, 'vl-infotext--badge');
-        } else {
-            this.firstElementChild.classList.remove('vl-infotext--badge');
+        if (this.firstElementChild) {
+            this._toggleClass(this.firstElementChild, newValue, 'vl-infotext--badge')
         }
+    }
+
+    __observeChildElement(callback) {
+        const observer = new MutationObserver(callback);
+        observer.observe(this.firstElementChild, { childList: true, subtree: true });
+        return observer;
+    }
+
+    __observeChildElementResize(callback) {
+        const observer = new ResizeObserver(callback);
+        observer.observe(this.firstElementChild);
+        return observer;
+    }
+
+    __processChildElementChange(records) {
+        records.forEach(record => {
+            if (VlInfotext.__isMutationRecordOfTypeChildList(record) && VlInfotext.__isMutationRecordTextContentChanged(record)) {
+                this.__dress();
+            }
+        });
+    }
+
+    __processChildElementResize() {
+        this.__dress();
+    }
+
+    __dress() {
+        vl.infotext.dress(this.__valueElement);
+        vl.infotext.dress(this.__textElement);
+    }
+
+    static __isMutationRecordOfTypeChildList(record) {
+        return record.type == 'childList';
+    }
+
+    static __hasMutationRecordOneChangedNode(record) {
+        const hasOneAddedNode = record.addedNodes && record.addedNodes.length == 1;
+        const hasOneRemovedNode = record.removedNodes && record.removedNodes.length == 1;
+        return hasOneAddedNode && hasOneRemovedNode;
+    }
+
+    static __isMutationRecordTextContentChanged(record) {
+        return this.__hasMutationRecordOneChangedNode(record) && record.addedNodes[0].textContent != record.removedNodes[0].textContent;
     }
 }
 
-define('vl-infotext', VlInfotext, {extends: 'div'});
+define('vl-infotext', VlInfotext, { extends: 'div' });

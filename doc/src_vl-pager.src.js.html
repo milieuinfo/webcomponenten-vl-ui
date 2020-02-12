@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/vl-pager.src.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/vl-pager.src.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+
+/**
+ * VlPager
+ * @class
+ * @classdesc Gebruik de pager component om het aantal beschikbare pagina's weer te geven, markeer de huidige pagina en voeg navigatie knoppen toe.
+ *
+ * @extends VlElement
+ *
+ * @property {number} total-items - Attribuut wordt gebruikt om totaal van elementen te bepalen.
+ * @property {number} current-page - Attribuut wordt gebruikt om huidige pagina te bepalen.
+ * @property {number} items-per-page - Attribuut wordt gebruikt om het aantal rijen per pagina te bepalen.
+ * @property {number} pagination-disabled - Attribuut wordt gebruikt om geen pagina links te tonen..
+ * @property {boolean} align-center - Attribuut wordt gebruikt om de paginatie te centreren.
+ * @property {boolean} align-right - Attribuut wordt gebruikt om de paginatie rechts uit te lijnen.
+ *
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-pager/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-pager/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-pager.html|Demo}
+ *
+ */
+export class VlPager extends VlElement(HTMLElement) {
+  static get _observedAttributes() {
+    return ['total-items', 'items-per-page', 'current-page', 'pagination-disabled'];
+  }
+
+  static get _observedChildClassAttributes() {
+    return ['align-center', 'align-right'];
+  }
+
+  constructor() {
+    super();
+    this.shadow(`
+      &lt;style>
+        @import "../style.css";
+      &lt;/style>
+      &lt;div class="vl-pager">
+        &lt;ul id="pager-list" class="vl-pager__list">
+          &lt;li id="bounds" class="vl-pager__element">&lt;/li>
+          &lt;li id="page-back-list-item" class="vl-pager__element">
+            &lt;a id="page-back-link" class="vl-pager__element__cta vl-link vl-link--bold">
+              &lt;i class="vl-link__icon vl-link__icon--before vl-vi vl-vi-arrow-left-fat" aria-hidden="true">&lt;/i>
+              Vorige &lt;span id="previous-items-per-page" class="vl-u-visually-hidden">&lt;/span>
+            &lt;/a>
+          &lt;/li>
+          &lt;li id="page-forward-list-item" class="vl-pager__element">
+            &lt;a id="page-forward-link" class="vl-pager__element__cta vl-link vl-link--bold">
+              Volgende &lt;span id="next-items-per-page" class="vl-u-visually-hidden">&lt;/span>
+              &lt;i class="vl-link__icon vl-link__icon--after vl-vi vl-vi-arrow-right-fat" aria-hidden="true">&lt;/i>
+            &lt;/a>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/div>
+    `);
+
+    this.__addPageBackLinkListener();
+    this.__addPageForwardLinkListener();
+  }
+
+  get _classPrefix() {
+    return 'vl-pager--';
+  }
+
+  /**
+   * Geeft het aantal pagina's terug.
+   * 
+   * @returns {Number} Aantal pagina's.
+   */
+  get totalPages() {
+    return Math.ceil(this.totalItems / this.itemsPerPage);
+  }
+
+  /**
+   * Geeft het totaal aantal items terug.
+   * 
+   * @returns {Number} Totaal aantal items.
+   */
+  get totalItems() {
+    return parseInt(this.getAttribute('total-items'));
+  }
+
+  /**
+   * Geeft het huidige pagina nummer terug.
+   * 
+   * @returns {Number} Huidig pagina nummer.
+   */
+  get currentPage() {
+    let currentPage = parseInt(this.getAttribute('current-page'));
+    if (currentPage &lt; 1) {
+      return 1;
+    } else {
+      return currentPage &lt;= this.totalPages ? currentPage : this.totalPages;
+    }
+  }
+
+  /**
+   * Geeft het aantal items per pagina terug.
+   * 
+   * @returns {Number} Aantal items per pagina.
+   */
+  get itemsPerPage() {
+    return parseInt(this.getAttribute('items-per-page'));
+  }
+
+  get _firstItemNumberOfPage() {
+    if (!this.totalItems) {
+      return 0;
+    } else {
+      return (this.currentPage - 1) * this.itemsPerPage + 1
+    }
+  }
+
+  get _lastItemNumberOfPage() {
+    const lastItemNumber = this._firstItemNumberOfPage + this.itemsPerPage - 1;
+    return lastItemNumber > this.totalItems ? this.totalItems : lastItemNumber;
+  }
+
+  get _isPagination() {
+    return this.getAttribute('pagination-disabled') == undefined;
+  }
+
+  get _boundsElement() {
+    return this._shadow.querySelector('#bounds');
+  }
+
+  get _pagesListElement() {
+    return this._shadow.querySelector('.vl-pager__list');
+  }
+
+  get _pagesElement() {
+    return this._shadow.querySelector('#pages');
+  }
+
+  get _pageBackLink() {
+    return this._shadow.querySelector('#page-back-link');
+  }
+
+  get _pageForwardLink() {
+    return this._shadow.querySelector('#page-forward-link');
+  }
+
+  get _pageBackListItem() {
+    return this._shadow.querySelector("#page-back-list-item");
+  }
+
+  get _pageForwardListItem() {
+    return this._shadow.querySelector("#page-forward-list-item");
+  }
+
+  get _totalItemsElement() {
+    return this._shadow.querySelector('#totalItems');
+  }
+
+  get _itemsPerPageElementen() {
+    const previous = this._shadow.querySelector('#previous-items-per-page');
+    const next = this._shadow.querySelector('#next-items-per-page');
+    return [previous, next];
+  }
+
+  _getBoundsTemplate() {
+    return `
+      &lt;span class="vl-u-visually-hidden">Rij&lt;/span>
+      &lt;strong>${this._firstItemNumberOfPage}-${this._lastItemNumberOfPage}&lt;/strong> van ${this.totalItems}
+    `;
+  }
+
+  _getPageTemplate(number) {
+    if (this._isPagination) {
+      if (number === this.currentPage) {
+        return this.__getActivePageTemplate(number);
+      } else if (number === 'skipped') {
+        return this.__getSkippedPageTemplate();
+      } else {
+        return this.__getPageTemplate(number);
+      }
+    } else {
+      return ``;
+    }
+  }
+
+  __getActivePageTemplate(number) {
+    return this._template(`
+      &lt;li name="pageLink" data-vl-pager-page=${number} class="vl-pager__element"> 
+        &lt;label>${number}&lt;/label>
+      &lt;/li>
+    `);
+  }
+
+  __getSkippedPageTemplate() {
+    return this._template(`
+      &lt;li class="vl-pager__element">
+        &lt;div class="vl-pager__element__cta">...&lt;/div>
+      &lt;/li>
+    `);
+  }
+
+  __getPagesTemplate() {
+    return this._template(`
+      &lt;li id="pages" class="vl-pager__element">&lt;/li>
+    `);
+  }
+
+  __getPageTemplate(number) {
+    const template = this._template(`
+      &lt;li name="pageLink" data-vl-pager-page=${number} class="vl-pager__element"> 
+        &lt;a class="vl-pager__element__cta vl-link vl-link--bold">${number}&lt;/a>
+      &lt;/li>
+    `);
+    template.firstElementChild.addEventListener('click', () => this.setAttribute('current-page', number));
+    return template;
+  }
+
+  _getItemsPerPageContentTemplate() {
+    return `${this.itemsPerPage} rijen`;
+  }
+
+  _items_per_pageChangedCallback(oldValue, newValue) {
+    this._update();
+  };
+
+  _total_itemsChangedCallback(oldValue, newValue) {
+    if (this.totalItems === 0) {
+      this._hide(this._element);
+    } else {
+      this._show(this._element);
+      this._update();
+    }
+  }
+
+  _current_pageChangedCallback(oldValue, newValue) {
+    this._update();
+  }
+
+  _pagination_disabledChangedCallback(oldValue, newValue) {
+    if (newValue !== undefined &amp;&amp; this._pagesElement) {
+      this._pagesElement.remove();
+    } else {
+      this._pagesListElement.insertBefore(this.__getPagesTemplate(), this._pageForwardListItem);
+    }
+  }
+
+  _hide(element) {
+    element.hidden = true;
+  }
+
+  _show(element) {
+    element.hidden = false;
+  }
+
+  _update() {
+    this._updateInfoElement();
+    this._updatePagination();
+    this._updateListItems();
+  }
+
+  _updateInfoElement() {
+    this._boundsElement.innerHTML = this._getBoundsTemplate();
+    this._itemsPerPageElementen.forEach((span) => {
+      span.innerHTML = this._getItemsPerPageContentTemplate();
+    });
+  }
+
+  _updatePagination() {
+    if (this._isPagination) {
+      if (!this._pagesElement) {
+        this._pagesListElement.insertBefore(this.__getPagesTemplate(), this._pageForwardListItem);
+      }
+
+      this._pagesElement.innerHTML = '';
+      if (this.totalPages > 1) {
+        const pages = this.__generatePagination(this.currentPage, this.totalPages);
+        const content = pages.map((number) => this._getPageTemplate(number));
+        this._pagesElement.append(...content);
+      }
+    }
+  }
+
+  _updateListItems() {
+    this.currentPage &lt;= 1 ? this._hide(this._pageBackListItem) : this._show(this._pageBackListItem);
+    this.currentPage >= this.totalPages ? this._hide(this._pageForwardListItem) : this._show(this._pageForwardListItem);
+  }
+
+  __generatePagination(currentPage, pageCount) {
+    const delta = 2;
+    const range = [];
+    for (let i = Math.max(2, currentPage - delta); i &lt;= Math.min(pageCount - 1, currentPage + delta); i++) {
+      range.push(i);
+    }
+    if (currentPage - delta > 2) {
+      range.unshift("skipped");
+    }
+    if (currentPage + delta &lt; pageCount - 1) {
+      range.push("skipped");
+    }
+    range.unshift(1);
+    range.push(pageCount);
+    return range;
+  }
+
+  __addPageBackLinkListener() {
+    this._pageBackLink.addEventListener("click", () => {
+      if (!(this.currentPage - 1 &lt;= 0)) {
+        this.setAttribute("current-page", this.currentPage - 1);
+      }
+    });
+  }
+
+  __addPageForwardLinkListener() {
+    this._pageForwardLink.addEventListener("click", () => {
+      if (!(this.currentPage + 1 > this.totalPages)) {
+        this.setAttribute("current-page", this.currentPage + 1);
+      }
+    });
+  }
+}
+
+define('vl-pager', VlPager);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Feb 12 2020 10:46:03 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

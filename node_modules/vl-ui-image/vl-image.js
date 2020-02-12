@@ -1,1 +1,0 @@
-import{NativeVlElement,define}from"/node_modules/vl-ui-core/vl-core.js";export class VlImage extends(NativeVlElement(HTMLImageElement)){constructor(){super(),this.classList.add("vl-image"),this.alt||(this.alt="")}get _stylePath(){return"/node_modules/vl-ui-image/style.css"}}define("vl-image",VlImage,{extends:"img"});

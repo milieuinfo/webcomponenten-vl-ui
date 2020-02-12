@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VlTitle
@@ -40,3 +40,4 @@ define('vl-h3', class extends VlTitle{}, {extends:"h3"});
 define('vl-h4', class extends VlTitle{}, {extends:"h4"});
 define('vl-h5', class extends VlTitle{}, {extends:"h5"});
 define('vl-h6', class extends VlTitle{}, {extends:"h6"});
+

@@ -1,5 +1,5 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js';
+import { VlElement, define } from 'vl-ui-core';
+import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1vl-ui-widget-polyfill/dist/index.js';
 
 /**
  * VlHeader
@@ -63,3 +63,4 @@ export class VlHeader extends VlElement(HTMLElement) {
 }
 
 define('vl-header', VlHeader);
+

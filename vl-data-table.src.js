@@ -1,4 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from 'vl-ui-core';
 
 /**
  * VlDataTable
@@ -39,3 +39,4 @@ export class VlDataTable extends NativeVlElement(HTMLTableElement) {
 }
 
 define('vl-data-table', VlDataTable, {extends: 'table'});
+

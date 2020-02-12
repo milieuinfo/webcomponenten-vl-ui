@@ -1,12 +1,8 @@
-import { VlElement, define, awaitScript, awaitUntil } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-button/vl-button.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
-
-Promise.all([
-    awaitScript('util', '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js'),
-    awaitScript('accordion', '../dist/accordion.js'),
-    awaitUntil(() => window.vl && window.vl.accordion)
-]).then(() => define('vl-accordion', VlAccordion));
+import { VlElement, define } from 'vl-ui-core';
+import 'vl-ui-button';
+import 'vl-ui-icon';
+import '@govflanders/vl-ui-util/dist/js/util.min.js';
+import 'vl-ui-accordion/dist/accordion.js';
 
 /**
  * VlAccordion
@@ -37,12 +33,12 @@ export class VlAccordion extends VlElement(HTMLElement) {
 
             <div class="js js-vl-accordion">
                 <div data-vl-accordion>
-                    <button data-vl-accordion-toggle>
+                    <button id="accordion-toggle" data-vl-accordion-toggle>
                         <span is="vl-icon" icon="arrow-right-fat" before></span><span></span>
                     </button>
-                    <div class="vl-accordion__content">
-                        <div class="vl-accordion__panel">
-                            <slot></slot>
+                    <div id="accordion-content" class="vl-accordion__content">
+                        <div id="accordion-panel" class="vl-accordion__panel">
+                            <slot id="accordion-slot"></slot>
                         </div>
                     </div>
                 </div>
@@ -142,3 +138,5 @@ export class VlAccordion extends VlElement(HTMLElement) {
         this._buttonElement.classList.add('vl-link--bold');
     }
 }
+
+define('vl-accordion', VlAccordion);

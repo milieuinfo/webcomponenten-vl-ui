@@ -36,7 +36,7 @@ function copyCss() {
 
 copyCss();
 getFileNames().forEach(component => {
-    replace('../demo/' + component + '.html', "/style.css", "/" + component + ".css");
+    replace('demo/' + component + '.html', "/style.css", "/" + component + ".css");
 });
 
 

@@ -10,21 +10,17 @@ function replace(file, search, replacement) {
 }
 
 function getInstalledWebcomponentsDirnames() {
-    let installedComponents = [];
-    fs.readdirSync('../node_modules').forEach((file) => {
-        if (file.indexOf('vl-ui') > -1) {
-            installedComponents.push(file);
+    const installedComponents = [];
+    fs.readdirSync('../node_modules').forEach((dir) => {
+        if (dir.indexOf('vl-ui') > -1) {
+            installedComponents.push(dir);
         }
     });
     return installedComponents;
 }
 
 function getFileNames() {
-    let fileNames = [];
-    getInstalledWebcomponentsDirnames().forEach((componentFilename) => {
-        fileNames.push(componentFilename.replace('-ui', ''));
-    });
-    return fileNames;
+    return getInstalledWebcomponentsDirnames().map(componentFilename => componentFilename.replace('-ui', ''));
 }
 
 function copyCss() {

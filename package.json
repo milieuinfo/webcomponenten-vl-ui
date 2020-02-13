@@ -1,6 +1,6 @@
 {
   "name": "webcomponenten-vl-ui",
-  "version": "1.0.81",
+  "version": "1.0.80",
   "description": "Webcomponenten demo",
   "main": "index.html",
   "author": "DIDM",
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "install": "npm run analyze && npm run doc",
-    "analyze": "npm run analyze:copy && npm run analyze:generate",
+    "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
+    "analyze:prepare": "replace '/src/(.*).src.js' '../$1.js' ./demo/vl*.html",
     "analyze:copy": "npm run analyze:copy:webcomponent && npm run analyze:copy:webcomponent:src && npm run analyze:copy:demo && npm run analyze:copy:style",
     "analyze:copy:webcomponent": "copyfiles -f node_modules/*/vl-*.js .",
     "analyze:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",

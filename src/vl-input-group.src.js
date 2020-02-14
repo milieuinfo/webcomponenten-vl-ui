@@ -15,10 +15,6 @@ export class VlInputGroup extends NativeVlElement(HTMLDivElement) {
   connectedCallback() {
       this.classList.add('vl-input-group');
   }
-
-  get _stylePath() {
-      return '../style.css';
-  }
 }
 
 define('vl-input-group', VlInputGroup, {extends: 'div'});

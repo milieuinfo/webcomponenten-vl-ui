@@ -37,11 +37,6 @@ export class VlDescriptionData extends NativeVlElement(HTMLDivElement) {
 	get __values() {
 		return this.querySelectorAll("[data-vl-value]");
 	}
-	
-    get _stylePath() {
-        return '../style.css';
-    }
-
 }
 
 define('vl-description-data', VlDescriptionData, {extends: 'div'});

@@ -19,7 +19,7 @@ export class VlTemplate extends VlElement(HTMLElement) {
   constructor() {
     super(`
         <style>
-            @import '../style.css';
+            @import '/style.css';
         </style>
         <slot name="header"></slot>
         <div class="vl-page">

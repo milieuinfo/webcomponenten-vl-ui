@@ -16,7 +16,7 @@ export class VlTypography extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '../style.css';
+                @import '/style.css';
             </style>
             <div id="content" class="vl-typography"></div>
         `);

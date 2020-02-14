@@ -21,7 +21,7 @@ export class VlAlert extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import "/node_modules/vl-ui-alert/style.css";
+                @import '/node_modules/vl-ui-alert/style.css';
             </style>
             <div id="alert" class="vl-alert" role="alert">
                 <div id="content" class="vl-alert__content">

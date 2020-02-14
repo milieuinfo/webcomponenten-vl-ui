@@ -28,10 +28,6 @@ export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
     get _classPrefix() {
         return 'vl-title--';
     }
-
-    get _stylePath() {
-        return '/node_modules/vl-ui-titles/style.css';
-    }
 }
 
 define('vl-h1', class extends VlTitle{}, {extends:"h1"});

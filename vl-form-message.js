@@ -27,12 +27,7 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
   get _classPrefix() {
     return 'vl-form__label--';
   }
-  
-  get _stylePath() {
-    return '/node_modules/vl-ui-form-message/style.css';
-  }
 }
-
 
 /**
  * VlFormValidationMessage
@@ -82,10 +77,6 @@ export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElemen
     return `vl-form__`;
   }
 
-  get _stylePath() {
-    return '/node_modules/vl-ui-form-message/style.css';
-  }
-
   _successChangedCallback(oldValue, newValue) {
     if (newValue != undefined) {
       this._element.append(this._getCheckTemplate());
@@ -125,10 +116,6 @@ export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 
   get _classPrefix() {
     return 'vl-form__annotation--';
-  }
-
-  get _stylePath() {
-    return '/node_modules/vl-ui-form-message/style.css';
   }
 }
 

@@ -23,10 +23,6 @@ export const VlButtonElement = (SuperClass) => {
             return 'vl-button--';
         }
 
-        get _stylePath() {
-            return '/node_modules/vl-ui-button/style.css';
-        }
-
         _setIconClass() {
             const icon = this.querySelector('[is="vl-icon"]');
             if (icon) {
@@ -86,10 +82,6 @@ export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElemen
         super();
         this.classList.add('vl-pill');
         this.classList.add('vl-pill--clickable');
-    }
-
-    get _stylePath() {
-        return '/node_modules/vl-ui-button/style.css';
     }
 }
 

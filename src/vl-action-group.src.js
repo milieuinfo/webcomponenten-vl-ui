@@ -24,11 +24,6 @@ export class VlActionGroup extends NativeVlElement(HTMLDivElement) {
     return 'vl-action-group--';
   }
 
-  get _stylePath() {
-    return '../style.css';
-  }
-
-
   static get _observedClassAttributes() {
     return ['align', 'space-between', 'bordered'];
   }

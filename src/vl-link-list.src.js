@@ -23,10 +23,6 @@ export class VlLinkList extends NativeVlElement(HTMLUListElement) {
   get _classPrefix() {
     return "vl-link-list--"
   }
-
-  get _stylePath() {
-    return "../style.css"
-  }
 }
 
 /**
@@ -46,10 +42,6 @@ export class VlLinkListItem extends NativeVlElement(HTMLLIElement) {
       link.insertAdjacentHTML("afterBegin",
           '<span is="vl-icon" icon="nav-right" before></span>')
     })
-  }
-
-  get _stylePath() {
-    return "../style.css"
   }
 
   get _links() {

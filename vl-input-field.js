@@ -30,10 +30,6 @@ export class VlInputField extends VlFormValidation(NativeVlElement(HTMLInputElem
     return 'vl-input-field--';
   }
 
-  get _stylePath() {
-    return '/node_modules/vl-ui-input-field/style.css';
-  }
-
   _dress() {
     if (this.form) {
       this.setAttribute('data-vl-success-class', 'vl-input-field--success');

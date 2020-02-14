@@ -16,7 +16,7 @@ export class VlContentHeader extends VlElement(HTMLElement) {
 	constructor() {
 		super(`
 			<style>
-				@import '../style.css';
+				@import '/style.css';
 			</style>
 			<header class="vl-content-header vl-content-header--large vl-content-header--show-mobile vl-content-header--has-context">
 				<div class="vl-content-header__wrapper">

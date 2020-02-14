@@ -72,10 +72,6 @@ export class VlInfotext extends NativeVlElement(HTMLDivElement) {
         return this.querySelector('[data-vl-text]');
     }
 
-    get _stylePath() {
-        return '/node_modules/vl-ui-infotext/style.css';
-    }
-
     _data_vl_badgeChangedCallback(oldValue, newValue) {
         if (this.firstElementChild) {
             this._toggleClass(this.firstElementChild, newValue, 'vl-infotext--badge')

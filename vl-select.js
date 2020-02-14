@@ -63,10 +63,6 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
     return 'vl-select--';
   }
 
-  get _stylePath() {
-    return '/node_modules/vl-ui-select/style.css';
-  }
-
   get _dressed() {
     return !!this.getAttribute(VlSelect._dressedAttributeName);
   }

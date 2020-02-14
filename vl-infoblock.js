@@ -25,22 +25,22 @@ export class VlInfoblock extends VlElement(HTMLElement) {
 
     constructor() {
         super(`
-                <style>
-                    @import '/node_modules/vl-ui-infoblock/style.css';
-                    @import '/node_modules/vl-ui-icon/style.css';
-                    
-                </style>
-    
-                <section id="infoblock-element" class="vl-infoblock">
-                    <header class="vl-infoblock__header" role="presentation">
-                        <span is="vl-icon" id="infoblock_icon" class="vl-infoblock__header__icon"></span>
-                        <h2 class="vl-infoblock__title" id="infoblock_title"><slot name='title'></slot></h2>
-                    </header>
-                    <div class="vl-infoblock__content" id="infoblock_content">
-                       <slot></slot>
-                    </div>  
-                </section>
-            `);
+            <style>
+                @import '/node_modules/vl-ui-infoblock/style.css';
+                @import '/node_modules/vl-ui-icon/style.css';
+                
+            </style>
+
+            <section id="infoblock-element" class="vl-infoblock">
+                <header class="vl-infoblock__header" role="presentation">
+                    <span is="vl-icon" id="infoblock_icon" class="vl-infoblock__header__icon"></span>
+                    <h2 class="vl-infoblock__title" id="infoblock_title"><slot name='title'></slot></h2>
+                </header>
+                <div class="vl-infoblock__content" id="infoblock_content">
+                    <slot></slot>
+                </div>  
+            </section>
+        `);
     }
 
     _titleChangedCallback(oldValue, newValue) {

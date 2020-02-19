@@ -4,7 +4,7 @@ import '/node_modules/vl-ui-icon/vl-icon.js';
 import '/node_modules/vl-ui-typography/vl-typography.js';
 import '/node_modules/vl-ui-toaster/vl-toaster.js';
 import '/node_modules/vl-ui-alert/vl-alert.js';
-import '/dist/tinymce.min.js';
+import '/node_modules/vl-ui-proza-message/dist/tinymce.min.js';
 
 /**
  * VlProzaMessage
@@ -32,7 +32,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
         this.appendChild(this.__createWysiwygElement());
         this.shadow(`
             <style>
-                @import '/style.css';
+                @import '/node_modules/vl-ui-proza-message/style.css';
                 @import '/node_modules/vl-ui-button/style.css';
                 @import '/node_modules/vl-ui-icon/style.css';
             </style>
@@ -115,7 +115,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             quickbars_selection_toolbar: 'bold italic underline',
             powerpaste_word_import: 'clean',
             powerpaste_html_import: 'clean',
-            content_css: '../style.css',
+            content_css: '/node_modules/vl-ui-proza-message/style.css',
             verify_html: false,
             forced_root_block: ''
         }

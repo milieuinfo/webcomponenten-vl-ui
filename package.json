@@ -20,6 +20,7 @@
     "analyze:copy": "npm run analyze:copy:webcomponent && npm run analyze:copy:webcomponent:src && npm run analyze:copy:demo && npm run analyze:copy:style",
     "analyze:copy:webcomponent": "copyfiles -f -e '**/*.min.js' -e '**/*.src.js' node_modules/*/vl-*.js .",
     "analyze:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",
+    "analyze:copy:webcomponent:dist": "copyfiles -f node_modules/*/dist/* dist",
     "analyze:copy:demo": "npm run analyze:copy:demo:files && npm run analyze:copy:demo:directory:img",
     "analyze:copy:demo:files": "copyfiles -f node_modules/vl-*/demo/* ./demo",
     "analyze:copy:demo:directory:img": "copyfiles -f node_modules/vl-*/demo/img/* ./demo/img",

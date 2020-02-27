@@ -1,10 +1,10 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-button/vl-button.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
-import '/node_modules/vl-ui-typography/vl-typography.js';
-import '/node_modules/vl-ui-toaster/vl-toaster.js';
-import '/node_modules/vl-ui-alert/vl-alert.js';
-import '/node_modules/vl-ui-proza-message/dist/tinymce.min.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-button/dist/vl-button.js';
+import '/node_modules/vl-ui-icon/dist/vl-icon.js';
+import '/node_modules/vl-ui-typography/dist/vl-typography.js';
+import '/node_modules/vl-ui-toaster/dist/vl-toaster.js';
+import '/node_modules/vl-ui-alert/dist/vl-alert.js';
+import '/node_modules/vl-ui-proza-message/lib/tinymce.min.js';
 
 /**
  * VlProzaMessage
@@ -32,9 +32,9 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
         this.appendChild(this.__createWysiwygElement());
         this.shadow(`
             <style>
-                @import '/node_modules/vl-ui-proza-message/style.css';
-                @import '/node_modules/vl-ui-button/style.css';
-                @import '/node_modules/vl-ui-icon/style.css';
+                @import '/node_modules/vl-ui-proza-message/dist/style.css';
+                @import '/node_modules/vl-ui-button/dist/style.css';
+                @import '/node_modules/vl-ui-icon/dist/style.css';
             </style>
             <div>
                 <slot></slot>
@@ -44,12 +44,27 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
     }
     
     __initProzaMessageToaster() {
-    	const id = "vl-proza-message-toaster";
-        if (document.getElementById(id) == null) {
-        	const toaster = document.createElement('div', {is: 'vl-toaster'});
-        	toaster.setAttribute("top-right", "");
-        	toaster.id = id;
-        	document.body.appendChild(toaster);
+        const toaster = this.__addToasterElement();
+        this.__addToasterStyle();
+        return toaster;
+    }
+
+    __addToasterElement() {
+        const id = 'vl-proza-message-toaster';
+        if (!document.getElementById(id)) {
+            document.body.appendChild(this._template(`<div is='vl-toaster' top-right id=${id}></div>`));
+        }
+        return document.getElementById(id);
+    }
+
+    __addToasterStyle() {
+        const id = 'vl-proza-message-toaster-style';
+        if (!document.getElementById(id)) {
+            document.head.appendChild(this._template(`
+                <style id=${id}>
+                    @import '/node_modules/vl-ui-toaster/dist/style.css';
+                </style>
+            `));
         }
         return document.getElementById(id);
     }
@@ -115,7 +130,7 @@ export class VlProzaMessage extends VlElement(HTMLElement) {
             quickbars_selection_toolbar: 'bold italic underline',
             powerpaste_word_import: 'clean',
             powerpaste_html_import: 'clean',
-            content_css: '/node_modules/vl-ui-proza-message/style.css',
+            content_css: '/node_modules/vl-ui-proza-message/dist/style.css',
             verify_html: false,
             forced_root_block: ''
         }

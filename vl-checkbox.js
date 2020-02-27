@@ -1,4 +1,4 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlCheckbox
@@ -29,7 +29,7 @@ export class VlCheckbox extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '/node_modules/vl-ui-checkbox/style.css';
+                @import '/node_modules/vl-ui-checkbox/dist/style.css';
             </style>
 
             <label id="label" class="vl-checkbox" for="checkbox">
@@ -130,7 +130,7 @@ export class VlCheckbox extends VlElement(HTMLElement) {
     }
 
     _isTextNode(node) {
-        return node.nodeType === 3;
+        return node.nodeType === Node.TEXT_NODE;
     }
 
     _removeNode(node) {

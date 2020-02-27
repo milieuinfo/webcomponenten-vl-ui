@@ -1,7 +1,7 @@
-import { awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js';
-import '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js';
-import '/node_modules/vl-ui-select/dist/select.js';
+import { awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
+import '/node_modules/@govflanders/vl-ui-core/dist/js/core.js';
+import '/node_modules/vl-ui-select/lib/select.js';
 
 /**
 * VlSelect

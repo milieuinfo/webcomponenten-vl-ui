@@ -1,4 +1,4 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlTemplate
@@ -19,7 +19,7 @@ export class VlTemplate extends VlElement(HTMLElement) {
   constructor() {
     super(`
         <style>
-            @import '/node_modules/vl-ui-template/style.css';
+            @import '/node_modules/vl-ui-template/dist/style.css';
         </style>
         <slot name="header"></slot>
         <div class="vl-page">

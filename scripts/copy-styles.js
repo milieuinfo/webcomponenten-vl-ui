@@ -36,7 +36,7 @@ function copyCss() {
 
 copyCss();
 getFileNames().forEach(component => {
-    replace('demo/' + component + '.html', "href=\"/style.css\"", "href=\"/" + component + ".css\"");
+    replace('demo/' + component + '.html', "href=\"/src/style.css\"", "href=\"/" + component + ".css\"");
 });
 
 

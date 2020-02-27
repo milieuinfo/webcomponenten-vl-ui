@@ -1,5 +1,5 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 
 /**
  * VlAlert
@@ -21,7 +21,7 @@ export class VlAlert extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '/node_modules/vl-ui-alert/style.css';
+                @import '/node_modules/vl-ui-alert/dist/style.css';
             </style>
             <div id="alert" class="vl-alert" role="alert">
                 <div id="content" class="vl-alert__content">

@@ -1,3 +1,4 @@
 .npmrc
 npm-debug*
 node_modules
+.idea

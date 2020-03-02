@@ -1,8 +1,8 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-grid/vl-grid.js';
-import '/node_modules/vl-ui-titles/vl-titles.js';
-import '/node_modules/vl-ui-typography/vl-typography.js';
-import '/node_modules/vl-ui-button/vl-button.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-grid/dist/vl-grid.js';
+import '/node_modules/vl-ui-titles/dist/vl-titles.js';
+import '/node_modules/vl-ui-typography/dist/vl-typography.js';
+import '/node_modules/vl-ui-button/dist/vl-button.js';
 
 /**
  * VlHttpErrorMessage
@@ -35,10 +35,10 @@ export class VlHttpErrorMessage extends VlElement(HTMLElement) {
     constructor(defaults) {
         super(`
             <style>
-                @import '/node_modules/vl-ui-http-error-message/style.css';
-                @import '/node_modules/vl-ui-grid/style.css';
-                @import '/node_modules/vl-ui-titles/style.css';
-                @import '/node_modules/vl-ui-button/style.css';
+                @import '/node_modules/vl-ui-http-error-message/dist/style.css';
+                @import '/node_modules/vl-ui-grid/dist/style.css';
+                @import '/node_modules/vl-ui-titles/dist/style.css';
+                @import '/node_modules/vl-ui-button/dist/style.css';
             </style>
             <div is="vl-grid" is-stacked align-center v-center>
                 <div is="vl-column" size="6" max-size="12" class="vl-u-hidden vl-u-visible--s">

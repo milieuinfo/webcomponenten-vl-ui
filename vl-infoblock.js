@@ -1,5 +1,5 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 
 /**
  * VlInfoblock
@@ -26,9 +26,8 @@ export class VlInfoblock extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '/node_modules/vl-ui-infoblock/style.css';
-                @import '/node_modules/vl-ui-icon/style.css';
-                
+                @import '/node_modules/vl-ui-infoblock/dist/style.css';
+                @import '/node_modules/vl-ui-icon/dist/style.css';
             </style>
 
             <section id="infoblock-element" class="vl-infoblock">

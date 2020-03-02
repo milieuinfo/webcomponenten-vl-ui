@@ -1,8 +1,8 @@
-import {VlElement, define} from '/node_modules/vl-ui-core/vl-core.js';
-import '/node_modules/vl-ui-icon/vl-icon.js';
-import '/node_modules/@govflanders/vl-ui-util/dist/js/util.min.js';
-import '/node_modules/@govflanders/vl-ui-core/dist/js/core.min.js';
-import '/node_modules/vl-ui-upload/dist/upload.js';
+import {VlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-icon/dist/vl-icon.js';
+import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
+import '/node_modules/@govflanders/vl-ui-core/dist/js/core.js';
+import '/node_modules/vl-ui-upload/lib/upload.js';
 
 /**
  * VlUpload
@@ -45,9 +45,9 @@ export class VlUpload extends VlElement(HTMLElement) {
   constructor() {
     super(`
       <style>
-        @import '/node_modules/vl-ui-link/style.css';
-        @import '/node_modules/vl-ui-icon/style.css';
-        @import '/node_modules/vl-ui-upload/style.css';
+        @import '/node_modules/vl-ui-link/dist/style.css';
+        @import '/node_modules/vl-ui-icon/dist/style.css';
+        @import '/node_modules/vl-ui-upload/dist/style.css';
       </style>
       <div class="vl-upload" data-vl-upload data-vl-upload-url="http://www.example.com"></div>
     `);

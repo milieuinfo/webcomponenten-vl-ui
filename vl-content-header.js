@@ -1,4 +1,4 @@
-import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
+import { VlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlContentHeader
@@ -16,7 +16,7 @@ export class VlContentHeader extends VlElement(HTMLElement) {
 	constructor() {
 		super(`
 			<style>
-				@import '/node_modules/vl-ui-content-header/style.css';
+				@import '/node_modules/vl-ui-content-header/dist/style.css';
 			</style>
 			<header class="vl-content-header vl-content-header--large vl-content-header--show-mobile vl-content-header--has-context">
 				<div class="vl-content-header__wrapper">

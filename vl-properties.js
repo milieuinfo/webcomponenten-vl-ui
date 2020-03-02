@@ -1,4 +1,4 @@
-import {NativeVlElement, VlElement, define} from '/node_modules/vl-ui-core/vl-core.js';
+import {NativeVlElement, VlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlProperties
@@ -15,7 +15,7 @@ export class VlProperties extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '/node_modules/vl-ui-properties/style.css';
+                @import '/node_modules/vl-ui-properties/dist/style.css';
             </style>
 
             <div class="vl-properties">
@@ -66,7 +66,7 @@ export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
     }
 
     get _stylePath() {
-        return '/node_modules/vl-ui-properties/style.css';
+        return '/node_modules/vl-ui-properties/dist/style.css';
     }
 }
 
@@ -87,7 +87,7 @@ export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
     }
 
     get _stylePath() {
-        return '/node_modules/vl-ui-properties/style.css';
+        return '/node_modules/vl-ui-properties/dist/style.css';
     }
 }
 
@@ -108,7 +108,7 @@ export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
     }
 
     get _stylePath() {
-        return '/node_modules/vl-ui-properties/style.css';
+        return '/node_modules/vl-ui-properties/dist/style.css';
     }
 }
 
@@ -129,7 +129,7 @@ export class VlPropertyValue extends NativeVlElement(HTMLElement) {
     }
 
     get _stylePath() {
-        return '/node_modules/vl-ui-properties/style.css';
+        return '/node_modules/vl-ui-properties/dist/style.css';
     }
 }
 

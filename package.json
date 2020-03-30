@@ -42,7 +42,7 @@
     "polymer": "^0.5.0",
     "polymer-cli": "^1.9.11",
     "replace": "1.1.1",
-    "vl-ui-util": "^5.0.8"
+    "vl-ui-util": "^5.1.5"
   },
   "dependencies": {
     "fetch-mock": "^8.3.2",
@@ -50,7 +50,7 @@
     "vl-ui-accordion": "^3.0.0",
     "vl-ui-action-group": "^3.0.0",
     "vl-ui-alert": "^3.0.0",
-    "vl-ui-button": "^4.0.0",
+    "vl-ui-button": "^5.0.1",
     "vl-ui-checkbox": "^3.0.0",
     "vl-ui-content-header": "^3.0.0",
     "vl-ui-cookie-consent": "^3.0.0",
@@ -65,7 +65,7 @@
     "vl-ui-grid": "^3.0.0",
     "vl-ui-header": "^3.0.0",
     "vl-ui-http-error-message": "^3.0.0",
-    "vl-ui-icon": "^4.0.0",
+    "vl-ui-icon": "^5.0.1",
     "vl-ui-image": "^3.0.0",
     "vl-ui-infoblock": "^3.0.0",
     "vl-ui-infotext": "^3.0.0",
@@ -78,8 +78,9 @@
     "vl-ui-modal": "^3.0.0",
     "vl-ui-multiselect": "^4.0.0",
     "vl-ui-pager": "^3.0.0",
-    "vl-ui-pill": "^3.0.0",
+    "vl-ui-pill": "^4.0.1",
     "vl-ui-properties": "^4.0.0",
+    "vl-ui-proza-message": "^1.0.0",
     "vl-ui-search-filter": "^3.0.0",
     "vl-ui-select": "^4.0.0",
     "vl-ui-side-sheet": "^3.0.0",
@@ -89,8 +90,7 @@
     "vl-ui-toaster": "^3.0.0",
     "vl-ui-tooltip": "^3.0.1",
     "vl-ui-typography": "^3.0.0",
-    "vl-ui-upload": "^3.0.0",
-    "vl-ui-proza-message": "^1.0.0"
+    "vl-ui-upload": "^3.0.0"
   },
   "bundledDependencies": [
     "fetch-mock",

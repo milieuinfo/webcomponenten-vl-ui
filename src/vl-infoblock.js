@@ -43,7 +43,11 @@ export class VlInfoblock extends VlElement(HTMLElement) {
     }
 
     _titleChangedCallback(oldValue, newValue) {
-        this._titleElement.innerText = newValue;
+    	const currentSlot = this.querySelector("[slot='title']");
+    	if (currentSlot) {
+    		currentSlot.remove();
+    	}
+    	this.append(this._template(`<span slot='title'>${newValue}</span>`));
     }
 
     _iconChangedCallback(oldValue, newValue) {
@@ -58,10 +62,6 @@ export class VlInfoblock extends VlElement(HTMLElement) {
         if (newValue) {
             this._element.classList.add(classPrefix + newValue);
         }
-    }
-
-    get _titleElement() {
-        return this._element.querySelector('#infoblock_title');
     }
 
     get _iconElement() {

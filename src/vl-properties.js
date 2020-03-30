@@ -65,9 +65,6 @@ export class VlPropertiesColumn extends NativeVlElement(HTMLDivElement) {
         return 'vl-properties__column--';
     }
 
-    get _stylePath() {
-        return '/src/style.css';
-    }
 }
 
 /**
@@ -86,9 +83,6 @@ export class VlPropertiesList extends NativeVlElement(HTMLDListElement) {
         this.classList.add('vl-properties__list');
     }
 
-    get _stylePath() {
-        return '/src/style.css';
-    }
 }
 
 /**
@@ -107,9 +101,6 @@ export class VlPropertyTerm extends NativeVlElement(HTMLElement) {
         this.classList.add('vl-properties__label');
     }
 
-    get _stylePath() {
-        return '/src/style.css';
-    }
 }
 
 /**
@@ -128,9 +119,6 @@ export class VlPropertyValue extends NativeVlElement(HTMLElement) {
         this.classList.add('vl-properties__data');
     }
 
-    get _stylePath() {
-        return '/src/style.css';
-    }
 }
 
 define('vl-properties', VlProperties);

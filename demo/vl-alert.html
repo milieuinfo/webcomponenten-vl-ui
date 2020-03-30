@@ -20,18 +20,6 @@
   </p>
 
   <div>
-    <h2>Alert zonder attributen of inhoud</h2>
-    <pre>
-      <code class="line-numbers language-markup">
-        &lt;vl-alert>&lt;/vl-alert>
-      </code>
-    </pre>
-    <div class="demo">
-      <vl-alert id="alert-empty"></vl-alert>
-    </div>
-  </div>
-
-  <div>
     <h2>Alert met pictogram en titel</h2>
     <pre>
       <code class="line-numbers language-markup">
@@ -112,55 +100,7 @@
   </div>
 
   <div>
-    <h2>Alert success</h2>
-    <pre>
-      <code class="line-numbers language-markup">
-        &lt;vl-alert type="success" icon="check" title="Gelukt!"&gt;
-          &lt;p&gt;Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.&lt;/p&gt;
-        &lt;/vl-alert&gt;
-      </code>
-    </pre>
-    <div class="demo">
-      <vl-alert id="alert-success" type="success" icon="check" title="Gelukt!">
-        <p>Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
-      </vl-alert>
-    </div>
-  </div>
-
-  <div>
-    <h2>Alert warning</h2>
-    <pre>
-      <code class="line-numbers language-markup">
-        &lt;vl-alert type="warning" icon="alert-triangle" title="Technische storing"&gt;
-          &lt;p&gt;Door een technische storing is dit loket tijdelijk niet beschikbaar.&lt;/p&gt;
-        &lt;/vl-alert&gt;
-      </code>
-    </pre>
-    <div class="demo">
-      <vl-alert id="alert-warning" type="warning" icon="alert-triangle" title="Technische storing">
-        <p>Door een technische storing is dit loket tijdelijk niet beschikbaar.</p>
-      </vl-alert>
-    </div>
-  </div>
-
-  <div>
-    <h2>Alert error</h2>
-    <pre>
-      <code class="line-numbers language-markup">
-        &lt;vl-alert type="error" icon="warning" title="Error!"&gt;
-          &lt;p&gt;Er is een fout opgetreden.&lt;/p&gt;
-        &lt;/vl-alert&gt;
-      </code>
-    </pre>
-    <div class="demo">
-      <vl-alert id="alert-error" type="error" icon="warning" title="Error!">
-        <p>Er is een fout opgetreden.</p>
-      </vl-alert>
-    </div>
-  </div>
-
-  <div>
-    <h2>Alert CtA</h2>
+    <h2>Alert met button (CtA)</h2>
     <pre>
       <code class="line-numbers language-markup">
         &lt;vl-alert type="cta" icon="info" title="Opgelet!"&gt;
@@ -222,13 +162,61 @@
   </div>
 
   <div>
+    <h2>Alert error</h2>
+    <pre>
+      <code class="line-numbers language-markup">
+        &lt;vl-alert type="error" icon="warning" title="Error!"&gt;
+          &lt;p&gt;Er is een fout opgetreden.&lt;/p&gt;
+        &lt;/vl-alert&gt;
+      </code>
+    </pre>
+    <div class="demo">
+      <vl-alert id="alert-error" type="error" icon="warning" title="Error!">
+        <p>Er is een fout opgetreden.</p>
+      </vl-alert>
+    </div>
+  </div>
+
+  <div>
+    <h2>Alert warning</h2>
+    <pre>
+      <code class="line-numbers language-markup">
+        &lt;vl-alert type="warning" icon="alert-triangle" title="Technische storing"&gt;
+          &lt;p&gt;Door een technische storing is dit loket tijdelijk niet beschikbaar.&lt;/p&gt;
+        &lt;/vl-alert&gt;
+      </code>
+    </pre>
+    <div class="demo">
+      <vl-alert id="alert-warning" type="warning" icon="alert-triangle" title="Technische storing">
+        <p>Door een technische storing is dit loket tijdelijk niet beschikbaar.</p>
+      </vl-alert>
+    </div>
+  </div>
+
+  <div>
+    <h2>Alert success</h2>
+    <pre>
+      <code class="line-numbers language-markup">
+        &lt;vl-alert type="success" icon="check" title="Gelukt!"&gt;
+          &lt;p&gt;Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.&lt;/p&gt;
+        &lt;/vl-alert&gt;
+      </code>
+    </pre>
+    <div class="demo">
+      <vl-alert id="alert-success" type="success" icon="check" title="Gelukt!">
+        <p>Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
+      </vl-alert>
+    </div>
+  </div>
+
+  <div>
     <h2>Alert large</h2>
     <pre>
       <code class="line-numbers language-markup">
         &lt;vl-alert icon="info" title="Grote melding" size="large"&gt;
           &lt;div&gt;
             &lt;p&gt;De grote melding is vooral ruimer opgezet, met extra padding.&lt;/p&gt;
-            &lt;p&gt;De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geï&lt;/p&gt;
+            &lt;p&gt;De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geïmplementeerd.&lt;/p&gt;
             &lt;/div&gt;
         &lt;/vl-alert&gt;
       </code>
@@ -238,7 +226,7 @@
         <div>
           <p>De grote melding is vooral ruimer opgezet, met extra padding.</p>
           <p>De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit
-            is hier niet geï</p>
+            is hier niet geïmplementeerd.</p>
         </div>
       </vl-alert>
     </div>

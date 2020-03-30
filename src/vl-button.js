@@ -1,6 +1,4 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
-import { VlPillElement } from "/node_modules/vl-ui-pill/dist/vl-pill.js";
-import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/dist/vl-input-addon.js";
 
 export const VlButtonElement = (SuperClass) => {
     return class extends NativeVlElement(SuperClass) {
@@ -62,7 +60,7 @@ export const VlButtonElement = (SuperClass) => {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html|Demo}
  */
-export class VlButton extends VlButtonElement(HTMLButtonElement) {}
+export class VlButton extends VlButtonElement(HTMLButtonElement) { }
 
 /**
  * VlLinkButton
@@ -75,21 +73,7 @@ export class VlButton extends VlButtonElement(HTMLButtonElement) {}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-link.html|Demo}
  */
-export class VlLinkButton extends VlButtonElement(HTMLAnchorElement) {}
-
-export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElement)) {
-    constructor() {
-        super();
-        this.classList.add('vl-pill');
-        this.classList.add('vl-pill--clickable');
-    }
-}
-
-export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
-    
-} 
+export class VlLinkButton extends VlButtonElement(HTMLAnchorElement) { }
 
 define('vl-button', VlButton, {extends: 'button'});
-define('vl-button-pill', VlButtonPill, {extends: 'button'});
-define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});
 define('vl-link-button', VlLinkButton, {extends: 'a'});

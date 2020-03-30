@@ -4,10 +4,11 @@
         <title>vl-input-addon voorbeeld</title>
         <script type="module" src="demo.js"></script>
         <script type="module" src="../vl-input-addon.js"></script>
-        <script type="module" src="/node_modules/vl-ui-tooltip/vl-tooltip.js"></script>
+        <script type="module" src="/node_modules/vl-ui-tooltip/dist/vl-tooltip.js"></script>
+        <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
         <link rel="stylesheet" type="text/css" href="/vl-input-addon.css"/>
-        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-tooltip/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-tooltip/dist/style.css"/>
     </head>
 
 	<body>
@@ -26,7 +27,7 @@
                 </code>
             </pre>
             <div class="demo">
-                <p is="vl-input-addon">
+                <p is="vl-input-addon" id="input-addon">
                     €
                 </p>
             </div>
@@ -45,8 +46,24 @@
             <div class="demo">
                 <p is="vl-input-addon">
                     €
-                    <vl-tooltip placement="top">Euro</vl-tooltip>
+                    <vl-tooltip id="tooltip" placement="top">Euro</vl-tooltip>
                 </p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Button input addon met icoon</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;button is="vl-button-input-addon" type="button"&gt;
+                        &lt;span is="vl-icon" icon="location"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <button is="vl-button-input-addon" id="button-input-addon" type="button">
+                    <span is="vl-icon" icon="location"></span>
+                </button>
             </div>
         </div>
     </body>

@@ -22,7 +22,7 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field"/>
+          <input is="vl-input-field" id="input-field"/>
       </div>
   </div>
 
@@ -34,7 +34,7 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field" block/>
+          <input is="vl-input-field" block id="input-field-block"/>
       </div>
   </div>
 
@@ -46,7 +46,7 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field" error/>
+          <input is="vl-input-field" error id="input-field-error"/>
       </div>
   </div>
 
@@ -58,7 +58,7 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field" success/>
+          <input is="vl-input-field" success id="input-field-success"/>
       </div>
   </div>
 
@@ -70,7 +70,7 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field" disabled/>
+          <input is="vl-input-field" disabled id="input-field-disabled"/>
       </div>
   </div>
 
@@ -82,8 +82,97 @@
           </code>
       </pre>
       <div class="demo">
-          <input is="vl-input-field" small/>
+          <input is="vl-input-field" small id="input-field-small"/>
       </div>
   </div>
+
+
+    <div>
+        <h2>Formulier validatie</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;form&gt;
+                        &lt;div&gt;
+                            &lt;label for="input-voornaam" block&gt;Voornaam&lt;/label&gt;
+                            &lt;input id="input-voornaam" is='vl-input-field' placeholder="Jos" block data-required="true"
+                                data-vl-error-message="Veld &quot;Voornaam&quot; is verplicht"
+                                data-vl-error-placeholder="validation-voornaam-error" /&gt;
+                            &lt;p data-vl-error-id="validation-voornaam-error"&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;label is="vl-form-label" for="input-iban" block&gt;IBAN-nummer&lt;/label&gt;
+                            &lt;input id="input-iban" is='vl-input-field' placeholder="BE00 0000 0000 0000" block type="text"
+                                data-required="true" 
+                                data-vl-error-message="Een geldig &quot;IBAN-nummer&quot; is verplicht"
+                                data-vl-error-placeholder="validation-iban-error" data-vl-validation-type="iban" /&gt;
+                            &lt;p data-vl-error-id="validation-iban-error"&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;button&gt;Formulier valideren&lt;/button&gt;
+                       &lt;/div&gt;
+                &lt;/form&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <form>
+                    <div>
+                        <label for="input-voornaam" block>Voornaam</label>
+                        <input id="input-voornaam" is='vl-input-field' placeholder="Jos" block data-required="true"
+                            data-vl-error-message="Veld &quot;Voornaam&quot; is verplicht"
+                            data-vl-error-placeholder="validation-voornaam-error" />
+                        <p id="validation-voornaam-error-message" data-vl-error-id="validation-voornaam-error"></p>
+                    </div>
+                    <div>
+                        <label for="input-iban" block>IBAN-nummer</label>
+                        <input id="input-iban" is='vl-input-field' placeholder="BE00 0000 0000 0000" block type="text"
+                            data-required="true" data-vl-error-message="Een geldig &quot;IBAN-nummer&quot; is verplicht"
+                            data-vl-error-placeholder="validation-iban-error" data-vl-validation-type="iban" />
+                        <p id="validation-iban-error-message" data-vl-error-id="validation-iban-error"></p>
+                    </div>
+                    <div>
+                        <button id="form-validate-button">Formulier valideren</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <h2>Input field reageert op input-event</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;label for="input-field-met-event" block&gt;Origineel&lt;/label&gt;
+                &lt;input is="vl-input-field" id="input-field-met-event" block/&gt;
+                &lt;label for="input-field-copy" block&gt;Kopie&lt;/label&gt;
+                &lt;input is="vl-input-field" id="input-field-copy" disabled block /&gt;
+
+                &lt;script&gt;
+                    customElements.whenDefined('vl-input-field').then(() =&gt; {
+                        const inputField = document.querySelector('#input-field-met-event');
+                        inputField.addEventListener('input', (e) =&gt; {
+                            const copy = document.querySelector('#input-field-copy');
+                            copy.value = inputField.value;
+                        });
+                    });
+                &lt;/script&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <label for="input-field-met-event" block>Origineel</label>
+            <input is="vl-input-field" id="input-field-met-event" block/>
+            <label for="input-field-copy" block>Kopie</label>
+            <input is="vl-input-field" id="input-field-copy" disabled block />
+
+            <script>
+                customElements.whenDefined('vl-input-field').then(() => {
+                    const inputField = document.querySelector('#input-field-met-event');
+                    inputField.addEventListener('input', (e) => {
+                        const copy = document.querySelector('#input-field-copy');
+                        copy.value = inputField.value;
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
   </body>
 </html>

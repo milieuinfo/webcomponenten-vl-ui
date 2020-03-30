@@ -30,9 +30,16 @@ export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
     }
 }
 
-define('vl-h1', class extends VlTitle{}, {extends:"h1"});
-define('vl-h2', class extends VlTitle{}, {extends:"h2"});
-define('vl-h3', class extends VlTitle{}, {extends:"h3"});
-define('vl-h4', class extends VlTitle{}, {extends:"h4"});
-define('vl-h5', class extends VlTitle{}, {extends:"h5"});
-define('vl-h6', class extends VlTitle{}, {extends:"h6"});
+export class VlH1 extends VlTitle { }
+export class VlH2 extends VlTitle { }
+export class VlH3 extends VlTitle { }
+export class VlH4 extends VlTitle { }
+export class VlH5 extends VlTitle { }
+export class VlH6 extends VlTitle { }
+
+define('vl-h1', VlH1, {extends:"h1"});
+define('vl-h2', VlH2, {extends:"h2"});
+define('vl-h3', VlH3, {extends:"h3"});
+define('vl-h4', VlH4, {extends:"h4"});
+define('vl-h5', VlH5, {extends:"h5"});
+define('vl-h6', VlH6, {extends:"h6"});

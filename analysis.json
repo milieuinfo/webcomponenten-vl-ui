@@ -24945,6 +24945,415 @@
       "name": "VlButtonLink"
     },
     {
+      "description": "VlLoader",
+      "summary": "",
+      "path": "vl-loader.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_loader",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_text",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 43,
+              "column": 4
+            },
+            "end": {
+              "line": 45,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_lightChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 4
+            },
+            "end": {
+              "line": 49,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 51,
+              "column": 4
+            },
+            "end": {
+              "line": 53,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_singleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 57,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 18,
+          "column": 7
+        },
+        "end": {
+          "line": 58,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlLoader"
+    },
+    {
       "description": "VlModal",
       "summary": "",
       "path": "vl-modal.js",
@@ -27982,6 +28391,844 @@
       },
       "privacy": "public",
       "name": "VlButtonPill"
+    },
+    {
+      "description": "VlProgressBarStep",
+      "summary": "",
+      "path": "vl-progress-bar-step.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "description": "Geeft de tekst van de progress bar stap.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 4
+            },
+            "end": {
+              "line": 28,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "description": "Geeft terug of de progress bar stap actief is.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 37,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "template",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 16,
+          "column": 7
+        },
+        "end": {
+          "line": 60,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlProgressBarStep"
+    },
+    {
+      "description": "VlProgressBar",
+      "summary": "",
+      "path": "vl-progress-bar.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 71,
+              "column": 4
+            },
+            "end": {
+              "line": 73,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "description": "Geeft de progress bar DOM",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 60,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "buttons",
+          "type": "Array.<HTMLElement>",
+          "description": "Geeft van elke stap het button element.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 67,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_steps",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 75,
+              "column": 4
+            },
+            "end": {
+              "line": 77,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activeStep",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 79,
+              "column": 4
+            },
+            "end": {
+              "line": 81,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 39,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "updateStep",
+          "description": "Zet een stap actief al dan niet met focus.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 4
+            },
+            "end": {
+              "line": 51,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number",
+              "type": "number",
+              "description": "Het nummer van de stap die actief wordt."
+            },
+            {
+              "name": "focus",
+              "type": "boolean",
+              "description": "Focus bepaalt of de stap in de progress bar focus krijgt."
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getStep",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 83,
+              "column": 4
+            },
+            "end": {
+              "line": 85,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "index"
+            }
+          ]
+        },
+        {
+          "name": "_processSteps",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 4
+            },
+            "end": {
+              "line": 92,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setFirstStepAsActiveWhenThereIsNoActiveStepDefined",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 94,
+              "column": 4
+            },
+            "end": {
+              "line": 98,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__observeChildElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 100,
+              "column": 4
+            },
+            "end": {
+              "line": 104,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 20,
+          "column": 7
+        },
+        "end": {
+          "line": 105,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlProgressBar"
     },
     {
       "description": "VlProperties",
@@ -31547,6 +32794,902 @@
       },
       "privacy": "public",
       "name": "ProzaRestClient"
+    },
+    {
+      "description": "VlRadio",
+      "summary": "",
+      "path": "vl-radio.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_inputElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_labelText",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 2
+            },
+            "end": {
+              "line": 62,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 91,
+              "column": 2
+            },
+            "end": {
+              "line": 93,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 48,
+              "column": 2
+            },
+            "end": {
+              "line": 50,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "check",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 64,
+              "column": 2
+            },
+            "end": {
+              "line": 66,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_check",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 2
+            },
+            "end": {
+              "line": 77,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_labelChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 79,
+              "column": 2
+            },
+            "end": {
+              "line": 81,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_valueChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 83,
+              "column": 2
+            },
+            "end": {
+              "line": 85,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_nameChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 2
+            },
+            "end": {
+              "line": 89,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_checkedChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 2
+            },
+            "end": {
+              "line": 101,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_disabledChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 103,
+              "column": 2
+            },
+            "end": {
+              "line": 105,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_singleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 107,
+              "column": 2
+            },
+            "end": {
+              "line": 109,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 22,
+          "column": 7
+        },
+        "end": {
+          "line": 110,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlRadio"
+    },
+    {
+      "description": "VlRadioGroup",
+      "summary": "",
+      "path": "vl-radio-group.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "radios",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 20,
+              "column": 2
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 13,
+          "column": 7
+        },
+        "end": {
+          "line": 29,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlRadioGroup"
     },
     {
       "description": "VlSearchFilter",
@@ -37478,6 +39621,1152 @@
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlUpload"
+    },
+    {
+      "description": "VlWizardPane",
+      "summary": "",
+      "path": "vl-wizard-pane.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "isActive",
+          "type": "Boolean",
+          "description": "Geeft terug of de pagina actief is.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 69,
+              "column": 4
+            },
+            "end": {
+              "line": 71,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "description": "Geeft de titel van de pagina terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 78,
+              "column": 4
+            },
+            "end": {
+              "line": 80,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "isNextPaneDisabled",
+          "type": "Boolean",
+          "description": "Geeft terug of de volgende pagina bereikt mag worden.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 4
+            },
+            "end": {
+              "line": 89,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "isPreviousPaneDisabled",
+          "type": "Boolean",
+          "description": "Geeft terug of de vorige pagina bereikt mag worden",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 96,
+              "column": 4
+            },
+            "end": {
+              "line": 98,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_titleSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 133,
+              "column": 4
+            },
+            "end": {
+              "line": 135,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_nextActionSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 137,
+              "column": 4
+            },
+            "end": {
+              "line": 139,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_previousActionSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 4
+            },
+            "end": {
+              "line": 143,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_previousAction",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 145,
+              "column": 4
+            },
+            "end": {
+              "line": 150,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_nextAction",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 152,
+              "column": 4
+            },
+            "end": {
+              "line": 157,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_wizard",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 159,
+              "column": 4
+            },
+            "end": {
+              "line": 161,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 62,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "enableNextPane",
+          "description": "Sta navigatie naar de volgende pagina toe.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 103,
+              "column": 4
+            },
+            "end": {
+              "line": 106,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disableNextPane",
+          "description": "Blokkeer navigatie naar de volgende pagina.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 111,
+              "column": 4
+            },
+            "end": {
+              "line": 114,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "enablePreviousPane",
+          "description": "Sta navigatie naar de vorige pagina toe",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 119,
+              "column": 4
+            },
+            "end": {
+              "line": 123,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disablePreviousPane",
+          "description": "Blokkeer navigatie naar de vorige pagina.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 128,
+              "column": 4
+            },
+            "end": {
+              "line": 131,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setNextPaneDisabledAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 163,
+              "column": 4
+            },
+            "end": {
+              "line": 165,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setPreviousPaneDisabledAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 167,
+              "column": 4
+            },
+            "end": {
+              "line": 169,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processTitle",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 4
+            },
+            "end": {
+              "line": 175,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processActions",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 177,
+              "column": 4
+            },
+            "end": {
+              "line": 184,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_observeActionsClick",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 186,
+              "column": 4
+            },
+            "end": {
+              "line": 199,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 19,
+          "column": 7
+        },
+        "end": {
+          "line": 200,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlWizardPane"
+    },
+    {
+      "description": "VlWizard",
+      "summary": "",
+      "path": "vl-wizard.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "description": "Geeft de callback functie die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 57,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_panes",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activePane",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 72,
+              "column": 4
+            },
+            "end": {
+              "line": 74,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activePaneNumber",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 76,
+              "column": 4
+            },
+            "end": {
+              "line": 78,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_progressBar",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 4
+            },
+            "end": {
+              "line": 82,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 44,
+              "column": 4
+            },
+            "end": {
+              "line": 48,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getProgressBarStepTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 84,
+              "column": 4
+            },
+            "end": {
+              "line": 90,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "content"
+            }
+          ]
+        },
+        {
+          "name": "_processPanes",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 92,
+              "column": 4
+            },
+            "end": {
+              "line": 96,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_dress",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 98,
+              "column": 4
+            },
+            "end": {
+              "line": 102,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_observeProgressBarClick",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 104,
+              "column": 4
+            },
+            "end": {
+              "line": 114,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 17,
+          "column": 7
+        },
+        "end": {
+          "line": 115,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlWizard"
     },
     {
       "description": "VlAccordion",
@@ -61194,6 +64483,415 @@
       "name": "VlButtonLink"
     },
     {
+      "description": "VlLoader",
+      "summary": "",
+      "path": "src/vl-loader.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_loader",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_text",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 43,
+              "column": 4
+            },
+            "end": {
+              "line": 45,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_lightChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 4
+            },
+            "end": {
+              "line": 49,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_textChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 51,
+              "column": 4
+            },
+            "end": {
+              "line": 53,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_singleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 57,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 18,
+          "column": 7
+        },
+        "end": {
+          "line": 58,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlLoader"
+    },
+    {
       "description": "VlMap",
       "summary": "",
       "path": "src/vl-map.js",
@@ -72035,6 +75733,844 @@
       "name": "VlLabelPill"
     },
     {
+      "description": "VlProgressBarStep",
+      "summary": "",
+      "path": "src/vl-progress-bar-step.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "description": "Geeft de tekst van de progress bar stap.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 4
+            },
+            "end": {
+              "line": 28,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "description": "Geeft terug of de progress bar stap actief is.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 37,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "template",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 39,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 16,
+          "column": 7
+        },
+        "end": {
+          "line": 60,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlProgressBarStep"
+    },
+    {
+      "description": "VlProgressBar",
+      "summary": "",
+      "path": "src/vl-progress-bar.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 71,
+              "column": 4
+            },
+            "end": {
+              "line": 73,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "description": "Geeft de progress bar DOM",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 60,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "buttons",
+          "type": "Array.<HTMLElement>",
+          "description": "Geeft van elke stap het button element.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 67,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_steps",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 75,
+              "column": 4
+            },
+            "end": {
+              "line": 77,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activeStep",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 79,
+              "column": 4
+            },
+            "end": {
+              "line": 81,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 39,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "updateStep",
+          "description": "Zet een stap actief al dan niet met focus.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 4
+            },
+            "end": {
+              "line": 51,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "number",
+              "type": "number",
+              "description": "Het nummer van de stap die actief wordt."
+            },
+            {
+              "name": "focus",
+              "type": "boolean",
+              "description": "Focus bepaalt of de stap in de progress bar focus krijgt."
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_getStep",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 83,
+              "column": 4
+            },
+            "end": {
+              "line": 85,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "index"
+            }
+          ]
+        },
+        {
+          "name": "_processSteps",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 4
+            },
+            "end": {
+              "line": 92,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setFirstStepAsActiveWhenThereIsNoActiveStepDefined",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 94,
+              "column": 4
+            },
+            "end": {
+              "line": 98,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__observeChildElements",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 100,
+              "column": 4
+            },
+            "end": {
+              "line": 104,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "callback"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 20,
+          "column": 7
+        },
+        "end": {
+          "line": 105,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlProgressBar"
+    },
+    {
       "description": "VlProperties",
       "summary": "",
       "path": "src/vl-properties.js",
@@ -77333,6 +81869,902 @@
       },
       "privacy": "public",
       "name": "ProzaRestClient"
+    },
+    {
+      "description": "VlRadio",
+      "summary": "",
+      "path": "src/vl-radio.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_inputElement",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 56,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_labelText",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 2
+            },
+            "end": {
+              "line": 62,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "checked",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 91,
+              "column": 2
+            },
+            "end": {
+              "line": 93,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 48,
+              "column": 2
+            },
+            "end": {
+              "line": 50,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "check",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 64,
+              "column": 2
+            },
+            "end": {
+              "line": 66,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_check",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 2
+            },
+            "end": {
+              "line": 77,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_labelChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 79,
+              "column": 2
+            },
+            "end": {
+              "line": 81,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_valueChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 83,
+              "column": 2
+            },
+            "end": {
+              "line": 85,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_nameChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 2
+            },
+            "end": {
+              "line": 89,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_checkedChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 2
+            },
+            "end": {
+              "line": 101,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_disabledChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 103,
+              "column": 2
+            },
+            "end": {
+              "line": 105,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_singleChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 107,
+              "column": 2
+            },
+            "end": {
+              "line": 109,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 22,
+          "column": 7
+        },
+        "end": {
+          "line": 110,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlRadio"
+    },
+    {
+      "description": "VlRadioGroup",
+      "summary": "",
+      "path": "src/vl-radio-group.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "radios",
+          "type": "?",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 20,
+              "column": 2
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 13,
+          "column": 7
+        },
+        "end": {
+          "line": 29,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlRadioGroup"
     },
     {
       "description": "VlSearchFilter",
@@ -85606,6 +91038,1152 @@
       "privacy": "public",
       "superclass": "VlElement",
       "name": "VlUpload"
+    },
+    {
+      "description": "VlWizardPane",
+      "summary": "",
+      "path": "src/vl-wizard-pane.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "isActive",
+          "type": "Boolean",
+          "description": "Geeft terug of de pagina actief is.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 69,
+              "column": 4
+            },
+            "end": {
+              "line": 71,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "description": "Geeft de titel van de pagina terug.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 78,
+              "column": 4
+            },
+            "end": {
+              "line": 80,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "isNextPaneDisabled",
+          "type": "Boolean",
+          "description": "Geeft terug of de volgende pagina bereikt mag worden.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 87,
+              "column": 4
+            },
+            "end": {
+              "line": 89,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "isPreviousPaneDisabled",
+          "type": "Boolean",
+          "description": "Geeft terug of de vorige pagina bereikt mag worden",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 96,
+              "column": 4
+            },
+            "end": {
+              "line": 98,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_titleSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 133,
+              "column": 4
+            },
+            "end": {
+              "line": 135,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_nextActionSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 137,
+              "column": 4
+            },
+            "end": {
+              "line": 139,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_previousActionSlot",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 4
+            },
+            "end": {
+              "line": 143,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_previousAction",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 145,
+              "column": 4
+            },
+            "end": {
+              "line": 150,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_nextAction",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 152,
+              "column": 4
+            },
+            "end": {
+              "line": 157,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_wizard",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 159,
+              "column": 4
+            },
+            "end": {
+              "line": 161,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 62,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "enableNextPane",
+          "description": "Sta navigatie naar de volgende pagina toe.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 103,
+              "column": 4
+            },
+            "end": {
+              "line": 106,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disableNextPane",
+          "description": "Blokkeer navigatie naar de volgende pagina.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 111,
+              "column": 4
+            },
+            "end": {
+              "line": 114,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "enablePreviousPane",
+          "description": "Sta navigatie naar de vorige pagina toe",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 119,
+              "column": 4
+            },
+            "end": {
+              "line": 123,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "disablePreviousPane",
+          "description": "Blokkeer navigatie naar de vorige pagina.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 128,
+              "column": 4
+            },
+            "end": {
+              "line": 131,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setNextPaneDisabledAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 163,
+              "column": 4
+            },
+            "end": {
+              "line": 165,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_setPreviousPaneDisabledAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 167,
+              "column": 4
+            },
+            "end": {
+              "line": 169,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processTitle",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 4
+            },
+            "end": {
+              "line": 175,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_processActions",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 177,
+              "column": 4
+            },
+            "end": {
+              "line": 184,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_observeActionsClick",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 186,
+              "column": 4
+            },
+            "end": {
+              "line": 199,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 19,
+          "column": 7
+        },
+        "end": {
+          "line": 200,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlWizardPane"
+    },
+    {
+      "description": "VlWizard",
+      "summary": "",
+      "path": "src/vl-wizard.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "void",
+          "description": "De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 113,
+              "column": 8
+            },
+            "end": {
+              "line": 115,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_element",
+          "type": "Element",
+          "description": "DOM element getter.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 123,
+              "column": 8
+            },
+            "end": {
+              "line": 129,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "description": "Geeft de callback functie die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 57,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_panes",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activePane",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 72,
+              "column": 4
+            },
+            "end": {
+              "line": 74,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_activePaneNumber",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 76,
+              "column": 4
+            },
+            "end": {
+              "line": 78,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_progressBar",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 80,
+              "column": 4
+            },
+            "end": {
+              "line": 82,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
+      "methods": [
+        {
+          "name": "attributeChangedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 80,
+              "column": 8
+            },
+            "end": {
+              "line": 105,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attr"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "getAttribute",
+          "description": "Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 136,
+              "column": 8
+            },
+            "end": {
+              "line": 142,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "attribute",
+              "type": "String"
+            }
+          ],
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_template",
+          "description": "Genereert een {HTMLTemplateElement} template met de HTML Literal.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 151,
+              "column": 8
+            },
+            "end": {
+              "line": 155,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "HTMLTemplateElement"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_changeClass",
+          "description": "Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 167,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "oldValue",
+              "type": "Object",
+              "description": "oude waarde"
+            },
+            {
+              "name": "newValue",
+              "type": "Object",
+              "description": "nieuwe waarde"
+            },
+            {
+              "name": "classPrefix",
+              "type": "String",
+              "description": "class prefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "_toggleClass",
+          "description": "Zal op basis van de attribuut waarde de class verwijderen of toevoegen.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 186,
+              "column": 8
+            },
+            "end": {
+              "line": 192,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element",
+              "type": "Element",
+              "description": "HTML element"
+            },
+            {
+              "name": "value",
+              "type": "Object",
+              "description": "attribuut waarde"
+            },
+            {
+              "name": "clazz",
+              "type": "String",
+              "description": "class waarde"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "shadow",
+          "description": "Definieer shadow DOM.",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 201,
+              "column": 8
+            },
+            "end": {
+              "line": 204,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "html",
+              "type": "Literal",
+              "description": "HTML literal"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "__changeAttribute",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "file": "../node_modules/vl-ui-core/dist/vl-core.js",
+            "start": {
+              "line": 209,
+              "column": 8
+            },
+            "end": {
+              "line": 217,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "attribute"
+            },
+            {
+              "name": "classPrefix"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlElement"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 44,
+              "column": 4
+            },
+            "end": {
+              "line": 48,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getProgressBarStepTemplate",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 84,
+              "column": 4
+            },
+            "end": {
+              "line": 90,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "content"
+            }
+          ]
+        },
+        {
+          "name": "_processPanes",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 92,
+              "column": 4
+            },
+            "end": {
+              "line": 96,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_dress",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 98,
+              "column": 4
+            },
+            "end": {
+              "line": 102,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_observeProgressBarClick",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 104,
+              "column": 4
+            },
+            "end": {
+              "line": 114,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 17,
+          "column": 7
+        },
+        "end": {
+          "line": 115,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlElement",
+      "name": "VlWizard"
     }
   ]
 }

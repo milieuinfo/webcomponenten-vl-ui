@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vl-loader voorbeeld</title>
+    <script type="module" src="demo.js"></script>
+    <script type="module" src="../vl-loader.js"></script>
+    <script type="module" src="/node_modules/vl-ui-grid/dist/vl-grid.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-grid/dist/style.css" />
+</head>
+
+<body>
+    <h1>vl-ui-loader demo</h1>
+    <p>
+        <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-loader">
+            Meer voorbeelden en documentatie</a>.
+    </p>
+
+    <div>
+        <h2>Loader</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;section is="vl-region"&gt;
+                    &lt;vl-loader&gt;&lt;/vl-loader&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <section is="vl-region">
+                <vl-loader id="loader"></vl-loader>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <h2>Loader dark</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;section is="vl-region" alt&gt;
+                    &lt;vl-loader data-vl-light&gt;&lt;/vl-loader&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <section is="vl-region" alt>
+                <vl-loader id="light-loader" data-vl-light></vl-loader>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <h2>Loader met tekst</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;section is="vl-region"&gt;
+                    &lt;vl-loader data-vl-text="Informatie is aan het laden"&gt;&lt;/vl-loader&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <section is="vl-region">
+                <vl-loader data-vl-text="Informatie is aan het laden"></vl-loader>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <h2>Loader met tekst content</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;section is="vl-region"&gt;
+                    &lt;vl-loader&gt;
+                        &lt;span&gt;&lt;strong&gt;Informatie&lt;/strong&gt; is aan het laden&lt;/span&gt;
+                    &lt;/vl-loader&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <section is="vl-region">
+                <vl-loader id="slot-loader">
+                    <span><strong>Informatie</strong> is aan het laden</span>
+                </vl-loader>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <h2>Loader zonder tekst</h2>
+        <pre>
+            <code class="line-numbers language-markup">
+                &lt;section is="vl-region"&gt;
+                    &lt;vl-loader data-vl-single&gt;
+                        &lt;span&gt;&lt;strong&gt;Informatie&lt;/strong&gt; is aan het laden&lt;/span&gt;
+                    &lt;/vl-loader&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <div class="demo">
+            <section is="vl-region">
+                <vl-loader id="single-loader" data-vl-single>
+                    <span><strong>Informatie</strong> is aan het laden</span>
+                </vl-loader>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

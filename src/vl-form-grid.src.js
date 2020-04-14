@@ -44,6 +44,7 @@ export class VlFormColumn extends VlColumn {
   get _pushClassPrefix() {
     return 'vl-form-push--';
   }
+
 }
 
 define('vl-form-grid', VlFormGrid, {extends: 'div'});

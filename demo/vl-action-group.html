@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
   <title>vl-action-group voorbeeld</title>
 
   <script type="module" src="demo.js"></script>
   <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script type="module" src="../vl-action-group.js"></script>
-  <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
-  <script type="module" src="/node_modules/vl-ui-link/dist/vl-link.js"></script>
-  <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
+  <script type="module" src="../vl-action-group.src.js"></script>
+  <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>
+  <script type="module" src="/node_modules/vl-ui-link/vl-link.js"></script>
+  <script type="module" src="/node_modules/vl-ui-icon/vl-icon.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="/vl-action-group.css" />
-  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
-  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
+  <link rel="stylesheet" type="text/css" href="/style.css"/>
+  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/style.css"/>
+  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/style.css"/>
 </head>
-
 <body>
 
-  <h1>vl-ui-action-group demo</h1>
-  <p>
-    <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">Meer
-      voorbeelden en documentatie</a>.
-  </p>
+<h1>vl-ui-action-group demo</h1>
+<p>
+  <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">Meer
+    voorbeelden en documentatie</a>.
+</p>
 
 
-  <div>
-    <h2>Action group</h2>
-    <pre>
+<div>
+  <h2>Action group</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group"&gt;
             &lt;button is="vl-button"&gt;
@@ -39,21 +37,22 @@
           &lt;/div&gt;
         </code>
       </pre>
-    <div class="demo">
-      <div is="vl-action-group" id="vl-action-group">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
+  <div class="demo">
+    <div is="vl-action-group">
+      <button is="vl-button" >
+        Aanvraag starten
+      </button>
+      <button is="vl-button" secondary>
+        Annuleren
+      </button>
     </div>
   </div>
 
-  <div>
-    <h2>Action group align center</h2>
-    <pre>
+</div>
+
+<div>
+  <h2>Action group align center</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group" align="center"&gt;
             &lt;button is="vl-button"&gt;
@@ -65,21 +64,22 @@
           &lt;/div&gt;
         </code>
       </pre>
-    <div class="demo">
-      <div is="vl-action-group" align="center" id="vl-action-group-align-center">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
+  <div class="demo">
+    <div is="vl-action-group" align="center">
+      <button is="vl-button">
+        Aanvraag starten
+      </button>
+      <button is="vl-button" secondary>
+        Annuleren
+      </button>
     </div>
-  </div>
+</div>
 
-  <div>
-    <h2>Action group align right</h2>
-    <pre>
+</div>
+
+<div>
+  <h2>Action group align right</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group" align="right"&gt;
               &lt;button is="vl-button"&gt;
@@ -91,21 +91,24 @@
           &lt;/div&gt;
         </code>
       </pre>
-    <div class="demo">
-      <div is="vl-action-group" align="right" id="vl-action-group-align-right">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
+  <div class="demo">
+    <div is="vl-action-group" align="right">
+      <button is="vl-button">
+        Aanvraag starten
+      </button>
+      <button is="vl-button" secondary>
+        Annuleren
+      </button>
     </div>
   </div>
 
-  <div>
-    <h2>Action group space between</h2>
-    <pre>
+</div>
+
+
+
+<div>
+  <h2>Action group space between</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group" space-between&gt;
             &lt;button is="vl-button"&gt;
@@ -117,21 +120,24 @@
           &lt;/vl-action-group&gt;
         </code>
       </pre>
-    <div class="demo">
-      <div is="vl-action-group" space-between id="vl-action-group-space-between">
-        <button class="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
+  <div class="demo">
+    <div is="vl-action-group" space-between>
+      <button class="vl-button">
+        Aanvraag starten
+      </button>
+      <button is="vl-button" secondary>
+        Annuleren
+      </button>
     </div>
   </div>
 
-  <div>
-    <h2>Action group with links</h2>
-    <pre>
+</div>
+
+
+
+<div>
+  <h2>Action group with links</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group"&gt;
             &lt;a href="#" is="vl-link"&gt;
@@ -149,27 +155,29 @@
         &lt;/div&gt;
     </code>
   </pre>
-    <div class="demo">
-      <div is="vl-action-group">
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="bell" before></span>
-          Notificaties
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="graduate" before></span>
-          Opleidingen
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="pin" before></span>
-          Locaties
-        </a>
-      </div>
+  <div class="demo">
+    
+    <div is="vl-action-group"><a href="#" is="vl-link">
+      <span is="vl-icon" icon="bell" before></span>
+      Notificaties
+    </a>
+      <a href="#" is="vl-link">
+        <span is="vl-icon" icon="graduate" before></span>
+        Opleidingen
+      </a>
+      <a href="#" is="vl-link">
+        <span is="vl-icon" icon="pin" before></span>
+        Locaties
+      </a>
     </div>
   </div>
 
-  <div>
-    <h2>Action group with bordered links</h2>
-    <pre>
+</div>
+
+
+<div>
+  <h2>Action group with bordered links</h2>
+  <pre>
         <code class="line-numbers language-markup">
           &lt;div is="vl-action-group" bordered&gt;
             &lt;a href="#" is="vl-link"&gt;
@@ -187,23 +195,25 @@
           &lt;/div&gt;
     </code>
   </pre>
-    <div class="demo">
-      <div is="vl-action-group" bordered id="vl-action-group-bordered">
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="bell" before></span>
-          Notificaties
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="graduate" before></span>
-          Opleidingen
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="pin" before></span>
-          Locaties
-        </a>
-      </div>
+  <div class="demo">
+
+    <div is="vl-action-group" bordered><a href="#" is="vl-link">
+      <span is="vl-icon" icon="bell" before></span>
+      Notificaties
+    </a>
+      <a href="#" is="vl-link">
+        <span is="vl-icon" icon="graduate" before></span>
+        Opleidingen
+      </a>
+      <a href="#" is="vl-link">
+        <span is="vl-icon" icon="pin" before></span>
+        Locaties
+      </a>
     </div>
   </div>
-</body>
 
+</div>
+
+
+</body>
 </html>

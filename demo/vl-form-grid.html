@@ -4,20 +4,20 @@
     <title>vl-form-grid voorbeeld</title>
     <script type="module" src="demo.js"></script>
     <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module" src="../vl-form-grid.js"></script>
-    <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
-    <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
-    <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
-    <script type="module" src="/node_modules/vl-ui-checkbox/dist/vl-checkbox.js"></script>
-    <script type="module" src="/node_modules/vl-ui-textarea/dist/vl-textarea.js"></script>
+    <script type="module" src="../vl-form-grid.src.js"></script>
+    <script type="module" src="/node_modules/vl-ui-input-field/vl-input-field.js"></script>
+    <script type="module" src="/node_modules/vl-ui-form-message/vl-form-message.js"></script>
+    <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>
+    <script type="module" src="/node_modules/vl-ui-checkbox/vl-checkbox.js"></script>
+    <script type="module" src="/node_modules/vl-ui-textarea/vl-textarea.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-checkbox/dist/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-textarea/dist/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/vl-form-grid.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-checkbox/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-textarea/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
   </head>
 
   <body>
@@ -99,23 +99,23 @@
       </pre>
       <div class="demo">
         <form>
-          <div id="form-grid-voorkeur" is="vl-form-grid" is-stacked>
-            <div id="form-column-voornaam" is="vl-form-column" size="12">
+          <div is="vl-form-grid" is-stacked>
+            <div is="vl-form-column" size="12">
               <label is="vl-form-label" for="txt1" block>Voornaam</label>
               <input id="txt1" is='vl-input-field' placeholder="Jos" block/>
             </div>
-            <div id="form-column-naam" is="vl-form-column" size="12">
+            <div is="vl-form-column" size="12">
               <label is="vl-form-label" for="txt2" block>Naam</label>
               <input id="txt2" is='vl-input-field' placeholder="Bosmans" block/>
             </div>
-            <div id="form-column-love" is="vl-form-column" size="12">
+            <div is="vl-form-column" size="12">
               <vl-checkbox label="Ik hou van webcomponenten" checked></vl-checkbox>
             </div>
-            <div id="form-column-opmerking" is="vl-form-column" size="12">
+            <div is="vl-form-column" size="12">
               <label is="vl-form-label" for="txta" block>Opmerking</label>
               <textarea id="txta" is="vl-textarea" aria-label="textarea block" cols="40" rows="4" placeholder="Geen" block></textarea>
             </div>
-            <div id="form-column-save" is="vl-form-column" size="12">
+            <div is="vl-form-column" size="12">
               <button is="vl-button">Gegevens opslaan</button>
             </div>
           </div>

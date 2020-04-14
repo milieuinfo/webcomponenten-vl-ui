@@ -32,6 +32,10 @@ export class VlDataTable extends NativeVlElement(HTMLTableElement) {
   get _classPrefix() {
     return 'vl-data-table--';
   }
+
+  get _stylePath() {
+    return '../style.css';
+  }
 }
 
 define('vl-data-table', VlDataTable, {extends: 'table'});

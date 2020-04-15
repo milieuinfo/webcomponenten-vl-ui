@@ -4,9 +4,9 @@
 <head>
   <title>vl-pager voorbeeld</title>
   <script type="module" src="demo.js"></script>
-  <script type="module" src="../vl-pager.src.js"></script>
+  <script type="module" src="../vl-pager.js"></script>
   
-  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/style.css"/>
+  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css"/>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
       </code>
     </pre>
     <div class="demo">
-      <vl-pager id="pager-default" align-center total-items="100" items-per-page="10" current-page="1"></vl-pager>
+      <vl-pager id="pager-default" total-items="100" items-per-page="10" current-page="1"></vl-pager>
     </div>
   </div>
 
@@ -32,7 +32,7 @@
     <h2>Single page</h2>
     <pre>
       <code class="line-numbers language-markup">
-        &lt;vl-pager total-items="10" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
+        &lt;vl-pager align-center total-items="10" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
       </code>
     </pre>
     <div class="demo">
@@ -44,7 +44,7 @@
     <h2>Pager zonder pagina items</h2>
     <pre>
       <code class="line-numbers language-markup">
-        &lt;vl-pager total-items="100" items-per-page="10" current-page="1" pagination-disabled&gt;&lt;/vl-pager&gt;
+        &lt;vl-pager align-center total-items="100" items-per-page="10" current-page="1" pagination-disabled&gt;&lt;/vl-pager&gt;
       </code>
     </pre>
     <div class="demo">
@@ -56,10 +56,12 @@
     <h2>Event listener</h2>
     <pre>
       <code class="line-numbers language-markup">
-        &lt;vl-pager id="pager-event-listener" total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
+        &lt;vl-pager id="pager-event-listener" align-center total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
+        &lt;div id="pager-event-listener-log&gt;
+        &lt;/div&gt;
         &lt;script&gt;
-        document.querySelector('#dem-pager').addEventListener('pagechanged', (e) =&gt; {
-          console.log("pagechanged", e)
+        document.querySelector('#pager-event-listener').addEventListener('change', (e) => {
+          document.querySelector("#pager-event-listener-log").innerText = JSON.stringify(e.detail);
         });
         &lt;/script&gt;
       </code>
@@ -67,9 +69,11 @@
     <div class="demo">
       <vl-pager id="pager-event-listener" align-center total-items="100" items-per-page="10" current-page="1"></vl-pager>
     </div>
+    <div id="pager-event-listener-log">
+    </div>
     <script>
-      document.querySelector('#pager-event-listener').addEventListener('pagechanged', (e) => {
-        console.log("pagechanged", e);
+      document.querySelector('#pager-event-listener').addEventListener('change', (e) => {
+        document.querySelector("#pager-event-listener-log").innerText = JSON.stringify(e.detail);
       });
     </script>
   </div>
@@ -78,7 +82,7 @@
     <h2>Align center</h2>
     <pre>
       <code class="line-numbers language-markup">
-        &lt;vl-pager id="demoPager" align-center total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
+        &lt;vl-pager align-center total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
       </code>
     </pre>
     <div class="demo">
@@ -90,11 +94,11 @@
     <h2>Align right</h2>
     <pre>
       <code class="line-numbers language-markup">
-        &lt;vl-pager id="demoPager" align-right total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
+        &lt;vl-pager align-right total-items="100" items-per-page="10" current-page="1"&gt;&lt;/vl-pager&gt;
       </code>
     </pre>
     <div class="demo">
-      <vl-pager id="pager-left" align-right total-items="100" items-per-page="10" current-page="1"></vl-pager>
+      <vl-pager id="pager-right" align-right total-items="100" items-per-page="10" current-page="1"></vl-pager>
     </div>
   </div>
 </body>

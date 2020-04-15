@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>vl-title voorbeeld</title>
-    <script type="module" src="../vl-titles.src.js"></script>
+    <script type="module" src="../vl-titles.js"></script>
     <script type="module" src="demo.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/vl-titles.css"/>
 </head>
 
 <body>
@@ -28,12 +28,12 @@
             </code>
         </pre>
         <div class="demo">
-            <h1 is="vl-h1">Dit is een h1</h1>
-            <h2 is="vl-h2">Dit is een h2</h2>
-            <h3 is="vl-h3">Dit is een h3</h3>
-            <h4 is="vl-h4">Dit is een h4</h4>
-            <h5 is="vl-h5">Dit is een h5</h5>
-            <h6 is="vl-h6">Dit is een h6</h6>
+            <h1 id="h1" is="vl-h1">Dit is een h1</h1>
+            <h2 id="h2" is="vl-h2">Dit is een h2</h2>
+            <h3 id="h3" is="vl-h3">Dit is een h3</h3>
+            <h4 id="h4" is="vl-h4">Dit is een h4</h4>
+            <h5 id="h5" is="vl-h5">Dit is een h5</h5>
+            <h6 id="h6" is="vl-h6">Dit is een h6</h6>
         </div>
     </div>
 
@@ -93,17 +93,17 @@
             </code>
         </pre>
         <div class="demo">
-            <h1 is="vl-h1" sans has-border>Dit is een vl-h1 met "sans" en "has-border"</h1>
-            <h2 is="vl-h2" sans has-border>Dit is een vl-h2 met "sans" en "has-border"</h2>
-            <h3 is="vl-h3" has-border>Dit is een vl-h3 met "has-border" (standaard sans-serif)</h3>
-            <h4 is="vl-h4" has-border>Dit is een vl-h4 met "has-border" (standaard sans-serif)</h4>
-            <h5 is="vl-h5" alt>Dit is een vl-h5 met "alt"</h5>
-            <h6 is="vl-h6" alt>Dit is een vl-h6 met "alt"</h6>
+            <h1 id="h1-sans-border" is="vl-h1" sans has-border>Dit is een vl-h1 met "sans" en "has-border"</h1>
+            <h2 id="h2-sans-border" is="vl-h2" sans has-border>Dit is een vl-h2 met "sans" en "has-border"</h2>
+            <h3 id="h3-border" is="vl-h3" has-border>Dit is een vl-h3 met "has-border" (standaard sans-serif)</h3>
+            <h4 id="h4-border" is="vl-h4" has-border>Dit is een vl-h4 met "has-border" (standaard sans-serif)</h4>
+            <h5 id="h5-alt" is="vl-h5" alt>Dit is een vl-h5 met "alt"</h5>
+            <h6 id="h6-alt" is="vl-h6" alt>Dit is een vl-h6 met "alt"</h6>
         </div>
     </div>
 
     <div>
-        <h2>Titles sans, has-border en alt</h2>
+        <h2>'is' die niet overeenkomt met de tag</h2>
         <pre>
             <code class="line-numbers language-markup">
                 &lt;h2 is="vl-h1" has-border&gt;Dit is een h2 met is="vl-h1" en "has-border" --&gt; "vl-h1" op een h2 is ongeldig; dit doet dus niks; ook niet de border&lt;/h2&gt;

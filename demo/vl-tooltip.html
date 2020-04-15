@@ -4,11 +4,12 @@
     <title>vl-ui-tooltip voorbeeld</title>
     <script type="module" src="demo.js"></script>
     <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>
-    <script type="module" src="../vl-tooltip.src.js"></script>
+    <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
+    <script type="module" src="../vl-tooltip.js"></script>
+    <script type="module" src="vl-tooltip-test.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/vl-tooltip.css"/>
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css"/>
   </head>
 
   <body>
@@ -40,20 +41,20 @@
         </code>
       </pre>
       <div class="demo">
-        <button is="vl-button">
-          <vl-tooltip placement="top">This is tooltip on the top</vl-tooltip>
+        <button id="top-button" is="vl-button">
+          <vl-tooltip id="top-tooltip" placement="top">This is tooltip on the top</vl-tooltip>
           top
         </button>
-        <button is="vl-button">
-          <vl-tooltip placement="right">This is tooltip on the right</vl-tooltip>
+        <button id="right-button" is="vl-button">
+          <vl-tooltip id="right-tooltip" placement="right">This is tooltip on the right</vl-tooltip>
           right
         </button>
-        <button is="vl-button">
-          <vl-tooltip placement="bottom">This is tooltip on the bottom</vl-tooltip>
+        <button id="bottom-button" is="vl-button">
+          <vl-tooltip id="bottom-tooltip" placement="bottom">This is tooltip on the bottom</vl-tooltip>
           bottom
         </button>
-        <button is="vl-button">
-          <vl-tooltip placement="left">This is tooltip on the left</vl-tooltip>
+        <button id="left-button" is="vl-button">
+          <vl-tooltip id="left-tooltip" placement="left">This is tooltip on the left</vl-tooltip>
           left
         </button>
       </div>
@@ -72,8 +73,8 @@
         </code>
       </pre>
       <div class="demo">
-        <button is="vl-button">
-          <vl-tooltip placement="bottom">
+        <button id="more-button" is="vl-button">
+          <vl-tooltip id="more-tooltip" placement="bottom">
             For a large button, label or other element with more text, the content is shown in a smaller, more condensed way.
           </vl-tooltip>
           more content
@@ -89,7 +90,19 @@
         </code>
       </pre>
       <div class="demo">
-        <vl-tooltip static placement="top">Static Tooltip</vl-tooltip>
+        <vl-tooltip id="static-tooltip" static placement="top">Static Tooltip</vl-tooltip>
+      </div>
+    </div>
+
+    <div>
+      <h2>Tooltip in shadow DOM</h2>
+      <pre>
+        <code class="line-numbers language-markup">
+          &lt;vl-tooltip-test&gt;&lt;/vl-tooltip-test&gt;
+        </code>
+      </pre>
+      <div class="demo">
+        <vl-tooltip-test id="shadow-dom-button"></vl-tooltip-test>
       </div>
     </div>
   </body>

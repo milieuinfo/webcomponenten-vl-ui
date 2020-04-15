@@ -4,9 +4,9 @@
   <title>vl-data-table voorbeeld</title>
 </head>
 
-<script type="module" src="../vl-data-table.src.js"></script>
+<script type="module" src="../vl-data-table.js"></script>
 <script type="module" src="demo.js"></script>
-<link rel="stylesheet" type="text/css" href="/style.css"/> 
+<link rel="stylesheet" type="text/css" href="/vl-data-table.css"/> 
 
 <body>
 <h1>vl-ui-data-table demo</h1>
@@ -20,7 +20,7 @@
     <pre>
         <code class="line-numbers language-markup">
           &lt;table is="vl-data-table" hover&gt;
-            &lt;caption&gt;Data table hover&lt;/caption&gt;
+            &lt;caption&gt;Data table Hover&lt;/caption&gt;
             &lt;thead&gt;
             &lt;tr&gt;
               &lt;th&gt;Entry Header 1&lt;/th&gt;    &lt;th&gt;Entry Header 2&lt;/th&gt;    &lt;th&gt;Entry Header 3&lt;/th&gt;    &lt;th&gt;Entry Header 4&lt;/th&gt;
@@ -43,7 +43,7 @@
         </code>
     </pre>
     <div class="demo">
-        <table is="vl-data-table" hover>
+        <table is="vl-data-table" hover id="data-table-hover">
           <caption>Data table Hover</caption>
           <thead>
             <tr>
@@ -94,7 +94,7 @@
       </code>
     </pre>
   <div class="demo">
-    <table is="vl-data-table" matrix>
+    <table is="vl-data-table" matrix id='data-table-matrix-column-titles'>
       <caption>Data table Matrix - Column titles</caption>
       <thead>
       <tr>
@@ -165,7 +165,7 @@
       </code>
     </pre>
   <div class="demo">
-    <table is="vl-data-table" matrix>
+    <table is="vl-data-table" matrix id='data-table-matrix-row-titles'>
       <caption>Data table Matrix - Joined row titles</caption>
       <thead>
       <tr>
@@ -235,7 +235,7 @@
       </code>
     </pre>
   <div class="demo">
-    <table is="vl-data-table" lined>
+    <table is="vl-data-table" lined id="data-table-lined">
       <caption>Data table Lined</caption>
       <thead>
       <tr>
@@ -306,7 +306,7 @@
       </code>
     </pre>
   <div class="demo">
-    <table is="vl-data-table" lined>
+    <table is="vl-data-table" lined id="data-table-lined-row-titles"> 
       <caption>Data table Lined - Joined row titles</caption>
       <thead>
       <tr>
@@ -376,7 +376,7 @@
      </code>
     </pre>
   <div class="demo">
-    <table is="vl-data-table" zebra>
+    <table is="vl-data-table" zebra id="data-table-zebra">
       <caption>Data table Zebra</caption>
       <thead>
       <tr>
@@ -397,6 +397,182 @@
       </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+
+
+<div>
+  <h2>Data table collapsed medium</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+          &lt;table is=&quot;vl-data-table&quot; collapsed-m id='data-table-collapsed-medium'&gt;
+              &lt;thead&gt;
+                  &lt;tr&gt;
+                      &lt;th&gt;Entry Header 1&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 2&lt;/th&gt;   
+                      &lt;th&gt;Entry Header 3&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 4&lt;/th&gt;
+                  &lt;/tr&gt
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+              &lt;/tbody&gt;
+          &lt;/table&gt;
+      </code>
+  </pre>
+  <div class="demo">
+      <table is="vl-data-table" collapsed-m id='data-table-collapsed-medium'>
+          <thead>
+              <tr>
+                  <th>Entry Header 1</th>    
+                  <th>Entry Header 2</th>   
+                  <th>Entry Header 3</th>    
+                  <th>Entry Header 4</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>    
+                  <td data-title="Entry Header 2">Entry line 2</td>    
+                  <td data-title="Entry Header 3">Entry line 3</td>    
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>
+                  <td data-title="Entry Header 2">Entry line 2</td>
+                  <td data-title="Entry Header 3">Entry line 3</td>
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<div>
+  <h2>Data table collapsed small</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+          &lt;table is=&quot;vl-data-table&quot; collapsed-s id='data-table-collapsed-small'&gt;
+              &lt;thead&gt;
+                  &lt;tr&gt;
+                      &lt;th&gt;Entry Header 1&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 2&lt;/th&gt;   
+                      &lt;th&gt;Entry Header 3&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 4&lt;/th&gt;
+                  &lt;/tr&gt
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+              &lt;/tbody&gt;
+          &lt;/table&gt;
+      </code>
+  </pre>
+  <div class="demo">
+      <table is="vl-data-table" collapsed-s id='data-table-collapsed-small'>
+          <thead>
+              <tr>
+                  <th>Entry Header 1</th>    
+                  <th>Entry Header 2</th>   
+                  <th>Entry Header 3</th>    
+                  <th>Entry Header 4</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>    
+                  <td data-title="Entry Header 2">Entry line 2</td>    
+                  <td data-title="Entry Header 3">Entry line 3</td>    
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>
+                  <td data-title="Entry Header 2">Entry line 2</td>
+                  <td data-title="Entry Header 3">Entry line 3</td>
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<div>
+  <h2>Data table collapsed extra small</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+          &lt;table is=&quot;vl-data-table&quot; collapsed-xs id='data-table-collapsed-extra-small'&gt;
+              &lt;thead&gt;
+                  &lt;tr&gt;
+                      &lt;th&gt;Entry Header 1&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 2&lt;/th&gt;   
+                      &lt;th&gt;Entry Header 3&lt;/th&gt;    
+                      &lt;th&gt;Entry Header 4&lt;/th&gt;
+                  &lt;/tr&gt
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;    
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td data-title=&quot;Entry Header 1&quot;&gt;Entry line 1&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 2&quot;&gt;Entry line 2&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 3&quot;&gt;Entry line 3&lt;/td&gt;
+                      &lt;td data-title=&quot;Entry Header 4&quot;&gt;Entry line 4&lt;/td&gt;
+                  &lt;/tr&gt;
+              &lt;/tbody&gt;
+          &lt;/table&gt;
+      </code>
+  </pre>
+  <div class="demo">
+      <table is="vl-data-table" collapsed-xs id='data-table-collapsed-extra-small'>
+          <thead>
+              <tr>
+                  <th>Entry Header 1</th>    
+                  <th>Entry Header 2</th>   
+                  <th>Entry Header 3</th>    
+                  <th>Entry Header 4</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>    
+                  <td data-title="Entry Header 2">Entry line 2</td>    
+                  <td data-title="Entry Header 3">Entry line 3</td>    
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+              <tr>
+                  <td data-title="Entry Header 1">Entry line 1</td>
+                  <td data-title="Entry Header 2">Entry line 2</td>
+                  <td data-title="Entry Header 3">Entry line 3</td>
+                  <td data-title="Entry Header 4">Entry line 4</td>
+              </tr>
+          </tbody>
+      </table>
   </div>
 </div>
 

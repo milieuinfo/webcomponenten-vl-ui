@@ -37,7 +37,7 @@
     "url": "https://github.com/milieuinfo/webcomponenten-vl-ui/issues"
   },
   "devDependencies": {
-    "copyfiles": "2.1.1",
+    "copyfiles": "2.2.0",
     "http-server": "^0.12.1",
     "jsdoc": "^3.6.3",
     "np": "3.0.4",

@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "fetch-mock": "^8.3.2",
-    "prismjs": "1.17.1",
+    "prismjs": "1.20.0",
     "vl-ui-accordion": "^3.0.0",
     "vl-ui-action-group": "^3.0.0",
     "vl-ui-alert": "^3.0.0",

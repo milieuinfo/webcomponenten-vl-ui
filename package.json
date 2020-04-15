@@ -14,7 +14,7 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "install": "npm run analyze && npm run doc",
+    "install": "npm run analyze && npm run install:copy && npm run doc",
     "analyze": "npm run analyze:copy && npm run analyze:prepare && npm run analyze:generate",
     "analyze:prepare": "replace '/src/(.*).js' '../$1.js' ./demo/vl*.*",
     "analyze:copy": "npm run analyze:copy:webcomponent && npm run analyze:copy:webcomponent:src && npm run analyze:copy:demo && npm run analyze:copy:style",
@@ -23,6 +23,8 @@
     "analyze:copy:demo": "npm run analyze:copy:demo:files && npm run analyze:copy:demo:directory:img",
     "analyze:copy:demo:files": "copyfiles -f node_modules/vl-*/demo/* ./demo",
     "analyze:copy:demo:directory:img": "copyfiles -f node_modules/vl-*/demo/img/* ./demo/img",
+    "install:copy": "npm run install:copy:github",
+    "install:copy:github": "npm explore vl-ui-util -- npm run install:copy:github",
     "analyze:copy:style": "node ./scripts/copy-styles.js",
     "analyze:generate": "polymer analyze --sources [src/vl-*.js] > analysis.json",
     "doc": "npm run doc:generate",

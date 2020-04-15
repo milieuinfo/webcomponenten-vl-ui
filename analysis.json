@@ -1486,7 +1486,7 @@
           "column": 31
         },
         "end": {
-          "line": 41,
+          "line": 45,
           "column": 1
         }
       },
@@ -45170,6 +45170,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -45199,11 +45216,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 30,
+              "line": 35,
               "column": 2
             },
             "end": {
-              "line": 32,
+              "line": 37,
               "column": 3
             }
           },
@@ -45230,7 +45247,7 @@
           "column": 7
         },
         "end": {
-          "line": 33,
+          "line": 38,
           "column": 1
         }
       },
@@ -47005,6 +47022,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 25,
+              "column": 8
+            },
+            "end": {
+              "line": 27,
+              "column": 9
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -47034,11 +47068,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 25,
+              "line": 29,
               "column": 8
             },
             "end": {
-              "line": 39,
+              "line": 43,
               "column": 9
             }
           },
@@ -47058,7 +47092,7 @@
           "column": 11
         },
         "end": {
-          "line": 40,
+          "line": 44,
           "column": 5
         }
       },
@@ -47075,11 +47109,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 64,
+          "line": 68,
           "column": 7
         },
         "end": {
-          "line": 64,
+          "line": 68,
           "column": 67
         }
       },
@@ -47098,11 +47132,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 77,
+          "line": 81,
           "column": 7
         },
         "end": {
-          "line": 77,
+          "line": 81,
           "column": 71
         }
       },
@@ -47114,18 +47148,36 @@
       "description": "",
       "summary": "",
       "path": "src/vl-button.src.js",
-      "properties": [],
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 90,
+              "column": 4
+            },
+            "end": {
+              "line": 92,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
       "methods": [],
       "staticMethods": [],
       "demos": [],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 79,
+          "line": 83,
           "column": 7
         },
         "end": {
-          "line": 85,
+          "line": 93,
           "column": 1
         }
       },
@@ -47143,11 +47195,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 87,
+          "line": 95,
           "column": 7
         },
         "end": {
-          "line": 89,
+          "line": 97,
           "column": 1
         }
       },
@@ -52239,6 +52291,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 2
+            },
+            "end": {
+              "line": 37,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -52272,7 +52341,7 @@
           "column": 7
         },
         "end": {
-          "line": 34,
+          "line": 38,
           "column": 1
         }
       },
@@ -53002,7 +53071,7 @@
           "metadata": {}
         },
         {
-          "name": "_attributePrefix",
+          "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -53019,7 +53088,7 @@
           "metadata": {}
         },
         {
-          "name": "_inputElement",
+          "name": "_attributePrefix",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -53036,7 +53105,7 @@
           "metadata": {}
         },
         {
-          "name": "_format",
+          "name": "_inputElement",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -53047,6 +53116,23 @@
             },
             "end": {
               "line": 101,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_format",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 103,
+              "column": 4
+            },
+            "end": {
+              "line": 105,
               "column": 5
             }
           },
@@ -53100,34 +53186,7 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 103,
-              "column": 4
-            },
-            "end": {
-              "line": 120,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_formatChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 122,
+              "line": 107,
               "column": 4
             },
             "end": {
@@ -53149,7 +53208,7 @@
           }
         },
         {
-          "name": "_visual_formatChangedCallback",
+          "name": "_formatChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53176,7 +53235,7 @@
           }
         },
         {
-          "name": "_selected_dateChangedCallback",
+          "name": "_visual_formatChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53203,7 +53262,7 @@
           }
         },
         {
-          "name": "_min_dateChangedCallback",
+          "name": "_selected_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53230,7 +53289,7 @@
           }
         },
         {
-          "name": "_max_dateChangedCallback",
+          "name": "_min_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53257,7 +53316,7 @@
           }
         },
         {
-          "name": "_min_timeChangedCallback",
+          "name": "_max_dateChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53284,7 +53343,7 @@
           }
         },
         {
-          "name": "_max_timeChangedCallback",
+          "name": "_min_timeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53311,7 +53370,7 @@
           }
         },
         {
-          "name": "_am_pmChangedCallback",
+          "name": "_max_timeChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53338,7 +53397,7 @@
           }
         },
         {
-          "name": "_errorChangedCallback",
+          "name": "_am_pmChangedCallback",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -53347,7 +53406,34 @@
               "column": 4
             },
             "end": {
-              "line": 160,
+              "line": 156,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_errorChangedCallback",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 158,
+              "column": 4
+            },
+            "end": {
+              "line": 164,
               "column": 5
             }
           },
@@ -53370,11 +53456,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 162,
+              "line": 166,
               "column": 4
             },
             "end": {
-              "line": 168,
+              "line": 172,
               "column": 5
             }
           },
@@ -53401,7 +53487,7 @@
           "column": 7
         },
         "end": {
-          "line": 169,
+          "line": 173,
           "column": 1
         }
       },
@@ -53539,6 +53625,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 40,
+              "column": 4
+            },
+            "end": {
+              "line": 42,
+              "column": 5
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [],
@@ -53551,7 +53654,7 @@
           "column": 7
         },
         "end": {
-          "line": 39,
+          "line": 44,
           "column": 1
         }
       },
@@ -55321,7 +55424,7 @@
           "column": 7
         },
         "end": {
-          "line": 46,
+          "line": 47,
           "column": 1
         }
       },
@@ -56405,6 +56508,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 30,
+              "column": 2
+            },
+            "end": {
+              "line": 32,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -56438,7 +56558,7 @@
           "column": 7
         },
         "end": {
-          "line": 29,
+          "line": 33,
           "column": 1
         }
       },
@@ -56458,11 +56578,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 57,
+              "line": 62,
               "column": 3
             }
           },
@@ -56475,11 +56595,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 64,
               "column": 2
             },
             "end": {
-              "line": 61,
+              "line": 66,
               "column": 3
             }
           },
@@ -56492,11 +56612,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 63,
+              "line": 68,
               "column": 2
             },
             "end": {
-              "line": 65,
+              "line": 70,
               "column": 3
             }
           },
@@ -56509,11 +56629,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 67,
+              "line": 72,
               "column": 2
             },
             "end": {
-              "line": 69,
+              "line": 74,
               "column": 3
             }
           },
@@ -56526,11 +56646,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 75,
+              "line": 80,
               "column": 2
             },
             "end": {
-              "line": 77,
+              "line": 82,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 84,
+              "column": 2
+            },
+            "end": {
+              "line": 86,
               "column": 3
             }
           },
@@ -56544,11 +56681,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 71,
+              "line": 76,
               "column": 2
             },
             "end": {
-              "line": 73,
+              "line": 78,
               "column": 3
             }
           },
@@ -56561,11 +56698,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 79,
+              "line": 88,
               "column": 2
             },
             "end": {
-              "line": 85,
+              "line": 94,
               "column": 3
             }
           },
@@ -56588,11 +56725,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 96,
               "column": 2
             },
             "end": {
-              "line": 89,
+              "line": 98,
               "column": 3
             }
           },
@@ -56615,11 +56752,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 46,
+          "line": 51,
           "column": 7
         },
         "end": {
-          "line": 90,
+          "line": 99,
           "column": 1
         }
       },
@@ -56639,11 +56776,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 116,
+              "line": 125,
               "column": 2
             },
             "end": {
-              "line": 118,
+              "line": 127,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 129,
+              "column": 2
+            },
+            "end": {
+              "line": 131,
               "column": 3
             }
           },
@@ -56657,11 +56811,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 112,
+              "line": 121,
               "column": 2
             },
             "end": {
-              "line": 114,
+              "line": 123,
               "column": 3
             }
           },
@@ -56677,11 +56831,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 106,
+          "line": 115,
           "column": 7
         },
         "end": {
-          "line": 119,
+          "line": 132,
           "column": 1
         }
       },
@@ -58510,11 +58664,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 33,
               "column": 2
             },
             "end": {
-              "line": 34,
+              "line": 35,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 37,
+              "column": 2
+            },
+            "end": {
+              "line": 39,
               "column": 3
             }
           },
@@ -58528,11 +58699,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 28,
+              "line": 29,
               "column": 2
             },
             "end": {
-              "line": 30,
+              "line": 31,
               "column": 3
             }
           },
@@ -58552,7 +58723,7 @@
           "column": 7
         },
         "end": {
-          "line": 35,
+          "line": 40,
           "column": 1
         }
       },
@@ -58572,11 +58743,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 64,
               "column": 2
             },
             "end": {
-              "line": 61,
+              "line": 66,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 68,
+              "column": 2
+            },
+            "end": {
+              "line": 70,
               "column": 3
             }
           },
@@ -58590,11 +58778,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 57,
+              "line": 62,
               "column": 3
             }
           },
@@ -58610,11 +58798,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 50,
+          "line": 55,
           "column": 7
         },
         "end": {
-          "line": 62,
+          "line": 71,
           "column": 1
         }
       },
@@ -58634,11 +58822,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 100,
+              "line": 109,
               "column": 2
             },
             "end": {
-              "line": 102,
+              "line": 111,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 113,
+              "column": 2
+            },
+            "end": {
+              "line": 115,
               "column": 3
             }
           },
@@ -58652,11 +58857,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 96,
+              "line": 105,
               "column": 2
             },
             "end": {
-              "line": 98,
+              "line": 107,
               "column": 3
             }
           },
@@ -58672,11 +58877,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 86,
+          "line": 95,
           "column": 7
         },
         "end": {
-          "line": 103,
+          "line": 116,
           "column": 1
         }
       },
@@ -58696,11 +58901,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 128,
+              "line": 141,
               "column": 2
             },
             "end": {
-              "line": 130,
+              "line": 143,
               "column": 3
             }
           },
@@ -58713,11 +58918,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 132,
+              "line": 145,
               "column": 2
             },
             "end": {
-              "line": 134,
+              "line": 147,
               "column": 3
             }
           },
@@ -58730,11 +58935,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 136,
+              "line": 149,
               "column": 2
             },
             "end": {
-              "line": 138,
+              "line": 151,
               "column": 3
             }
           },
@@ -58747,11 +58952,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 140,
+              "line": 153,
               "column": 2
             },
             "end": {
-              "line": 142,
+              "line": 155,
               "column": 3
             }
           },
@@ -58764,11 +58969,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 144,
+              "line": 157,
               "column": 2
             },
             "end": {
-              "line": 146,
+              "line": 159,
               "column": 3
             }
           },
@@ -58781,11 +58986,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 148,
+              "line": 161,
               "column": 2
             },
             "end": {
-              "line": 150,
+              "line": 163,
               "column": 3
             }
           },
@@ -58798,11 +59003,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 152,
+              "line": 165,
               "column": 2
             },
             "end": {
-              "line": 154,
+              "line": 167,
               "column": 3
             }
           },
@@ -58815,11 +59020,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 156,
+              "line": 169,
               "column": 2
             },
             "end": {
-              "line": 158,
+              "line": 171,
               "column": 3
             }
           },
@@ -58832,11 +59037,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 160,
+              "line": 173,
               "column": 2
             },
             "end": {
-              "line": 162,
+              "line": 175,
               "column": 3
             }
           },
@@ -58849,11 +59054,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 164,
+              "line": 177,
               "column": 2
             },
             "end": {
-              "line": 166,
+              "line": 179,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 2
+            },
+            "end": {
+              "line": 183,
               "column": 3
             }
           },
@@ -58867,11 +59089,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 172,
+              "line": 189,
               "column": 2
             },
             "end": {
-              "line": 174,
+              "line": 191,
               "column": 3
             }
           },
@@ -58894,11 +59116,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 176,
+              "line": 193,
               "column": 2
             },
             "end": {
-              "line": 178,
+              "line": 195,
               "column": 3
             }
           },
@@ -58921,11 +59143,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 180,
+              "line": 197,
               "column": 2
             },
             "end": {
-              "line": 186,
+              "line": 203,
               "column": 3
             }
           },
@@ -58948,11 +59170,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 188,
+              "line": 205,
               "column": 2
             },
             "end": {
-              "line": 194,
+              "line": 211,
               "column": 3
             }
           },
@@ -58975,11 +59197,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 196,
+              "line": 213,
               "column": 2
             },
             "end": {
-              "line": 202,
+              "line": 219,
               "column": 3
             }
           },
@@ -59002,11 +59224,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 204,
+              "line": 221,
               "column": 2
             },
             "end": {
-              "line": 210,
+              "line": 227,
               "column": 3
             }
           },
@@ -59029,11 +59251,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 212,
+              "line": 229,
               "column": 2
             },
             "end": {
-              "line": 218,
+              "line": 235,
               "column": 3
             }
           },
@@ -59056,11 +59278,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 220,
+              "line": 237,
               "column": 2
             },
             "end": {
-              "line": 226,
+              "line": 243,
               "column": 3
             }
           },
@@ -59083,11 +59305,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 228,
+              "line": 245,
               "column": 2
             },
             "end": {
-              "line": 233,
+              "line": 250,
               "column": 3
             }
           },
@@ -59112,11 +59334,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 168,
+              "line": 185,
               "column": 2
             },
             "end": {
-              "line": 170,
+              "line": 187,
               "column": 3
             }
           },
@@ -59138,11 +59360,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 123,
+          "line": 136,
           "column": 7
         },
         "end": {
-          "line": 234,
+          "line": 251,
           "column": 1
         }
       },
@@ -63322,7 +63544,25 @@
       "description": "VlImage",
       "summary": "",
       "path": "src/vl-image.src.js",
-      "properties": [],
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 24,
+              "column": 4
+            },
+            "end": {
+              "line": 26,
+              "column": 5
+            }
+          },
+          "metadata": {}
+        }
+      ],
       "methods": [],
       "staticMethods": [],
       "demos": [],
@@ -63333,7 +63573,7 @@
           "column": 7
         },
         "end": {
-          "line": 23,
+          "line": 27,
           "column": 1
         }
       },
@@ -64513,6 +64753,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 74,
+              "column": 4
+            },
+            "end": {
+              "line": 76,
+              "column": 5
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -64599,11 +64856,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 74,
+              "line": 78,
               "column": 4
             },
             "end": {
-              "line": 78,
+              "line": 82,
               "column": 5
             }
           },
@@ -64626,11 +64883,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 80,
+              "line": 84,
               "column": 4
             },
             "end": {
-              "line": 84,
+              "line": 88,
               "column": 5
             }
           },
@@ -64647,11 +64904,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 90,
               "column": 4
             },
             "end": {
-              "line": 90,
+              "line": 94,
               "column": 5
             }
           },
@@ -64668,11 +64925,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 96,
               "column": 4
             },
             "end": {
-              "line": 98,
+              "line": 102,
               "column": 5
             }
           },
@@ -64692,11 +64949,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 100,
+              "line": 104,
               "column": 4
             },
             "end": {
-              "line": 102,
+              "line": 106,
               "column": 5
             }
           },
@@ -64712,11 +64969,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 108,
               "column": 4
             },
             "end": {
-              "line": 107,
+              "line": 111,
               "column": 5
             }
           },
@@ -64734,11 +64991,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 109,
+              "line": 113,
               "column": 4
             },
             "end": {
-              "line": 111,
+              "line": 115,
               "column": 5
             }
           },
@@ -64755,11 +65012,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 117,
               "column": 4
             },
             "end": {
-              "line": 117,
+              "line": 121,
               "column": 5
             }
           },
@@ -64776,11 +65033,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 119,
+              "line": 123,
               "column": 4
             },
             "end": {
-              "line": 121,
+              "line": 125,
               "column": 5
             }
           },
@@ -64800,7 +65057,7 @@
           "column": 7
         },
         "end": {
-          "line": 122,
+          "line": 126,
           "column": 1
         }
       },
@@ -65585,6 +65842,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 32,
+              "column": 2
+            },
+            "end": {
+              "line": 34,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -65614,11 +65888,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 32,
+              "line": 36,
               "column": 2
             },
             "end": {
-              "line": 38,
+              "line": 42,
               "column": 3
             }
           },
@@ -65638,7 +65912,7 @@
           "column": 7
         },
         "end": {
-          "line": 40,
+          "line": 44,
           "column": 1
         }
       },
@@ -65964,7 +66238,25 @@
       "description": "VlInputGroup",
       "summary": "",
       "path": "src/vl-input-group.src.js",
-      "properties": [],
+      "properties": [
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 18,
+              "column": 2
+            },
+            "end": {
+              "line": 20,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        }
+      ],
       "methods": [
         {
           "name": "connectedCallback",
@@ -65996,7 +66288,7 @@
           "column": 7
         },
         "end": {
-          "line": 17,
+          "line": 21,
           "column": 1
         }
       },
@@ -66668,6 +66960,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 26,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -66701,7 +67010,7 @@
           "column": 7
         },
         "end": {
-          "line": 25,
+          "line": 29,
           "column": 1
         }
       },
@@ -66715,17 +67024,34 @@
       "path": "src/vl-link-list.src.js",
       "properties": [
         {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 50,
+              "column": 2
+            },
+            "end": {
+              "line": 52,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
           "name": "_links",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 46,
+              "line": 54,
               "column": 2
             },
             "end": {
-              "line": 48,
+              "line": 56,
               "column": 3
             }
           },
@@ -66739,11 +67065,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 38,
+              "line": 42,
               "column": 2
             },
             "end": {
-              "line": 44,
+              "line": 48,
               "column": 3
             }
           },
@@ -66759,11 +67085,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 37,
+          "line": 41,
           "column": 7
         },
         "end": {
-          "line": 49,
+          "line": 57,
           "column": 1
         }
       },
@@ -74595,11 +74921,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 78,
+              "line": 77,
               "column": 2
             },
             "end": {
-              "line": 80,
+              "line": 79,
               "column": 3
             }
           },
@@ -74612,11 +74938,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 82,
+              "line": 81,
               "column": 2
             },
             "end": {
-              "line": 84,
+              "line": 83,
               "column": 3
             }
           },
@@ -74629,11 +74955,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 85,
               "column": 2
             },
             "end": {
-              "line": 88,
+              "line": 87,
               "column": 3
             }
           },
@@ -74646,11 +74972,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 90,
+              "line": 89,
               "column": 2
             },
             "end": {
-              "line": 92,
+              "line": 91,
               "column": 3
             }
           },
@@ -74663,11 +74989,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 94,
+              "line": 93,
               "column": 2
             },
             "end": {
-              "line": 96,
+              "line": 95,
               "column": 3
             }
           },
@@ -74680,11 +75006,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 98,
+              "line": 97,
               "column": 2
             },
             "end": {
-              "line": 100,
+              "line": 99,
               "column": 3
             }
           },
@@ -74698,11 +75024,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 74,
+              "line": 73,
               "column": 2
             },
             "end": {
-              "line": 76,
+              "line": 75,
               "column": 3
             }
           },
@@ -74718,11 +75044,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 105,
+              "line": 104,
               "column": 2
             },
             "end": {
-              "line": 109,
+              "line": 108,
               "column": 3
             }
           },
@@ -74738,11 +75064,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 114,
+              "line": 113,
               "column": 2
             },
             "end": {
-              "line": 119,
+              "line": 118,
               "column": 3
             }
           },
@@ -74758,11 +75084,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 124,
+              "line": 123,
               "column": 2
             },
             "end": {
-              "line": 128,
+              "line": 127,
               "column": 3
             }
           },
@@ -74778,11 +75104,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 135,
+              "line": 134,
               "column": 2
             },
             "end": {
-              "line": 137,
+              "line": 136,
               "column": 3
             }
           },
@@ -74805,11 +75131,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 139,
+              "line": 138,
               "column": 2
             },
             "end": {
-              "line": 146,
+              "line": 145,
               "column": 3
             }
           },
@@ -74822,11 +75148,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 148,
+              "line": 147,
               "column": 2
             },
             "end": {
-              "line": 151,
+              "line": 150,
               "column": 3
             }
           },
@@ -74843,11 +75169,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 153,
+              "line": 152,
               "column": 2
             },
             "end": {
-              "line": 158,
+              "line": 157,
               "column": 3
             }
           },
@@ -74860,11 +75186,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 160,
+              "line": 159,
               "column": 2
             },
             "end": {
-              "line": 162,
+              "line": 161,
               "column": 3
             }
           },
@@ -74887,11 +75213,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 164,
+              "line": 163,
               "column": 2
             },
             "end": {
-              "line": 176,
+              "line": 175,
               "column": 3
             }
           },
@@ -74914,11 +75240,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 178,
+              "line": 177,
               "column": 2
             },
             "end": {
-              "line": 184,
+              "line": 183,
               "column": 3
             }
           },
@@ -74941,11 +75267,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 186,
+              "line": 185,
               "column": 2
             },
             "end": {
-              "line": 188,
+              "line": 187,
               "column": 3
             }
           },
@@ -74968,11 +75294,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 190,
+              "line": 189,
               "column": 2
             },
             "end": {
-              "line": 201,
+              "line": 200,
               "column": 3
             }
           },
@@ -74995,11 +75321,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 203,
+              "line": 202,
               "column": 2
             },
             "end": {
-              "line": 209,
+              "line": 208,
               "column": 3
             }
           },
@@ -75026,7 +75352,7 @@
           "column": 7
         },
         "end": {
-          "line": 210,
+          "line": 209,
           "column": 1
         }
       },
@@ -75920,11 +76246,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 66,
+              "line": 70,
               "column": 2
             },
             "end": {
-              "line": 68,
+              "line": 72,
               "column": 3
             }
           },
@@ -76037,6 +76363,23 @@
             },
             "end": {
               "line": 64,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 66,
+              "column": 2
+            },
+            "end": {
+              "line": 68,
               "column": 3
             }
           },
@@ -76452,7 +76795,7 @@
           "column": 7
         },
         "end": {
-          "line": 69,
+          "line": 73,
           "column": 1
         }
       },
@@ -88675,11 +89018,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 47,
+              "line": 48,
               "column": 2
             },
             "end": {
-              "line": 49,
+              "line": 50,
               "column": 3
             }
           },
@@ -88692,11 +89035,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 51,
+              "line": 52,
               "column": 2
             },
             "end": {
-              "line": 53,
+              "line": 54,
               "column": 3
             }
           },
@@ -88709,11 +89052,28 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 56,
               "column": 2
             },
             "end": {
-              "line": 57,
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 2
+            },
+            "end": {
+              "line": 62,
               "column": 3
             }
           },
@@ -88727,11 +89087,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 26,
+              "line": 27,
               "column": 2
             },
             "end": {
-              "line": 35,
+              "line": 36,
               "column": 3
             }
           },
@@ -88754,11 +89114,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 37,
+              "line": 38,
               "column": 2
             },
             "end": {
-              "line": 45,
+              "line": 46,
               "column": 3
             }
           },
@@ -88778,7 +89138,7 @@
           "column": 7
         },
         "end": {
-          "line": 58,
+          "line": 64,
           "column": 1
         }
       },
@@ -90243,7 +90603,7 @@
           "metadata": {}
         },
         {
-          "name": "_dressed",
+          "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -90260,7 +90620,7 @@
           "metadata": {}
         },
         {
-          "name": "_dataVlSelectAttribute",
+          "name": "_dressed",
           "type": "?",
           "description": "",
           "privacy": "protected",
@@ -90277,17 +90637,34 @@
           "metadata": {}
         },
         {
+          "name": "_dataVlSelectAttribute",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 73,
+              "column": 2
+            },
+            "end": {
+              "line": 75,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
           "name": "choices",
           "type": "?",
           "description": "Zet de mogelijkheden die gekozen kunnen worden.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 154,
+              "line": 158,
               "column": 2
             },
             "end": {
-              "line": 156,
+              "line": 160,
               "column": 3
             }
           },
@@ -90300,11 +90677,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 163,
+              "line": 167,
               "column": 2
             },
             "end": {
-              "line": 165,
+              "line": 169,
               "column": 3
             }
           },
@@ -90317,11 +90694,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 181,
+              "line": 185,
               "column": 2
             },
             "end": {
-              "line": 183,
+              "line": 187,
               "column": 3
             }
           },
@@ -90334,11 +90711,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 191,
+              "line": 195,
               "column": 2
             },
             "end": {
-              "line": 195,
+              "line": 199,
               "column": 3
             }
           },
@@ -90351,11 +90728,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 202,
+              "line": 206,
               "column": 2
             },
             "end": {
-              "line": 204,
+              "line": 208,
               "column": 3
             }
           },
@@ -90389,33 +90766,6 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 77,
-              "column": 2
-            },
-            "end": {
-              "line": 79,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "oldValue"
-            },
-            {
-              "name": "newValue"
-            }
-          ],
-          "return": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "_errorChangedCallback",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
               "line": 81,
               "column": 2
             },
@@ -90438,16 +90788,43 @@
           }
         },
         {
-          "name": "__stateChangedCallback",
+          "name": "_errorChangedCallback",
           "description": "",
-          "privacy": "private",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 85,
               "column": 2
             },
             "end": {
-              "line": 103,
+              "line": 87,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "oldValue"
+            },
+            {
+              "name": "newValue"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "__stateChangedCallback",
+          "description": "",
+          "privacy": "private",
+          "sourceRange": {
+            "start": {
+              "line": 89,
+              "column": 2
+            },
+            "end": {
+              "line": 107,
               "column": 3
             }
           },
@@ -90470,11 +90847,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 110,
+              "line": 114,
               "column": 2
             },
             "end": {
-              "line": 114,
+              "line": 118,
               "column": 3
             }
           },
@@ -90490,11 +90867,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 116,
+              "line": 120,
               "column": 2
             },
             "end": {
-              "line": 121,
+              "line": 125,
               "column": 3
             }
           },
@@ -90510,11 +90887,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 130,
+              "line": 134,
               "column": 2
             },
             "end": {
-              "line": 133,
+              "line": 137,
               "column": 3
             }
           },
@@ -90546,11 +90923,11 @@
           "privacy": "private",
           "sourceRange": {
             "start": {
-              "line": 142,
+              "line": 146,
               "column": 2
             },
             "end": {
-              "line": 147,
+              "line": 151,
               "column": 3
             }
           },
@@ -90571,11 +90948,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 213,
+              "line": 217,
               "column": 2
             },
             "end": {
-              "line": 224,
+              "line": 228,
               "column": 3
             }
           },
@@ -90596,11 +90973,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 231,
+              "line": 235,
               "column": 2
             },
             "end": {
-              "line": 233,
+              "line": 237,
               "column": 3
             }
           },
@@ -90617,11 +90994,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 240,
+              "line": 244,
               "column": 2
             },
             "end": {
-              "line": 249,
+              "line": 253,
               "column": 3
             }
           },
@@ -90637,11 +91014,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 254,
+              "line": 258,
               "column": 2
             },
             "end": {
-              "line": 256,
+              "line": 260,
               "column": 3
             }
           },
@@ -90657,11 +91034,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 261,
+              "line": 265,
               "column": 2
             },
             "end": {
-              "line": 263,
+              "line": 267,
               "column": 3
             }
           },
@@ -90677,11 +91054,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 268,
+              "line": 272,
               "column": 2
             },
             "end": {
-              "line": 270,
+              "line": 274,
               "column": 3
             }
           },
@@ -90697,11 +91074,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 275,
+              "line": 279,
               "column": 2
             },
             "end": {
-              "line": 277,
+              "line": 281,
               "column": 3
             }
           },
@@ -90717,11 +91094,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 282,
+              "line": 286,
               "column": 2
             },
             "end": {
-              "line": 284,
+              "line": 288,
               "column": 3
             }
           },
@@ -90741,7 +91118,7 @@
           "column": 7
         },
         "end": {
-          "line": 285,
+          "line": 289,
           "column": 1
         }
       },
@@ -91288,7 +91665,7 @@
       "name": "VlSideSheet"
     },
     {
-      "description": "VlSideSheet",
+      "description": "VlSide-sheet",
       "summary": "",
       "path": "src/vl-side-sheet.src.js",
       "properties": [
@@ -92206,6 +92583,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 33,
+              "column": 2
+            },
+            "end": {
+              "line": 35,
+              "column": 3
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -92239,7 +92633,7 @@
           "column": 7
         },
         "end": {
-          "line": 32,
+          "line": 36,
           "column": 1
         }
       },
@@ -94464,6 +94858,23 @@
             }
           },
           "metadata": {}
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {}
         }
       ],
       "methods": [
@@ -94497,7 +94908,7 @@
           "column": 7
         },
         "end": {
-          "line": 30,
+          "line": 34,
           "column": 1
         }
       },
@@ -94527,253 +94938,19 @@
           },
           "metadata": {},
           "inheritedFrom": "VlTitle"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 22,
-              "column": 4
-            },
-            "end": {
-              "line": 25,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 32,
-          "column": 16
         },
-        "end": {
-          "line": 32,
-          "column": 39
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlTitle"
-    },
-    {
-      "description": "",
-      "summary": "",
-      "path": "src/vl-titles.src.js",
-      "properties": [
         {
-          "name": "_classPrefix",
+          "name": "_stylePath",
           "type": "?",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 27,
+              "line": 31,
               "column": 4
             },
             "end": {
-              "line": 29,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 22,
-              "column": 4
-            },
-            "end": {
-              "line": 25,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 33,
-          "column": 16
-        },
-        "end": {
-          "line": 33,
-          "column": 39
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlTitle"
-    },
-    {
-      "description": "",
-      "summary": "",
-      "path": "src/vl-titles.src.js",
-      "properties": [
-        {
-          "name": "_classPrefix",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 27,
-              "column": 4
-            },
-            "end": {
-              "line": 29,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 22,
-              "column": 4
-            },
-            "end": {
-              "line": 25,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 34,
-          "column": 16
-        },
-        "end": {
-          "line": 34,
-          "column": 39
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlTitle"
-    },
-    {
-      "description": "",
-      "summary": "",
-      "path": "src/vl-titles.src.js",
-      "properties": [
-        {
-          "name": "_classPrefix",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 27,
-              "column": 4
-            },
-            "end": {
-              "line": 29,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "methods": [
-        {
-          "name": "connectedCallback",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 22,
-              "column": 4
-            },
-            "end": {
-              "line": 25,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [],
-          "return": {
-            "type": "void"
-          },
-          "inheritedFrom": "VlTitle"
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 35,
-          "column": 16
-        },
-        "end": {
-          "line": 35,
-          "column": 39
-        }
-      },
-      "privacy": "public",
-      "superclass": "VlTitle"
-    },
-    {
-      "description": "",
-      "summary": "",
-      "path": "src/vl-titles.src.js",
-      "properties": [
-        {
-          "name": "_classPrefix",
-          "type": "?",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 27,
-              "column": 4
-            },
-            "end": {
-              "line": 29,
+              "line": 33,
               "column": 5
             }
           },
@@ -94842,6 +95019,24 @@
           },
           "metadata": {},
           "inheritedFrom": "VlTitle"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
         }
       ],
       "methods": [
@@ -94877,6 +95072,330 @@
         },
         "end": {
           "line": 37,
+          "column": 39
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlTitle"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "src/vl-titles.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 29,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 22,
+              "column": 4
+            },
+            "end": {
+              "line": 25,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 38,
+          "column": 16
+        },
+        "end": {
+          "line": 38,
+          "column": 39
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlTitle"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "src/vl-titles.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 29,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 22,
+              "column": 4
+            },
+            "end": {
+              "line": 25,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 39,
+          "column": 16
+        },
+        "end": {
+          "line": 39,
+          "column": 39
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlTitle"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "src/vl-titles.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 29,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 22,
+              "column": 4
+            },
+            "end": {
+              "line": 25,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 40,
+          "column": 16
+        },
+        "end": {
+          "line": 40,
+          "column": 39
+        }
+      },
+      "privacy": "public",
+      "superclass": "VlTitle"
+    },
+    {
+      "description": "",
+      "summary": "",
+      "path": "src/vl-titles.src.js",
+      "properties": [
+        {
+          "name": "_classPrefix",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 29,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        },
+        {
+          "name": "_stylePath",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 22,
+              "column": 4
+            },
+            "end": {
+              "line": 25,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "VlTitle"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 41,
+          "column": 16
+        },
+        "end": {
+          "line": 41,
           "column": 39
         }
       },
@@ -95096,10 +95615,10 @@
           "metadata": {}
         },
         {
-          "name": "toasterFadeClass",
+          "name": "_stylePath",
           "type": "?",
           "description": "",
-          "privacy": "public",
+          "privacy": "protected",
           "sourceRange": {
             "start": {
               "line": 44,
@@ -95113,10 +95632,10 @@
           "metadata": {}
         },
         {
-          "name": "_dressed",
+          "name": "toasterFadeClass",
           "type": "?",
           "description": "",
-          "privacy": "protected",
+          "privacy": "public",
           "sourceRange": {
             "start": {
               "line": 48,
@@ -95124,6 +95643,23 @@
             },
             "end": {
               "line": 50,
+              "column": 3
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "name": "_dressed",
+          "type": "?",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 52,
+              "column": 2
+            },
+            "end": {
+              "line": 54,
               "column": 3
             }
           },
@@ -95157,11 +95693,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 63,
               "column": 2
             },
             "end": {
-              "line": 62,
+              "line": 66,
               "column": 3
             }
           },
@@ -95181,11 +95717,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 74,
               "column": 2
             },
             "end": {
-              "line": 75,
+              "line": 79,
               "column": 3
             }
           },
@@ -95205,11 +95741,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 77,
+              "line": 81,
               "column": 2
             },
             "end": {
-              "line": 83,
+              "line": 87,
               "column": 3
             }
           },
@@ -95232,11 +95768,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 89,
               "column": 2
             },
             "end": {
-              "line": 89,
+              "line": 93,
               "column": 3
             }
           },
@@ -95256,7 +95792,7 @@
           "column": 7
         },
         "end": {
-          "line": 90,
+          "line": 94,
           "column": 1
         }
       },
@@ -96648,11 +97184,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 60,
               "column": 2
             },
             "end": {
-              "line": 61,
+              "line": 62,
               "column": 3
             }
           },
@@ -96665,11 +97201,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 63,
+              "line": 64,
               "column": 2
             },
             "end": {
-              "line": 65,
+              "line": 66,
               "column": 3
             }
           },
@@ -96682,11 +97218,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 67,
+              "line": 68,
               "column": 2
             },
             "end": {
-              "line": 70,
+              "line": 71,
               "column": 3
             }
           },
@@ -96699,11 +97235,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 76,
+              "line": 77,
               "column": 2
             },
             "end": {
-              "line": 78,
+              "line": 79,
               "column": 3
             }
           },
@@ -96716,11 +97252,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 84,
+              "line": 85,
               "column": 2
             },
             "end": {
-              "line": 86,
+              "line": 87,
               "column": 3
             }
           },
@@ -96733,11 +97269,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 93,
               "column": 2
             },
             "end": {
-              "line": 94,
+              "line": 95,
               "column": 3
             }
           },
@@ -96750,11 +97286,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 96,
+              "line": 97,
               "column": 2
             },
             "end": {
-              "line": 146,
+              "line": 147,
               "column": 3
             }
           },
@@ -96767,11 +97303,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 148,
+              "line": 149,
               "column": 2
             },
             "end": {
-              "line": 150,
+              "line": 151,
               "column": 3
             }
           },
@@ -96785,11 +97321,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 55,
+              "line": 56,
               "column": 2
             },
             "end": {
-              "line": 57,
+              "line": 58,
               "column": 3
             }
           },
@@ -96805,11 +97341,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 156,
+              "line": 157,
               "column": 2
             },
             "end": {
-              "line": 161,
+              "line": 162,
               "column": 3
             }
           },
@@ -96825,11 +97361,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 168,
+              "line": 169,
               "column": 2
             },
             "end": {
-              "line": 173,
+              "line": 174,
               "column": 3
             }
           },
@@ -96849,11 +97385,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 179,
+              "line": 180,
               "column": 2
             },
             "end": {
-              "line": 181,
+              "line": 182,
               "column": 3
             }
           },
@@ -96869,11 +97405,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 189,
+              "line": 190,
               "column": 2
             },
             "end": {
-              "line": 191,
+              "line": 192,
               "column": 3
             }
           },
@@ -96896,11 +97432,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 193,
+              "line": 194,
               "column": 2
             },
             "end": {
-              "line": 195,
+              "line": 196,
               "column": 3
             }
           },
@@ -96923,11 +97459,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 197,
+              "line": 198,
               "column": 2
             },
             "end": {
-              "line": 199,
+              "line": 200,
               "column": 3
             }
           },
@@ -96950,11 +97486,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 201,
+              "line": 202,
               "column": 2
             },
             "end": {
-              "line": 204,
+              "line": 205,
               "column": 3
             }
           },
@@ -96977,11 +97513,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 206,
+              "line": 207,
               "column": 2
             },
             "end": {
-              "line": 209,
+              "line": 210,
               "column": 3
             }
           },
@@ -97004,11 +97540,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 211,
+              "line": 212,
               "column": 2
             },
             "end": {
-              "line": 214,
+              "line": 215,
               "column": 3
             }
           },
@@ -97031,11 +97567,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 216,
+              "line": 217,
               "column": 2
             },
             "end": {
-              "line": 218,
+              "line": 219,
               "column": 3
             }
           },
@@ -97058,11 +97594,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 220,
+              "line": 221,
               "column": 2
             },
             "end": {
-              "line": 222,
+              "line": 223,
               "column": 3
             }
           },
@@ -97085,11 +97621,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 224,
+              "line": 225,
               "column": 2
             },
             "end": {
-              "line": 227,
+              "line": 228,
               "column": 3
             }
           },
@@ -97112,11 +97648,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 229,
+              "line": 230,
               "column": 2
             },
             "end": {
-              "line": 231,
+              "line": 232,
               "column": 3
             }
           },
@@ -97139,11 +97675,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 233,
+              "line": 234,
               "column": 2
             },
             "end": {
-              "line": 235,
+              "line": 236,
               "column": 3
             }
           },
@@ -97166,11 +97702,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 238,
               "column": 2
             },
             "end": {
-              "line": 239,
+              "line": 240,
               "column": 3
             }
           },
@@ -97197,7 +97733,7 @@
           "column": 7
         },
         "end": {
-          "line": 241,
+          "line": 242,
           "column": 1
         }
       },

@@ -30,6 +30,10 @@ export class VlTextarea extends NativeVlElement(HTMLTextAreaElement) {
   get _classPrefix() {
     return 'vl-textarea--';
   }
+
+  get _stylePath() {
+    return '../style.css';
+  }
 }
 
 define('vl-textarea', VlTextarea, {extends: 'textarea'});

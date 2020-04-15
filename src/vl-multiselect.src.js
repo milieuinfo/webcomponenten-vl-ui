@@ -64,6 +64,10 @@ export class VlMultiSelect extends VlSelect {
     });
   }
 
+  get _stylePath() {
+    return '../style.css';
+  }
+
   get _dataVlSelectAttribute() {
     return this.getAttribute('data-vl-multiselect');
   }

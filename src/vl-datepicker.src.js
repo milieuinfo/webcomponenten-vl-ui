@@ -34,10 +34,10 @@ export class VlDatepicker extends VlElement(HTMLElement) {
     constructor() {
         super(`
             <style>
-                @import '/style.css';
-                @import '/node_modules/vl-ui-button/style.css';
-                @import '/node_modules/vl-ui-input-field/style.css';
-                @import '/node_modules/vl-ui-icon/style.css';
+                @import "../style.css";
+                @import "/node_modules/vl-ui-button/style.css";
+                @import "/node_modules/vl-ui-input-field/style.css";
+                @import "/node_modules/vl-ui-icon/style.css";
 
                 #wrapper {
                     position: relative;
@@ -87,6 +87,10 @@ export class VlDatepicker extends VlElement(HTMLElement) {
 
     set value(value) {
         this._inputElement._flatpickr.setDate(value, false, this._format);
+    }
+
+    get _stylePath() {
+        return '../style.css';
     }
 
     get _attributePrefix() {

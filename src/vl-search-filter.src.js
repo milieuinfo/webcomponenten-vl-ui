@@ -16,6 +16,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
  *
  */
 export class VlSearchFilter extends NativeVlElement(HTMLDivElement) {
+
   static get _observedAttributes() {
     return ['data-vl-title'];
   }
@@ -56,6 +57,11 @@ export class VlSearchFilter extends NativeVlElement(HTMLDivElement) {
   get _elementName() {
     return 'vl-search-filter';
   }
+
+  get _stylePath() {
+    return '../style.css';
+  }
+
 }
 
 define('vl-search-filter', VlSearchFilter, { extends: 'div' });

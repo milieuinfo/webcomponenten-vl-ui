@@ -21,6 +21,10 @@ export class VlImage extends NativeVlElement(HTMLImageElement) {
 			this.alt = "";
 		}
 	}	
+	
+    get _stylePath() {
+        return '../style.css';
+    }
 }
 
 define('vl-image', VlImage, {extends: 'img'});

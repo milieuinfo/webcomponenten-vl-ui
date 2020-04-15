@@ -2,9 +2,9 @@ import { VlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import swipeDetect from '/node_modules/swipe-detect/dist/index.js';
 
 /**
- * VlSideSheet
+ * VlSide-sheet
  * @class
- * @classdesc SideSheet zijn containers die aan de linker- of rechterrand van het scherm zijn verankerd.
+ * @classdesc Side-sheet zijn containers die aan de linker- of rechterrand van het scherm zijn verankerd.
  *
  * @extends VlElement
  *
@@ -35,7 +35,7 @@ export class VlSideSheet extends VlElement(HTMLElement) {
   constructor() {
     super(`
       <style> 
-        @import '/style.css';
+        @import "../style.css";
       </style>  
       <div id="vl-side-sheet-backdrop"></div>
       <div id="vl-side-sheet">

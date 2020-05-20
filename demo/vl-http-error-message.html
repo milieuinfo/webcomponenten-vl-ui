@@ -13,14 +13,26 @@
         <h1>vl-ui-http-error-message demo</h1>
 
         <div>
-            <h2>404 Not Found</h2>
+            <h2>404</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                    &lt;vl-http-404-message id=&quot;not-found-message&quot;&gt;&lt;/vl-http-404-message&gt;
+                    &lt;vl-http-404-message id=&quot;error-404&quot;&gt;&lt;/vl-http-404-message&gt;
                 </code>
             </pre>
             <div class="demo">
-                <vl-http-404-message id="not-found-message"></vl-http-404-message>
+                <vl-http-404-message id="error-404"></vl-http-404-message>
+            </div>
+        </div>
+
+        <div>
+            <h2>500</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                    &lt;vl-http-500-message id=&quot;error-500&quot;&gt;&lt;/vl-http-500-message&gt;
+                </code>
+            </pre>
+            <div class="demo">
+                <vl-http-500-message id="error-500"></vl-http-500-message>
             </div>
         </div>
 

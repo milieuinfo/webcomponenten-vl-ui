@@ -24,11 +24,10 @@ Build:
   key: BD
   tasks:
     - clean
-    - script:
-        scripts: |
-          #!/usr/env/bin
-          set -e
-          docker-compose -f test/docker-compose.yml up --exit-code-from tests
+    - script: |
+        #!/usr/env/bin bash
+        set -e
+        docker-compose -f test/docker-compose.yml up --exit-code-from tests
   final-tasks:
     - script: /opt/scripts/docker/stop-docker-containers.sh
   requirements:

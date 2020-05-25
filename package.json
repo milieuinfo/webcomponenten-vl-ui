@@ -31,7 +31,18 @@
     "doc:generate": "node_modules/jsdoc/jsdoc.js src/vl-*.js README.md --destination doc",
     "release:prepare": "echo tjiek tsjak vollen bak",
     "release:testless": "np --yolo",
-    "demo": "http-server"
+    "demo": "http-server",
+    "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
+    "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
+    "test:grid": "npm run test:e2e:grid",
+    "posttest:e2e": "pkill -f http-server",
+    "test:e2e:chrome": "mocha --chrome",
+    "test:e2e:chrome:grid": "mocha --chrome --grid",
+    "test:e2e:firefox": "mocha --firefox",
+    "test:e2e:firefox:grid": "mocha --firefox --grid",
+    "test:e2e:opera": "mocha --opera",
+    "test:e2e:safari": "mocha --safari",
+    "test:server:start": "http-server &"
   },
   "bugs": {
     "url": "https://github.com/milieuinfo/webcomponenten-vl-ui/issues"
@@ -40,11 +51,11 @@
     "copyfiles": "2.2.0",
     "http-server": "^0.12.1",
     "jsdoc": "^3.6.3",
-    "np": "3.0.4",
+    "np": "6.2.3",
     "polymer": "^0.5.0",
     "polymer-cli": "^1.9.11",
     "replace": "1.2.0",
-    "vl-ui-util": "^5.1.5"
+    "vl-ui-util": "^5.1.10"
   },
   "dependencies": {
     "fetch-mock": "^8.3.2",

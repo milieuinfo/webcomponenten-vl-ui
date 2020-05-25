@@ -127,6 +127,10 @@ export class VlHttpErrorMessage extends VlElement(HTMLElement) {
         return this._element.querySelector('#actions');
     }
 
+    get __actionElement() {
+        return this._element.querySelector('#actions > *');
+    }
+
     get __imageForSmallScreensElement() {
         return this._element.querySelector('#image-small');
     }
@@ -203,5 +207,26 @@ define('vl-http-404-message', class extends VlHttpErrorMessage {
             text: `<p>De pagina die u zoekt, vonden we niet terug.</p>`,
             actions: `<a is="vl-link-button" href="/">Terug naar de startpagina</a>`
         });
+    }
+});
+
+define('vl-http-500-message', class extends VlHttpErrorMessage {
+    constructor() {
+        super({
+            title: 'Oeps, er is iets fout gelopen',
+            image: 'https://cdn.milieuinfo.be/http-error-message-assets/LATEST/img/unexpected-error.svg',
+            imageAlt: 'Onverwachte fout',
+            text: `<p>De actie die u heeft uitgevoerd is fout gelopen. Gelieve opnieuw te proberen.</p>`,
+            actions: `<a is="vl-link-button">Terug naar de pagina</a>`
+        });
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this._registerBackLink();
+    }
+
+    _registerBackLink() {
+        this.__actionElement.addEventListener('click', () => window.history.back());
     }
 });

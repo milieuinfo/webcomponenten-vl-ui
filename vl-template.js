@@ -21,14 +21,14 @@ export class VlTemplate extends VlElement(HTMLElement) {
         <style>
             @import '/node_modules/vl-ui-template/dist/style.css';
         </style>
-        <div>
+        <div class="vl-u-sticky-gf">
           <slot name="header"></slot>
           <div class="vl-page">
             <main class="vl-main-content">
               <slot name="main"></slot>
             </main>
           </div>
-            <slot name="footer"></slot>
+          <slot name="footer"></slot>
         </div>
     `);
   }

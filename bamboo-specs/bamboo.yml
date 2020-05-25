@@ -25,9 +25,12 @@ Build:
   tasks:
     - clean
     - script:
-        scripts:
-          - 'docker-compose -f test/docker-compose.yml up --exit-code-from tests'
-          - /opt/scripts/docker/stop-docker-containers.sh
+        scripts: |
+          #!/usr/env/bin
+          set -e
+          docker-compose -f test/docker-compose.yml up --exit-code-from tests
+  final-tasks:
+    - script: /opt/scripts/docker/stop-docker-containers.sh
   requirements:
     - REMOTE_ONLY
 

@@ -1,12 +1,13 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlFormLabel
  * @class
  * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier.
- * 
- * @extends NativeVlElement
- * 
+ *
+ * @extends HTMLLabelElement
+ * @mixin nativeVlElement
+ *
  * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
  *
@@ -14,8 +15,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.j
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
-export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
-
+export class VlFormLabel extends nativeVlElement(HTMLLabelElement) {
   static get _observedClassAttributes() {
     return ['light', 'block'];
   }
@@ -34,7 +34,8 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  * @class
  * @classdesc Gebruik de vl-form-validation-message om een validatie boodschap toe te voegen aan een formulier.
  *
- * @extends NativeVlElement
+ * @extends HTMLParagraphElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} error - Attribuut wordt gebruikt om foutboodschap te tonen bij validatiefouten.
  * @property {boolean} success - Attribuut wordt gebruikt om boodschap te tonen bij een succesvolle validatie.
@@ -44,7 +45,7 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
-export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElement) {
+export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElement) {
   static get _observedAttributes() {
     return ['block', 'success'];
   }
@@ -96,16 +97,16 @@ export class VlFormValidationMessage extends NativeVlElement(HTMLParagraphElemen
  * @class
  * @classdesc Gebruik de vl-form-annotation om invoerinstructies toe te voegen aan een formulier.
  *
- * @extends NativeVlElement
+ * @extends HTMLParagraphElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
- * 
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
-export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
-
+export class VlFormAnnotation extends nativeVlElement(HTMLParagraphElement) {
   static get _observedClassAttributes() {
     return ['block'];
   }

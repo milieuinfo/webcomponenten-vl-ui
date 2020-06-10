@@ -28,267 +28,269 @@
         <article>
             <pre class="prettyprint source linenums"><code>import '/node_modules/document-register-element/build/document-register-element.js';
 
-export const VlElement = (SuperClass) => {
+export const vlElement = (SuperClass) => {
+  /**
+   * VlElement
+   * @class
+   * @classdesc De root element class voor custom HTML elementen.
+   *
+   * @property {boolean} data-vl-spacer-none - Attribuut wordt gebruikt om aan te geven dat er geen lege ruimte toegevoegd mag worden rond het element.
+   *
+   * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-core/releases/latest|Release notes}
+   * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-core/issues|Issues}
+   */
+  class VlElement extends SuperClass {
     /**
-     * VlElement
-     * @class
-     * @classdesc De root element class voor custom HTML elementen.
-     * 
-    * @property {boolean} data-vl-spacer-none - Attribuut wordt gebruikt om aan te geven dat er geen lege ruimte toegevoegd mag worden rond het element.
-     * 
-     * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-core/releases/latest|Release notes}
-     * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-core/issues|Issues}
+     * VlElement constructor die een shadow DOM voorziet op basis van de HTML {Literal} parameter.
+     *
+     * @param {Literal} html - HTML literal die de DOM representeert
+     * @return {void}
      */
-    class VlElement extends SuperClass {
-        /**
-         * VlElement constructor die een shadow DOM voorziet op basis van de HTML {Literal} parameter.
-         * 
-         * @param {Literal} html - HTML literal die de DOM representeert
-         * @returns {void}
-         */
-        constructor(html) {
-            super();
-            if (html) {
-                this.shadow(html);
-            }
-        }
-
-        /**
-         * Geeft de prefix die gebruikt kan worden voor attributen.
-         * 
-         * @returns {String} attribuut prefix
-         */
-        static get attributePrefix() {
-            return 'data-vl-';
-        }
-
-        static get observedAttributes() {
-            const spacer = [`${VlElement.attributePrefix}spacer-none`];
-            const observedAttributes = [spacer].concat(this._observedAttributes.concat(this._observedPrefixAttributes));
-            const observedClassAttributes = this._observedClassAttributes.concat(this._observedPrefixClassAttributes);
-            const observedChildClassAttributes = this._observedChildClassAttributes.concat(this._observedPrefixChildClassAttributes);
-            return observedAttributes.concat(observedClassAttributes).concat(observedChildClassAttributes);
-        }
-
-        /**
-         * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een functie (`_attribuutChangedCallback`) functie aangeroepen worden met de oude en nieuwe waarde als parameters. Indien de attribuut `-` bevat in de naam zal dit vervangen worden door `_` bij het aanroepen van de functie (`_attribuut_naamChangedCallback`).
-         * 
-         * @protected
-         * @returns {Array} array van attributen waar naar geluisterd moet worden
-         */
-        static get _observedAttributes() {
-            return [];
-        }
-
-        /**
-         * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een class toegevoegd worden aan het root element. De naam van de class is gebaseerd op de element prefix (`_classPrefix`) en de naam van het attribuut.
-         * 
-         * @protected
-         * @returns {Array} array van attributen waar naar geluisterd moet worden
-         */
-        static get _observedClassAttributes() {
-            return [];
-        }
-
-        /**
-         * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een class toegevoegd worden aan het eerste shadow DOM element. De naam van de class is gebaseerd op de element prefix (`_classPrefix`) en de naam van het attribuut.
-         * 
-         * @protected
-         * @returns {Array} array van attributen waar naar geluisterd moet worden
-         */
-        static get _observedChildClassAttributes() {
-            return [];
-        }
-
-        static get _observedPrefixAttributes() {
-            return this._observedAttributes.map((attribute) => VlElement.attributePrefix + attribute);
-        }
-
-        static get _observedPrefixClassAttributes() {
-            return this._observedClassAttributes.map((attribute) => VlElement.attributePrefix + attribute);
-        }
-
-        static get _observedPrefixChildClassAttributes() {
-            return this._observedChildClassAttributes.map((attribute) => VlElement.attributePrefix + attribute);
-        }
-
-        attributeChangedCallback(attr, oldValue, newValue) {
-            if (attr.startsWith(VlElement.attributePrefix)) {
-                attr = attr.replace(VlElement.attributePrefix, '');
-            }
-
-            this.constructor._observedClassAttributes.concat(this.constructor._observedPrefixClassAttributes).filter(attribute => {
-                return attribute == attr || attribute == VlElement.attributePrefix + attr;
-            }).forEach((attribute) => {
-                this.__changeAttribute(this, oldValue, newValue, attribute);
-            });
-
-            this.constructor._observedChildClassAttributes.concat(this.constructor._observedPrefixChildClassAttributes).filter(attribute => {
-                return attribute == attr || attribute == VlElement.attributePrefix + attr;
-            }).forEach((attribute) => {
-                this.__changeAttribute(this._element, oldValue, newValue, attribute);
-            });
-
-            const getCallbackFunction = (attribute) => {
-                return this['_' + attribute.split('-').join('_') + 'ChangedCallback'];
-            }
-
-            const callback = getCallbackFunction(attr) || getCallbackFunction(`${VlElement.attributePrefix}${attr}`);
-            if (callback) {
-                callback.call(this, oldValue, newValue);
-            }
-        }
-
-        /**
-         * De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.
-         * 
-         * @protected
-         * @returns {void}
-         */
-        get _classPrefix() {
-            console.error('class prefix is undefined');
-        }
-
-        /**
-         * DOM element getter.
-         * 
-         * @protected
-         * @returns {Element}
-         */
-        get _element() {
-            if (this._shadow) {
-                return this._shadow.lastElementChild;
-            } else {
-                return this;
-            }
-        }
-
-        /**
-         * Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.
-         * 
-         * @param {String} attribute
-         */
-        getAttribute(attribute) {
-            if (this.hasAttribute(VlElement.attributePrefix + attribute)) {
-                return super.getAttribute(VlElement.attributePrefix + attribute);
-            } else {
-                return super.getAttribute(attribute);
-            }
-        }
-
-        /**
-         * Genereert een {HTMLTemplateElement} template met de HTML Literal.
-         * 
-         * @protected
-         * @param {Literal} html - HTML literal
-         * @returns {HTMLTemplateElement}
-         */
-        _template(html) {
-            const template = document.createElement('template');
-            template.innerHTML = html;
-            return template.content;
-        }
-
-        /**
-         * Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.
-         * 
-         * @protected
-         * @param {Element} element - HTML element
-         * @param {Object} oldValue - oude waarde
-         * @param {Object} newValue - nieuwe waarde
-         * @param {String} classPrefix - class prefix 
-         * @returns {void}
-         */
-        _changeClass(element, oldValue, newValue, classPrefix) {
-            if (element.classList.contains((classPrefix || this._classPrefix) + oldValue)) {
-                element.classList.remove((classPrefix || this._classPrefix) + oldValue);
-            }
-
-            if (newValue != undefined) {
-                element.classList.add((classPrefix || this._classPrefix) + newValue);
-            }
-        }
-
-        /**
-         * Zal op basis van de attribuut waarde de class verwijderen of toevoegen.
-         * 
-         * @protected
-         * @param {Element} element - HTML element
-         * @param {Object} value - attribuut waarde
-         * @param {String} clazz - class waarde 
-         * @returns {void}
-         */
-        _toggleClass(element, value, clazz) {
-            if (value != undefined || !!value) {
-                element.classList.add(clazz);
-            } else {
-                element.classList.remove(clazz);
-            }
-        }
-
-        _spacer_noneChangedCallback(oldValue, newValue) {
-            this._toggleClass(this._element, newValue, 'vl-u-spacer--none');
-        }
-
-        /**
-         * Definieer shadow DOM.
-         * 
-         * @protected
-         * @param {Literal} html - HTML literal
-         * @returns {void}
-         */
-        shadow(html) {
-            this._shadow = this.attachShadow({ mode: 'open' });
-            this._shadow.innerHTML = html;
-        }
-
-        /**
-         * @private
-         */
-        __changeAttribute(element, oldValue, newValue, attribute, classPrefix) {
-            if (oldValue != newValue) {
-                if (this.getAttribute(attribute) != undefined) {
-                    element.classList.add((classPrefix || this._classPrefix) + attribute);
-                } else {
-                    element.classList.remove((classPrefix || this._classPrefix) + attribute);
-                }
-            }
-        }
+    constructor(html) {
+      super();
+      if (html) {
+        this.shadow(html);
+      }
     }
 
-    return VlElement;
+    /**
+     * Geeft de prefix die gebruikt kan worden voor attributen.
+     *
+     * @return {String} attribuut prefix
+     */
+    static get attributePrefix() {
+      return 'data-vl-';
+    }
+
+    static get observedAttributes() {
+      const spacer = [`${VlElement.attributePrefix}spacer-none`];
+      const observedAttributes = [spacer].concat(this._observedAttributes.concat(this._observedPrefixAttributes));
+      const observedClassAttributes = this._observedClassAttributes.concat(this._observedPrefixClassAttributes);
+      const observedChildClassAttributes = this._observedChildClassAttributes.concat(this._observedPrefixChildClassAttributes);
+      return observedAttributes.concat(observedClassAttributes).concat(observedChildClassAttributes);
+    }
+
+    /**
+     * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een functie (`_attribuutChangedCallback`) functie aangeroepen worden met de oude en nieuwe waarde als parameters. Indien de attribuut `-` bevat in de naam zal dit verwijderd worden gevolgd door een hoofdletter bij het aanroepen van de functie (`_attribuutNaamChangedCallback`).
+     *
+     * @protected
+     * @return {Array} array van attributen waar naar geluisterd moet worden
+     */
+    static get _observedAttributes() {
+      return [];
+    }
+
+    /**
+     * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een class toegevoegd worden aan het root element. De naam van de class is gebaseerd op de element prefix (`_classPrefix`) en de naam van het attribuut.
+     *
+     * @protected
+     * @return {Array} array van attributen waar naar geluisterd moet worden
+     */
+    static get _observedClassAttributes() {
+      return [];
+    }
+
+    /**
+     * Een lijst van attributen die geobserveerd zullen worden. Bij een wijziging van de attribuut waarde zal een class toegevoegd worden aan het eerste shadow DOM element. De naam van de class is gebaseerd op de element prefix (`_classPrefix`) en de naam van het attribuut.
+     *
+     * @protected
+     * @return {Array} array van attributen waar naar geluisterd moet worden
+     */
+    static get _observedChildClassAttributes() {
+      return [];
+    }
+
+    static get _observedPrefixAttributes() {
+      return this._observedAttributes.map((attribute) => VlElement.attributePrefix + attribute);
+    }
+
+    static get _observedPrefixClassAttributes() {
+      return this._observedClassAttributes.map((attribute) => VlElement.attributePrefix + attribute);
+    }
+
+    static get _observedPrefixChildClassAttributes() {
+      return this._observedChildClassAttributes.map((attribute) => VlElement.attributePrefix + attribute);
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (attr.startsWith(VlElement.attributePrefix)) {
+        attr = attr.replace(VlElement.attributePrefix, '');
+      }
+
+      this.constructor._observedClassAttributes.concat(this.constructor._observedPrefixClassAttributes).filter((attribute) => {
+        return attribute == attr || attribute == VlElement.attributePrefix + attr;
+      }).forEach((attribute) => {
+        this.__changeAttribute(this, oldValue, newValue, attribute);
+      });
+
+      this.constructor._observedChildClassAttributes.concat(this.constructor._observedPrefixChildClassAttributes).filter((attribute) => {
+        return attribute == attr || attribute == VlElement.attributePrefix + attr;
+      }).forEach((attribute) => {
+        this.__changeAttribute(this._element, oldValue, newValue, attribute);
+      });
+
+      const getDeprecatedCallbackFunction = (attribute) => {
+        return this['_' + attribute.split('-').join('_') + 'ChangedCallback'];
+      };
+
+      const getCallbackFunction = (attribute) => {
+        const splittedAttribute = attribute.split('-');
+        const changeFirstLetterToUpperCase = (item) => `${item.charAt(0).toUpperCase()}${item.slice(1)}`;
+        return this[`_${splittedAttribute.shift()}${splittedAttribute.map(changeFirstLetterToUpperCase).join('')}ChangedCallback`];
+      };
+
+      const callback = getCallbackFunction(attr) || getDeprecatedCallbackFunction(attr) || getCallbackFunction(`${VlElement.attributePrefix}${attr}`) || getDeprecatedCallbackFunction(`${VlElement.attributePrefix}${attr}`);
+      if (callback) {
+        callback.call(this, oldValue, newValue);
+      }
+    }
+
+    /**
+     * De class prefix bepaalt de prefix van het class attribuut dat automatisch toegevoegd wordt op basis van attributen.
+     *
+     * @protected
+     * @return {void}
+     */
+    get _classPrefix() {
+      console.error('class prefix is undefined');
+    }
+
+    /**
+     * DOM element getter.
+     *
+     * @protected
+     * @return {Element}
+     */
+    get _element() {
+      if (this._shadow) {
+        return this._shadow.lastElementChild;
+      } else {
+        return this;
+      }
+    }
+
+    /**
+     * Geeft de waarde van het attribuut rekening houdende met het feit dat de attribuut prefix {@link #attributePrefix} gebruikt wordt.
+     *
+     * @param {String} attribute
+     * @return {String}
+     */
+    getAttribute(attribute) {
+      if (this.hasAttribute(VlElement.attributePrefix + attribute)) {
+        return super.getAttribute(VlElement.attributePrefix + attribute);
+      } else {
+        return super.getAttribute(attribute);
+      }
+    }
+
+    /**
+     * Genereert een {HTMLTemplateElement} template met de HTML Literal.
+     *
+     * @protected
+     * @param {Literal} html - HTML literal
+     * @return {HTMLTemplateElement}
+     */
+    _template(html) {
+      const template = document.createElement('template');
+      template.innerHTML = html;
+      return template.content;
+    }
+
+    /**
+     * Het class attribuut op basis van de oude waarde zal vervangen worden door het class attribuut op basis van de nieuwe waarde.
+     *
+     * @protected
+     * @param {Element} element - HTML element
+     * @param {Object} oldValue - oude waarde
+     * @param {Object} newValue - nieuwe waarde
+     * @param {String} classPrefix - class prefix
+     * @return {void}
+     */
+    _changeClass(element, oldValue, newValue, classPrefix) {
+      if (element.classList.contains((classPrefix || this._classPrefix) + oldValue)) {
+        element.classList.remove((classPrefix || this._classPrefix) + oldValue);
+      }
+
+      if (newValue != undefined) {
+        element.classList.add((classPrefix || this._classPrefix) + newValue);
+      }
+    }
+
+    /**
+     * Zal op basis van de attribuut waarde de class verwijderen of toevoegen.
+     *
+     * @protected
+     * @param {Element} element - HTML element
+     * @param {Object} value - attribuut waarde
+     * @param {String} clazz - class waarde
+     * @return {void}
+     */
+    _toggleClass(element, value, clazz) {
+      if (value != undefined || !!value) {
+        element.classList.add(clazz);
+      } else {
+        element.classList.remove(clazz);
+      }
+    }
+
+    _spacerNoneChangedCallback(oldValue, newValue) {
+      this._toggleClass(this._element, newValue, 'vl-u-spacer--none');
+    }
+
+    /**
+     * Definieer shadow DOM.
+     *
+     * @protected
+     * @param {Literal} html - HTML literal
+     * @return {void}
+     */
+    shadow(html) {
+      this._shadow = this.attachShadow({mode: 'open'});
+      this._shadow.innerHTML = html;
+    }
+
+    __changeAttribute(element, oldValue, newValue, attribute, classPrefix) {
+      if (oldValue != newValue) {
+        if (this.getAttribute(attribute) != undefined) {
+          element.classList.add((classPrefix || this._classPrefix) + attribute);
+        } else {
+          element.classList.remove((classPrefix || this._classPrefix) + attribute);
+        }
+      }
+    }
+  }
+
+  return VlElement;
 };
 
-export const NativeVlElement = (SuperClass) => {
+export const nativeVlElement = (SuperClass) => {
+  /**
+   * NativeVlElement
+   * @class
+   * @classdesc De root element class voor native HTML elementen.
+   */
+  class NativeVlElement extends vlElement(SuperClass) {
     /**
-     * NativeVlElement
-     * @class
-     * @classdesc De root element class voor native HTML elementen.
-     * 
-     * @extends VlElement
+     * NativeVlElement constructor. Deze geeft geen html mee zoals bij {VlElement},
+     * aangezien {NativeVlElement}en geen shadow dom mogen aanmaken.
+     *
+     * @return {void}
      */
-    class NativeVlElement extends VlElement(SuperClass) {
-        /**
-         * NativeVlElement constructor. Deze geeft geen html mee zoals bij {VlElement},
-         * aangezien {NativeVlElement}en geen shadow dom mogen aanmaken.
-         *
-         * @returns {void}
-         */
-        constructor(html) {
-            super();
-        }
-
-        /**
-         * DOM element getter.
-         * 
-         * @returns {Element}
-         */
-        get _element() {
-            return this;
-        }
+    constructor() {
+      super();
     }
 
-    return NativeVlElement;
+    /**
+     * DOM element getter.
+     *
+     * @return {Element}
+     */
+    get _element() {
+      return this;
+    }
+  }
+
+  return NativeVlElement;
 };
 
 /**
@@ -297,55 +299,63 @@ export const NativeVlElement = (SuperClass) => {
  * @param {String} name - custom HTML element naam
  * @param {Object} constructor - constructor voor de class
  * @param {Object} options - opties
- * @returns {void}
+ * @return {void}
  */
 export const define = (name, constructor, options) => {
-    if (customElements.get(name)) {
-        console.warn(`${name} werd reeds gedefinieerd als custom element`);
-    } else {
-        customElements.define(name, constructor, options);
-    }
+  if (customElements.get(name)) {
+    console.warn(`${name} werd reeds gedefinieerd als custom element`);
+  } else {
+    customElements.define(name, constructor, options);
+  }
 };
 
 /**
  * Asynchroon een script downloaden maar synchroon in volgorde uitvoeren.
- * 
+ *
  * @param {String} id - script id
  * @param {String} src - script src path
- * @returns {void}
+ * @return {void}
  */
 export const awaitScript = (id, src) => {
-    if (document.head.querySelector('script#' + id)) {
-        console.log(`script with id '${id}' is already loaded`);
-        return Promise.resolve();
-    }
+  if (document.head.querySelector('script#' + id)) {
+    console.log(`script with id '${id}' is already loaded`);
+    return Promise.resolve();
+  }
 
-    let script = document.createElement('script');
-    script.id = id;
-    script.src = src;
-    script.async = false;
+  const script = document.createElement('script');
+  script.id = id;
+  script.src = src;
+  script.async = false;
 
-    const promise = new Promise((resolve, reject) => {
-        script.onload = () => { resolve(); };
-        script.onerror = () => { reject(); };
-    });
+  const promise = new Promise((resolve, reject) => {
+    script.onload = () => {
+      resolve();
+    };
+    script.onerror = () => {
+      reject(new Error(`error when script with src attribute '${script.src}' was loaded`));
+    };
+  });
 
-    document.head.appendChild(script);
-    return promise;
+  document.head.appendChild(script);
+  return promise;
 };
+
+export const VlElement = vlElement;
+export const NativeVlElement = nativeVlElement;
 
 /**
  * Wacht tot conditie geldig is.
- * 
- * @param {Function} conditie - conditionele functie 
+ *
+ * @param {Function} condtion - conditionele functie
+ * @return {Function}
  */
 export const awaitUntil = (condtion) => {
-    return new Promise(async (resolve, reject) => {
-        while(!condtion()) {
-            await new Promise(resolve => setTimeout(resolve, 50));
-        }
-        resolve();
-    });
+  return new Promise(async (resolve, reject) => {
+    while (!condtion()) {
+      await new Promise((resolve) => setTimeout(resolve, 50));
+    }
+    resolve();
+  });
 };
 </code></pre>
         </article>
@@ -357,13 +367,13 @@ export const awaitUntil = (condtion) => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputAddonElement.html">VlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlPillElement.html">VlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlBody.html">VlBody</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlDurationStep.html">VlDurationStep</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlIntroduction.html">VlIntroduction</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="vlPillElement.html">vlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlStep.html">VlStep</a></li><li><a href="VlSteps.html">VlSteps</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed May 20 2020 10:37:36 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 20:52:18 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

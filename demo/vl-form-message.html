@@ -1,119 +1,58 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
+
+<head>
     <title>vl-ui-form-message voorbeeld</title>
+    <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+
     <script type="module" src="../vl-form-message.js"></script>
-    <script type="module" src="demo.js"></script>
-    <link rel="stylesheet" type="text/css" href="/vl-form-message.css"/>
-  </head>
 
-  <body>
-    <h1>vl-ui-form-message demo</h1>
-    <p>
-        <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-form-message">Meer voorbeelden en documentatie</a>.
-    </p>
+    <link rel="stylesheet" type="text/css" href="/vl-form-message.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+</head>
 
-    <div>
-        <h2>Form label</h2>
-        <pre>
-            <code class="line-numbers language-markup">
-                &lt;span id="demo-label"&gt;&lt;/span&gt;
-                &lt;label is="vl-form-label" for="demo-label"&gt;foobar&lt;/label&gt;
-            </code>
-        </pre>
-        <div class="demo">
+<body>
+    <vl-demo-page data-vl-webcomponent="vl-form-message"
+        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-form-message">
+        <vl-demo data-vl-title="Form label">
             <span id="demo-label"></span>
-            <label is="vl-form-label" for="demo-label" id="form-label">foobar</label>
-        </div>
-    </div>
+            <label is="vl-form-label" for="demo-label" id="form-label">
+                foobar
+            </label>
+        </vl-demo>
 
-    <div>
-        <h2>Form label (light)</h2>
-        <pre>
-            <code class="line-numbers language-markup">
-                &lt;span id="demo-label-light"&gt;&lt;/span&gt;
-                &lt;label is="vl-form-label" for="demo-label-light" light&gt;foobar&lt;/label&gt;
-            </code>
-        </pre>
-        <div class="demo">
+        <vl-demo data-vl-title="Form label (light)">
             <span id="demo-label-light"></span>
-            <label is="vl-form-label" for="demo-label-light" light id="form-label-light">foobar</label>
-        </div>
-    </div>
+            <label is="vl-form-label" for="demo-label-light" light id="form-label-light">
+                foobar
+            </label>
+        </vl-demo>
 
-    <div>
-        <h2>Form label (block)</h2>
-        <pre>
-            <code class="line-numbers language-markup">
-                &lt;span id="demo-label-block"&gt;&lt;/span&gt;
-                &lt;label is="vl-form-label" for="demo-label-block" block&gt;foobar&lt;/label&gt;
-            </code>
-        </pre>
-        <div class="demo">
+        <vl-demo data-vl-title="Form label (block)">
             <span id="demo-label-block"></span>
-            <label is="vl-form-label" for="demo-label-block" block id="form-label-block">foobar</label>
-        </div>
-    </div>
+            <label is="vl-form-label" for="demo-label-block" block id="form-label-block">
+                foobar
+            </label>
+        </vl-demo>
 
-    <div>
-      <h2>Form annotation</h2>
-      <pre>
-            <code class="line-numbers language-markup">
-              &lt;p is=&quot;vl-form-annotation&quot;&gt;De naam van het evenement moet minstens 12 karakters tellen.&lt;/p&gt;
-            </code>
-        </pre>
-      <div class="demo">
-        <p is="vl-form-annotation" id="form-annotation">De naam van het evenement moet minstens 12 karakters tellen.</p>
-      </div>
-    </div>
+        <vl-demo data-vl-title="Form annotation">
+            <p is="vl-form-annotation" id="form-annotation">
+                De naam van het evenement moet minstens 12 karakters tellen.
+            </p>
+        </vl-demo>
 
-    <div>
-      <h2>Form annotation (block)</h2>
-      <pre>
-            <code class="line-numbers language-markup">
-              &lt;p is=&quot;vl-form-annotation&quot; block&gt;De naam van het evenement moet minstens 12 karakters tellen.&lt;/p&gt;
-            </code>
-        </pre>
-      <div class="demo">
-        <p is="vl-form-annotation" block id="form-annotation-block">De naam van het evenement moet minstens 12 karakters tellen.</p>
-      </div>
-    </div>
+        <vl-demo data-vl-title="Form error">
+            <p is="vl-form-validation-message" error id="form-validation-message-error">
+                Het veld 'Naam evenement' is een verplicht veld.
+            </p>
+        </vl-demo>
 
-    <div>
-      <h2>Form error</h2>
-      <pre>
-            <code class="line-numbers language-markup">
-              &lt;p is=&quot;vl-form-validation-message&quot; error&gt;Het veld &#39;Naam evenement&#39; is een verplicht veld.&lt;/p&gt;
-            </code>
-        </pre>
-      <div class="demo">
-        <p is="vl-form-validation-message" error id="form-validation-message-error">Het veld 'Naam evenement' is een verplicht veld.</p>
-      </div>
-    </div>
+        <vl-demo data-vl-title="Form success">
+            <p is="vl-form-validation-message" success id="form-validation-message-success">
+                Het veld 'Naam evenement' is correct ingevuld.
+            </p>
+        </vl-demo>
+    </vl-demo-page>
+</body>
 
-    <div>
-      <h2>Form error (block)</h2>
-      <pre>
-            <code class="line-numbers language-markup">
-              &lt;p is=&quot;vl-form-validation-message&quot; error block&gt;Het veld &#39;Naam evenement&#39; is een verplicht veld.&lt;/p&gt;
-            </code>
-        </pre>
-      <div class="demo">
-        <p is="vl-form-validation-message" error block id="form-validation-message-block-error">Het veld 'Naam evenement' is een verplicht veld.</p>
-      </div>
-    </div>
-
-    <div>
-      <h2>Form success</h2>
-      <pre>
-            <code class="line-numbers language-markup">
-              &lt;p is=&quot;vl-form-validation-message&quot; success&gt;Het veld &#39;Naam evenement&#39; is correct ingevuld.&lt;/p&gt;
-            </code>
-        </pre>
-      <div class="demo">
-        <p is="vl-form-validation-message" success id="form-validation-message-success">Het veld 'Naam evenement' is correct ingevuld.</p>
-      </div>
-    </div>
-
-  </body>
 </html>

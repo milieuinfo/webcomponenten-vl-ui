@@ -2,208 +2,100 @@
 <html lang="nl">
 
 <head>
-  <title>vl-action-group voorbeeld</title>
+    <title>vl-action-group voorbeeld</title>
+    <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
 
-  <script type="module" src="demo.js"></script>
-  <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script type="module" src="../vl-action-group.js"></script>
-  <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
-  <script type="module" src="/node_modules/vl-ui-link/dist/vl-link.js"></script>
-  <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
+    <script type="module" src="../vl-action-group.js"></script>
+    <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
+    <script type="module" src="/node_modules/vl-ui-link/dist/vl-link.js"></script>
+    <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="/vl-action-group.css" />
-  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
-  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/vl-action-group.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
 </head>
 
 <body>
+    <vl-demo-page data-vl-webcomponent="vl-action-group"
+        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">
+        <vl-demo data-vl-title="Action group">
+            <div is="vl-action-group" id="vl-action-group">
+                <button is="vl-button">
+                    Aanvraag starten
+                </button>
+                <button is="vl-button" secondary>
+                    Annuleren
+                </button>
+            </div>
+        </vl-demo>
 
-  <h1>vl-ui-action-group demo</h1>
-  <p>
-    <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">Meer
-      voorbeelden en documentatie</a>.
-  </p>
+        <vl-demo data-vl-title="Action group align center">
+            <div is="vl-action-group" align="center" id="vl-action-group-align-center">
+                <button is="vl-button">
+                    Aanvraag starten
+                </button>
+                <button is="vl-button" secondary>
+                    Annuleren
+                </button>
+            </div>
+        </vl-demo>
 
+        <vl-demo data-vl-title="Action group align right">
+            <div is="vl-action-group" align="right" id="vl-action-group-align-right">
+                <button is="vl-button">
+                    Aanvraag starten
+                </button>
+                <button is="vl-button" secondary>
+                    Annuleren
+                </button>
+            </div>
+        </vl-demo>
 
-  <div>
-    <h2>Action group</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group"&gt;
-            &lt;button is="vl-button"&gt;
-              Aanvraag starten
-            &lt;/button&gt;
-            &lt;button is="vl-button" secondary&gt;
-              Annuleren
-            &lt;/button&gt;
-          &lt;/div&gt;
-        </code>
-      </pre>
-    <div class="demo">
-      <div is="vl-action-group" id="vl-action-group">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
-    </div>
-  </div>
+        <vl-demo data-vl-title="Action group space between">
+            <div is="vl-action-group" space-between id="vl-action-group-space-between">
+                <button class="vl-button">
+                    Aanvraag starten
+                </button>
+                <button is="vl-button" secondary>
+                    Annuleren
+                </button>
+            </div>
+        </vl-demo>
 
-  <div>
-    <h2>Action group align center</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group" align="center"&gt;
-            &lt;button is="vl-button"&gt;
-              Aanvraag starten
-            &lt;/button&gt;
-            &lt;button is="vl-button" secondary&gt;
-              Annuleren
-            &lt;/button&gt;
-          &lt;/div&gt;
-        </code>
-      </pre>
-    <div class="demo">
-      <div is="vl-action-group" align="center" id="vl-action-group-align-center">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
-    </div>
-  </div>
+        <vl-demo data-vl-title="Action group with links">
+            <div is="vl-action-group">
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="bell" data-vl-before></span>
+                    Notificaties
+                </a>
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="graduate" data-vl-before></span>
+                    Opleidingen
+                </a>
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="pin" data-vl-before></span>
+                    Locaties
+                </a>
+            </div>
+        </vl-demo>
 
-  <div>
-    <h2>Action group align right</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group" align="right"&gt;
-              &lt;button is="vl-button"&gt;
-                Aanvraag starten
-              &lt;/button&gt;
-              &lt;button is="vl-button" secondary&gt;
-                Annuleren
-              &lt;/button&gt;
-          &lt;/div&gt;
-        </code>
-      </pre>
-    <div class="demo">
-      <div is="vl-action-group" align="right" id="vl-action-group-align-right">
-        <button is="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <h2>Action group space between</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group" space-between&gt;
-            &lt;button is="vl-button"&gt;
-              Aanvraag starten
-            &lt;/button&gt;
-            &lt;button is="vl-button" secondary&gt;
-              Annuleren
-            &lt;/button&gt;
-          &lt;/vl-action-group&gt;
-        </code>
-      </pre>
-    <div class="demo">
-      <div is="vl-action-group" space-between id="vl-action-group-space-between">
-        <button class="vl-button">
-          Aanvraag starten
-        </button>
-        <button is="vl-button" secondary>
-          Annuleren
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <h2>Action group with links</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group"&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="bell" before&gt;&lt;/span&gt;
-              Notificaties
-            &lt;/a&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="graduate" before&gt;&lt;/span&gt;
-              Opleidingen
-            &lt;/a&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="pin" before&gt;&lt;/span&gt;
-              Locaties
-            &lt;/a&gt;
-        &lt;/div&gt;
-    </code>
-  </pre>
-    <div class="demo">
-      <div is="vl-action-group">
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="bell" before></span>
-          Notificaties
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="graduate" before></span>
-          Opleidingen
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="pin" before></span>
-          Locaties
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <h2>Action group with bordered links</h2>
-    <pre>
-        <code class="line-numbers language-markup">
-          &lt;div is="vl-action-group" bordered&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="bell" before&gt;&lt;/span&gt;
-              Notificaties
-            &lt;/a&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="graduate" before&gt;&lt;/span&gt;
-              Opleidingen
-            &lt;/a&gt;
-            &lt;a href="#" is="vl-link"&gt;
-              &lt;span is="vl-icon" icon="pin" before&gt;&lt;/span&gt;
-              Locaties
-            &lt;/a&gt;
-          &lt;/div&gt;
-    </code>
-  </pre>
-    <div class="demo">
-      <div is="vl-action-group" bordered id="vl-action-group-bordered">
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="bell" before></span>
-          Notificaties
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="graduate" before></span>
-          Opleidingen
-        </a>
-        <a href="#" is="vl-link">
-          <span is="vl-icon" icon="pin" before></span>
-          Locaties
-        </a>
-      </div>
-    </div>
-  </div>
+        <vl-demo data-vl-title="Action group with bordered links">
+            <div is="vl-action-group" bordered id="vl-action-group-bordered">
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="bell" data-vl-before></span>
+                    Notificaties
+                </a>
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="graduate" data-vl-before></span>
+                    Opleidingen
+                </a>
+                <a href="#" is="vl-link">
+                    <span is="vl-icon" data-vl-icon="pin" data-vl-before></span>
+                    Locaties
+                </a>
+            </div>
+        </vl-demo>
+    </vl-demo-page>
 </body>
 
 </html>

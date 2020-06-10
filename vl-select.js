@@ -1,4 +1,4 @@
-import { awaitUntil, define, NativeVlElement } from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {nativeVlElement, awaitUntil, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
 import '/node_modules/@govflanders/vl-ui-core/dist/js/core.js';
 import '/node_modules/vl-ui-select/lib/select.js';
@@ -8,8 +8,9 @@ import '/node_modules/vl-ui-select/lib/select.js';
 * @class
 * @classdesc Gebruik de select component om gebruikers toe te laten een selectie te maken uit een lijst met voorgedefinieerde opties. Het is aangeraden om enkel deze component te gebruiken als er 5 of meer opties zijn. Bij minder opties, kan er gebruik gemaakt worden van de radio component.
 *
-* @extends NativeVlElement
-* 
+* @extends HTMLSelectElement
+* @mixin nativeVlElement
+*
 * @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de textarea getoond wordt als een block element en bijgevolg de breedte van de parent zal aannemen.
 * @property {boolean} error - Attribuut wordt gebruikt om aan te duiden dat het select element verplicht is of ongeldige tekst bevat.
 * @property {boolean} success - Attribuut wordt gebruikt om aan te duiden dat het select element correct werd ingevuld.
@@ -25,11 +26,11 @@ import '/node_modules/vl-ui-select/lib/select.js';
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
 * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-select.html|Demo}
 */
-export class VlSelect extends NativeVlElement(HTMLSelectElement) {
+export class VlSelect extends nativeVlElement(HTMLSelectElement) {
   /**
    * Geeft de ready event naam.
-   * 
-   * @returns {string}
+   *
+   * @return {string}
    */
   static get readyEvent() {
     return 'VlSelectReady';
@@ -52,8 +53,8 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 
   /**
    * Geeft de ready event naam.
-   * 
-   * @returns {string}
+   *
+   * @return {string}
    */
   get readyEvent() {
     return VlSelect.readyEvent;
@@ -122,10 +123,14 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 
   /**
-   * Override van de __changeAttribute om rekening te houden dat de select
-   * component geinitialiseerd kan worden met de 'dress()' functie.
+   * Override van de __changeAttribute om rekening te houden dat de select component geinitialiseerd kan worden met de 'dress()' functie.
    *  - wanneer de component geinitialiseerd is, moet de CSS class op de parent van de js-vl-select div komen
    *  - wanneer de component native is, moet de CSS class op de select zelf komen
+   * @param {HTMLElement} element
+   * @param {String} oldValue
+   * @param {String} newValue
+   * @param {String} attribute
+   * @param {String} classPrefix
    * @private
    */
   __changeAttribute(element, oldValue, newValue, attribute, classPrefix) {
@@ -134,9 +139,8 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 
   /**
-   * Afhankelijk of de component dressed is, moet de CSS class op een ander
-   * element toegevoegd worden.
-   * @param element
+   * Afhankelijk of de component dressed is, moet de CSS class op een ander element toegevoegd worden.
+   * @param {HTMLElement} element
    * @return {HTMLElement|*} element waar de CSS class toegevoegd moet worden.
    * @private
    */
@@ -149,7 +153,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
 
   /**
    * Zet de mogelijkheden die gekozen kunnen worden.
-   * 
+   *
    * @param {Object[]} choices met value en label attribuut.
    */
   set choices(choices) {
@@ -168,7 +172,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**
    * Zet het geselecteerd option element op basis van de option value.
    *
-   * @param {string} de option value van het option element dat gekozen moet worden.
+   * @param {string} value - de option value van het option element dat gekozen moet worden.
    */
   set value(value) {
     vl.select.setValueByChoice(this, value);
@@ -177,7 +181,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**
    * Geeft de waarde van het eerst geselecteerde option element indien deze er is, anders een lege string.
    *
-   * @returns {void}
+   * @return {void}
    */
   get value() {
     return this.selectedOptions[0] ? this.selectedOptions[0].value : '';
@@ -187,7 +191,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    * Geef de `Choices` instantie.
    *
    * @see https://www.npmjs.com/package/choices.js
-   * @returns {Choices} de `Choices` instantie of `null` als de component nog niet geïnitialiseerd is door `dress()`
+   * @return {Choices} de `Choices` instantie of `null` als de component nog niet geïnitialiseerd is door `dress()`
    */
   get _choices() {
     return vl.select.selectInstances.find((instance) => {
@@ -208,7 +212,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
    * Initialiseer de `Choices` config.
    *
    * @see https://www.npmjs.com/package/choices.js
-   * @param params object with callbackFn: function(select) with return value the items for `setChoices`
+   * @param {Object} params - object with callbackFn: function(select) with return value the items for `setChoices`
    * @fires VlSelect#VlSelectReady ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.
    */
   dress(params) {
@@ -227,7 +231,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   /**
    * Geeft een promise die 'resolved' wanneer de select initialisatie klaar is.
    *
-   * @returns {Promise} De promise
+   * @return {Promise} De promise
    */
   async ready() {
     await awaitUntil(() => this._dressed === true);
@@ -244,7 +248,7 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
         vl.select.undress(this._choices);
         vl.select.selectInstances.splice(vl.select.selectInstances.indexOf(this._choices));
       } catch (exception) {
-        console.error("er liep iets fout bij de undress functie, controleer dat het vl-select element een id bevat! Foutmelding: " + exception);
+        console.error('er liep iets fout bij de undress functie, controleer dat het vl-select element een id bevat! Foutmelding: ' + exception);
       }
     }
   }
@@ -285,4 +289,4 @@ export class VlSelect extends NativeVlElement(HTMLSelectElement) {
   }
 }
 
-define('vl-select', VlSelect, { extends: 'select' });
+define('vl-select', VlSelect, {extends: 'select'});

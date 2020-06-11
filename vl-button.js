@@ -47,7 +47,6 @@ export const VlButtonElement = vlButtonElement;
  * @classdesc Gebruik de vl-button om een CTA toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
  *
  * @extends HTMLButtonElement
- * @mixin nativeVlElement
  *
  * @property {boolean} disabled - Attribuut wordt gebruikt om aan de gebruiker aan te duiden dat de functionaliteit niet actief is.
  * @property {boolean} error - Attribuut wordt gebruikt om het belang of de gevolgen van een actie te benadrukken.
@@ -71,7 +70,6 @@ export class VlButton extends vlButtonElement(HTMLButtonElement) { }
  * @classdesc Gebruik de vl-link-button om een CTA toe te voegen.
  *
  * @extends HTMLAnchorElement
- * @mixin nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}

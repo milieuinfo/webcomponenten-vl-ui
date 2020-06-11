@@ -6,7 +6,6 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  * @classdesc Toon meerdere knoppen of links. De groep zorgt ervoor dat ze correct zijn uitgelijnd.
  *
  * @extends HTMLDivElement
- * @mixin nativeVlElement
  *
  * @property {string} align - Attribuut wordt gebruikt om ervoor te zorgen dat de onderliggende elementen worden gealigneerd. Mogelijkheden: align="center" of align="right".
  * @property {boolean} space-between - Attribuut wordt gebruikt om aan te duiden dat de ruimte tussen de elementen volledig moet worden opgevuld.

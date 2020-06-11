@@ -28,7 +28,6 @@ export const VlInputAddonElement = vlInputAddonElement;
  * @classdesc Gebruik de input-addon in combinatie met de vl-ui-input-group webcomponent. Deze combinatie zorgt ervoor dat de gebruiker extra informatie ontvangt over de inhoud of de vorm van de inhoud dat ingevuld moet worden.
  *
  * @extends HTMLParagraphElement
- * @mixin vlInputAddonElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/issues|Issues}
@@ -43,7 +42,6 @@ export class VlInputAddon extends vlInputAddonElement(HTMLParagraphElement) {}
  * @classdesc Gebruik de vl-button-input-addon in combinatie met de vl-input-group webcomponent. Deze combinatie zorgt er voor dat men een button heeft die naast de input in vl-input-group staat.
  *
  * @extends HTMLButtonElement
- * @mixin vlInputAddonElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-input-addon/issues|Issues}

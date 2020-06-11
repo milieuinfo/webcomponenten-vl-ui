@@ -7,7 +7,6 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
  * @classdesc Gebruik de infoblock om een sectie met een nieuwe content te starten.
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @property {string} title - Attribuut dat wordt gebruikt om de titel van de infoblock te zetten.
  * @property {string} icon -  Attribuut dat wordt gebruikt om een icoon vooraan aan de titel toe te voegen. Het icoon kan gekozen worden uit de lijst op https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon.

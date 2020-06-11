@@ -39,7 +39,6 @@ export const VlLinkElement = vlLinkElement;
  * @classdesc Gebruik de vl-link om de gebruiker door te verwijzen naar een andere URL, bijvoorbeeld een nieuwe pagina of een document.
  *
  * @extends HTMLAnchorElement
- * @mixin vlLinkElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
@@ -53,7 +52,6 @@ export class VlLink extends vlLinkElement(HTMLAnchorElement) {}
  * @classdesc Een button gestyled als link.
  *
  * @extends HTMLButtonElement
- * @mixin vlLinkElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}

@@ -7,7 +7,6 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
  * @classdesc Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.
  *
  * @extends HTMLElement
- * @mixin VlElement
  *
  * @property {string} title - Attribuut wordt gebruikt als titel van de waarschuwing.
  * @property {boolean} closable - Attribuut wordt gebruikt om de optie toe te voegen om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek..
@@ -86,10 +85,10 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   /**
-     * Schakelt de werking van de close button uit zodat de alert niet gesloten kan worden.
-     *
-     * @Return {void}
-     */
+   * Schakelt de werking van de close button uit zodat de alert niet gesloten kan worden.
+   *
+   * @Return {void}
+   */
   disableClosable() {
     if (this._closeButtonElement) {
       this._closeButtonElement.removeEventListener('click', this.__removeAlert);
@@ -98,25 +97,25 @@ export class VlAlert extends vlElement(HTMLElement) {
 
   _getIconTemplate(newValue) {
     return this._template(`
-            <div class="vl-alert__icon">
-                <span is="vl-icon" data-vl-icon="${newValue}"></span>
-            </div>
-        `);
+      <div class="vl-alert__icon">
+          <span is="vl-icon" data-vl-icon="${newValue}"></span>
+      </div>
+    `);
   };
 
   _getCloseButtonTemplate() {
     return this._template(`
-            <button id="close" class="vl-alert__close" type="button">
-                <i class="vl-vi vl-vi-cross" aria-hidden="true"></i>
-                <span class="vl-u-visually-hidden">Melding sluiten</span>
-            </button>
-        `);
+      <button id="close" class="vl-alert__close" type="button">
+          <i class="vl-vi vl-vi-cross" aria-hidden="true"></i>
+          <span class="vl-u-visually-hidden">Melding sluiten</span>
+      </button>
+    `);
   }
 
   _getActionsTemplate() {
     return this._template(`
-            <div class="vl-alert__actions"></div>
-        `);
+      <div class="vl-alert__actions"></div>
+    `);
   }
 
   _iconChangedCallback(oldValue, newValue) {

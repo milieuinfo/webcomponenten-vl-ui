@@ -26,7 +26,7 @@ function getFileNames() {
 function copyCss() {
     getInstalledWebcomponentsDirnames().forEach((dirname) => {
         const filename = dirname.replace('-ui', '');
-        const source = path.join(__dirname, '..', 'node_modules/' + dirname + '/style.css');
+        const source = path.join(__dirname, '..', 'node_modules/' + dirname + '/dist/style.css');
         const destination = filename + '.css';
         if (fs.existsSync(source)) {
             fs.copyFileSync(source, destination);

@@ -49,19 +49,17 @@
   },
   "devDependencies": {
     "copyfiles": "2.3.0",
-    "http-server": "^0.12.1",
     "jsdoc": "^3.6.3",
-    "np": "6.2.4",
     "polymer": "^0.5.0",
     "polymer-cli": "^1.9.11",
     "replace": "1.2.0",
-    "vl-ui-util": "^5.2.4"
+    "vl-ui-util": "^5.2.5"
   },
   "dependencies": {
     "fetch-mock": "^8.3.2",
     "prismjs": "1.20.0",
     "vl-ui-accordion": "^3.0.5",
-    "vl-ui-action-group": "milieuinfo/webcomponent-vl-ui-action-group",
+    "vl-ui-action-group": "github:milieuinfo/webcomponent-vl-ui-action-group",
     "vl-ui-alert": "^3.0.5",
     "vl-ui-body": "^1.0.2",
     "vl-ui-button": "^5.0.5",

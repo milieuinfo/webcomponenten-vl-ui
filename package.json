@@ -59,7 +59,7 @@
     "fetch-mock": "^8.3.2",
     "prismjs": "1.20.0",
     "vl-ui-accordion": "^3.0.5",
-    "vl-ui-action-group": "github:milieuinfo/webcomponent-vl-ui-action-group",
+    "vl-ui-action-group": "^3.0.5",
     "vl-ui-alert": "^3.0.5",
     "vl-ui-body": "^1.0.2",
     "vl-ui-button": "^5.0.5",

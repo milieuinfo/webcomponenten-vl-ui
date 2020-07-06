@@ -11,11 +11,13 @@ function replace(file, search, replacement) {
 
 function getInstalledWebcomponentsDirnames() {
     const installedComponents = [];
-    fs.readdirSync('node_modules').forEach((dir) => {
-        if (dir.indexOf('vl-ui') > -1) {
-            installedComponents.push(dir);
-        }
-    });
+    if (fs.existsSync('node_modules')) {
+        fs.readdirSync('node_modules').forEach((dir) => {
+            if (dir.indexOf('vl-ui') > -1) {
+                installedComponents.push(dir);
+            }
+        });
+    }
     return installedComponents;
 }
 

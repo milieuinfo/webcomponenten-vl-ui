@@ -10,6 +10,8 @@ function replace(file, search, replacement) {
 }
 
 function getInstalledWebcomponentsDirnames() {
+    console.log('CWD: ' + ${cwd});
+    console.log('PWD: ' + ${pwd});
     const installedComponents = [];
     fs.readdirSync('node_modules').forEach((dir) => {
         if (dir.indexOf('vl-ui') > -1) {

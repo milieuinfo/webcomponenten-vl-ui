@@ -14,15 +14,16 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
+    "install": "npm run install:copy:github",
+    "install:copy:github": "npm explore vl-ui-util -- npm run install:copy:github",
     "generate": "npm run generate:copy && npm run generate:replace && npm run generate:analyze && npm run generate:doc",
     "generate:analyze": "polymer analyze --sources [src/vl-*.js] > analysis.json",
-    "generate:copy": "npm run generate:copy:webcomponent && npm run generate:copy:webcomponent:src && npm run generate:copy:demo && npm run generate:copy:github && npm run generate:copy:style",
+    "generate:copy": "npm run generate:copy:webcomponent && npm run generate:copy:webcomponent:src && npm run generate:copy:demo && npm run generate:copy:style",
     "generate:copy:webcomponent": "copyfiles -f -e '**/*.min.js' -e '**/*.src.js' node_modules/*/dist/vl-*.js .",
     "generate:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",
     "generate:copy:demo": "npm run generate:copy:demo:files && npm run generate:copy:demo:directory:img",
     "generate:copy:demo:files": "copyfiles -f node_modules/vl-*/demo/* ./demo",
     "generate:copy:demo:directory:img": "copyfiles -f node_modules/vl-*/demo/img/* ./demo/img",
-    "generate:copy:github": "npm explore vl-ui-util -- npm run install:copy:github",
     "generate:copy:style": "node ./scripts/copy-styles.js",
     "generate:doc": "node_modules/jsdoc/jsdoc.js src/vl-*.js README.md --destination doc",
     "generate:replace": "replace '/src/(.*).js' '../$1.js' ./demo/vl*.*",

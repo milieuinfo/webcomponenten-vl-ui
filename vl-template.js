@@ -6,7 +6,6 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De standaard template voor websites en applicaties van de Vlaamse overheid.
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @property {slot} header - header content binnen vl-header
  * @property {slot} main - main content

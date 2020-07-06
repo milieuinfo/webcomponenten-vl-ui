@@ -10,7 +10,6 @@ import '/node_modules/vl-ui-button/dist/vl-button.js';
  * @classdesc Toont een verklarend bericht voor een HTTP fout.
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @property {String} data-vl-title - De titel van de foutmelding.
  * @property {String} data-vl-image - De url van de afbeelding die getoond moet worden.

@@ -30,7 +30,7 @@ services:
     shm_size: 2g
   tests:
     image: ${DOCKER_REGISTRY}node:13
-    command: bash -c "cp -R /data/. /workdir && npm install && npm run test:grid"
+    command: bash -c "cp -R /data/. /workdir && npm install && npm run generate && npm run test:grid"
     depends_on:
       - selenium-hub
       - selenium-chrome

@@ -6,6 +6,7 @@ import {nativeVlElement, vlElement, define} from '/node_modules/vl-ui-core/dist/
  * @classdesc De properties webcomponent vormt de container van een lijst van kenmerken van een onderwerp. Deze component wordt meestal gebruikt om informatie te tonen dat ingevuld werd in een formulier.
  *
  * @extends HTMLElement
+ * @mixin vlElement
  *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
@@ -45,6 +46,7 @@ export class VlProperties extends vlElement(HTMLElement) {
  * @classdesc De properties kolom webcomponent wordt gebruikt om lijsten van kenmerken van een onderwerp te verdelen in verschillende kolommen.
  *
  * @extends HTMLDivElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} full - Attribuut wordt gebruikt om de kolom de volledige breedte te laten innemen.
  *
@@ -72,6 +74,7 @@ export class VlPropertiesColumn extends nativeVlElement(HTMLDivElement) {
  * @classdesc De properties lijst webcomponent toont een lijst van kenmerken van een onderwerp.
  *
  * @extends HTMLDListElement
+ * @mixin nativeVlElement
  *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
@@ -89,6 +92,7 @@ export class VlPropertiesList extends nativeVlElement(HTMLDListElement) {
  * @classdesc De property kenmerk webcomponent toont de beschrijving van een onderwerp kenmerk.
  *
  * @extends HTMLElement
+ * @mixin nativeVlElement
  *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
@@ -106,6 +110,7 @@ export class VlPropertyTerm extends nativeVlElement(HTMLElement) {
  * @classdesc De property waarde webcomponent toont de waarde van een onderwerp kenmerk.
  *
  * @extends HTMLElement
+ * @mixin nativeVlElement
  *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}

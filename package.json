@@ -19,7 +19,7 @@
     "generate:copy": "npm run generate:copy:webcomponent && npm run generate:copy:webcomponent:src && npm run generate:copy:demo && npm run generate:copy:github && npm run generate:copy:style",
     "generate:copy:webcomponent": "copyfiles -f -e '**/*.min.js' -e '**/*.src.js' node_modules/*/dist/vl-*.js .",
     "generate:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",
-    "generate:copy:demo": "npm run analyze:copy:demo:files && npm run analyze:copy:demo:directory:img",
+    "generate:copy:demo": "npm run generate:copy:demo:files && npm run generate:copy:demo:directory:img",
     "generate:copy:demo:files": "copyfiles -f node_modules/vl-*/demo/* ./demo",
     "generate:copy:demo:directory:img": "copyfiles -f node_modules/vl-*/demo/img/* ./demo/img",
     "generate:copy:github": "npm explore vl-ui-util -- npm run install:copy:github",

@@ -6,6 +6,7 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier.
  *
  * @extends HTMLLabelElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
@@ -34,6 +35,7 @@ export class VlFormLabel extends nativeVlElement(HTMLLabelElement) {
  * @classdesc Gebruik de vl-form-validation-message om een validatie boodschap toe te voegen aan een formulier.
  *
  * @extends HTMLParagraphElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} error - Attribuut wordt gebruikt om foutboodschap te tonen bij validatiefouten.
  * @property {boolean} success - Attribuut wordt gebruikt om boodschap te tonen bij een succesvolle validatie.
@@ -96,6 +98,7 @@ export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElemen
  * @classdesc Gebruik de vl-form-annotation om invoerinstructies toe te voegen aan een formulier.
  *
  * @extends HTMLParagraphElement
+ * @mixin nativeVlElement
  *
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
  *

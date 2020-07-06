@@ -1,7 +1,7 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/vl-ui-button/dist/vl-button.js';
 import '/node_modules/vl-ui-input-field/dist/vl-input-field.js';
-import '../vl-modal.js';
+import '/src/vl-modal.js';
 
 export class VlModalTest extends vlElement(HTMLElement) {
   constructor() {

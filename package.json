@@ -14,7 +14,7 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "generate": "npm run generate:replace && npm run generate:copy && npm run generate:analyze && npm run generate:doc",
+    "generate": "npm run generate:copy && npm run generate:replace && npm run generate:analyze && npm run generate:doc",
     "generate:analyze": "polymer analyze --sources [src/vl-*.js] > analysis.json",
     "generate:copy": "npm run generate:copy:webcomponent && npm run generate:copy:webcomponent:src && npm run generate:copy:demo && npm run generate:copy:github && npm run generate:copy:style",
     "generate:copy:webcomponent": "copyfiles -f -e '**/*.min.js' -e '**/*.src.js' node_modules/*/dist/vl-*.js .",

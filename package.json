@@ -25,7 +25,7 @@
     "process:copy:demo:directory:img": "copyfiles -f node_modules/vl-*/demo/img/* ./demo/img",
     "process:copy:github": "npm explore vl-ui-util -- npm run install:copy:github",
     "process:generate": "polymer analyze --sources [src/vl-*.js] > analysis.json",
-    "process:copy:styles": "node ./scripts/copy-styles.js",
+    "process:copy:style": "node ./scripts/copy-styles.js",
     "postinstall": "npm run process",
     "doc": "npm run doc:generate",
     "doc:generate": "node_modules/jsdoc/jsdoc.js src/vl-*.js README.md --destination doc",

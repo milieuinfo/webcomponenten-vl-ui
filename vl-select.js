@@ -221,6 +221,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
 
         (async () => {
           await this.ready();
+          this._copySlotAttribute();
           this.dispatchEvent(new CustomEvent(this.readyEvent));
         })();
       }
@@ -285,6 +286,14 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
    */
   hideDropdown() {
     vl.select.hideDropdown(this);
+  }
+
+  _copySlotAttribute() {
+    const attribute = this.getAttribute('slot');
+    this.removeAttribute('slot');
+    if (attribute) {
+      this._wrapperElement.setAttribute('slot', attribute);
+    }
   }
 }
 

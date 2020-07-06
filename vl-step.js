@@ -6,7 +6,6 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De step component stelt een enkele stap voor in de steps component.
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @property {boolean} disabled - Attribuut om aan te geven dat de stap niet toegankelijk is.
  * @property {(success | warning | error)} type - Attribuut bepaalt het type van de stap.

@@ -50,7 +50,7 @@
     "polymer-cli": "1.9.11",
     "replace": "1.2.0",
     "copyfiles": "2.3.0",
-    "vl-ui-util": "5.2.5",
+    "vl-ui-util": "5.2.10",
     "fetch-mock": "8.3.2",
     "prismjs": "1.20.0",
     "vl-ui-accordion": "3.0.6",

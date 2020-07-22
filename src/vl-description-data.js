@@ -6,7 +6,6 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  * @classdesc Gebruik de description data component om meer informatie te geven over de inhoud op de pagina, bvb over een contactpersoon, een entiteit of een publicatie.
  *
  * @extends HTMLDivElement
- * @mixin nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-description-data/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-description-data/issues|Issues}

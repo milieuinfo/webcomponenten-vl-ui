@@ -26,154 +26,154 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { VlElement } from "/node_modules/vl-ui-core/dist/vl-core.js";
+            <pre class="prettyprint source linenums"><code>import {vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlMapBaseLayer
  * @class
  * @classdesc De kaart basis laag component.
  *
- * @extends VlElement
- * 
+ * @extends vlElement
+ *
  * @property {(wmts | wfs )} type - Attribuut wordt gebruikt om aan te geven wat het type is van de kaartlaag.
  * @property {string} url - Attribuut geeft aan via welke URL gebruikt wordt om de kaartlaag op te halen.
  * @property {string} layer - Attribuut geeft aan wat de kaartlaag identifier is.
  * @property {string} title - Attribuut bepaalt de titel van de kaartlaag.
- * 
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-map.html|Demo}
  */
-export class VlMapBaseLayer extends VlElement(HTMLElement) {
-    connectedCallback() {
-        this._configureMap();
-    }
+export class VlMapBaseLayer extends vlElement(HTMLElement) {
+  connectedCallback() {
+    this._configureMap();
+  }
 
-    /**
+  /**
      * Geeft het kaartlaag type terug.
-     * 
+     *
      * @Return {string}
      */
-    get type() {
-        return this.getAttribute('type') || 'wmts';
-    }
+  get type() {
+    return this.getAttribute('type') || 'wmts';
+  }
 
-    /**
+  /**
      * Geeft de kaartlaag URL terug.
-     * 
+     *
      * @Return {string}
      */
-    get url() {
-        return this.getAttribute('url');
-    }
+  get url() {
+    return this.getAttribute('url');
+  }
 
-    /**
+  /**
      * Geeft de kaartlaag identifier terug.
-     * 
+     *
      * @Return {string}
      */
-    get layer() {
-        return this.getAttribute('layer');
-    }
+  get layer() {
+    return this.getAttribute('layer');
+  }
 
-    /**
+  /**
      * Geeft de kaartlaag titel terug.
-     * 
+     *
      * @Return {string}
      */
-    get title() {
-        return this.getAttribute('title');
+  get title() {
+    return this.getAttribute('title');
+  }
+
+  get _map() {
+    if (this.parentNode) {
+      return this.parentNode.map;
+    }
+  }
+
+  get _projection() {
+    if (this.parentNode) {
+      return this.parentNode._projection;
+    }
+  }
+
+  get _WMTSSource() {
+    this._wmtsSource = this._wmtsSource || this._createWMTSSource();
+    return this._wmtsSource;
+  }
+
+  get _vectorSource() {
+    this._createdVectorSource = this._createdVectorSource || this._createVectorSource();
+    return this._createdVectorSource;
+  }
+
+  _configureMap() {
+    if (this._map) {
+      this._map.addBaseLayerAndOverlayMapLayer(this._createBaseLayer(), this._createBaseLayer());
+    }
+  }
+
+  _createWMTSSource() {
+    const size = ol.extent.getWidth(this._projection.getExtent()) / 256;
+    const resolutions = new Array(16);
+    const matrixIds = new Array(16);
+    for (let z = 0; z &lt; 16; ++z) {
+      resolutions[z] = size / Math.pow(2, z);
+      matrixIds[z] = z;
     }
 
-    get _map() {
-        if (this.parentNode) {
-            return this.parentNode.map;
-        }
-    }
+    return new ol.source.WMTS({
+      url: this.url,
+      layer: this.layer,
+      matrixSet: 'BPL72VL',
+      format: 'image/png',
+      projection: this._projection,
+      tileGrid: new ol.tilegrid.WMTS({
+        extent: this._projection.getExtent(),
+        origin: ol.extent.getTopLeft(this._projection.getExtent()),
+        resolutions: resolutions,
+        matrixIds: matrixIds,
+      }),
+      style: '',
+    });
+  }
 
-    get _projection() {
-        if (this.parentNode) {
-            return this.parentNode._projection;
-        }
-    }
+  _createVectorSource() {
+    const self = this;
+    return new ol.source.Vector({
+      format: new ol.format.GeoJSON({
+        defaultDataProjection: self._projection,
+      }),
+      url: function() {
+        return self.url + '&amp;typeName=' + self.layer;
+      },
+      strategy: ol.loadingstrategy.bbox,
+    });
+  }
 
-    get _WMTSSource() {
-        this._wmtsSource = this._wmtsSource || this._createWMTSSource();
-        return this._wmtsSource;
-    }
-
-    get _vectorSource() {
-        this._createdVectorSource = this._createdVectorSource || this._createVectorSource();
-        return this._createdVectorSource;
-    }
-
-    _configureMap() {
-        if(this._map) {
-            this._map.addBaseLayerAndOverlayMapLayer(this._createBaseLayer(), this._createBaseLayer());
-        }
-    }
-
-    _createWMTSSource() {
-        let size = ol.extent.getWidth(this._projection.getExtent()) / 256;
-        let resolutions = new Array(16);
-        let matrixIds = new Array(16);
-        for (let z = 0; z &lt; 16; ++z) {
-            resolutions[z] = size / Math.pow(2, z);
-            matrixIds[z] = z;
-        }
-
-        return new ol.source.WMTS({
-            url: this.url,
-            layer: this.layer,
-            matrixSet: 'BPL72VL',
-            format: 'image/png',
-            projection: this._projection,
-            tileGrid: new ol.tilegrid.WMTS({
-                extent: this._projection.getExtent(),
-                origin: ol.extent.getTopLeft(this._projection.getExtent()),
-                resolutions: resolutions,
-                matrixIds: matrixIds
+  _createBaseLayer() {
+    switch (this.type) {
+      case 'wmts':
+        return new ol.layer.Tile({
+          title: this.title,
+          type: 'base',
+          source: this._WMTSSource,
+        });
+      case 'wfs':
+        return new ol.layer.Vector({
+          source: this._vectorSource,
+          style: new ol.style.Style({
+            stroke: new ol.style.Stroke({
+              color: 'rgba(0, 0, 0, 1.0)',
+              width: 1,
             }),
-            style: ''
+            fill: new ol.style.Fill({
+              color: 'rgba(255, 0, 0, 1.0)',
+            }),
+          }),
         });
     }
-
-    _createVectorSource() {
-        var self = this;
-        return new ol.source.Vector({
-            format: new ol.format.GeoJSON({
-                defaultDataProjection: self._projection
-            }),
-            url: function() {
-                return self.url + '&amp;typeName=' + self.layer;
-            },
-            strategy: ol.loadingstrategy.bbox
-        });
-    }
-
-    _createBaseLayer() {
-        switch(this.type) {
-            case 'wmts':
-                return new ol.layer.Tile({
-                    title: this.title,
-                    type: 'base',
-                    source: this._WMTSSource
-                });
-            case 'wfs':
-                return new ol.layer.Vector({
-                    source: this._vectorSource,
-                    style: new ol.style.Style({
-                        stroke: new ol.style.Stroke({
-                            color: 'rgba(0, 0, 0, 1.0)',
-                            width: 1
-                        }),
-                        fill: new ol.style.Fill({
-                            color: 'rgba(255, 0, 0, 1.0)'
-                        })
-                    })
-                });
-        }
-    }
+  }
 }
 </code></pre>
         </article>
@@ -185,13 +185,13 @@ export class VlMapBaseLayer extends VlElement(HTMLElement) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement_.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement_.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlHttpErrorMessage_VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="nativeVlElement.html">nativeVlElement</a></li><li><a href="vlElement.html">vlElement</a></li><li><a href="vlPillElement.html">vlPillElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlBody.html">VlBody</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlDurationStep.html">VlDurationStep</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlIntroduction.html">VlIntroduction</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="vlPillElement.html">vlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlStep.html">VlStep</a></li><li><a href="VlSteps.html">VlSteps</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="vlPattern.html">vlPattern</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li><li><a href="global.html#sleep">sleep</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jul 06 2020 14:47:40 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 22 2020 11:24:59 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -6,7 +6,6 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De loader component is een animatie dat aangeeft dat een pagina of website aan het laden is.
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @property {boolean} data-vl-light - Attribuut wordt gebruikt om een alternatieve rendering te bekomen in combinatie met een donkere achtergrond.
  * @property {boolean} data-vl-text - Attribuut wordt gebruikt om een informatieve tekst te tonen tijdens het laden.

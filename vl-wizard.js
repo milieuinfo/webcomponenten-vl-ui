@@ -1,7 +1,7 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/vl-ui-progress-bar/dist/vl-progress-bar-all.js';
 import '/node_modules/vl-ui-wizard/lib/wizard.js';
-import './vl-wizard-pane.js';
+import {VlWizardPane} from '/node_modules/vl-ui-wizard/dist/vl-wizard-pane.js';
 
 /**
  * VlWizard
@@ -25,23 +25,23 @@ export class VlWizard extends vlElement(HTMLElement) {
 
   constructor() {
     super(`
-        <style>
-            @import '/node_modules/vl-ui-wizard/dist/style.css';
+      <style>
+        @import '/node_modules/vl-ui-wizard/dist/style.css';
 
-            .vl-wizard__panes {
-                overflow: hidden;
-            }
-        </style>
-        <section class="vl-wizard" data-vl-wizard>
-            <header class="vl-wizard__heading" role="none">
-                <slot name="title"></slot>
-                <slot name="header"></slot>
-            </header>
-            <vl-progress-bar></vl-progress-bar>
-            <div class="vl-wizard__panes">
-                <slot name="panes"></slot>
-            </div>
-        </section>
+        .vl-wizard__panes {
+          overflow: hidden;
+        }
+      </style>
+      <section class="vl-wizard" data-vl-wizard>
+        <header class="vl-wizard__heading" role="none">
+          <slot name="title"></slot>
+          <slot name="header"></slot>
+        </header>
+        <vl-progress-bar></vl-progress-bar>
+        <div class="vl-wizard__panes">
+          <slot name="panes"></slot>
+        </div>
+      </section>
     `);
 
     this.__callback = {
@@ -50,38 +50,43 @@ export class VlWizard extends vlElement(HTMLElement) {
   }
 
   connectedCallback() {
+    this._observer = this._observePanes(() => this._processPanes());
     this._processPanes();
     this._dress();
   }
 
+  disconnectedCallback() {
+    this._observer.disconnect();
+  }
+
   /**
-     * Geeft de callback functie die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.
-     *
-     * @return {Function}
-     */
+   * Geeft de callback functie die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.
+   *
+   * @return {Function}
+   */
   get callback() {
     return this.__callback;
   }
 
   /**
-     * Callback setter die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.
-     *
-     * @param {Promise} promise
-     */
+   * Callback setter die bepaalt of er naar de volgende/vorige pagina mag genavigeerd worden.
+   *
+   * @param {Promise} promise
+   */
   set callback(promise) {
     this.__callback.callbackFn = promise;
   }
 
   /**
-     * Navigeer naar de volgende pagina.
-     */
+   * Navigeer naar de volgende pagina.
+   */
   next() {
     this._activePane.next();
   }
 
   /**
-     * Navigeer naar de vorige pagina.
-     */
+   * Navigeer naar de vorige pagina.
+   */
   previous() {
     this._activePane.previous();
   }
@@ -102,12 +107,16 @@ export class VlWizard extends vlElement(HTMLElement) {
     return this._shadow.querySelector('vl-progress-bar');
   }
 
+  get _panesSlot() {
+    return this.querySelector('[slot="panes"]');
+  }
+
   _getProgressBarStepTemplate(content) {
     return this._template(`
-            <vl-progress-bar-step>
-                ${content}
-            </vl-progress-bar-step>
-        `);
+      <vl-progress-bar-step>
+        ${content}
+      </vl-progress-bar-step>
+    `);
   }
 
   _processPanes() {
@@ -142,11 +151,42 @@ export class VlWizard extends vlElement(HTMLElement) {
   }
 
   _nextPanesDisabledChangedCallback(oldValue, newValue) {
-    this._panes.forEach((pane) => newValue != undefined ? pane.disableNextPane() : pane.enableNextPane());
+    VlWizardPane.whenDefined.then(() => {
+      if (newValue != undefined) {
+        this._panes.forEach((pane) => pane.disableNextPane());
+      } else {
+        this._panes.forEach((pane) => pane.enableNextPane());
+      }
+    });
   }
 
   _previousPanesDisabledChangedCallback(oldValue, newValue) {
-    this._panes.forEach((pane) => newValue != undefined ? pane.disablePreviousPane() : pane.enablePreviousPane());
+    VlWizardPane.whenDefined.then(() => {
+      if (newValue != undefined) {
+        this._panes.forEach((pane) => pane.disablePreviousPane());
+      } else {
+        this._panes.forEach((pane) => pane.enablePreviousPane());
+      }
+    });
+  }
+
+  _observePanes(callback) {
+    const observer = new MutationObserver((mutations) => {
+      const hasNewPane = mutations.flatMap((mutation) => [...mutation.addedNodes]).some((node) => node instanceof VlWizardPane);
+      if (hasNewPane) {
+        this.constructor._observedAttributes.forEach((attribute) => this._triggerAttribute(attribute));
+        callback();
+      }
+    });
+    observer.observe(this._panesSlot, {childList: true, subtree: true, characterDataOldValue: true});
+    return observer;
+  }
+
+  _triggerAttribute(attribute) {
+    attribute = `${this.constructor.attributePrefix}${attribute}`;
+    if (this.hasAttribute(attribute)) {
+      this.attributeChangedCallback(attribute, null, this.getAttribute(attribute));
+    }
   }
 }
 

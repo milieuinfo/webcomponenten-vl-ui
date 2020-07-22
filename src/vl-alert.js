@@ -81,7 +81,7 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   get _actionsSlotElement() {
-    return this._element.querySelector('slot[name=\'actions\']');
+    return this._element.querySelector('slot[name="actions"]');
   }
 
   /**

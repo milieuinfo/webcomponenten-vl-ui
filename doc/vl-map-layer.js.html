@@ -26,7 +26,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { VlElement } from "/node_modules/vl-ui-core/dist/vl-core.js";
+            <pre class="prettyprint source linenums"><code>import {vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlMapLayer
@@ -39,260 +39,262 @@
  * @property {boolean} cluster - Attribuut geeft aan of de features geclusterd moeten worden of niet.
  * @property {number} cluster-distance - Attribuut geeft aan vanaf welke afstand tussen features er geclusterd mag worden.
  * @property {string[]} features - Attribuut die de kaartlaag bevat.
- * 
- * @extends VlElement
- * 
+ *
+ * @extends vlElement
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-map-layer.html|Demo}
  */
-export class VlMapLayer extends VlElement(HTMLElement) {
-    static get _observedAttributes() {
-        return ['auto-extent', 'features'];
-    }
+export class VlMapLayer extends vlElement(HTMLElement) {
+  static get _observedAttributes() {
+    return ['auto-extent', 'features'];
+  }
 
-    constructor() {
-        super();
-        VlMapLayer._counter = 0;
-        this.__geoJSON = new ol.format.GeoJSON();
-        this.__counter = ++VlMapLayer._counter;
-    }
+  constructor() {
+    super();
+    VlMapLayer._counter = 0;
+    this.__geoJSON = new ol.format.GeoJSON();
+    this.__counter = ++VlMapLayer._counter;
+  }
 
-    connectedCallback() {
-        this._layer = this.__createLayer(this._name, this.features);
-        this._configureMap();
-    }
+  connectedCallback() {
+    this._layer = this.__createLayer(this._name, this.features);
+    this._configureMap();
+  }
 
-    static get _counter() {
-        return this.__counter;
-    }
+  static get _counter() {
+    return this.__counter;
+  }
 
-    static set _counter(counter) {
-        this.__counter = counter;
-    }
+  static set _counter(counter) {
+    this.__counter = counter;
+  }
 
-    /**
-     * Geeft de OpenLayers kaartlaag.
-     * 
-     * @returns {ol.layer.Layer}
-     */
-    get layer() {
-        return this._layer;
-    }
+  /**
+   * Geeft de OpenLayers kaartlaag.
+   *
+   * @return {ol.layer.Layer}
+   */
+  get layer() {
+    return this._layer;
+  }
 
-    /**
-     * Geeft de OpenLayers kaartlaag source.
-     * 
-     * @returns {ol.source}
-     */
-    get source() {
-        return this._source;
-    }
+  /**
+   * Geeft de OpenLayers kaartlaag source.
+   *
+   * @return {ol.source}
+   */
+  get source() {
+    return this._source;
+  }
 
-    /**
-     * Geeft de OpenLayers features collectie van de kaartlaag terug.
-     * 
-     * @returns {object}
-     */
-    get features() {
-        const features = this.getAttribute('features');
-        return features ? this.__geoJSON.readFeatures(features) : [];
-    }
+  /**
+   * Geeft de OpenLayers features collectie van de kaartlaag terug.
+   *
+   * @return {object}
+   */
+  get features() {
+    const features = this.getAttribute('features');
+    return features ? this.__geoJSON.readFeatures(features) : [];
+  }
 
-    /**
-     * Zet de OpenLayers features collectie op de kaartlaag.
-     * 
-     * @param {object} features
-     */
-    set features(features) {
-        this.setAttribute('features', JSON.stringify(features));
-    }
+  /**
+   * Zet de OpenLayers features collectie op de kaartlaag.
+   *
+   * @param {object} features
+   */
+  set features(features) {
+    this.setAttribute('features', JSON.stringify(features));
+  }
 
-    /**
-     * Geeft de OpenLayers kaartlaag stijl.
-     * 
-     * @returns {ol.style}
-     */
-    get style() {
-        if (this._layer) {
-            return this._layer.getStyle();
+  /**
+   * Geeft de OpenLayers kaartlaag stijl.
+   *
+   * @return {ol.style}
+   */
+  get style() {
+    if (this._layer) {
+      return this._layer.getStyle();
+    }
+  }
+
+  /**
+   * Zet de OpenLayers kaartlaag stijl.
+   *
+   * @param {ol.style} style
+   */
+  set style(style) {
+    this._style = style;
+    this._layer.setStyle(style);
+  }
+
+  get _name() {
+    return this.getAttribute('name') || 'kaartlaag';
+  }
+
+  get _autoExtent() {
+    return this.getAttribute('auto-extent') != undefined;
+  }
+
+  get _autoExtentMaxZoom() {
+    return this.getAttribute('auto-extent-max-zoom');
+  }
+
+  get _cluster() {
+    return this.getAttribute('cluster') != undefined;
+  }
+
+  get _clusterDistance() {
+    return this.getAttribute('cluster-distance');
+  }
+
+  get _map() {
+    return this._mapElement.map;
+  }
+
+  get _mapReady() {
+    return this._mapElement.ready;
+  }
+
+  get _mapElement() {
+    return this.parentNode;
+  }
+
+  /**
+   * Verwijdert de stijl van al de kaartlaag features.
+   */
+  verwijderFeatureStijlen() {
+    if (this._source &amp;&amp; this._source.getFeatures()) {
+      this._source.getFeatures().forEach((feature) => {
+        feature.setStyle(null);
+      });
+    }
+  }
+
+  /**
+   * Rendert de kaart opnieuw.
+   */
+  rerender() {
+    if (this._map) {
+      this._map.render();
+    }
+  }
+
+  /**
+   * Geeft de feature terug op basis van het id attribuut.
+   *
+   * @param {number} id
+   * @return {boolean}
+   */
+  getFeature(id) {
+    if (this._source &amp;&amp; this._source.getFeatures()) {
+      return this._source.getFeatures().filter((feature) => {
+        return feature.getId() === id;
+      })[0];
+    }
+  }
+
+  /**
+   * Geeft de cluster terug op basis van het id attribuut.
+   *
+   * @param {number} id
+   * @return {boolean}
+   */
+  getCluster(id) {
+    if (this._layer) {
+      return this._layer.getSource().getFeatures().filter((cluster) => {
+        const features = cluster.get('features');
+        if (features) {
+          return features.some((feature) => {
+            return feature.getId() === id;
+          });
+        } else {
+          return false;
         }
+      })[0];
     }
-    
-    /**
-     * Zet de OpenLayers kaartlaag stijl.
-     * 
-     * @param {ol.style} style
-     */
-    set style(style) {
-        this._style = style;
-        this._layer.setStyle(style);
-    }
+  }
 
-    get _name() {
-        return this.getAttribute('name') || 'kaartlaag';
-    }
+  /**
+   * Zoom naar alle features in deze layer.
+   *
+   * @param {number} maxZoom - Hoe diep er maximaal ingezoomd mag worden.
+   * @return {Promise&lt;void>}
+   */
+  async zoomToExtent(maxZoom) {
+    await this._mapReady;
+    this._map.zoomToExtent(this.__boundingBox, maxZoom);
+  }
 
-    get _autoExtent() {
-        return this.getAttribute('auto-extent') != undefined;
-    }
+  _autoExtentChangedCallback() {
+    this.__autoZoomToExtent();
+  }
 
-    get _autoExtentMaxZoom() {
-        return this.getAttribute('auto-extent-max-zoom');
+  _featuresChangedCallback(oldValue, newValue) {
+    if (newValue &amp;&amp; this._layer) {
+      this._source.clear();
+      this._source.addFeatures(this.features);
+      this.__autoZoomToExtent();
+      this.rerender();
     }
+  }
 
-    get _cluster() {
-        return this.getAttribute('cluster') != undefined;
+  __autoZoomToExtent() {
+    if (this._autoExtent) {
+      this.zoomToExtent(this._autoExtentMaxZoom);
     }
+  }
 
-    get _clusterDistance() {
-        return this.getAttribute('cluster-distance');
-    }
+  __createLayer(title, features) {
+    const layer = new ol.layer.Vector({
+      title: title,
+      source: this.__createSource(features),
+      updateWhileAnimating: true,
+      updateWhileInteracting: true,
+    });
+    layer.set('id', this.__counter);
+    return layer;
+  }
 
-    get _map() {
-        return this._mapElement.map;
-    }
+  __createSource(features) {
+    this._source = new ol.source.Vector({
+      features: features,
+    });
+    return this._cluster ? this.__createClusterSource(this._source) : this._source;
+  }
 
-    get _mapReady() {
-        return this._mapElement.ready;
-    }
-
-    get _mapElement() {
-        return this.parentNode;
-    }
-
-    /**
-     * Verwijdert de stijl van al de kaartlaag features.
-     */
-    verwijderFeatureStijlen() {
-        if (this._source &amp;&amp; this._source.getFeatures()) {
-            this._source.getFeatures().forEach((feature) => {
-                feature.setStyle(null);
-            });
+  __createClusterSource(source) {
+    return new ol.source.Cluster({
+      distance: this._clusterDistance,
+      source: source,
+      geometryFunction: (feature) => {
+        const geometry = feature.getGeometry();
+        if (geometry instanceof ol.geom.Point) {
+          return geometry;
+        } else {
+          return this.__negeerClustering();
         }
-    }
+      },
+    });
+  }
 
-    /**
-     * Rendert de kaart opnieuw.
-     */
-    rerender() {
-        if (this._map) {
-            this._map.render();
-        }
+  get __boundingBox() {
+    if (this._source &amp;&amp; this._source.getFeatures().length > 0) {
+      return this._source.getExtent();
     }
+  }
 
-    /**
-     * Geeft de feature terug op basis van het id attribuut.
-     * 
-     * @param {number} id
-     */
-    getFeature(id) {
-        if (this._source &amp;&amp; this._source.getFeatures()) {
-            return this._source.getFeatures().filter((feature) => {
-                return feature.getId() === id;
-            })[0];
-        }
-    }
+  __negeerClustering() {
+    return null;
+  }
 
-    /**
-     * Geeft de cluster terug op basis van het id attribuut.
-     * 
-     * @param {number} id
-     */
-    getCluster(id) {
-        if (this._layer) {
-            return this._layer.getSource().getFeatures().filter((cluster) => {
-                const features = cluster.get('features');
-                if (features) {
-                    return features.some((feature) => {
-                        return feature.getId() === id;
-                    });
-                } else {
-                    return false;
-                }
-            })[0];
-        }
+  _configureMap() {
+    if (this._map) {
+      this._map.getOverlayLayers().push(this._layer);
+      this.__autoZoomToExtent();
     }
-
-    /**
-     * Zoom naar alle features in deze layer.
-     *
-     * @param {number} maxZoom - Hoe diep er maximaal ingezoomd mag worden.
-     * @returns {Promise&lt;void>}
-     */
-    async zoomToExtent(maxZoom) {
-        await this._mapReady;
-        this._map.zoomToExtent(this.__boundingBox, maxZoom);
-    }
-
-    _auto_extentChangedCallback() {
-        this.__autoZoomToExtent();
-    }
-
-    _featuresChangedCallback(oldValue, newValue) {
-        if (newValue &amp;&amp; this._layer) {
-            this._source.clear();
-            this._source.addFeatures(this.features);
-            this.__autoZoomToExtent();
-            this.rerender();
-        }
-    }
-
-    __autoZoomToExtent() {
-        if (this._autoExtent) {
-            this.zoomToExtent(this._autoExtentMaxZoom);
-        }
-    }
-
-    __createLayer(title, features) {
-        const layer = new ol.layer.Vector({
-            title: title,
-            source: this.__createSource(features),
-            updateWhileAnimating: true,
-            updateWhileInteracting: true
-        });
-        layer.set('id', this.__counter);
-        return layer;
-    }
-
-    __createSource(features) {
-        this._source = new ol.source.Vector({
-            features: features
-        });
-        return this._cluster ? this.__createClusterSource(this._source) : this._source;
-    }
-
-    __createClusterSource(source) {
-        return new ol.source.Cluster({
-            distance: this._clusterDistance,
-            source: source,
-            geometryFunction: (feature) => {
-                const geometry = feature.getGeometry();
-                if (geometry instanceof ol.geom.Point) {
-                    return geometry;
-                } else {
-                    return this.__negeerClustering();
-                }
-            }
-        });
-    }
-
-    get __boundingBox() {
-        if (this._source &amp;&amp; this._source.getFeatures().length > 0) {
-            return this._source.getExtent();
-        }
-    }
-
-    __negeerClustering() {
-        return null;
-    }
-
-    _configureMap() {
-        if (this._map) {
-            this._map.getOverlayLayers().push(this._layer);
-            this.__autoZoomToExtent();
-        }
-    }
+  }
 }
 </code></pre>
         </article>
@@ -304,13 +306,13 @@ export class VlMapLayer extends VlElement(HTMLElement) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement_.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlElement_.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlHttpErrorMessage_VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="nativeVlElement.html">nativeVlElement</a></li><li><a href="vlElement.html">vlElement</a></li><li><a href="vlPillElement.html">vlPillElement</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlBody.html">VlBody</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlDurationStep.html">VlDurationStep</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlIntroduction.html">VlIntroduction</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="vlPillElement.html">vlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlStep.html">VlStep</a></li><li><a href="VlSteps.html">VlSteps</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="vlPattern.html">vlPattern</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li><li><a href="global.html#sleep">sleep</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jul 06 2020 14:47:40 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 22 2020 14:58:57 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

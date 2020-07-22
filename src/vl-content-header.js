@@ -6,7 +6,6 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc
  *
  * @extends HTMLElement
- * @mixin vlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-content-header/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-content-header/issues|Issues}

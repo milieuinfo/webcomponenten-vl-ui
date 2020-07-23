@@ -26,7 +26,7 @@
     "generate:copy:webcomponent:src": "copyfiles -f node_modules/*/src/vl-*.js src",
     "generate:doc": "node_modules/jsdoc/jsdoc.js src/vl-*.js README.md --destination doc",
     "generate:replace": "replace '/src/(.*).js' '../$1.js' ./demo/vl*.*",
-    "release:prepare": "npm run generate",
+    "release:prepare": "echo npm run generate",
     "release:testless": "np --yolo",
     "demo": "http-server",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-search-results voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+
+        <script type="module" src="../vl-search-results.js"></script>
+        <script type="module" src="../vl-search-result.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/vl-search-results.css" />
+    </head>
+
+	<body>
+        <vl-demo-page data-vl-webcomponent="vl-search-results" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-search-results">
+            <vl-demo data-vl-title="Search results">
+                <vl-search-results id="search-results">
+                    <vl-search-result>
+                        <a href="#" slot="title">Vlaanderenkiest.be</a>
+                        <time slot="sub-title">Maandag 22 oktober 2018</time>
+                        <dl slot="content">
+                            <dt>Vlaanderenkiest.be</dt>
+                            <dd>Verkiezingsresultaten op Vlaanderenkiest.be...</dd>
+                            <dt>Vlaanderen intern</dt>
+                            <dd>Werkt u bij de Vlaamse overheid...</dd>
+                        </dl>
+                    </vl-search-result>
+                </vl-search-results>
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

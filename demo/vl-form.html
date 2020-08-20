@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>vl-form voorbeeld</title>
+    <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+    <script type="module" src="/node_modules/vl-ui-form-grid/dist/vl-form-grid.js"></script>
+    <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
+    <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
+    <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
+
+    <script type="module" src="../vl-form.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-grid/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
+  </head>
+
+	<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-form">
+      <vl-demo data-vl-title="Form">
+        <form is="vl-form">
+          <div is="vl-form-grid" data-vl-is-stacked>
+            <div is="vl-form-column" data-vl-size="12">
+              <label is="vl-form-label" for="text" data-vl-block>Voornaam</label>
+              <input id="name" name="name" is="vl-input-field" placeholder="Jos" data-vl-block data-required="true" data-vl-error-message="Gelieve een voornaam in te vullen" data-vl-error-placeholder="name-error">
+              <p is="vl-form-validation-message" data-vl-error data-vl-error-id="name-error"></p>
+            </div>
+            <div is="vl-form-column" data-vl-size="12">
+              <label is="vl-form-label" for="url" data-vl-block>Naam</label>
+              <input id="surname" name="surname" is="vl-input-field" placeholder="Bosmans" data-vl-block data-required="true" data-vl-error-message="Gelieve een naam in te vullen" data-vl-error-placeholder="surname-error">
+              <p is="vl-form-validation-message" data-vl-error data-vl-error-id="surname-error"></p>
+            </div>
+            <div is="vl-form-column" data-vl-size="12">
+              <button is="vl-button" type="submit">Verzend</button>
+            </div>
+          </div>
+        </form>
+      </vl-demo>
+    </vl-demo-page>
+  </body>
+</html>

@@ -6,6 +6,7 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De loader component is een animatie dat aangeeft dat een pagina of website aan het laden is.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {boolean} data-vl-light - Attribuut wordt gebruikt om een alternatieve rendering te bekomen in combinatie met een donkere achtergrond.
  * @property {boolean} data-vl-text - Attribuut wordt gebruikt om een informatieve tekst te tonen tijdens het laden.
@@ -23,17 +24,17 @@ export class VlLoader extends vlElement(HTMLElement) {
 
   constructor() {
     super(`
-        <style>
-            @import '/src/style.css';
-        </style>
-        <div class="vl-u-align-center">
-            <div class="vl-loader" role="alert" aria-busy="true"></div>
-            <p id="text">
-                <slot>
-                    Pagina is aan het laden
-                </slot>
-            </p>
-        </div>
+      <style>
+        @import '/src/style.css';
+      </style>
+      <div class="vl-u-align-center">
+        <div class="vl-loader" role="alert" aria-busy="true"></div>
+        <p id="text">
+          <slot>
+            Pagina is aan het laden
+          </slot>
+        </p>
+      </div>
     `);
   }
 

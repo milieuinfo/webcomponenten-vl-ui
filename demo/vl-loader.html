@@ -4,17 +4,17 @@
 <head>
     <title>vl-loader voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-loader.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-grid/dist/vl-grid.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+    <script type="module" src="../vl-loader.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-grid/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-loader"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-loader">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-loader" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-loader">
         <vl-demo data-vl-title="Loader">
             <section is="vl-region">
                 <vl-loader id="loader"></vl-loader>

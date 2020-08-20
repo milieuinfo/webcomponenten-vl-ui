@@ -6,6 +6,7 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De zoekresultaten worden als een lijst met links getoond.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-results/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-results/issues|Issues}
@@ -14,12 +15,12 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 export class VlSearchResults extends vlElement(HTMLElement) {
   constructor() {
     super(`
-        <style>
-            @import '/src/style.css';
-        </style>
-        <ul class="vl-search-results">
-            <slot></slot>
-        </ul>
+      <style>
+        @import '/src/style.css';
+      </style>
+      <ul class="vl-search-results">
+        <slot></slot>
+      </ul>
     `);
   }
 }

@@ -4,54 +4,19 @@
 <head>
     <title>vl-properties voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     
     <script type="module" src="../vl-properties.js"></script>
-    <script type="module" src="/node_modules/vl-ui-titles/dist/vl-titles.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-titles/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/vl-properties.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-properties"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-properties">
-        <vl-demo data-vl-title="Property">
-            <vl-properties>
-                <dl is="vl-properties-list">
-                    <dt is="vl-property-term">Voornaam</dt>
-                    <dd is="vl-property-value">Koen</dd>
-                </dl>
-            </vl-properties>
-        </vl-demo>
-
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-properties" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-properties">
         <vl-demo data-vl-title="Properties">
             <vl-properties>
-                <dl is="vl-properties-list">
-                    <dt is="vl-property-term">Voornaam</dt>
-                    <dd is="vl-property-value">Koen</dd>
-                    <dt is="vl-property-term">Naam</dt>
-                    <dd is="vl-property-value">Peeters</dd>
-                    <dt is="vl-property-term">Geslacht</dt>
-                    <dd is="vl-property-value">Man</dd>
-                </dl>
-            </vl-properties>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Properties titel">
-            <vl-properties>
-                <h1 is="vl-h1">Title</h1>
-            </vl-properties>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Gebruik fancy vl-title als properties title">
-            <vl-properties>
-                <h1 is="vl-h1" sans has-border>Title</h1>
-            </vl-properties>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Properties met title">
-            <vl-properties>
-                <h1 is="vl-h1">Gegevens</h1>
+                <h1>Gegevens</h1>
                 <dl is="vl-properties-list">
                     <dt is="vl-property-term">Voornaam</dt>
                     <dd is="vl-property-value">Koen</dd>
@@ -64,34 +29,8 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Properties met kolommen">
-            <vl-properties>
-                <h1 is="vl-h1">Gegevens</h1>
-                <div is="vl-properties-column">
-                    <dl is="vl-properties-list">
-                        <dt is="vl-property-term">Voornaam</dt>
-                        <dd is="vl-property-value">Koen</dd>
-                        <dt is="vl-property-term">Naam</dt>
-                        <dd is="vl-property-value">Peeters</dd>
-                        <dt is="vl-property-term">Geslacht</dt>
-                        <dd is="vl-property-value">Man</dd>
-                    </dl>
-                </div>
-                <div is="vl-properties-column">
-                    <dl is="vl-properties-list">
-                        <dt is="vl-property-term">Telefoon</dt>
-                        <dd is="vl-property-value">000/00.00.00</dd>
-                        <dt is="vl-property-term">Gsm-nummer</dt>
-                        <dd is="vl-property-value">000/00.00.00</dd>
-                        <dt is="vl-property-term">E-mailadres</dt>
-                        <dd is="vl-property-value">koen.peeters@outlook.be</dd>
-                    </dl>
-                </div>
-            </vl-properties>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Properties met een kolom in de volledige breedte">
             <vl-properties id="properties">
-                <h1 is="vl-h1">Gegevens</h1>
+                <h1>Gegevens</h1>
                 <div is="vl-properties-column">
                     <dl is="vl-properties-list">
                         <dt is="vl-property-term">Voornaam</dt>
@@ -102,6 +41,7 @@
                         <dd is="vl-property-value">Man</dd>
                     </dl>
                 </div>
+                
                 <div is="vl-properties-column">
                     <dl is="vl-properties-list">
                         <dt is="vl-property-term">Telefoon</dt>
@@ -112,7 +52,8 @@
                         <dd is="vl-property-value">koen.peeters@outlook.be</dd>
                     </dl>
                 </div>
-                <div is="vl-properties-column" full>
+
+                <div is="vl-properties-column" data-vl-full>
                     <dl is="vl-properties-list">
                         <dt is="vl-property-term">Nationaliteit</dt>
                         <dd is="vl-property-value">Belg</dd>
@@ -120,8 +61,8 @@
                         <dd is="vl-property-value">Getrouwd</dd>
                         <dt is="vl-property-term">Adres</dt>
                         <dd is="vl-property-value">
-                            <div>Havenlaan 88</div>
-                            <div>1000 Brussel</div>
+                            <p>Havenlaan 88</p>
+                            <p>1000 Brussel</p>
                         </dd>
                     </dl>
                 </div>

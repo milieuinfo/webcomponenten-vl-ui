@@ -12,18 +12,21 @@ import '/node_modules/vl-ui-footer/dist/vl-footer.js';
  * @classdesc
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {boolean} data-vl-link - Attribuut wordt gebruikt om de link naar de documentatie van Webuniversum te bepalen.
  * @property {boolean} data-vl-webcomponent - Attribuut wordt gebruikt om aan te geven over welke webcomponent de demo pagina gaat.
+ * @property {number} data-vl-size - De teller van de verdeling van grote scherm.
+ * @property {number} data-vl-small-size - De teller van de verdeling van kleine scherm.
+ * @property {number} data-vl-extra-small-size - De teller van de verdeling van extra kleine scherm.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-demo/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-demo/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-demo.html|Demo}
- *
  */
 export class VlDemoPage extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['link', 'webcomponent'];
+    return ['link', 'webcomponent', 'size', 'medium-size', 'small-size', 'extra-small-size'];
   }
 
   constructor() {
@@ -34,8 +37,8 @@ export class VlDemoPage extends vlElement(HTMLElement) {
         @import '/node_modules/vl-ui-demo/dist/style.css';
 
         ::slotted(vl-demo:not(:first-child)) {
-            display: block;
-            margin-top: 3rem;
+          display: block;
+          margin-top: 3rem;
         }
       </style>
       <vl-template>
@@ -48,8 +51,8 @@ export class VlDemoPage extends vlElement(HTMLElement) {
           <section is="vl-region">
             <div is="vl-layout">
               <h1 is="vl-h1"></h1>
-              <div id="grid" is="vl-grid" is-stacked slot="main">
-                <div id="demo" is="vl-column" size="12">
+              <div id="grid" is="vl-grid" data-vl-is-stacked slot="main" data-vl-size="12">
+                <div id="demo" is="vl-column">
                   <h2 is="vl-h2">Demo's</h2>
                   <slot></slot>
                 </div>
@@ -59,6 +62,7 @@ export class VlDemoPage extends vlElement(HTMLElement) {
         </div>
       </vl-template>
     `);
+    this._addMetaTag();
     const template = this._shadow.querySelector('vl-template');
     const params = new URLSearchParams(VlDemoPage.getSearchParams());
     const noHeader = !!params.get('no-header');
@@ -93,7 +97,7 @@ export class VlDemoPage extends vlElement(HTMLElement) {
 
   _getLinkTemplate(link) {
     return this._template(`
-      <div id="link" is="vl-column" size="12">
+      <div id="link" is="vl-column">
         <h2 is="vl-h2">Documentatie</h2>
         <p>
           Meer voorbeelden en documentatie raadpleegbaar via de <a href="${link}">website</a> van Webuniversum.
@@ -111,6 +115,29 @@ export class VlDemoPage extends vlElement(HTMLElement) {
 
   _webcomponentChangedCallback(oldValue, newValue) {
     this._titleElement.innerText = `Demo ${newValue}`;
+  }
+
+  _sizeChangedCallback(oldValue, newValue) {
+    this._demoElement.setAttribute('data-vl-size', newValue);
+  }
+
+  _mediumSizeChangedCallback(oldValue, newValue) {
+    this._demoElement.setAttribute('data-vl-medium-size', newValue);
+  }
+
+  _smallSizeChangedCallback(oldValue, newValue) {
+    this._demoElement.setAttribute('data-vl-small-size', newValue);
+  }
+
+  _extraSmallSizeChangedCallback(oldValue, newValue) {
+    this._demoElement.setAttribute('data-vl-extra-small-size', newValue);
+  }
+
+  _addMetaTag() {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0';
+    document.head.appendChild(meta);
   }
 }
 

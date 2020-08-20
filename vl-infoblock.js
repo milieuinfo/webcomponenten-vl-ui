@@ -7,10 +7,11 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
  * @classdesc Gebruik de infoblock om een sectie met een nieuwe content te starten.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
- * @property {string} title - Attribuut dat wordt gebruikt om de titel van de infoblock te zetten.
- * @property {string} icon -  Attribuut dat wordt gebruikt om een icoon vooraan aan de titel toe te voegen. Het icoon kan gekozen worden uit de lijst op https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon.
- * @property {string} type -  Er kan een vast icoon gekozen worden (contact, publications, faq, news, timeline, question)
+ * @property {string} data-vl-title - Attribuut dat wordt gebruikt om de titel van de infoblock te zetten.
+ * @property {string} data-vl-icon -  Attribuut dat wordt gebruikt om een icoon vooraan aan de titel toe te voegen. Het icoon kan gekozen worden uit de lijst op https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon.
+ * @property {string} data-vl-type -  Er kan een vast icoon gekozen worden (contact, publications, faq, news, timeline, question)
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-infoblock/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-infoblock/issues|Issues}
@@ -24,25 +25,25 @@ export class VlInfoblock extends vlElement(HTMLElement) {
 
   constructor() {
     super(`
-        <style>
-            @import '/node_modules/vl-ui-infoblock/dist/style.css';
-            @import '/node_modules/vl-ui-icon/dist/style.css';
-        </style>
+      <style>
+        @import '/node_modules/vl-ui-icon/dist/style.css';
+        @import '/node_modules/vl-ui-infoblock/dist/style.css';
+      </style>
 
-        <section id="infoblock-element" class="vl-infoblock">
-            <header class="vl-infoblock__header" role="presentation">
-                <span is="vl-icon" id="infoblock_icon" class="vl-infoblock__header__icon"></span>
-                <h2 class="vl-infoblock__title" id="infoblock_title"><slot name='title'></slot></h2>
-            </header>
-            <div class="vl-infoblock__content" id="infoblock_content">
-                <slot></slot>
-            </div>  
-        </section>
+      <section id="infoblock-element" class="vl-infoblock">
+        <header class="vl-infoblock__header" role="presentation">
+          <span is="vl-icon" id="infoblock_icon" class="vl-infoblock__header__icon"></span>
+          <h2 class="vl-infoblock__title" id="infoblock_title"><slot name='title'></slot></h2>
+        </header>
+        <div class="vl-infoblock__content" id="infoblock_content">
+          <slot></slot>
+        </div>  
+      </section>
     `);
   }
 
   _titleChangedCallback(oldValue, newValue) {
-    const currentSlot = this.querySelector('[slot=\'title\']');
+    const currentSlot = this.querySelector('[slot="title"]');
     if (currentSlot) {
       currentSlot.remove();
     }

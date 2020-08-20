@@ -4,15 +4,15 @@
 <head>
     <title>vl-image voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
     <script type="module" src="../vl-image.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-image"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-button">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-image" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-button">
         <vl-demo data-vl-title="Display an image">
             <img id="image" is="vl-image" sizes="100vw" src="default.jpg"
                 srcset="mobile.jpg 320w, default.jpg 1024w, wide.jpg 1600w" alt="Content Header">

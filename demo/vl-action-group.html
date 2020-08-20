@@ -4,65 +4,66 @@
 <head>
     <title>vl-action-group voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-action-group.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
     <script type="module" src="/node_modules/vl-ui-link/dist/vl-link.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
+    <script type="module" src="../vl-action-group.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vl-action-group.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-action-group"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-action-group" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-action-group">
         <vl-demo data-vl-title="Action group">
             <div is="vl-action-group" id="vl-action-group">
                 <button is="vl-button">
                     Aanvraag starten
                 </button>
-                <button is="vl-button" secondary>
+                <button is="vl-button" data-vl-secondary>
                     Annuleren
                 </button>
             </div>
         </vl-demo>
 
         <vl-demo data-vl-title="Action group align center">
-            <div is="vl-action-group" align="center" id="vl-action-group-align-center">
+            <div is="vl-action-group" data-vl-align="center" id="vl-action-group-align-center">
                 <button is="vl-button">
                     Aanvraag starten
                 </button>
-                <button is="vl-button" secondary>
+                <button is="vl-button" data-vl-secondary>
                     Annuleren
                 </button>
             </div>
         </vl-demo>
 
         <vl-demo data-vl-title="Action group align right">
-            <div is="vl-action-group" align="right" id="vl-action-group-align-right">
+            <div is="vl-action-group" data-vl-align="right" id="vl-action-group-align-right">
                 <button is="vl-button">
                     Aanvraag starten
                 </button>
-                <button is="vl-button" secondary>
+                <button is="vl-button" data-vl-secondary>
                     Annuleren
                 </button>
             </div>
         </vl-demo>
 
         <vl-demo data-vl-title="Action group space between">
-            <div is="vl-action-group" space-between id="vl-action-group-space-between">
+            <div is="vl-action-group" data-vl-space-between id="vl-action-group-space-between">
                 <button class="vl-button">
                     Aanvraag starten
                 </button>
-                <button is="vl-button" secondary>
+                <button is="vl-button" data-vl-secondary>
                     Annuleren
                 </button>
             </div>
         </vl-demo>
 
-        <vl-demo data-vl-title="Action group with links">
+        <vl-demo data-vl-title="Action group met links">
             <div is="vl-action-group">
                 <a href="#" is="vl-link">
                     <span is="vl-icon" data-vl-icon="bell" data-vl-before></span>
@@ -79,8 +80,8 @@
             </div>
         </vl-demo>
 
-        <vl-demo data-vl-title="Action group with bordered links">
-            <div is="vl-action-group" bordered id="vl-action-group-bordered">
+        <vl-demo data-vl-title="Action group met bordered links">
+            <div is="vl-action-group" data-vl-bordered id="vl-action-group-bordered">
                 <a href="#" is="vl-link">
                     <span is="vl-icon" data-vl-icon="bell" data-vl-before></span>
                     Notificaties

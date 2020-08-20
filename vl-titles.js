@@ -6,10 +6,11 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  * @classdesc Gebruik de vl-title om titels en subtitels als leidraad voor de gebruiker om door de content te gaan.
  *
  * @extends HTMLHeadingElement
+ * @mixes nativeVlElement
  *
- * @property {boolean} sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
- * @property {boolean} has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
- * @property {boolean} alt - Attribuut wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel.
+ * @property {boolean} data-vl-sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
+ * @property {boolean} data-vl-has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
+ * @property {boolean} data-vl-alt - Attribuut wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/issues|Issues}

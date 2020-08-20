@@ -4,95 +4,63 @@
 <head>
     <title>vl-alert voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-alert.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
 
+    <script type="module" src="../vl-alert.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
 </head>
 
-<body>
+<body is="vl-body">
     <vl-demo-page data-vl-webcomponent="vl-alert" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-alert">
-        <vl-demo data-vl-title="Alert met pictogram en titel">
-            <vl-alert id="alert-iconAndTitle" icon="info" title="Dit is een melding met pictogram en titel. Een titel kan enkel tekst bevatten."></vl-alert>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Alert met pictogram en boodschap">
-            <vl-alert id="alert-iconAndMessage" icon="info">
-                <div>
-                    <p>Dit is een melding met pictogram en boodschap.</p>
-                    <p>De boodschap bestaat uit standaard HTML.</p>
-                    <p>De boodschap kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen
-                        bevatten.</p>
-                </div>
+        <vl-demo data-vl-title="Alert">
+            <vl-alert id="alert" data-vl-icon="warning" data-vl-title="Opgelet!">
+                <p>U heeft geen rechten om deze actie uit te voeren. <a href="#">Vraag rechten aan</a>.</p>
             </vl-alert>
         </vl-demo>
 
-        <vl-demo data-vl-title="Alert met pictogram, titel en boodschap">
-            <vl-alert id="alert-iconTitleAndMessage" icon="info" title="Dit is een melding met pictogram, titel en boodschap.">
-                <div>
-                    <p>De titel is vetgedrukte tekst.</p>
-                    <p>Het bericht bestaat uit standaard HTML.</p>
-                    <p>Het bericht kan dus uit meerdere paragrafen bestaan en <a href="#">links</a> en andere HTML elementen
-                        bevatten.</p>
-                </div>
+        <vl-demo data-vl-title="Alert closable">
+            <vl-alert id="alert-closable" data-vl-icon="warning" data-vl-title="Opgelet!" data-vl-closable>
+                <p>U heeft geen rechten om deze actie uit te voeren. <a href="#">Vraag rechten aan</a>.</p>
             </vl-alert>
         </vl-demo>
 
-        <vl-demo data-vl-title="Alert sluitbaar">
-            <vl-alert id="alert-closable" icon="info" title="Sluitbare melding" closable>
-                <p>Deze melding kan worden gesloten door middel van het knopje rechtsboven.</p>
-            </vl-alert>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Alert met button (CTA)">
-            <vl-alert id="alert-cta" type="cta" icon="info" title="Opgelet!">
+        <vl-demo data-vl-title="Alert met button">
+            <vl-alert id="alert-with-button" data-vl-type="cta" data-vl-icon="warning" data-vl-title="Opgelet!">
                 <p>U heeft geen rechten om deze actie uit te voeren. <a href="#">Vraag rechten aan</a>.</p>
                 <button slot="actions" is="vl-button" id="b1">Fout melden</button>
             </vl-alert>
         </vl-demo>
 
         <vl-demo data-vl-title="Alert small">
-            <vl-alert id="alert-smallNoTitle" icon="info" size="small">
-                <p>Dit is een kleine melding zonder titel.</p>
-            </vl-alert>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Alert small met titel">
-            <vl-alert id="alert-smallTitle " icon="info" size="small" title="Kleine melding met titel"></vl-alert>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Alert small met titel en inhoud">
-            <vl-alert id="alert-smallTitleAndMessage" icon="info" size="small" title="Kleine melding met titel en inhoud">
-                <p>Dit is een kleine melding met titel en inhoud</p>
+            <vl-alert id="alert-small" data-vl-icon="warning" data-vl-title="Opgelet!" data-vl-size="small">
+                <p>U heeft geen rechten om deze actie uit te voeren. <a href="#">Vraag rechten aan</a>.</p>
             </vl-alert>
         </vl-demo>
 
         <vl-demo data-vl-title="Alert error">
-            <vl-alert id="alert-error" type="error" icon="warning" title="Error!">
-                <p>Er is een fout opgetreden.</p>
+            <vl-alert id="alert-error" data-vl-type="error" data-vl-icon="warning" data-vl-title="Opgelet!">
+                <p>U heeft geen rechten om deze actie uit te voeren. <a href="#">Vraag rechten aan</a>.</p>
             </vl-alert>
         </vl-demo>
 
         <vl-demo data-vl-title="Alert warning">
-            <vl-alert id="alert-warning" type="warning" icon="alert-triangle" title="Technische storing">
+            <vl-alert id="alert-warning" data-vl-type="warning" data-vl-icon="warning" data-vl-title="Technische storing">
                 <p>Door een technische storing is dit loket tijdelijk niet beschikbaar.</p>
             </vl-alert>
         </vl-demo>
 
         <vl-demo data-vl-title="Alert success">
-            <vl-alert id="alert-success" type="success" icon="check" title="Gelukt!">
-                <p>Wij hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
+            <vl-alert id="alert-success" data-vl-type="success" data-vl-icon="check" data-vl-title="Gelukt!">
+                <p>We hebben uw melding goed ontvangen en nemen deze spoedig in behandeling.</p>
             </vl-alert>
         </vl-demo>
 
-        <vl-demo data-vl-title="Alert large">
-            <vl-alert id="alert-large" icon="info" title="Grote melding" size="large">
-                <div>
-                    <p>De grote melding is vooral ruimer opgezet, met extra padding.</p>
-                    <p>De grote melding van het Webuniversum bevat verder nog een afbeelding in plaats van een pictogram, maar dit is hier niet geïmplementeerd.</p>
-                </div>
+        <vl-demo data-vl-title="Alert info">
+            <vl-alert id="alert-info" data-vl-type="info" data-vl-icon="info-circle" data-vl-title="Info">
+                <p>Als u vaststelt dat er foute informatie over u in het bestand van de Centrale voor Kredieten aan Particulieren staat, dan kunt u een rechtzetting aanvragen.</p>
             </vl-alert>
         </vl-demo>
     </vl-demo-page>

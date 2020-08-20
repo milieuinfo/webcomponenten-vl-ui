@@ -3,17 +3,18 @@
 	<head>
         <title>vl-pattern voorbeeld</title>
         <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-        <script type="module" src="../vl-pattern.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
         <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
         <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+        <script type="module" src="../vl-pattern.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
         <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css" />
         <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css" />
     </head>
 
-	<body>
+	<body is="vl-body">
         <vl-demo-page data-vl-webcomponent="vl-pattern" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-pattern">
             <vl-demo data-vl-title="IBAN pattern">
                 <label is="vl-form-label" for="pattern-1">IBAN-nummer</label>

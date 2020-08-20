@@ -4,65 +4,66 @@
 <head>
     <title>vl-infoblock voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
     <script type="module" src="../vl-infoblock.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vl-infoblock.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-infoblock"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-infoblock">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-infoblock" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-infoblock">
         <vl-demo data-vl-title="Infoblock contact">
-            <vl-infoblock id="contact" title="Contactenlijst" type="contact">
+            <vl-infoblock id="contact" data-vl-title="Contactenlijst" data-vl-type="contact">
                 Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock publications">
-            <vl-infoblock id="publications" title="Contracten" type="publications">
+            <vl-infoblock id="publications" data-vl-title="Contracten" data-vl-type="publications">
                 Hieronder bevindt zicht een overzicht van al uw contracten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock FAQ">
-            <vl-infoblock id="faq" title="Veelgestelde vragen" type="faq">
+            <vl-infoblock id="faq" data-vl-title="Veelgestelde vragen" data-vl-type="faq">
                 Hieronder bevindt zicht een overzicht van alle veelgestelde vragen binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock news">
-            <vl-infoblock id="news" title="Nieuwsberichten" type="news">
+            <vl-infoblock id="news" data-vl-title="Nieuwsberichten" data-vl-type="news">
                 Hieronder bevindt zicht een overzicht van alle nieuwsberichten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock timeline">
-            <vl-infoblock id="timeline" title="Archief" type="timeline">
+            <vl-infoblock id="timeline" data-vl-title="Archief" data-vl-type="timeline">
                 Hieronder bevindt zicht een overzicht van alle gearchiveerde berichten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock question">
-            <vl-infoblock id="question" title="Overheidsdiensten" type="question">
+            <vl-infoblock id="question" data-vl-title="Overheidsdiensten" data-vl-type="question">
                 Hieronder bevindt zicht een overzicht van alle overheidsdiensten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock custom icon">
-            <vl-infoblock id="calendar" title="Evenementen" icon="calendar">
+            <vl-infoblock id="calendar" data-vl-title="Evenementen" data-vl-icon="calendar">
                 Hieronder bevindt zicht een overzicht van alle evenementen binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock titel via attribuut doorgeven">
-            <vl-infoblock id="contact-title" title='Titel via title attribuut' type="contact">
+            <vl-infoblock id="contact-title" data-vl-title='Titel via title attribuut' data-vl-type="contact">
                 Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
             </vl-infoblock>
         </vl-demo>
 
         <vl-demo data-vl-title="Infoblock titel via slot doorgeven">
-            <vl-infoblock id="contact-slot" type="contact">
+            <vl-infoblock id="contact-slot" data-vl-type="contact">
                 <span slot='title'>Titel via slot</span>
                 Hieronder bevindt zich een overzicht van al uw contacten binnen de Vlaamse Overheid.
             </vl-infoblock>

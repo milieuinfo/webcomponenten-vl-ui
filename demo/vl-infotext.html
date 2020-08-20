@@ -4,15 +4,16 @@
 <head>
     <title>vl-infotext voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
     <script type="module" src="../vl-infotext.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vl-infotext.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-infotext"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-infotext">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-infotext" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-infotext">
         <vl-demo data-vl-title="Infotext">
             <div id="infotext" is='vl-infotext'>
                 <div>

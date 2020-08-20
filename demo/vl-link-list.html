@@ -4,65 +4,58 @@
 <head>
     <title>vl-link-list voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-link-list.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-link/dist/vl-link.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
+    <script type="module" src="../vl-link-list.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vl-link-list.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-link/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-link-list"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-link-list">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-link-list" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-link-list">
         <vl-demo data-vl-title="Link list">
             <ul is="vl-link-list" id='link-list'>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Ga naar
-                        index</a>
+                    <a is="vl-link" href="#">Ga naar index</a>
                 </li>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Terug naar
-                        overzicht</a>
+                    <a is="vl-link" href="#">Terug naar overzicht</a>
                 </li>
             </ul>
         </vl-demo>
 
         <vl-demo data-vl-title="Link list small">
-            <ul is="vl-link-list" small>
+            <ul is="vl-link-list" data-vl-small>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Ga naar
-                        index</a>
+                    <a is="vl-link" href="#">Ga naar index</a>
                 </li>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Terug naar
-                        overzicht</a>
+                    <a is="vl-link" href="#">Terug naar overzicht</a>
                 </li>
             </ul>
         </vl-demo>
 
         <vl-demo data-vl-title="Link list inline">
-            <ul is="vl-link-list" inline>
+            <ul is="vl-link-list" data-vl-inline>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Ga naar
-                        index</a>
+                    <a is="vl-link" href="#">Ga naar index</a>
                 </li>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Terug naar
-                        overzicht</a>
+                    <a is="vl-link" href="#">Terug naar overzicht</a>
                 </li>
             </ul>
         </vl-demo>
 
         <vl-demo data-vl-title="Link list bordered">
-            <ul is="vl-link-list" bordered>
+            <ul is="vl-link-list" data-vl-bordered>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Ga naar
-                        index</a>
+                    <a is="vl-link" href="#">Ga naar index</a>
                 </li>
                 <li is="vl-link-list-item">
-                    <a is="vl-link" href="#">Terug naar
-                        overzicht</a>
+                    <a is="vl-link" href="#">Terug naar overzicht</a>
                 </li>
             </ul>
         </vl-demo>

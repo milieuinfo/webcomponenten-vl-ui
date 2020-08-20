@@ -10,6 +10,7 @@ import '/node_modules/vl-ui-button/dist/vl-button.js';
  * @classdesc Toont een verklarend bericht voor een HTTP fout.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {String} data-vl-title - De titel van de foutmelding.
  * @property {String} data-vl-image - De url van de afbeelding die getoond moet worden.
@@ -21,46 +22,46 @@ import '/node_modules/vl-ui-button/dist/vl-button.js';
  */
 export class VlHttpErrorMessage extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['data-vl-title', 'data-vl-image', 'data-vl-image-alt'];
+    return ['title', 'image', 'image-alt'];
   }
 
   /**
-     * @param {Object} defaults - De standaardwaarden voor alles wat er in de foutboodschap getoond moet worden. Hier wordt op teruggevallen indien er op een andere manier geen waarde werd gespecificeerd.
-     * @param {String} defaults.title - De titel van de foutmelding.
-     * @param {String} defaults.image - De url van de afbeelding die getoond moet worden.
-     * @param {String} defaults.imageAlt - De alternatieve tekst van de afbeelding die getoond moet worden.
-     * @param {Literal} defaults.text - De uitleg die getoond moet worden.
-     * @param {Literal} defaults.actions - De acties die mogelijk zijn.
-     */
+   * @param {Object} defaults - De standaardwaarden voor alles wat er in de foutboodschap getoond moet worden. Hier wordt op teruggevallen indien er op een andere manier geen waarde werd gespecificeerd.
+   * @param {String} defaults.title - De titel van de foutmelding.
+   * @param {String} defaults.image - De url van de afbeelding die getoond moet worden.
+   * @param {String} defaults.imageAlt - De alternatieve tekst van de afbeelding die getoond moet worden.
+   * @param {Literal} defaults.text - De uitleg die getoond moet worden.
+   * @param {Literal} defaults.actions - De acties die mogelijk zijn.
+   */
   constructor(defaults) {
     super(`
-        <style>
-            @import '/node_modules/vl-ui-http-error-message/dist/style.css';
-            @import '/node_modules/vl-ui-grid/dist/style.css';
-            @import '/node_modules/vl-ui-titles/dist/style.css';
-            @import '/node_modules/vl-ui-button/dist/style.css';
-        </style>
-        <div is="vl-grid" is-stacked align-center v-center>
-            <div is="vl-column" size="6" max-size="12" class="vl-u-hidden vl-u-visible--s">
-                <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
-                    <img id="image-small"/>
-                </div>
-            </div>
-            <div is="vl-column" size="6" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
-                <div is="vl-grid" is-stacked>
-                    <div is="vl-column" size="12" max-size="12">
-                        <h2 id="title" is="vl-h2"></h2>
-                        <vl-typography id="text"></vl-typography>
-                    </div>
-                    <div id="actions" is="vl-column" size="12" max-size="12"></div>
-                </div>
-            </div>
-            <div is="vl-column" size="6" max-size="12" class="vl-u-hidden--s">
-                <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
-                    <img id="image-normal"/>
-                </div>
-            </div>
+      <style>
+        @import '/node_modules/vl-ui-http-error-message/dist/style.css';
+        @import '/node_modules/vl-ui-grid/dist/style.css';
+        @import '/node_modules/vl-ui-titles/dist/style.css';
+        @import '/node_modules/vl-ui-button/dist/style.css';
+      </style>
+      <div is="vl-grid" is-stacked align-center v-center>
+        <div is="vl-column" size="6" max-size="12" class="vl-u-hidden vl-u-visible--s">
+          <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
+            <img id="image-small"/>
+          </div>
         </div>
+        <div is="vl-column" size="6" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
+          <div is="vl-grid" is-stacked>
+            <div is="vl-column" size="12" max-size="12">
+              <h2 id="title" is="vl-h2"></h2>
+              <vl-typography id="text"></vl-typography>
+            </div>
+            <div id="actions" is="vl-column" size="12" max-size="12"></div>
+          </div>
+        </div>
+        <div is="vl-column" size="6" max-size="12" class="vl-u-hidden--s">
+          <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
+            <img id="image-normal"/>
+          </div>
+        </div>
+      </div>
     `);
 
     this._defaults = defaults || {};
@@ -89,13 +90,11 @@ export class VlHttpErrorMessage extends vlElement(HTMLElement) {
   }
 
   get _textSlotElement() {
-    return this.querySelector('[slot="text"]') ||
-            VlHttpErrorMessage.__createDivWithContent(this._defaults.text);
+    return this.querySelector('[slot="text"]') || VlHttpErrorMessage.__createDivWithContent(this._defaults.text);
   }
 
   get _actionsSlotElement() {
-    return this.querySelector('[slot="actions"]') ||
-            VlHttpErrorMessage.__createDivWithContent(this._defaults.actions);
+    return this.querySelector('[slot="actions"]') || VlHttpErrorMessage.__createDivWithContent(this._defaults.actions);
   }
 
   _titleChangedCallback() {

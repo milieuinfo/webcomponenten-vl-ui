@@ -4,47 +4,48 @@
 <head>
     <title>vl-link voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-link.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
+    <script type="module" src="../vl-link.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vl-link.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-icon/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-link"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-link">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-link" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-link">
         <vl-demo data-vl-title="Link">
             <a id="link" is="vl-link" href="#">Terug naar overzicht</a>
         </vl-demo>
 
         <vl-demo data-vl-title="Link block">
-            <a is="vl-link" href="#" block>Terug naar overzicht</a>
+            <a id="link-block" is="vl-link" href="#" data-vl-block>Terug naar overzicht</a>
         </vl-demo>
 
-        <vl-demo data-vl-title="Link met icoon voor tekst">
+        <vl-demo data-vl-title="Link with icon before text">
             <a id="link-with-icon" is="vl-link" href="#">
                 <span is="vl-icon" data-vl-icon="arrow-right-fat" data-vl-before></span>
                 Terug naar overzicht
             </a>
         </vl-demo>
 
-        <vl-demo data-vl-title="Link met icoon na tekst">
+        <vl-demo data-vl-title="Link with icon after text">
             <a is="vl-link" href="#">
                 Terug naar overzicht
                 <span is="vl-icon" data-vl-icon="arrow-right-fat" data-vl-after></span>
             </a>
         </vl-demo>
 
-        <vl-demo data-vl-title="Link extern">
+        <vl-demo data-vl-title="Link external">
             <a is="vl-link" href="#">
                 Ga naar Vlaanderen.be
                 <span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span>
             </a>
         </vl-demo>
 
-        <vl-demo data-vl-title="Link sluiten">
+        <vl-demo data-vl-title="Link close">
             <a is="vl-link" href="#">
                 <span is="vl-icon" data-vl-icon="cross" data-vl-before></span>
                 Venster sluiten
@@ -52,11 +53,11 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Button link">
-            <a is="vl-link" id="button-a-link" block>
+            <a is="vl-link" id="button-a-link" data-vl-block>
                 <span is="vl-icon" data-vl-icon="arrow-right-fat" data-vl-before></span>
                 Demo link
             </a>
-            <button id="button-link" is="vl-button-link" type="button" id="button-link" block>
+            <button id="button-link" is="vl-button-link" type="button" id="button-link" data-vl-block>
                 <span is="vl-icon" data-vl-icon="arrow-right-fat" data-vl-before></span>
                 Demo link
             </button>

@@ -4,7 +4,7 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-typography/dist/vl-typography.js';
 import '/node_modules/vl-ui-toaster/dist/vl-toaster.js';
 import '/node_modules/vl-ui-alert/dist/vl-alert.js';
-import '/lib/tinymce.min.js';
+import '/node_modules/tinymce/tinymce.min.js';
 
 /**
  * VlProzaMessage
@@ -12,10 +12,12 @@ import '/lib/tinymce.min.js';
  * @classdesc De vl-proza-message webcomponent kan gebruikt worden om teksten te laten beheren door de business. De edit modus wordt geactiveerd door op het potlood icoon te klikken. De edit modus kan gedactiveerd worden door op enter te duwen of een focus te geven aan een ander element op de pagina. Wanneer de gebruiker op escape klikt zal de edit modus afgesloten worden en zullen de wijzigingen ongedaan gemaakt worden.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {string} data-vl-domain - Het Proza domein waarin het Proza bericht zit.
  * @property {string} data-vl-code - De code die het Proza bericht identificeert.
  * @property {string} data-vl-block - Attribuut om aan te duiden dat de inhoud van het Proza bericht een block element is.
+ * @property {string} data-vl-parameters - De key/value parameters die verwerkt en getoond zullen worden in het content element.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-proza-message/issues|Issues}
@@ -24,21 +26,21 @@ import '/lib/tinymce.min.js';
  */
 export class VlProzaMessage extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['data-vl-domain', 'data-vl-code', 'data-vl-block'];
+    return ['domain', 'code', 'block', 'parameters'];
   }
 
   constructor() {
     super();
     this.appendChild(this.__createWysiwygElement());
     this.shadow(`
-        <style>
-            @import '/src/style.css';
-            @import '/node_modules/vl-ui-button/dist/style.css';
-            @import '/node_modules/vl-ui-icon/dist/style.css';
-        </style>
-        <div>
-            <slot></slot>
-        </div>
+      <style>
+        @import '/src/style.css';
+        @import '/node_modules/vl-ui-button/dist/style.css';
+        @import '/node_modules/vl-ui-icon/dist/style.css';
+      </style>
+      <div>
+        <slot></slot>
+      </div>
     `);
     this._toaster = this.__initProzaMessageToaster();
   }
@@ -52,7 +54,7 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
   __addToasterElement() {
     const id = 'vl-proza-message-toaster';
     if (!document.getElementById(id)) {
-      document.body.appendChild(this._template(`<div is='vl-toaster' top-right id=${id}></div>`));
+      document.body.appendChild(this._template(`<div is='vl-toaster' data-vl-top-right id=${id}></div>`));
     }
     return document.getElementById(id);
   }
@@ -71,6 +73,10 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
 
   connectedCallback() {
     this.__processToegelatenOperaties();
+  }
+
+  disconnectedCallback() {
+    this.__destroyWysiwyg();
   }
 
   get _wysiwygElement() {
@@ -109,6 +115,12 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
       this.classList.add(blockClass);
     } else {
       this.classList.remove(blockClass);
+    }
+  }
+
+  _parametersChangedCallback(oldValue, newValue) {
+    if (this._typographyElement && this.dataset.vlParameters) {
+      this._typographyElement.dataset.vlParameters = this.dataset.vlParameters;
     }
   }
 
@@ -300,7 +312,7 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
 
   __getProzaSaveErrorAlertTemplate() {
     return this._template(`
-      <vl-alert type="error" icon="alert-triangle" title="Technische storing" closable>
+      <vl-alert data-vl-type="error" data-vl-icon="warning" data-vl-title="Technische storing" data-vl-closable>
         <p>Uw wijziging kon niet bewaard worden. Probeer het later opnieuw of neem contact op met de helpdesk als het probleem zich blijft voordoen.</p>
       </vl-alert>
     `);
@@ -338,12 +350,16 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
   }
 
   __stopWysiwyg() {
+    this.__destroyWysiwyg();
+    this.__showWysiwygButton();
+    this.__wrapWysiwygElement();
+  }
+
+  __destroyWysiwyg() {
     const editor = this._activeWysiwygEditor;
     if (editor) {
       editor.destroy();
     }
-    this.__showWysiwygButton();
-    this.__wrapWysiwygElement();
   }
 
   __hideWysiwygButton() {
@@ -365,6 +381,9 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
     if (!this._typographyElement) {
       const typography = document.createElement('vl-typography');
       typography.appendChild(this._wysiwygElement);
+      if (this.dataset.vlParameters) {
+        typography.dataset.vlParameters = this.dataset.vlParameters;
+      }
       this.appendChild(typography);
     }
   }
@@ -388,9 +407,10 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
 /**
  * VlProzaMessagePreloader
  * @class
- * @classdesc
+ * @classdesc Proza preloader dient om proza codes op voorhand op te halen zodat deze sneller getoond kunnen worden aan de gebruiker.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {string} data-vl-domain - Het Proza domein waarin de Proza berichten zitten.
  *
@@ -401,7 +421,7 @@ export class VlProzaMessage extends vlElement(HTMLElement) {
  */
 export class VlProzaMessagePreloader extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['data-vl-domain'];
+    return ['domain'];
   }
 
   constructor() {

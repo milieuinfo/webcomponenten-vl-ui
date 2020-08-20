@@ -27,10 +27,8 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import '/node_modules/vl-ui-button/dist/vl-button.js';
-import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
-import '/lib/accordion.js';
+import '/node_modules/@govflanders/vl-ui-accordion/dist/js/accordion.js';
 
 /**
  * VlAccordion
@@ -38,10 +36,11 @@ import '/lib/accordion.js';
  * @classdesc Deccordion component kan gebruikt worden om informatie te tonen of te verbergen aan de hand van een toggle.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
- * @property {string} toggle-text - Attribuut wordt gebruikt als tekst waarop de gebruiker kan klikken om de accordion te openen en te sluiten.
- * @property {string} open-toggle-text - Attribuut wordt gebruikt als tekst wanneer de gebruiker de accordion geopend heeft.
- * @property {string} close-toggle-text - Attribuut wordt gebruikt als tekst wanneer de gebruiker de accordion gesloten heeft.
+ * @property {string} data-vl-toggle-text - Attribuut wordt gebruikt als tekst waarop de gebruiker kan klikken om de accordion te openen en te sluiten.
+ * @property {string} data-vl-open-toggle-text - Attribuut wordt gebruikt als tekst wanneer de gebruiker de accordion geopend heeft.
+ * @property {string} data-vl-close-toggle-text - Attribuut wordt gebruikt als tekst wanneer de gebruiker de accordion gesloten heeft.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-accordion/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-accordion/issues|Issues}
@@ -55,23 +54,28 @@ export class VlAccordion extends vlElement(HTMLElement) {
 
   constructor() {
     super(`
-            &lt;style>
-                @import '/src/style.css';
-            &lt;/style>
+      &lt;style>
+        @import '/src/style.css';
+      &lt;/style>
 
-            &lt;div class="js js-vl-accordion">
-                &lt;div data-vl-accordion>
-                    &lt;button id="accordion-toggle" data-vl-accordion-toggle>
-                        &lt;span is="vl-icon" data-vl-icon="arrow-right-fat" data-vl-before>&lt;/span>&lt;span>&lt;/span>
-                    &lt;/button>
-                    &lt;div id="accordion-content" class="vl-accordion__content">
-                        &lt;div id="accordion-panel" class="vl-accordion__panel">
-                            &lt;slot id="accordion-slot">&lt;/slot>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
+      &lt;div class="js js-vl-accordion">
+        &lt;div class="vl-accordion" data-vl-accordion>
+          &lt;button class="vl-toggle vl-link vl-link--bold" data-vl-accordion-toggle>
+            &lt;i class="vl-link__icon vl-link__icon--before vl-toggle__icon vl-vi vl-vi-arrow-right-fat" aria-hidden="true">&lt;/i>
+            &lt;span>&lt;/span>
+          &lt;/button>
+          &lt;div class="vl-accordion__content js-vl-accordion__content">
+            &lt;div class="vl-accordion__panel">
+              &lt;slot id="accordion-slot">&lt;/slot>
             &lt;/div>
-        `);
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    `);
+  }
+
+  connectedCallback() {
+    this.dress();
   }
 
   get _accordionElement() {
@@ -83,7 +87,7 @@ export class VlAccordion extends vlElement(HTMLElement) {
   }
 
   get _titleElement() {
-    return this._buttonElement.querySelector('span:not([is="vl-icon"])');
+    return this._buttonElement.querySelector('span');
   }
 
   get _openToggleTextAttribute() {
@@ -95,54 +99,55 @@ export class VlAccordion extends vlElement(HTMLElement) {
   }
 
   get _dressedAttribute() {
-    return this.getAttribute('data-vl-accordion-dressed');
+    return this.getAttribute('accordion-dressed');
+  }
+
+  get _isDressed() {
+    return !!this._dressedAttribute;
+  }
+
+  get _isOpen() {
+    return this._accordionElement.classList.contains('js-vl-accordion--open');
   }
 
   /**
-     * Activeer de accordion functionaliteit.
-     *
-     * @return {void}
-     */
+   * Activeer de accordion functionaliteit.
+   *
+   * @return {void}
+   */
   dress() {
-    if (!this._isDressed()) {
-      vl.accordion.dress(this._buttonElement);
+    if (!this._isDressed) {
+      vl.accordion.dress(this._element);
     }
   }
 
   /**
-     * Opent de accordion.
-     *
-     * @return {void}
-     */
+   * Opent de accordion.
+   *
+   * @return {void}
+   */
   open() {
     vl.accordion.open(this._accordionElement);
   }
 
   /**
-     * Sluit de accordion.
-     *
-     * @return {void}
-     */
+   * Sluit de accordion.
+   *
+   * @return {void}
+   */
   close() {
-    vl.accordion.close(this._accordionElement);
+    if (this._isOpen) {
+      this.toggle();
+    }
   }
 
   /**
-     * Opent of sluit de accordion afhankelijk van de huidige status (open of gesloten) van de accordion.
-     *
-     * @return {void}
-     */
+   * Opent of sluit de accordion afhankelijk van de huidige status (open of gesloten) van de accordion.
+   *
+   * @return {void}
+   */
   toggle() {
     vl.accordion.toggle(this._accordionElement);
-  }
-
-  connectedCallback() {
-    this.__setClasses();
-    this.dress();
-  }
-
-  _isDressed() {
-    return !!this._dressedAttribute;
   }
 
   _toggleTextChangedCallback(oldValue, newValue) {
@@ -158,13 +163,6 @@ export class VlAccordion extends vlElement(HTMLElement) {
     this._titleElement.classList.add('js-vl-accordion__toggle__text');
     this._titleElement.setAttribute('data-vl-accordion-close-text', newValue);
   }
-
-  __setClasses() {
-    this.classList.add('js');
-    this._buttonElement.classList.add('vl-toggle');
-    this._buttonElement.classList.add('vl-link');
-    this._buttonElement.classList.add('vl-link--bold');
-  }
 }
 
 define('vl-accordion', VlAccordion);
@@ -178,13 +176,13 @@ define('vl-accordion', VlAccordion);
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlBody.html">VlBody</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlDurationStep.html">VlDurationStep</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlIntroduction.html">VlIntroduction</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="vlPillElement.html">vlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichData.html">VlRichData</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlRichDataTableVlRichData.html">VlRichData</a></li><li><a href="VlRichDataTableVlRichDataTableVlRichData.html">VlRichData</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSearchResult.html">VlSearchResult</a></li><li><a href="VlSearchResults.html">VlSearchResults</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlStep.html">VlStep</a></li><li><a href="VlSteps.html">VlSteps</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="vlElement_.html">vlElement</a></li><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="vlPattern.html">vlPattern</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li><li><a href="global.html#sleep">sleep</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NativeVlElement.html">NativeVlElement</a></li><li><a href="VlAccordion.html">VlAccordion</a></li><li><a href="VlActionGroup.html">VlActionGroup</a></li><li><a href="VlAlert.html">VlAlert</a></li><li><a href="VlBody.html">VlBody</a></li><li><a href="VlButton.html">VlButton</a></li><li><a href="VlButtonInputAddon.html">VlButtonInputAddon</a></li><li><a href="VlButtonLink.html">VlButtonLink</a></li><li><a href="VlCheckbox.html">VlCheckbox</a></li><li><a href="VlCodePreview.html">VlCodePreview</a></li><li><a href="VlColumn.html">VlColumn</a></li><li><a href="VlContentHeader.html">VlContentHeader</a></li><li><a href="VlCookieConsent.html">VlCookieConsent</a></li><li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li><li><a href="VlDataTable.html">VlDataTable</a></li><li><a href="VlDatepicker.html">VlDatepicker</a></li><li><a href="VlDemo.html">VlDemo</a></li><li><a href="VlDemoPage.html">VlDemoPage</a></li><li><a href="VlDescriptionData.html">VlDescriptionData</a></li><li><a href="VlDurationStep.html">VlDurationStep</a></li><li><a href="VlElement.html">VlElement</a></li><li><a href="VlFooter.html">VlFooter</a></li><li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li><li><a href="VlFormColumn.html">VlFormColumn</a></li><li><a href="VlFormGrid.html">VlFormGrid</a></li><li><a href="VlFormLabel.html">VlFormLabel</a></li><li><a href="VlFormValidation_.html">VlFormValidation</a></li><li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li><li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li><li><a href="VlGrid.html">VlGrid</a></li><li><a href="VlHeader.html">VlHeader</a></li><li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li><li><a href="VlIcon.html">VlIcon</a></li><li><a href="VlIconWrapper.html">VlIconWrapper</a></li><li><a href="VlImage.html">VlImage</a></li><li><a href="VlInfoblock.html">VlInfoblock</a></li><li><a href="VlInfotext.html">VlInfotext</a></li><li><a href="VlInputAddon.html">VlInputAddon</a></li><li><a href="VlInputField.html">VlInputField</a></li><li><a href="VlInputGroup.html">VlInputGroup</a></li><li><a href="VlIntroduction.html">VlIntroduction</a></li><li><a href="VlLayout.html">VlLayout</a></li><li><a href="VlLink.html">VlLink</a></li><li><a href="VlLinkButton.html">VlLinkButton</a></li><li><a href="VlLinkList.html">VlLinkList</a></li><li><a href="VlLinkListItem.html">VlLinkListItem</a></li><li><a href="VlLoader.html">VlLoader</a></li><li><a href="VlMap.html">VlMap</a></li><li><a href="VlMapAction.html">VlMapAction</a></li><li><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></li><li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li><li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li><li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li><li><a href="VlMapLayer.html">VlMapLayer</a></li><li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li><li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li><li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li><li><a href="VlMapSearch.html">VlMapSearch</a></li><li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li><li><a href="VlModal.html">VlModal</a></li><li><a href="VlMultiSelect.html">VlMultiSelect</a></li><li><a href="VlPager.html">VlPager</a></li><li><a href="VlPill.html">VlPill</a></li><li><a href="vlPillElement.html">vlPillElement</a></li><li><a href="VlProgressBar.html">VlProgressBar</a></li><li><a href="VlProgressBarStep.html">VlProgressBarStep</a></li><li><a href="VlProperties.html">VlProperties</a></li><li><a href="VlPropertiesColumn.html">VlPropertiesColumn</a></li><li><a href="VlPropertiesList.html">VlPropertiesList</a></li><li><a href="VlPropertyTerm.html">VlPropertyTerm</a></li><li><a href="VlPropertyValue.html">VlPropertyValue</a></li><li><a href="VlProzaMessage.html">VlProzaMessage</a></li><li><a href="VlProzaMessagePreloader.html">VlProzaMessagePreloader</a></li><li><a href="VlRadio.html">VlRadio</a></li><li><a href="VlRadioGroup.html">VlRadioGroup</a></li><li><a href="VlRegion.html">VlRegion</a></li><li><a href="VlRichData.html">VlRichData</a></li><li><a href="VlRichDataField.html">VlRichDataField</a></li><li><a href="VlRichDataTable.html">VlRichDataTable</a></li><li><a href="VlRichDataTableVlRichData.html">VlRichData</a></li><li><a href="VlRichDataTableVlRichDataTableVlRichData.html">VlRichData</a></li><li><a href="VlSearch.html">VlSearch</a></li><li><a href="VlSearchFilter.html">VlSearchFilter</a></li><li><a href="VlSearchResult.html">VlSearchResult</a></li><li><a href="VlSearchResults.html">VlSearchResults</a></li><li><a href="VlSelect.html">VlSelect</a></li><li><a href="VlSideSheet.html">VlSideSheet</a></li><li><a href="VlStep.html">VlStep</a></li><li><a href="VlSteps.html">VlSteps</a></li><li><a href="VlTemplate.html">VlTemplate</a></li><li><a href="VlTextarea.html">VlTextarea</a></li><li><a href="VlTitle.html">VlTitle</a></li><li><a href="VlToaster.html">VlToaster</a></li><li><a href="VlTooltip.html">VlTooltip</a></li><li><a href="VlTypography.html">VlTypography</a></li><li><a href="VlUpload.html">VlUpload</a></li><li><a href="VlWizard.html">VlWizard</a></li><li><a href="VlWizardPane.html">VlWizardPane</a></li></ul><h3>Events</h3><ul><li><a href="VlPager.html#event:change">change</a></li><li><a href="VlPill.html#event:check">check</a></li><li><a href="VlPill.html#event:close">close</a></li><li><a href="VlRichDataField.html#event:change">change</a></li><li><a href="VlSearch.html#event:change">change</a></li></ul><h3>Mixins</h3><ul><li><a href="vlButtonElement.html">vlButtonElement</a></li><li><a href="vlFormValidation.html">vlFormValidation</a></li><li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li><li><a href="vlLinkElement.html">vlLinkElement</a></li><li><a href="vlPattern.html">vlPattern</a></li></ul><h3>Global</h3><ul><li><a href="global.html#awaitScript">awaitScript</a></li><li><a href="global.html#awaitUntil">awaitUntil</a></li><li><a href="global.html#awaitUntilReady">awaitUntilReady</a></li><li><a href="global.html#define">define</a></li><li><a href="global.html#dress">dress</a></li><li><a href="global.html#sleep">sleep</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Jul 23 2020 12:41:12 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Aug 20 2020 09:38:31 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

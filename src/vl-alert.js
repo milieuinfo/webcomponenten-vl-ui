@@ -7,69 +7,57 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
  * @classdesc Gebruik de vl-alert om de gebruiker te informeren over belangrijke informatie.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
- * @property {string} title - Attribuut wordt gebruikt als titel van de waarschuwing.
- * @property {boolean} closable - Attribuut wordt gebruikt om de optie toe te voegen om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek..
- * @property {(small | large)} size - Attribuut activeert een variant van de waarschuwing maar kleiner.
- * @property {(success | warning | error)} type - Attribuut bepaalt de soort van waarschuwing, foutmelding, probleemmelding of succesmelding.
+ * @property {boolean} data-vl-closable - Attribuut wordt gebruikt om de optie toe te voegen om de waarschuwing te sluiten door op het sluit icoon te klikken in de rechterbovenhoek.
+ * @property {boolean} data-vl-icon - Attribuut wordt gebruikt om het icoon type te bepalen.
+ * @property {(small)} data-vl-size - Attribuut activeert een variant van de waarschuwing maar kleiner.
+ * @property {string} data-vl-title - Attribuut wordt gebruikt als titel van de waarschuwing.
+ * @property {(success | warning | error | info)} data-vl-type - Attribuut bepaalt de soort van waarschuwing, foutmelding, probleemmelding of succesmelding.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-alert/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-alert.html|Demo}
  */
 export class VlAlert extends vlElement(HTMLElement) {
+  static get _observedAttributes() {
+    return ['icon', 'title', 'closable', 'type', 'size'];
+  }
+
   constructor() {
     super(`
       <style>
-          @import '/src/style.css';
-          @import '/node_modules/vl-ui-core/dist/style.css';
+        @import '/src/style.css';
       </style>
       <div id="alert" class="vl-alert" role="alert">
-          <div id="content" class="vl-alert__content">
-              <p id="title" class="vl-alert__title"></p>
-              <div id="message" class="vl-alert__message">
-                  <slot id="messages-slot"></slot>
-              </div>
-              <div id="actions" class="vl-alert__actions">
-                  <slot id="actions-slot" name="actions"></slot>
-              </div>
+        <div id="content" class="vl-alert__content">
+          <p id="title" class="vl-alert__title"></p>
+          <div id="message" class="vl-alert__message">
+            <slot id="messages-slot"></slot>
           </div>
+          <div id="actions" class="vl-alert__actions">
+            <slot id="actions-slot" name="actions"></slot>
+          </div>
+        </div>
       </div>
     `);
   }
 
   connectedCallback() {
-    this._actionsSlotElement.addEventListener('slotchange', (e) => {
-      if (this._actionsSlotElement) {
-        this._actionsSlotElement.assignedNodes().forEach((element) => {
-          if (element instanceof HTMLButtonElement) {
-            element.classList.add('vl-button--narrow');
-          }
-        });
-      }
-      this.__processActionsElementVisibility();
-    });
     this.__processActionsElementVisibility();
-  }
-
-  static get _observedAttributes() {
-    return ['icon', 'title', 'closable', 'type', 'size'];
+    this._actionsSlotElement.addEventListener('slotchange', () => this.__processButtons());
   }
 
   get _classPrefix() {
     return 'vl-alert--';
   }
 
-  get _titelElement() {
+  get _titleElement() {
     return this._element.querySelector('.vl-alert__title');
   }
 
   get _iconElement() {
     return this._element.querySelector('.vl-alert__icon');
-  }
-
-  get _contentElement() {
-    return this._element.querySelector('.vl-alert__content');
   }
 
   get _closeButtonElement() {
@@ -81,24 +69,13 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   get _actionsSlotElement() {
-    return this._element.querySelector('slot[name=\'actions\']');
-  }
-
-  /**
-   * Schakelt de werking van de close button uit zodat de alert niet gesloten kan worden.
-   *
-   * @Return {void}
-   */
-  disableClosable() {
-    if (this._closeButtonElement) {
-      this._closeButtonElement.removeEventListener('click', this.__removeAlert);
-    }
+    return this._element.querySelector('slot[name="actions"]');
   }
 
   _getIconTemplate(newValue) {
     return this._template(`
       <div class="vl-alert__icon">
-          <span is="vl-icon" data-vl-icon="${newValue}"></span>
+        <span is="vl-icon" data-vl-icon="${newValue}"></span>
       </div>
     `);
   };
@@ -106,8 +83,8 @@ export class VlAlert extends vlElement(HTMLElement) {
   _getCloseButtonTemplate() {
     return this._template(`
       <button id="close" class="vl-alert__close" type="button">
-          <i class="vl-vi vl-vi-cross" aria-hidden="true"></i>
-          <span class="vl-u-visually-hidden">Melding sluiten</span>
+        <i class="vl-vi vl-vi-cross" aria-hidden="true"></i>
+        <span class="vl-u-visually-hidden">Melding sluiten</span>
       </button>
     `);
   }
@@ -124,12 +101,12 @@ export class VlAlert extends vlElement(HTMLElement) {
     }
 
     if (newValue != undefined) {
-      this._element.insertBefore(this._getIconTemplate(newValue), this._element.firstChild);
+      this._element.prepend(this._getIconTemplate(newValue));
     }
   };
 
   _titleChangedCallback(oldValue, newValue) {
-    this._titelElement.textContent = newValue;
+    this._titleElement.textContent = newValue;
   };
 
   _closableChangedCallback(oldValue, newValue) {
@@ -145,7 +122,7 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   _typeChangedCallback(oldValue, newValue) {
-    if (['success', 'warning', 'error', 'cta'].indexOf(newValue) >= 0) {
+    if (['success', 'warning', 'error', 'info'].indexOf(newValue) >= 0) {
       this._changeClass(this._element, oldValue, newValue);
     } else {
       this._element.classList.remove(this._classPrefix + oldValue);
@@ -153,7 +130,7 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   _sizeChangedCallback(oldValue, newValue) {
-    if (['large', 'small'].indexOf(newValue) >= 0) {
+    if (['small'].indexOf(newValue) >= 0) {
       this._changeClass(this._element, oldValue, newValue);
     } else {
       this._element.classList.remove(this._classPrefix + oldValue);
@@ -161,11 +138,18 @@ export class VlAlert extends vlElement(HTMLElement) {
   }
 
   __processActionsElementVisibility() {
-    if (this._actionsSlotElement && this._actionsSlotElement.assignedElements().length == 0) {
-      this._actionsElement.style.display = 'none';
-    } else {
-      this._actionsElement.style.display = 'block';
+    this._actionsElement.hidden = this._actionsSlotElement && this._actionsSlotElement.assignedElements().length == 0;
+  }
+
+  __processButtons() {
+    if (this._actionsSlotElement) {
+      this._actionsSlotElement.assignedNodes().forEach((element) => {
+        if (element instanceof HTMLButtonElement) {
+          element.setAttribute('data-vl-narrow', '');
+        }
+      });
     }
+    this.__processActionsElementVisibility();
   }
 
   __removeAlert() {

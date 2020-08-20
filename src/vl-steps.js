@@ -8,6 +8,7 @@ import '/src/vl-duration-step.js';
  * @classdesc De steps component bevat een verticale lijst van genummerde stappen. Stappen kunnen gebruikt worden om de gebruiker stap voor stap door een procedure te begeleiden.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {boolean} data-vl-timeline - Attribuut wordt gebruikt om aan te geven dat de stappen een tijdlijn voorstellen.
  *
@@ -22,10 +23,10 @@ export class VlSteps extends vlElement(HTMLElement) {
 
   constructor() {
     super(`
-        <style>
-            @import '/src/style.css';
-        </style>
-        <ul id="steps" class="vl-steps"></ul>
+      <style>
+        @import '/src/style.css';
+      </style>
+      <ul id="steps" class="vl-steps"></ul>
     `);
   }
 

@@ -6,6 +6,7 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @classdesc De standaard template voor websites en applicaties van de Vlaamse overheid.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {slot} header - header content binnen vl-header
  * @property {slot} main - main content
@@ -18,18 +19,18 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 export class VlTemplate extends vlElement(HTMLElement) {
   constructor() {
     super(`
-        <style>
-            @import '/src/style.css';
-        </style>
-        <div class="vl-u-sticky-gf">
-          <slot name="header"></slot>
-          <div class="vl-page">
-            <main class="vl-main-content">
-              <slot name="main"></slot>
-            </main>
-          </div>
-          <slot name="footer"></slot>
+      <style>
+        @import '/src/style.css';
+      </style>
+      <div class="vl-u-sticky-gf">
+        <slot name="header"></slot>
+        <div class="vl-page">
+          <main class="vl-main-content">
+            <slot name="main"></slot>
+          </main>
         </div>
+        <slot name="footer"></slot>
+      </div>
     `);
   }
 }

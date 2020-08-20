@@ -4,22 +4,17 @@
 <head>
     <title>vl-upload voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-upload.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
 
+    <script type="module" src="../vl-upload.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-button"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-upload">
-
-        <button is="vl-button" id="clear-all"
-            onclick="document.querySelectorAll('vl-upload').forEach(upload => upload.clear());">
-            Verwijder bestanden uit alle uploads
-        </button>
-
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-button" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-upload">
         <p>
             Om de bestanden effectief op te laden, moet je <strong>vl.upload.dropzoneInstances[i].processQueue()</strong>
             oproepen. Elke methode van <a href="https://www.dropzonejs.com/#dropzone-methods" target="_blank">Dropzone</a> kan
@@ -27,21 +22,22 @@
         </p>
 
         <vl-demo data-vl-title="Upload">
-            <vl-upload url="http://httpbin.org/post" input-name="files" id="vl-upload"></vl-upload>
+            <vl-upload url="http://httpbin.org/post" data-vl-input-name="files" id="vl-upload"></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Upload bij toevoegen van bestand">
-            <vl-upload id="vl-upload-auto-process" url="http://httpbin.org/post" input-name="files" autoprocess="true">
-            </vl-upload>
+            <vl-upload id="vl-upload-auto-process" url="http://httpbin.org/post" data-vl-input-name="files" data-vl-autoprocess="true"></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Upload error">
-            <vl-upload id="vl-upload-error" url="http://httpbin.org/post" input-name="files" error></vl-upload>
+            <vl-upload id="vl-upload-error" url="http://httpbin.org/post" data-vl-input-name="files" data-vl-error></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Upload clear">
-            <vl-upload id="vl-upload-clear" url="http://httpbin.org/post" input-name="files"></vl-upload>
-            <button id="vl-upload-clear-button" is="vl-button" onclick="clearList()">Clear</button>
+            <vl-upload id="vl-upload-clear" data-vl-url="http://httpbin.org/post" data-vl-input-name="files"></vl-upload>
+            <div slot="actions">
+                <button id="vl-upload-clear-button" is="vl-button" onclick="clearList()">Clear</button>
+            </div>
             <script type="text/javascript">
                 // eslint-disable-next-line no-unused-vars
                 const clearList = () => {
@@ -51,50 +47,35 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Beperkte upload (aantal en grootte)">
-            <p>beperkt aantal bestanden opladen, met een bepaalde grootte (2MB)</p>
-            <vl-upload id="vl-upload-max-5" url="http://httpbin.org/post" input-name="files"
-                error-message-filesize="De grootte van het bestand mag maximaal :maxFsz zijn."
-                error-message-maxfiles="Je kan maximaal :maxfl file(s) uploaden." max-files="5" max-size="2000000"></vl-upload>
+            <vl-upload id="vl-upload-max-5" data-vl-url="http://httpbin.org/post" data-vl-input-name="files"
+                data-vl-error-message-filesize="De grootte van het bestand mag maximaal :maxFsz zijn."
+                data-vl-error-message-maxfiles="Je kan maximaal :maxfl file(s) uploaden." data-vl-max-files="5" data-vl-max-size="2000000"></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Beperkte upload zonder dubbels">
-            <p>beperkt aantal bestanden opladen en dubbels zijn niet toegelaten</p>
-            <vl-upload id="vl-upload-geen-dubbels" url="http://httpbin.org/post" input-name="files"
+            <vl-upload id="vl-upload-geen-dubbels" data-vl-url="http://httpbin.org/post" data-vl-input-name="files"
                 error-message-filesize="De grootte van het bestand mag maximaal :maxFsz zijn."
-                error-message-maxfiles="Je kan maximaal :maxfl file(s) uploaden." max-files="2" max-size="20000000"
+                error-message-maxfiles="Je kan maximaal :maxfl file(s) uploaden." data-vl-max-files="2" data-vl-max-size="20000000"
                 disallow-duplicates="true"></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Beperkte upload (aantal en type)">
-            <p>beperkt aantal bestanden opladen, van een bepaald type (mime of extensie)</p>
-            <vl-upload id="vl-upload-file-types" url="http://httpbin.org/post" input-name="files" max-files="10"
-                max-size="20000000" accepted-files="application/pdf, .png"
-                error-message-accepted-files="Je kan enkel :fileType bestanden opladen"></vl-upload>
+            <vl-upload id="vl-upload-file-types" data-vl-url="http://httpbin.org/post" data-vl-input-name="files" data-vl-max-files="10"
+                data-vl-max-size="20000000" data-vl-accepted-files="application/pdf, .png"
+                data-vl-error-message-accepted-files="Je kan enkel :fileType bestanden opladen"></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Full body Dropzone upload">
-            <vl-upload id="vl-upload-full-body-drop" url="http://httpbin.org/post" input-name="files" full-body-drop>
-            </vl-upload>
+            <vl-upload id="vl-upload-full-body-drop" data-vl-url="http://httpbin.org/post" data-vl-input-name="files" data-vl-full-body-drop></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Event listener">
-            <p>
-                Bij elke <strong>fileChange</strong> van de upload component, wordt de custom event
-                <strong>vl.upload.hook.fileChange</strong> getriggered. Dit custom event zal triggeren op <strong>drop</strong>
-                en
-                <strong>change</strong>. Het event object zal een lijst van alle bestanden bevatten in
-                <strong>e.detail</strong>.
-                Je kan die lijst ook vinden in <strong>vl.upload.dropzoneInstances[i].files</strong>, waarbij i de index van de
-                dropzone instance is op uw pagina. Het event bubbled, dus je kan de event listener op eender welke ancestor van
-                het de upload component zetten. <strong>vl.upload.dropzoneInstances</strong> bevat alle dropzones op de pagina
-                (indien je niet met shadow root werkt).
-            </p>
             <button id="vl-upload-listener-button" is="vl-button" onclick="addListener()">Voeg listener toe</button>
             <script>
                 // eslint-disable-next-line no-unused-vars
                 const addListener = () => {
                   document.querySelector('vl-upload[id="vl-upload"]').on('vl.upload.hook.fileChange',
-                      function(event) {
+                      (event) => {
                         console.log(event);
                         console.log(vl.upload.dropzoneInstances[0].files);
                         document.querySelector('#vl-upload-log').innerText = 'Bestanden in vl-upload: ' + vl.upload.dropzoneInstances[0].files.map((f) => f.name);
@@ -102,6 +83,12 @@
                 };
             </script>
             <span id="vl-upload-log"></span>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Verwijder bestanden">
+            <button is="vl-button" id="clear-all" onclick="document.querySelectorAll('vl-upload').forEach(upload => upload.clear());">
+                Verwijder bestanden uit alle uploads
+            </button>
         </vl-demo>
     </vl-demo-page>
 </body>

@@ -4,73 +4,58 @@
 <head>
     <title>vl-icon voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
-    <script type="module" src="../vl-icon.js"></script>
+    <script type="module" src="../vl-icon-all.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vl-icon.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-icon"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon">
-        <vl-demo data-vl-title="Icon klein">
-            <span id="icon" is="vl-icon" data-vl-icon="calendar"></span>
-            <span id="icon-small" is="vl-icon" data-vl-icon="calendar" data-vl-size="small"></span>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon licht">
-            <span is="vl-icon" data-vl-icon="calendar"></span>
-            <span id="icon-light" is="vl-icon" data-vl-icon="calendar" data-vl-light></span>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon large">
-            <span is="vl-icon" data-vl-icon="calendar"></span>
-            <span id="icon-large" is="vl-icon" data-vl-icon="calendar" data-vl-size="large"></span>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon 90 deg">
-            <span is="vl-icon" data-vl-icon="calendar"></span>
-            <span id="icon-90" is="vl-icon" data-vl-icon="calendar" data-vl-90deg></span>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon 180 deg">
-            <span is="vl-icon" data-vl-icon="calendar"></span>
-            <span id="icon-180" is="vl-icon" data-vl-icon="calendar" data-vl-180deg></span>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon met before attribuut">
-            <div>
-                <span is="vl-icon" data-vl-icon="calendar"></span>
-                Icoon voor tekst zonder "before" attribuut
-            </div>
-            <div>
-                <span id="icon-before" is="vl-icon" data-vl-icon="calendar" data-vl-before></span>
-                Icoon voor tekst met "before" attribuut
-            </div>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon na tekst met after attribuut">
-            <div>
-                Icoon na tekst zonder "after" attribuut:
-                <span is="vl-icon" data-vl-icon="calendar"></span>
-            </div>
-            <div>
-                Icoon na tekst met "after" attribuut:
-                <span id="icon-after" is="vl-icon" data-vl-icon="calendar" data-vl-after></span>
-            </div>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Icon na tekst met after attribuut en display flex">
-            <p style="display: flex;">
-                Icoon na tekst met "after" attribuut en display:flex op container:
-                <span id="icon-after-flex" is="vl-icon" data-vl-icon="calendar" data-vl-after></span>
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-icon" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon">
+        <vl-demo data-vl-title="Only child">
+            <p>
+                <span id="icon" is="vl-icon" data-vl-icon="calendar"></span>
             </p>
         </vl-demo>
 
-        <vl-demo data-vl-title="Icon klein, standaard en groot icoon">
-            <span is="vl-icon" data-vl-icon="calendar" data-vl-size="small"></span>
-            <span is="vl-icon" data-vl-icon="calendar"></span>
-            <span is="vl-icon" data-vl-icon="calendar" data-vl-size="large"></span>
+        <vl-demo data-vl-title="Icon appended before any other element">
+            <p is="vl-icon-wrapper">
+                <span id="icon-before" is="vl-icon" data-vl-icon="calendar" data-vl-before></span><span>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</span>
+            </p>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Icon appended after any other element">
+            <p is="vl-icon-wrapper">
+                <span>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</span><span id="icon-after" is="vl-icon" data-vl-icon="nav-right" data-vl-after></span>
+            </p>
+        </vl-demo>
+        
+        <vl-demo data-vl-title="Small size">
+            <span id="icon-small" is="vl-icon" data-vl-icon="calendar" data-vl-size="small"></span>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Large size">
+            <span id="icon-large" is="vl-icon" data-vl-icon="chat-help" data-vl-size="large"></span>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Light">
+            <span id="icon-light" is="vl-icon" data-vl-icon="chat-help" data-vl-light></span>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Icon wrapper">
+            <p is="vl-icon-wrapper">
+                <span id="icon" is="vl-icon" data-vl-icon="chat-help" data-vl-before></span><span>My icon is aligned neatly in the middle</span>
+            </p>
+        </vl-demo>
+
+        <vl-demo data-vl-title="90 deg">
+            <span id="icon-90" is="vl-icon" data-vl-icon="calendar" data-vl-90deg></span>
+        </vl-demo>
+
+        <vl-demo data-vl-title="180 deg">
+            <span id="icon-180" is="vl-icon" data-vl-icon="calendar" data-vl-180deg></span>
         </vl-demo>
     </vl-demo-page>
 </body>

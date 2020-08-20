@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-doormat voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+
+        <script type="module" src="../vl-doormat-all.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/vl-doormat.css" />
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    </head>
+
+	<body is="vl-body">
+        <vl-demo-page data-vl-webcomponent="vl-doormat" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-doormat">
+            <vl-demo data-vl-title="Doormat">
+                <a id="doormat" is="vl-doormat" href="#">
+                    <h2 is="vl-doormat-title">Bouwen, wonen en energie</h2>
+                    <div is="vl-doormat-text">De overheid zet zich in om betaalbaar en kwaliteitsvol wonen voor iedereen beschikbaar te maken. Ze biedt sociale woningen aan, geeft premies aan wie zijn woning verbouwt en energiezuinig maakt en zoekt oplossingen om de stijging van de vastgoedprijzen onder controle te houden.</div>
+                </a>
+            </vl-demo>
+
+            <vl-demo data-vl-title="Doormat with image">
+                <a id="doormat-image" is="vl-doormat" href="#">
+                    <h2 is="vl-doormat-title">Bouwen, wonen en energie</h2>
+                    <div is="vl-doormat-text">De overheid zet zich in om betaalbaar en kwaliteitsvol wonen voor iedereen beschikbaar te maken. Ze biedt sociale woningen aan, geeft premies aan wie zijn woning verbouwt en energiezuinig maakt en zoekt oplossingen om de stijging van de vastgoedprijzen onder controle te houden.</div>
+                    <img is="vl-doormat-image" src="https://picsum.photos/200/300?image=1048" alt="Bouwen in Brussel" width="100" height="150"/>
+                </a>
+            </vl-demo>
+
+            <vl-demo data-vl-title="Doormat alt">
+                <a id="doormat-alt" is="vl-doormat" href="#" data-vl-alt>
+                    <h2 is="vl-doormat-title">Bouwen, wonen en energie</h2>
+                    <div is="vl-doormat-text">De overheid zet zich in om betaalbaar en kwaliteitsvol wonen voor iedereen beschikbaar te maken. Ze biedt sociale woningen aan, geeft premies aan wie zijn woning verbouwt en energiezuinig maakt en zoekt oplossingen om de stijging van de vastgoedprijzen onder controle te houden.</div>
+                </a>
+            </vl-demo>
+
+            <vl-demo data-vl-title="Doormat graphic">
+                <a id="doormat-graphic" is="vl-doormat" href="#">
+                    <h2 is="vl-doormat-title">Bouwen, wonen en energie</h2>
+                    <div is="vl-doormat-text">De overheid zet zich in om betaalbaar en kwaliteitsvol wonen voor iedereen beschikbaar te maken. Ze biedt sociale woningen aan, geeft premies aan wie zijn woning verbouwt en energiezuinig maakt en zoekt oplossingen om de stijging van de vastgoedprijzen onder controle te houden.</div>
+                    <img is="vl-doormat-image" src="https://picsum.photos/1600/400?image=1048" alt="Bouwen in Brussel" data-vl-graphic/>
+                </a>
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

@@ -4,16 +4,17 @@
 <head>
     <title>vl-button voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-button.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
+    <script type="module" src="../vl-button.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vl-button.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-button"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-button">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-button" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-button">
         <vl-demo data-vl-title="Button primary">
             <button is="vl-button" type="button" id="button-primary" onclick="getElementById('button-primary').innerHTML = 'Klik geregistreerd'">
                 Gegevens opslaan
@@ -27,7 +28,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Button error">
-            <button is="vl-button" type="button" error type="button" id="button-error">
+            <button is="vl-button" type="button" data-vl-error type="button" id="button-error">
                 Gegevens opslaan
             </button>
         </vl-demo>
@@ -47,76 +48,76 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Button block">
-            <button is="vl-button" type="button" id="button-block" block>
+            <button is="vl-button" type="button" id="button-block" data-vl-block>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button large">
-            <button is="vl-button" type="button" id="button-large" large>
+            <button is="vl-button" type="button" id="button-large" data-vl-large>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button wide">
-            <button is="vl-button" type="button" id="button-wide" wide>
+            <button is="vl-button" type="button" id="button-wide" data-vl-wide>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button narrow">
-            <button is="vl-button" type="button" id="button-narrow" narrow>
+            <button is="vl-button" type="button" id="button-narrow" data-vl-narrow>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button loading">
-            <button is="vl-button" type="button" id="button-loading" loading disabled>
+            <button is="vl-button" type="button" id="button-loading" data-vl-loading data-vl-disabled>
                 Gegevens verwerken
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button secondary">
-            <button is="vl-button" type="button" id="button-secondary" secondary>
+            <button is="vl-button" type="button" id="button-secondary" data-vl-secondary>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button secondary met icoon voor">
-            <button is="vl-button" type="button" id="button-secondary-voor" secondary>
+            <button is="vl-button" type="button" id="button-secondary-voor" data-vl-secondary>
                 <span is="vl-icon" data-vl-icon="location" data-vl-before></span>
                 Gegevens opslaan</button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button secondary error">
-            <button is="vl-button" type="button" id="button-secondary-error" secondary>
+            <button is="vl-button" type="button" id="button-secondary-error" data-vl-secondary>
                 <span is="vl-icon" data-vl-icon="location" data-vl-before></span>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button secondary error met icoon voor">
-            <button is="vl-button" type="button" id="button-secondary-error-voor" secondary error>
+            <button is="vl-button" type="button" id="button-secondary-error-voor" data-vl-secondary data-vl-error>
                 <span is="vl-icon" data-vl-icon="location" data-vl-before></span>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button tertiary">
-            <button is="vl-button" type="button" id="button-tertiary" tertiary>
+            <button is="vl-button" type="button" id="button-tertiary" data-vl-tertiary>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button tertiary met icoon voor">
-            <button is="vl-button" type="button" id="button-tertiary-icon-voor" tertiary>
+            <button is="vl-button" type="button" id="button-tertiary-icon-voor" data-vl-tertiary>
                 <span is="vl-icon" data-vl-icon="location" data-vl-before></span>
                 Gegevens opslaan
             </button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button tertiary error">
-            <button is="vl-button" type="button" id="button-tertiary-error" tertiary error>
+            <button is="vl-button" type="button" id="button-tertiary-error" data-vl-tertiary data-vl-error>
                 Gegevens verwerken
             </button>
         </vl-demo>

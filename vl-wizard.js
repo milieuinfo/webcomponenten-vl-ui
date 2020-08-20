@@ -9,6 +9,7 @@ import {VlWizardPane} from '/node_modules/vl-ui-wizard/dist/vl-wizard-pane.js';
  * @classdesc Gebruik de wizard om de gebruiker door een proces met meerdere stappen te begeleiden. Een wizard laat je toe om een complex proces op te splitsen in hapklare acties. Een wizard maakt het ook mogelijk om opties afhankelijk te maken van de keuzes in een voorgaande stap.
  *
  * @extends HTMLElement
+ * @mixes vlElement
  *
  * @property {boolean} data-vl-next-panes-disabled - Attribuut zorgt ervoor dat de gebruiker niet verder kan naar de volgende stappen.
  * @property {boolean} data-vl-previous-panes-disabled - Attribuut zorgt ervoor dat de gebruiker niet verder kan naar de vorige stappen.
@@ -29,6 +30,7 @@ export class VlWizard extends vlElement(HTMLElement) {
         @import '/node_modules/vl-ui-wizard/dist/style.css';
 
         .vl-wizard__panes {
+          position: relative;
           overflow: hidden;
         }
       </style>
@@ -124,6 +126,7 @@ export class VlWizard extends vlElement(HTMLElement) {
       this._progressBar.appendChild(this._getProgressBarStepTemplate(pane.title));
     });
     this._observeProgressBarClick();
+    this._observeProgressBarMouseover();
   }
 
   _dress() {
@@ -136,17 +139,35 @@ export class VlWizard extends vlElement(HTMLElement) {
     setTimeout(() => {
       this._progressBar.buttons.forEach((button) => button.onclick = (event) => {
         const panes = [...this._panes];
-        const number = event.target.getAttribute('data-vl-index');
+        const number = Number(event.target.getAttribute('data-vl-index'));
         if (number < this._activePaneNumber) {
-          const panesBetween = panes.slice(Number(number), panes.indexOf(this._activePane) + 1);
+          const panesBetween = panes.slice(number, panes.indexOf(this._activePane) + 1);
           const allPanesBetweenAreEnabled = panesBetween.every((pane) => !pane.isPreviousPaneDisabled);
           this.callback = allPanesBetweenAreEnabled ? Promise.resolve(true) : new Promise(() => { });
         } else {
-          const panesBetween = panes.slice(panes.indexOf(this._activePane), Number(number) - 1);
+          const panesBetween = panes.slice(panes.indexOf(this._activePane), number - 1);
           const allPanesBetweenAreEnabled = panesBetween.every((pane) => !pane.isNextPaneDisabled);
           this.callback = allPanesBetweenAreEnabled ? Promise.resolve(true) : new Promise(() => { });
         }
       });
+    });
+  }
+
+  _observeProgressBarMouseover() {
+    setTimeout(() => {
+      this._progressBar.onmouseover = () => {
+        this._progressBar.buttons.forEach((button, index) => {
+          const panes = [...this._panes];
+          const previousPane = panes[index - 1];
+          const nextPane = panes[index + 1];
+          const paneIsDisabled = previousPane ? previousPane.isNextPaneDisabled : nextPane.isPreviousPaneDisabled;
+          if (paneIsDisabled) {
+            button.parentElement.setAttribute('disabled', '');
+          } else {
+            button.parentElement.removeAttribute('disabled');
+          }
+        });
+      };
     });
   }
 

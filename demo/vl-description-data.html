@@ -3,33 +3,36 @@
 
 <head>
 	<title>vl-description-data voorbeeld</title>
-	<script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-	
-	<script type="module" src="../vl-description-data.js"></script>
-	<script type="module" src="/node_modules/vl-ui-grid/dist/vl-grid.js"></script>
+	<script type="module">
+		import '/node_modules/vl-ui-demo/dist/vl-demo.js';
+		import '/node_modules/vl-ui-demo/dist/vl-demo-page.js';
+		import '/node_modules/vl-ui-body/dist/vl-body.js';
+		import '/node_modules/vl-ui-grid/dist/vl-grid.js';
+		import '../vl-description-data.js';
+	</script>
 
 	<link rel="stylesheet" type="text/css" href="/vl-description-data.css" />
+	<link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-	<vl-demo-page data-vl-webcomponent="vl-description-data"
-		data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-description-data">
-		<vl-demo data-vl-title="">
+<body is="vl-body">
+	<vl-demo-page data-vl-webcomponent="vl-description-data" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-description-data">
+		<vl-demo data-vl-title="Description data">
 			<div is="vl-description-data" id="vl-description-data">
 				<div is="vl-grid">
-					<div is="vl-column" size="3">
+					<div is="vl-column" data-vl-size="3">
 						<span data-vl-label>Uitgever</span>
 						<span data-vl-value>Kind en Gezin</span>
 					</div>
-					<div is="vl-column" size="3">
+					<div is="vl-column" data-vl-size="3">
 						<span data-vl-label>Publicatiedatum</span>
 						<span data-vl-value>Augustus 2018</span>
 					</div>
-					<div is="vl-column" size="3">
+					<div is="vl-column" data-vl-size="3">
 						<span data-vl-label>Publicatietype</span>
 						<span data-vl-value>Brochure</span>
 					</div>
-					<div is="vl-column" size="3">
+					<div is="vl-column" data-vl-size="3">
 						<span data-vl-label>Categorie</span>
 						<span data-vl-value>Kinderen en jongeren</span>
 					</div>

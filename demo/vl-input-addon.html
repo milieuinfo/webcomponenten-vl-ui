@@ -4,16 +4,19 @@
 <head>
     <title>vl-input-addon voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-input-addon.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-tooltip/dist/vl-tooltip.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
+    <script type="module" src="../vl-input-addon.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vl-input-addon.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-tooltip/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-icon/dist/style.css" />
 </head>
 
-<body>
+<body is="vl-body">
     <vl-demo-page data-vl-webcomponent="vl-input-addon" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-input-addon">
         <vl-demo data-vl-title="Input add-on informatief">
             <p is="vl-input-addon" id="input-addon">€</p>

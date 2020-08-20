@@ -4,8 +4,8 @@
 <head>
     <title>vl-template voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-template.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+    <script type="module" src="/node_modules/vl-ui-code-preview/dist/vl-code-preview.js"></script>
     <script type="module" src="/node_modules/vl-ui-header/dist/vl-header.js"></script>
     <script type="module" src="/node_modules/vl-ui-footer/dist/vl-footer.js"></script>
     <script type="module" src="/node_modules/vl-ui-grid/dist/vl-grid.js"></script>
@@ -14,156 +14,41 @@
     <script type="module" src="/node_modules/vl-ui-titles/dist/vl-titles.js"></script>
     <script type="module" src="/node_modules/vl-ui-typography/dist/vl-typography.js"></script>
 
+    <script type="module" src="../vl-template.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-grid/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-image/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-titles/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-template">
-        <vl-demo data-vl-title="">
-            <vl-template>
-                <vl-header id="header" slot="header" data-vl-identifier="59188ff6-662b-45b9-b23a-964ad48c2bfb" data-vl-development></vl-header>
-                <div id="content" slot="main">
-                    <vl-content-header>
-                        <img is="vl-image" slot="image" src="img/default.jpg"
-                            srcset="img/mobile.jpg 320w, img/default.jpg 1024w, img/wide.jpg 1600w">
-                        <a slot="context-link" href="https://www.vlaanderen.be">Context</a>
-                        <a slot="title-link" href="https://www.vlaanderen.be">Vlaanderen</a>
-                    </vl-content-header>
-
-                    <section is="vl-region" no-space-bottom>
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-template" data-vl-size="12" data-vl-medium-size="12" data-vl-small-size="12" data-vl-extra-small-size="12">
+        <vl-demo data-vl-title="Template">
+            <vl-code-preview slot="code">
+                <vl-template>
+                    <vl-header id="header" slot="header" data-vl-identifier="59188ff6-662b-45b9-b23a-964ad48c2bfb" data-vl-development></vl-header>
+                    <div slot="main">
+                      <vl-content-header>
+                        <img is="vl-image" slot="image" src="/node_modules/vl-ui-demo/dist/default.jpg" srcset="/node_modules/vl-ui-demo/dist/mobile.jpg 320w, /node_modules/vl-ui-demo/dist/default.jpg 1024w, /node_modules/vl-ui-demo/dist/wide.jpg 1600w">
+                        <a slot="context-link" href="https://webcomponenten.omgeving.vlaanderen.be">Vlaanderen</a>
+                        <a slot="title-link" href="https://webcomponenten.omgeving.vlaanderen.be">Webcomponenten</a>
+                      </vl-content-header>
+                      <section is="vl-region">
                         <div is="vl-layout">
-                            <h1 is="vl-h1">Demo pagina</h1>
+                          <h1 is="vl-h1"></h1>
+                          <div id="grid" is="vl-grid" is-stacked slot="main">
+                            <div id="demo" is="vl-column">
+                              <h2 is="vl-h2">Demo's</h2>
+                              <slot></slot>
+                            </div>
+                          </div>
                         </div>
-                    </section>
-                    <section is="vl-region">
-                        <div is="vl-layout">
-                            <vl-typography>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis diam ut odio ultrices
-                                    suscipit.
-                                    Etiam
-                                    eleifend malesuada condimentum. Suspendisse et eros condimentum, bibendum magna sit amet, ullamcorper
-                                    lacus.
-                                    Pellentesque tempus semper dui, ac fringilla purus vulputate quis. Proin vulputate tortor est, id
-                                    hendrerit
-                                    risus
-                                    consectetur non. In lectus nisl, pellentesque vel maximus sed, lacinia sed lorem. Nam nec ex magna.
-                                </p>
-                                <p>
-                                    Nulla eget volutpat dui. Mauris magna ligula, tempor non cursus ac, varius dignissim nibh. Quisque
-                                    eget elit
-                                    eu
-                                    ante dapibus interdum eu sagittis sem. Suspendisse et viverra nulla. Curabitur suscipit porta metus
-                                    eget
-                                    mollis.
-                                    Maecenas imperdiet congue ex, vitae efficitur diam efficitur nec. Duis ligula est, tempus vitae urna
-                                    vitae,
-                                    rutrum
-                                    molestie dolor. Vivamus eu lacus sapien. Etiam vel fringilla dolor. Aenean et elit faucibus, pretium
-                                    risus
-                                    id,
-                                    scelerisque nisi.
-                                </p>
-                                <p>
-                                    Mauris vestibulum venenatis magna, at luctus nibh feugiat nec. Praesent tempus magna non urna pharetra
-                                    vehicula.
-                                    Pellentesque laoreet sit amet magna quis euismod. Curabitur finibus cursus lorem, at vulputate magna
-                                    suscipit
-                                    quis. Phasellus molestie est eget dolor dignissim, a sodales urna gravida. Curabitur non ultrices
-                                    massa. Sed
-                                    at
-                                    arcu massa. Nam quam libero, mattis non laoreet quis, vehicula et nunc. Sed vel lacus rutrum, eleifend
-                                    lectus sit
-                                    amet, placerat nulla. Quisque fermentum viverra finibus. Cras congue consequat elit. Nam nulla est,
-                                    scelerisque
-                                    sed quam in, luctus sodales arcu. Nunc molestie congue erat, sagittis eleifend magna suscipit eget.
-                                    Phasellus
-                                    turpis orci, vestibulum ut egestas vel, lacinia eu mi.
-                                </p>
-                                <p>
-                                    Proin massa turpis, lacinia ac interdum non, suscipit at sem. Nulla eget condimentum neque. Class
-                                    aptent
-                                    taciti
-                                    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec vestibulum malesuada
-                                    lacus,
-                                    non
-                                    commodo ante. Cras consectetur lacus id laoreet tincidunt. Cras vel porta ligula. Nunc sagittis purus
-                                    sed
-                                    risus
-                                    dapibus tempor. Sed euismod hendrerit tellus ut accumsan. Interdum et malesuada fames ac ante ipsum
-                                    primis
-                                    in
-                                    faucibus. In accumsan est ac mauris auctor ullamcorper.
-                                </p>
-                                <p>
-                                    Aenean nec purus id nulla aliquam lacinia eu in ante. Mauris ultrices sem turpis, ac maximus orci
-                                    bibendum
-                                    et. Sed
-                                    vitae consequat turpis. Pellentesque suscipit erat a velit tincidunt, id iaculis libero fringilla.
-                                    Suspendisse
-                                    sapien arcu, ultrices ultrices leo sit amet, semper facilisis risus. Morbi fermentum sapien elit, sit
-                                    amet
-                                    aliquet
-                                    nibh egestas in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium, mi sit
-                                    amet
-                                    mollis
-                                    fermentum, mi neque viverra sem, in placerat lectus justo in lacus. Vestibulum vehicula dapibus dolor,
-                                    vel
-                                    ultrices eros posuere nec.
-                                </p>
-                            </vl-typography>
-                        </div>
-                    </section>
-                    <section is="vl-region">
-                        <div is="vl-layout">
-                            <h2 is="vl-h2">In eu tortor</h2>
-                            <vl-typography>
-                                <p>
-                                    In eu tortor at erat sagittis luctus. Ut eu cursus neque. Proin volutpat leo sit amet nisl suscipit,
-                                    vel
-                                    pulvinar nulla cursus. Duis non lorem sit amet elit ultrices sagittis. Nunc ultricies, sapien eget
-                                    rutrum
-                                    pulvinar, eros enim fringilla nibh, quis commodo orci erat et purus. Ut non magna viverra, dignissim
-                                    nunc
-                                    vel,
-                                    scelerisque leo. Ut convallis, urna quis porta lobortis, mauris nisl consectetur lectus, in faucibus
-                                    magna
-                                    magna vel sapien. Quisque pulvinar tortor libero. Class aptent taciti sociosqu ad litora torquent per
-                                    conubia
-                                    nostra, per inceptos himenaeos. Maecenas venenatis mauris quam. Suspendisse scelerisque mattis orci in
-                                    convallis. Donec vitae dui ex. Ut vel porttitor justo. Pellentesque ut varius augue. Nulla in elit
-                                    eget quam
-                                    sollicitudin dapibus. Maecenas eros dolor, pellentesque eget orci vel, efficitur sagittis arcu.
-                                </p>
-                                <p>
-                                    Curabitur rhoncus id leo sed mollis. Aliquam erat volutpat. Sed eget justo cursus, efficitur elit sed,
-                                    interdum massa. Nunc condimentum nibh vel vulputate elementum. Duis commodo erat eu risus scelerisque,
-                                    at
-                                    eleifend orci vehicula. Aliquam erat volutpat. In sit amet consectetur nisi. Aliquam erat volutpat.
-                                    Nulla in
-                                    justo laoreet, euismod nibh non, interdum felis. Sed lacinia ex non quam bibendum consectetur.
-                                </p>
-                                <p>
-                                    Donec bibendum sodales turpis, non vehicula lorem ornare non. Nulla consectetur felis vitae neque
-                                    varius
-                                    suscipit. Nulla et sapien quis nibh feugiat fringilla non vel odio. Aliquam facilisis mattis massa,
-                                    lacinia
-                                    auctor sem aliquam at. Praesent fringilla molestie felis non auctor. Sed nec mauris vitae tortor
-                                    semper
-                                    tristique vitae vel nibh. Aenean vehicula, nisi vel auctor dapibus, tellus diam sodales erat, vitae
-                                    varius
-                                    turpis purus non sapien. Sed maximus eleifend cursus. Maecenas eget felis sit amet libero aliquam
-                                    faucibus.
-                                    Donec vitae sem finibus, pellentesque magna eget, viverra sapien.
-                                </p>
-                            </vl-typography>
-                        </div>
-                    </section>
-                </div>
-                <vl-footer id="footer" slot="footer" data-vl-identifier="0337f8dc-3266-4e7a-8f4a-95fd65189e5b" data-vl-development></vl-footer>
-            </vl-template>
+                      </section>
+                    </div>
+                    <vl-footer data-vl-identifier="0337f8dc-3266-4e7a-8f4a-95fd65189e5b" data-vl-development></vl-footer>
+                  </vl-template>
+            </vl-code-preview>
         </vl-demo>
     </vl-demo-page>
 </body>

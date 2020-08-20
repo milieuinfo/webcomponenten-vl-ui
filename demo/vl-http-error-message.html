@@ -4,14 +4,16 @@
 <head>
     <title>vl-http-error-message voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-http-error-message.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
 
+    <script type="module" src="../vl-http-error-message.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
 </head>
 
-<body>
+<body is="vl-body">
     <vl-demo-page data-vl-webcomponent="vl-http-error-message">
         <vl-demo data-vl-title="404">
             <vl-http-404-message id="error-404"></vl-http-404-message>
@@ -22,8 +24,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Custom">
-            <vl-http-error-message id="custom-message" data-vl-title="Niets gevonden hiervoor."
-                data-vl-image="error-404.png" data-vl-image-alt="Niets gevonden">
+            <vl-http-error-message id="custom-message" data-vl-title="Niets gevonden hiervoor." data-vl-image="error-404.png" data-vl-image-alt="Niets gevonden">
                 <p slot="text">Sorry, er liep iets onverwachts mis.</p>
                 <div slot="actions">
                     <a is="vl-link-button" href="#demo">Opnieuw opstarten</a>

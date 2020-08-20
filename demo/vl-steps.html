@@ -4,15 +4,15 @@
 <head>
     <title>vl-steps voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
     <script type="module" src="../vl-steps-all.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-steps"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-steps">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-steps" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-steps">
         <vl-demo data-vl-title="Steps">
             <vl-steps id="vl-steps-1">
                 <vl-step>
@@ -45,7 +45,7 @@
 
         <vl-demo data-vl-title="Steps">
             <vl-steps id="vl-steps-2">
-                <vl-step disabled>
+                <vl-step data-vl-disabled>
                     <span slot="identifier">0</span>
                     <span slot="title">Six centuries ago</span>
                     <span slot="sub-title">The last visitor from earth entered my world.</span>
@@ -90,7 +90,7 @@
                 <vl-duration-step>
                     Vrije tijd: 2 uur
                 </vl-duration-step>
-                <vl-step disabled>
+                <vl-step data-vl-disabled>
                     <span slot="identifier">3</span>
                     <span slot="identifier-annotation">maa</span>
                     <span slot="title">Bike ride</span>
@@ -100,7 +100,7 @@
                         This activity is canceled.
                     </span>
                 </vl-step>
-                <vl-step type="success">
+                <vl-step data-vl-type="success">
                     <span slot="identifier">3</span>
                     <span slot="identifier-annotation">maa</span>
                     <span slot="title">Bike ride</span>
@@ -110,7 +110,7 @@
                         This activity is new!
                     </span>
                 </vl-step>
-                <vl-step type="warning">
+                <vl-step data-vl-type="warning">
                     <span slot="identifier">3</span>
                     <span slot="identifier-annotation">maa</span>
                     <span slot="title">Bike ride</span>
@@ -120,7 +120,7 @@
                         This activity is almost fully booked.
                     </span>
                 </vl-step>
-                <vl-step type="error">
+                <vl-step data-vl-type="error">
                     <span slot="identifier">3</span>
                     <span slot="identifier-annotation">maa</span>
                     <span slot="title">Bike ride</span>

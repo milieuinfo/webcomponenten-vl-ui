@@ -8,6 +8,7 @@ import '/node_modules/@govflanders/vl-ui-infotext/dist/js/infotext.js';
  * @classdesc Gebruik de infotext om belangrijke getallen weer te geven.
  *
  * @extends HTMLDivElement
+ * @mixes nativeVlElement
  *
  * @property {boolean} data-vl-badge - Attribuut wordt gebruikt om een badge te maken. Indien weggelaten wordt er geen badge gemaakt.
  *

@@ -4,17 +4,17 @@
 <head>
 	<title>vl-content-header voorbeeld</title>
 	<script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+	<script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+	<script type="module" src="/node_modules/vl-ui-image/dist/vl-image.js"></script>
 	
 	<script type="module" src="../vl-content-header.js"></script>
-	<script type="module" src="/node_modules/vl-ui-image/dist/vl-image.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+	<link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 	<link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-image/dist/style.css" />
 </head>
 
-<body>
-	<vl-demo-page data-vl-webcomponent="vl-content-header"
-		data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-content-header">
+<body is="vl-body">
+	<vl-demo-page data-vl-webcomponent="vl-content-header" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-content-header">
 		<vl-demo data-vl-title="Content header tonen met custom image en custom links">
 			<vl-content-header id="content-header">
 				<img id="img-component" is="vl-image" slot="image" sizes="100vw" src="default.jpg" srcset="mobile.jpg 320w, default.jpg 1024w, wide.jpg 1600w" alt="Content Header">

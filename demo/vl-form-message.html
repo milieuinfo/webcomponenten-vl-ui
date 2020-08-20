@@ -4,16 +4,16 @@
 <head>
     <title>vl-ui-form-message voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
 
     <script type="module" src="../vl-form-message.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vl-form-message.css" />
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-core/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-form-message"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-form-message">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-form-message" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-form-message">
         <vl-demo data-vl-title="Form label">
             <span id="demo-label"></span>
             <label is="vl-form-label" for="demo-label" id="form-label">
@@ -23,14 +23,14 @@
 
         <vl-demo data-vl-title="Form label (light)">
             <span id="demo-label-light"></span>
-            <label is="vl-form-label" for="demo-label-light" light id="form-label-light">
+            <label is="vl-form-label" for="demo-label-light" data-vl-light id="form-label-light">
                 foobar
             </label>
         </vl-demo>
 
         <vl-demo data-vl-title="Form label (block)">
             <span id="demo-label-block"></span>
-            <label is="vl-form-label" for="demo-label-block" block id="form-label-block">
+            <label is="vl-form-label" for="demo-label-block" data-vl-block id="form-label-block">
                 foobar
             </label>
         </vl-demo>
@@ -42,13 +42,13 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Form error">
-            <p is="vl-form-validation-message" error id="form-validation-message-error">
+            <p is="vl-form-validation-message" data-vl-error id="form-validation-message-error">
                 Het veld 'Naam evenement' is een verplicht veld.
             </p>
         </vl-demo>
 
         <vl-demo data-vl-title="Form success">
-            <p is="vl-form-validation-message" success id="form-validation-message-success">
+            <p is="vl-form-validation-message" data-vl-success id="form-validation-message-success">
                 Het veld 'Naam evenement' is correct ingevuld.
             </p>
         </vl-demo>

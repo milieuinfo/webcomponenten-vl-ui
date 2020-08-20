@@ -4,45 +4,40 @@
 <head>
     <title>vl-form-grid voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-form-grid.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
     <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
-    <script type="module" src="/node_modules/vl-ui-checkbox/dist/vl-checkbox.js"></script>
     <script type="module" src="/node_modules/vl-ui-textarea/dist/vl-textarea.js"></script>
 
+    <script type="module" src="../vl-form-grid.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/vl-form-grid.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
-    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-checkbox/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-textarea/dist/style.css" />
-    <link rel="stylesheet" type="text/css" href="/vl-form-grid.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-form-grid"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/grid">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-form-grid" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/grid">
         <vl-demo data-vl-title="Formulier">
             <form>
-                <div id="form-grid-voorkeur" is="vl-form-grid" is-stacked>
-                    <div id="form-column-voornaam" is="vl-form-column" size="12">
-                        <label is="vl-form-label" for="txt1" block>Voornaam</label>
-                        <input id="txt1" is='vl-input-field' placeholder="Jos" block />
+                <div id="form-grid-voorkeur" is="vl-form-grid" data-vl-is-stacked>
+                    <div id="form-column-voornaam" is="vl-form-column" data-vl-size="12">
+                        <label is="vl-form-label" for="txt1" data-vl-block>Voornaam</label>
+                        <input id="txt1" is='vl-input-field' data-vl-placeholder="Jos" data-vl-block />
                     </div>
-                    <div id="form-column-naam" is="vl-form-column" size="12">
-                        <label is="vl-form-label" for="txt2" block>Naam</label>
-                        <input id="txt2" is='vl-input-field' placeholder="Bosmans" block />
+                    <div id="form-column-naam" is="vl-form-column" data-vl-size="12">
+                        <label is="vl-form-label" for="txt2" data-vl-block>Naam</label>
+                        <input id="txt2" is='vl-input-field' data-vl-placeholder="Bosmans" data-vl-block />
                     </div>
-                    <div id="form-column-love" is="vl-form-column" size="12">
-                        <vl-checkbox label="Ik hou van webcomponenten" checked></vl-checkbox>
+                    <div id="form-column-opmerking" is="vl-form-column" data-vl-size="12">
+                        <label is="vl-form-label" for="txta" data-vl-block>Opmerking</label>
+                        <textarea id="txta" is="vl-textarea" aria-label="textarea block" data-vl-cols="40" data-vl-rows="4" data-vl-placeholder="Geen" data-vl-block></textarea>
                     </div>
-                    <div id="form-column-opmerking" is="vl-form-column" size="12">
-                        <label is="vl-form-label" for="txta" block>Opmerking</label>
-                        <textarea id="txta" is="vl-textarea" aria-label="textarea block" cols="40" rows="4" placeholder="Geen"
-                            block></textarea>
-                    </div>
-                    <div id="form-column-save" is="vl-form-column" size="12">
+                    <div id="form-column-save" is="vl-form-column" data-vl-size="12">
                         <button is="vl-button">Gegevens opslaan</button>
                     </div>
                 </div>

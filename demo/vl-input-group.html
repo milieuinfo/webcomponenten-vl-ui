@@ -4,23 +4,24 @@
 <head>
     <title>vl-ui-input-group voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="../vl-input-group.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
     <script type="module" src="/node_modules/vl-ui-input-addon/dist/vl-input-addon.js"></script>
     <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
 
+    <script type="module" src="../vl-input-group.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/vl-input-group.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-addon/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-icon/dist/style.css" />
-    <link rel="stylesheet" type="text/css" href="/vl-input-group.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-input-group"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-input-group">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-input-group" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-input-group">
         <vl-demo data-vl-title="Input group met input-addon links">
             <div id="input-group" is="vl-input-group">
                 <button is="vl-button-input-addon" type="button" id="button-1">

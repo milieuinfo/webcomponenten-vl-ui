@@ -4,22 +4,24 @@
 <head>
     <title>vl-select voorbeeld</title>
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-
-    <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+    <script type="module" src="/node_modules/vl-ui-action-group/dist/vl-action-group.js"></script>
     <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
     <script type="module" src="/node_modules/vl-ui-form-grid/dist/vl-form-grid.js"></script>
     <script type="module" src="/node_modules/vl-ui-modal/dist/vl-modal.js"></script>
     <script type="module" src="/node_modules/vl-ui-upload/dist/vl-upload.js"></script>
+
     <script type="module" src="../vl-select.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="/vl-select.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-action-group/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-grid/dist/style.css" />
-    <link rel="stylesheet" type="text/css" href="/vl-select.css" />
 </head>
 
-<body>
-    <vl-demo-page data-vl-webcomponent="vl-select"
-        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-select">
+<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-select" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-select">
         <vl-demo data-vl-title="Select">
             <select id="select-default" is="vl-select">
                 <option value="Belgium">België</option>
@@ -37,7 +39,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select block">
-            <select is="vl-select" block>
+            <select is="vl-select" data-vl-block>
                 <option value="België">België</option>
                 <option value="Duitsland">Duitsland</option>
                 <option value="Frankrijk">Frankrijk</option>
@@ -45,7 +47,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select error">
-            <select id="select-error" is="vl-select" error>
+            <select id="select-error" is="vl-select" data-vl-error>
                 <option value="België">België</option>
                 <option value="Duitsland">Duitsland</option>
                 <option value="Frankrijk">Frankrijk</option>
@@ -53,7 +55,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select success">
-            <select id="select-success" is="vl-select" success>
+            <select id="select-success" is="vl-select" data-vl-success>
                 <option value="België">België</option>
                 <option value="Duitsland">Duitsland</option>
                 <option value="Frankrijk">Frankrijk</option>
@@ -75,7 +77,7 @@
                 <option value="Frankrijk">Frankrijk</option>
             </select>
 
-            <button id="toggle-success-button" is="vl-button" onclick="toggleSuccess()" type="button">Toggle success</button>
+            <button id="toggle-success-button" is="vl-button" onclick="toggleSuccess()" type="button" slot="actions">Toggle success</button>
 
             <script type="text/javascript">
                 toggleSuccess = () => {
@@ -90,8 +92,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select met zoeken">
-            <select id="select-searchable" is="vl-select" tabindex="0" data-vl-select
-                data-vl-select-search-empty-text="Geen resultaten gevonden">
+            <select id="select-searchable" is="vl-select" tabindex="0" data-vl-select data-vl-select-search-empty-text="Geen resultaten gevonden">
                 <optgroup label="Landen">
                     <option value="België">België</option>
                     <option value="Duitsland">Duitsland</option>
@@ -121,7 +122,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select disabled">
-            <select id="select-disabled" is="vl-select" tabindex="0" data-vl-select data-vl-select-search="false" disabled>
+            <select id="select-disabled" is="vl-select" tabindex="0" data-vl-select data-vl-select-search="false" data-vl-disabled>
                 <optgroup label="Landen">
                     <option value="België">België</option>
                     <option value="Duitsland">Duitsland</option>
@@ -136,8 +137,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Select deletable">
-            <select id="select-deletable" is="vl-select" tabindex="0" data-vl-select-deletable data-vl-select
-                data-vl-select-search="false">
+            <select id="select-deletable" is="vl-select" tabindex="0" data-vl-select-deletable data-vl-select data-vl-select-search="false">
                 <optgroup label="Landen">
                     <option value="België">België</option>
                     <option value="Duitsland">Duitsland</option>
@@ -196,7 +196,7 @@
                 <option placeholder>Selecteer item</option>
             </select>
 
-            <button id="activate-data-button" is="vl-button" onclick="laadDynamisch()" type="button">Activeer dynamische
+            <button id="activate-data-button" is="vl-button" onclick="laadDynamisch()" type="button" slot="actions">Activeer dynamische
                 data</button>
 
             <script type="text/javascript">
@@ -224,10 +224,10 @@
                 <option value="Italië">Italië</option>
             </select>
 
-            <button id="dress-button" is="vl-button" onclick="document.getElementById('select-dress-undress-methode').dress()"
-                type="button">Dress</button>
-            <button id="undress-button" is="vl-button"
-                onclick="document.getElementById('select-dress-undress-methode').undress()" type="button">Undress</button>
+            <div is="vl-action-group" slot="actions">
+                <button id="dress-button" is="vl-button" onclick="document.getElementById('select-dress-undress-methode').dress()" type="button">Dress</button>
+                <button id="undress-button" is="vl-button" onclick="document.getElementById('select-dress-undress-methode').undress()" type="button">Undress</button>
+                </div>
             </div>
         </vl-demo>
 
@@ -241,10 +241,10 @@
                 <option value="Italië">Italië</option>
             </select>
 
-            <button id="enable-button" is="vl-button"
-                onclick="document.getElementById('select-enable-disable-methode').enable()" type="button">Enable</button>
-            <button id="disable-button" is="vl-button"
-                onclick="document.getElementById('select-enable-disable-methode').disable()" type="button">Disable</button>
+            <div is="vl-action-group" slot="actions">
+                <button id="enable-button" is="vl-button" onclick="document.getElementById('select-enable-disable-methode').enable()" type="button">Enable</button>
+                <button id="disable-button" is="vl-button" onclick="document.getElementById('select-enable-disable-methode').disable()" type="button">Disable</button>
+            </div>
         </vl-demo>
 
         <vl-demo data-vl-title="Select zet en verwijder keuze methoden">
@@ -257,17 +257,19 @@
                 <option value="Italië">Italië</option>
             </select>
 
-            <button id="select-button" is="vl-button"
-                onclick="document.getElementById('select-set-get-methode').value = 'Duitsland'" type="button">Kies
-                Duitsland</button>
-            <button id="remove-button" is="vl-button"
-                onclick="document.getElementById('select-set-get-methode').removeActive()" type="button">Verwijder
-                selectie</button>
+            <div is="vl-action-group" slot="actions">
+                <button id="select-button" is="vl-button" onclick="document.getElementById('select-set-get-methode').value = 'Duitsland'" type="button">
+                    Kies Duitsland
+                </button>
+                <button id="remove-button" is="vl-button" onclick="document.getElementById('select-set-get-methode').removeActive()" type="button">
+                    Verwijder selectie
+                </button>
+            </div>
         </vl-demo>
 
         <vl-demo data-vl-title="Select in combinatie met upload in modal">
             <button is="vl-button" data-vl-modal-open="modal-4">Open</button>
-            <vl-modal id="modal-4" data-title="Modal 4" closable not-cancellable>
+            <vl-modal id="modal-4" data-vl-title="Modal 4" closable not-cancellable>
                 <span slot="content">
                     <form>
                         <div is="vl-form-grid" is-stacked>

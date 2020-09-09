@@ -1,4 +1,4 @@
-import {vlElement, define} from '../vl-core.js';
+import {vlElement, define} from '/vl-core.js';
 
 class VlSlowElement extends vlElement(HTMLElement) {
   constructor() {

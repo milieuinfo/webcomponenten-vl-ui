@@ -1,6 +1,6 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/vl-ui-button/dist/vl-button.js';
-import '../vl-tooltip.js';
+import '/vl-tooltip.js';
 
 export class VlTooltipTest extends vlElement(HTMLElement) {
   constructor() {

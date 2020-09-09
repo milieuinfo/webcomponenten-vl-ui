@@ -1,5 +1,5 @@
 import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import {vlFormValidation} from '../vl-form-validation.js';
+import {vlFormValidation} from '/vl-form-validation.js';
 
 Promise.all([
   vlFormValidation.ready(),

@@ -1,0 +1,28 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc"]
+    },
+    "source": {
+        "include": ["src", "README.md"],
+        "includePattern": ".js$"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "referenceTitle": "Webcomponenten",
+        "disableSort": false,
+        "collapse": true,
+        "resources": {
+            "GitHub": "https://github.com/milieuinfo"
+        }
+    },
+    "opts": {
+        "destination": "./doc/",
+        "encoding": "utf8",
+        "private": false,
+        "recurse": true,
+        "template": "./template"
+    }
+}

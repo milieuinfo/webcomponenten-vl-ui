@@ -1,5 +1,5 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import '../vl-textarea.js';
+import '/vl-textarea.js';
 
 class VlRichTextarea extends vlElement(HTMLElement) {
   constructor() {

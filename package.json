@@ -34,12 +34,9 @@
   },
   "dependencies": {
     "copyfiles": "2.3.0",
-    "fetch-mock": "^9.10.7",
     "jsdoc": "3.6.5",
-    "polymer": "0.5.0",
-    "polymer-cli": "1.9.11",
     "replace": "1.2.0",
-    "webcomponenten-vl-ui-bom": "^0.0.2"
+    "webcomponenten-vl-ui-bom": "^1.0.0"
   },
   "bundledDependencies": [
     "fetch-mock",

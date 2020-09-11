@@ -1,20 +1,7 @@
 # webcomponenten-vl-ui
 ![GitHub issues](https://img.shields.io/github/issues-raw/milieuinfo/webcomponenten-vl-ui) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/milieuinfo/webcomponenten-vl-ui) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/milieuinfo/webcomponenten-vl-ui)
 
-Een overzicht van de webcomponenten met bijhorende API en demo's, gepubliceerd via de [demo](https://webcomponenten.omgeving.vlaanderen.be) pagina.
-
-Deze dependency kan ook gebruikt worden als bill of materials (BOM). Enerzijds als leidraad of rechtstreeks als dependency.
-
-## BOM leidraad
-De BOM kan als leidraad gebruikt worden om versies te selecteren die applicatief gebruikt kunnen worden. De BOM draait in één build de e2e testen van elke webcomponent, waardoor de versies opgesomd in de BOM (volgens de testen) probleemloos gecombineerd kunnen worden.
-
-## BOM dependency
-De BOM kan ook als dependency gebruikt worden zodat automatisch de juiste versie van elke webcomponent applicatief beschikbaar zal zijn. Bij elke BOM release zal de grootste change (major/minor/patch) van de onderliggend gewijzigde webcomponenten de BOM versie bepalen. Bij breaking changes zal ook in de BOM een samenvatting van de onderliggende breaking change release notes voorzien worden om migratie te vereenvoudigen.
-
-## Installatie
-``` bash
-$ npm install --save webcomponenten-vl-ui
-```
+Een overzicht van de webcomponenten met bijhorende API en demo's, gepubliceerd via de [demo](https://webcomponenten.omgeving.vlaanderen.be) pagina. De [webcomponenten-vl-ui-bom](https://github.com/milieuinfo/webcomponenten-vl-ui-bom) dependency kan gebruikt worden als bill of materials (BOM).
 
 ## API
 De API van elke webcomponent worden gepubliceerd via de [demo](https://webcomponenten.omgeving.vlaanderen.be) pagina.

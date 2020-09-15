@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>vl-breadcrumb voorbeeld</title>
+    <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+    <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+
+    <script type="module" src="/vl-breadcrumb.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/vl-breadcrumb.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+  </head>
+
+	<body is="vl-body">
+    <vl-demo-page data-vl-webcomponent="vl-breadcrumb" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-breadcrumb">
+      <vl-demo data-vl-title="Breadcrumb">
+        <nav is="vl-breadcrumb">
+          <ol>
+            <li>
+              <a href="#">Vlaanderen Intern</a>
+            </li>
+            <li>
+              <a href="#">Regelgeving</a>
+            </li>
+            <li>
+              <a href="#">Webuniversum</a>
+            </li>
+            <li>
+              <a href="#">Componenten</a>
+            </li>
+          </ol>
+        </nav>
+      </vl-demo>
+    </vl-demo-page>
+  </body>
+</html>

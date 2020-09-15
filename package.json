@@ -36,7 +36,7 @@
     "copyfiles": "2.3.0",
     "jsdoc": "3.6.5",
     "replace": "1.2.0",
-    "webcomponenten-vl-ui-bom": "^1.0.0"
+    "webcomponenten-vl-ui-bom": "^1.1.0"
   },
   "bundledDependencies": [
     "fetch-mock",
@@ -44,6 +44,7 @@
     "vl-ui-action-group",
     "vl-ui-alert",
     "vl-ui-body",
+    "vl-ui-breadcrumb",
     "vl-ui-button",
     "vl-ui-checkbox",
     "vl-ui-code-preview",
@@ -100,6 +101,7 @@
     "vl-ui-tooltip",
     "vl-ui-typography",
     "vl-ui-upload",
+    "vl-ui-video-player",
     "vl-ui-wizard"
   ]
 }

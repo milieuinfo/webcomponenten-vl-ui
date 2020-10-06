@@ -23,6 +23,11 @@
         "encoding": "utf8",
         "private": false,
         "recurse": true,
-        "template": "./template"
+        "template": "node_modules/foodoc/template"
+    },
+    "templates": {
+        "systemName": "Webcomponenten",
+        "systemSummary": "There is a webcomponent for that!",
+        "copyright": ""
     }
 }

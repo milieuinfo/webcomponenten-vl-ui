@@ -36,7 +36,7 @@
     "copyfiles": "2.4.0",
     "jsdoc": "3.6.6",
     "replace": "1.2.0",
-    "webcomponenten-vl-ui-bom": "^1.1.0"
+    "webcomponenten-vl-ui-bom": "^1.2.0"
   },
   "bundledDependencies": [
     "fetch-mock",
@@ -103,5 +103,8 @@
     "vl-ui-upload",
     "vl-ui-video-player",
     "vl-ui-wizard"
-  ]
+  ],
+  "devDependencies": {
+    "foodoc": "0.0.9"
+  }
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-document voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+        <script type="module" src="/node_modules/vl-ui-grid/dist/vl-grid.js"></script>
+
+        <script type="module" src="/vl-document.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-grid/dist/style.css" />
+    </head>
+
+	<body is="vl-body">
+        <vl-demo-page data-vl-webcomponent="vl-document" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-document">
+            <vl-demo data-vl-title="Document">
+                <div is="vl-grid">
+                    <div is="vl-column" data-vl-size="3" data-vl-medium-size="6">
+                        <vl-document>
+                            <span slot="type">PDF</span>
+                            <span slot="title">Hubert en Jan van Eyck, Vlaamse Primitieven</span>
+                            <span slot="metadata">PDF - 580 kB</span>
+                        </vl-document>
+                    </div>
+                </div>
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

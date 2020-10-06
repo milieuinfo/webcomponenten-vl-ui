@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-info-tile voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+
+        <script type="module" src="/vl-info-tile.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    </head>
+
+	<body is="vl-body">
+        <vl-demo-page data-vl-webcomponent="vl-info-tile" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/components/vl-ui-info-tile">
+            <vl-demo data-vl-title="Toggleable info-tile">
+                <vl-info-tile data-vl-toggleable>
+                    <span slot="title">Broos Deprez</span>
+                    <span slot="subtitle">Uw zoon (19.05.2005) <br> niet verwant aan referentiepersoon</span>
+                    <div slot="content">
+                        <p><strong>Beslissingsbrief Studietoelage</strong></p>
+                        <p>De studietoelage voor Broos Deprez werd toegekend.</p>
+                    </div>
+                </vl-info-tile>
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

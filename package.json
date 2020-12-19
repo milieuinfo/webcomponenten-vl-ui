@@ -36,7 +36,7 @@
     "copyfiles": "2.4.1",
     "jsdoc": "3.6.6",
     "replace": "1.2.0",
-    "webcomponenten-vl-ui-bom": "^1.2.0"
+    "webcomponenten-vl-ui-bom": "^2.0.0"
   },
   "bundledDependencies": [
     "fetch-mock",

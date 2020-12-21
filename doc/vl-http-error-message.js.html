@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -235,22 +243,22 @@ export class VlHttpErrorMessage extends vlElement(HTMLElement) {
         @import '/node_modules/vl-ui-titles/dist/style.css';
         @import '/node_modules/vl-ui-button/dist/style.css';
       &lt;/style>
-      &lt;div is="vl-grid" is-stacked align-center v-center>
-        &lt;div is="vl-column" size="6" max-size="12" class="vl-u-hidden vl-u-visible--s">
+      &lt;div is="vl-grid" data-vl-is-stacked data-vl-align-center data-vl-v-center>
+        &lt;div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="6" data-vl-extra-small-size="6" class="vl-u-hidden vl-u-visible--s">
           &lt;div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
             &lt;img id="image-small"/>
           &lt;/div>
         &lt;/div>
-        &lt;div is="vl-column" size="6" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
-          &lt;div is="vl-grid" is-stacked>
-            &lt;div is="vl-column" size="12" max-size="12">
+        &lt;div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="8">
+          &lt;div is="vl-grid" data-vl-is-stacked>
+            &lt;div is="vl-column" data-vl-size="12">
               &lt;h2 id="title" is="vl-h2">&lt;/h2>
               &lt;vl-typography id="text">&lt;/vl-typography>
             &lt;/div>
-            &lt;div id="actions" is="vl-column" size="12" max-size="12">&lt;/div>
+            &lt;div id="actions" is="vl-column" data-vl-size="12">&lt;/div>
           &lt;/div>
         &lt;/div>
-        &lt;div is="vl-column" size="6" max-size="12" class="vl-u-hidden--s">
+        &lt;div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="6" class="vl-u-hidden--s">
           &lt;div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
             &lt;img id="image-normal"/>
           &lt;/div>
@@ -391,38 +399,6 @@ export class VlHttpErrorMessage extends vlElement(HTMLElement) {
 }
 
 define('vl-http-error-message', VlHttpErrorMessage);
-define('vl-http-404-message', class extends VlHttpErrorMessage {
-  constructor() {
-    super({
-      title: 'Oeps, die pagina vonden we niet terug',
-      image: 'https://cdn.milieuinfo.be/http-error-message-assets/LATEST/img/page-not-found.svg',
-      imageAlt: 'Pagina niet gevonden',
-      text: `&lt;p>De pagina die u zoekt, vonden we niet terug.&lt;/p>`,
-      actions: `&lt;a is="vl-link-button" href="/">Terug naar de startpagina&lt;/a>`,
-    });
-  }
-});
-
-define('vl-http-500-message', class extends VlHttpErrorMessage {
-  constructor() {
-    super({
-      title: 'Oeps, er is iets fout gelopen',
-      image: 'https://cdn.milieuinfo.be/http-error-message-assets/LATEST/img/unexpected-error.svg',
-      imageAlt: 'Onverwachte fout',
-      text: `&lt;p>De actie die u heeft uitgevoerd is fout gelopen. Gelieve opnieuw te proberen.&lt;/p>`,
-      actions: `&lt;a is="vl-link-button">Terug naar de pagina&lt;/a>`,
-    });
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    this._registerBackLink();
-  }
-
-  _registerBackLink() {
-    this.__actionElement.addEventListener('click', () => window.history.back());
-  }
-});
 </code></pre>
 		</section>
 			</div>

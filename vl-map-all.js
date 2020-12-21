@@ -8,15 +8,19 @@ import {VlMapBaseLayerGRBGray} from '/node_modules/vl-ui-map/dist/vl-map-baselay
 import {VlMapBaseLayerGRB} from '/node_modules/vl-ui-map/dist/vl-map-baselayer-grb.js';
 import {VlMapBaseLayerGRBOrtho} from '/node_modules/vl-ui-map/dist/vl-map-baselayer-grb-ortho.js';
 import {VlMapAction} from '/node_modules/vl-ui-map/dist/vl-map-action.js';
+import {VlMapLayerAction} from '/node_modules/vl-ui-map/dist/vl-map-layer-action.js';
 import {VlMapSelectAction} from '/node_modules/vl-ui-map/dist/vl-map-select-action.js';
+import {VlMapDrawPointAction} from '/node_modules/vl-ui-map/dist/vl-map-draw-point-action.js';
+import {VlMapDrawLineAction} from '/node_modules/vl-ui-map/dist/vl-map-draw-line-action.js';
+import {VlMapDrawPolygonAction} from '/node_modules/vl-ui-map/dist/vl-map-draw-polygon-action.js';
 import {VlMapLayerStyle} from '/node_modules/vl-ui-map/dist/vl-map-layer-style.js';
 import {VlMapLayerCircleStyle} from '/node_modules/vl-ui-map/dist/vl-map-layer-circle-style.js';
 import {VlMapSearch} from '/node_modules/vl-ui-map/dist/vl-map-search.js';
+import {VlMapSideSheet} from '/node_modules/vl-ui-map/dist/vl-map-side-sheet.js';
+import {VlMapLayerSwitcher} from '/node_modules/vl-ui-map/dist/vl-map-layer-switcher.js';
 
 Promise.all([
-  awaitScript('vl-map-openlayers', '/node_modules/vl-mapactions/lib/openlayers/dist/ol.js'),
   awaitScript('vl-map-proj4', '/node_modules/proj4/dist/proj4.js'),
-  awaitScript('vl-map-mapactions', '/node_modules/vl-mapactions/dist/mapactions-min.js'),
 ]).then(() => {
   define('vl-map', VlMap);
   define('vl-map-overview-map', VlMapOverviewMap);
@@ -26,10 +30,16 @@ Promise.all([
   define('vl-map-baselayer-grb', VlMapBaseLayerGRB);
   define('vl-map-baselayer-grb-ortho', VlMapBaseLayerGRBOrtho);
   define('vl-map-action', VlMapAction);
+  define('vl-map-layer-action', VlMapLayerAction);
   define('vl-map-select-action', VlMapSelectAction);
+  define('vl-map-draw-point-action', VlMapDrawPointAction);
+  define('vl-map-draw-line-action', VlMapDrawLineAction);
+  define('vl-map-draw-polygon-action', VlMapDrawPolygonAction);
   define('vl-map-layer-style', VlMapLayerStyle);
   define('vl-map-layer-circle-style', VlMapLayerCircleStyle);
   define('vl-map-search', VlMapSearch);
+  define('vl-map-side-sheet', VlMapSideSheet);
+  define('vl-map-layer-switcher', VlMapLayerSwitcher);
 });
 
 export {
@@ -41,8 +51,14 @@ export {
   VlMapBaseLayerGRB,
   VlMapBaseLayerGRBOrtho,
   VlMapAction,
+  VlMapLayerAction,
   VlMapSelectAction,
+  VlMapDrawPointAction,
+  VlMapDrawLineAction,
+  VlMapDrawPolygonAction,
   VlMapLayerStyle,
   VlMapLayerCircleStyle,
   VlMapSearch,
+  VlMapSideSheet,
+  VlMapLayerSwitcher,
 };

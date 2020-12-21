@@ -1,7 +1,4 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import '/node_modules/vl-ui-icon/dist/vl-icon.js';
-import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
-import '/node_modules/@govflanders/vl-ui-core/dist/js/core.js';
 import '/lib/upload.js';
 
 /**
@@ -12,16 +9,19 @@ import '/lib/upload.js';
  * @extends HTMLElement
  * @mixes vlElement
  *
- * @property {URL} data-vl-url - Attribuut om de url naar waar de component moet uploaden, te definiëren.
- * @property {string} data-vl-input-name - Attribuut om de key te definiëren waarmee het bestand wordt opgeladen.
- * @property {string} data-vl-error-message-filesize - Attribuut om de message te definiëren wanneer er te grote bestanden zijn toegevoegd.
+ * @property {File[]} data-vl-accepted-files - Attribuut om te bepalen welke bestanden worden geaccepteerd door component (extensie en mimetype).
+ * @property {boolean} data-vl-autoprocess - Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.
+ * @property {boolean} data-vl-disallow-duplicates - Attribuut om te voorkomen dat dezelfde bijlage meerdere keren kan opgeladen worden.
  * @property {string} data-vl-error-message-accepted-files - Attribuut om de message te definiëren wanneer er niet-geaccepteerde bestanden zijn toegevoegd.
+ * @property {string} data-vl-error-message-filesize - Attribuut om de message te definiëren wanneer er te grote bestanden zijn toegevoegd.
  * @property {string} data-vl-error-message-maxfiles - Attribuut om de message te definiëren wanneer er teveel bestanden zijn toegevoegd.
+ * @property {boolean} data-vl-full-body-drop - Attribuut om te activeren of deactiveren dat het de dropzone over het heel scherm is.
+ * @property {string} data-vl-input-name - Attribuut om de key te definiëren waarmee het bestand wordt opgeladen.
  * @property {number} data-vl-max-files - Attribuut om het maximaal aantal bestanden dat opgeladen mag worden, aan te duiden.
  * @property {number} data-vl-max-size - Attribuut om de maximum grootte van een bestand dat opgeladen kan worden (20000000 = 2MB), aan te duiden.
- * @property {list} data-vl-accepted-files - Attribuut om te op te lijsten welke bestanden worden geaccepteerd door component (extensie en mimetype).
- * @property {boolean} data-vl-full-body-drop - Attribuut om te activeren of deactiveren dat het de dropzone over het heel scherm is.
- * @property {boolean} data-vl-autoprocess - Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.
+ * @property {number} data-vl-sub-title - Attribuut om de subtitel te bepalen.
+ * @property {number} data-vl-title - Attribuut om de titel te bepalen.
+ * @property {URL} data-vl-url - Attribuut om de url naar waar de component moet uploaden, te definiëren.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-upload/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-upload/issues|Issues}
@@ -29,9 +29,7 @@ import '/lib/upload.js';
  */
 export class VlUpload extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['url', 'input-name', 'error-message-filesize', 'error-message-accepted-files',
-      'error-message-maxfiles', 'max-files', 'max-size', 'accepted-files', 'full-body-drop', 'autoprocess',
-      'disallow-duplicates'];
+    return ['accepted-files', 'autoprocess', 'error-message-accepted-files', 'error-message-filesize', 'error-message-maxfiles', 'full-body-drop', 'input-name', 'max-files', 'max-size', 'disallow-duplicates', 'title', 'sub-title', 'url'];
   }
 
   static get _observedChildClassAttributes() {
@@ -47,28 +45,14 @@ export class VlUpload extends vlElement(HTMLElement) {
       <style>
         @import '/src/style.css';
         @import '/node_modules/vl-ui-link/dist/style.css';
-        @import '/node_modules/vl-ui-icon/dist/style.css';
       </style>
       <div class="vl-upload" data-vl-upload data-vl-upload-url="http://www.example.com"></div>
     `);
   }
 
   connectedCallback() {
+    this._appendTemplates();
     this.dress();
-  }
-
-  get _upload() {
-    return this._element;
-  }
-
-  get _dressed() {
-    return !!this.getAttribute('data-vl-upload-dressed');
-  }
-
-  get _dropzone() {
-    if (vl && vl.upload && vl.upload.dropzoneInstances) {
-      return vl.upload.dropzoneInstances.filter((dropzone) => dropzone.element === this._element)[0];
-    }
   }
 
   /**
@@ -103,53 +87,99 @@ export class VlUpload extends vlElement(HTMLElement) {
     return this._dropzone.files;
   }
 
-  get _templates() {
+  get _upload() {
+    return this._element;
+  }
+
+  get _dressed() {
+    return !!this.getAttribute('data-vl-upload-dressed');
+  }
+
+  get _dropzone() {
+    if (vl && vl.upload && vl.upload.dropzoneInstances) {
+      return vl.upload.dropzoneInstances.filter((dropzone) => dropzone.element === this._element)[0];
+    }
+  }
+
+  get _button() {
+    return this._shadow.querySelector('.vl-upload__element__button');
+  }
+
+  get _hasUploadTemplate() {
+    return document.body.querySelector('#uploadTemplate');
+  }
+
+  get _hasPreviewFilesWrapperTemplate() {
+    return document.body.querySelector('#previewFilesWrapper');
+  }
+
+  get _hasPreviewTemplate() {
+    return document.body.querySelector('#previewTemplate');
+  }
+
+  get _hasUploadOverlayTemplate() {
+    return document.body.querySelector('#uploadOverlay');
+  }
+
+  get _uploadTemplate() {
     return this._template(`
       <template id="uploadTemplate">
         <div class="vl-upload__element">
           <div class="vl-upload__element__label">
             <button type="button" class="vl-upload__element__button vl-link">
-              <span is="vl-icon" data-vl-icon="paperclip"></span>
+              <i class="vl-vi vl-vi-paperclip" aria-hidden="true"></i>
               <span class="vl-upload__element__button__container"></span>
             </button>
             <small></small>
           </div>
         </div>
       </template>
-  
+    `);
+  }
+
+  get _previewFilesWrapperTemplate() {
+    return this._template(`
       <template id="previewFilesWrapper">
         <div class="vl-upload__files">
           <div class="vl-upload__files__container"></div>
           <div class="vl-upload__files__input__container"></div>
           <button class="vl-upload__files__close vl-link vl-link--icon">
-            <span is="vl-icon" data-vl-icon="trash" data-vl-link></span>
+            <span class="vl-link__icon vl-vi vl-vi-trash" aria-hidden="true"></span>  
             Verwijder alle bestanden
           </button>
         </div>
       </template>
+    `);
+  }
 
+  get _previewTemplate() {
+    return this._template(`
       <template id="previewTemplate">
         <div class="vl-upload__file">
           <p class="vl-upload__file__name">
-            <span is="vl-icon" class="vl-upload__file__name__icon" data-vl-icon="document"></span>
+            <span class="vl-upload__file__name__icon vl-vi vl-vi-document" aria-hidden="true"></span>
             <span data-dz-name></span>
             <span class="vl-upload__file__size">
-          (<span data-dz-size></span>)
-        </span>
+              (<span data-dz-size></span>)
+            </span>
           </p>
           <div class="dz-error-message">
             <span data-dz-errormessage></span>
           </div>
           <button type="button" class="vl-upload__file__close vl-link vl-link--icon" data-dz-remove>
-            <span is="vl-icon" data-vl-icon="cross"></span>
+            <span class="vl-vi vl-vi-cross" aria-hidden="true"></span>
           </button>
         </div>
       </template>
+    `);
+  }
 
+  get _uploadOverlayTemplate() {
+    return this._template(`
       <template id="uploadOverlay">
         <div class="vl-upload__overlay">
           <p class="vl-upload__overlay__text">
-            <span is="vl-icon" data-vl-icon="paperclip" link></span>
+            <span class="vl-link__icon vl-vi vl-vi-paperclip" aria-hidden="true"></span>
           </p>
         </div>
       </template>
@@ -166,7 +196,6 @@ export class VlUpload extends vlElement(HTMLElement) {
    */
   dress() {
     if (!this._dressed) {
-      document.body.appendChild(this._templates);
       vl.upload.dress(this._upload);
     }
   }
@@ -199,32 +228,61 @@ export class VlUpload extends vlElement(HTMLElement) {
    */
   on(event, callback) {
     this._element.addEventListener(event, callback);
+    this._dropzone.on(event, callback);
   }
 
-  _urlChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'url', newValue);
-    if (this._dropzone && this._dropzone.options) {
-      this._dropzone.options.url = newValue;
-    }
+  /**
+   * Handmatig bestand toevoegen
+   * @param {String} name
+   * @param {Number} size
+   * @param {Number} id
+   * @return {void}
+   */
+  addFile({name, size, id}) {
+    const file = {name: name, size: size, id: id};
+    this._dropzone.files.push(file);
+    this._dropzone.emit('addedfile', file);
+    this._dropzone.emit('complete', file);
+  }
+
+  /**
+   * Geeft focus aan het link element.
+   */
+  focus() {
+    this._button.focus();
+  }
+
+  _acceptedFilesChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'accepted-files', newValue);
+    this._element.setAttribute('accept', newValue);
+  }
+
+  _autoprocessChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'autoprocess', newValue);
+  }
+
+  _disallowDuplicatesChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'disallow-duplicates', newValue);
+  }
+
+  _errorMessageAcceptedFilesChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'error-message-accepted-files', newValue);
+  }
+
+  _errorMessageFilesizeChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'error-message-filesize', newValue);
+  }
+
+  _errorMessageMaxfilesChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'error-message-maxfiles', newValue);
+  }
+
+  _fullBodyDropChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'full-body-drop', '');
   }
 
   _inputNameChangedCallback(oldValue, newValue) {
     this._element.setAttribute(this._prefix + 'input-name', newValue);
-  }
-
-  _errorMessageFilesizeChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'error-message-filesize',
-        newValue);
-  }
-
-  _errorMessageAcceptedFilesChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'error-message-accepted-files',
-        newValue);
-  }
-
-  _errorMessageMaxfilesChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'error-message-maxfiles',
-        newValue);
   }
 
   _maxFilesChangedCallback(oldValue, newValue) {
@@ -235,21 +293,37 @@ export class VlUpload extends vlElement(HTMLElement) {
     this._element.setAttribute(this._prefix + 'max-size', newValue);
   }
 
-  _acceptedFilesChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'accepted-files', newValue);
-    this._element.setAttribute('accept', newValue);
+  _titleChangedCallback(oldValue, newValue) {
+    this._changeTranslation('upload.add_files', newValue);
   }
 
-  _fullBodyDropChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'full-body-drop', '');
+  _subTitleChangedCallback(oldValue, newValue) {
+    this._changeTranslation('upload.add_files_subtitle', newValue);
   }
 
-  _autoprocessChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix + 'autoprocess', newValue);
+  _urlChangedCallback(oldValue, newValue) {
+    this._element.setAttribute(this._prefix + 'url', newValue);
+    if (this._dropzone && this._dropzone.options) {
+      this._dropzone.options.url = newValue;
+    }
   }
 
-  _disallowDuplicatesChangedCallback(oldValue, newValue) {
-    this._element.setAttribute(this._prefix+'disallow-duplicates', newValue);
+  _appendTemplates() {
+    if (!this._hasUploadTemplate) {
+      document.body.appendChild(this._uploadTemplate);
+    }
+
+    if (!this._hasPreviewFilesWrapperTemplate) {
+      document.body.appendChild(this._previewFilesWrapperTemplate);
+    }
+
+    if (!this._hasPreviewTemplate) {
+      document.body.appendChild(this._previewTemplate);
+    }
+
+    if (!this._hasUploadOverlayTemplate) {
+      document.body.appendChild(this._uploadOverlayTemplate);
+    }
   }
 }
 

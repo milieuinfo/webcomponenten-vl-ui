@@ -1,16 +1,18 @@
 import {vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {OlWMTSSource, OlWMTSTileGrid, OlVectorSource, OlVectorLayer, OlTileLayer, OlGeoJSON, OlStyle, OlStyleStroke, OlStyleFill, OlExtent, OlLoadingstrategy} from '/node_modules/vl-mapactions/dist/vl-mapactions.js';
 
 /**
  * VlMapBaseLayer
  * @class
  * @classdesc De kaart basis laag component.
  *
- * @extends vlElement
+ * @extends HTMLElement
+ * @mixes vlElement
  *
- * @property {(wmts | wfs )} type - Attribuut wordt gebruikt om aan te geven wat het type is van de kaartlaag.
- * @property {string} url - Attribuut geeft aan via welke URL gebruikt wordt om de kaartlaag op te halen.
- * @property {string} layer - Attribuut geeft aan wat de kaartlaag identifier is.
- * @property {string} title - Attribuut bepaalt de titel van de kaartlaag.
+ * @property {(wmts | wfs )} data-vl-type - Attribuut wordt gebruikt om aan te geven wat het type is van de kaartlaag.
+ * @property {string} data-vl-url - Attribuut geeft aan via welke URL gebruikt wordt om de kaartlaag op te halen.
+ * @property {string} data-vl-layer - Attribuut geeft aan wat de kaartlaag identifier is.
+ * @property {string} data-vl-title - Attribuut bepaalt de titel van de kaartlaag.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
@@ -86,7 +88,7 @@ export class VlMapBaseLayer extends vlElement(HTMLElement) {
   }
 
   _createWMTSSource() {
-    const size = ol.extent.getWidth(this._projection.getExtent()) / 256;
+    const size = OlExtent.getWidth(this._projection.getExtent()) / 256;
     const resolutions = new Array(16);
     const matrixIds = new Array(16);
     for (let z = 0; z < 16; ++z) {
@@ -94,15 +96,15 @@ export class VlMapBaseLayer extends vlElement(HTMLElement) {
       matrixIds[z] = z;
     }
 
-    return new ol.source.WMTS({
+    return new OlWMTSSource({
       url: this.url,
       layer: this.layer,
       matrixSet: 'BPL72VL',
       format: 'image/png',
       projection: this._projection,
-      tileGrid: new ol.tilegrid.WMTS({
+      tileGrid: new OlWMTSTileGrid({
         extent: this._projection.getExtent(),
-        origin: ol.extent.getTopLeft(this._projection.getExtent()),
+        origin: OlExtent.getTopLeft(this._projection.getExtent()),
         resolutions: resolutions,
         matrixIds: matrixIds,
       }),
@@ -112,34 +114,34 @@ export class VlMapBaseLayer extends vlElement(HTMLElement) {
 
   _createVectorSource() {
     const self = this;
-    return new ol.source.Vector({
-      format: new ol.format.GeoJSON({
-        defaultDataProjection: self._projection,
+    return new OlVectorSource({
+      format: new OlGeoJSON({
+        dataProjection: self._projection,
       }),
       url: function() {
         return self.url + '&typeName=' + self.layer;
       },
-      strategy: ol.loadingstrategy.bbox,
+      strategy: OlLoadingstrategy.bbox,
     });
   }
 
   _createBaseLayer() {
     switch (this.type) {
       case 'wmts':
-        return new ol.layer.Tile({
+        return new OlTileLayer({
           title: this.title,
           type: 'base',
           source: this._WMTSSource,
         });
       case 'wfs':
-        return new ol.layer.Vector({
+        return new OlVectorLayer({
           source: this._vectorSource,
-          style: new ol.style.Style({
-            stroke: new ol.style.Stroke({
+          style: new OlStyle({
+            stroke: new OlStyleStroke({
               color: 'rgba(0, 0, 0, 1.0)',
               width: 1,
             }),
-            fill: new ol.style.Fill({
+            fill: new OlStyleFill({
               color: 'rgba(255, 0, 0, 1.0)',
             }),
           }),

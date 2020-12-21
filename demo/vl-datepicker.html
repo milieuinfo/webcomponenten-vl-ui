@@ -10,11 +10,12 @@
     <script type="module" src="/vl-datepicker.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-grid/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
 </head>
 
-<body>
+<body is="vl-body">
     <vl-demo-page data-vl-webcomponent="vl-datepicker" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-datepicker">
         <vl-demo data-vl-title="Datepicker">
             <vl-datepicker id="default-datepicker"></vl-datepicker>
@@ -97,6 +98,11 @@
 
         <vl-demo data-vl-title="Datepicker succes">
             <vl-datepicker id="success-datepicker" data-vl-success></vl-datepicker>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Datepicker focus">
+            <vl-datepicker id="focus-datepicker"></vl-datepicker>
+            <button is="vl-button" slot="actions" onclick="document.getElementById('focus-datepicker').focus();">Focus</button>
         </vl-demo>
     </vl-demo-page>
 </body>

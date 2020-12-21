@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -194,31 +202,51 @@
 			<article></article>
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/vl-ui-select/dist/vl-select.js';
+import '/node_modules/vl-ui-search/dist/vl-search.js';
+import {OlOverlay} from '/node_modules/vl-mapactions/dist/vl-mapactions.js';
 
 /**
  * VlMapSearch
  * @class
  * @classdesc De kaart zoek op adres component.
  *
- * @extends vlElement
+ * @extends HTMLElement
+ * @mixes vlElement
+ *
+ * @property {string} [data-vl-placeholder=Lokaliseer adres] - Attribuut bepaalt de placeholder van het zoek adres select element.
+ * @property {string} [data-vl-search-placeholder=Zoek gemeente, straat en huisnummer] - Attribuut bepaalt de placeholder van het zoek adres input element.
+ * @property {string} [data-vl-search-empty-text=Geen adres gevonden] - Attribuut bepaalt de tekst wanneer er geen zoekresultaten zijn.
+ * @property {string} [data-vl-search-no-results-text=Geen adres resultaat] - Attribuut bepaalt de tekst wanneer er geen zoekresultaten meer zijn.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-map-search.html|Demo}
  */
 export class VlMapSearch extends vlElement(HTMLElement) {
+  static get _observedAttributes() {
+    return ['placeholder', 'search-placeholder', 'search-empty-text', 'search-no-results-text'];
+  }
+
   constructor() {
     super(`
       &lt;style>
         @import '/node_modules/vl-ui-select/dist/style.css';
+        @import '/node_modules/vl-ui-search/dist/style.css';
+
+        :host {
+          display: block;
+        }
       &lt;/style>
+      &lt;vl-search id="search" data-vl-inline>
+        &lt;select is="vl-select" data-vl-select data-vl-block slot="input">
+          &lt;option placeholder>&lt;/option>
+        &lt;/select>
+      &lt;/vl-search>
     `);
     this._configure();
-    customElements.whenDefined('vl-select').then(() => {
-      this._shadow.appendChild(this._getSelectTemplate());
-      this._addSearchEventListener();
-      this._addChoiceEventListener();
-    });
+    this._addSearchEventListener();
+    this._addChoiceEventListener();
+    this._changeTranslations();
   }
 
   get url() {
@@ -233,6 +261,22 @@ export class VlMapSearch extends vlElement(HTMLElement) {
     return this.url + '/Location?q=';
   }
 
+  set placeholder(value) {
+    this._placeholderElement.innerText = value;
+  }
+
+  set searchPlaceholder(value) {
+    this._changeTranslation('select.search_placeholder_value', value);
+  }
+
+  set searchEmptyText(value) {
+    this._selectElement.setAttribute('data-vl-select-search-empty-text', value);
+  }
+
+  set searchNoResultsText(value) {
+    this._changeTranslation('select.no_more_options', value);
+  }
+
   get _selectElement() {
     return this._shadow.querySelector('select');
   }
@@ -243,15 +287,38 @@ export class VlMapSearch extends vlElement(HTMLElement) {
     }
   }
 
+  get _placeholderElement() {
+    return this._selectElement.querySelector('option[placeholder]');
+  }
+
   bindMap(map) {
     this._map = map;
   }
 
-  _getSelectTemplate() {
-    return this._template(`
-      &lt;select is="vl-select" id="test" data-vl-select data-vl-select-deletable data-vl-select-search-empty-text="Geen adres gevonden">&lt;/select>
-    `);
-  };
+  /**
+   * Bepaal callback die uitgevoerd wordt bij selectie van een locatie via de map search.
+   *
+   * @param {Function} callback
+   */
+  onSelect(callback) {
+    this._onSelect = callback;
+  }
+
+  _placeholderChangedCallback(oldValue, newValue) {
+    this.placeholder = newValue;
+  }
+
+  _searchPlaceholderChangedCallback(oldValue, newValue) {
+    this.searchPlaceholder = newValue;
+  }
+
+  _searchEmptyTextChangedCallback(oldValue, newValue) {
+    this.searchEmptyText = newValue;
+  }
+
+  _searchNoResultsTextChangedCallback(oldValue, newValue) {
+    this.searchNoResultsText = newValue;
+  }
 
   _addSearchEventListener() {
     if (!this.__searchEventListenerRegistered) {
@@ -285,12 +352,15 @@ export class VlMapSearch extends vlElement(HTMLElement) {
             return response.json();
           }).then((data) => {
             if (data &amp;&amp; data.LocationResult) {
-              if (this._map) {
-                this._map.zoomTo(
-                    [data.LocationResult[0].BoundingBox.LowerLeft.X_Lambert72,
-                      data.LocationResult[0].BoundingBox.LowerLeft.Y_Lambert72,
-                      data.LocationResult[0].BoundingBox.UpperRight.X_Lambert72,
-                      data.LocationResult[0].BoundingBox.UpperRight.Y_Lambert72]);
+              if (this._onSelect) {
+                this._onSelect(data);
+              } else if (this._map) {
+                this._map.zoomTo([
+                  data.LocationResult[0].BoundingBox.LowerLeft.X_Lambert72,
+                  data.LocationResult[0].BoundingBox.LowerLeft.Y_Lambert72,
+                  data.LocationResult[0].BoundingBox.UpperRight.X_Lambert72,
+                  data.LocationResult[0].BoundingBox.UpperRight.Y_Lambert72,
+                ]);
               }
             }
           });
@@ -302,11 +372,20 @@ export class VlMapSearch extends vlElement(HTMLElement) {
   _configure() {
     customElements.whenDefined('vl-map').then(() => {
       if (this.parentNode &amp;&amp; this.parentNode.map) {
-        this.parentNode._shadow.prepend(this);
-        this.parentNode.host.style.setProperty('--vl-map--margin-top', '35px');
-        this._map = this._parentElement;
+        this._map = this.parentNode._shadow.host;
+        this._map.map.addOverlay(new OlOverlay({
+          className: 'vl-map-search__overlaycontainer',
+          element: this,
+        }));
       }
     });
+  }
+
+  _changeTranslations() {
+    this.placeholder = 'Lokaliseer adres';
+    this.searchPlaceholder = 'Gemeente, straat en huisnummer';
+    this.searchEmptyText = 'Geen adres gevonden';
+    this.searchNoResultsText = 'Geen adres gevonden';
   }
 }
 </code></pre>

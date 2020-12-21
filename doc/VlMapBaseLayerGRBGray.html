@@ -14,7 +14,7 @@
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"Webcomponenten","systemSummary":"There is a webcomponent for that!","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
 			window.DOCLET_TOC_ENABLED = true;
-			window.DOCLET_AFILTER_ENABLED = false;
+			window.DOCLET_AFILTER_ENABLED = true;
 		</script>
 </head>
 <body>
@@ -61,6 +61,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -108,12 +109,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -194,6 +202,16 @@
 							<li><a href="list_class.html">Classes</a></li>
 							<li class="active">VlMapBaseLayerGRBGray</li>
 						</ol>
+						<div class="access-filter">
+								<label class="checkbox-inline">
+									<input class="toggle-inherited" type="checkbox" value="" checked>
+									Inherited
+								</label>
+								<label class="checkbox-inline">
+									<input class="toggle-public" type="checkbox" value="" checked>
+									Public
+								</label>
+						</div>
 					<section>
 							<dl class="symbol primary">
 								<dt class="symbol-title class collapsible-symbol expanded">
@@ -210,7 +228,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Augments</label>
 								<div class="col-sm-9">
-										<p class="form-control-static">vlElement</p>
+										<p class="form-control-static"><a href="VlMapBaseLayer.html">VlMapBaseLayer</a></p>
 								</div>
 							</div>
 			
@@ -261,6 +279,245 @@
 <dd class="symbol-details class public">
 	<div class="symbol-details-inner">
 	</div>
+</dd>
+									</dl>
+									<h3>Members</h3>
+									<dl class="symbol">
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="type" class="member public inherited"><span class="name">type</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft het kaartlaag type terug.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">string</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#type">VlMapBaseLayer#type</a></p>
+								</div>
+							</div>
+			
+							<!-- overrides -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Overrides</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#type">VlMapBaseLayer#type</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-baselayer.js.html">vl-map-baselayer.js</a>, <a href="vl-map-baselayer.js.html#line-31">line 31</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="url" class="member public inherited"><span class="name">url</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de kaartlaag URL terug.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">string</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#url">VlMapBaseLayer#url</a></p>
+								</div>
+							</div>
+			
+							<!-- overrides -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Overrides</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#url">VlMapBaseLayer#url</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-baselayer.js.html">vl-map-baselayer.js</a>, <a href="vl-map-baselayer.js.html#line-40">line 40</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="layer" class="member public inherited"><span class="name">layer</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de kaartlaag identifier terug.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">string</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#layer">VlMapBaseLayer#layer</a></p>
+								</div>
+							</div>
+			
+							<!-- overrides -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Overrides</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#layer">VlMapBaseLayer#layer</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-baselayer.js.html">vl-map-baselayer.js</a>, <a href="vl-map-baselayer.js.html#line-49">line 49</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="title" class="member public inherited"><span class="name">title</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de kaartlaag titel terug.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">string</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#title">VlMapBaseLayer#title</a></p>
+								</div>
+							</div>
+			
+							<!-- overrides -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Overrides</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapBaseLayer.html#title">VlMapBaseLayer#title</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-baselayer.js.html">vl-map-baselayer.js</a>, <a href="vl-map-baselayer.js.html#line-58">line 58</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
 </dd>
 									</dl>
 							</article>

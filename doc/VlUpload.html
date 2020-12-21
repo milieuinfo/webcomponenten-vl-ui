@@ -61,6 +61,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -108,12 +109,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -214,24 +222,24 @@
 					</thead>
 					<tbody>
 						<tr>
-								<td><code>data-vl-url</code></td>
-							<td><span class="param-type">URL</span></td>
+								<td><code>data-vl-accepted-files</code></td>
+							<td><span class="param-type">Array.&lt;File></span></td>
 							<td class="last">
-									<p>Attribuut om de url naar waar de component moet uploaden, te definiëren.</p>
+									<p>Attribuut om te bepalen welke bestanden worden geaccepteerd door component (extensie en mimetype).</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>data-vl-input-name</code></td>
-							<td><span class="param-type">string</span></td>
+								<td><code>data-vl-autoprocess</code></td>
+							<td><span class="param-type">boolean</span></td>
 							<td class="last">
-									<p>Attribuut om de key te definiëren waarmee het bestand wordt opgeladen.</p>
+									<p>Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>data-vl-error-message-filesize</code></td>
-							<td><span class="param-type">string</span></td>
+								<td><code>data-vl-disallow-duplicates</code></td>
+							<td><span class="param-type">boolean</span></td>
 							<td class="last">
-									<p>Attribuut om de message te definiëren wanneer er te grote bestanden zijn toegevoegd.</p>
+									<p>Attribuut om te voorkomen dat dezelfde bijlage meerdere keren kan opgeladen worden.</p>
 							</td>
 						</tr>
 						<tr>
@@ -242,10 +250,31 @@
 							</td>
 						</tr>
 						<tr>
+								<td><code>data-vl-error-message-filesize</code></td>
+							<td><span class="param-type">string</span></td>
+							<td class="last">
+									<p>Attribuut om de message te definiëren wanneer er te grote bestanden zijn toegevoegd.</p>
+							</td>
+						</tr>
+						<tr>
 								<td><code>data-vl-error-message-maxfiles</code></td>
 							<td><span class="param-type">string</span></td>
 							<td class="last">
 									<p>Attribuut om de message te definiëren wanneer er teveel bestanden zijn toegevoegd.</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>data-vl-full-body-drop</code></td>
+							<td><span class="param-type">boolean</span></td>
+							<td class="last">
+									<p>Attribuut om te activeren of deactiveren dat het de dropzone over het heel scherm is.</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>data-vl-input-name</code></td>
+							<td><span class="param-type">string</span></td>
+							<td class="last">
+									<p>Attribuut om de key te definiëren waarmee het bestand wordt opgeladen.</p>
 							</td>
 						</tr>
 						<tr>
@@ -263,24 +292,24 @@
 							</td>
 						</tr>
 						<tr>
-								<td><code>data-vl-accepted-files</code></td>
-							<td><span class="param-type">list</span></td>
+								<td><code>data-vl-sub-title</code></td>
+							<td><span class="param-type">number</span></td>
 							<td class="last">
-									<p>Attribuut om te op te lijsten welke bestanden worden geaccepteerd door component (extensie en mimetype).</p>
+									<p>Attribuut om de subtitel te bepalen.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>data-vl-full-body-drop</code></td>
-							<td><span class="param-type">boolean</span></td>
+								<td><code>data-vl-title</code></td>
+							<td><span class="param-type">number</span></td>
 							<td class="last">
-									<p>Attribuut om te activeren of deactiveren dat het de dropzone over het heel scherm is.</p>
+									<p>Attribuut om de titel te bepalen.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>data-vl-autoprocess</code></td>
-							<td><span class="param-type">boolean</span></td>
+								<td><code>data-vl-url</code></td>
+							<td><span class="param-type">URL</span></td>
 							<td class="last">
-									<p>Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.</p>
+									<p>Attribuut om de url naar waar de component moet uploaden, te definiëren.</p>
 							</td>
 						</tr>
 					</tbody>
@@ -391,7 +420,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-78">line 78</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-62">line 62</a></p>
 								</div>
 							</div>
 			
@@ -436,7 +465,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-86">line 86</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-70">line 70</a></p>
 								</div>
 							</div>
 			
@@ -481,7 +510,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-94">line 94</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-78">line 78</a></p>
 								</div>
 							</div>
 			
@@ -526,7 +555,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-102">line 102</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-86">line 86</a></p>
 								</div>
 							</div>
 			
@@ -574,7 +603,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-167">line 167</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-197">line 197</a></p>
 								</div>
 							</div>
 			
@@ -639,7 +668,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-179">line 179</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-208">line 208</a></p>
 								</div>
 							</div>
 			
@@ -684,7 +713,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-190">line 190</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-219">line 219</a></p>
 								</div>
 							</div>
 			
@@ -755,7 +784,121 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-200">line 200</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-229">line 229</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="addFile" class="function public"><span class="name">addFile</span><span class="signature-params">( <span class="signature-param">name</span>, <span class="signature-param">size</span>, <span class="signature-param">id</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{void}</span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Handmatig bestand toevoegen</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>name</code></td>
+							<td><span class="param-type">String</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>size</code></td>
+							<td><span class="param-type">Number</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>id</code></td>
+							<td><span class="param-type">Number</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">void</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-241">line 241</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="focus" class="function public"><span class="name">focus</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft focus aan het link element.</p></div>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-251">line 251</a></p>
 								</div>
 							</div>
 			

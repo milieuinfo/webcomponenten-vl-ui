@@ -10,6 +10,7 @@
     <script type="module" src="/vl-upload.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
 </head>
 
@@ -27,10 +28,6 @@
 
         <vl-demo data-vl-title="Upload bij toevoegen van bestand">
             <vl-upload id="vl-upload-auto-process" url="http://httpbin.org/post" data-vl-input-name="files" data-vl-autoprocess="true"></vl-upload>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Upload error">
-            <vl-upload id="vl-upload-error" url="http://httpbin.org/post" data-vl-input-name="files" data-vl-error></vl-upload>
         </vl-demo>
 
         <vl-demo data-vl-title="Upload clear">
@@ -53,7 +50,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Beperkte upload zonder dubbels">
-            <vl-upload id="vl-upload-geen-dubbels" data-vl-url="http://httpbin.org/post" data-vl-input-name="files"
+            <vl-upload id="vl-upload-unique" data-vl-url="http://httpbin.org/post" data-vl-input-name="files"
                 error-message-filesize="De grootte van het bestand mag maximaal :maxFsz zijn."
                 error-message-maxfiles="Je kan maximaal :maxfl file(s) uploaden." data-vl-max-files="2" data-vl-max-size="20000000"
                 disallow-duplicates="true"></vl-upload>
@@ -62,10 +59,10 @@
         <vl-demo data-vl-title="Beperkte upload (aantal en type)">
             <vl-upload id="vl-upload-file-types" data-vl-url="http://httpbin.org/post" data-vl-input-name="files" data-vl-max-files="10"
                 data-vl-max-size="20000000" data-vl-accepted-files="application/pdf, .png"
-                data-vl-error-message-accepted-files="Je kan enkel :fileType bestanden opladen"></vl-upload>
+                data-vl-error-message-accepted-files="Je kan enkel :filetype bestanden opladen"></vl-upload>
         </vl-demo>
 
-        <vl-demo data-vl-title="Full body Dropzone upload">
+        <vl-demo data-vl-title="Volledig scherm upload">
             <vl-upload id="vl-upload-full-body-drop" data-vl-url="http://httpbin.org/post" data-vl-input-name="files" data-vl-full-body-drop></vl-upload>
         </vl-demo>
 
@@ -85,10 +82,30 @@
             <span id="vl-upload-log"></span>
         </vl-demo>
 
+        <vl-demo data-vl-title="Programmatische upload">
+            <vl-upload id="vl-upload-programmatically" data-vl-input-name="files"></vl-upload>
+            <button is="vl-button" id="add-file" slot="actions" onclick="document.querySelector('#vl-upload-programmatically').addFile({name: 'bestand.pdf', size: '1000'});">
+                Voeg programmatisch bestand toe
+            </button>
+        </vl-demo>
+
         <vl-demo data-vl-title="Verwijder bestanden">
             <button is="vl-button" id="clear-all" onclick="document.querySelectorAll('vl-upload').forEach(upload => upload.clear());">
                 Verwijder bestanden uit alle uploads
             </button>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Upload error">
+            <vl-upload id="vl-upload-error" url="http://httpbin.org/post" data-vl-input-name="files" data-vl-error></vl-upload>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Upload met custom tekst">
+            <vl-upload id="vl-upload-custom-text" url="http://httpbin.org/post" data-vl-input-name="files" id="vl-upload" data-vl-title="Afbeelding toevoegen" data-vl-sub-title="Sleep de afbeelding naar hier om toe te voegen"></vl-upload>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Upload focus">
+            <vl-upload url="http://httpbin.org/post" data-vl-input-name="files" id="vl-upload-focus"></vl-upload>
+            <button is="vl-button" onclick="document.getElementById('vl-upload-focus').focus();" slot="actions">Focus</button>
         </vl-demo>
     </vl-demo-page>
 </body>

@@ -61,6 +61,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -108,12 +109,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -214,42 +222,42 @@
 					</thead>
 					<tbody>
 						<tr>
-								<td><code>name</code></td>
+								<td><code>data-vl-name</code></td>
 							<td><span class="param-type">string</span></td>
 							<td class="last">
 									<p>Attribuut bepaalt de kaartlaag naam.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>auto-extent</code></td>
+								<td><code>data-vl-auto-extent</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
 									<p>Attribuut geeft aan of er automatisch gezoomt wordt op de kaartlaag zodat al de features zichtbaar zijn.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>auto-extent-max-zoom</code></td>
+								<td><code>data-vl-auto-extent-max-zoom</code></td>
 							<td><span class="param-type">number</span></td>
 							<td class="last">
 									<p>Attribuut geeft aan tot op welk niveau er maximaal automatisch gezoomd wordt bij een extent.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>cluster</code></td>
+								<td><code>data-vl-cluster</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
 									<p>Attribuut geeft aan of de features geclusterd moeten worden of niet.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>cluster-distance</code></td>
+								<td><code>data-vl-cluster-distance</code></td>
 							<td><span class="param-type">number</span></td>
 							<td class="last">
 									<p>Attribuut geeft aan vanaf welke afstand tussen features er geclusterd mag worden.</p>
 							</td>
 						</tr>
 						<tr>
-								<td><code>features</code></td>
+								<td><code>data-vl-features</code></td>
 							<td><span class="param-type">Array.&lt;string></span></td>
 							<td class="last">
 									<p>Attribuut die de kaartlaag bevat.</p>
@@ -266,7 +274,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Augments</label>
 								<div class="col-sm-9">
-										<p class="form-control-static">vlElement</p>
+										<p class="form-control-static">HTMLElement</p>
 								</div>
 							</div>
 			
@@ -276,6 +284,13 @@
 			
 			
 			
+							<!-- mixes -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Mixes In</label>
+								<div class="col-sm-9">
+										<p class="form-control-static">vlElement</p>
+								</div>
+							</div>
 			
 			
 			
@@ -285,7 +300,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-21">line 21</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-23">line 23</a></p>
 								</div>
 							</div>
 			
@@ -356,7 +371,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-51">line 51</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-54">line 54</a></p>
 								</div>
 							</div>
 			
@@ -401,7 +416,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-60">line 60</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-63">line 63</a></p>
 								</div>
 							</div>
 			
@@ -446,7 +461,142 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-69">line 69</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-72">line 72</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="visible" class="member public"><span class="name">visible</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft terug ofdat de kaartlaag zichtbaar is of niet.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Boolean</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-82">line 82</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="style" class="member public"><span class="name">style</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de OpenLayers kaartlaag stijl.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">ol.style</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-91">line 91</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="title" class="member public"><span class="name">title</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de kaartlaag titel terug.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">String</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-102">line 102</a></p>
 								</div>
 							</div>
 			
@@ -503,52 +653,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-79">line 79</a></p>
-								</div>
-							</div>
-			
-			
-			
-			
-					</form>
-			</div>	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title member public collapsible-symbol">
-			<h4 id="style" class="member public"><span class="name">style</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details member public  collapsible-symbol">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de OpenLayers kaartlaag stijl.</p></div>
-			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
-							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">ol.style</span></label>
-								<div class="col-sm-9">
-									<div class="form-control-static returns-description"></div>
-								</div>
-							</div>
-					</form>
-			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-							<!-- source -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Source</label>
-								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-88">line 88</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-111">line 111</a></p>
 								</div>
 							</div>
 			
@@ -605,7 +710,64 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-99">line 99</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-120">line 120</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="visible" class="member public"><span class="name">visible</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Zet de zichtbaarheid van de kaartlaag.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>value</code></td>
+							<td><span class="param-type">Boolean</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-130">line 130</a></p>
 								</div>
 							</div>
 			
@@ -620,7 +782,72 @@
 									<dl class="symbol">
 											<hr/>
 											<dt class="symbol-title function public collapsible-symbol">
-			<h4 id="verwijderFeatureStijlen" class="function public"><span class="name">verwijderFeatureStijlen</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+			<h4 id="get" class="function public"><span class="name">get</span><span class="signature-params">( <span class="signature-param">key</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Object}</span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de waarde op basis van een sleutel.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>key</code></td>
+							<td><span class="param-type">String</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Object</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-180">line 180</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="removeFeaturesStyle" class="function public"><span class="name">removeFeaturesStyle</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public  collapsible-symbol">
 	<div class="symbol-details-inner">
@@ -645,7 +872,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-139">line 139</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-187">line 187</a></p>
 								</div>
 							</div>
 			
@@ -661,7 +888,7 @@
 		</dt>
 <dd class="symbol-details function public  collapsible-symbol">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Rendert de kaart opnieuw.</p></div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Rendert de kaartlaag opnieuw.</p></div>
 			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
 			
 			
@@ -682,7 +909,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-150">line 150</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-198">line 198</a></p>
 								</div>
 							</div>
 			
@@ -694,7 +921,7 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public collapsible-symbol">
-			<h4 id="getFeature" class="function public"><span class="name">getFeature</span><span class="signature-params">( <span class="signature-param">id</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{boolean}</span></h4>
+			<h4 id="getFeature" class="function public"><span class="name">getFeature</span><span class="signature-params">( <span class="signature-param">id</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Object}</span></h4>
 		</dt>
 <dd class="symbol-details function public  collapsible-symbol">
 	<div class="symbol-details-inner">
@@ -721,7 +948,7 @@
 			</div>
 			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
 							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">boolean</span></label>
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Object</span></label>
 								<div class="col-sm-9">
 									<div class="form-control-static returns-description"></div>
 								</div>
@@ -747,7 +974,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-162">line 162</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-210">line 210</a></p>
 								</div>
 							</div>
 			
@@ -812,7 +1039,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-176">line 176</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-224">line 224</a></p>
 								</div>
 							</div>
 			
@@ -824,7 +1051,7 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public collapsible-symbol">
-			<h4 id="zoomToExtent" class="function public"><span class="signature-attribs">&lt;async> </span><span class="name">zoomToExtent</span><span class="signature-params">( <span class="signature-param">maxZoom</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;void>}</span></h4>
+			<h4 id="zoomToExtent" class="function public"><span class="signature-attribs">&lt;async> </span><span class="name">zoomToExtent</span><span class="signature-params">( <span class="signature-param">maxZoom</span>&nbsp;)</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public  collapsible-symbol">
 	<div class="symbol-details-inner">
@@ -850,15 +1077,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
-							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;void></span></label>
-								<div class="col-sm-9">
-									<div class="form-control-static returns-description"></div>
-								</div>
-							</div>
-					</form>
-			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
 			
 			
 			
@@ -878,7 +1097,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-197">line 197</a></p>
+									<p class="form-control-static"><a href="vl-map-layer.js.html">vl-map-layer.js</a>, <a href="vl-map-layer.js.html#line-244">line 244</a></p>
 								</div>
 							</div>
 			

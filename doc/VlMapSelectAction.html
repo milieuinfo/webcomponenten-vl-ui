@@ -14,7 +14,7 @@
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"Webcomponenten","systemSummary":"There is a webcomponent for that!","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
 			window.DOCLET_TOC_ENABLED = true;
-			window.DOCLET_AFILTER_ENABLED = false;
+			window.DOCLET_AFILTER_ENABLED = true;
 		</script>
 </head>
 <body>
@@ -61,6 +61,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -108,12 +109,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -194,6 +202,16 @@
 							<li><a href="list_class.html">Classes</a></li>
 							<li class="active">VlMapSelectAction</li>
 						</ol>
+						<div class="access-filter">
+								<label class="checkbox-inline">
+									<input class="toggle-inherited" type="checkbox" value="" checked>
+									Inherited
+								</label>
+								<label class="checkbox-inline">
+									<input class="toggle-public" type="checkbox" value="" checked>
+									Public
+								</label>
+						</div>
 					<section>
 							<dl class="symbol primary">
 								<dt class="symbol-title class collapsible-symbol expanded">
@@ -214,7 +232,7 @@
 					</thead>
 					<tbody>
 						<tr>
-								<td><code>cluster</code></td>
+								<td><code>data-vl-cluster</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
 									<p>Attribuut geeft aan of de features geclusterd zijn of niet.</p>
@@ -231,7 +249,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Augments</label>
 								<div class="col-sm-9">
-										<p class="form-control-static">vlElement</p>
+										<p class="form-control-static"><a href="VlMapLayerAction.html">VlMapLayerAction</a></p>
 								</div>
 							</div>
 			
@@ -250,7 +268,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-map-select-action.js.html">vl-map-select-action.js</a>, <a href="vl-map-select-action.js.html#line-16">line 16</a></p>
+									<p class="form-control-static"><a href="vl-map-select-action.js.html">vl-map-select-action.js</a>, <a href="vl-map-select-action.js.html#line-17">line 17</a></p>
 								</div>
 							</div>
 			
@@ -273,15 +291,267 @@
 </dd>
 							</dl>
 							<article class="secondary">
-									<h3>Classes</h3>
+									<h3>Members</h3>
 									<dl class="symbol">
 											<hr/>
-											<dt class="symbol-title class public">
-			<h4 id="VlMapSelectAction" class="class public"><a href="VlMapSelectAction.html"><span class="signature-new">new&nbsp;</span><span class="name">VlMapSelectAction</span><span class="signature-params">()</span><span class="signature-type"></span></a></h4>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="style" class="member public"><span class="name">style</span><span class="signature-type"></span></h4>
 		</dt>
-<dd class="symbol-details class public">
+<dd class="symbol-details member public  collapsible-symbol">
 	<div class="symbol-details-inner">
-	</div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de stijl die een geselecteerd feature zal krijgen.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Object</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-select-action.js.html">vl-map-select-action.js</a>, <a href="vl-map-select-action.js.html#line-23">line 23</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="layer" class="member public inherited"><span class="name">layer</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de OL6 kaartlaag.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Object</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapLayerAction.html#layer">VlMapLayerAction#layer</a></p>
+								</div>
+							</div>
+			
+							<!-- overrides -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Overrides</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapLayerAction.html#layer">VlMapLayerAction#layer</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-layer-action.js.html">vl-map-layer-action.js</a>, <a href="vl-map-layer-action.js.html#line-30">line 30</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="style" class="member public"><span class="name">style</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Zet de stijl die een geselecteerd feature zal krijgen.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>style</code></td>
+							<td><span class="param-type">Object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-select-action.js.html">vl-map-select-action.js</a>, <a href="vl-map-select-action.js.html#line-32">line 32</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public inherited collapsible-symbol">
+			<h4 id="action" class="member public inherited"><span class="name">action</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de vl-mapactions kaart actie.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Object</span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapAction.html#action">VlMapAction#action</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-action.js.html">vl-map-action.js</a>, <a href="vl-map-action.js.html#line-33">line 33</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+									</dl>
+									<h3>Methods</h3>
+									<dl class="symbol">
+											<hr/>
+											<dt class="symbol-title function public inherited collapsible-symbol">
+			<h4 id="activate" class="function public inherited"><span class="name">activate</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public inherited  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Activeer de kaart actie op de kaart.</p></div>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+							<!-- inherits -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Inherited From</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="VlMapAction.html#activate">VlMapAction#activate</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-map-action.js.html">vl-map-action.js</a>, <a href="vl-map-action.js.html#line-52">line 52</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
 </dd>
 									</dl>
 							</article>

@@ -41,22 +41,22 @@ export class VlHttpErrorMessage extends vlElement(HTMLElement) {
         @import '/node_modules/vl-ui-titles/dist/style.css';
         @import '/node_modules/vl-ui-button/dist/style.css';
       </style>
-      <div is="vl-grid" is-stacked align-center v-center>
-        <div is="vl-column" size="6" max-size="12" class="vl-u-hidden vl-u-visible--s">
+      <div is="vl-grid" data-vl-is-stacked data-vl-align-center data-vl-v-center>
+        <div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="6" data-vl-extra-small-size="6" class="vl-u-hidden vl-u-visible--s">
           <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
             <img id="image-small"/>
           </div>
         </div>
-        <div is="vl-column" size="6" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
-          <div is="vl-grid" is-stacked>
-            <div is="vl-column" size="12" max-size="12">
+        <div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="8">
+          <div is="vl-grid" data-vl-is-stacked>
+            <div is="vl-column" data-vl-size="12">
               <h2 id="title" is="vl-h2"></h2>
               <vl-typography id="text"></vl-typography>
             </div>
-            <div id="actions" is="vl-column" size="12" max-size="12"></div>
+            <div id="actions" is="vl-column" data-vl-size="12"></div>
           </div>
         </div>
-        <div is="vl-column" size="6" max-size="12" class="vl-u-hidden--s">
+        <div is="vl-column" data-vl-size="6" data-vl-medium-size="6" data-vl-small-size="6" class="vl-u-hidden--s">
           <div class="vl-u-display-flex vl-u-flex-align-center vl-u-flex-v-center">
             <img id="image-normal"/>
           </div>
@@ -197,35 +197,3 @@ export class VlHttpErrorMessage extends vlElement(HTMLElement) {
 }
 
 define('vl-http-error-message', VlHttpErrorMessage);
-define('vl-http-404-message', class extends VlHttpErrorMessage {
-  constructor() {
-    super({
-      title: 'Oeps, die pagina vonden we niet terug',
-      image: 'https://cdn.milieuinfo.be/http-error-message-assets/LATEST/img/page-not-found.svg',
-      imageAlt: 'Pagina niet gevonden',
-      text: `<p>De pagina die u zoekt, vonden we niet terug.</p>`,
-      actions: `<a is="vl-link-button" href="/">Terug naar de startpagina</a>`,
-    });
-  }
-});
-
-define('vl-http-500-message', class extends VlHttpErrorMessage {
-  constructor() {
-    super({
-      title: 'Oeps, er is iets fout gelopen',
-      image: 'https://cdn.milieuinfo.be/http-error-message-assets/LATEST/img/unexpected-error.svg',
-      imageAlt: 'Onverwachte fout',
-      text: `<p>De actie die u heeft uitgevoerd is fout gelopen. Gelieve opnieuw te proberen.</p>`,
-      actions: `<a is="vl-link-button">Terug naar de pagina</a>`,
-    });
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    this._registerBackLink();
-  }
-
-  _registerBackLink() {
-    this.__actionElement.addEventListener('click', () => window.history.back());
-  }
-});

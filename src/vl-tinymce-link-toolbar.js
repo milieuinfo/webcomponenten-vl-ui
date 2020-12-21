@@ -1,5 +1,6 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/vl-ui-modal/dist/vl-modal.js';
+import '/node_modules/vl-ui-form/dist/vl-form.js';
 import '/node_modules/vl-ui-form-grid/dist/vl-form-grid.js';
 import '/node_modules/vl-ui-form-message/dist/vl-form-message.js';
 import '/node_modules/vl-ui-input-field/dist/vl-input-field.js';
@@ -56,32 +57,28 @@ class VlTextareaModal extends vlElement(HTMLElement) {
     super(`
       <style>
         @import '/node_modules/vl-ui-core/dist/style.css';
+        @import '/node_modules/vl-ui-form/dist/style.css';
         @import '/node_modules/vl-ui-form-grid/dist/style.css';
         @import '/node_modules/vl-ui-form-message/dist/style.css';
         @import '/node_modules/vl-ui-input-field/dist/style.css';
         @import '/node_modules/vl-ui-button/dist/style.css';
-
-        iframe {
-          display: none;
-        }
       </style>
       <vl-modal id="modal-cl" data-vl-title="Link toevoegen">
-        <form id="link-form" slot="content" data-validate-form target="hidden">
-          <div is="vl-form-grid" data-vl-is-stacked>
-            <div is="vl-form-column" data-vl-size="12">
+        <form is="vl-form" id="link-form" slot="content" data-validate-form>
+          <div is="vl-form-grid" is-stacked>
+            <div is="vl-form-column" size="12">
               <label is="vl-form-label" for="text" data-vl-block>Tekst</label>
-              <input id="text" is="vl-input-field" placeholder="Link" data-vl-block data-required="true" data-vl-error-message="Gelieve een tekst in te vullen" data-vl-error-placeholder="text-error">
+              <input id="text" is="vl-input-field" placeholder="Link" data-vl-block data-required="true" data-vl-error-message="Gelieve een tekst in te vullen" data-vl-error-placeholder="text-error" name="link">
               <p is="vl-form-validation-message" data-vl-error data-vl-error-id="text-error"></p>
             </div>
             <div is="vl-form-column" data-vl-size="12">
               <label is="vl-form-label" for="url" data-vl-block>URL</label>
-              <input id="url" is="vl-input-field" placeholder="https://vlaanderen.be" data-vl-block data-required="true" data-vl-error-message="Gelieve een URL in te vullen" data-vl-error-placeholder="url-error">
+              <input id="url" is="vl-input-field" placeholder="https://vlaanderen.be" data-vl-block data-required="true" data-vl-error-message="Gelieve een URL in te vullen" data-vl-error-placeholder="url-error" name="url">
               <p is="vl-form-validation-message" data-vl-error data-vl-error-id="url-error"></p>
             </div>
           </div>
         </form>
         <button is="vl-button" slot="button" type="submit" form="link-form">Bewaar</button>
-        <iframe name="hidden" width="0" height="0" border="0"></iframe>
       </vl-modal>
     `);
   }

@@ -45,7 +45,7 @@ export class VlTypography extends vlElement(HTMLElement) {
   __processSlotElements() {
     this.__clearChildren();
     const parameters = this.dataset.vlParameters ? JSON.parse(this.dataset.vlParameters) : {};
-    const template = ((html, parameters) => new Function('parameter', 'return `' + html + '`')(parameters))(this.innerHTML, parameters);
+    const template = this.__processTemplateParameters(this.innerHTML, parameters);
     this._element.insertAdjacentHTML('afterbegin', template);
   }
 
@@ -59,6 +59,12 @@ export class VlTypography extends vlElement(HTMLElement) {
     const observer = new MutationObserver(callback);
     observer.observe(this, {attributes: true, childList: true, characterData: true, subtree: true});
     return observer;
+  }
+
+  __processTemplateParameters(template, params) {
+    Object.keys(params).forEach((key) => template = template.replaceAll('${parameter.' + key + '}', params[key]));
+    template = template.replace(/\${parameter.\w+}/g, '');
+    return template;
   }
 }
 

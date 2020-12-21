@@ -43,7 +43,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
 
   _addTargetElement() {
     this.setAttribute('target', VlForm._targetElementName);
-    this.setAttribute('action', 'about:blank');
+    this.setAttribute('action', '');
     this.appendChild(this._getTargetElementTemplate());
   }
 

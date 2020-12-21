@@ -1,5 +1,10 @@
-import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js';
+import {vlElement, define, awaitScript} from '/node_modules/vl-ui-core/dist/vl-core.js';
+
+awaitScript('vl-footer', 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js').then(() => {
+  define('vl-footer', VlFooter);
+}).catch(() => {
+  define('vl-footer', VlFooter);
+});
 
 /**
  * VlFooter
@@ -18,6 +23,12 @@ import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@go
  *
  */
 export class VlFooter extends vlElement(HTMLElement) {
+  static get EVENTS() {
+    return {
+      ready: 'ready',
+    };
+  }
+
   constructor() {
     super();
     this.__addFooterElement();
@@ -29,6 +40,12 @@ export class VlFooter extends vlElement(HTMLElement) {
 
   static get footer() {
     return document.getElementById(VlFooter.id);
+  }
+
+  disconnectedCallback() {
+    if (this._observer) {
+      this._observer.disconnect();
+    }
   }
 
   get _widgetURL() {
@@ -65,8 +82,20 @@ export class VlFooter extends vlElement(HTMLElement) {
     if (!VlFooter.footer) {
       document.body.appendChild(this.getFooterTemplate());
     }
-    eval(code.replace(/document\.write\((.*?)\);/, 'document.getElementById("' + VlFooter.id + '").innerHTML = $1;'));
+    this._observer = this.__observeFooterElementIsAdded();
+    Function(code.replace(/document\.write\((.*?)\);/, 'document.getElementById("' + VlFooter.id + '").innerHTML = $1;'))();
+  }
+
+  __observeFooterElementIsAdded() {
+    const isFooter = (node) => node.tagName === 'FOOTER' || (node.childNodes && [...node.childNodes].some(isFooter));
+    const observer = new MutationObserver((mutations, observer) => {
+      const nodes = mutations.flatMap((mutation) => [...mutation.addedNodes]);
+      if (nodes.some(isFooter)) {
+        this.dispatchEvent(new CustomEvent(VlFooter.EVENTS.ready));
+        observer.disconnect();
+      }
+    });
+    observer.observe(VlFooter.footer, {childList: true});
+    return observer;
   }
 }
-
-define('vl-footer', VlFooter);

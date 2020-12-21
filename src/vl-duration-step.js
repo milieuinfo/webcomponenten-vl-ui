@@ -25,7 +25,7 @@ export class VlDurationStep extends vlElement(HTMLElement) {
   }
 
   get template() {
-    return this._template(this.shadowRoot.innerHTML);
+    return this._element.cloneNode(true);
   }
 
   _processSlots() {

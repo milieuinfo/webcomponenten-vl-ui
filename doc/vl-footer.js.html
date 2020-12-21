@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -192,8 +200,13 @@
 			<div class="col-md-12 main-content">
 		<section class="source-section">
 			<article></article>
-			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js';
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {vlElement, define, awaitScript} from '/node_modules/vl-ui-core/dist/vl-core.js';
+
+awaitScript('vl-footer', 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js').then(() => {
+  define('vl-footer', VlFooter);
+}).catch(() => {
+  define('vl-footer', VlFooter);
+});
 
 /**
  * VlFooter
@@ -212,6 +225,12 @@ import 'https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@go
  *
  */
 export class VlFooter extends vlElement(HTMLElement) {
+  static get EVENTS() {
+    return {
+      ready: 'ready',
+    };
+  }
+
   constructor() {
     super();
     this.__addFooterElement();
@@ -223,6 +242,12 @@ export class VlFooter extends vlElement(HTMLElement) {
 
   static get footer() {
     return document.getElementById(VlFooter.id);
+  }
+
+  disconnectedCallback() {
+    if (this._observer) {
+      this._observer.disconnect();
+    }
   }
 
   get _widgetURL() {
@@ -259,11 +284,23 @@ export class VlFooter extends vlElement(HTMLElement) {
     if (!VlFooter.footer) {
       document.body.appendChild(this.getFooterTemplate());
     }
-    eval(code.replace(/document\.write\((.*?)\);/, 'document.getElementById("' + VlFooter.id + '").innerHTML = $1;'));
+    this._observer = this.__observeFooterElementIsAdded();
+    Function(code.replace(/document\.write\((.*?)\);/, 'document.getElementById("' + VlFooter.id + '").innerHTML = $1;'))();
+  }
+
+  __observeFooterElementIsAdded() {
+    const isFooter = (node) => node.tagName === 'FOOTER' || (node.childNodes &amp;&amp; [...node.childNodes].some(isFooter));
+    const observer = new MutationObserver((mutations, observer) => {
+      const nodes = mutations.flatMap((mutation) => [...mutation.addedNodes]);
+      if (nodes.some(isFooter)) {
+        this.dispatchEvent(new CustomEvent(VlFooter.EVENTS.ready));
+        observer.disconnect();
+      }
+    });
+    observer.observe(VlFooter.footer, {childList: true});
+    return observer;
   }
 }
-
-define('vl-footer', VlFooter);
 </code></pre>
 		</section>
 			</div>

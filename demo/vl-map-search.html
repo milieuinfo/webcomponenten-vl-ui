@@ -5,12 +5,21 @@
   <title>vl-map-search voorbeeld</title>
   <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
   <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+  <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
   <script type="module" src="/node_modules/vl-ui-button/dist/vl-button.js"></script>
 
   <script type="module" src="/vl-map-all.js"></script>
 
   <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
+  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css" />
+  <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css" />
   <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-button/dist/style.css" />
+
+  <style>
+    vl-map-search {
+        --vl-search-width: 100%;
+    }
+  </style>
 </head>
 
 <body is="vl-body">
@@ -24,14 +33,39 @@
       </vl-map>
     </vl-demo>
 
-    <vl-demo data-vl-title="Een vl-map-search element en een vl-map element handmatig te koppelen.">
+    <vl-demo data-vl-title="Handmatige koppeling afzonderlijke adres zoek functionaliteit">
+      <label is="vl-form-label" data-vl-block>Zoek op adres</label>
       <vl-map-search id="bind-map-search"></vl-map-search>
+      <br/>
       <vl-map id="bind-map">
         <vl-map-baselayer-grb-gray></vl-map-baselayer-grb-gray>
         <vl-map-baselayer-grb></vl-map-baselayer-grb>
         <vl-map-baselayer-grb-ortho></vl-map-baselayer-grb-ortho>
       </vl-map>
       <button id="bind-map-button" is="vl-button" type="button" onclick="document.querySelector('#bind-map-search').bindMap(document.querySelector('#bind-map'))" slot="actions">Koppel zoekbalk aan kaart</button>
+    </vl-demo>
+
+    <vl-demo data-vl-title="Callback bij adres selectie">
+      <vl-map id="vl-map-select-callback">
+        <vl-map-search id="vl-map-search-select-callback"></vl-map-search>
+          <vl-map-baselayer-grb-gray></vl-map-baselayer-grb-gray>
+          <vl-map-baselayer-grb></vl-map-baselayer-grb>
+          <vl-map-baselayer-grb-ortho></vl-map-baselayer-grb-ortho>
+        </vl-map>
+        <script>
+          Promise.all([
+            customElements.whenDefined('vl-map'),
+            customElements.whenDefined('vl-map-search')]).then(() => {
+            document.querySelector('#vl-map-search-select-callback').onSelect((data) => {
+              document.querySelector('#vl-map-select-callback').zoomTo([
+                data.LocationResult[0].BoundingBox.LowerLeft.X_Lambert72,
+                data.LocationResult[0].BoundingBox.LowerLeft.Y_Lambert72,
+                data.LocationResult[0].BoundingBox.UpperRight.X_Lambert72,
+                data.LocationResult[0].BoundingBox.UpperRight.Y_Lambert72,
+              ]);
+            });
+          });
+        </script>
     </vl-demo>
   </vl-demo-page>
 </body>

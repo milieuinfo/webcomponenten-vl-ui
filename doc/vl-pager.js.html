@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -242,13 +250,13 @@ export class VlPager extends vlElement(HTMLElement) {
         &lt;ul id="pager-list" class="vl-pager__list">
           &lt;li id="bounds" class="vl-pager__element">&lt;/li>
           &lt;li id="page-back-list-item" class="vl-pager__element">
-            &lt;a id="page-back-link" class="vl-pager__element__cta vl-link vl-link--bold" tabindex="0">
+            &lt;a id="page-back-link" class="vl-pager__element__cta vl-link vl-link--bold" href="#" tabindex="0">
               &lt;i class="vl-link__icon vl-link__icon--before vl-vi vl-vi-arrow-left-fat" aria-hidden="true">&lt;/i>
               Vorige &lt;span id="previous-items-per-page" class="vl-u-visually-hidden">&lt;/span>
             &lt;/a>
           &lt;/li>
           &lt;li id="page-forward-list-item" class="vl-pager__element">
-            &lt;a id="page-forward-link" class="vl-pager__element__cta vl-link vl-link--bold" tabindex="0">
+            &lt;a id="page-forward-link" class="vl-pager__element__cta vl-link vl-link--bold" href="#" tabindex="0">
               Volgende &lt;span id="next-items-per-page" class="vl-u-visually-hidden">&lt;/span>
               &lt;i class="vl-link__icon vl-link__icon--after vl-vi vl-vi-arrow-right-fat" aria-hidden="true">&lt;/i>
             &lt;/a>
@@ -407,10 +415,13 @@ export class VlPager extends vlElement(HTMLElement) {
   __getPageTemplate(number) {
     const template = this._template(`
       &lt;li name="pageLink" data-vl-pager-page=${number} class="vl-pager__element"> 
-        &lt;a class="vl-pager__element__cta vl-link vl-link--bold" tabindex="0">${number}&lt;/a>
+        &lt;a class="vl-pager__element__cta vl-link vl-link--bold" href="#" tabindex="0">${number}&lt;/a>
       &lt;/li>
     `);
-    template.firstElementChild.addEventListener('click', () => this.setAttribute('data-vl-current-page', number));
+    template.firstElementChild.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.setAttribute('data-vl-current-page', number);
+    });
     return template;
   }
 
@@ -506,7 +517,8 @@ export class VlPager extends vlElement(HTMLElement) {
   }
 
   __addPageBackLinkListener() {
-    this._pageBackLink.addEventListener('click', () => {
+    this._pageBackLink.addEventListener('click', (e) => {
+      e.preventDefault();
       if (!(this.currentPage - 1 &lt;= 0)) {
         this.setAttribute('data-vl-current-page', this.currentPage - 1);
       }
@@ -514,7 +526,8 @@ export class VlPager extends vlElement(HTMLElement) {
   }
 
   __addPageForwardLinkListener() {
-    this._pageForwardLink.addEventListener('click', () => {
+    this._pageForwardLink.addEventListener('click', (e) => {
+      e.preventDefault();
       if (!(this.currentPage + 1 > this.totalPages)) {
         this.setAttribute('data-vl-current-page', this.currentPage + 1);
       }

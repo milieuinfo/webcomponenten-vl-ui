@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -239,7 +247,7 @@ export class VlTypography extends vlElement(HTMLElement) {
   __processSlotElements() {
     this.__clearChildren();
     const parameters = this.dataset.vlParameters ? JSON.parse(this.dataset.vlParameters) : {};
-    const template = ((html, parameters) => new Function('parameter', 'return `' + html + '`')(parameters))(this.innerHTML, parameters);
+    const template = this.__processTemplateParameters(this.innerHTML, parameters);
     this._element.insertAdjacentHTML('afterbegin', template);
   }
 
@@ -253,6 +261,12 @@ export class VlTypography extends vlElement(HTMLElement) {
     const observer = new MutationObserver(callback);
     observer.observe(this, {attributes: true, childList: true, characterData: true, subtree: true});
     return observer;
+  }
+
+  __processTemplateParameters(template, params) {
+    Object.keys(params).forEach((key) => template = template.replaceAll('${parameter.' + key + '}', params[key]));
+    template = template.replace(/\${parameter.\w+}/g, '');
+    return template;
   }
 }
 

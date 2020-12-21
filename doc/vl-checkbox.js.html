@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -214,11 +222,11 @@
  */
 export class VlCheckbox extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['label', 'value', 'checked'];
+    return ['label', 'value', 'checked', 'switch'];
   }
 
   static get _observedChildClassAttributes() {
-    return ['block', 'single', 'disabled', 'error', 'switch'];
+    return ['block', 'single', 'disabled', 'error'];
   }
 
   constructor() {
@@ -226,22 +234,39 @@ export class VlCheckbox extends vlElement(HTMLElement) {
       &lt;style>
         @import '/src/style.css';
       &lt;/style>
-
-      &lt;label id="label" class="vl-checkbox" for="checkbox">
-        &lt;input class="vl-checkbox__toggle" type="checkbox" id="checkbox" name="checkbox"/>
-        &lt;div class="vl-checkbox__label">
-          &lt;i class="vl-checkbox__box" aria-hidden="true">&lt;/i>
-          &lt;span>
-            &lt;slot>&lt;/slot>
-          &lt;/span>
-        &lt;/div>
-      &lt;/label>
     `);
+
+    if (this.dataset.vlSwitch !== undefined) {
+      this._shadow.append(this._template(`
+        &lt;div class="vl-checkbox--switch__wrapper">
+          &lt;input class="vl-checkbox--switch" type="checkbox" id="checkbox" name="checkbox" value="1" />
+          &lt;label class="vl-checkbox--switch__label" for="checkbox">
+            &lt;span aria-hidden="true">&lt;/span>
+            &lt;span class="vl-u-visually-hidden">
+              &lt;slot>&lt;/slot>
+            &lt;/span>
+          &lt;/label>
+        &lt;/div>
+      `));
+    } else {
+      this._shadow.append(this._template(`
+        &lt;label id="label" class="vl-checkbox" for="checkbox">
+          &lt;input class="vl-checkbox__toggle" type="checkbox" id="checkbox" name="checkbox"/>
+          &lt;div class="vl-checkbox__label">
+            &lt;i class="vl-checkbox__box" aria-hidden="true">&lt;/i>
+            &lt;span>
+              &lt;slot>&lt;/slot>
+            &lt;/span>
+          &lt;/div>
+        &lt;/label>
+      `));
+    }
   }
 
   connectedCallback() {
     this._inputElement.onchange = this._toggle;
     this._inputElement.oninput = (event) => event.stopPropagation();
+    this._registerChangeEvent();
   }
 
   /**
@@ -345,6 +370,10 @@ export class VlCheckbox extends vlElement(HTMLElement) {
 
   _removeNode(node) {
     node.remove();
+  }
+
+  _registerChangeEvent() {
+    this._inputElement.addEventListener('change', () => this.dispatchEvent(new Event('change')));
   }
 }
 

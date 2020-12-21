@@ -61,6 +61,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -108,12 +109,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -214,6 +222,13 @@
 					</thead>
 					<tbody>
 						<tr>
+								<td><code>data-vl-enable-swipe</code></td>
+							<td><span class="param-type">boolean</span></td>
+							<td class="last">
+									<p>Attribute wordt gebruikt om aan te duiden dat swipe functie toegelaten is.</p>
+							</td>
+						</tr>
+						<tr>
 								<td><code>data-vl-left</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
@@ -221,17 +236,17 @@
 							</td>
 						</tr>
 						<tr>
+								<td><code>data-vl-absolute</code></td>
+							<td><span class="param-type">boolean</span></td>
+							<td class="last">
+									<p>Attribute wordt gebruikt om aan te duiden dat de side-sheet absoluut gepositioneerd wordt.</p>
+							</td>
+						</tr>
+						<tr>
 								<td><code>data-vl-right</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
 									<p>Attribute wordt gebruikt om aan te duiden dat de side-sheet de rechterkant van het scherm moet plaatsen.</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>data-vl-enable-swipe</code></td>
-							<td><span class="param-type">boolean</span></td>
-							<td class="last">
-									<p>Attribute wordt gebruikt om aan te duiden dat swipe functie toegelaten is.</p>
 							</td>
 						</tr>
 					</tbody>
@@ -283,7 +298,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-31">line 31</a></p>
+									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-35">line 35</a></p>
 								</div>
 							</div>
 			
@@ -354,7 +369,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-82">line 82</a></p>
+									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-120">line 120</a></p>
 								</div>
 							</div>
 			
@@ -399,7 +414,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-91">line 91</a></p>
+									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-129">line 129</a></p>
 								</div>
 							</div>
 			
@@ -444,7 +459,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-101">line 101</a></p>
+									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-139">line 139</a></p>
 								</div>
 							</div>
 			
@@ -501,7 +516,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-114">line 114</a></p>
+									<p class="form-control-static"><a href="vl-side-sheet.js.html">vl-side-sheet.js</a>, <a href="vl-side-sheet.js.html#line-152">line 152</a></p>
 								</div>
 							</div>
 			

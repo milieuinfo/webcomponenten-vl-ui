@@ -62,6 +62,7 @@
 											<li><a href="VlContentHeader.html">VlContentHeader</a></li>
 											<li><a href="VlCookieConsent.html">VlCookieConsent</a></li>
 											<li><a href="VlCookieConsentOptIn.html">VlCookieConsentOptIn</a></li>
+											<li><a href="VlCustomMap.html">VlCustomMap</a></li>
 											<li><a href="VlDataTable.html">VlDataTable</a></li>
 											<li><a href="VlDatepicker.html">VlDatepicker</a></li>
 											<li><a href="VlDemo.html">VlDemo</a></li>
@@ -109,12 +110,19 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
+											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
+											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
+											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
+											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
+											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -240,7 +248,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
 
   connectedCallback() {
     this.classList.add('vl-select');
-    if (this._dataVlSelectAttribute != null) {
+    if (this._hasDressedAttribute) {
       this.dress();
     }
   }
@@ -262,6 +270,10 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
     return !!this.getAttribute(VlSelect._dressedAttributeName);
   }
 
+  get _hasDressedAttribute() {
+    return this._dataVlSelectAttribute != null;
+  }
+
   get _dataVlSelectAttribute() {
     return this.getAttribute('data-vl-select');
   }
@@ -281,7 +293,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
   __stateChangedCallback(newValue, type) {
     if (newValue != null) {
       (async () => {
-        if (this._dataVlSelectAttribute != null) {
+        if (this._hasDressedAttribute || this._dressed) {
           await awaitUntil(() => this._dressed);
           this.__wrap();
           this._wrapperElement.parentNode.classList.add('vl-select--' + type);
@@ -290,7 +302,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
         }
       })();
     } else {
-      if (this._dataVlSelectAttribute != null) {
+      if (this._hasDressedAttribute || this._dressed) {
         this.__unwrap();
       } else {
         this.classList.remove('vl-select--' + type);
@@ -485,6 +497,17 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
    */
   hideDropdown() {
     vl.select.hideDropdown(this);
+  }
+
+  /**
+   * Geeft focus aan het element.
+   */
+  focus() {
+    if (this._dressed) {
+      this._wrapperElement.focus();
+    } else {
+      super.focus();
+    }
   }
 
   _copySlotAttribute() {

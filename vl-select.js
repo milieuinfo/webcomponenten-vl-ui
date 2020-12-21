@@ -46,7 +46,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
 
   connectedCallback() {
     this.classList.add('vl-select');
-    if (this._dataVlSelectAttribute != null) {
+    if (this._hasDressedAttribute) {
       this.dress();
     }
   }
@@ -68,6 +68,10 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
     return !!this.getAttribute(VlSelect._dressedAttributeName);
   }
 
+  get _hasDressedAttribute() {
+    return this._dataVlSelectAttribute != null;
+  }
+
   get _dataVlSelectAttribute() {
     return this.getAttribute('data-vl-select');
   }
@@ -87,7 +91,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
   __stateChangedCallback(newValue, type) {
     if (newValue != null) {
       (async () => {
-        if (this._dataVlSelectAttribute != null) {
+        if (this._hasDressedAttribute || this._dressed) {
           await awaitUntil(() => this._dressed);
           this.__wrap();
           this._wrapperElement.parentNode.classList.add('vl-select--' + type);
@@ -96,7 +100,7 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
         }
       })();
     } else {
-      if (this._dataVlSelectAttribute != null) {
+      if (this._hasDressedAttribute || this._dressed) {
         this.__unwrap();
       } else {
         this.classList.remove('vl-select--' + type);
@@ -291,6 +295,17 @@ export class VlSelect extends nativeVlElement(HTMLSelectElement) {
    */
   hideDropdown() {
     vl.select.hideDropdown(this);
+  }
+
+  /**
+   * Geeft focus aan het element.
+   */
+  focus() {
+    if (this._dressed) {
+      this._wrapperElement.focus();
+    } else {
+      super.focus();
+    }
   }
 
   _copySlotAttribute() {

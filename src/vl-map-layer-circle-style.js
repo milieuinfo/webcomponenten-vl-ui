@@ -1,4 +1,5 @@
-import {VlMapLayerStyle} from './vl-map-layer-style.js';
+import {VlMapLayerStyle} from '/src/vl-map-layer-style.js';
+import {OlStyle, OlStyleCircle, OlStyleStroke, OlStyleText, OlStyleFill} from '/node_modules/vl-mapactions/dist/vl-mapactions.js';
 
 /**
  * VlMapLayerCircleStyle
@@ -7,11 +8,11 @@ import {VlMapLayerStyle} from './vl-map-layer-style.js';
  *
  * @extends VlMapLayerStyle
  *
- * @property {number} size - Attribuut wordt gebruikt om aan te geven wat de grootte is van de cirkels.
- * @property {string} border-color - Attribuut wordt gebruikt om aan te geven wat de color is van de randen van de cirkels.
- * @property {number} border-size - Attribuut wordt gebruikt om aan te geven wat de grootte is van de randen van de cirkels.
- * @property {string} cluster-text-color - Attribuut wordt gebruikt om aan te geven wat de kleur van de tekst is bij het clusteren van features.
- * @property {string} cluster-color - Attribuut wordt gebruikt om aan te geven wat de kleur is bij het clusteren van features.
+ * @property {number} data-vl-size - Attribuut wordt gebruikt om aan te geven wat de grootte is van de cirkels.
+ * @property {string} data-vl-border-color - Attribuut wordt gebruikt om aan te geven wat de color is van de randen van de cirkels.
+ * @property {number} data-vl-border-size - Attribuut wordt gebruikt om aan te geven wat de grootte is van de randen van de cirkels.
+ * @property {string} data-vl-cluster-text-color - Attribuut wordt gebruikt om aan te geven wat de kleur van de tekst is bij het clusteren van features.
+ * @property {string} data-vl-cluster-color - Attribuut wordt gebruikt om aan te geven wat de kleur is bij het clusteren van features.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
@@ -33,7 +34,7 @@ export class VlMapLayerCircleStyle extends VlMapLayerStyle {
    * @Return {string}
    */
   get borderColor() {
-    return this.getAttribute('border-color') || 'rgba(0, 0, 0, 1)';
+    return this.getAttribute('border-color') || 'rgba(0, 0, 0, 0)';
   }
 
   /**
@@ -60,7 +61,7 @@ export class VlMapLayerCircleStyle extends VlMapLayerStyle {
    * @Return {string}
    */
   get clusterColor() {
-    return this.getAttribute('cluster-color') || 'rgba(0, 0, 0, 0)';
+    return this.getAttribute('cluster-color') || 'rgba(2, 85, 204, 1)';
   }
 
   /**
@@ -75,9 +76,9 @@ export class VlMapLayerCircleStyle extends VlMapLayerStyle {
       const clusterMultiplier = size == 1 ? 1 : Math.max(1.5, size.toString().length);
       const text = size > 1 ? size.toString() : '';
       let textColor = this.textColor;
-      let kleur = this.color;
-      let randKleur = this.borderColor;
-      let randGrootte = this.borderSize;
+      let color = this.color;
+      let borderColor = this.borderColor;
+      let borderSize = this.borderSize;
       let radius = size > 1 ? this.size * clusterMultiplier : this.size;
 
       if (this.parentElement && this.parentElement.cluster) {
@@ -87,33 +88,32 @@ export class VlMapLayerCircleStyle extends VlMapLayerStyle {
             style = style();
           }
           const styleImage = style.getImage();
-          kleur = styleImage.getFill().getColor();
-          randKleur = styleImage.getStroke().getColor();
-          randGrootte = styleImage.getStroke().getWidth();
+          color = styleImage.getFill().getColor();
+          borderColor = styleImage.getStroke().getColor();
+          borderSize = styleImage.getStroke().getWidth();
           radius = size > 1 ? styleImage.getRadius() * clusterMultiplier : styleImage.getRadius();
         } else if (this._containsStyle(features)) {
-          kleur = this.clusterColor;
+          color = this.clusterColor;
           textColor = this.clusterTextColor;
         } else {
           // default options zijn goed
         }
       }
 
-      return new ol.style.Style({
-        image: new ol.style.Circle({
-          fill: new ol.style.Fill({
-            color: kleur,
+      return new OlStyle({
+        image: new OlStyleCircle({
+          fill: new OlStyleFill({
+            color: color,
           }),
-          stroke: new ol.style.Stroke({
-            color: randKleur,
-            width: randGrootte,
+          stroke: new OlStyleStroke({
+            color: borderColor,
+            width: borderSize,
           }),
           radius: radius,
         }),
-        text: new ol.style.Text({
+        text: new OlStyleText({
           text: text,
-          font: '12px Flanders Art',
-          fill: new ol.style.Fill({
+          fill: new OlStyleFill({
             color: textColor,
           }),
           offsetX: this.textOffsetX,

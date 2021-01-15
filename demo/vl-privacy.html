@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-privacy voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+
+        <script type="module" src="/vl-privacy.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/vl-privacy.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css">
+    </head>
+
+	<body is="vl-body">
+        <vl-demo-page data-vl-webcomponent="vl-privacy">
+            <vl-demo data-vl-title="Privacy" data-vl-no-code-preview>
+                <a is="vl-link" href="/demo/vl-privacy-demo.html">Bekijk voorbeeld</a>
+                <vl-code-preview slot="code">
+                    <vl-privacy data-vl-version="1.0" data-vl-date="15 oktober 2020"></vl-privacy>
+                </vl-code-preview>
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

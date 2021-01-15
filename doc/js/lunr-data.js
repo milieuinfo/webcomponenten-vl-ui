@@ -1170,6 +1170,69 @@ window.lunrData = {
           "visualiseren",
           "vlpillel"
         ],
+        "VlSideNavigationContent.html": [
+          "class",
+          "content",
+          "element",
+          "het",
+          "navigati",
+          "vlsidenavigationcont"
+        ],
+        "VlSideNavigationGroup.html": [
+          "class",
+          "element",
+          "groep",
+          "het",
+          "navigati",
+          "vlsidenavigationgroup"
+        ],
+        "VlSideNavigationReference.html": [
+          "class",
+          "content",
+          "element",
+          "het",
+          "naar",
+          "navigati",
+          "verwijst",
+          "vlsidenavigationrefer",
+          "waar"
+        ],
+        "VlSideNavigationTitle.html": [
+          "class",
+          "element",
+          "het",
+          "navigati",
+          "titel",
+          "vlsidenavigationtitl"
+        ],
+        "VlStickySessionCookie.html": [
+          "beschrijv",
+          "class",
+          "cooki",
+          "session",
+          "sticki",
+          "vlstickysessioncooki"
+        ],
+        "VlContactCard.html": [
+          "card",
+          "class",
+          "contact",
+          "contactgegeven",
+          "een",
+          "gebruik",
+          "om",
+          "overheidsdienst",
+          "te",
+          "tonen",
+          "van",
+          "vlcontactcard"
+        ],
+        "VlCookie.html": [
+          "beschrijv",
+          "class",
+          "cooki",
+          "vlcooki"
+        ],
         "VlDoormatImage.html": [
           "class",
           "combinati",
@@ -1317,6 +1380,36 @@ window.lunrData = {
           "stap",
           "vlprogressbarstep#act"
         ],
+        "VlSideNavigation.html": [
+          "aan",
+          "class",
+          "compact",
+          "dat",
+          "de",
+          "door",
+          "een",
+          "element",
+          "en",
+          "extern",
+          "gebruik",
+          "het",
+          "inhoud",
+          "je",
+          "kan",
+          "lang",
+          "leidt",
+          "naar",
+          "navigati",
+          "ook",
+          "pagina",
+          "pagina'",
+          "samen",
+          "toevoegen",
+          "van",
+          "vat",
+          "verwijzen",
+          "vlsidenavig"
+        ],
         "VlTemplate.html": [
           "applicati",
           "class",
@@ -1452,6 +1545,22 @@ window.lunrData = {
           "verfijnen",
           "vlsearchfilt",
           "zoekresulten"
+        ],
+        "VlSideNavigationItem.html": [
+          "class",
+          "element",
+          "het",
+          "item",
+          "navigati",
+          "vlsidenavigationitem"
+        ],
+        "VlSideNavigationToggle.html": [
+          "class",
+          "element",
+          "het",
+          "navigati",
+          "toggl",
+          "vlsidenavigationtoggl"
         ],
         "VlTypography.html": [
           "binnen",
@@ -3447,6 +3556,12 @@ window.lunrData = {
           "van",
           "vlcookieconsent#isoptinact"
         ],
+        "VlCookieStatement.html": [
+          "class",
+          "cookieverklar",
+          "pagina",
+          "vlcookiestat"
+        ],
         "VlDemoPage.html": [
           "class",
           "vldemopag"
@@ -4006,6 +4121,18 @@ window.lunrData = {
           "het",
           "link",
           "vlupload#focu"
+        ],
+        "VlAccessibility.html": [
+          "class",
+          "pagina",
+          "toegankelijkheid",
+          "vlaccess"
+        ],
+        "VlPrivacy.html": [
+          "class",
+          "pagina",
+          "privaci",
+          "vlprivaci"
         ],
         "VlPager.html": [
           "aantal",
@@ -4753,7 +4880,7 @@ window.lunrData = {
           "vlpattern"
         ]
       },
-      "length": 339
+      "length": 352
     },
     "tokenStore": {
       "root": {
@@ -5207,6 +5334,10 @@ window.lunrData = {
                       "VlDescriptionData.html": {
                         "ref": "VlDescriptionData.html",
                         "tf": 2.083333333333333
+                      },
+                      "VlSideNavigation.html": {
+                        "ref": "VlSideNavigation.html",
+                        "tf": 3.0303030303030303
                       },
                       "VlTypography.html": {
                         "ref": "VlTypography.html",
@@ -5825,6 +5956,10 @@ window.lunrData = {
               "docs": {},
               "m": {
                 "docs": {
+                  "VlSideNavigationItem.html": {
+                    "ref": "VlSideNavigationItem.html",
+                    "tf": 12.5
+                  },
                   "VlPager.html#totalItems": {
                     "ref": "VlPager.html#totalItems",
                     "tf": 8.333333333333332
@@ -7013,7 +7148,12 @@ window.lunrData = {
             "a": {
               "docs": {},
               "r": {
-                "docs": {},
+                "docs": {
+                  "VlSideNavigationReference.html": {
+                    "ref": "VlSideNavigationReference.html",
+                    "tf": 5.555555555555555
+                  }
+                },
                 "d": {
                   "docs": {
                     "VlElement.html#._observedAttributes": {
@@ -7422,6 +7562,10 @@ window.lunrData = {
                     "ref": "VlElement.html#_changeClass",
                     "tf": 2.272727272727273
                   },
+                  "VlSideNavigation.html": {
+                    "ref": "VlSideNavigation.html",
+                    "tf": 1.5151515151515151
+                  },
                   "VlSteps.html": {
                     "ref": "VlSteps.html",
                     "tf": 2
@@ -7612,6 +7756,10 @@ window.lunrData = {
                 "VlProgressBarStep.html": {
                   "ref": "VlProgressBarStep.html",
                   "tf": 2.941176470588235
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
                 },
                 "VlDocument.html": {
                   "ref": "VlDocument.html",
@@ -8048,6 +8196,10 @@ window.lunrData = {
               "VlProgressBarStep.html#active": {
                 "ref": "VlProgressBarStep.html#active",
                 "tf": 8.333333333333332
+              },
+              "VlSideNavigation.html": {
+                "ref": "VlSideNavigation.html",
+                "tf": 4.545454545454546
               },
               "VlTemplate.html": {
                 "ref": "VlTemplate.html",
@@ -9736,6 +9888,14 @@ window.lunrData = {
                         "vlPillElement.html": {
                           "ref": "vlPillElement.html",
                           "tf": 4.166666666666666
+                        },
+                        "VlContactCard.html": {
+                          "ref": "VlContactCard.html",
+                          "tf": 4.545454545454546
+                        },
+                        "VlSideNavigation.html": {
+                          "ref": "VlSideNavigation.html",
+                          "tf": 1.5151515151515151
                         },
                         "VlDocument.html": {
                           "ref": "VlDocument.html",
@@ -11659,6 +11819,21 @@ window.lunrData = {
                   }
                 }
               },
+              "e": {
+                "docs": {},
+                "p": {
+                  "docs": {
+                    "VlSideNavigationGroup.html": {
+                      "ref": "VlSideNavigationGroup.html",
+                      "tf": 12.5
+                    },
+                    "VlActionGroup.html": {
+                      "ref": "VlActionGroup.html",
+                      "tf": 3.8461538461538463
+                    }
+                  }
+                }
+              },
               "o": {
                 "docs": {},
                 "t": {
@@ -11669,17 +11844,6 @@ window.lunrData = {
                         "ref": "VlMapLayerCircleStyle.html#size",
                         "tf": 7.142857142857142
                       }
-                    }
-                  }
-                }
-              },
-              "e": {
-                "docs": {},
-                "p": {
-                  "docs": {
-                    "VlActionGroup.html": {
-                      "ref": "VlActionGroup.html",
-                      "tf": 3.8461538461538463
                     }
                   }
                 }
@@ -11882,6 +12046,34 @@ window.lunrData = {
                       "ref": "vlPillElement.html",
                       "tf": 114.16666666666667
                     },
+                    "VlSideNavigationContent.html": {
+                      "ref": "VlSideNavigationContent.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigationGroup.html": {
+                      "ref": "VlSideNavigationGroup.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigationReference.html": {
+                      "ref": "VlSideNavigationReference.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigationTitle.html": {
+                      "ref": "VlSideNavigationTitle.html",
+                      "tf": 110
+                    },
+                    "VlStickySessionCookie.html": {
+                      "ref": "VlStickySessionCookie.html",
+                      "tf": 110
+                    },
+                    "VlContactCard.html": {
+                      "ref": "VlContactCard.html",
+                      "tf": 110
+                    },
+                    "VlCookie.html": {
+                      "ref": "VlCookie.html",
+                      "tf": 110
+                    },
                     "VlDoormatImage.html": {
                       "ref": "VlDoormatImage.html",
                       "tf": 110
@@ -11896,6 +12088,10 @@ window.lunrData = {
                     },
                     "VlProgressBarStep.html": {
                       "ref": "VlProgressBarStep.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigation.html": {
+                      "ref": "VlSideNavigation.html",
                       "tf": 110
                     },
                     "VlTemplate.html": {
@@ -11924,6 +12120,14 @@ window.lunrData = {
                     },
                     "VlSearchFilter.html": {
                       "ref": "VlSearchFilter.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigationItem.html": {
+                      "ref": "VlSideNavigationItem.html",
+                      "tf": 110
+                    },
+                    "VlSideNavigationToggle.html": {
+                      "ref": "VlSideNavigationToggle.html",
                       "tf": 110
                     },
                     "VlTypography.html": {
@@ -12082,6 +12286,10 @@ window.lunrData = {
                       "ref": "VlCookieConsent.html",
                       "tf": 110
                     },
+                    "VlCookieStatement.html": {
+                      "ref": "VlCookieStatement.html",
+                      "tf": 110
+                    },
                     "VlDemoPage.html": {
                       "ref": "VlDemoPage.html",
                       "tf": 110
@@ -12108,6 +12316,14 @@ window.lunrData = {
                     },
                     "VlUpload.html": {
                       "ref": "VlUpload.html",
+                      "tf": 110
+                    },
+                    "VlAccessibility.html": {
+                      "ref": "VlAccessibility.html",
+                      "tf": 110
+                    },
+                    "VlPrivacy.html": {
+                      "ref": "VlPrivacy.html",
                       "tf": 110
                     },
                     "VlPager.html": {
@@ -12570,6 +12786,10 @@ window.lunrData = {
                     "docs": {},
                     "t": {
                       "docs": {
+                        "VlContactCard.html": {
+                          "ref": "VlContactCard.html",
+                          "tf": 4.545454545454546
+                        },
                         "VlRegion.html": {
                           "ref": "VlRegion.html",
                           "tf": 1.0416666666666665
@@ -12600,6 +12820,32 @@ window.lunrData = {
                             }
                           }
                         }
+                      },
+                      "g": {
+                        "docs": {},
+                        "e": {
+                          "docs": {},
+                          "g": {
+                            "docs": {},
+                            "e": {
+                              "docs": {},
+                              "v": {
+                                "docs": {},
+                                "e": {
+                                  "docs": {},
+                                  "n": {
+                                    "docs": {
+                                      "VlContactCard.html": {
+                                        "ref": "VlContactCard.html",
+                                        "tf": 4.545454545454546
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -12613,6 +12859,14 @@ window.lunrData = {
                         "VlDoormatContent.html": {
                           "ref": "VlDoormatContent.html",
                           "tf": 3.8461538461538463
+                        },
+                        "VlSideNavigationContent.html": {
+                          "ref": "VlSideNavigationContent.html",
+                          "tf": 12.5
+                        },
+                        "VlSideNavigationReference.html": {
+                          "ref": "VlSideNavigationReference.html",
+                          "tf": 5.555555555555555
                         },
                         "VlTitle.html": {
                           "ref": "VlTitle.html",
@@ -12853,6 +13107,20 @@ window.lunrData = {
                     }
                   }
                 },
+                "a": {
+                  "docs": {},
+                  "c": {
+                    "docs": {},
+                    "t": {
+                      "docs": {
+                        "VlSideNavigation.html": {
+                          "ref": "VlSideNavigation.html",
+                          "tf": 1.5151515151515151
+                        }
+                      }
+                    }
+                  }
+                },
                 "l": {
                   "docs": {},
                   "e": {
@@ -12967,6 +13235,73 @@ window.lunrData = {
                 }
               }
             },
+            "o": {
+              "docs": {},
+              "k": {
+                "docs": {},
+                "i": {
+                  "docs": {
+                    "VlStickySessionCookie.html": {
+                      "ref": "VlStickySessionCookie.html",
+                      "tf": 12.5
+                    },
+                    "VlCookie.html": {
+                      "ref": "VlCookie.html",
+                      "tf": 25
+                    },
+                    "VlCookieConsentOptIn.html": {
+                      "ref": "VlCookieConsentOptIn.html",
+                      "tf": 5.88235294117647
+                    },
+                    "VlCookieConsent.html": {
+                      "ref": "VlCookieConsent.html",
+                      "tf": 5.555555555555555
+                    },
+                    "VlCookieConsent.html#open": {
+                      "ref": "VlCookieConsent.html#open",
+                      "tf": 3.8461538461538463
+                    },
+                    "VlCookieConsent.html#close": {
+                      "ref": "VlCookieConsent.html#close",
+                      "tf": 12.5
+                    },
+                    "VlCookieConsent.html#reset": {
+                      "ref": "VlCookieConsent.html#reset",
+                      "tf": 3.8461538461538463
+                    }
+                  },
+                  "e": {
+                    "docs": {},
+                    "v": {
+                      "docs": {},
+                      "e": {
+                        "docs": {},
+                        "r": {
+                          "docs": {},
+                          "k": {
+                            "docs": {},
+                            "l": {
+                              "docs": {},
+                              "a": {
+                                "docs": {},
+                                "r": {
+                                  "docs": {
+                                    "VlCookieStatement.html": {
+                                      "ref": "VlCookieStatement.html",
+                                      "tf": 25
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "r": {
               "docs": {},
               "r": {
@@ -13051,36 +13386,6 @@ window.lunrData = {
                   }
                 }
               }
-            },
-            "o": {
-              "docs": {},
-              "k": {
-                "docs": {},
-                "i": {
-                  "docs": {
-                    "VlCookieConsentOptIn.html": {
-                      "ref": "VlCookieConsentOptIn.html",
-                      "tf": 5.88235294117647
-                    },
-                    "VlCookieConsent.html": {
-                      "ref": "VlCookieConsent.html",
-                      "tf": 5.555555555555555
-                    },
-                    "VlCookieConsent.html#open": {
-                      "ref": "VlCookieConsent.html#open",
-                      "tf": 3.8461538461538463
-                    },
-                    "VlCookieConsent.html#close": {
-                      "ref": "VlCookieConsent.html#close",
-                      "tf": 12.5
-                    },
-                    "VlCookieConsent.html#reset": {
-                      "ref": "VlCookieConsent.html#reset",
-                      "tf": 3.8461538461538463
-                    }
-                  }
-                }
-              }
             }
           },
           "a": {
@@ -13141,6 +13446,17 @@ window.lunrData = {
                         }
                       }
                     }
+                  }
+                }
+              }
+            },
+            "r": {
+              "docs": {},
+              "d": {
+                "docs": {
+                  "VlContactCard.html": {
+                    "ref": "VlContactCard.html",
+                    "tf": 4.545454545454546
                   }
                 }
               }
@@ -13864,6 +14180,17 @@ window.lunrData = {
                 }
               }
             },
+            "n": {
+              "docs": {},
+              "g": {
+                "docs": {
+                  "VlSideNavigation.html": {
+                    "ref": "VlSideNavigation.html",
+                    "tf": 1.5151515151515151
+                  }
+                }
+              }
+            },
             "b": {
               "docs": {},
               "e": {
@@ -14168,6 +14495,14 @@ window.lunrData = {
               "docs": {},
               "d": {
                 "docs": {},
+                "t": {
+                  "docs": {
+                    "VlSideNavigation.html": {
+                      "ref": "VlSideNavigation.html",
+                      "tf": 1.5151515151515151
+                    }
+                  }
+                },
                 "r": {
                   "docs": {},
                   "a": {
@@ -15469,6 +15804,10 @@ window.lunrData = {
                 "VlElement.html#._observedChildClassAttributes": {
                   "ref": "VlElement.html#._observedChildClassAttributes",
                   "tf": 1.1627906976744187
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
                 },
                 "VlFormLabel.html": {
                   "ref": "VlFormLabel.html",
@@ -17340,6 +17679,14 @@ window.lunrData = {
                         "docs": {},
                         "v": {
                           "docs": {
+                            "VlStickySessionCookie.html": {
+                              "ref": "VlStickySessionCookie.html",
+                              "tf": 12.5
+                            },
+                            "VlCookie.html": {
+                              "ref": "VlCookie.html",
+                              "tf": 25
+                            },
                             "VlPropertyTerm.html": {
                               "ref": "VlPropertyTerm.html",
                               "tf": 4.545454545454546
@@ -18365,6 +18712,10 @@ window.lunrData = {
                   "ref": "VlCustomMap.html",
                   "tf": 2.8169014084507045
                 },
+                "VlContactCard.html": {
+                  "ref": "VlContactCard.html",
+                  "tf": 9.090909090909092
+                },
                 "VlMapSelectAction.html#style": {
                   "ref": "VlMapSelectAction.html#style",
                   "tf": 5.555555555555555
@@ -18372,6 +18723,10 @@ window.lunrData = {
                 "VlProgressBarStep.html": {
                   "ref": "VlProgressBarStep.html",
                   "tf": 5.88235294117647
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 3.0303030303030303
                 },
                 "VlDocument.html": {
                   "ref": "VlDocument.html",
@@ -18752,6 +19107,10 @@ window.lunrData = {
                 "ref": "VlCustomMap.html",
                 "tf": 0.7042253521126761
               },
+              "VlSideNavigation.html": {
+                "ref": "VlSideNavigation.html",
+                "tf": 1.5151515151515151
+              },
               "VlTemplate.html": {
                 "ref": "VlTemplate.html",
                 "tf": 4.545454545454546
@@ -19094,6 +19453,17 @@ window.lunrData = {
                       }
                     }
                   }
+                },
+                "r": {
+                  "docs": {},
+                  "n": {
+                    "docs": {
+                      "VlSideNavigation.html": {
+                        "ref": "VlSideNavigation.html",
+                        "tf": 1.5151515151515151
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -19149,6 +19519,34 @@ window.lunrData = {
                         "VlElement.html#_toggleClass": {
                           "ref": "VlElement.html#_toggleClass",
                           "tf": 16.666666666666664
+                        },
+                        "VlSideNavigationContent.html": {
+                          "ref": "VlSideNavigationContent.html",
+                          "tf": 12.5
+                        },
+                        "VlSideNavigationGroup.html": {
+                          "ref": "VlSideNavigationGroup.html",
+                          "tf": 12.5
+                        },
+                        "VlSideNavigationReference.html": {
+                          "ref": "VlSideNavigationReference.html",
+                          "tf": 11.11111111111111
+                        },
+                        "VlSideNavigationTitle.html": {
+                          "ref": "VlSideNavigationTitle.html",
+                          "tf": 12.5
+                        },
+                        "VlSideNavigation.html": {
+                          "ref": "VlSideNavigation.html",
+                          "tf": 1.5151515151515151
+                        },
+                        "VlSideNavigationItem.html": {
+                          "ref": "VlSideNavigationItem.html",
+                          "tf": 12.5
+                        },
+                        "VlSideNavigationToggle.html": {
+                          "ref": "VlSideNavigationToggle.html",
+                          "tf": 12.5
                         },
                         "VlTooltip.html": {
                           "ref": "VlTooltip.html",
@@ -20277,6 +20675,34 @@ window.lunrData = {
                   "ref": "VlCustomMap.html",
                   "tf": 2.112676056338028
                 },
+                "VlSideNavigationContent.html": {
+                  "ref": "VlSideNavigationContent.html",
+                  "tf": 12.5
+                },
+                "VlSideNavigationGroup.html": {
+                  "ref": "VlSideNavigationGroup.html",
+                  "tf": 12.5
+                },
+                "VlSideNavigationReference.html": {
+                  "ref": "VlSideNavigationReference.html",
+                  "tf": 11.11111111111111
+                },
+                "VlSideNavigationTitle.html": {
+                  "ref": "VlSideNavigationTitle.html",
+                  "tf": 12.5
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
+                },
+                "VlSideNavigationItem.html": {
+                  "ref": "VlSideNavigationItem.html",
+                  "tf": 12.5
+                },
+                "VlSideNavigationToggle.html": {
+                  "ref": "VlSideNavigationToggle.html",
+                  "tf": 12.5
+                },
                 "VlLoader.html": {
                   "ref": "VlLoader.html",
                   "tf": 3.571428571428571
@@ -21390,6 +21816,10 @@ window.lunrData = {
                   "ref": "VlDoormatImage.html",
                   "tf": 4.166666666666666
                 },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 3.0303030303030303
+                },
                 "VlDocument.html": {
                   "ref": "VlDocument.html",
                   "tf": 2.380952380952381
@@ -21955,6 +22385,34 @@ window.lunrData = {
                             "ref": "VlBreadcrumb.html",
                             "tf": 3.125
                           },
+                          "VlSideNavigationContent.html": {
+                            "ref": "VlSideNavigationContent.html",
+                            "tf": 12.5
+                          },
+                          "VlSideNavigationGroup.html": {
+                            "ref": "VlSideNavigationGroup.html",
+                            "tf": 12.5
+                          },
+                          "VlSideNavigationReference.html": {
+                            "ref": "VlSideNavigationReference.html",
+                            "tf": 5.555555555555555
+                          },
+                          "VlSideNavigationTitle.html": {
+                            "ref": "VlSideNavigationTitle.html",
+                            "tf": 12.5
+                          },
+                          "VlSideNavigation.html": {
+                            "ref": "VlSideNavigation.html",
+                            "tf": 1.5151515151515151
+                          },
+                          "VlSideNavigationItem.html": {
+                            "ref": "VlSideNavigationItem.html",
+                            "tf": 12.5
+                          },
+                          "VlSideNavigationToggle.html": {
+                            "ref": "VlSideNavigationToggle.html",
+                            "tf": 12.5
+                          },
                           "VlWizardPane.html#enableNextPane": {
                             "ref": "VlWizardPane.html#enableNextPane",
                             "tf": 7.142857142857142
@@ -22053,6 +22511,14 @@ window.lunrData = {
                   "VlCustomMap.html": {
                     "ref": "VlCustomMap.html",
                     "tf": 0.7042253521126761
+                  },
+                  "VlSideNavigationReference.html": {
+                    "ref": "VlSideNavigationReference.html",
+                    "tf": 5.555555555555555
+                  },
+                  "VlSideNavigation.html": {
+                    "ref": "VlSideNavigation.html",
+                    "tf": 1.5151515151515151
                   },
                   "VlDocument.html": {
                     "ref": "VlDocument.html",
@@ -22583,6 +23049,10 @@ window.lunrData = {
                 "ref": "vlPillElement.html",
                 "tf": 4.166666666666666
               },
+              "VlContactCard.html": {
+                "ref": "VlContactCard.html",
+                "tf": 4.545454545454546
+              },
               "VlInfoTile.html#toggle": {
                 "ref": "VlInfoTile.html#toggle",
                 "tf": 5.555555555555555
@@ -22812,6 +23282,10 @@ window.lunrData = {
                 "VlMapWithActions.html": {
                   "ref": "VlMapWithActions.html",
                   "tf": 1.1111111111111112
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
                 },
                 "VlWizard.html": {
                   "ref": "VlWizard.html",
@@ -23703,6 +24177,32 @@ window.lunrData = {
                             "ref": "VlTemplate.html",
                             "tf": 4.545454545454546
                           }
+                        },
+                        "s": {
+                          "docs": {},
+                          "d": {
+                            "docs": {},
+                            "i": {
+                              "docs": {},
+                              "e": {
+                                "docs": {},
+                                "n": {
+                                  "docs": {},
+                                  "s": {
+                                    "docs": {},
+                                    "t": {
+                                      "docs": {
+                                        "VlContactCard.html": {
+                                          "ref": "VlContactCard.html",
+                                          "tf": 4.545454545454546
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -23856,6 +24356,10 @@ window.lunrData = {
                         "ref": "VlDescriptionData.html",
                         "tf": 2.083333333333333
                       },
+                      "VlSideNavigation.html": {
+                        "ref": "VlSideNavigation.html",
+                        "tf": 3.0303030303030303
+                      },
                       "VlDoormat.html": {
                         "ref": "VlDoormat.html",
                         "tf": 1.2195121951219512
@@ -23928,6 +24432,10 @@ window.lunrData = {
                         "ref": "VlFunctionalHeader.html",
                         "tf": 2.7777777777777777
                       },
+                      "VlCookieStatement.html": {
+                        "ref": "VlCookieStatement.html",
+                        "tf": 25
+                      },
                       "VlProzaMessage.html": {
                         "ref": "VlProzaMessage.html",
                         "tf": 0.7246376811594203
@@ -23935,6 +24443,14 @@ window.lunrData = {
                       "VlModal.html": {
                         "ref": "VlModal.html",
                         "tf": 1.2195121951219512
+                      },
+                      "VlAccessibility.html": {
+                        "ref": "VlAccessibility.html",
+                        "tf": 25
+                      },
+                      "VlPrivacy.html": {
+                        "ref": "VlPrivacy.html",
+                        "tf": 25
                       },
                       "VlPager.html": {
                         "ref": "VlPager.html",
@@ -23959,6 +24475,10 @@ window.lunrData = {
                     },
                     "'": {
                       "docs": {
+                        "VlSideNavigation.html": {
+                          "ref": "VlSideNavigation.html",
+                          "tf": 3.0303030303030303
+                        },
                         "VlWizardPane.html#enableNextPanes": {
                           "ref": "VlWizardPane.html#enableNextPanes",
                           "tf": 7.142857142857142
@@ -24462,6 +24982,23 @@ window.lunrData = {
                     }
                   }
                 }
+              },
+              "v": {
+                "docs": {},
+                "a": {
+                  "docs": {},
+                  "c": {
+                    "docs": {},
+                    "i": {
+                      "docs": {
+                        "VlPrivacy.html": {
+                          "ref": "VlPrivacy.html",
+                          "tf": 25
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -24574,6 +25111,10 @@ window.lunrData = {
                     "VlMapWithActions.html": {
                       "ref": "VlMapWithActions.html",
                       "tf": 0.5555555555555556
+                    },
+                    "VlSideNavigation.html": {
+                      "ref": "VlSideNavigation.html",
+                      "tf": 1.5151515151515151
                     }
                   },
                   "h": {
@@ -24900,6 +25441,20 @@ window.lunrData = {
             },
             "i": {
               "docs": {},
+              "c": {
+                "docs": {},
+                "k": {
+                  "docs": {},
+                  "i": {
+                    "docs": {
+                      "VlStickySessionCookie.html": {
+                        "ref": "VlStickySessionCookie.html",
+                        "tf": 12.5
+                      }
+                    }
+                  }
+                }
+              },
               "j": {
                 "docs": {},
                 "l": {
@@ -25272,6 +25827,26 @@ window.lunrData = {
           },
           "e": {
             "docs": {},
+            "s": {
+              "docs": {},
+              "s": {
+                "docs": {},
+                "i": {
+                  "docs": {},
+                  "o": {
+                    "docs": {},
+                    "n": {
+                      "docs": {
+                        "VlStickySessionCookie.html": {
+                          "ref": "VlStickySessionCookie.html",
+                          "tf": 12.5
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "l": {
               "docs": {},
               "e": {
@@ -25823,6 +26398,10 @@ window.lunrData = {
               "vlPillElement.html": {
                 "ref": "vlPillElement.html",
                 "tf": 4.166666666666666
+              },
+              "VlContactCard.html": {
+                "ref": "VlContactCard.html",
+                "tf": 4.545454545454546
               },
               "VlInfoTile.html#toggle": {
                 "ref": "VlInfoTile.html#toggle",
@@ -26776,6 +27355,23 @@ window.lunrData = {
                                     "ref": "VlVideoPlayer.html",
                                     "tf": 7.142857142857142
                                   }
+                                },
+                                "h": {
+                                  "docs": {},
+                                  "e": {
+                                    "docs": {},
+                                    "i": {
+                                      "docs": {},
+                                      "d": {
+                                        "docs": {
+                                          "VlAccessibility.html": {
+                                            "ref": "VlAccessibility.html",
+                                            "tf": 25
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
                                 }
                               }
                             }
@@ -26801,6 +27397,10 @@ window.lunrData = {
                             "VlElement.html#_toggleClass": {
                               "ref": "VlElement.html#_toggleClass",
                               "tf": 4.545454545454546
+                            },
+                            "VlSideNavigation.html": {
+                              "ref": "VlSideNavigation.html",
+                              "tf": 1.5151515151515151
                             },
                             "VlUpload.html#addFile": {
                               "ref": "VlUpload.html#addFile",
@@ -26847,6 +27447,10 @@ window.lunrData = {
                     "VlInfoTile.html#toggle": {
                       "ref": "VlInfoTile.html#toggle",
                       "tf": 755.5555555555555
+                    },
+                    "VlSideNavigationToggle.html": {
+                      "ref": "VlSideNavigationToggle.html",
+                      "tf": 12.5
                     },
                     "VlCheckbox.html#toggle": {
                       "ref": "VlCheckbox.html#toggle",
@@ -26913,6 +27517,10 @@ window.lunrData = {
                     "VlImage.html": {
                       "ref": "VlImage.html",
                       "tf": 3.3333333333333335
+                    },
+                    "VlContactCard.html": {
+                      "ref": "VlContactCard.html",
+                      "tf": 4.545454545454546
                     },
                     "VlAccordion.html": {
                       "ref": "VlAccordion.html",
@@ -27159,6 +27767,10 @@ window.lunrData = {
                     "VlMapBaseLayerGRB.html#title": {
                       "ref": "VlMapBaseLayerGRB.html#title",
                       "tf": 10
+                    },
+                    "VlSideNavigationTitle.html": {
+                      "ref": "VlSideNavigationTitle.html",
+                      "tf": 12.5
                     },
                     "VlDoormat.html": {
                       "ref": "VlDoormat.html",
@@ -27468,6 +28080,10 @@ window.lunrData = {
                   "ref": "VlCustomMap.html",
                   "tf": 2.112676056338028
                 },
+                "VlContactCard.html": {
+                  "ref": "VlContactCard.html",
+                  "tf": 4.545454545454546
+                },
                 "VlProgressBarStep.html": {
                   "ref": "VlProgressBarStep.html",
                   "tf": 5.88235294117647
@@ -27475,6 +28091,10 @@ window.lunrData = {
                 "VlProgressBarStep.html#text": {
                   "ref": "VlProgressBarStep.html#text",
                   "tf": 6.25
+                },
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
                 },
                 "VlTemplate.html": {
                   "ref": "VlTemplate.html",
@@ -27823,6 +28443,14 @@ window.lunrData = {
                       }
                     }
                   }
+                }
+              }
+            },
+            "t": {
+              "docs": {
+                "VlSideNavigation.html": {
+                  "ref": "VlSideNavigation.html",
+                  "tf": 1.5151515151515151
                 }
               }
             },
@@ -32082,6 +32710,26 @@ window.lunrData = {
                       }
                     }
                   }
+                },
+                "i": {
+                  "docs": {},
+                  "v": {
+                    "docs": {},
+                    "a": {
+                      "docs": {},
+                      "c": {
+                        "docs": {},
+                        "i": {
+                          "docs": {
+                            "VlPrivacy.html": {
+                              "ref": "VlPrivacy.html",
+                              "tf": 1900
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               },
               "i": {
@@ -32772,36 +33420,147 @@ window.lunrData = {
                   }
                 }
               },
-              "t": {
+              "i": {
                 "docs": {},
-                "e": {
+                "d": {
                   "docs": {},
-                  "p": {
-                    "docs": {
-                      "VlSteps.html": {
-                        "ref": "VlSteps.html",
-                        "tf": 1900
-                      },
-                      "VlStep.html": {
-                        "ref": "VlStep.html",
-                        "tf": 1900
-                      }
-                    },
-                    "#": {
+                  "e": {
+                    "docs": {},
+                    "n": {
                       "docs": {},
-                      "t": {
+                      "a": {
                         "docs": {},
-                        "e": {
+                        "v": {
                           "docs": {},
-                          "m": {
+                          "i": {
                             "docs": {},
-                            "p": {
-                              "docs": {},
-                              "l": {
-                                "docs": {
-                                  "VlStep.html#template": {
-                                    "ref": "VlStep.html#template",
-                                    "tf": 1150
+                            "g": {
+                              "docs": {
+                                "VlSideNavigation.html": {
+                                  "ref": "VlSideNavigation.html",
+                                  "tf": 1900
+                                }
+                              },
+                              "a": {
+                                "docs": {},
+                                "t": {
+                                  "docs": {},
+                                  "i": {
+                                    "docs": {},
+                                    "o": {
+                                      "docs": {},
+                                      "n": {
+                                        "docs": {},
+                                        "c": {
+                                          "docs": {},
+                                          "o": {
+                                            "docs": {},
+                                            "n": {
+                                              "docs": {},
+                                              "t": {
+                                                "docs": {
+                                                  "VlSideNavigationContent.html": {
+                                                    "ref": "VlSideNavigationContent.html",
+                                                    "tf": 1900
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "g": {
+                                          "docs": {},
+                                          "r": {
+                                            "docs": {},
+                                            "o": {
+                                              "docs": {},
+                                              "u": {
+                                                "docs": {},
+                                                "p": {
+                                                  "docs": {
+                                                    "VlSideNavigationGroup.html": {
+                                                      "ref": "VlSideNavigationGroup.html",
+                                                      "tf": 1900
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "r": {
+                                          "docs": {},
+                                          "e": {
+                                            "docs": {},
+                                            "f": {
+                                              "docs": {},
+                                              "e": {
+                                                "docs": {},
+                                                "r": {
+                                                  "docs": {
+                                                    "VlSideNavigationReference.html": {
+                                                      "ref": "VlSideNavigationReference.html",
+                                                      "tf": 1900
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "t": {
+                                          "docs": {},
+                                          "i": {
+                                            "docs": {},
+                                            "t": {
+                                              "docs": {},
+                                              "l": {
+                                                "docs": {
+                                                  "VlSideNavigationTitle.html": {
+                                                    "ref": "VlSideNavigationTitle.html",
+                                                    "tf": 1900
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "o": {
+                                            "docs": {},
+                                            "g": {
+                                              "docs": {},
+                                              "g": {
+                                                "docs": {},
+                                                "l": {
+                                                  "docs": {
+                                                    "VlSideNavigationToggle.html": {
+                                                      "ref": "VlSideNavigationToggle.html",
+                                                      "tf": 1900
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "i": {
+                                          "docs": {},
+                                          "t": {
+                                            "docs": {},
+                                            "e": {
+                                              "docs": {},
+                                              "m": {
+                                                "docs": {
+                                                  "VlSideNavigationItem.html": {
+                                                    "ref": "VlSideNavigationItem.html",
+                                                    "tf": 1900
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
                                   }
                                 }
                               }
@@ -32809,16 +33568,7 @@ window.lunrData = {
                           }
                         }
                       }
-                    }
-                  }
-                }
-              },
-              "i": {
-                "docs": {},
-                "d": {
-                  "docs": {},
-                  "e": {
-                    "docs": {},
+                    },
                     "s": {
                       "docs": {},
                       "h": {
@@ -32918,6 +33668,100 @@ window.lunrData = {
                     }
                   }
                 }
+              },
+              "t": {
+                "docs": {},
+                "i": {
+                  "docs": {},
+                  "c": {
+                    "docs": {},
+                    "k": {
+                      "docs": {},
+                      "y": {
+                        "docs": {},
+                        "s": {
+                          "docs": {},
+                          "e": {
+                            "docs": {},
+                            "s": {
+                              "docs": {},
+                              "s": {
+                                "docs": {},
+                                "i": {
+                                  "docs": {},
+                                  "o": {
+                                    "docs": {},
+                                    "n": {
+                                      "docs": {},
+                                      "c": {
+                                        "docs": {},
+                                        "o": {
+                                          "docs": {},
+                                          "o": {
+                                            "docs": {},
+                                            "k": {
+                                              "docs": {},
+                                              "i": {
+                                                "docs": {
+                                                  "VlStickySessionCookie.html": {
+                                                    "ref": "VlStickySessionCookie.html",
+                                                    "tf": 1900
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "e": {
+                  "docs": {},
+                  "p": {
+                    "docs": {
+                      "VlSteps.html": {
+                        "ref": "VlSteps.html",
+                        "tf": 1900
+                      },
+                      "VlStep.html": {
+                        "ref": "VlStep.html",
+                        "tf": 1900
+                      }
+                    },
+                    "#": {
+                      "docs": {},
+                      "t": {
+                        "docs": {},
+                        "e": {
+                          "docs": {},
+                          "m": {
+                            "docs": {},
+                            "p": {
+                              "docs": {},
+                              "l": {
+                                "docs": {
+                                  "VlStep.html#template": {
+                                    "ref": "VlStep.html#template",
+                                    "tf": 1150
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             },
             "c": {
@@ -32953,29 +33797,23 @@ window.lunrData = {
                           }
                         }
                       }
-                    }
-                  }
-                },
-                "d": {
-                  "docs": {},
-                  "e": {
-                    "docs": {},
-                    "p": {
+                    },
+                    "a": {
                       "docs": {},
-                      "r": {
+                      "c": {
                         "docs": {},
-                        "e": {
+                        "t": {
                           "docs": {},
-                          "v": {
+                          "c": {
                             "docs": {},
-                            "i": {
+                            "a": {
                               "docs": {},
-                              "e": {
+                              "r": {
                                 "docs": {},
-                                "w": {
+                                "d": {
                                   "docs": {
-                                    "VlCodePreview.html": {
-                                      "ref": "VlCodePreview.html",
+                                    "VlContactCard.html": {
+                                      "ref": "VlContactCard.html",
                                       "tf": 1900
                                     }
                                   }
@@ -32993,7 +33831,12 @@ window.lunrData = {
                   "k": {
                     "docs": {},
                     "i": {
-                      "docs": {},
+                      "docs": {
+                        "VlCookie.html": {
+                          "ref": "VlCookie.html",
+                          "tf": 1900
+                        }
+                      },
                       "e": {
                         "docs": {},
                         "c": {
@@ -33274,6 +34117,55 @@ window.lunrData = {
                                           }
                                         }
                                       }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "s": {
+                          "docs": {},
+                          "t": {
+                            "docs": {},
+                            "a": {
+                              "docs": {},
+                              "t": {
+                                "docs": {
+                                  "VlCookieStatement.html": {
+                                    "ref": "VlCookieStatement.html",
+                                    "tf": 1900
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "d": {
+                  "docs": {},
+                  "e": {
+                    "docs": {},
+                    "p": {
+                      "docs": {},
+                      "r": {
+                        "docs": {},
+                        "e": {
+                          "docs": {},
+                          "v": {
+                            "docs": {},
+                            "i": {
+                              "docs": {},
+                              "e": {
+                                "docs": {},
+                                "w": {
+                                  "docs": {
+                                    "VlCodePreview.html": {
+                                      "ref": "VlCodePreview.html",
+                                      "tf": 1900
                                     }
                                   }
                                 }
@@ -34100,6 +34992,20 @@ window.lunrData = {
                                 }
                               }
                             }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "e": {
+                    "docs": {},
+                    "s": {
+                      "docs": {},
+                      "s": {
+                        "docs": {
+                          "VlAccessibility.html": {
+                            "ref": "VlAccessibility.html",
+                            "tf": 1900
                           }
                         }
                       }
@@ -36515,12 +37421,27 @@ window.lunrData = {
                         }
                       }
                     },
+                    "s": {
+                      "docs": {},
+                      "t": {
+                        "docs": {
+                          "VlSideNavigationReference.html": {
+                            "ref": "VlSideNavigationReference.html",
+                            "tf": 5.555555555555555
+                          }
+                        }
+                      }
+                    },
                     "z": {
                       "docs": {},
                       "e": {
                         "docs": {},
                         "n": {
                           "docs": {
+                            "VlSideNavigation.html": {
+                              "ref": "VlSideNavigation.html",
+                              "tf": 1.5151515151515151
+                            },
                             "VlLink.html": {
                               "ref": "VlLink.html",
                               "tf": 2.5
@@ -38513,6 +39434,10 @@ window.lunrData = {
                 "ref": "VlImage.html",
                 "tf": 3.3333333333333335
               },
+              "VlSideNavigation.html": {
+                "ref": "VlSideNavigation.html",
+                "tf": 1.5151515151515151
+              },
               "VlWizard.html": {
                 "ref": "VlWizard.html",
                 "tf": 1.1111111111111112
@@ -38600,7 +39525,7 @@ window.lunrData = {
           }
         }
       },
-      "length": 4205
+      "length": 4306
     },
     "corpusTokens": [
       "1200px",
@@ -38723,6 +39648,7 @@ window.lunrData = {
       "bvb",
       "call",
       "callback",
+      "card",
       "catchen",
       "categori",
       "categorieën",
@@ -38750,6 +39676,7 @@ window.lunrData = {
       "combinati",
       "combineert",
       "combineren",
+      "compact",
       "complex",
       "compon",
       "config",
@@ -38759,10 +39686,12 @@ window.lunrData = {
       "constructor",
       "consumeren",
       "contact",
+      "contactgegeven",
       "contactpersoon",
       "contain",
       "content",
       "cooki",
+      "cookieverklar",
       "correct",
       "cta",
       "currentpag",
@@ -38831,6 +39760,7 @@ window.lunrData = {
       "etc",
       "event",
       "extent",
+      "extern",
       "extra",
       "featur",
       "feit",
@@ -39005,6 +39935,7 @@ window.lunrData = {
       "laat",
       "label",
       "laden",
+      "lang",
       "laten",
       "lay",
       "layer",
@@ -39013,6 +39944,7 @@ window.lunrData = {
       "leggen",
       "leiden",
       "leidraad",
+      "leidt",
       "lijn",
       "lijst",
       "lijsten",
@@ -39120,6 +40052,7 @@ window.lunrData = {
       "out",
       "over",
       "overheid",
+      "overheidsdienst",
       "overview",
       "overzicht",
       "overzichtskaartj",
@@ -39143,6 +40076,7 @@ window.lunrData = {
       "preview",
       "previou",
       "prioriteit",
+      "privaci",
       "proce",
       "procedur",
       "progress",
@@ -39193,6 +40127,7 @@ window.lunrData = {
       "selecteren",
       "selecti",
       "selector",
+      "session",
       "setter",
       "shadow",
       "sheet",
@@ -39233,6 +40168,7 @@ window.lunrData = {
       "stellen",
       "stelt",
       "step",
+      "sticki",
       "stijl",
       "string",
       "style",
@@ -39261,6 +40197,7 @@ window.lunrData = {
       "toaster",
       "toe",
       "toegankelijk",
+      "toegankelijkheid",
       "toegevoegd",
       "toestand",
       "toet",
@@ -39298,6 +40235,7 @@ window.lunrData = {
       "valu",
       "van",
       "vast",
+      "vat",
       "veld",
       "verankerd",
       "verberg",
@@ -39324,6 +40262,7 @@ window.lunrData = {
       "verwijderd",
       "verwijderen",
       "verwijdert",
+      "verwijst",
       "verwijzen",
       "verzekert",
       "via",
@@ -39341,6 +40280,7 @@ window.lunrData = {
       "vl.upload.hook.filechang",
       "vlaams",
       "vlaanderen",
+      "vlaccess",
       "vlaccordion",
       "vlaccordion#clos",
       "vlaccordion#dress",
@@ -39359,7 +40299,9 @@ window.lunrData = {
       "vlcheckbox#toggl",
       "vlcodepreview",
       "vlcolumn",
+      "vlcontactcard",
       "vlcontenthead",
+      "vlcooki",
       "vlcookiecons",
       "vlcookieconsent#addoptin",
       "vlcookieconsent#addoptinactivatedcallback",
@@ -39369,6 +40311,7 @@ window.lunrData = {
       "vlcookieconsent#open",
       "vlcookieconsent#reset",
       "vlcookieconsentoptin",
+      "vlcookiestat",
       "vlcustommap",
       "vldatat",
       "vldatepick",
@@ -39568,6 +40511,7 @@ window.lunrData = {
       "vlpill",
       "vlpill#check",
       "vlpillel",
+      "vlprivaci",
       "vlprogressbar",
       "vlprogressbar#button",
       "vlprogressbar#el",
@@ -39625,6 +40569,13 @@ window.lunrData = {
       "vlselect#undress",
       "vlselect#valu",
       "vlselect.readyev",
+      "vlsidenavig",
+      "vlsidenavigationcont",
+      "vlsidenavigationgroup",
+      "vlsidenavigationitem",
+      "vlsidenavigationrefer",
+      "vlsidenavigationtitl",
+      "vlsidenavigationtoggl",
       "vlsidesheet",
       "vlsidesheet#clos",
       "vlsidesheet#onclos",
@@ -39632,6 +40583,7 @@ window.lunrData = {
       "vlsidesheet#toggl",
       "vlstep",
       "vlstep#templ",
+      "vlstickysessioncooki",
       "vltemplat",
       "vltextarea",
       "vltitl",
@@ -39691,6 +40643,7 @@ window.lunrData = {
       "vormt",
       "vraagt",
       "vullen",
+      "waar",
       "waard",
       "waarden",
       "waarin",
@@ -40586,6 +41539,83 @@ window.lunrData = {
       "description": "Gebruik de VlPillElement als base class om keywoorden (filters of tags) te visualiseren.",
       "body": ""
     },
+    "VlSideNavigationContent.html": {
+      "id": "VlSideNavigationContent.html",
+      "kind": "class",
+      "title": "VlSideNavigationContent",
+      "longname": "VlSideNavigationContent",
+      "name": "VlSideNavigationContent",
+      "tags": "VlSideNavigationContent",
+      "summary": "",
+      "description": "Het navigatie content element.",
+      "body": ""
+    },
+    "VlSideNavigationGroup.html": {
+      "id": "VlSideNavigationGroup.html",
+      "kind": "class",
+      "title": "VlSideNavigationGroup",
+      "longname": "VlSideNavigationGroup",
+      "name": "VlSideNavigationGroup",
+      "tags": "VlSideNavigationGroup",
+      "summary": "",
+      "description": "Het navigatie groep element.",
+      "body": ""
+    },
+    "VlSideNavigationReference.html": {
+      "id": "VlSideNavigationReference.html",
+      "kind": "class",
+      "title": "VlSideNavigationReference",
+      "longname": "VlSideNavigationReference",
+      "name": "VlSideNavigationReference",
+      "tags": "VlSideNavigationReference",
+      "summary": "",
+      "description": "Het content element waar het navigatie element naar verwijst.",
+      "body": ""
+    },
+    "VlSideNavigationTitle.html": {
+      "id": "VlSideNavigationTitle.html",
+      "kind": "class",
+      "title": "VlSideNavigationTitle",
+      "longname": "VlSideNavigationTitle",
+      "name": "VlSideNavigationTitle",
+      "tags": "VlSideNavigationTitle",
+      "summary": "",
+      "description": "Het navigatie titel element.",
+      "body": ""
+    },
+    "VlStickySessionCookie.html": {
+      "id": "VlStickySessionCookie.html",
+      "kind": "class",
+      "title": "VlStickySessionCookie",
+      "longname": "VlStickySessionCookie",
+      "name": "VlStickySessionCookie",
+      "tags": "VlStickySessionCookie",
+      "summary": "",
+      "description": "Sticky session cookie beschrijving",
+      "body": ""
+    },
+    "VlContactCard.html": {
+      "id": "VlContactCard.html",
+      "kind": "class",
+      "title": "VlContactCard",
+      "longname": "VlContactCard",
+      "name": "VlContactCard",
+      "tags": "VlContactCard",
+      "summary": "",
+      "description": "Gebruik een contact card om contactgegevens van een overheidsdienst te tonen.",
+      "body": ""
+    },
+    "VlCookie.html": {
+      "id": "VlCookie.html",
+      "kind": "class",
+      "title": "VlCookie",
+      "longname": "VlCookie",
+      "name": "VlCookie",
+      "tags": "VlCookie",
+      "summary": "",
+      "description": "Cookie beschrijving",
+      "body": ""
+    },
     "VlDoormatImage.html": {
       "id": "VlDoormatImage.html",
       "kind": "class",
@@ -40720,6 +41750,17 @@ window.lunrData = {
       "summary": "",
       "description": "Bepaal of de progress bar stap actief is."
     },
+    "VlSideNavigation.html": {
+      "id": "VlSideNavigation.html",
+      "kind": "class",
+      "title": "VlSideNavigation",
+      "longname": "VlSideNavigation",
+      "name": "VlSideNavigation",
+      "tags": "VlSideNavigation",
+      "summary": "",
+      "description": "Een compact navigatie element dat je aan een pagina kan toevoegen. Het vat de inhoud van lange pagina's samen, leidt de gebruiker door de pagina inhoud en kan ook naar externe pagina's verwijzen.",
+      "body": ""
+    },
     "VlTemplate.html": {
       "id": "VlTemplate.html",
       "kind": "class",
@@ -40815,6 +41856,28 @@ window.lunrData = {
       "tags": "VlSearchFilter",
       "summary": "",
       "description": "De search filter laat de gebruiker toe om de zoekresulten te verfijnen.",
+      "body": ""
+    },
+    "VlSideNavigationItem.html": {
+      "id": "VlSideNavigationItem.html",
+      "kind": "class",
+      "title": "VlSideNavigationItem",
+      "longname": "VlSideNavigationItem",
+      "name": "VlSideNavigationItem",
+      "tags": "VlSideNavigationItem",
+      "summary": "",
+      "description": "Het navigatie item element.",
+      "body": ""
+    },
+    "VlSideNavigationToggle.html": {
+      "id": "VlSideNavigationToggle.html",
+      "kind": "class",
+      "title": "VlSideNavigationToggle",
+      "longname": "VlSideNavigationToggle",
+      "name": "VlSideNavigationToggle",
+      "tags": "VlSideNavigationToggle",
+      "summary": "",
+      "description": "Het navigatie toggle element.",
       "body": ""
     },
     "VlTypography.html": {
@@ -42346,6 +43409,17 @@ window.lunrData = {
       "summary": "",
       "description": "Bepaalt of een opt-in actief is of niet op basis van de naam."
     },
+    "VlCookieStatement.html": {
+      "id": "VlCookieStatement.html",
+      "kind": "class",
+      "title": "VlCookieStatement",
+      "longname": "VlCookieStatement",
+      "name": "VlCookieStatement",
+      "tags": "VlCookieStatement",
+      "summary": "",
+      "description": "Cookieverklaring pagina",
+      "body": ""
+    },
     "VlDemoPage.html": {
       "id": "VlDemoPage.html",
       "kind": "class",
@@ -42732,6 +43806,28 @@ window.lunrData = {
       "tags": "VlUpload#focus focus",
       "summary": "",
       "description": "Geeft focus aan het link element."
+    },
+    "VlAccessibility.html": {
+      "id": "VlAccessibility.html",
+      "kind": "class",
+      "title": "VlAccessibility",
+      "longname": "VlAccessibility",
+      "name": "VlAccessibility",
+      "tags": "VlAccessibility",
+      "summary": "",
+      "description": "Toegankelijkheid pagina",
+      "body": ""
+    },
+    "VlPrivacy.html": {
+      "id": "VlPrivacy.html",
+      "kind": "class",
+      "title": "VlPrivacy",
+      "longname": "VlPrivacy",
+      "name": "VlPrivacy",
+      "tags": "VlPrivacy",
+      "summary": "",
+      "description": "Privacy pagina",
+      "body": ""
     },
     "VlPager.html": {
       "id": "VlPager.html",

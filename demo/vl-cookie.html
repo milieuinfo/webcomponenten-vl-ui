@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>vl-cookie-statement voorbeeld</title>
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
+
+        <script type="module" src="/vl-cookie.js"></script>
+        <script type="module" src="/vl-sticky-session-cookie.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/src/style.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css">
+        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css">
+    </head>
+
+	<body is="vl-body">
+        <vl-demo-page data-vl-webcomponent="vl-cookie">
+            <vl-demo data-vl-title="Custom cookie">
+                <vl-cookie 
+                    data-vl-title="Captcha contactformulier" 
+                    data-vl-name="NID" 
+                    data-vl-purpose="reCaptcha is een beveiligingsmaatregel die controleert of u een legitieme bezoeker bent, om te voorkomen dat een bot of script het formulier misbruikt om spam mee te versturen."
+                    data-vl-domain="google.com"
+                    data-vl-processor="Google"
+                    data-vl-validity="Permanente cookie met een geldigheid van 6 maanden">
+                </vl-cookie>
+            </vl-demo>
+
+            <vl-demo data-vl-title="Sticky session cookie">
+                <vl-sticky-session-cookie></vl-sticky-session-cookie> 
+            </vl-demo>
+        </vl-demo-page>
+    </body>
+</html>

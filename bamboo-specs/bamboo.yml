@@ -42,7 +42,7 @@ Release:
 ---
 version: 2
 plan:
-  key: VLUI
+  key: WEBCO-VLUI
 
 plan-permissions:
   - groups:

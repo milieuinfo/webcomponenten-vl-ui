@@ -49,7 +49,7 @@ export class VlInputAddon extends vlInputAddonElement(HTMLParagraphElement) {}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-input-addon.html|Demo}
  *
  */
-export class VlButtonInputAddon extends vlInputAddonElement(nativeVlElement(HTMLButtonElement)) {}
+export class VlButtonInputAddon extends vlInputAddonElement(HTMLButtonElement) {}
 
 
 define('vl-input-addon', VlInputAddon, {extends: 'p'});

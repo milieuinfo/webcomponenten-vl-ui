@@ -70,7 +70,7 @@
         </vl-demo>
 
         <vl-demo data-vl-title="Multiselect met disabled">
-            <select id="multiselect-disabled" is="vl-multiselect" multiple data-vl-disabled>
+            <select id="multiselect-disabled" is="vl-multiselect" multiple disabled>
                 <option value="Belgium">België</option>
                 <option value="Germany">Duitsland</option>
                 <option value="France">Frankrijk</option>
@@ -180,6 +180,15 @@
                     Verwijder selectie
                 </button>
             </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Multiselect focus">
+            <select id="vl-multiselect-focus" is="vl-multiselect" multiple>
+                <option value="Belgium">België</option>
+                <option value="Germany">Duitsland</option>
+                <option value="France">Frankrijk</option>
+            </select>
+            <button is="vl-button" onclick="document.getElementById('vl-multiselect-focus').focus()" slot="actions">Focus</button>
         </vl-demo>
     </vl-demo-page>
 </body>

@@ -39,7 +39,9 @@
 									<ul class="dropdown-menu">
 											<li><a href="global.html#awaitScript">awaitScript</a></li>
 											<li><a href="global.html#awaitUntil">awaitUntil</a></li>
+											<li><a href="global.html#checkValidity">checkValidity</a></li>
 											<li><a href="global.html#define">define</a></li>
+											<li><a href="global.html#setCustomValidity">setCustomValidity</a></li>
 											<li><a href="global.html#sleep">sleep</a></li>
 									</ul>
 								</li>
@@ -163,6 +165,10 @@
 											<li><a href="VlStep.html">VlStep</a></li>
 											<li><a href="VlSteps.html">VlSteps</a></li>
 											<li><a href="VlStickySessionCookie.html">VlStickySessionCookie</a></li>
+											<li><a href="VlTab.html">VlTab</a></li>
+											<li><a href="VlTabs.html">VlTabs</a></li>
+											<li><a href="VlTabSection.html">VlTabSection</a></li>
+											<li><a href="VlTabsPane.html">VlTabsPane</a></li>
 											<li><a href="VlTemplate.html">VlTemplate</a></li>
 											<li><a href="VlTextarea.html">VlTextarea</a></li>
 											<li><a href="VlTitle.html">VlTitle</a></li>
@@ -180,6 +186,7 @@
 									<ul class="dropdown-menu">
 											<li><a href="vlButtonElement.html">vlButtonElement</a></li>
 											<li><a href="vlFormValidation.html">vlFormValidation</a></li>
+											<li><a href="vlFormValidationElement.html">vlFormValidationElement</a></li>
 											<li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li>
 											<li><a href="vlLinkElement.html">vlLinkElement</a></li>
 											<li><a href="vlPattern.html">vlPattern</a></li>
@@ -256,6 +263,13 @@
 							</td>
 						</tr>
 						<tr>
+								<td><code>data-vl-error</code></td>
+							<td><span class="param-type">string</span></td>
+							<td class="last">
+									<p>Attribuut om aan te geven dat het upload element een fout bevat.</p>
+							</td>
+						</tr>
+						<tr>
 								<td><code>data-vl-error-message-accepted-files</code></td>
 							<td><span class="param-type">string</span></td>
 							<td class="last">
@@ -312,6 +326,13 @@
 							</td>
 						</tr>
 						<tr>
+								<td><code>data-vl-success</code></td>
+							<td><span class="param-type">string</span></td>
+							<td class="last">
+									<p>Attribuut om aan te geven dat het upload element geen fout bevat.</p>
+							</td>
+						</tr>
+						<tr>
 								<td><code>data-vl-title</code></td>
 							<td><span class="param-type">number</span></td>
 							<td class="last">
@@ -362,7 +383,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-30">line 30</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-37">line 37</a></p>
 								</div>
 							</div>
 			
@@ -400,6 +421,51 @@
 									<dl class="symbol">
 											<hr/>
 											<dt class="symbol-title member public collapsible-symbol">
+			<h4 id="value" class="member public"><span class="name">value</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details member public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Geeft de bestanden die toegevoegd zijn.</p></div>
+			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Array.&lt;File></span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description"></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-69">line 69</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title member public collapsible-symbol">
 			<h4 id="uploadElement" class="member public"><span class="name">uploadElement</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details member public  collapsible-symbol">
@@ -433,7 +499,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-62">line 62</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-79">line 79</a></p>
 								</div>
 							</div>
 			
@@ -449,7 +515,7 @@
 		</dt>
 <dd class="symbol-details member public  collapsible-symbol">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal de geaccepteerde bestanden (zonder error) op, die toegevoegd zijn aan de dropzone.</p></div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal de geaccepteerde bestanden (zonder error) op, die toegevoegd zijn.</p></div>
 			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
 							<div class="form-group">
 								<label class="col-sm-3 control-label returns-type"><span class="param-type">Array.&lt;File></span></label>
@@ -478,7 +544,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-70">line 70</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-87">line 87</a></p>
 								</div>
 							</div>
 			
@@ -494,7 +560,7 @@
 		</dt>
 <dd class="symbol-details member public  collapsible-symbol">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal de niet-geaccepteerde bestanden (met error) op, die toegevoegd zijn aan de dropzone.</p></div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal de niet-geaccepteerde bestanden (met error) op, die toegevoegd zijn.</p></div>
 			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
 							<div class="form-group">
 								<label class="col-sm-3 control-label returns-type"><span class="param-type">Array.&lt;File></span></label>
@@ -523,7 +589,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-78">line 78</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-95">line 95</a></p>
 								</div>
 							</div>
 			
@@ -539,7 +605,7 @@
 		</dt>
 <dd class="symbol-details member public  collapsible-symbol">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal alle bestanden op die toegevoegd zijn aan de dropzone.</p></div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Haal alle bestanden op die toegevoegd zijn.</p></div>
 			</div>			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
 							<div class="form-group">
 								<label class="col-sm-3 control-label returns-type"><span class="param-type">Array.&lt;File></span></label>
@@ -568,7 +634,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-86">line 86</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-103">line 103</a></p>
 								</div>
 							</div>
 			
@@ -616,7 +682,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-197">line 197</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-214">line 214</a></p>
 								</div>
 							</div>
 			
@@ -681,7 +747,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-208">line 208</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-228">line 228</a></p>
 								</div>
 							</div>
 			
@@ -726,7 +792,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-219">line 219</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-239">line 239</a></p>
 								</div>
 							</div>
 			
@@ -797,7 +863,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-229">line 229</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-249">line 249</a></p>
 								</div>
 							</div>
 			
@@ -874,7 +940,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-241">line 241</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-261">line 261</a></p>
 								</div>
 							</div>
 			
@@ -911,7 +977,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-251">line 251</a></p>
+									<p class="form-control-static"><a href="vl-upload.js.html">vl-upload.js</a>, <a href="vl-upload.js.html#line-269">line 269</a></p>
 								</div>
 							</div>
 			
@@ -931,7 +997,7 @@
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 16th Jan 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

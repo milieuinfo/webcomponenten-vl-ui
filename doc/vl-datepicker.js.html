@@ -40,7 +40,9 @@
 									<ul class="dropdown-menu">
 											<li><a href="global.html#awaitScript">awaitScript</a></li>
 											<li><a href="global.html#awaitUntil">awaitUntil</a></li>
+											<li><a href="global.html#checkValidity">checkValidity</a></li>
 											<li><a href="global.html#define">define</a></li>
+											<li><a href="global.html#setCustomValidity">setCustomValidity</a></li>
 											<li><a href="global.html#sleep">sleep</a></li>
 									</ul>
 								</li>
@@ -164,6 +166,10 @@
 											<li><a href="VlStep.html">VlStep</a></li>
 											<li><a href="VlSteps.html">VlSteps</a></li>
 											<li><a href="VlStickySessionCookie.html">VlStickySessionCookie</a></li>
+											<li><a href="VlTab.html">VlTab</a></li>
+											<li><a href="VlTabs.html">VlTabs</a></li>
+											<li><a href="VlTabSection.html">VlTabSection</a></li>
+											<li><a href="VlTabsPane.html">VlTabsPane</a></li>
 											<li><a href="VlTemplate.html">VlTemplate</a></li>
 											<li><a href="VlTextarea.html">VlTextarea</a></li>
 											<li><a href="VlTitle.html">VlTitle</a></li>
@@ -181,6 +187,7 @@
 									<ul class="dropdown-menu">
 											<li><a href="vlButtonElement.html">vlButtonElement</a></li>
 											<li><a href="vlFormValidation.html">vlFormValidation</a></li>
+											<li><a href="vlFormValidationElement.html">vlFormValidationElement</a></li>
 											<li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li>
 											<li><a href="vlLinkElement.html">vlLinkElement</a></li>
 											<li><a href="vlPattern.html">vlPattern</a></li>
@@ -217,11 +224,9 @@
 import '/node_modules/vl-ui-input-addon/dist/vl-input-addon.js';
 import '/node_modules/vl-ui-input-group/dist/vl-input-group.js';
 import '/node_modules/vl-ui-input-field/dist/vl-input-field.js';
-import {vlFormValidation} from '/node_modules/vl-ui-form-validation/dist/vl-form-validation.js';
+import {vlFormValidation, vlFormValidationElement} from '/node_modules/vl-ui-form-validation/dist/vl-form-validation-all.js';
 import {vlPattern} from '/node_modules/vl-ui-pattern/dist/vl-pattern.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
-import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
-import '/node_modules/@govflanders/vl-ui-core/dist/js/core.js';
 import '/lib/datepicker.js';
 
 Promise.all([
@@ -256,9 +261,9 @@ Promise.all([
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-datepicker/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-datepicker.html|Demo}
  */
-export class VlDatepicker extends vlElement(HTMLElement) {
+export class VlDatepicker extends vlFormValidationElement(vlElement(HTMLElement)) {
   static get _observedAttributes() {
-    return [
+    return vlFormValidation._observedAttributes().concat([
       'type',
       'format',
       'visual-format',
@@ -272,8 +277,7 @@ export class VlDatepicker extends vlElement(HTMLElement) {
       'success',
       'value',
       'pattern',
-      'name',
-    ];
+    ]);
   }
 
   constructor() {
@@ -301,30 +305,6 @@ export class VlDatepicker extends vlElement(HTMLElement) {
   connectedCallback() {
     this.dress();
     this._registerChangeEvent();
-  }
-
-  disconnectedCallback() {
-    if (this._observer) {
-      this._observer.disconnect();
-    }
-  }
-
-  /**
-   * Geeft de waarde van het naam attribuut terug.
-   *
-   * @return {string}
-   */
-  get name() {
-    return this.getAttribute('name');
-  }
-
-  /**
-   * Geeft het form element terug.
-   *
-   * @return {HTMLFormElement}
-   */
-  get form() {
-    return this.closest('form');
   }
 
   get value() {
@@ -454,26 +434,8 @@ export class VlDatepicker extends vlElement(HTMLElement) {
     this._inputElement.setAttribute('data-vl-pattern', newValue);
   }
 
-  _nameChangedCallback(oldValue, newValue) {
-    if (this._inputElement.name != newValue) {
-      this._inputElement.name = newValue;
-      this.setAttribute('name', newValue);
-    }
-  }
-
   _registerChangeEvent() {
     this._inputElement.addEventListener('change', () => this.dispatchEvent(new Event('change')));
-  }
-
-  _dressFormValidation() {
-    if (this.form) {
-      this.setAttribute('data-vl-success-class', 'vl-datepicker--success');
-      this.setAttribute('data-vl-error-class', 'vl-datepicker--error');
-      Object.assign(this, vlFormValidation);
-      this.dress(this.form);
-      this.dress = this._dress;
-      this._observer = this._observeFormValidationClasses();
-    }
   }
 
   _dressPattern() {
@@ -482,20 +444,6 @@ export class VlDatepicker extends vlElement(HTMLElement) {
     this.dress(this._inputElement);
     this.dress = this._dress;
   }
-
-  _observeFormValidationClasses() {
-    const observer = new MutationObserver((mutations) => {
-      ['error', 'success'].forEach((type) => {
-        if (mutations.find((mutation) => mutation.target.classList.contains(`vl-datepicker--${type}`))) {
-          this.setAttribute(`data-vl-${type}`, '');
-        } else {
-          this.removeAttribute(`data-vl-${type}`);
-        }
-      });
-    });
-    observer.observe(this, {attributes: true, attributeFilter: ['class']});
-    return observer;
-  }
 }
 </code></pre>
 		</section>
@@ -503,7 +451,7 @@ export class VlDatepicker extends vlElement(HTMLElement) {
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 16th Jan 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -21,10 +21,13 @@ import {VlTranslateAction} from './vl-mapactions-translate-action';
 import {VlSnapInteraction} from './vl-mapactions-snap-interaction';
 import OlLayerGroup from 'ol/layer/Group';
 import OlVectorLayer from 'ol/layer/Vector';
+import OlImageLayer from 'ol/layer/Image';
 import OlTileLayer from 'ol/layer/Tile';
 import OlOverlay from 'ol/Overlay';
 import OlVectorSource from 'ol/source/Vector';
 import OlClusterSource from 'ol/source/Cluster';
+import OlImageWMSSource from 'ol/source/ImageWMS';
+import OlTileWMSSource from 'ol/source/TileWMS';
 import OlWMTSSource from 'ol/source/WMTS';
 import OlWMTSTileGrid from 'ol/tilegrid/WMTS';
 import OlFeature from 'ol/Feature';
@@ -37,8 +40,13 @@ import OlStyleCircle from 'ol/style/Circle';
 import OlStyleText from 'ol/style/Text';
 import OlProjection from 'ol/proj/Projection';
 import OlGeoJSON from 'ol/format/GeoJSON';
+import OlGML2 from 'ol/format/GML2';
+import OlGML3 from 'ol/format/GML3';
+import OlGML32 from 'ol/format/GML32';
 import * as OlExtent from 'ol/extent';
 import * as OlLoadingstrategy from 'ol/loadingstrategy';
+import OlFullScreenControl from 'ol/control/FullScreen';
+import proj4 from 'proj4';
 
 export {
   VlCustomMap,
@@ -64,10 +72,13 @@ export {
   VlTranslateAction,
   OlLayerGroup,
   OlVectorLayer,
+  OlImageLayer,
   OlTileLayer,
   OlOverlay,
   OlVectorSource,
   OlClusterSource,
+  OlImageWMSSource,
+  OlTileWMSSource,
   OlWMTSSource,
   OlWMTSTileGrid,
   OlFeature,
@@ -80,6 +91,11 @@ export {
   OlStyleText,
   OlProjection,
   OlGeoJSON,
+  OlGML2,
+  OlGML3,
+  OlGML32,
   OlExtent,
   OlLoadingstrategy,
+  OlFullScreenControl,
+  proj4,
 };

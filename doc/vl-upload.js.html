@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -238,6 +255,7 @@ Promise.all([
  *
  * @property {File[]} data-vl-accepted-files - Attribuut om te bepalen welke bestanden worden geaccepteerd door component (extensie en mimetype).
  * @property {boolean} data-vl-autoprocess - Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.
+ * @property {boolean} data-vl-disabled - Attribuut om te voorkomen dat de gebruiker een bijlage kan opladen.
  * @property {boolean} data-vl-disallow-duplicates - Attribuut om te voorkomen dat dezelfde bijlage meerdere keren kan opgeladen worden.
  * @property {string} data-vl-error - Attribuut om aan te geven dat het upload element een fout bevat.
  * @property {string} data-vl-error-message-accepted-files - Attribuut om de message te definiëren wanneer er niet-geaccepteerde bestanden zijn toegevoegd.
@@ -258,7 +276,7 @@ Promise.all([
  */
 export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
   static get _observedAttributes() {
-    return vlFormValidation._observedAttributes().concat(['accepted-files', 'autoprocess', 'error-message-accepted-files', 'error-message-filesize', 'error-message-maxfiles', 'full-body-drop', 'input-name', 'max-files', 'max-size', 'disallow-duplicates', 'title', 'sub-title', 'url']);
+    return vlFormValidation._observedAttributes().concat(['accepted-files', 'autoprocess', 'disabled', 'disallow-duplicates', 'error-message-accepted-files', 'error-message-filesize', 'error-message-maxfiles', 'full-body-drop', 'input-name', 'max-files', 'max-size', 'sub-title', 'title', 'url']);
   }
 
   static get _observedChildClassAttributes() {
@@ -439,6 +457,7 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
       this._dressFormValidation();
       this._dropzone.on('addedfile', () => setTimeout(() => this.dispatchEvent(new Event('change'))));
       this._dropzone.on('removedfile', () => setTimeout(() => this.dispatchEvent(new Event('change'))));
+      this._dropzone.timeout = 0; // 0 value will disable the connection timeout
     }
   }
 
@@ -474,15 +493,24 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
   }
 
   /**
-   * Handmatig bestand toevoegen
+   * Handmatig bestand toevoegen aan de lijst van opgeladen bestanden zonder achterliggende upload
    * @param {String} name
    * @param {Number} size
    * @param {Number} id
    * @return {void}
    */
   addFile({name, size, id}) {
+    const autoprocessActive = this.dataset.vlAutoprocess != undefined;
+    if (autoprocessActive) {
+      this._disableAutoProcessQueue();
+    }
     const file = {name: name, size: size, id: id};
     this._dropzone.addFile(file);
+    this._dropzone.emit('complete', file);
+    file.status = 'success';
+    if (autoprocessActive) {
+      this._enableAutoProcessQueue();
+    }
   }
 
   /**
@@ -492,6 +520,20 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
     this._button.focus();
   }
 
+  /**
+   * Enable input element.
+   */
+  enable() {
+    vl.upload.enable(this._element);
+  }
+
+  /**
+   * Disable input element.
+   */
+  disable() {
+    vl.upload.disable(this._element);
+  }
+
   _acceptedFilesChangedCallback(oldValue, newValue) {
     this._element.setAttribute(this._prefix + 'accepted-files', newValue);
     this._element.setAttribute('accept', newValue);
@@ -499,6 +541,14 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
 
   _autoprocessChangedCallback(oldValue, newValue) {
     this._element.setAttribute(this._prefix + 'autoprocess', newValue);
+  }
+
+  _disabledChangedCallback(oldValue, newValue) {
+    if (newValue !== undefined) {
+      this.disable();
+    } else {
+      this.enable();
+    }
   }
 
   _disallowDuplicatesChangedCallback(oldValue, newValue) {
@@ -565,6 +615,14 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
       document.body.appendChild(this._uploadOverlayTemplate);
     }
   }
+
+  _disableAutoProcessQueue() {
+    this._dropzone.options.autoProcessQueue = false;
+  }
+
+  _enableAutoProcessQueue() {
+    this._dropzone.options.autoProcessQueue = true;
+  }
 }
 </code></pre>
 		</section>
@@ -572,7 +630,7 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

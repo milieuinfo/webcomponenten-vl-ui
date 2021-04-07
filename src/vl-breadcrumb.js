@@ -15,6 +15,7 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
 export class VlBreadcrumb extends nativeVlElement(HTMLElement) {
   connectedCallback() {
     this._processStyle();
+    this._processAriaLabel();
   }
 
   get _olElements() {
@@ -36,6 +37,12 @@ export class VlBreadcrumb extends nativeVlElement(HTMLElement) {
   _processStyle() {
     this._addClasses();
     this._addSeparators();
+  }
+
+  _processAriaLabel() {
+    if (!this.getAttribute('aria-label')) {
+      this.setAttribute('aria-label', 'U bent hier: ');
+    }
   }
 
   _addClasses() {

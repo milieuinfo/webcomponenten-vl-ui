@@ -18,10 +18,10 @@ import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
  * @extends HTMLElement
  * @mixes vlElement
  *
- * @property {boolean} data-vl-application - Attribuut wordt gebruikt om aan te geven voor welke applicatie deze toegankelijkheidspagina van toepassing is.
- * @property {boolean} data-vl-date - Attribuut wordt gebruikt om aan te geven op welke datum deze toegankelijkheidspagina opgesteld werd.
- * @property {boolean} data-vl-date-modified - Attribuut wordt gebruikt om aan te geven op welke datum deze toegankelijkheidspagina het laatst gewijzigd werd.
- * @property {boolean} data-vl-version - Attribuut wordt gebruikt om de toegankelijkheidspagina versie aan te geven.
+ * @property {string} [data-vl-application="deze applicatie"] - Attribuut wordt gebruikt om aan te geven voor welke applicatie deze toegankelijkheidspagina van toepassing is.
+ * @property {string} [data-vl-date="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze toegankelijkheidspagina opgesteld werd.
+ * @property {string} [data-vl-date-modified="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze toegankelijkheidspagina het laatst gewijzigd werd.
+ * @property {string} [data-vl-version="1.0.0"] - Attribuut wordt gebruikt om de toegankelijkheidspagina versie aan te geven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-accessibility/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-accessibility/issues|Issues}
@@ -42,8 +42,13 @@ export class VlAccessibility extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-icon/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         </style>
-        <vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Toegankelijkheid en gebruiksvoorwaarden" data-vl-link="/"></vl-functional-header>
+        <vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Toegankelijkheid en gebruiksvoorwaarden" data-vl-link="https://omgeving.vlaanderen.be"></vl-functional-header>
     `);
+
+    const version = this.dataset.vlVersion || '1.0.0';
+    const date = this.dataset.vlDate || '3 maart 2021';
+    const application = this.dataset.vlApplication || 'deze applicatie';
+    const modifiedDate = this.dataset.vlDateModified || '3 maart 2021';
 
     this._element.insertAdjacentHTML('afterend', `
       <section is="vl-region">
@@ -54,7 +59,7 @@ export class VlAccessibility extends vlElement(HTMLElement) {
             </div>
             <div is="vl-column" data-vl-size="10">
               <p is="vl-introduction">
-                <span>Versie</span> ${this.dataset.vlVersion} - ${this.dataset.vlDate}
+                <span>Versie</span> <span id="introduction-version">${version}</span> - <span id="introduction-date">${date}</span>
               </p>
             </div>
 
@@ -72,45 +77,55 @@ export class VlAccessibility extends vlElement(HTMLElement) {
           <div is="vl-grid" data-vl-is-stacked>
             <div is="vl-column" data-vl-size="8" data-vl-medium-size="8" data-vl-small-size="8" data-vl-extra-small-size="12">
               <div is="vl-side-navigation-reference" data-vl--scrollspy-content>
-                <div is="vl-grid" data-vl-is-stacked>
+                <div is="vl-grid" data-vl-is-stacked-large>
                   <div id="accessibility-statement" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                     <h2 is="vl-h2">Toegankelijkheidsverklaring</h2>
-                    <p>De Vlaamse overheid streeft ernaar haar websites en (mobiele) toepassingen toegankelijk te maken, overeenkomstig het <a is="vl-link" href="http://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?language=nl&cn=2018120705&table_name=wet&caller=list&fromtab=wet#LNK0011" target="_blank">bestuursdecreet van 7 december 2018<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> waarmee de <a is="vl-link" href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=uriserv:OJ.L_.2016.327.01.0001.01.NLD&toc=OJ:L:2016:327:TOC" target="_blank">Europese Richtlijn 2016/2102<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> is omgezet.</p>
-                    <br/>
-                    <p>Deze toegankelijkheidsverklaring is van toepassing op ${this.dataset.vlApplication} en voldoet gedeeltelijk aan de <a is="vl-link" href="https://www.w3.org/TR/WCAG21" target="_blank">Web Content Accessibility Guidelines versie 2.1 niveau AA<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a>.</p>
-                    <br/>
-                    <p>Er wordt momenteel onderzocht welke acties nodig zijn om volledig naar deze richtlijn te conformeren en er worden stelselmatig verbeteringen doorgevoerd.</p>
-                    <br/>
-                    <p>Deze toegankelijkheidsverklaring is opgesteld op ${this.dataset.vlDate} en werd voor het laatst herzien op ${this.dataset.vlDateModified}.</p>
-                  </div>
+                    
+                    <div is="vl-grid" data-vl-is-stacked>
+                      <div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <p>De Vlaamse overheid streeft ernaar haar websites en (mobiele) toepassingen toegankelijk te maken, overeenkomstig het <a is="vl-link" href="http://www.ejustice.just.fgov.be/cgi_loi/loi_a1.pl?language=nl&cn=2018120705&table_name=wet&caller=list&fromtab=wet#LNK0011" target="_blank">bestuursdecreet van 7 december 2018<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> waarmee de <a is="vl-link" href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=uriserv:OJ.L_.2016.327.01.0001.01.NLD&toc=OJ:L:2016:327:TOC" target="_blank">Europese Richtlijn 2016/2102<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> is omgezet.</p>
+                        <br/>
+                        <p>Deze toegankelijkheidsverklaring is van toepassing op <span id="application">${application}</span> en voldoet gedeeltelijk aan de <a is="vl-link" href="https://www.w3.org/TR/WCAG21" target="_blank">Web Content Accessibility Guidelines versie 2.1 niveau AA<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a>.</p>
+                        <br/>
+                        <p>Er wordt momenteel onderzocht welke acties nodig zijn om volledig naar deze richtlijn te conformeren en er worden stelselmatig verbeteringen doorgevoerd.</p>
+                        <br/>
+                        <p>Deze toegankelijkheidsverklaring is opgesteld op <span id="date">${date}</span> en werd voor het laatst herzien op <span id="date-modified">${modifiedDate}</span>.</p>
+                      </div>
 
-                  <div id="accessibility-statement-browsers" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                    <h3 is="vl-h3">Ondersteunde browsers</h3>
-                    <p>Om deze website of toepassing optimaal te kunnen gebruiken, moet u over <a is="vl-link" href="https://www.vlaanderen.be/over-vlaanderenbe/uw-browser-wordt-niet-ondersteund" target="_blank">de nieuwste versie van uw browser<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> beschikken. Bij oudere versies kunt u misschien bepaalde toepassingen niet zien of gebruiken, zal de website er anders uitzien of zullen bepaalde functionaliteiten niet werken. Bij zeer oude browsers wordt surfen zelfs onveilig.</p>
-                    <br/>
-                    <p>U kunt uw browser zelf bijwerken naar de meest recente update voor een optimale beleving. Kijk na bij de instellingen van uw browser welke versie u hebt en hoe u een nieuwe versie moet installeren. Voor smartphones en tablets zorgt u er best voor dat u over de meest recente software-update beschikt.</p>
-                  </div>
-
-                  <div id="accessibility-statement-languages" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                    <h3 is="vl-h3">Ondersteunde talen</h3>
-                    <p>Deze website/toepassing is enkel beschikbaar in het Nederlands.</p>
+                      <div id="accessibility-statement-browsers" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <h3 is="vl-h3">Ondersteunde browsers</h3>
+                        <p>Om deze website of toepassing optimaal te kunnen gebruiken, moet u over <a is="vl-link" href="https://www.vlaanderen.be/over-vlaanderenbe/uw-browser-wordt-niet-ondersteund" target="_blank">de nieuwste versie van uw browser<span is="vl-icon" data-vl-icon="external" data-vl-after data-vl-light></span></a> beschikken. Bij oudere versies kunt u misschien bepaalde toepassingen niet zien of gebruiken, zal de website er anders uitzien of zullen bepaalde functionaliteiten niet werken. Bij zeer oude browsers wordt surfen zelfs onveilig.</p>
+                        <br/>
+                        <p>U kunt uw browser zelf bijwerken naar de meest recente update voor een optimale beleving. Kijk na bij de instellingen van uw browser welke versie u hebt en hoe u een nieuwe versie moet installeren. Voor smartphones en tablets zorgt u er best voor dat u over de meest recente software-update beschikt.</p>
+                      </div>
+    
+                      <div id="accessibility-statement-languages" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <h3 is="vl-h3">Ondersteunde talen</h3>
+                        <p>Deze website/toepassing is enkel beschikbaar in het Nederlands.</p>
+                      </div>
+                    </div>
                   </div>
 
                   <div id="terms-of-use" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                     <h2 is="vl-h2">Gebruiksvoorwaarden</h2>
-                    <p>De Vlaamse overheid besteedt veel aandacht en zorg aan haar websites en streeft ernaar dat alle informatie zo volledig, juist, begrijpelijk, nauwkeurig en actueel mogelijk is. Ondanks alle inspanningen kan de Vlaamse overheid niet garanderen dat de ter beschikking gestelde informatie volledig, juist, nauwkeurig of bijgewerkt is.</p>
-                    <br/>
-                    <p>Als de op of via deze website verstrekte informatie tekortkomingen vertoont, zal de Vlaamse overheid al het mogelijke doen om die zo snel mogelijk weg te werken. Als u onjuistheden vaststelt, kunt u met ons contact opnemen (zie onder). De Vlaamse overheid spant zich ook in om onderbrekingen van technische aard zo veel mogelijk te voorkomen. De Vlaamse overheid kan echter niet garanderen dat de website volledig vrij is van onderbrekingen en andere technische problemen.</p>
-                  </div>
+                    
+                    <div is="vl-grid" data-vl-is-stacked>
+                      <div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <p>De Vlaamse overheid besteedt veel aandacht en zorg aan haar websites en streeft ernaar dat alle informatie zo volledig, juist, begrijpelijk, nauwkeurig en actueel mogelijk is. Ondanks alle inspanningen kan de Vlaamse overheid niet garanderen dat de ter beschikking gestelde informatie volledig, juist, nauwkeurig of bijgewerkt is.</p>
+                        <br/>
+                        <p>Als de op of via deze website verstrekte informatie tekortkomingen vertoont, zal de Vlaamse overheid al het mogelijke doen om die zo snel mogelijk weg te werken. Als u onjuistheden vaststelt, kunt u met ons contact opnemen (zie onder). De Vlaamse overheid spant zich ook in om onderbrekingen van technische aard zo veel mogelijk te voorkomen. De Vlaamse overheid kan echter niet garanderen dat de website volledig vrij is van onderbrekingen en andere technische problemen.</p>
+                      </div>
 
-                  <div id="terms-of-use-photos" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                    <h3 is="vl-h3">Foto's en afbeeldingen</h3>
-                    <p>Op de foto's en afbeeldingen rust copyright.</p>
-                  </div>
-
-                  <div id="terms-of-use-hyperlinks" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                    <h3 is="vl-h3">Hyperlinks en verwijzingen</h3>
-                    <p>Deze site bevat hyperlinks naar websites van andere overheden, instanties en organisaties, en naar informatiebronnen die door derden worden beheerd. De Vlaamse overheid beschikt voor deze sites over geen enkele technische of inhoudelijke controle of zeggenschap en kan daarom geen enkele garantie bieden over de volledigheid of juistheid van de inhoud en over de beschikbaarheid van de websites en informatiebronnen.</p>
+                      <div id="terms-of-use-photos" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <h3 is="vl-h3">Foto's en afbeeldingen</h3>
+                        <p>Op de foto's en afbeeldingen rust copyright.</p>
+                      </div>
+    
+                      <div id="terms-of-use-hyperlinks" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                        <h3 is="vl-h3">Hyperlinks en verwijzingen</h3>
+                        <p>Deze site bevat hyperlinks naar websites van andere overheden, instanties en organisaties, en naar informatiebronnen die door derden worden beheerd. De Vlaamse overheid beschikt voor deze sites over geen enkele technische of inhoudelijke controle of zeggenschap en kan daarom geen enkele garantie bieden over de volledigheid of juistheid van de inhoud en over de beschikbaarheid van de websites en informatiebronnen.</p>
+                      </div>
+                    </div>
                   </div>
 
                   <div id="feedback-contact" is="vl-column" data-vl-size="12" data-vl-medium-size="12">

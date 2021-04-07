@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -254,20 +271,32 @@ export class VlStep extends vlElement(HTMLElement) {
     super(`
       &lt;li class="vl-step">
         &lt;div id="icon" class="vl-step__icon">
-          &lt;span id="sub-icon" class="vl-step__icon__sub">&lt;/span>
+          &lt;span slot="identifier">&lt;/span>
+          &lt;span id="sub-icon" class="vl-step__icon__sub">
+            &lt;span slot="identifier-annotation">&lt;/span>
+          &lt;/span>
         &lt;/div>
         &lt;div class="vl-step__wrapper">
           &lt;div class="vl-step__header">
             &lt;div class="vl-step__header__titles">
               &lt;h3 id="title" class="vl-step__title">
-                &lt;span id="title-label">&lt;/span>
-                &lt;span id="title-annotation" class="vl-step__title__annotation">&lt;/span>
+                &lt;span slot="title">&lt;/span>
+                &lt;span id="title-label">
+                  &lt;span slot="title-label">&lt;/span>
+                &lt;/span>
+                &lt;span id="title-annotation" class="vl-step__title__annotation">
+                  &lt;span slot="title-annotation">&lt;/span>
+                &lt;/span>
               &lt;/h3>
-              &lt;p id="sub-title" class="vl-step__subtitle">&lt;/p>
+              &lt;p id="sub-title" class="vl-step__subtitle">
+                &lt;span slot="sub-title">&lt;/span>
+              &lt;/p>
             &lt;/div>
           &lt;/div>
           &lt;div class="vl-step__content-wrapper">
-            &lt;p id="content" class="vl-step__content">&lt;/p>
+            &lt;p id="content" class="vl-step__content">
+              &lt;span slot="content">&lt;/span>
+            &lt;/p>
           &lt;/div>
         &lt;/div>
       &lt;/li>
@@ -280,6 +309,7 @@ export class VlStep extends vlElement(HTMLElement) {
    * @return {HTMLElement}
    */
   get template() {
+    this._processSlots();
     const template = this._element.cloneNode(true);
     if (this._isToggleable) {
       vl.accordion.dress(template);
@@ -332,12 +362,19 @@ export class VlStep extends vlElement(HTMLElement) {
     return this.hasAttribute('toggleable');
   }
 
+  _getSlot(name) {
+    return this._shadow.querySelector(`[slot="${name}"]`);
+  }
+
   _getToggleableHeaderHTML() {
     return `
       &lt;button class="vl-step__header js-vl-accordion__toggle">
         &lt;div class="vl-step__header__titles">
           &lt;h3 id="title" class="vl-step__title">
-            &lt;span id="title-label">&lt;/span>
+            &lt;span slot="title">&lt;/span>
+            &lt;span id="title-label">
+              &lt;span slot="title-label">&lt;/span>
+            &lt;/span>
           &lt;/h3>
         &lt;/div>
         &lt;div class="vl-step__header__info" aria-hidden="true">
@@ -357,26 +394,42 @@ export class VlStep extends vlElement(HTMLElement) {
       this._element.classList.add('js-vl-accordion');
       this._headerElement.remove();
       this._wrapperElement.insertAdjacentHTML('afterbegin', this._getToggleableHeaderHTML());
-      this.__processSlot(this.querySelector('[slot="title"]'), (slot) => this._titleElement.prepend(slot));
-      this.__processSlot(this.querySelector('[slot="title-label"]'), (slot) => this._titleLabelElement.prepend(slot));
+      this.__processSlot(this._titleElement, 'title');
+      this.__processSlot(this._titleLabelElement, 'title-label');
     }
   }
 
   _processSlots() {
-    this.__processSlot(this.querySelector('[slot="identifier"]'), (slot) => this._iconElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="identifier-annotation"]'), (slot) => this._subIconElement.append(slot));
-    this.__processSlot(this.querySelector('[slot="title"]'), (slot) => this._titleElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="title-label"]'), (slot) => this._titleLabelElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="title-annotation"]'), (slot) => this._titleAnnotationElement.append(slot), () => this._titleAnnotationElement.hidden = true);
-    this.__processSlot(this.querySelector('[slot="sub-title"]'), (slot) => this._subTitleElement.append(slot));
-    this.__processSlot(this.querySelector('[slot="content"]'), (slot) => this._contentElement.append(slot), () => this._contentElement.hidden = true);
+    this.__processSlot(this._iconElement, 'identifier');
+    this.__processSlot(this._subIconElement, 'identifier-annotation');
+    this.__processSlot(this._titleElement, 'title');
+    this.__processSlot(this._titleLabelElement, 'title-label');
+    this.__processSlot(this._titleAnnotationElement, 'title-annotation');
+    this.__processSlot(this._subTitleElement, 'sub-title');
+    this.__processSlot(this._contentElement, 'content');
   }
 
-  __processSlot(slot, success, error) {
-    if (slot &amp;&amp; success) {
-      success(slot.cloneNode(true));
-    } else if (error) {
-      error();
+  __processSlot(parent, identifier) {
+    const element = this.querySelector(`[slot="${identifier}"]`);
+    if (element) {
+      this.__replaceSlot(parent, element, identifier);
+    } else {
+      this.__hideSlot(parent, this._getSlot(identifier));
+    }
+  }
+
+  __replaceSlot(element, slot, name) {
+    element.hidden = false;
+    element.replaceChild(slot.cloneNode(true), this._getSlot(name));
+  }
+
+  __hideSlot(element, slot) {
+    if (element) {
+      element.hidden = true;
+    }
+
+    if (slot) {
+      slot.innerHTML = '';
     }
   }
 }
@@ -388,7 +441,7 @@ define('vl-step', VlStep);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

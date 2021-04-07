@@ -32,20 +32,32 @@ export class VlStep extends vlElement(HTMLElement) {
     super(`
       <li class="vl-step">
         <div id="icon" class="vl-step__icon">
-          <span id="sub-icon" class="vl-step__icon__sub"></span>
+          <span slot="identifier"></span>
+          <span id="sub-icon" class="vl-step__icon__sub">
+            <span slot="identifier-annotation"></span>
+          </span>
         </div>
         <div class="vl-step__wrapper">
           <div class="vl-step__header">
             <div class="vl-step__header__titles">
               <h3 id="title" class="vl-step__title">
-                <span id="title-label"></span>
-                <span id="title-annotation" class="vl-step__title__annotation"></span>
+                <span slot="title"></span>
+                <span id="title-label">
+                  <span slot="title-label"></span>
+                </span>
+                <span id="title-annotation" class="vl-step__title__annotation">
+                  <span slot="title-annotation"></span>
+                </span>
               </h3>
-              <p id="sub-title" class="vl-step__subtitle"></p>
+              <p id="sub-title" class="vl-step__subtitle">
+                <span slot="sub-title"></span>
+              </p>
             </div>
           </div>
           <div class="vl-step__content-wrapper">
-            <p id="content" class="vl-step__content"></p>
+            <p id="content" class="vl-step__content">
+              <span slot="content"></span>
+            </p>
           </div>
         </div>
       </li>
@@ -58,6 +70,7 @@ export class VlStep extends vlElement(HTMLElement) {
    * @return {HTMLElement}
    */
   get template() {
+    this._processSlots();
     const template = this._element.cloneNode(true);
     if (this._isToggleable) {
       vl.accordion.dress(template);
@@ -110,12 +123,19 @@ export class VlStep extends vlElement(HTMLElement) {
     return this.hasAttribute('toggleable');
   }
 
+  _getSlot(name) {
+    return this._shadow.querySelector(`[slot="${name}"]`);
+  }
+
   _getToggleableHeaderHTML() {
     return `
       <button class="vl-step__header js-vl-accordion__toggle">
         <div class="vl-step__header__titles">
           <h3 id="title" class="vl-step__title">
-            <span id="title-label"></span>
+            <span slot="title"></span>
+            <span id="title-label">
+              <span slot="title-label"></span>
+            </span>
           </h3>
         </div>
         <div class="vl-step__header__info" aria-hidden="true">
@@ -135,26 +155,42 @@ export class VlStep extends vlElement(HTMLElement) {
       this._element.classList.add('js-vl-accordion');
       this._headerElement.remove();
       this._wrapperElement.insertAdjacentHTML('afterbegin', this._getToggleableHeaderHTML());
-      this.__processSlot(this.querySelector('[slot="title"]'), (slot) => this._titleElement.prepend(slot));
-      this.__processSlot(this.querySelector('[slot="title-label"]'), (slot) => this._titleLabelElement.prepend(slot));
+      this.__processSlot(this._titleElement, 'title');
+      this.__processSlot(this._titleLabelElement, 'title-label');
     }
   }
 
   _processSlots() {
-    this.__processSlot(this.querySelector('[slot="identifier"]'), (slot) => this._iconElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="identifier-annotation"]'), (slot) => this._subIconElement.append(slot));
-    this.__processSlot(this.querySelector('[slot="title"]'), (slot) => this._titleElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="title-label"]'), (slot) => this._titleLabelElement.prepend(slot));
-    this.__processSlot(this.querySelector('[slot="title-annotation"]'), (slot) => this._titleAnnotationElement.append(slot), () => this._titleAnnotationElement.hidden = true);
-    this.__processSlot(this.querySelector('[slot="sub-title"]'), (slot) => this._subTitleElement.append(slot));
-    this.__processSlot(this.querySelector('[slot="content"]'), (slot) => this._contentElement.append(slot), () => this._contentElement.hidden = true);
+    this.__processSlot(this._iconElement, 'identifier');
+    this.__processSlot(this._subIconElement, 'identifier-annotation');
+    this.__processSlot(this._titleElement, 'title');
+    this.__processSlot(this._titleLabelElement, 'title-label');
+    this.__processSlot(this._titleAnnotationElement, 'title-annotation');
+    this.__processSlot(this._subTitleElement, 'sub-title');
+    this.__processSlot(this._contentElement, 'content');
   }
 
-  __processSlot(slot, success, error) {
-    if (slot && success) {
-      success(slot.cloneNode(true));
-    } else if (error) {
-      error();
+  __processSlot(parent, identifier) {
+    const element = this.querySelector(`[slot="${identifier}"]`);
+    if (element) {
+      this.__replaceSlot(parent, element, identifier);
+    } else {
+      this.__hideSlot(parent, this._getSlot(identifier));
+    }
+  }
+
+  __replaceSlot(element, slot, name) {
+    element.hidden = false;
+    element.replaceChild(slot.cloneNode(true), this._getSlot(name));
+  }
+
+  __hideSlot(element, slot) {
+    if (element) {
+      element.hidden = true;
+    }
+
+    if (slot) {
+      slot.innerHTML = '';
     }
   }
 }

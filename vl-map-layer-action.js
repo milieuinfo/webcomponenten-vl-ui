@@ -1,3 +1,4 @@
+import {define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import {VlMapAction} from '/node_modules/vl-ui-map/dist/vl-map-action.js';
 
 /**
@@ -42,7 +43,7 @@ export class VlMapLayerAction extends VlMapAction {
   }
 
   get _layerElement() {
-    return this._mapElement.querySelector(`vl-map-layer[data-vl-name="${this.dataset.vlLayer}"]`) || this.closest('vl-map-layer');
+    return this._mapElement.querySelector(`[data-vl-is-layer][data-vl-name="${this.dataset.vlLayer}"]`) || this.closest('[data-vl-is-layer]');
   }
 
   _layerChangedCallback() {
@@ -64,3 +65,5 @@ export class VlMapLayerAction extends VlMapAction {
     });
   }
 }
+
+define('vl-map-layer-action', VlMapLayerAction);

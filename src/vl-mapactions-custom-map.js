@@ -20,13 +20,13 @@ export class VlCustomMap extends VlMapWithActions {
       options.customLayers.overlayGroup,
     ];
 
-    options.controls = options.controls || [
+    options.controls = [
       new Zoom(),
       new Rotate(),
       new ScaleLine({
         minWidth: 128,
       }),
-    ];
+    ].concat(options.controls || []);
 
     super(options);
 

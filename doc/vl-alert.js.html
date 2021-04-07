@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -253,7 +270,9 @@ export class VlAlert extends vlElement(HTMLElement) {
       &lt;/style>
       &lt;div id="alert" class="vl-alert" role="alert">
         &lt;div id="content" class="vl-alert__content">
-          &lt;p id="title" class="vl-alert__title">&lt;/p>
+          &lt;p id="title" class="vl-alert__title">
+            &lt;slot name='title'>&lt;/slot>
+          &lt;/p>
           &lt;div id="message" class="vl-alert__message">
             &lt;slot id="messages-slot">&lt;/slot>
           &lt;/div>
@@ -267,15 +286,13 @@ export class VlAlert extends vlElement(HTMLElement) {
 
   connectedCallback() {
     this.__processActionsElementVisibility();
+    this.__processTitleElementVisibility();
     this._actionsSlotElement.addEventListener('slotchange', () => this.__processButtons());
+    this._titleSlotElement.addEventListener('slotchange', () => this.__processTitleElementVisibility());
   }
 
   get _classPrefix() {
     return 'vl-alert--';
-  }
-
-  get _titleElement() {
-    return this._element.querySelector('.vl-alert__title');
   }
 
   get _iconElement() {
@@ -290,8 +307,16 @@ export class VlAlert extends vlElement(HTMLElement) {
     return this._element.querySelector('.vl-alert__actions');
   }
 
+  get _titleElement() {
+    return this._element.querySelector('.vl-alert__title');
+  }
+
   get _actionsSlotElement() {
     return this._element.querySelector('slot[name="actions"]');
+  }
+
+  get _titleSlotElement() {
+    return this._element.querySelector('slot[name="title"]');
   }
 
   _getIconTemplate(newValue) {
@@ -328,7 +353,8 @@ export class VlAlert extends vlElement(HTMLElement) {
   };
 
   _titleChangedCallback(oldValue, newValue) {
-    this._titleElement.textContent = newValue;
+    this._titleSlotElement.textContent = newValue;
+    this.__processTitleElementVisibility();
   };
 
   _closableChangedCallback(oldValue, newValue) {
@@ -359,6 +385,12 @@ export class VlAlert extends vlElement(HTMLElement) {
     }
   }
 
+  __processTitleElementVisibility() {
+    this._titleElement.hidden = this._titleSlotElement &amp;&amp;
+        this._titleSlotElement.assignedElements().length == 0 &amp;&amp;
+        this._titleSlotElement.textContent.trim() === '';
+  }
+
   __processActionsElementVisibility() {
     this._actionsElement.hidden = this._actionsSlotElement &amp;&amp; this._actionsSlotElement.assignedElements().length == 0;
   }
@@ -386,7 +418,7 @@ define('vl-alert', VlAlert);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

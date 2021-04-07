@@ -1,5 +1,4 @@
 import DragBox from 'ol/interaction/DragBox';
-import {Stroke, Style} from 'ol/style';
 import {VlSelectAction} from './vl-mapactions-select-action';
 
 export class VlBoxSelectAction extends VlSelectAction {
@@ -10,14 +9,7 @@ export class VlBoxSelectAction extends VlSelectAction {
       }
     }, options);
 
-    this.dragBoxInteraction = new DragBox({
-      style: new Style({
-        stroke: new Stroke({
-          color: [0, 0, 255, 1],
-        }),
-      }),
-    });
-
+    this.dragBoxInteraction = new DragBox();
     this.addInteraction(this.dragBoxInteraction);
 
     this.dragBoxInteraction.on('boxdrag', () => {

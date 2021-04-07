@@ -1,5 +1,11 @@
-import {vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
-import {VlCustomMap, OlLayerGroup, OlProjection} from '/node_modules/vl-mapactions/dist/vl-mapactions.js';
+import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {
+  OlFullScreenControl,
+  OlLayerGroup,
+  OlProjection,
+  VlCustomMap,
+  proj4,
+} from '/node_modules/vl-mapactions/dist/vl-mapactions.js';
 
 /**
  * VlMap
@@ -9,9 +15,11 @@ import {VlCustomMap, OlLayerGroup, OlProjection} from '/node_modules/vl-mapactio
  * @extends HTMLElement
  * @mixes vlElement
  *
- * @property {boolean} disable-escape-key - Attribuut wordt gebruikt om ervoor te zorgen dat de escape toets niet gebruikt kan worden.
- * @property {boolean} disable-rotation - Attribuut wordt gebruikt om ervoor te zorgen dat het niet mogelijk is om de kaart te draaien.
- * @property {boolean} disable-mouse-wheel-zoom - Attribuut wordt gebruikt om ervoor te zorgen dat het niet mogelijk is om de kaart in te zoomen met het muiswiel.
+ * @property {boolean} data-vl-allow-fullscreen - Attribuut wordt gebruikt om de gebruiker de mogelijkheid te geven om de kaart in fullscreen te
+ *     visualiseren.
+ * @property {boolean} data-vl-disable-escape-key - Attribuut wordt gebruikt om ervoor te zorgen dat de escape toets niet gebruikt kan worden.
+ * @property {boolean} data-vl-disable-rotation - Attribuut wordt gebruikt om ervoor te zorgen dat het niet mogelijk is om de kaart te draaien.
+ * @property {boolean} data-vl-disable-mouse-wheel-zoom - Attribuut wordt gebruikt om ervoor te zorgen dat het niet mogelijk is om de kaart in te zoomen met het muiswiel.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-map/issues|Issues}
@@ -83,7 +91,7 @@ export class VlMap extends vlElement(HTMLElement) {
    * @return {Object[]}
    */
   get nonBaseLayers() {
-    return [...this.querySelectorAll('vl-map-layer')];
+    return [...this.querySelectorAll('[data-vl-is-layer]')];
   }
 
   get disableEscapeKey() {
@@ -109,6 +117,14 @@ export class VlMap extends vlElement(HTMLElement) {
 
   get _mapElement() {
     return this._shadow.querySelector('#map');
+  }
+
+  get _controls() {
+    if (this.dataset.vlAllowFullscreen != undefined) {
+      return [new OlFullScreenControl()];
+    } else {
+      return [];
+    }
   }
 
   get _projection() {
@@ -138,6 +154,7 @@ export class VlMap extends vlElement(HTMLElement) {
       },
       projection: this._projection,
       target: this._mapElement,
+      controls: this._controls,
     });
 
     this._map.initializeView();
@@ -185,13 +202,17 @@ export class VlMap extends vlElement(HTMLElement) {
   }
 
   /**
-   * Zoomt op de kaart naar de bounding box.
+   * Zoomt op de kaart naar de meegegeven geometry of bounding box.
    *
-   * @param {Number[]} boundingbox
+   * @param {(ol/geom/Geometry|Number[])} geometryOrBoundingbox
    * @param {Number} max
    */
-  zoomTo(boundingbox, max) {
-    this.map.zoomToExtent(boundingbox, max);
+  zoomTo(geometryOrBoundingbox, max) {
+    if (Array.isArray(geometryOrBoundingbox)) {
+      this.map.zoomToExtent(geometryOrBoundingbox, max);
+    } else if (geometryOrBoundingbox instanceof Object) {
+      this.map.zoomToGeometry(geometryOrBoundingbox, max);
+    }
   }
 
   /**
@@ -253,3 +274,5 @@ export class VlMap extends vlElement(HTMLElement) {
     }
   }
 }
+
+define('vl-map', VlMap);

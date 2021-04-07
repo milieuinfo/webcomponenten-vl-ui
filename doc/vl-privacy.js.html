@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -242,8 +259,8 @@ import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
  * @extends HTMLElement
  * @mixes vlElement
  *
- * @property {boolean} data-vl-date - Attribuut wordt gebruikt om aan te geven op welke datum deze toegankelijkheidspagina opgesteld werd.
- * @property {boolean} data-vl-version - Attribuut wordt gebruikt om de toegankelijkheidspagina versie aan te geven.
+ * @property {string} [data-vl-date="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze pagina opgesteld werd.
+ * @property {string} [data-vl-version="1.0.0"] - Attribuut wordt gebruikt om de pagina versie aan te geven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-privacy/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-privacy/issues|Issues}
@@ -263,8 +280,11 @@ export class VlPrivacy extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-properties/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         &lt;/style>
-        &lt;vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Privacy" data-vl-link="/">&lt;/vl-functional-header>
+        &lt;vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Privacy" data-vl-link="https://omgeving.vlaanderen.be">&lt;/vl-functional-header>
     `);
+
+    const version = this.dataset.vlVersion || '1.0.0';
+    const date = this.dataset.vlDate || '3 maart 2021';
 
     this._element.insertAdjacentHTML('afterend', `
         &lt;section is="vl-region">
@@ -275,7 +295,7 @@ export class VlPrivacy extends vlElement(HTMLElement) {
                     &lt;/div>
                     &lt;div is="vl-column" data-vl-size="10">
                         &lt;p is="vl-introduction">
-                        &lt;span>Versie&lt;/span> ${this.dataset.vlVersion} - ${this.dataset.vlDate}
+                        &lt;span>Versie&lt;/span> &lt;span id="introduction-version">${version}&lt;/span> - &lt;span id="introduction-date">${date}&lt;/span>
                         &lt;/p>
                     &lt;/div>
 
@@ -293,220 +313,284 @@ export class VlPrivacy extends vlElement(HTMLElement) {
                 &lt;div is="vl-grid" data-vl-is-stacked>
                     &lt;div is="vl-column" data-vl-size="8" data-vl-medium-size="8" data-vl-small-size="8" data-vl-extra-small-size="12">
                         &lt;div is="vl-side-navigation-reference" data-vl--scrollspy-content>
-                            &lt;div is="vl-grid" data-vl-is-stacked>
+                            &lt;div is="vl-grid" data-vl-is-stacked-large>
                                 &lt;div id="privacy-department" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     &lt;h2 is="vl-h2">Het Departement Omgeving en uw privacy&lt;/h2>
-                                    &lt;p>Op 25 mei 2018 ging de Europese ‘Algemene Verordening Gegevensbescherming’ (AVG), ook gekend onder de Engelse naam ‘General Data Protection Regulation’ (GDPR) van kracht. Naar aanleiding daarvan heeft het Departement Omgeving zijn privacybeleid verduidelijkt. Om zijn dienstverlening verder te optimaliseren, beheert en gebruikt het departement alle persoonsgegevens die het verzamelt op een veilige, respectvolle manier en als een goede huisvader.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Algemene info mbt privacy:&lt;/p>
-                                    &lt;br/>
-                                    &lt;div is="vl-grid">
-                                        &lt;div is="vl-column" data-vl-size="4" data-vl-medium-size="6">
-                                            &lt;vl-document data-vl-href="informatiepagina-algemene-verordening-gegevensbescherming-v1_0.pdf">
-                                                &lt;span slot="type">PDF&lt;/span>
-                                                &lt;span slot="title">Algemene informatie over de nieuwe Privacywet&lt;/span>
-                                                &lt;span slot="metadata">PDF - 216 kB&lt;/span>
-                                            &lt;/vl-document>
+                                    &lt;p>Op 25 mei 2018 werd de Europese ‘Algemene Verordening Gegevensbescherming’ (AVG), ook gekend onder de Engelse naam ‘General Data Protection Regulation’ (GDPR) van kracht. Naar aanleiding daarvan heeft het Departement Omgeving zijn privacybeleid verduidelijkt. Om zijn dienstverlening verder te optimaliseren, beheert en gebruikt het departement alle persoonsgegevens die het verzamelt op een veilige, respectvolle manier en als een goede huisvader.&lt;/p>
+                                &lt;/div>
+
+                                &lt;div data-vl-size="12" data-vl-medium-size="12">
+                                    &lt;h2 id="privacy-declaration" is="vl-h2">Privacyverklaring&lt;/h2>
+
+                                    &lt;div is="vl-grid" data-vl-is-stacked>
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-declaration-who" is="vl-h3">Wie is verantwoordelijk voor de verwerking van mijn persoonsgegevens?&lt;/h3>
+
+                                            &lt;div is="vl-grid" data-vl-is-stacked>
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;vl-typography>
+                                                        &lt;p>Het Departement Omgeving verwerkt gegevens van haar doelgroepen en contactpersonen (burgers, medewerkers van andere overheden/organisaties/ondernemingen, medewerkers van scholen of MOS-referentiepersonen, adviesbureaus, experten, …) en is voor die gegevensverwerkingen de verwerkingsverantwoordelijke in de zin van de Algemene Verordening Gegevensbescherming. We verwerken alleen persoonsgegevens als dat noodzakelijk is om de taken die ons zijn toegewezen te kunnen verrichten. We verwerken de gegevens altijd in overeenstemming met de bepalingen van de algemene verordening gegevensbescherming (AVG), en met de bepalingen van de federale en Vlaamse regelgeving over de bescherming van natuurlijke personen bij de verwerking van persoonsgegevens.&lt;/p>
+                                                        &lt;p>In een aantal gevallen verwerken externe partners persoonsgegevens in opdracht van het Departement Omgeving. Met deze verwerkers wordt een verwerkingsovereenkomst afgesloten, conform de bepalingen van art. 28 AVG. Ook in dit geval blijft het Departement Omgeving de eindverantwoordelijke voor de verwerking.&lt;/p>
+                                                        &lt;p>Het Departement treedt voor een aantal specifieke taken op als co-verwerkingsverantwoordelijke. Dit betekent dat het Departement samen met andere partners verantwoordelijk is voor de verwerking van persoonsgegevens. Met de co-verwerkingsverantwoordelijken wordt een samenwerkingsovereenkomst afgesloten, conform de bepalingen van art. 26 AVG.&lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Over het Departement Omgeving&lt;/h4>
+                                                    &lt;p>Het Departement Omgeving van de Vlaamse overheid is een officieel overheidsorgaan dat als doel heeft het beleid en de handhaving van de Vlaamse overheid inzake de beleidsthema’s Ruimtelijke ordening, Leefmilieu, Natuur en Energie vorm te geven en te realiseren. Met behulp van de informatiesystemen en de methoden van het Departement Omgeving van de Vlaamse Overheid worden inventarissen gemaakt, beleidsmaatregelen uitgevoerd en informatie verstrekt aan het beleidsdomein, aan andere overheden, inspectiediensten en burgers.&lt;/p>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;vl-contact-card>
+                                                        &lt;vl-infoblock slot="info" data-vl-type="contact">
+                                                            &lt;h4 slot="title">Departement Omgeving&lt;/h4>
+                                                        &lt;/vl-infoblock>
+                                                        &lt;vl-properties slot="properties">
+                                                            &lt;dl is="vl-properties-list">
+                                                            &lt;dt is="vl-property-term">Adres&lt;/dt>
+                                                            &lt;dd is="vl-property-value">Graaf de Ferrarisgebouw&lt;br/>Koning Albert II laan 20 (bus 8)&lt;br/>1000 Brussel, België&lt;/dd>
+                                                            &lt;dt is="vl-property-term">Telefoon&lt;/dt>
+                                                            &lt;dd is="vl-property-value">&lt;a is="vl-link" href="tel:02 553 80 11">02 553 80 11&lt;span is="vl-icon" data-vl-icon="phone" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
+                                                            &lt;dt is="vl-property-term">E-mail&lt;/dt>
+                                                            &lt;dd is="vl-property-value">&lt;a is="vl-link" href="mailto:omgeving@vlaanderen.be">omgeving@vlaanderen.be&lt;span is="vl-icon" data-vl-icon="mail" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
+                                                            &lt;dt is="vl-property-term">Website&lt;/dt>
+                                                            &lt;dd is="vl-property-value">&lt;a is="vl-link" href="http://www.omgevingvlaanderen.be" target="_blank">http://www.omgevingvlaanderen.be&lt;span is="vl-icon" data-vl-icon="external" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
+                                                            &lt;dt is="vl-property-term">KBO-nummer&lt;/dt>
+                                                            &lt;dd is="vl-property-value">0316.380.841 (ondernemingsnummer van de Vlaamse Overheid)&lt;/dd>
+                                                            &lt;/dl>
+                                                        &lt;/vl-properties>
+                                                    &lt;/vl-contact-card>
+                                                &lt;/div>
+                                            &lt;/div>
+                                        &lt;/div>
+
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-declaration-process" is="vl-h3">Verwerking van persoonsgegevens&lt;/h3>
+
+                                            &lt;div is="vl-grid" data-vl-is-stacked>
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;p>Het Departement Omgeving verwerkt persoonsgegevens van u als burger of als medewerker van een overheid/bestuur, organisatie of onderneming. De Algemene Verordening Gegevensbescherming geeft in Artikel 4 volgende definitie van het begrip ‘verwerking’: “een bewerking of een geheel van bewerkingen met betrekking tot persoonsgegevens of een geheel van persoonsgegevens, al dan niet uitgevoerd via geautomatiseerde procedés, zoals het verzamelen, vastleggen, ordenen, structureren, opslaan, bijwerken of wijzigen, opvragen, raadplegen, gebruiken, verstrekken door middel van doorzending, verspreiden of op andere wijze ter beschikking stellen, aligneren of combineren, afschermen, wissen of vernietigen van gegevens”.&lt;/p>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Hoe verzamelen en verwerken we uw persoonsgegevens?&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Het Departement Omgeving kan uw persoonsgegevens op verschillende manieren verzamelen:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>We kunnen gegevens rechtstreeks bij u opvragen in een formulier of in documenten die u bij een formulier moet voegen. Die documenten zijn opgesomd in de regelgeving.&lt;/li>
+                                                            &lt;li>Daarnaast vragen we gegevens op bij andere overheidsdiensten die er al over beschikken. We leven daarbij altijd de bepalingen na over de bescherming van natuurlijke personen bij de verwerking van persoonsgegevens, die in voorkomend geval op federaal of Vlaams niveau vastgelegd zijn. Voor de toegang tot authentieke bronnen zoals bv. het Rijksregister heeft het Departement Omgeving een aantal machtigingen gekregen om deze persoonsgegevens op te vragen en te verwerken. &lt;/li>
+                                                        &lt;/ul>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Waarvoor verwerken we uw persoonsgegevens?&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Het Departement Omgeving verwerkt persoonsgegevens voor de volgende doeleinden:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>
+                                                                Om aan wettelijke verplichtingen en beleidsmatig toegewezen taken als overheidsinstelling te voldoen;
+                                                                &lt;br/>&lt;br/>
+                                                                In Vlaamse Regelgeving worden aan het Departement Omgeving een aantal taken opgelegd waarbij de verwerking van persoonsgegevens expliciet verplicht wordt. De verwerking is in dat geval beperkt tot wat door die wettelijke verplichting bepaald wordt. 
+                                                                &lt;br/>&lt;br/>
+                                                                Voor andere verwerkingen bestaat geen expliciete verplichting in een wettekst, maar is de verwerking van persoonsgegevens een noodzaak voor de uitvoering van beleidstaken die aan het Departement zijn toegewezen. 
+                                                            &lt;/li>
+                                                            &lt;li>
+                                                                Om te voldoen aan contractuele verplichtingen of administratieve handelingen te kunnen verrichten;
+                                                                &lt;br/>&lt;br/>
+                                                                Bij de uitvoering van haar taken neemt het Departement ook contractuele verbintenissen op zich. Sommige van deze verbintenissen vereisen de verwerking van persoonsgegevens. Ook hier is de verwerkte informatie steeds beperkt tot die gegevens die strikt noodzakelijk zijn voor de uitvoering van overeenkomsten. (financiële administratie en facturatie, personeelsadministratie, rechtenbeheer, beheer gebruikersovereenkomst)
+                                                            &lt;/li>
+                                                            &lt;li>
+                                                                Om u te informeren over nieuwe ontwikkelingen in thema’s waarvoor het Departement Omgeving verantwoordelijkheden draagt.
+                                                                &lt;br/>&lt;br/>
+                                                                Het Departement Omgeving geeft een aantal nieuwsbrieven uit over thema's die nauw verbonden zijn met haar taken. Het informeren van burgers kadert in de beleidstaken van de overheid. Gezien het hier over directe communicatie gaat, is deze verwerking gebaseerd op de toestemming van de betrokkene. U kiest dus zelf of u zich in- of uitschrijft voor deze communicatie. 
+                                                            &lt;/li>
+                                                        &lt;/ul>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Welke persoonsgegevens worden verwerkt?&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>In dit kader verwerkt het Departement Omgeving, naargelang de aard van de relatie met u als burger, of medewerker van een overheid/bestuur, organisatie of onderneming en de noodzakelijke verwerking van (persoons)gegevens mogelijk de volgende gegevens:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>Aanhef/aanspreking&lt;/li>
+                                                            &lt;li>Voornaam&lt;/li>
+                                                            &lt;li>Tussenvoegsel&lt;/li>
+                                                            &lt;li>Familienaam&lt;/li>
+                                                            &lt;li>Rijksregisternummer&lt;/li>
+                                                            &lt;li>Geslacht&lt;/li>
+                                                            &lt;li>Geboortedatum&lt;/li>
+                                                            &lt;li>Leeftijd of geboortejaar&lt;/li>
+                                                            &lt;li>Nationaliteit&lt;/li>
+                                                            &lt;li>Adres(sen)&lt;/li>
+                                                            &lt;li>E-mailadres(sen)&lt;/li>
+                                                            &lt;li>Telefoon/gsm/fax&lt;/li>
+                                                            &lt;li>Beroepsgegevens, diploma’s, certificeringen&lt;/li>
+                                                            &lt;li>Strafrechtelijke en justitiële gegevens&lt;/li>
+                                                        &lt;/ul>
+                                                        &lt;p>Tijdens het gebruik van de informatieverwerkende systemen door medewerkers of door uzelf (bijvoorbeeld bij ingave in of consultatie van een via webtoegang beschikbaar gestelde applicatie) worden door het Departement Omgeving en/of de door haar aangewezen verwerkers ook bepaalde gegevens verzameld. Het gaat hier om gegevens die vereist zijn voor de dienstverlening en de bewaking van de kwaliteit van de verzamelde data van het Departement Omgeving. Deze gegevens kunnen door het Departement of een door haar aangewezen verwerker/dienstverlener onder strikte voorwaarden gebruikt worden als er bijvoorbeeld klachten zijn over de verbinding of het niet naar behoren functioneren van een software/webtoepassing. Afhankelijk van de activiteit die u daarbij als betrokkene verricht, verwerkt het Departement Omgeving in dit kader mogelijk de volgende gegevens:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>IP-adres&lt;/li>
+                                                            &lt;li>gebruikersnaam (login) of identificatienummer&lt;/li>
+                                                            &lt;li>eID identificatie- en authenticatiegegevens&lt;/li>
+                                                            &lt;li>tijdstip van handelingen in de software&lt;/li>
+                                                            &lt;li>registratie van de handelingen in de software (logging).&lt;/li>
+                                                        &lt;/ul>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Hoelang bewaren we uw persoonsgegevens?&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Het Departement Omgeving verzamelt niet meer gegevens dan noodzakelijk voor de dienstverlening die zij geacht wordt te leveren en wenst deze niet langer bij te houden dan wettelijk verplicht, noodzakelijk of aanvaardbaar. Volgens de algemene regel mogen we uw persoonsgegevens alleen bewaren tijdens de periode waarin ze noodzakelijk zijn om bepaalde diensten te verlenen. We bewaren uw gegevens dus zolang u gebruikmaakt van onze diensten. Daarna bewaren we uw gegevens nog gedurende de termijn waarin we ons moeten kunnen verantwoorden voor de verleende diensten. Na verloop van die verjaringstermijn worden de gegevens verwijderd conform aan de bepalingen van het Vlaams Archiefdecreet, tenzij ze van historisch, cultureel of algemeen belang zijn.&lt;/p>
+                                                        &lt;p>Bij de bewaring wordt een onderscheid gemaakt tussen de periode waarin uw dossier actief is en de periode waarin het passief wordt. Uw dossier is actief zolang u van de verleende dienst gebruikmaakt. Alle medewerkers die uw gegevens nodig hebben om hun taak te kunnen uitoefenen, hebben dan toegang tot uw gegevens. Nadien wordt uw dossier passief en heeft enkel een beperkt aantal medewerkers van de bevoegde dienst toegang tot uw gegevens.&lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Persoonsgegevens van kinderen&lt;/h4>
+                                                    &lt;p>In principe gebeurt er geen systematische verwerking van persoonsgegevens van kinderen onder de door de AVG en de Belgische wetgever bepaalde leeftijdsgrens.&lt;/p>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Beeldmateriaal&lt;/h4>
+                                                    &lt;p>Voor opname en gebruik (publicatie) van beeldmateriaal zoals foto of film, wordt gevraagd om toestemming als de geportretteerden duidelijk individueel herkenbaar zijn.&lt;/p>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Mededeling van persoonsgegevens aan derde partijen&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Uw gegevens worden hoofdzakelijk intern verwerkt door onze medewerkers. Daarnaast worden uw persoonsgegevens doorgegeven aan deze categorieën van ontvangers:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>verwerkers: voor bepaalde verwerkingen doet het Departement Omgeving een beroep op externe dienstverleners, die (een deel van) de gegevensverwerking uitvoeren. Deze verwerkers ontvangen de persoonsgegevens die ze nodig hebben om die opdrachten uit te voeren, en kunnen deze enkel gebruiken binnen de voorwaarden die het Departement bepaalt. Zij mogen je persoonsgegevens dus niet niet hergebruiken voor hun eigen doeleinden, en moeten ze verwijderen of terugzenden bij het einde van hun opdracht. &lt;/li>
+                                                            &lt;li>sociale media: het Departement Omgeving is aanwezig op sociale media. De informatie die via onze pagina's bij sociale media gedeeld wordt, is niet exclusief binnen het beheer van het Departement. Ook de aanbieders van de sociale media hebben daar toegang toe, en bepalen zelf hoe ze die informatie gebruiken. We raden je aan om dus ook de gebruiksvoorwaarden en het privacybeleid van deze sociale media te lezen.&lt;/li>
+                                                            &lt;li>andere overheden: het Departement Omgeving geeft persoonsgegevens door aan andere overheden, wanneer daar een rechtmatige basis voor bestaat. Dat kan een wettelijke verplichting zijn, of een hergebruik van verzamelde persoonsgegevens voor doeleinden die niet onverenigbaar zijn met de oorspronkelijke verzameling. Welke persoonsgegevens precies worden doorgegeven, wordt bepaald in een protocol, dat publiek beschikbaar is. &lt;/li>
+                                                        &lt;/ul>
+                                                        &lt;p>Indien er bepaalde persoonsgegevens worden overgemaakt aan of bekomen van andere entiteiten, overheden of derde partijen, dan gebeurt dit onder daarvoor bekomen machtigingen of afgesloten protocollen. Deze documenten zijn gepubliceerd op deze pagina. &lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+                                            &lt;/div>
+                                        &lt;/div>
+
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-declaration-measures" is="vl-h3">Maatregelen in het kader van de Algemene verordening Gegevensbescherming&lt;/h3>
+
+                                            &lt;div is="vl-grid" data-vl-is-stacked>
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Register van gegevensverwerkingen&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Er wordt, in overeenstemming met de vereisten van de Algemene Verordening Gegevensbescherming, een register van gegevensverwerkingen opgesteld. Dit wordt geactualiseerd indien zich wijzigingen aandienen. Een dergelijk register (inventaris) voor de verwerking van persoonsgegevens is verplicht en kan worden opgevraagd door de Gegevensbeschermingsautoriteit (GBA). Elke organisatie die persoonsgegevens verwerkt en gevat is door de Algemene Verordening Gegevensbescherming is verplicht aan de Gegevensbeschermingsautoriteit inzage in het register te geven.&lt;/p>
+                                                        &lt;p>Voor die verwerkingen waarbij het Departement Omgeving optreedt als &lt;strong>verantwoordelijke&lt;/strong> voor de verwerking van gegevens bevat het register de volgende informatie:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>de naam en contactgegevens van verantwoordelijke (of diens vertegenwoordiger, wanneer de verantwoordelijke buiten de Europese Unie is gevestigd), en van de functionaris voor gegevensbescherming of FG – de Data Protection Officer (DPO).&lt;/li>
+                                                            &lt;li>de doeleinden waarvoor gegevens worden verwerkt;&lt;/li>
+                                                            &lt;li>de categorieën gegevens (bijvoorbeeld Rijksregistergegevens, contactgegevens, betaalgegevens …);&lt;/li>
+                                                            &lt;li>de categorieën betrokkenen (bijvoorbeeld: klanten, websitebezoekers, werknemers …);&lt;/li>
+                                                            &lt;li>de categorieën ontvangers (aan wie worden de gegevens verstrekt?);&lt;/li>
+                                                            &lt;li>informatie over eventuele doorgifte van gegevens naar landen buiten de Europese Unie;&lt;/li>
+                                                            &lt;li>de bewaartermijnen en gebeurlijk termijnen voor vernietiging van de gegevens;&lt;/li>
+                                                            &lt;li>de manieren waarop gegevens zijn beveiligd (bijvoorbeeld: encryptie, logische toegangscontrole, pseudonimisering, anonimisering in geval van bepaalde verdere verwerkingen, …).&lt;/li>
+                                                        &lt;/ul>
+                                                        &lt;p>Voor die verwerkingen waarvoor het Departement Omgeving optreedt als &lt;strong>verwerker&lt;/strong> is het register bevat het register per verantwoordelijke de volgende informatie:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>de naam en contactgegevens van de verwerker en de verantwoordelijke (of hun vertegenwoordigers) en (indien voorzien) de functionaris voor gegevensbescherming;&lt;/li>
+                                                            &lt;li>de categorieën verwerkingen (dit komt overeen met de doeleinden uit het register van de verantwoordelijke);&lt;/li>
+                                                            &lt;li>informatie over eventueel doorgifte van gegevens naar landen buiten de Europese Unie;&lt;/li>
+                                                            &lt;li>de manieren waarop gegevens zijn beveiligd.&lt;/li>
+                                                        &lt;/ul>
+                                                        &lt;p>Het Departement Omgeving spant zich in om de verwerkingsactiviteiten van de processen binnen haar afdelingen en diensten in kaart te brengen en deze inventarisatie (verwerkt in het register van verwerkingsactiviteiten) wordt op permanente basis geoptimaliseerd en geactualiseerd.&lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+                                                
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Toe te passen principes vereist door de Algemene Verordening Gegevensbescherming&lt;/h4>
+                                                    
+                                                    &lt;div is="vl-grid" data-vl-is-stacked>
+                                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                            &lt;p>Het risico voor een privacyschending of het niet kunnen garanderen van de rechten van u als betrokkene wordt mee in kaart gebracht en voor die activiteiten die een verhoogd risicoprofiel hebben inzake bescherming van de privacy wordt een gegevensbeschermingseffectbeoordeling (GEB) uitgevoerd. Ook de andere principes van de AVG zoals gegevensbescherming door ontwerp en met standaardinstellingen, incidentbeheer voor informatieveiligheids- en privacy-incidenten met procedure voor melding en aanpak van gegevenslek en gegevensverlies worden meegenomen in de aanpak van het Departement Omgeving inzake privacybescherming.&lt;/p>
+                                                        &lt;/div>
+
+                                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                            &lt;vl-typography>
+                                                                &lt;p>Het Departement Omgeving voorziet in de nodige maatregelen om persoonsgegevens en privacy te beschermen, zowel in fysieke vorm, in de informatiesystemen en online. Het Departement Omgeving draagt zorg hiervoor door passende organisatorische en technische maatregelen te treffen om persoonsgegevens te beveiligen en ongeoorloofde toegang tot en gebruik van informatie te vermijden, zoals een degelijk paswoordbeleid, gebruik van SSL-certificaten op websites (https secured filetransfer), kwalitatieve firewalls, antivirus/antimalware en intrusie- en anomaliedetectie.&lt;/p>
+                                                                &lt;p>Aan de medewerkers van het Departement Omgeving wordt toegang tot persoonlijke informatie verleend enkel voor zover ze die specifieke informatie nodig hebben om hun taken en dienstverlening naar behoren uit te voeren. De betrokken werknemers kregen in hun opleiding instructies om correct om te gaan met vertrouwelijke gegevens. Ambts- en beroepsgeheim met betrekking tot behandeling van persoonsgegevens zijn volledig van toepassing.&lt;/p>
+                                                                &lt;p>De gegevens worden opgeslagen en verwerkt op eigen, beveiligde informaticaomgevingen en datacenters van het Departement Omgeving of in de beveiligde omgeving van verwerkers in opdracht van en onder toezicht van het Departement Omgeving.&lt;/p>
+                                                            &lt;/vl-typography>
+                                                        &lt;/div>
+                                                    &lt;/div>
+                                                &lt;/div>
+                                            &lt;/div>
+                                        &lt;/div>
+
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-declaration-rights" is="vl-h3">Uw rechten als betrokkene&lt;/h3>
+
+                                            &lt;div is="vl-grid" data-vl-is-stacked>
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;vl-typography>
+                                                        &lt;p>De Algemene Verordening Gegevensbescherming voorziet in een aantal privacy-rechten, waarop u als ‘betrokkene’ (dit is: natuurlijk persoon) beroep op kunt doen. Dit uiteraard rekening houdend met de privacyrechten van andere personen en met wettelijke bepalingen en beperkingen.&lt;/p>
+                                                        &lt;p>Als betrokkene in de zin zoals bepaald in de Algemene Verordening Gegevensbescherming beschikt u over volgende rechten die samengevat kunnen worden in “het recht op een correcte, legitieme verwerking van uw persoonsgegevens”:&lt;/p>
+                                                        &lt;ul>
+                                                            &lt;li>Recht van inzage van de met betrekking tot u verwerkte gegevens (AVG art. 15)&lt;/li>
+                                                            &lt;li>Recht op rectificatie, of recht op correctie van fouten (AVG art. 16)&lt;/li>
+                                                            &lt;li>Recht op gegevenswissing (officieel "recht op vergetelheid" of ook genoemd “het recht om vergeten te worden”); dit recht is toepasbaar in bepaalde gevallen en met name als wij gegevens van u verwerken op basis van een geïnformeerde toestemming waarbij wij geen wettelijke of andere wettelijke basis kunnen inroepen voor verdere verwerking inbegrepen bewaring ervan (AVG art. 17);&lt;/li>
+                                                            &lt;li>Recht op beperking van verwerking (AVG art. 18);&lt;/li>
+                                                            &lt;li>Notificatie van rechtzetting, van uitwissing of van beperking van verwerking (AVG art. 19); &lt;/li>
+                                                            &lt;li>Recht op overdraagbaarheid van persoonsgegevens (AVG art. 20); &lt;/li>
+                                                            &lt;li>Recht van bezwaar/verzet tegen verwerking van uw gegevens (AVG art. 21);&lt;/li>
+                                                            &lt;li>Rechten met betrekking tot individuele besluitvorming, inclusief profilering (AVG art. 22).&lt;/li>
+                                                        &lt;/ul>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;h4 is="vl-h4">Recht op inzage, verbetering of verwijdering&lt;/h4>
+                                                    &lt;vl-typography>
+                                                        &lt;p>Voor de verwerkingen van persoonsgegevens waarbij het Departement Omgeving optreedt als de Verwerkingsverantwoordelijke voor de gegevensverwerkingen in de zin van de Algemene Verordening Gegevensbescherming, kunnen betrokkenen een verzoeken om inzage, correctie of verwijdering indienen en zal het Departement Omgeving deze behandelen conform de bepalingen die zijn voorgeschreven door de Algemene Verordening Gegevensbescherming, rekening houdend met de beperkingen voorzien in Art. 23 van de AVG.&lt;/p>
+                                                        &lt;p>Voor de verwerkingen van persoonsgegevens waarbij het Departement Omgeving niet als de Verwerkingsverantwoordelijke voor de gegevensverwerkingen optreedt in de zin van de Algemene Verordening Gegevensbescherming, kunnen verzoeken om inzage, correctie of verwijdering niet door het Departement Omgeving zelfstandig worden afgehandeld. In dat geval moeten verzoeken om inzage, correctie of verwijdering worden ingediend bij de Verwerkingsverantwoordelijke voor de gegevensverwerkingen die gebruik maken van de diensten en verwerking met /door de informatiesystemen van het Departement Omgeving.&lt;/p>
+                                                        &lt;p>Voor meer informatie over de wijze waarop persoonsgegevens worden verwerkt binnen het werkingsdomein van het Departement Omgeving of het uitoefenen van een recht in het kader van de Algemene Verordening Gegevensbescherming kunt u contact opnemen met de Data Protection Officer) van het Departement Omgeving (DPO) waarvan de contactgegevens onderaan deze pagina terug te vinden zijn.&lt;/p>
+                                                        &lt;p>Daarnaast hebt u het recht om klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit (GBA), indien u meent dat uw rechten geschaad zijn en u zich ook na vraagstelling bij de bevoegde diensten van het Departement Omgeving of de door het Departement Omgeving aangestelde Functionaris voor gegevensbescherming (DPO) niet voldoende in uw rechten erkend weet.&lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
+                                            &lt;/div>
+                                        &lt;/div>
+
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-declaration-aplpy" is="vl-h3">Toepassing van deze Privacyverklaring&lt;/h3>
+                                            &lt;vl-typography>
+                                                &lt;p>Deze versie van de Privacyverklaring van het Departement Omgeving is van toepassing vanaf 25 mei 2018.&lt;/p>
+                                                &lt;p>Als de doelstellingen wijzigen waarvoor verwerking van persoonsgegevens gebeurt, zal het Departement Omgeving dit publiek melden en hiervan op transparante wijze mededeling doen in nieuwsbrieven, op de website &lt;a href="www.omgevingvlaanderen.be" target="_blank">www.omgevingvlaanderen.be&lt;/a> en via andere mediakanalen waarvan het Departement Omgeving gebruik maakt.&lt;/p>
+                                                &lt;p>Het Departement Omgeving behoudt zich het recht voor om de privacyverklaring aan te passen aan nieuwe noden of inzichten. Er zal van wijzigingen aan de Privacyverklaring transparant melding gemaakt worden op de hoofdwebsite van het Departement Omgeving (&lt;a href="www.omgevingvlaanderen.be" target="_blank">www.omgevingvlaanderen.be&lt;/a>) alsook op de papieren versie die op eenvoudige aanvraag verkrijgbaar is bij de Dienst Communicatie van het Departement Omgeving en via de Functionaris voor gegevensbescherming (Data Protection Officer) van het Departement Omgeving.&lt;/p>
+                                                &lt;p>Bij vragen over de Privacyverklaring of de aanpassingen eraan, kunt u terecht bij de Data Protection Officer waarvan u de contactgegevens terugvindt via de knop 'Hulp nodig?'.&lt;/p>
+                                            &lt;/vl-typography>
                                         &lt;/div>
                                     &lt;/div>
-                                    &lt;br/>
-                                    &lt;p>Indien u specifieke vragen of klachten heeft ivm ons privacybeleid kan u deze mailen naar &lt;a is="vl-link" href="mailto:omgeving@vlaanderen.be" target="_self">dpo@omgevingvlaanderen.be&lt;span is="vl-icon" data-vl-icon="envelope" data-vl-after>&lt;/span>&lt;/a> of per post verzenden naar Departement Omgeving t.a.v. Data Protection Officer (DPO), Koning Albert II-laan 20 – bus 8, 1000 Brussel.&lt;/p>
                                 &lt;/div>
 
-                                &lt;div id="privacy-declaration" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h2 is="vl-h2" data-vl-no-space-bottom>Privacyverklaring&lt;/h2>
-                                &lt;/div>
+                                &lt;div data-vl-size="12" data-vl-medium-size="12">
+                                    &lt;h2 id="privacy-permissions-protocols" is="vl-h2">Machtigingen en protocollen&lt;/h2>
 
-                                &lt;div id="privacy-declaration-general" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Algemeen&lt;/h3>
-                                    &lt;h4 is="vl-h4">Over het Departement Omgeving&lt;/h4>
-                                    &lt;p>Het Departement Omgeving van de Vlaamse overheid is een officieel overheidsorgaan dat als doel heeft het beleid en de handhaving van de Vlaamse overheid inzake de beleidsthema’s Ruimtelijke ordening, Leefmilieu, Natuur en Energie vorm te geven en te realiseren. Met behulp van de informatiesystemen en de methoden van het Departement Omgeving van de Vlaamse Overheid worden inventarissen gemaakt, beleidsmaatregelen uitgevoerd en informatie verstrekt aan het beleidsdomein, aan andere overheden, inspectiediensten en burgers. Het Departement Omgeving is verantwoordelijk voor de verwerking van uw persoonsgegevens die in deze verklaring worden omschreven en toegelicht. We verwerken alleen persoonsgegevens en we laten alleen persoonsgegevens verwerken als dat noodzakelijk is om de taken die ons zijn toebedeeld, te kunnen verrichten. We verwerken de gegevens altijd in overeenstemming met de bepalingen van de algemene verordening gegevensbescherming (AVG), en met de bepalingen van de federale en Vlaamse regelgeving over de bescherming van natuurlijke personen bij de verwerking van persoonsgegevens.&lt;/p>
-                                &lt;/div>
+                                    &lt;div is="vl-grid" data-vl-is-stacked>
+                                        &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                            &lt;h3 id="privacy-permissions-protocols-process" is="vl-h3">Machtigingen van de bevoegde autoriteiten en afgesloten protocollen voor het verwerken van bepaalde gegevens&lt;/h3>
 
-                                &lt;div id="privacy-declaration-information-processing-systems" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Informatieverwerkende systemen van het Departement Omgeving&lt;/h3>
-                                    &lt;p>Dit onderdeel beschrijft de gegevensverwerkingen op gestructureerde wijze, hoofdzakelijk door informaticasystemen en -oplossingen (software, databanken) van het departement Omgeving.&lt;/p>
-                                &lt;/div>
+                                            &lt;div is="vl-grid" data-vl-is-stacked>
+                                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
+                                                    &lt;vl-typography>
+                                                        &lt;p>Het Departement Omgeving of de overheidsinstanties waarvoor zij handelt als opvolger hebben voor een aantal verwerkingen van persoonsgegevens en/of gegevensoverdracht machtiging bekomen van Sectorale comités binnen de schoot van de Privacycommissie (CPBL), hun opvolgers IVC en de dienst Toegang tot het Rijksregister, of van de Vlaamse Toezichtcommissie (VTC). De lijst met toelichting en referentie naar het machtigingsbesluit in kwestie wordt verder in deze pagina beschikbaar gesteld.&lt;/p>
+                                                        &lt;p>Voor gegevensoverdrachten tussen overheden die beiden als verwerkingsverantwoordelijke optreden, sluit het Departement Omgeving een protocol af. Volgens de bepalingen van art. 18 van het Bestuursdecreet, worden deze protocollen gepubliceerd. U vindt alle protocollen waarbij het Departement Omgeving partij is, hieronder.&lt;/p>
+                                                    &lt;/vl-typography>
+                                                &lt;/div>
 
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Verwerking van persoonsgegevens&lt;/h4>
-                                    &lt;p>Het Departement Omgeving verwerkt persoonsgegevens van u als burger of als medewerker van een overheid/bestuur, organisatie of onderneming. In die hoedanigheid worden uw gegevens verwerkt als betrokkene en/of krijgt u een toegang tot op één of meerdere informatieverwerkende systemen De Algemene Verordening Gegevensbescherming geeft in Artikel 4 volgende definitie van het begrip 'verwerking': "een bewerking of een geheel van bewerkingen met betrekking tot persoonsgegevens of een geheel van persoonsgegevens, al dan niet uitgevoerd via geautomatiseerde procedés, zoals het verzamelen, vastleggen, ordenen, structureren, opslaan, bijwerken of wijzigen, opvragen, raadplegen, gebruiken, verstrekken door middel van doorzending, verspreiden of op andere wijze ter beschikking stellen, aligneren of combineren, afschermen, wissen of vernietigen van gegevens".&lt;/p>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Hoe verzamelen en verwerken we uw persoonsgegevens?&lt;/h4>
-                                    &lt;vl-typography>
-                                        &lt;p>Het Departement kan uw persoonsgegevens op verschillende manieren verkrijgen:&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>We kunnen gegevens rechtstreeks bij u opvragen in een formulier of in documenten die u bij een formulier moet voegen. Die documenten zijn opgesomd in de regelgeving.&lt;/li>
-                                            &lt;li>Daarnaast vragen we gegevens op bij andere overheidsdiensten die er al over beschikken. We leven daarbij altijd de bepalingen na over de bescherming van natuurlijke personen bij de verwerking van persoonsgegevens, die in voorkomend geval op federaal of Vlaams niveau vastgelegd zijn. Zo hebben we een aantal machtigingen gekregen om gegevens bij andere overheidsdiensten op te vragen.&lt;/li>
-                                        &lt;/ul>
-                                    &lt;/vl-typography>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Waarvoor verwerken we uw persoonsgegevens?&lt;/h4>
-                                    &lt;vl-typography>
-                                        &lt;p>Om haar wettelijke verplichtingen en beleidsmatig toegewezen taken als overheidsinstelling na te komen en om bepaalde administratieve handelingen te kunnen verrichten (financiële administratie en facturatie, rechtenbeheer, beheer gebruikersovereenkomst, boeteheffing, uitkeren van een premie, verlenen van een vergunning, inspectie van een installatie, enz...), alsmede om u desgewenst op de hoogte te houden van nieuwe ontwikkelingen aangaande één of meerdere thema’s waarvoor het Departement Omgeving verantwoordelijkheden draagt, heeft het Departement Omgeving een aantal gegevens van u nodig. In dit kader verwerkt het Departement Omgeving, naargelang de aard van de relatie met u als burger, of medewerker van een overheid/bestuur, organisatie of onderneming en de noodzakelijke verwerking van (persoons)gegevens mogelijks de volgende gegevens:&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>Aanhef/aanspreking&lt;/li>
-                                            &lt;li>Voornaam&lt;/li>
-                                            &lt;li>Tussenvoegsel&lt;/li>
-                                            &lt;li>Familienaam&lt;/li>
-                                            &lt;li>Rijksregisternummer&lt;/li>
-                                            &lt;li>Geslacht&lt;/li>
-                                            &lt;li>Geboortedatum&lt;/li>
-                                            &lt;li>Leeftijd of geboortejaar&lt;/li>
-                                            &lt;li>Nationaliteit&lt;/li>
-                                            &lt;li>Adres(sen)&lt;/li>
-                                            &lt;li>E-mailadres(sen)&lt;/li>
-                                            &lt;li>Telefoon/gsm/fax&lt;/li>
-                                            &lt;li>Beroepsgegevens, diploma’s, certificeringen&lt;/li>
-                                            &lt;li>Strafrechtelijke en justitiële gegevens&lt;/li>
-                                        &lt;/ul>
-                                        &lt;p>Tijdens het gebruik van de informatieverwerkende systemen door medewerkers of door uzelf (bijvoorbeeld bij ingave in of consultatie van een via webtoegang beschikbaar gestelde applicatie) worden door het Departement Omgeving en/of de door haar aangewezen verwerkers ook bepaalde gegevens verzameld. Het gaat hier om gegevens die vereist zijn voor de dienstverlening en de bewaking van de kwaliteit van de verzamelde data van het Departement Omgeving. Deze gegevens kunnen door het Departement of een door haar aangewezen verwerker/dienstverlener onder strikte voorwaarden gebruikt worden als er bijvoorbeeld klachten zijn over de verbinding of het niet naar behoren functioneren van een software/webtoepassing. Afhankelijk van de activiteit die u daarbij als betrokkene verricht, verwerkt het Departement Omgeving in dit kader mogelijks de volgende gegevens:&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>IP-adres&lt;/li>
-                                            &lt;li>gebruikersnaam (login) of identificatienummer&lt;/li>
-                                            &lt;li>eID identificatie- en authenticatiegegevens&lt;/li>
-                                            &lt;li>tijdstip van handelingen in de software&lt;/li>
-                                            &lt;li>registratie van de handelingen in de software (logging)&lt;/li>
-                                        &lt;/ul>
-                                    &lt;/vl-typography>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-role-in-processing" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">De rol van het Departement Omgeving in de verwerking van (persoons)gegevens&lt;/h3>
-                                    &lt;p>Het Departement Omgeving verwerkt gegevens van haar doelgroepen en contactpersonen (burgers, medewerkers van andere overheden/organisaties/ondernemingen, medewerkers van scholen of MOS-referentiepersonen, adviesbureaus, experten, …) en is voor die gegevensverwerkingen een &lt;strong>Verwerkingsverantwoordelijke&lt;/strong> in de zin van de Algemene Verordening Gegevensbescherming.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>In een aantal gevallen zullen daartoe aangestelde verwerkers, waarmee in het kader van de Algemene Verordening Gegevensbescherming en andere wettelijke en reglementaire verplichtingen een ter zake voldoend contract en/of verwerkingsovereenkomst is afgesloten, met de informatiesystemen of met door deze informatiesystemen verwerkte data op hun beurt persoonsgegevens gaan verwerken van betrokkenen.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Tevens kan het Departement Omgeving zelf optreden als co-verwerkingsverantwoordelijke of als de Verwerker van persoonsgegevens in de zin van de Algemene Verordening Gegevensbescherming. Dat betekent dat het Departement Omgeving in opdracht en op instructie van andere overheden of daartoe bevoegde organen persoonsgegevens verwerkt. Deze andere overheden of organen treden in dat geval op als Verwerkingsverantwoordelijke voor deze gegevensverwerkingen, in de zin van de Algemene Verordening Gegevensbescherming. Zij hanteren daarbij een eigen privacy-beleid waar het Departement Omgeving niet verantwoordelijk voor is.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-general-data-protection-regulation" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Maatregelen in het kader van de Algemene verordening Gegevensbescherming&lt;/h3>
-                                    &lt;h4 is="vl-h4">Register van gegevensverwerkingen&lt;/h4>
-                                    &lt;vl-typography>
-                                        &lt;p>Er wordt, in overeenstemming met de vereisten van de Algemene Verordening Gegevensbescherming, een register van gegevensverwerkingen opgesteld. Dit wordt geactualiseerd indien zich wijzigingen aandienen. Een dergelijk register (inventaris) voor de verwerking van persoonsgegevens is verplicht en kan worden opgevraagd door de bevoegde Gegevensbeschermingsautoriteit (DBA, of Data Protection Authority/DPA); in België is dit [de Gegevensbeschermingsautoriteit, beter gekend als de GBA]. Elke organisatie die persoonsgegevens verwerkt en gevat is door de Algemene Verordening Gegevensbescherming is verplicht aan de Gegevensbeschermingsautoriteit inzage in het register te geven.&lt;/p>
-                                        &lt;p>Bij de &lt;strong>verantwoordelijke&lt;/strong> voor de verwerking van gegevens bevat het register de volgende informatie:&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>de naam en contactgegevens van verantwoordelijke (of diens vertegenwoordiger, wanneer de verantwoordelijke buiten de Europese Unie is gevestigd), en van de functionaris voor gegevensbescherming of FG – de Data Protection Officer (DPO)&lt;/li>
-                                            &lt;li>de doeleinden waarvoor gegevens worden verwerkt&lt;/li>
-                                            &lt;li>de categorieën gegevens (bijvoorbeeld Rijksregistergegevens, contactgegevens, betaalgegevens ...)&lt;/li>
-                                            &lt;li>de categorieën betrokkenen (bijvoorbeeld: klanten, websitebezoekers, werknemers ...)&lt;/li>
-                                            &lt;li>de categorieën ontvangers (aan wie worden de gegevens verstrekt?)&lt;/li>
-                                            &lt;li>informatie over eventuele doorgifte van gegevens naar landen buiten de Europese Unie&lt;/li>
-                                            &lt;li>de bewaartermijnen en gebeurlijk termijnen voor vernietiging van de gegevens&lt;/li>
-                                            &lt;li>de manieren waarop gegevens zijn beveiligd (bijvoorbeeld: encryptie, logische toegangscontrole, pseudonimisering, anonimisering in geval van bepaalde verdere verwerkingen, ...)&lt;/li>
-                                        &lt;/ul>
-                                        &lt;p>Bij de &lt;strong>verwerker&lt;/strong> is het register georganiseerd per verantwoordelijke. Verwerkers registreren per verantwoordelijke voor wie zij werken:&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>de naam en contactgegevens van de verwerker en de verantwoordelijke (of hun vertegenwoordigers) en (indien voorzien) de functionaris voor gegevensbescherming&lt;/li>
-                                            &lt;li>de categorieën verwerkingen (dit komt overeen met de doeleinden uit het register van de verantwoordelijke)&lt;/li>
-                                            &lt;li>informatie over eventueel doorgifte van gegevens naar landen buiten de Europese Unie&lt;/li>
-                                            &lt;li>de manieren waarop gegevens zijn beveiligd&lt;/li>
-                                        &lt;/ul>
-                                        &lt;p>Het Departement Omgeving spant zich in om de verwerkingsactiviteiten van de processen binnen haar afdelingen en diensten in kaart te brengen en deze inventarisatie (verwerkt in het register van verwerkingsactiviteiten) wordt op permanente basis geoptimaliseerd en geactualiseerd indien noodzakelijk.&lt;/p>
-                                    &lt;/vl-typography>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Hoelang bewaren we uw persoonsgegevens?&lt;/h4>
-                                    &lt;p>Het Departement Omgeving verzamelt niet meer gegevens dan noodzakelijk voor de dienstverlening die zij geacht wordt te leveren en wenst deze niet langer bij te houden dan wettelijk verplicht, noodzakelijk of aanvaardbaar. Volgens de algemene regel mogen we uw persoonsgegevens alleen bewaren tijdens de periode waarin ze noodzakelijk zijn om bepaalde diensten te verlenen. We bewaren uw gegevens dus zolang u gebruikmaakt van onze diensten. Daarna bewaren we uw gegevens nog gedurende de termijn waarin we ons moeten kunnen verantwoorden voor de verleende diensten. Na verloop van die verjaringstermijn worden de gegevens verwijderd conform aan de bepalingen van het Vlaams Archiefdecreet, tenzij ze van historisch, cultureel of algemeen belang zijn.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Bij de bewaring wordt een onderscheid gemaakt tussen de periode waarin uw dossier actief is en de periode waarin het passief wordt. Uw dossier is actief zolang u van de verleende dienst gebruikmaakt. Alle medewerkers die uw gegevens nodig hebben om hun taak te kunnen uitoefenen, hebben dan toegang tot uw gegevens. Nadien wordt uw dossier passief en heeft enkel een beperkt aantal medewerkers van de bevoegde dienst toegang tot uw gegevens.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Persoonsgegevens van kinderen&lt;/h4>
-                                    &lt;p>In principe gebeurt er geen systematische verwerking van persoonsgegevens van kinderen onder de door de AVG en de Belgische wetgever bepaalde leeftijdsgrens.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Beeldmateriaal&lt;/h4>
-                                    &lt;p>Voor opname en gebruik (publicatie) van beeldmateriaal zoals foto of film, wordt gevraagd om akkoord als de geportretteerden duidelijk individueel herkenbaar zijn.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Toe te passen principes vereist door de Algemene Verordening Gegevensbescherming&lt;/h4>
-                                    &lt;p>Het risico voor een privacyschending of het niet kunnen garanderen van de rechten van u als betrokkene wordt mee in kaart gebracht en voor die activiteiten die een verhoogd risicoprofiel hebben inzake bescherming van de privacy wordt een gegevensbeschermingseffectbeoordeling (GEB) uitgevoerd. Ook de andere principes van de AVG zoals gegevensbescherming door ontwerp en met standaardinstellingen, incidentbeheer voor informatieveiligheids- en privacy-incidenten met procedure voor melding en aanpak van gegevenslek en gegevensverlies worden meegenomen in de aanpak van het Departement Omgeving inzake privacybescherming.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h4 is="vl-h4">Mededeling van persoonsgegevens&lt;/h4>
-                                    &lt;p>Uw gegevens worden hoofdzakelijk intern verwerkt door onze medewerkers. Het is mogelijk dat we voor bepaalde specifieke diensten een beroep doen op derden, die uw gegevens verwerken. We bezorgen uw gegevens aan die verwerkers, zodat ze de dienst in kwestie kunnen verlenen. We oefenen daar op elk moment controle op uit.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Indien er bepaalde persoonsgegevens worden overgemaakt aan of bekomen van andere entiteiten, overheden of derde partijen, dan gebeurt dit onder daarvoor bekomen machtigingen of afgesloten protocollen.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div  id="privacy-declaration-security" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Beveiliging van de informatie (persoonsgegevens)&lt;/h3>
-                                    &lt;p>Het Departement Omgeving voorziet in de nodige maatregelen om persoonsgegevens en privacy te beschermen, zowel in fysieke vorm, in de informatiesystemen en online. Het Departement Omgeving draagt zorg hiervoor door passende organisatorische en technische maatregelen te treffen om persoonsgegevens te beveiligen en ongeoorloofde toegang tot en gebruik van informatie te vermijden, zoals een degelijk paswoordbeleid, gebruik van SSL-certificaten op websites (https secured filetransfer), kwalitatieve firewalls, antivirus/antimalware en intrusie- en anomaliedetectie.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Aan de medewerkers van het Departement Omgeving wordt toegang tot persoonlijke informatie verleend enkel voor zover ze die specifieke informatie nodig hebben om hun taken en dienstverlening naar behoren uit te voeren. De betrokken werknemers kregen in hun opleiding instructies om correct om te gaan met vertrouwelijke gegevens. Ambts- en beroepsgeheim met betrekking tot behandeling van persoonsgegevens zijn volledig van toepassing.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>De gegevens worden opgeslagen en verwerkt op eigen, beveiligde informaticaomgevingen en datacenters van het Departement Omgeving of in de beveiligde omgeving van verwerkers in opdracht van en onder toezicht van het Departement Omgeving.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-authorizations" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Machtigingen van de bevoegde autoriteiten en afgesloten protocollen voor het verwerken van bepaalde gegevens&lt;/h3>
-                                    &lt;p>Het Departement Omgeving of de overheidsinstanties waarvoor zij handelt als opvolger hebben voor een aantal verwerkingen van persoonsgegevens en/of gegevensoverdracht machtiging bekomen van Sectorale comités binnen de schoot van de Privacycommissie (CPBL) of van de Vlaamse Toezichtcommissie (VTC). De lijst met toelichting en referentie naar het machtigingsbesluit in kwestie wordt verder in deze pagina beschikbaar gesteld.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Met de van toepassing worden van de Algemene Verordening Gegevensbescherming zijn de machtigingen opgeheven. De Machtigingen worden daarbij vervangen door protocollen. Bestaande machtigingen blijven wel rechtsgeldig. Het Departement Omgeving sluit, waar nodig, de nodige protocollen af en stelt deze eveneens ter beschikking op deze pagina.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-rights" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Uw rechten als betrokkene&lt;/h3>
-                                    &lt;vl-typography>
-                                        &lt;p>De Algemene Verordening Gegevensbescherming voorziet in een aantal privacy-rechten, waarop u als ‘betrokkene’ (dit is: natuurlijk persoon) beroep op kunt doen. Dit uiteraard rekening houdend met de privacyrechten van andere personen en met wettelijke bepalingen en beperkingen.&lt;/p>
-                                        &lt;p>Als betrokkene in de zin zoals bepaald in de Algemene Verordening Gegevensbescherming beschikt u over volgende rechten die samengevat kunnen worden in "het recht op een correcte, legitieme verwerking van uw persoonsgegevens":&lt;/p>
-                                        &lt;ul>
-                                            &lt;li>Recht van inzage van de met betrekking tot u verwerkte gegevens (AVG art. 15)&lt;/li>
-                                            &lt;li>Recht op rectificatie, of recht op correctie van fouten (AVG art. 16)&lt;/li>
-                                            &lt;li>Recht op gegevenswissing (officieel "recht op vergetelheid" of ook genoemd “het recht om vergeten te worden”); dit recht is toepasbaar in bepaalde gevallen en met name als wij gegevens van u verwerken op basis van een geïnformeerde toestemming waarbij wij geen wettelijke of andere wettelijke basis kunnen inroepen voor verdere verwerking inbegrepen bewaring ervan (AVG art. 17)&lt;/li>
-                                            &lt;li>Recht op beperking van verwerking (AVG art. 18)&lt;/li>
-                                            &lt;li>Notificatie van rechtzetting, van uitwissing of van beperking van verwerking (AVG art. 19)&lt;/li>
-                                            &lt;li>Recht op overdraagbaarheid van persoonsgegevens (AVG art. 20)&lt;/li>
-                                            &lt;li>Recht van bezwaar/verzet tegen verwerking van uw gegevens (AVG art. 21)&lt;/li>
-                                            &lt;li>Rechten met betrekking tot individuele besluitvorming, inclusief profilering (AVG art. 22)&lt;/li>
-                                        &lt;/ul>
-                                    &lt;/vl-typography>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-rights-inspection-correction-removal" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Recht op inzage, verbetering of verwijdering&lt;/h3>
-                                    &lt;p>Voor de verwerkingen van persoonsgegevens waarbij het Departement Omgeving optreedt als de Verwerkingsverantwoordelijke voor de gegevensverwerkingen in de zin van de Algemene Verordening Gegevensbescherming, kunnen betrokkenen een verzoeken om inzage, correctie of verwijdering indienen en zal het Departement Omgeving deze behandelen conform de bepalingen die zijn voorgeschreven door de Algemene Verordening Gegevensbescherming, rekening houdend met de beperkingen voorzien in Art. 23 van de AVG.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Voor de verwerkingen van persoonsgegevens waarbij het Departement Omgeving niet als de Verwerkingsverantwoordelijke voor de gegevensverwerkingen optreedt in de zin van de Algemene Verordening Gegevensbescherming, kunnen verzoeken om inzage, correctie of verwijdering niet door het Departement Omgeving zelfstandig worden afgehandeld. In dat geval moeten verzoeken om inzage, correctie of verwijdering worden ingediend bij de Verwerkingsverantwoordelijke voor de gegevensverwerkingen die gebruik maken van de diensten en verwerking met /door de informatiesystemen van het Departement Omgeving.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Voor meer informatie over de wijze waarop persoonsgegevens worden verwerkt binnen het werkingsdomein van het Departement Omgeving of het uitoefenen van een recht in het kader van de Algemene Verordening Gegevensbescherming kunt u contact opnemen met de Data Protection Officer) van het Departement Omgeving (DPO) waarvan de contactgegevens onderaan deze pagina terug te vinden zijn.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Daarnaast hebt u het recht om klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit(GBA), indien u meent dat uw rechten geschaad zijn en u zich ook na vraagstelling bij de bevoegde diensten van het Departement Omgeving of de door het Departement Omgeving aangestelde Functionaris voor gegevensbescherming (DPO) niet voldoende in uw rechten erkend weet.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div id="privacy-declaration-application" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h3 is="vl-h3">Toepassing van deze Privacyverklaring&lt;/h3>
-                                    &lt;p>Deze versie van de Privacyverklaring van het Departement Omgeving is van toepassing vanaf 25 mei 2018.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Als de doelstellingen wijzigen waarvoor verwerking van persoonsgegevens gebeurt, zal het Departement Omgeving dit publiek melden en hiervan op transparante wijze mededeling doen in nieuwsbrieven, op de website &lt;a is="vl-link" href="https://www.omgevingvlaanderen.be" target="_self">www.omgevingvlaanderen.be&lt;span is="vl-icon" data-vl-icon="external" data-vl-after>&lt;/span>&lt;/a> en via andere mediakanalen waarvan het Departement Omgeving gebruik maakt.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Het Departement Omgeving behoudt zich het recht voor om de privacyverklaring aan te passen aan nieuwe noden of inzichten. Er zal van wijzigingen aan de Privacyverklaring transparant melding gemaakt worden op de hoofdwebsite van het Departement Omgeving (&lt;a is="vl-link" href="https://www.omgevingvlaanderen.be" target="_self">www.omgevingvlaanderen.be&lt;span is="vl-icon" data-vl-icon="external" data-vl-after>&lt;/span>&lt;/a>) alsook op de papieren versie die op eenvoudige aanvraag verkrijgbaar is bij de Dienst Communicatie van het Departement Omgeving en via de Functionaris voor gegevensbescherming (Data Protection Officer) van het Departement Omgeving.&lt;/p>
-                                    &lt;br/>
-                                    &lt;p>Bij vragen over de Privacyverklaring of de aanpassingen eraan, kunt u terecht bij de Data Protection Officer waarvan u de contactgegevens terugvindt via de knop 'Hulp nodig?'.&lt;/p>
-                                &lt;/div>
-
-                                &lt;div id="privacy-department" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
-                                    &lt;h2 is="vl-h2">Machtigingen en protocollen&lt;/h2>
-                                    &lt;p>Volledige lijst machtigingen en protocollen die het departement heeft afgesloten.&lt;/p>
-                                    &lt;br/>
-                                    &lt;div is="vl-grid">
-                                        &lt;div is="vl-column" data-vl-size="4" data-vl-medium-size="6">
-                                            &lt;vl-document data-vl-href="privacybeleid-op-website-dOMG- v0.2_0.docx">
-                                                &lt;span slot="type">DOCX&lt;/span>
-                                                &lt;span slot="title">Lijst van aangiften en machtigingen&lt;/span>
-                                                &lt;span slot="metadata">DOCX - 43 kB&lt;/span>
-                                            &lt;/vl-document>
+                                                &lt;div is="vl-column" data-vl-size="4" data-vl-medium-size="6">
+                                                    &lt;vl-document data-vl-href="https://cdn.milieuinfo.be/footer-assets/LATEST/docx/privacybeleid-v0.2.docx">
+                                                        &lt;span slot="type">DOCX&lt;/span>
+                                                        &lt;span slot="title">Lijst van aangiften en machtigingen&lt;/span>
+                                                        &lt;span slot="metadata">DOCX - 43 kB&lt;/span>
+                                                    &lt;/vl-document>
+                                                &lt;/div>
+                                            &lt;/div>
                                         &lt;/div>
                                     &lt;/div>
                                 &lt;/div>
@@ -516,48 +600,74 @@ export class VlPrivacy extends vlElement(HTMLElement) {
 
                     &lt;div is="vl-column" data-vl-size="4" data-vl-medium-size="4" data-vl-small-size="4" data-vl-extra-small-size="0">
                         &lt;nav is="vl-side-navigation" aria-label="inhoudsopgave">
-                            &lt;h5 is="vl-side-navigation-h5">Op deze pagina&lt;/h5>
+                            &lt;h2 is="vl-side-navigation-h">Op deze pagina&lt;/h2>
                             &lt;div is="vl-side-navigation-content">
-                            &lt;ul is="vl-side-navigation-group">
-                                &lt;li is="vl-side-navigation-item" data-vl-parent>
-                                    &lt;a is="vl-side-navigation-toggle" href="#privacy-department" data-vl-child="privacy-department">
-                                    Het Departement Omgeving en uw privacy
-                                        &lt;i class="vl-vi vl-vi-arrow-right-fat">&lt;/i>
-                                    &lt;/a>
-                                &lt;/li>
-                                &lt;li is="vl-side-navigation-item" data-vl-parent>
-                                    &lt;a is="vl-side-navigation-toggle" href="#privacy-declaration" data-vl-child="privacy-declaration">
-                                        Privacy
-                                        &lt;i class="vl-vi vl-vi-arrow-right-fat">&lt;/i>
-                                    &lt;/a>
-                                    &lt;ul>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-general" data-vl-parent="privacy-declaration">Algemeen&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-information-processing-systems" data-vl-parent="privacy-declaration">Informatieverwerkende systemen van het Departement Omgeving&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-role-in-processing" data-vl-parent="privacy-declaration">De rol van het Departement Omgeving in de verwerking van (persoons)gegevens&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-general-data-protection-regulation" data-vl-parent="privacy-declaration">Maatregelen in het kader van de Algemene verordening Gegevensbescherming&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-security" data-vl-parent="privacy-declaration">Beveiliging van de informatie (persoonsgegevens)&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-rights" data-vl-parent="privacy-declaration">Uw rechten als betrokkene&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-rights-inspection-correction-removal" data-vl-parent="privacy-declaration">Recht op inzage, verbetering of verwijdering&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                        &lt;li is="vl-side-navigation-item">
-                                            &lt;div>&lt;a href="#privacy-declaration-application" data-vl-parent="privacy-declaration">Toepassing van deze Privacyverklaring&lt;/a>&lt;/div>
-                                        &lt;/li>
-                                    &lt;/ul>
-                                &lt;/li>
-                            &lt;/ul>
+                                &lt;ul is="vl-side-navigation-group">
+                                    &lt;li is="vl-side-navigation-item" data-vl-parent>
+                                        &lt;a is="vl-side-navigation-toggle" href="#privacy-department">
+                                            Het Departement Omgeving en uw privacy
+                                            &lt;i class="vl-vi vl-vi-arrow-right-fat">&lt;/i>
+                                        &lt;/a>
+                                    &lt;/li>
+                                    &lt;li is="vl-side-navigation-item" data-vl-parent>
+                                        &lt;a is="vl-side-navigation-toggle" href="#privacy-declaration" data-vl-child="privacy-declaration">
+                                            Privacyverklaring
+                                            &lt;i class="vl-vi vl-vi-arrow-right-fat">&lt;/i>
+                                        &lt;/a>
+                                        &lt;ul>
+                                            &lt;li is="vl-side-navigation-item">
+                                                &lt;div>
+                                                    &lt;a href="#privacy-declaration-who" data-vl-parent="privacy-declaration">
+                                                        Wie is verantwoordelijk voor de verwerking van mijn persoonsgegevens?
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                            &lt;li is="vl-side-navigation-item">
+                                                &lt;div>
+                                                    &lt;a href="#privacy-declaration-process" data-vl-parent="privacy-declaration">
+                                                        Verwerking van persoonsgegevens
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                            &lt;li>
+                                                &lt;div>
+                                                    &lt;a href="#privacy-declaration-measures" data-vl-parent="privacy-declaration">
+                                                        Maatregelen in het kader van de Algemene verordening Gegevensbescherming
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                            &lt;li>
+                                                &lt;div>
+                                                    &lt;a href="#privacy-declaration-rights" data-vl-parent="privacy-declaration">
+                                                        Uw rechten als betrokkene
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                            &lt;li>
+                                                &lt;div>
+                                                    &lt;a href="#privacy-declaration-aplpy" data-vl-parent="privacy-declaration">
+                                                        Toepassing van deze Privacyverklaring
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                        &lt;/ul>
+                                    &lt;/li>
+                                    &lt;li is="vl-side-navigation-item" data-vl-parent>
+                                        &lt;a is="vl-side-navigation-toggle" href="#privacy-permissions-protocols" data-vl-parent="privacy-permissions-protocols">
+                                            Machtigingen en protocollen
+                                            &lt;i class="vl-vi vl-vi-arrow-right-fat">&lt;/i>
+                                        &lt;/a>
+                                        &lt;ul>
+                                            &lt;li is="vl-side-navigation-item">
+                                                &lt;div>
+                                                    &lt;a href="#privacy-permissions-protocols-process" data-vl-parent="privacy-permissions-protocols">
+                                                        Machtigingen van de bevoegde autoriteiten en afgesloten protocollen voor het verwerken van bepaalde gegevens
+                                                    &lt;/a>
+                                                &lt;/div>
+                                            &lt;/li>
+                                        &lt;/ul>
+                                    &lt;/li>
+                                &lt;/ul>
                             &lt;/div>
                         &lt;/nav>
                     &lt;/div>
@@ -570,19 +680,13 @@ export class VlPrivacy extends vlElement(HTMLElement) {
                 &lt;div is="vl-grid" data-vl-is-stacked>
                     &lt;div is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                         &lt;vl-contact-card id="contact-card">
-                            &lt;vl-infoblock slot="info" data-vl-title="Departement Omgeving" data-vl-type="contact">&lt;/vl-infoblock>
+                            &lt;vl-infoblock slot="info" data-vl-title="DPO van Departement Omgeving" data-vl-type="contact">&lt;/vl-infoblock>
                             &lt;vl-properties slot="properties">
                                 &lt;dl is="vl-properties-list">
                                 &lt;dt is="vl-property-term">Adres&lt;/dt>
                                 &lt;dd is="vl-property-value">Graaf de Ferrarisgebouw&lt;br/>Koning Albert II laan 20 (bus 8)&lt;br/>1000 Brussel, België&lt;/dd>
-                                &lt;dt is="vl-property-term">Telefoon&lt;/dt>
-                                &lt;dd is="vl-property-value">&lt;a is="vl-link" href="tel:02 553 80 11">02 553 80 11&lt;span is="vl-icon" data-vl-icon="phone" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
                                 &lt;dt is="vl-property-term">E-mail&lt;/dt>
-                                &lt;dd is="vl-property-value">&lt;a is="vl-link" href="mailto:omgeving@vlaanderen.be">omgeving@vlaanderen.be&lt;span is="vl-icon" data-vl-icon="mail" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
-                                &lt;dt is="vl-property-term">Website&lt;/dt>
-                                &lt;dd is="vl-property-value">&lt;a is="vl-link" href="http://onderwijs.vlaanderen.be" target="_blank">http://onderwijs.vlaanderen.be&lt;span is="vl-icon" data-vl-icon="external" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
-                                &lt;dt is="vl-property-term">KBO-nummer&lt;/dt>
-                                &lt;dd is="vl-property-value">0316.380.841 (ondernemingsnummer van de Vlaamse Overheid)&lt;/dd>
+                                &lt;dd is="vl-property-value">&lt;a is="vl-link" href="mailto:dpo@omgevingvlaanderen.be">dpo@omgevingvlaanderen.be&lt;span is="vl-icon" data-vl-icon="mail" data-vl-after>&lt;/span>&lt;/a>&lt;/dd>
                                 &lt;/dl>
                             &lt;/vl-properties>
                         &lt;/vl-contact-card>
@@ -601,7 +705,7 @@ define('vl-privacy', VlPrivacy);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

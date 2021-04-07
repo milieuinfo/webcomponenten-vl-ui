@@ -24,7 +24,7 @@ export class VlCodePreview extends vlElement(HTMLElement) {
       </style>
       <div class="vl-code-preview" data-vl-code-preview data-vl-code-preview-no-copy-button>
         <pre class="line-numbers">
-          <code class="language-markup auto-indent"></code>
+          <code class="language-markup auto-indent" tabindex="0"></code>
         </pre>
       </div>
     `);

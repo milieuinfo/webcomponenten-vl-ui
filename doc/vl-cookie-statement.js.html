@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -221,6 +238,7 @@
 		<section class="source-section">
 			<article></article>
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-functional-header/dist/vl-functional-header.js';
 import '/node_modules/vl-ui-grid/dist/vl-grid.js';
 import '/node_modules/vl-ui-titles/dist/vl-titles.js';
 import '/node_modules/vl-ui-introduction/dist/vl-introduction.js';
@@ -231,7 +249,11 @@ import '/node_modules/vl-ui-properties/dist/vl-properties.js';
 import '/node_modules/vl-ui-link/dist/vl-link.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
+import '/src/vl-header-cookie.js';
+import '/src/vl-header-authentication-cookie.js';
+import '/src/vl-authentication-cookie.js';
 import '/src/vl-sticky-session-cookie.js';
+import '/src/vl-jsessionid-cookie.js';
 
 /**
  * VlCookieStatement
@@ -240,6 +262,9 @@ import '/src/vl-sticky-session-cookie.js';
  *
  * @extends HTMLElement
  * @mixes vlElement
+ *
+ * @property {string} [data-vl-date="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze pagina opgesteld werd.
+ * @property {string} [data-vl-version="1.0.0"] - Attribuut wordt gebruikt om de pagina versie aan te geven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/issues|Issues}
@@ -259,7 +284,11 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-properties/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         &lt;/style>
+        &lt;vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Cookieverklaring" data-vl-link="https://omgeving.vlaanderen.be">&lt;/vl-functional-header>
     `);
+
+    const version = this.dataset.vlVersion || '1.0.0';
+    const date = this.dataset.vlDate || '3 maart 2021';
 
     this._element.insertAdjacentHTML('afterend', `
         &lt;section is="vl-region">
@@ -270,7 +299,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                     &lt;/div>
                     &lt;div is="vl-column" data-vl-size="10">
                         &lt;p is="vl-introduction">
-                            &lt;span>Versie&lt;/span> ${this.dataset.vlVersion} - ${this.dataset.vlDate}
+                            &lt;span>Versie&lt;/span> &lt;span id="introduction-version">${version}&lt;/span> - &lt;span id="introduction-date">${date}&lt;/span>
                         &lt;/p>
                     &lt;/div>
 
@@ -288,7 +317,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                 &lt;div is="vl-grid" data-vl-is-stacked>
                     &lt;div is="vl-column" data-vl-size="8" data-vl-medium-size="8" data-vl-small-size="8" data-vl-extra-small-size="12">
                         &lt;div is="vl-side-navigation-reference" data-vl--scrollspy-content>
-                            &lt;div is="vl-grid" data-vl-is-stacked>
+                            &lt;div is="vl-grid" data-vl-is-stacked-large>
                                 &lt;div id="cookie-policy" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     &lt;h2 is="vl-h2">Cookiebeleid&lt;/h2>
                                     &lt;p>Departement Omgeving (verder ‘dOMG’) vindt het belangrijk dat u op iedere plaats en elk ogenblik haar dOMG-inhoud kan bekijken, beluisteren, lezen of beleven via diverse mediaplatformen. dOMG wil ook werken aan interactieve diensten en diensten op uw maat. Op dOMG-onlinediensten worden technieken gehanteerd om dit mogelijk te maken, bijvoorbeeld met behulp van cookies en scripts. Deze technieken worden hierna gemakkelijkheidshalve cookies genoemd. In dit cookiebeleid wenst dOMG u te informeren welke cookies worden gebruikt en waarom dit gebeurt. Verder wordt toegelicht in welke mate u als gebruiker het gebruik kan controleren. dOMG wil namelijk graag uw privacy en de gebruiksvriendelijkheid van haar onlinediensten zoveel mogelijk waarborgen.&lt;/p>
@@ -322,6 +351,10 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                                 &lt;div id="cookie-usage" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     &lt;h2 is="vl-h2">Gebruikte cookies&lt;/h2>
+                                    &lt;vl-header-cookie>&lt;/vl-header-cookie>
+                                    &lt;vl-header-authentication-cookie>&lt;/vl-header-authentication-cookie>
+                                    &lt;vl-authentication-cookie>&lt;/vl-authentication-cookie>
+                                    &lt;vl-jsessionid-cookie>&lt;/vl-jsessionid-cookie>
                                     &lt;vl-sticky-session-cookie>&lt;/vl-sticky-session-cookie>
                                     &lt;slot>&lt;/slot>
                                 &lt;/div>
@@ -331,7 +364,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                     &lt;div is="vl-column" data-vl-size="4" data-vl-medium-size="4" data-vl-small-size="4" data-vl-extra-small-size="0">
                         &lt;nav is="vl-side-navigation" aria-label="inhoudsopgave">
-                            &lt;h5 is="vl-side-navigation-h5">Op deze pagina&lt;/h5>
+                            &lt;h2 is="vl-side-navigation-h2">Op deze pagina&lt;/h2>
                             &lt;div is="vl-side-navigation-content">
                                 &lt;ul is="vl-side-navigation-group">
                                     &lt;li is="vl-side-navigation-item" data-vl-parent>
@@ -400,7 +433,7 @@ define('vl-cookie-statement', VlCookieStatement);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

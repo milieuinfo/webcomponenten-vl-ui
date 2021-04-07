@@ -46,6 +46,13 @@ export class VlFormLabel extends nativeVlElement(HTMLLabelElement) {
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
 export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElement) {
+  constructor() {
+    super();
+    if (this.hasAttribute('data-vl-error-id')) {
+      this.setAttribute('hidden', '');
+    }
+  }
+
   static get _observedAttributes() {
     return ['block', 'success'];
   }

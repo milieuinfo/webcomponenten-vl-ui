@@ -1,4 +1,5 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-functional-header/dist/vl-functional-header.js';
 import '/node_modules/vl-ui-grid/dist/vl-grid.js';
 import '/node_modules/vl-ui-titles/dist/vl-titles.js';
 import '/node_modules/vl-ui-introduction/dist/vl-introduction.js';
@@ -9,7 +10,11 @@ import '/node_modules/vl-ui-properties/dist/vl-properties.js';
 import '/node_modules/vl-ui-link/dist/vl-link.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-header-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-header-authentication-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-authentication-cookie.js';
 import '/node_modules/vl-ui-cookie-statement/dist/vl-sticky-session-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-jsessionid-cookie.js';
 
 /**
  * VlCookieStatement
@@ -18,6 +23,9 @@ import '/node_modules/vl-ui-cookie-statement/dist/vl-sticky-session-cookie.js';
  *
  * @extends HTMLElement
  * @mixes vlElement
+ *
+ * @property {string} [data-vl-date="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze pagina opgesteld werd.
+ * @property {string} [data-vl-version="1.0.0"] - Attribuut wordt gebruikt om de pagina versie aan te geven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/issues|Issues}
@@ -37,7 +45,11 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-properties/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         </style>
+        <vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Cookieverklaring" data-vl-link="https://omgeving.vlaanderen.be"></vl-functional-header>
     `);
+
+    const version = this.dataset.vlVersion || '1.0.0';
+    const date = this.dataset.vlDate || '3 maart 2021';
 
     this._element.insertAdjacentHTML('afterend', `
         <section is="vl-region">
@@ -48,7 +60,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                     </div>
                     <div is="vl-column" data-vl-size="10">
                         <p is="vl-introduction">
-                            <span>Versie</span> ${this.dataset.vlVersion} - ${this.dataset.vlDate}
+                            <span>Versie</span> <span id="introduction-version">${version}</span> - <span id="introduction-date">${date}</span>
                         </p>
                     </div>
 
@@ -66,7 +78,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                 <div is="vl-grid" data-vl-is-stacked>
                     <div is="vl-column" data-vl-size="8" data-vl-medium-size="8" data-vl-small-size="8" data-vl-extra-small-size="12">
                         <div is="vl-side-navigation-reference" data-vl--scrollspy-content>
-                            <div is="vl-grid" data-vl-is-stacked>
+                            <div is="vl-grid" data-vl-is-stacked-large>
                                 <div id="cookie-policy" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     <h2 is="vl-h2">Cookiebeleid</h2>
                                     <p>Departement Omgeving (verder ‘dOMG’) vindt het belangrijk dat u op iedere plaats en elk ogenblik haar dOMG-inhoud kan bekijken, beluisteren, lezen of beleven via diverse mediaplatformen. dOMG wil ook werken aan interactieve diensten en diensten op uw maat. Op dOMG-onlinediensten worden technieken gehanteerd om dit mogelijk te maken, bijvoorbeeld met behulp van cookies en scripts. Deze technieken worden hierna gemakkelijkheidshalve cookies genoemd. In dit cookiebeleid wenst dOMG u te informeren welke cookies worden gebruikt en waarom dit gebeurt. Verder wordt toegelicht in welke mate u als gebruiker het gebruik kan controleren. dOMG wil namelijk graag uw privacy en de gebruiksvriendelijkheid van haar onlinediensten zoveel mogelijk waarborgen.</p>
@@ -100,6 +112,10 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                                 <div id="cookie-usage" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     <h2 is="vl-h2">Gebruikte cookies</h2>
+                                    <vl-header-cookie></vl-header-cookie>
+                                    <vl-header-authentication-cookie></vl-header-authentication-cookie>
+                                    <vl-authentication-cookie></vl-authentication-cookie>
+                                    <vl-jsessionid-cookie></vl-jsessionid-cookie>
                                     <vl-sticky-session-cookie></vl-sticky-session-cookie>
                                     <slot></slot>
                                 </div>
@@ -109,7 +125,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                     <div is="vl-column" data-vl-size="4" data-vl-medium-size="4" data-vl-small-size="4" data-vl-extra-small-size="0">
                         <nav is="vl-side-navigation" aria-label="inhoudsopgave">
-                            <h5 is="vl-side-navigation-h5">Op deze pagina</h5>
+                            <h2 is="vl-side-navigation-h2">Op deze pagina</h2>
                             <div is="vl-side-navigation-content">
                                 <ul is="vl-side-navigation-group">
                                     <li is="vl-side-navigation-item" data-vl-parent>

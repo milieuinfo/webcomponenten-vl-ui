@@ -31,7 +31,9 @@ export class VlAlert extends vlElement(HTMLElement) {
       </style>
       <div id="alert" class="vl-alert" role="alert">
         <div id="content" class="vl-alert__content">
-          <p id="title" class="vl-alert__title"></p>
+          <p id="title" class="vl-alert__title">
+            <slot name='title'></slot>
+          </p>
           <div id="message" class="vl-alert__message">
             <slot id="messages-slot"></slot>
           </div>
@@ -45,15 +47,13 @@ export class VlAlert extends vlElement(HTMLElement) {
 
   connectedCallback() {
     this.__processActionsElementVisibility();
+    this.__processTitleElementVisibility();
     this._actionsSlotElement.addEventListener('slotchange', () => this.__processButtons());
+    this._titleSlotElement.addEventListener('slotchange', () => this.__processTitleElementVisibility());
   }
 
   get _classPrefix() {
     return 'vl-alert--';
-  }
-
-  get _titleElement() {
-    return this._element.querySelector('.vl-alert__title');
   }
 
   get _iconElement() {
@@ -68,8 +68,16 @@ export class VlAlert extends vlElement(HTMLElement) {
     return this._element.querySelector('.vl-alert__actions');
   }
 
+  get _titleElement() {
+    return this._element.querySelector('.vl-alert__title');
+  }
+
   get _actionsSlotElement() {
     return this._element.querySelector('slot[name="actions"]');
+  }
+
+  get _titleSlotElement() {
+    return this._element.querySelector('slot[name="title"]');
   }
 
   _getIconTemplate(newValue) {
@@ -106,7 +114,8 @@ export class VlAlert extends vlElement(HTMLElement) {
   };
 
   _titleChangedCallback(oldValue, newValue) {
-    this._titleElement.textContent = newValue;
+    this._titleSlotElement.textContent = newValue;
+    this.__processTitleElementVisibility();
   };
 
   _closableChangedCallback(oldValue, newValue) {
@@ -135,6 +144,12 @@ export class VlAlert extends vlElement(HTMLElement) {
     } else {
       this._element.classList.remove(this._classPrefix + oldValue);
     }
+  }
+
+  __processTitleElementVisibility() {
+    this._titleElement.hidden = this._titleSlotElement &&
+        this._titleSlotElement.assignedElements().length == 0 &&
+        this._titleSlotElement.textContent.trim() === '';
   }
 
   __processActionsElementVisibility() {

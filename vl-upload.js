@@ -16,6 +16,7 @@ Promise.all([
  *
  * @property {File[]} data-vl-accepted-files - Attribuut om te bepalen welke bestanden worden geaccepteerd door component (extensie en mimetype).
  * @property {boolean} data-vl-autoprocess - Attribuut om te activeren of deactiveren dat het het gedropte bestand direct moet opgeladen worden.
+ * @property {boolean} data-vl-disabled - Attribuut om te voorkomen dat de gebruiker een bijlage kan opladen.
  * @property {boolean} data-vl-disallow-duplicates - Attribuut om te voorkomen dat dezelfde bijlage meerdere keren kan opgeladen worden.
  * @property {string} data-vl-error - Attribuut om aan te geven dat het upload element een fout bevat.
  * @property {string} data-vl-error-message-accepted-files - Attribuut om de message te definiëren wanneer er niet-geaccepteerde bestanden zijn toegevoegd.
@@ -36,7 +37,7 @@ Promise.all([
  */
 export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
   static get _observedAttributes() {
-    return vlFormValidation._observedAttributes().concat(['accepted-files', 'autoprocess', 'error-message-accepted-files', 'error-message-filesize', 'error-message-maxfiles', 'full-body-drop', 'input-name', 'max-files', 'max-size', 'disallow-duplicates', 'title', 'sub-title', 'url']);
+    return vlFormValidation._observedAttributes().concat(['accepted-files', 'autoprocess', 'disabled', 'disallow-duplicates', 'error-message-accepted-files', 'error-message-filesize', 'error-message-maxfiles', 'full-body-drop', 'input-name', 'max-files', 'max-size', 'sub-title', 'title', 'url']);
   }
 
   static get _observedChildClassAttributes() {
@@ -217,6 +218,7 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
       this._dressFormValidation();
       this._dropzone.on('addedfile', () => setTimeout(() => this.dispatchEvent(new Event('change'))));
       this._dropzone.on('removedfile', () => setTimeout(() => this.dispatchEvent(new Event('change'))));
+      this._dropzone.timeout = 0; // 0 value will disable the connection timeout
     }
   }
 
@@ -252,15 +254,24 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
   }
 
   /**
-   * Handmatig bestand toevoegen
+   * Handmatig bestand toevoegen aan de lijst van opgeladen bestanden zonder achterliggende upload
    * @param {String} name
    * @param {Number} size
    * @param {Number} id
    * @return {void}
    */
   addFile({name, size, id}) {
+    const autoprocessActive = this.dataset.vlAutoprocess != undefined;
+    if (autoprocessActive) {
+      this._disableAutoProcessQueue();
+    }
     const file = {name: name, size: size, id: id};
     this._dropzone.addFile(file);
+    this._dropzone.emit('complete', file);
+    file.status = 'success';
+    if (autoprocessActive) {
+      this._enableAutoProcessQueue();
+    }
   }
 
   /**
@@ -270,6 +281,20 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
     this._button.focus();
   }
 
+  /**
+   * Enable input element.
+   */
+  enable() {
+    vl.upload.enable(this._element);
+  }
+
+  /**
+   * Disable input element.
+   */
+  disable() {
+    vl.upload.disable(this._element);
+  }
+
   _acceptedFilesChangedCallback(oldValue, newValue) {
     this._element.setAttribute(this._prefix + 'accepted-files', newValue);
     this._element.setAttribute('accept', newValue);
@@ -277,6 +302,14 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
 
   _autoprocessChangedCallback(oldValue, newValue) {
     this._element.setAttribute(this._prefix + 'autoprocess', newValue);
+  }
+
+  _disabledChangedCallback(oldValue, newValue) {
+    if (newValue !== undefined) {
+      this.disable();
+    } else {
+      this.enable();
+    }
   }
 
   _disallowDuplicatesChangedCallback(oldValue, newValue) {
@@ -342,5 +375,13 @@ export class VlUpload extends vlFormValidationElement(vlElement(HTMLElement)) {
     if (!this._hasUploadOverlayTemplate) {
       document.body.appendChild(this._uploadOverlayTemplate);
     }
+  }
+
+  _disableAutoProcessQueue() {
+    this._dropzone.options.autoProcessQueue = false;
+  }
+
+  _enableAutoProcessQueue() {
+    this._dropzone.options.autoProcessQueue = true;
   }
 }

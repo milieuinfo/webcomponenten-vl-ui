@@ -10,8 +10,8 @@ import '/node_modules/vl-ui-icon/dist/vl-icon.js';
  * @mixes vlElement
  *
  * @property {string} data-vl-title - Attribuut dat wordt gebruikt om de titel van de infoblock te zetten.
- * @property {string} data-vl-icon -  Attribuut dat wordt gebruikt om een icoon vooraan aan de titel toe te voegen. Het icoon kan gekozen worden uit de lijst op https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon.
- * @property {string} data-vl-type -  Er kan een vast icoon gekozen worden (contact, publications, faq, news, timeline, question)
+ * @property {string} data-vl-icon - Attribuut dat wordt gebruikt om een icoon vooraan aan de titel toe te voegen. Het icoon kan gekozen worden uit de lijst op https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-icon.
+ * @property {string} data-vl-type - Er kan een vast icoon gekozen worden (contact, publications, faq, news, timeline, question)
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-infoblock/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-infoblock/issues|Issues}
@@ -33,7 +33,7 @@ export class VlInfoblock extends vlElement(HTMLElement) {
       <section id="infoblock-element" class="vl-infoblock">
         <header class="vl-infoblock__header" role="presentation">
           <span is="vl-icon" id="infoblock_icon" class="vl-infoblock__header__icon"></span>
-          <h2 class="vl-infoblock__title" id="infoblock_title"><slot name='title'></slot></h2>
+          <slot name="title" class="vl-infoblock__title"></slot>
         </header>
         <div class="vl-infoblock__content" id="infoblock_content">
           <slot></slot>

@@ -2,44 +2,52 @@
 <html>
 	<head>
         <title>vl-pattern voorbeeld</title>
-        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
-        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
-        <script type="module" src="/node_modules/vl-ui-form-message/dist/vl-form-message.js"></script>
-        <script type="module" src="/node_modules/vl-ui-input-field/dist/vl-input-field.js"></script>
 
         <script type="module" src="/vl-pattern.js"></script>
+        <script type="module" src="./vl-input-field-pattern-demo.js"></script>
 
+        <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+        <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
         <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
         <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-demo/dist/style.css" />
-        <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-form-message/dist/style.css" />
         <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-input-field/dist/style.css" />
     </head>
 
 	<body is="vl-body">
         <vl-demo-page data-vl-webcomponent="vl-pattern" data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-pattern">
             <vl-demo data-vl-title="IBAN pattern">
-                <label is="vl-form-label" for="pattern-1">IBAN-nummer</label>
-                <input is="vl-input-field" data-vl-block type="text" id="pattern-iban" name="pattern-1" value="" data-vl-pattern="iban" data-vl-pattern-prefix="BE" />
+                <label is="vl-form-label" for="pattern-iban">IBAN-nummer</label>
+                <input is="vl-input-field-demo" type="text" id="pattern-iban" name="pattern-iban" value="" data-vl-pattern="iban" data-vl-pattern-prefix="BE" />
             </vl-demo>
 
-            <vl-demo data-vl-title="Phone number validation">
-                <label is="vl-form-label" for="pattern-2">Telefoonnummer</label>
-                <input is="vl-input-field" data-vl-block type="tel" id="pattern-phone" name="pattern-2" value="" data-vl-pattern="phone" data-vl-pattern-prefix="+32" />
+            <vl-demo data-vl-title="Phone number pattern">
+                <label is="vl-form-label" for="pattern-phone">Telefoonnummer</label>
+                <input is="vl-input-field-demo" data-vl-block type="tel" id="pattern-phone" name="pattern-phone" value="" data-vl-pattern="phone" data-vl-pattern-prefix="+32" />
             </vl-demo>
 
-            <vl-demo data-vl-title="Date validation">
-                <label is="vl-form-label" for="pattern-3">Datum</label>
-                <input is="vl-input-field" data-vl-block type="text" id="pattern-date" name="pattern-3" value="" placeholder="30.08.2018" data-vl-pattern="date" data-vl-datepicker-min="01.01.2016" data-vl-datepicker-max="01.01.2020" />
+            <vl-demo data-vl-title="Date pattern">
+                <label is="vl-form-label" for="pattern-date">Datum</label>
+                <input is="vl-input-field-demo" data-vl-block type="text" id="pattern-date" name="pattern-date" value="" placeholder="30.08.2018" data-vl-pattern="date" data-vl-datepicker-min="01.01.2016" data-vl-datepicker-max="01.01.2020" />
             </vl-demo>
 
-            <vl-demo data-vl-title="Price validation">
-                <label is="vl-form-label" for="pattern-4">Prijs</label>
-                <input is="vl-input-field" data-vl-block type="text" id="pattern-price" name="pattern-4" value="" data-vl-pattern="price" data-vl-pattern-prefix="€" />
+            <vl-demo data-vl-title="Price pattern">
+                <label is="vl-form-label" for="pattern-price">Prijs</label>
+                <input is="vl-input-field-demo" data-vl-block type="text" id="pattern-price" name="pattern-price" value="" data-vl-pattern="price" data-vl-pattern-prefix="€" />
             </vl-demo>
 
-            <vl-demo data-vl-title="RRN validation">
-                <label is="vl-form-label" for="pattern-5">Rijksregisternummer</label>
-                <input is="vl-input-field" data-vl-block type="text" id="pattern-rrn" name="pattern-5" value="" placeholder="11.22.33-444.55" data-vl-pattern="rrn" data-vl-js-dress="true" />
+            <vl-demo data-vl-title="RRN pattern">
+                <label is="vl-form-label" for="pattern-rrn">Rijksregisternummer</label>
+                <input is="vl-input-field-demo" data-vl-block type="text" id="pattern-rrn" name="pattern-rrn" value="" placeholder="11.22.33-444.55" data-vl-pattern="rrn" data-vl-js-dress="true" />
+            </vl-demo>
+
+            <vl-demo data-vl-title="UUID pattern">
+                <label is="vl-form-label" for="pattern-uuid">UUID</label>
+                <input is="vl-input-field-demo" data-vl-block type="text" id="pattern-uuid" name="pattern-uuid" value="" placeholder="1c6fa548-5eef-11eb-ae93-0242ac130002" data-vl-pattern="uuid" />
+            </vl-demo>
+
+            <vl-demo data-vl-title="Numerical pattern">
+                <label is="vl-form-label" for="pattern-numerical">Numeriek</label>
+                <input is="vl-input-field-demo" data-vl-block type="text" id="pattern-numerical" name="pattern-numerical" value="" placeholder="12,45" data-vl-pattern="numerical" data-vl-numerical-decimal-scale="4" />
             </vl-demo>
         </vl-demo-page>
     </body>

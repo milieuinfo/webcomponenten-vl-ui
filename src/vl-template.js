@@ -9,6 +9,7 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @mixes vlElement
  *
  * @property {boolean} data-vl-v-center - Attribuut wordt gebruikt om ervoor te zorgen dat de content verticaal gecentraliseerd wordt.
+ * @property {boolean} data-vl-v-stretch - Attribuut wordt gebruikt om ervoor te zorgen dat de content 100% zal innemen.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-template/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-template/issues|Issues}

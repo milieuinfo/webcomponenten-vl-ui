@@ -58,7 +58,7 @@ export class VlSteps extends vlElement(HTMLElement) {
 
   __observeChildElements(callback) {
     const observer = new MutationObserver(callback);
-    observer.observe(this, {childList: true, attributes: true, subtree: true});
+    observer.observe(this, {childList: true, attributes: true, subtree: true, characterData: true});
     return observer;
   }
 }

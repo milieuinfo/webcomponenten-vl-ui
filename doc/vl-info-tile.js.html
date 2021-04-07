@@ -54,6 +54,7 @@
 											<li><a href="VlAccordion.html">VlAccordion</a></li>
 											<li><a href="VlActionGroup.html">VlActionGroup</a></li>
 											<li><a href="VlAlert.html">VlAlert</a></li>
+											<li><a href="VlAuthenticationCookie.html">VlAuthenticationCookie</a></li>
 											<li><a href="VlBody.html">VlBody</a></li>
 											<li><a href="VlBreadcrumb.html">VlBreadcrumb</a></li>
 											<li><a href="VlButton.html">VlButton</a></li>
@@ -93,6 +94,8 @@
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
 											<li><a href="VlGrid.html">VlGrid</a></li>
 											<li><a href="VlHeader.html">VlHeader</a></li>
+											<li><a href="VlHeaderAuthenticationCookie.html">VlHeaderAuthenticationCookie</a></li>
+											<li><a href="VlHeaderCookie.html">VlHeaderCookie</a></li>
 											<li><a href="VlHttpErrorMessage.html">VlHttpErrorMessage</a></li>
 											<li><a href="VlIcon.html">VlIcon</a></li>
 											<li><a href="VlIconWrapper.html">VlIconWrapper</a></li>
@@ -104,6 +107,7 @@
 											<li><a href="VlInputField.html">VlInputField</a></li>
 											<li><a href="VlInputGroup.html">VlInputGroup</a></li>
 											<li><a href="VlIntroduction.html">VlIntroduction</a></li>
+											<li><a href="VlJSessionIdCookie.html">VlJSessionIdCookie</a></li>
 											<li><a href="VlLayout.html">VlLayout</a></li>
 											<li><a href="VlLink.html">VlLink</a></li>
 											<li><a href="VlLinkButton.html">VlLinkButton</a></li>
@@ -116,19 +120,31 @@
 											<li><a href="VlMapBaseLayerGRB.html">VlMapBaseLayerGRB</a></li>
 											<li><a href="VlMapBaseLayerGRBGray.html">VlMapBaseLayerGRBGray</a></li>
 											<li><a href="VlMapBaseLayerGRBOrtho.html">VlMapBaseLayerGRBOrtho</a></li>
+											<li><a href="VlMapDeleteAction.html">VlMapDeleteAction</a></li>
+											<li><a href="VlMapDrawAction.html">VlMapDrawAction</a></li>
 											<li><a href="VlMapDrawLineAction.html">VlMapDrawLineAction</a></li>
 											<li><a href="VlMapDrawPointAction.html">VlMapDrawPointAction</a></li>
 											<li><a href="VlMapDrawPolygonAction.html">VlMapDrawPolygonAction</a></li>
+											<li><a href="VlMapFeaturesLayer.html">VlMapFeaturesLayer</a></li>
+											<li><a href="VlMapImageWmsLayer.html">VlMapImageWmsLayer</a></li>
 											<li><a href="VlMapLayer.html">VlMapLayer</a></li>
 											<li><a href="VlMapLayerAction.html">VlMapLayerAction</a></li>
 											<li><a href="VlMapLayerCircleStyle.html">VlMapLayerCircleStyle</a></li>
 											<li><a href="VlMapLayerStyle.html">VlMapLayerStyle</a></li>
 											<li><a href="VlMapLayerSwitcher.html">VlMapLayerSwitcher</a></li>
+											<li><a href="VlMapModifyAction.html">VlMapModifyAction</a></li>
 											<li><a href="VlMapOverviewMap.html">VlMapOverviewMap</a></li>
 											<li><a href="VlMapSearch.html">VlMapSearch</a></li>
 											<li><a href="VlMapSelectAction.html">VlMapSelectAction</a></li>
 											<li><a href="VlMapSideSheet.html">VlMapSideSheet</a></li>
+											<li><a href="VlMapSideSheetMenu.html">VlMapSideSheetMenu</a></li>
+											<li><a href="VlMapSideSheetMenuItem.html">VlMapSideSheetMenuItem</a></li>
+											<li><a href="VlMapTiledWmsLayer.html">VlMapTiledWmsLayer</a></li>
+											<li><a href="VlMapVectorLayer.html">VlMapVectorLayer</a></li>
+											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
+											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
 											<li><a href="VlPager.html">VlPager</a></li>
@@ -155,6 +171,7 @@
 											<li><a href="VlSearchResult.html">VlSearchResult</a></li>
 											<li><a href="VlSearchResults.html">VlSearchResults</a></li>
 											<li><a href="VlSelect.html">VlSelect</a></li>
+											<li><a href="VlSelectLocation.html">VlSelectLocation</a></li>
 											<li><a href="VlSideNavigation.html">VlSideNavigation</a></li>
 											<li><a href="VlSideNavigationContent.html">VlSideNavigationContent</a></li>
 											<li><a href="VlSideNavigationGroup.html">VlSideNavigationGroup</a></li>
@@ -230,6 +247,10 @@ import '/lib/accordion.js';
  * @classdesc
  *
  * @extends HTMLElement
+ * @mixes vlElement
+ *
+ * @property {boolean} data-vl-auto-open - Attribuut wordt gebruikt om de info tile bij rendering meteen te openen.
+ * @property {boolean} data-vl-toggleable - Attribuut wordt gebruikt om mogelijk te maken dat de info tile geopend en gesloten kan worden.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-info-tile/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-info-tile/issues|Issues}
@@ -238,7 +259,7 @@ import '/lib/accordion.js';
  */
 export class VlInfoTile extends vlElement(HTMLElement) {
   static get _observedAttributes() {
-    return ['toggleable'];
+    return ['auto-open', 'toggleable'];
   }
 
   constructor() {
@@ -247,15 +268,12 @@ export class VlInfoTile extends vlElement(HTMLElement) {
         @import '/src/style.css';
         @import '/node_modules/vl-ui-accordion/dist/style.css';
       &lt;/style>
-      &lt;div class="vl-info-tile js-vl-accordion">
+      &lt;div class="vl-info-tile">
         &lt;header class="vl-info-tile__header" role="presentation">
-          &lt;div class="vl-info-tile__header__wrapper">
-            &lt;button class="vl-toggle vl-link vl-link--bold js-vl-accordion__toggle">
-              &lt;i class="vl-link__icon vl-link__icon--before vl-toggle__icon vl-vi vl-vi-arrow-right-fat" aria-hidden="true">&lt;/i>
-              &lt;h3 class="vl-info-tile__header__title">
-                &lt;slot name="title">&lt;/slot>&lt;slot name="title-label">&lt;/slot>
-              &lt;/h3>
-            &lt;/button>
+          &lt;div id="wrapper" class="vl-info-tile__header__wrapper">
+            &lt;h3 id="title" class="vl-info-tile__header__title">
+              &lt;slot name="title">&lt;/slot>&lt;slot name="title-label">&lt;/slot>
+            &lt;/h3>
             &lt;p class="vl-info-tile__header__subtitle">
               &lt;slot name="subtitle">&lt;/slot>
             &lt;/p>
@@ -271,6 +289,11 @@ export class VlInfoTile extends vlElement(HTMLElement) {
         &lt;/footer>
       &lt;/div>
     `);
+  }
+
+  connectedCallback() {
+    this.__processAutoOpen();
+    this.__processSlots();
   }
 
   /**
@@ -293,11 +316,45 @@ export class VlInfoTile extends vlElement(HTMLElement) {
     }
   }
 
+  get _headerWrapperElement() {
+    return this._element.querySelector('#wrapper');
+  }
+
+  get _titleElement() {
+    return this._headerWrapperElement.querySelector('#title');
+  }
+
+  get _titleLabelSlot() {
+    return this.querySelector('[slot=\'title-label\']');
+  }
+
+  get _titleLabelSlotElement() {
+    return this._titleElement.querySelector('[name="title-label"]');
+  }
+
   /**
    * Toggle de info-tile om deze te openen of sluiten.
    */
   toggle() {
     this._toggleElement.click();
+  }
+
+  /**
+   * Open de info-tile als deze nog niet geopend werd.
+   */
+  open() {
+    if (!this.isOpen) {
+      this.toggle();
+    }
+  }
+
+  /**
+   * Sluit de info-tile als deze nog niet gesloten werd.
+   */
+  close() {
+    if (this.isOpen) {
+      this.toggle();
+    }
   }
 
   get _toggleElement() {
@@ -314,14 +371,38 @@ export class VlInfoTile extends vlElement(HTMLElement) {
 
   _toggleableChangedCallback(oldValue, newValue) {
     if (newValue != undefined) {
+      this.__prepareAccordionElements();
       vl.accordion.dress(this._element);
-      this._preventContentClickPropagation();
+      this.__preventContentClickPropagation();
     }
   }
 
-  _preventContentClickPropagation() {
+  __prepareAccordionElements() {
+    this._element.classList.add('js-vl-accordion');
+    const button = this._template(`
+      &lt;button class="vl-toggle vl-link vl-link--bold js-vl-accordion__toggle">
+        &lt;i class="vl-link__icon vl-link__icon--before vl-toggle__icon vl-vi vl-vi-arrow-right-fat" aria-hidden="true">&lt;/i>
+      &lt;/button>
+    `).firstElementChild;
+    button.appendChild(this._titleElement);
+    this._headerWrapperElement.prepend(button);
+  }
+
+  __preventContentClickPropagation() {
     this._subtitleElement.addEventListener('click', (e) => e.stopPropagation());
     this._contentElement.addEventListener('click', (e) => e.stopPropagation());
+  }
+
+  __processAutoOpen() {
+    if (this.isToggleable &amp;&amp; this.dataset.vlAutoOpen != undefined) {
+      this.open();
+    }
+  }
+
+  __processSlots() {
+    if (!this._titleLabelSlot) {
+      this._titleLabelSlotElement.remove();
+    }
   }
 }
 
@@ -332,7 +413,7 @@ define('vl-info-tile', VlInfoTile);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 6th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 7th Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -30,11 +30,10 @@ Release:
     - script: |
         #!/usr/env/bin bash
         set -e
-        set -x #echo on
         /opt/scripts/git/git-repository-information-restore.sh
         export git_repo="${bamboo_repository_git_repositoryUrl}"
         export release_version="${bamboo.release_version}"
-        docker-compose -f docker-compose-release.yml run release
+        docker-compose -f docker-compose-release.yml run release:testless
   final-tasks:
     - script: /opt/scripts/docker/stop-docker-containers.sh
   requirements:

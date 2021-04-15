@@ -28,12 +28,12 @@ Release:
   tasks:
     - clean
     - script: |
-      #!/bin/sh
-      set -e
-      /opt/scripts/git/git-repository-information-restore.sh
-      export git_repo="${bamboo_repository_git_repositoryUrl}"
-      export release_version="${bamboo.release_version}"
-      docker-compose -f docker-compose-release.yml run release
+        #!/usr/env/bin bash
+        set -e
+        /opt/scripts/git/git-repository-information-restore.sh
+        export git_repo="${bamboo_repository_git_repositoryUrl}"
+        export release_version="${bamboo.release_version}"
+        docker-compose -f docker-compose-release.yml run release
   final-tasks:
     - script: /opt/scripts/docker/stop-docker-containers.sh
   requirements:

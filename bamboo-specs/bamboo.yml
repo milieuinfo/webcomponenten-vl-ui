@@ -27,7 +27,7 @@ Release:
   key: REL
   tasks:
     - clean
-    - scripts: |
+    - script: |
       #!/bin/sh
       set -e
       /opt/scripts/git/git-repository-information-restore.sh

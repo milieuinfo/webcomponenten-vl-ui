@@ -34,7 +34,7 @@ Release:
         export git_repo="${bamboo_repository_git_repositoryUrl}"
         export release_version="${bamboo.release_version}"
         docker-compose -f docker-compose-release.yml run release
-      interpreter: cmd.exe
+      interpreter: /bin/sh
   final-tasks:
     - script: /opt/scripts/docker/stop-docker-containers.sh
   requirements:

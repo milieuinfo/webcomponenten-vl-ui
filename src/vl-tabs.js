@@ -1,7 +1,7 @@
 import {awaitUntil, define, vlElement} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import {VlTabsPane} from '/src/vl-tabs-pane.js';
 import '/src/vl-tab.js';
-import '/lib/tabs.js';
+import '/node_modules/@govflanders/vl-ui-tabs/dist/js/tabs.js';
 
 /**
  * VlTabs

@@ -32,8 +32,23 @@ export class VlDrawAction extends VlMapAction {
     });
     const drawInteraction = new Draw(options);
     interactions.push(drawInteraction);
-    if (options.snapping) {
-      interactions.push(new VlSnapInteraction(options.snapping.layer || layer));
+    if (options.snapping !== undefined) {
+      switch (typeof options.snapping) {
+        case 'boolean':
+          if (options.snapping) {
+            interactions.push(new VlSnapInteraction(layer.getSource()));
+          }
+          break;
+        case 'object':
+          if (options.snapping.layer) {
+            interactions.push(new VlSnapInteraction(options.snapping.layer.getSource(), options.snapping));
+          } else {
+            interactions.push(new VlSnapInteraction(layer.getSource(), options.snapping));
+          }
+          break;
+        default:
+          break;
+      }
     }
 
     drawInteraction.on('drawstart', (event) => {
@@ -80,8 +95,18 @@ export class VlDrawAction extends VlMapAction {
     this.drawInteraction = drawInteraction;
   }
 
+  activate() {
+    if (this.options.snapping && this.options.snapping.layer) {
+      this.map.addLayer(this.options.snapping.layer);
+    }
+    super.activate();
+  }
+
   deactivate() {
     this._cleanUp();
+    if (this.options.snapping && this.options.snapping.layer) {
+      this.map.removeLayer(this.options.snapping.layer);
+    }
     super.deactivate();
   }
 

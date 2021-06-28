@@ -7,6 +7,8 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  *
  * @extends HTMLElement
  *
+ * @property {boolean} data-vl-validate - Attribuut wordt gebruikt om aan te geven dat de input velden validatie geactiveerd moet worden.
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form.html|Demo}
@@ -14,7 +16,7 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  */
 export class VlForm extends nativeVlElement(HTMLFormElement) {
   static get _observedAttributes() {
-    return ['target', 'action'];
+    return ['target', 'action', 'validate'];
   }
 
   static get _targetElementName() {
@@ -23,6 +25,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
 
   connectedCallback() {
     this._process();
+    this._addClasses();
   }
 
   get _targetElement() {
@@ -39,6 +42,7 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     if (targetAttributeIsMissing && actionAttributeIsMissing) {
       this._addTargetElement();
     }
+    this._disableNativeValidation();
   }
 
   _addTargetElement() {
@@ -62,6 +66,22 @@ export class VlForm extends nativeVlElement(HTMLFormElement) {
     if (newValue && this._targetElement) {
       this._removeTargetElement();
     }
+  }
+
+  _validateChangedCallback(oldValue, newValue) {
+    if (newValue != undefined) {
+      this.setAttribute('data-validate-form', '');
+    } else {
+      this.removeAttribute('data-validate-form');
+    }
+  }
+
+  _disableNativeValidation() {
+    this.setAttribute('novalidate', '');
+  }
+
+  _addClasses() {
+    this.classList.add('vl-form');
   }
 }
 

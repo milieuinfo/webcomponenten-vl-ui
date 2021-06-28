@@ -10,7 +10,7 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
 export const vlLinkElement = (SuperClass) => {
   return class extends nativeVlElement(SuperClass) {
     static get _observedAttributes() {
-      return [];
+      return ['error'];
     }
 
     static get _observedClassAttributes() {
@@ -35,6 +35,10 @@ export const vlLinkElement = (SuperClass) => {
         icon.setAttribute('link', '');
       });
     }
+
+    _errorChangedCallback(oldValue, newValue) {
+      this._toggleClass(this, newValue, 'vl-u-text--error');
+    }
   };
 };
 
@@ -48,7 +52,8 @@ export const VlLinkElement = vlLinkElement;
  * @extends HTMLAnchorElement
  * @mixes vlLinkElement
  *
- *@property {string} data-vl-block - Attribuut zorgt ervoor dat het element als block getoond wordt.
+ * @property {string} data-vl-block - Attribuut zorgt ervoor dat het element als block getoond wordt.
+ * @property {string} data-vl-error - Attribuut zorgt ervoor dat het element als error getoond wordt.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
@@ -65,6 +70,7 @@ export class VlLink extends vlLinkElement(HTMLAnchorElement) {}
  * @mixes vlLinkElement
  *
  * @property {string} data-vl-block - Attribuut zorgt ervoor dat het element als block getoond wordt.
+ * @property {string} data-vl-error - Attribuut zorgt ervoor dat het element als error getoond wordt.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}

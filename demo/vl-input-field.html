@@ -46,47 +46,6 @@
         <vl-demo data-vl-title="Input-field small">
             <input is="vl-input-field" data-vl-small id="input-field-small" />
         </vl-demo>
-
-        <vl-demo data-vl-title="Formulier validatie">
-            <form is="vl-form">
-                <div is="vl-form-grid" data-vl-is-stacked>
-                    <div is="vl-form-column" data-vl-size="12">
-                        <label is="vl-form-label" for="input-voornaam" data-vl-block>Voornaam</label>
-                        <input id="input-voornaam" is='vl-input-field' placeholder="Jos" data-vl-block data-required="true"
-                            data-vl-error-message='Veld "Voornaam" is verplicht'
-                            data-vl-error-placeholder="validation-voornaam-error" />
-                        <p is="vl-form-validation-message" data-vl-error id="validation-voornaam-error-message" data-vl-error-id="validation-voornaam-error"></p>
-                    </div>
-                    <div is="vl-form-column" data-vl-size="12">
-                        <label is="vl-form-label" for="input-iban" data-vl-block>IBAN-nummer</label>
-                        <input id="input-iban" is='vl-input-field' placeholder="BE00 0000 0000 0000" data-vl-block type="text"
-                            data-required="true" data-vl-error-message='Een geldig "IBAN-nummer" is verplicht'
-                            data-vl-error-placeholder="validation-iban-error" data-vl-validation-type="iban" />
-                        <p is="vl-form-validation-message" data-vl-error id="validation-iban-error-message" data-vl-error-id="validation-iban-error"></p>
-                    </div>
-                    <div is="vl-form-column" size="12">
-                        <button is="vl-button" type="submit" id="form-validate-button">Valideer</button>
-                    </div>
-                </div>
-            </form>
-        </vl-demo>
-
-        <vl-demo data-vl-title="Input field reageert op input-event">
-            <label for="input-field-met-event" data-vl-block>Origineel</label>
-            <input is="vl-input-field" id="input-field-met-event" data-vl-block />
-            <label for="input-field-copy" data-vl-block>Kopie</label>
-            <input is="vl-input-field" id="input-field-copy" disabled data-vl-block />
-
-            <script>
-                customElements.whenDefined('vl-input-field').then(() => {
-                  const inputField = document.querySelector('#input-field-met-event');
-                  inputField.addEventListener('input', (e) => {
-                    const copy = document.querySelector('#input-field-copy');
-                    copy.value = inputField.value;
-                  });
-                });
-            </script>
-        </vl-demo>
     </vl-demo-page>
 </body>
 

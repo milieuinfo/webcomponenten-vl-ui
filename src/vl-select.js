@@ -24,6 +24,9 @@ Promise.all([
 * @property {boolean} data-vl-select-search-result-limit - Attribuut om het aantal resultaten te limiteren.
 * @property {boolean} data-vl-select-search-no-result-limit - Attribuut om het aantal resultaten te limiteren.
 * @property {boolean} data-vl-select-deletable - Attribuut om te activeren of deactiveren dat het geselecteerde kan verwijderd worden.
+* @property {string} data-vl-search-placeholder - Attribuut bepaalt de placeholder van het zoek adres input element.
+* @property {string} data-vl-search-no-results-text - Attribuut bepaalt de tekst wanneer er geen zoekresultaten meer zijn.
+* @property {string} data-vl-no-more-options - Attribuut bepaalt de tekst wanneer er geen keuzes meer mogelijk zijn.
 *
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/releases/latest|Release notes}
 * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-select/issues|Issues}
@@ -35,6 +38,7 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
    *
    * @return {string}
    */
+
   static get readyEvent() {
     return 'VlSelectReady';
   }
@@ -66,6 +70,18 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
     return VlSelect.readyEvent;
   }
 
+  get DEFAULT_SEARCH_PLACEHOLDER() {
+    return 'Zoek item';
+  }
+
+  get DEFAULT_SEARCH_NO_RESULT() {
+    return 'Geen resultaten gevonden';
+  }
+
+  get DEFAULT_NO_MORE_OPTIONS() {
+    return 'Geen resterende opties gevonden';
+  }
+
   get _classPrefix() {
     return 'vl-select--';
   }
@@ -92,6 +108,18 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
 
   _errorChangedCallback(oldValue, newValue) {
     this.__stateChangedCallback(newValue, 'error');
+  }
+
+  set __searchPlaceholderTranslation(value) {
+    this._changeTranslation('select.search_placeholder_value', value);
+  }
+
+  set __searchNoResultTranslation(value) {
+    this._changeTranslation('select.no_results', value);
+  }
+
+  set __noMoreOptionsTranslation(value) {
+    this._changeTranslation('select.no_more_options', value);
   }
 
   __stateChangedCallback(newValue, type) {
@@ -215,6 +243,24 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
     return this._element.closest('.js-vl-select');
   }
 
+  get __searchPlaceholder() {
+    return this.getAttribute('data-vl-search-placeholder');
+  }
+
+  get __searchNoResults() {
+    return this.getAttribute('data-vl-search-no-results-text');
+  }
+
+  get __noMoreOptions() {
+    return this.getAttribute('data-vl-no-more-options');
+  }
+
+  _setTranslations() {
+    this.__searchPlaceholderTranslation = this.__searchPlaceholder || this.DEFAULT_SEARCH_PLACEHOLDER;
+    this.__searchNoResultTranslation = this.__searchNoResults || this.DEFAULT_SEARCH_NO_RESULT;
+    this.__noMoreOptionsTranslation = this.__noMoreOptions || this.DEFAULT_NO_MORE_OPTIONS;
+  }
+
   /**
    * Initialiseer de `Choices` config.
    *
@@ -222,8 +268,11 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
    * @param {Object} params - object with callbackFn: function(select) with return value the items for `setChoices`
    * @fires VlSelect#VlSelectReady ready event wordt verstuurd wanneer veilige interactie met de webcomponent mogelijk is.
    */
+
   dress(params) {
     setTimeout(() => {
+      this._setTranslations();
+
       if (!this._dressed) {
         vl.select.dress(this, params);
 
@@ -231,7 +280,6 @@ export class VlSelect extends vlFormValidationElement(nativeVlElement(HTMLSelect
           await this.ready();
           this._copySlotAttribute();
           this.__wrap();
-          this.disabled = true;
           this._dressFormValidation();
           this.dispatchEvent(new CustomEvent(this.readyEvent));
         })();

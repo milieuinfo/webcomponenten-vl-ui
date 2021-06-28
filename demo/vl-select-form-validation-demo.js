@@ -1,7 +1,7 @@
 import {define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import {VlSelect} from '/node_modules/vl-ui-select/dist/vl-select.js';
-import {vlFormValidation} from '/vl-form-validation-all.js';
+import {vlFormValidation, vlFormValidationElement} from '/vl-form-validation-all.js';
 
 Promise.all([vlFormValidation.ready()]).then(() => define('vl-select-demo', VlSelectDemo, {extends: 'select'}));
 
-export class VlSelectDemo extends VlSelect {}
+export class VlSelectDemo extends vlFormValidationElement(VlSelect) {}

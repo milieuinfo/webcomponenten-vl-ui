@@ -27,8 +27,27 @@ export class VlSearchFilter extends nativeVlElement(HTMLDivElement) {
     return ['alt', 'mobile-modal'];
   }
 
+  constructor() {
+    super();
+    this.observer = this.__observeChildElements(() => this.__processClasses());
+  }
+
   connectedCallback() {
     this.classList.add('vl-search-filter');
+    this.__processClasses();
+  }
+
+  __observeChildElements(callback) {
+    const observer = new MutationObserver(callback);
+    observer.observe(this, {childList: true});
+    return observer;
+  }
+
+  disconnectedCallback() {
+    this.observer.disconnect();
+  }
+
+  __processClasses() {
     this.querySelectorAll('form').forEach((form) => form.classList.add(`${this._elementPrefix}form`));
     this.querySelectorAll('form > section').forEach((section) => section.classList.add(`${this._elementPrefix}section`));
     this.querySelectorAll('form > section > h2').forEach((title) => title.classList.add(`${this._elementPrefix}section-title`));
@@ -88,7 +107,7 @@ export class VlSearchFilter extends nativeVlElement(HTMLDivElement) {
   get _submitButton() {
     let button;
     if (this._formElement) {
-      button = this._formElement.querySelector('button');
+      button = this._formElement.querySelector(':scope > div button[type="submit"]');
     }
     if (!button && this._footerModalElement) {
       button = this._footerModalElement.querySelector('button');
@@ -175,6 +194,9 @@ export class VlSearchFilter extends nativeVlElement(HTMLDivElement) {
   __convertHeaderTitleToIntro() {
     if (this._title) {
       this.insertBefore(this.__createTitleElement(), this.firstChild);
+    }
+
+    if (this._mobileModalTitleElement) {
       this._mobileModalTitleElement.remove();
     }
   }

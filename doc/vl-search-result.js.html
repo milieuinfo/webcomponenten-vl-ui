@@ -86,9 +86,11 @@
 											<li><a href="VlElement.html">VlElement</a></li>
 											<li><a href="VlFooter.html">VlFooter</a></li>
 											<li><a href="VlForm.html">VlForm</a></li>
-											<li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li>
+											<li><a href="VlFormAnnotationParagraph.html">VlFormAnnotationParagraph</a></li>
+											<li><a href="VlFormAnnotationSpan.html">VlFormAnnotationSpan</a></li>
 											<li><a href="VlFormColumn.html">VlFormColumn</a></li>
 											<li><a href="VlFormGrid.html">VlFormGrid</a></li>
+											<li><a href="VlFormGroup.html">VlFormGroup</a></li>
 											<li><a href="VlFormLabel.html">VlFormLabel</a></li>
 											<li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li>
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
@@ -144,6 +146,7 @@
 											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmsStyle.html">VlMapWmsStyle</a></li>
 											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
@@ -203,6 +206,7 @@
 									<a href="list_mixin.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 											<li><a href="vlButtonElement.html">vlButtonElement</a></li>
+											<li><a href="vlFormAnnotationElement.html">vlFormAnnotationElement</a></li>
 											<li><a href="vlFormValidation.html">vlFormValidation</a></li>
 											<li><a href="vlFormValidationElement.html">vlFormValidationElement</a></li>
 											<li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li>
@@ -237,7 +241,7 @@
 			<div class="col-md-12 main-content">
 		<section class="source-section">
 			<article></article>
-			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlSearchResult
@@ -251,74 +255,118 @@
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-results/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-search-results.html|Demo}
  */
-export class VlSearchResult extends vlElement(HTMLElement) {
-  constructor() {
-    super(`
-      &lt;style>
-          @import '/src/style.css';
-      &lt;/style>
-      &lt;li>
-        &lt;section class="vl-search-result">
-          &lt;h3 class="vl-search-result__title">
-            &lt;slot name="title">&lt;/slot>
-          &lt;/h3>
-          &lt;p class="vl-search-result__content-group">
-            &lt;slot class="vl-search-result__meta-data" name="sub-title">&lt;/slot>
-          &lt;/p>
-          &lt;div class="vl-search-result__content-group">
-            &lt;slot name="content">&lt;/slot>
-          &lt;/div>
-        &lt;/section>
-      &lt;/li>
-    `);
-  }
-
+export class VlSearchResult extends nativeVlElement(HTMLLIElement) {
   get _classPrefix() {
     return 'vl-search-result';
   }
 
-  get _titleSlotElement() {
-    return this._shadow.querySelector('slot[name="title"]');
+  get _sectionElement() {
+    return this.querySelector('.vl-search-result');
   }
 
-  get _contentSlotElement() {
-    return this._shadow.querySelector('slot[name="content"]');
+  get _titleElement() {
+    return this.querySelector('.vl-search-result__title');
+  }
+
+  get _titleLinkElement() {
+    return this._titleElement?.querySelector(':scope > * ') || this.querySelector('a');
+  }
+
+  get _metaDataContainerElement() {
+    return this.querySelector('p.vl-search-result__content-group');
+  }
+
+  get _metaDataElement() {
+    return this._metaDataContainerElement?.querySelector(':scope > *') || this.querySelector(':scope > *:nth-child(2)');
+  }
+
+  get _contentContainerElements() {
+    return this.querySelectorAll('div.vl-search-result__content-group');
+  }
+
+  get _contentElements() {
+    return this.querySelectorAll('dl');
+  }
+
+  get _sectionTemplate() {
+    return `&lt;section class="vl-search-result">&lt;/section>`;
+  }
+
+  get _titleTemplate() {
+    return `&lt;h3 class="vl-search-result__title">&lt;/h3>`;
+  }
+
+  get _metaDataContainerTemplate() {
+    return `&lt;p class="vl-search-result__content-group">&lt;/p>`;
+  }
+
+  get _contentContainerTemplate() {
+    return `&lt;div class="vl-search-result__content-group">&lt;/div>`;
   }
 
   connectedCallback() {
-    this._setChildClasses();
+    this._processChildren();
   }
 
-  _setChildClasses() {
-    this._setTitleClasses();
-    this._setContentClasses();
+  _processChildren() {
+    this._appendSection();
+    this._processTitle();
+    this._processMetaData();
+    this._processContent();
+  }
+
+  _appendSection() {
+    this.insertAdjacentHTML('afterbegin', this._sectionTemplate);
+  }
+
+  _processTitle() {
+    if (this._titleLinkElement) {
+      this._sectionElement.insertAdjacentHTML('beforeend', this._titleTemplate);
+      this._titleElement.appendChild(this._titleLinkElement);
+      this._setTitleClasses();
+    }
+  }
+
+  _processMetaData() {
+    if (this._metaDataElement) {
+      this._sectionElement.insertAdjacentHTML('beforeend', this._metaDataContainerTemplate);
+      this._metaDataContainerElement.appendChild(this._metaDataElement);
+      this._setMetaDataClasses();
+    }
+  }
+
+  _processContent() {
+    this._contentElements.forEach((element) => {
+      const container = this._template(this._contentContainerTemplate).firstElementChild;
+      container.appendChild(element);
+      this._setContentClasses(element);
+      this._sectionElement.insertAdjacentElement('beforeend', container);
+    });
+  }
+
+  _setMetaDataClasses() {
+    this._metaDataElement.classList.add(`${this._classPrefix}__meta-data`);
   }
 
   _setTitleClasses() {
-    this._titleSlotElement.assignedElements().forEach((element) => {
-      element.classList.add(`${this._classPrefix}__title__link`);
-    });
+    this._titleLinkElement.classList.add(`${this._classPrefix}__title__link`);
   }
 
-  _setContentClasses() {
-    this._contentSlotElement.assignedElements().forEach((element) => {
-      if (element instanceof HTMLDListElement) {
-        const dlClass = `${this._classPrefix}__description-list`;
-        element.classList.add(dlClass);
-        element.querySelectorAll('dt').forEach((dt) => dt.classList.add(`${dlClass}__description`));
-      }
-    });
+  _setContentClasses(element) {
+    const dlClass = `${this._classPrefix}__description-list`;
+    element.classList.add(dlClass);
+    element.querySelectorAll('dt').forEach((dt) => dt.classList.add(`${dlClass}__description`));
   }
 }
 
-define('vl-search-result', VlSearchResult);
+define('vl-search-result', VlSearchResult, {extends: 'li'});
 </code></pre>
 		</section>
 			</div>
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 22nd Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on 28th Jun 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

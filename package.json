@@ -38,7 +38,7 @@
     "jsdoc": "3.6.7",
     "replace": "^1.2.1",
     "vl-ui-util": "^5.3.11",
-    "webcomponenten-vl-ui-bom": "3.1.0"
+    "webcomponenten-vl-ui-bom": "4.0.0"
   },
   "bundledDependencies": [
     "fetch-mock",

@@ -8,11 +8,17 @@ import {nativeVlElement, vlElement, define} from '/node_modules/vl-ui-core/dist/
  * @extends HTMLElement
  * @mixes vlElement
  *
+ * @property {boolean} data-vl-full-width - Attribuut wordt gebruikt om de maximale breedte van het label te benutten.
+ *
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/releases/latest|Release notes}
  * @see {@link http://www.github.com/milieuinfo/webcomponent-vl-ui-properties/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-properties.html|Demo}
  */
 export class VlProperties extends vlElement(HTMLElement) {
+  static get _observedClassAttributes() {
+    return ['full-width'];
+  }
+
   constructor() {
     super(`
       <style>
@@ -31,6 +37,10 @@ export class VlProperties extends vlElement(HTMLElement) {
 
   get _titles() {
     return this.querySelectorAll('h1,h2,h3,h4,h5,h6');
+  }
+
+  get _classPrefix() {
+    return 'vl-properties--';
   }
 
   _setPropertiesTitle() {

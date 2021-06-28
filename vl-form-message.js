@@ -98,6 +98,28 @@ export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElemen
   }
 }
 
+/**
+ * Gebruik de form-annotation mixin in combinatie met HTML elementen.
+ * @mixin vlFormAnnotationElement
+ *
+ * @param {Object} SuperClass - Class die als base class gebruikt zal worden.
+ * @return {Object} class
+ */
+const vlFormAnnotationElement = (SuperClass) => {
+  return class extends nativeVlElement(SuperClass) {
+    static get _observedClassAttributes() {
+      return ['block'];
+    }
+
+    connectedCallback() {
+      this.classList.add('vl-form__annotation');
+    }
+
+    get _classPrefix() {
+      return 'vl-form__annotation--';
+    }
+  };
+};
 
 /**
  * VlFormAnnotation
@@ -105,7 +127,7 @@ export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElemen
  * @classdesc Gebruik de vl-form-annotation om invoerinstructies toe te voegen aan een formulier.
  *
  * @extends HTMLParagraphElement
- * @mixes nativeVlElement
+ * @mixes vlFormAnnotationElement
  *
  * @property {boolean} data-vl-block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
  *
@@ -113,20 +135,25 @@ export class VlFormValidationMessage extends nativeVlElement(HTMLParagraphElemen
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
  */
-export class VlFormAnnotation extends nativeVlElement(HTMLParagraphElement) {
-  static get _observedClassAttributes() {
-    return ['block'];
-  }
+export class VlFormAnnotationParagraph extends vlFormAnnotationElement(HTMLParagraphElement) {}
 
-  connectedCallback() {
-    this.classList.add('vl-form__annotation');
-  }
-
-  get _classPrefix() {
-    return 'vl-form__annotation--';
-  }
-}
+/**
+ * VlFormAnnotation
+ * @class
+ * @classdesc Gebruik de vl-form-annotation om invoerinstructies toe te voegen aan een formulier.
+ *
+ * @extends HTMLParagraphElement
+ * @mixes vlFormAnnotationElement
+ *
+ * @property {boolean} data-vl-block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ *
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-form-message/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-form-message.html|Demo}
+ */
+export class VlFormAnnotationSpan extends vlFormAnnotationElement(HTMLSpanElement) {}
 
 define('vl-form-label', VlFormLabel, {extends: 'label'});
 define('vl-form-validation-message', VlFormValidationMessage, {extends: 'p'});
-define('vl-form-annotation', VlFormAnnotation, {extends: 'p'});
+define('vl-form-annotation', VlFormAnnotationParagraph, {extends: 'p'});
+define('vl-form-annotation-span', VlFormAnnotationSpan, {extends: 'span'});

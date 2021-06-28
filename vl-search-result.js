@@ -1,4 +1,4 @@
-import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlSearchResult
@@ -12,64 +12,108 @@ import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-search-results/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-search-results.html|Demo}
  */
-export class VlSearchResult extends vlElement(HTMLElement) {
-  constructor() {
-    super(`
-      <style>
-          @import '/node_modules/vl-ui-search-results/dist/style.css';
-      </style>
-      <li>
-        <section class="vl-search-result">
-          <h3 class="vl-search-result__title">
-            <slot name="title"></slot>
-          </h3>
-          <p class="vl-search-result__content-group">
-            <slot class="vl-search-result__meta-data" name="sub-title"></slot>
-          </p>
-          <div class="vl-search-result__content-group">
-            <slot name="content"></slot>
-          </div>
-        </section>
-      </li>
-    `);
-  }
-
+export class VlSearchResult extends nativeVlElement(HTMLLIElement) {
   get _classPrefix() {
     return 'vl-search-result';
   }
 
-  get _titleSlotElement() {
-    return this._shadow.querySelector('slot[name="title"]');
+  get _sectionElement() {
+    return this.querySelector('.vl-search-result');
   }
 
-  get _contentSlotElement() {
-    return this._shadow.querySelector('slot[name="content"]');
+  get _titleElement() {
+    return this.querySelector('.vl-search-result__title');
+  }
+
+  get _titleLinkElement() {
+    return this._titleElement?.querySelector(':scope > * ') || this.querySelector('a');
+  }
+
+  get _metaDataContainerElement() {
+    return this.querySelector('p.vl-search-result__content-group');
+  }
+
+  get _metaDataElement() {
+    return this._metaDataContainerElement?.querySelector(':scope > *') || this.querySelector(':scope > *:nth-child(2)');
+  }
+
+  get _contentContainerElements() {
+    return this.querySelectorAll('div.vl-search-result__content-group');
+  }
+
+  get _contentElements() {
+    return this.querySelectorAll('dl');
+  }
+
+  get _sectionTemplate() {
+    return `<section class="vl-search-result"></section>`;
+  }
+
+  get _titleTemplate() {
+    return `<h3 class="vl-search-result__title"></h3>`;
+  }
+
+  get _metaDataContainerTemplate() {
+    return `<p class="vl-search-result__content-group"></p>`;
+  }
+
+  get _contentContainerTemplate() {
+    return `<div class="vl-search-result__content-group"></div>`;
   }
 
   connectedCallback() {
-    this._setChildClasses();
+    this._processChildren();
   }
 
-  _setChildClasses() {
-    this._setTitleClasses();
-    this._setContentClasses();
+  _processChildren() {
+    this._appendSection();
+    this._processTitle();
+    this._processMetaData();
+    this._processContent();
+  }
+
+  _appendSection() {
+    this.insertAdjacentHTML('afterbegin', this._sectionTemplate);
+  }
+
+  _processTitle() {
+    if (this._titleLinkElement) {
+      this._sectionElement.insertAdjacentHTML('beforeend', this._titleTemplate);
+      this._titleElement.appendChild(this._titleLinkElement);
+      this._setTitleClasses();
+    }
+  }
+
+  _processMetaData() {
+    if (this._metaDataElement) {
+      this._sectionElement.insertAdjacentHTML('beforeend', this._metaDataContainerTemplate);
+      this._metaDataContainerElement.appendChild(this._metaDataElement);
+      this._setMetaDataClasses();
+    }
+  }
+
+  _processContent() {
+    this._contentElements.forEach((element) => {
+      const container = this._template(this._contentContainerTemplate).firstElementChild;
+      container.appendChild(element);
+      this._setContentClasses(element);
+      this._sectionElement.insertAdjacentElement('beforeend', container);
+    });
+  }
+
+  _setMetaDataClasses() {
+    this._metaDataElement.classList.add(`${this._classPrefix}__meta-data`);
   }
 
   _setTitleClasses() {
-    this._titleSlotElement.assignedElements().forEach((element) => {
-      element.classList.add(`${this._classPrefix}__title__link`);
-    });
+    this._titleLinkElement.classList.add(`${this._classPrefix}__title__link`);
   }
 
-  _setContentClasses() {
-    this._contentSlotElement.assignedElements().forEach((element) => {
-      if (element instanceof HTMLDListElement) {
-        const dlClass = `${this._classPrefix}__description-list`;
-        element.classList.add(dlClass);
-        element.querySelectorAll('dt').forEach((dt) => dt.classList.add(`${dlClass}__description`));
-      }
-    });
+  _setContentClasses(element) {
+    const dlClass = `${this._classPrefix}__description-list`;
+    element.classList.add(dlClass);
+    element.querySelectorAll('dt').forEach((dt) => dt.classList.add(`${dlClass}__description`));
   }
 }
 
-define('vl-search-result', VlSearchResult);
+define('vl-search-result', VlSearchResult, {extends: 'li'});

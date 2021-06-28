@@ -38,9 +38,7 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
 
   async connectedCallback() {
     await super.connectedCallback();
-    if (this.mapElement) {
-      this._autoZoomToExtent();
-    }
+    this._autoZoomToExtent();
   }
 
   /**
@@ -49,7 +47,7 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @return {object}
    */
   get features() {
-    return this.source ? this.source.getFeatures() : this._featuresFromAttribute;
+    return this.__featuresSource ? this.__featuresSource.getFeatures() : this._featuresFromAttribute;
   }
 
   get _featuresFromAttribute() {
@@ -86,8 +84,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * Verwijdert de stijl van al de kaartlaag features.
    */
   removeFeaturesStyle() {
-    if (this.source && this.source.getFeatures()) {
-      this.source.getFeatures().forEach((feature) => {
+    if (this.__featuresSource && this.__featuresSource.getFeatures()) {
+      this.__featuresSource.getFeatures().forEach((feature) => {
         feature.setStyle(null);
       });
     }
@@ -100,8 +98,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @return {Object}
    */
   getFeature(id) {
-    if (this.source && this.source.getFeatures()) {
-      return this.source.getFeatures().filter((feature) => {
+    if (this.__featuresSource && this.__featuresSource.getFeatures()) {
+      return this.__featuresSource.getFeatures().filter((feature) => {
         return feature.getId() === id;
       })[0];
     }
@@ -134,15 +132,17 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {number} maxZoom - Hoe diep er maximaal ingezoomd mag worden.
    */
   async zoomToExtent(maxZoom) {
-    this.mapElement.zoomTo(this.__boundingBox, maxZoom);
+    if (this.mapElement && this.boundingBox) {
+      this.mapElement.zoomTo(this.boundingBox, maxZoom);
+    }
   }
 
   /**
    * Verwijdert alle features van de laag
    */
   clearFeatures() {
-    if (this._source) {
-      this._source.clear();
+    if (this.__featuresSource) {
+      this.__featuresSource.clear();
       this._featuresChanged();
     }
   }
@@ -153,8 +153,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {string} feature
    */
   addFeature(feature) {
-    if (this._source) {
-      this._source.addFeatures([this._geoJSON.readFeature(feature)]);
+    if (this.__featuresSource) {
+      this.__featuresSource.addFeatures([this._geoJSON.readFeature(feature)]);
       this._featuresChanged();
     }
   }
@@ -165,8 +165,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {string} featureCollection
    */
   addFeatureCollection(featureCollection) {
-    if (this._source) {
-      this._source.addFeatures(this._geoJSON.readFeatures(featureCollection));
+    if (this.__featuresSource) {
+      this.__featuresSource.addFeatures(this._geoJSON.readFeatures(featureCollection));
       this._featuresChanged();
     }
   }
@@ -177,8 +177,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
 
   _featuresChangedCallback(oldValue, newValue) {
     if (newValue && this._layer) {
-      this.source.clear();
-      this.source.addFeatures(this.__readGeoJsonFeatures(newValue));
+      this.__featuresSource.clear();
+      this.__featuresSource.addFeatures(this.__readGeoJsonFeatures(newValue));
       this._featuresChanged();
     }
   }
@@ -194,9 +194,9 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
     }
   }
 
-  get __boundingBox() {
-    if (this.source && this.source.getFeatures().length > 0) {
-      return this.source.getExtent();
+  get boundingBox() {
+    if (this.__featuresSource && this.__featuresSource.getFeatures().length > 0) {
+      return this.__featuresSource.getExtent();
     }
   }
 
@@ -220,6 +220,13 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
         }
       },
     });
+  }
+
+  get __featuresSource() {
+    if (this.cluster && this.source) {
+      return this.source.getSource();
+    }
+    return this.source;
   }
 
   __ignoreClustering() {

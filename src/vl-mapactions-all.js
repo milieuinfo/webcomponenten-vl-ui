@@ -19,6 +19,8 @@ import {VlSplitAction} from './vl-mapactions-split-action';
 import {VlTooltips} from './vl-mapactions-tooltips';
 import {VlTranslateAction} from './vl-mapactions-translate-action';
 import {VlSnapInteraction} from './vl-mapactions-snap-interaction';
+import {VlCompositeVectorLayer} from './vl-mapactions-composite-vector-layer';
+import {VlCompositeVectorSource} from './vl-mapactions-composite-vector-source';
 import OlLayerGroup from 'ol/layer/Group';
 import OlVectorLayer from 'ol/layer/Vector';
 import OlImageLayer from 'ol/layer/Image';
@@ -70,6 +72,8 @@ export {
   VlSplitAction,
   VlTooltips,
   VlTranslateAction,
+  VlCompositeVectorLayer,
+  VlCompositeVectorSource,
   OlLayerGroup,
   OlVectorLayer,
   OlImageLayer,

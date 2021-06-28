@@ -50,10 +50,6 @@ export class VlMapWithActions extends Map {
 
   activateAction(action) {
     if (this.currentAction) {
-      if (this.currentAction == action) {
-        return false;
-      }
-
       this.currentAction.deactivate();
       clearTimeout(this.timeout);
     }
@@ -88,10 +84,6 @@ export class VlMapWithActions extends Map {
 
   activateDefaultAction() {
     if (this.actions.length > 0 && this.actions[0]) {
-      if (this.currentAction == this.actions[0]) {
-        this.currentAction.deactivate();
-        this.currentAction = undefined;
-      }
       this.activateAction(this.actions[0]);
     }
   }

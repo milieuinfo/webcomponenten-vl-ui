@@ -1,6 +1,6 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import '/node_modules/@govflanders/vl-ui-util/dist/js/util.js';
-import '/node_modules/vl-ui-info-tile/lib/accordion.js';
+import '/node_modules/@govflanders/vl-ui-accordion/dist/js/accordion.js';
 
 /**
  * VlInfoTile
@@ -27,7 +27,6 @@ export class VlInfoTile extends vlElement(HTMLElement) {
     super(`
       <style>
         @import '/node_modules/vl-ui-info-tile/dist/style.css';
-        @import '/node_modules/vl-ui-accordion/dist/style.css';
       </style>
       <div class="vl-info-tile">
         <header class="vl-info-tile__header" role="presentation">
@@ -93,6 +92,10 @@ export class VlInfoTile extends vlElement(HTMLElement) {
     return this._titleElement.querySelector('[name="title-label"]');
   }
 
+  get _buttonElement() {
+    return this._element.querySelector('button');
+  }
+
   /**
    * Toggle de info-tile om deze te openen of sluiten.
    */
@@ -133,7 +136,7 @@ export class VlInfoTile extends vlElement(HTMLElement) {
   _toggleableChangedCallback(oldValue, newValue) {
     if (newValue != undefined) {
       this.__prepareAccordionElements();
-      vl.accordion.dress(this._element);
+      vl.accordion.dress(this._buttonElement);
       this.__preventContentClickPropagation();
     }
   }
@@ -164,6 +167,10 @@ export class VlInfoTile extends vlElement(HTMLElement) {
     if (!this._titleLabelSlot) {
       this._titleLabelSlotElement.remove();
     }
+    this._titleElement.addEventListener('click', (event) => {
+      event.stopPropagation();
+      this._buttonElement.click();
+    });
   }
 }
 

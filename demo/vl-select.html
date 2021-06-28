@@ -105,6 +105,18 @@
                     <option value="Gent">Gent</option>
                 </optgroup>
             </select>
+
+            <div>
+                Je hebt gezocht naar: <span id="search-value">/</span>
+            </div>
+
+            <script type="text/javascript">
+                const element = document.getElementById('select-searchable');
+                element.addEventListener('changeQuery', ({detail: {value}}) => {
+                  const searchValueElement = document.getElementById('search-value');
+                  searchValueElement.textContent = value;
+                });
+            </script>
         </vl-demo>
 
         <vl-demo data-vl-title="Select zonder search">
@@ -215,6 +227,57 @@
             </script>
         </vl-demo>
 
+        <vl-demo data-vl-title="Select dynamische data met groepering">
+            <select id="select-dynamic-grouping" is="vl-select">
+                <option placeholder>Selecteer item</option>
+            </select>
+
+            <button id="activate-data-grouping-button" is="vl-button" onclick="laadDynamischGrouping()" type="button" slot="actions">
+				Activeer dynamische data met grouping
+			</button>
+
+            <script type="text/javascript">
+                laadDynamischGrouping = () => {
+                  document.getElementById('select-dynamic-grouping').dress({
+                    callbackFn: (select) => {
+                      return [
+                        {
+                          id: 1,
+                          label: 'Group 1',
+                          choices: [
+                            {value: 'one', label: 'Label one'},
+                            {value: 'two', label: 'Label two'},
+                          ],
+                        },
+                        {
+                          id: 2,
+                          label: 'Group 2',
+                          choices: [
+                            {value: 'three', label: 'Label three'},
+                            {value: 'four', label: 'Label four'},
+                          ],
+                        },
+                      ];
+                    },
+                  });
+                };
+            </script>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Undressed select met groepering">
+            <select id="select-undressed-grouping" is="vl-select">
+                <optgroup label="Group 1">
+                    <option value="one">Label one</option>
+                    <option value="two">Label two</option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option value="three">Label three</option>
+                    <option value="four">Label four</option>
+                </optgroup>
+            </select>
+        </vl-demo>
+
+
         <vl-demo data-vl-title="Select dress en undress methode">
             <select id="select-dress-undress-methode" is="vl-select">
                 <option placeholder value="">Kies een land</option>
@@ -228,7 +291,6 @@
             <div is="vl-action-group" slot="actions">
                 <button id="dress-button" is="vl-button" onclick="document.getElementById('select-dress-undress-methode').dress()" type="button">Dress</button>
                 <button id="undress-button" is="vl-button" onclick="document.getElementById('select-dress-undress-methode').undress()" type="button">Undress</button>
-                </div>
             </div>
         </vl-demo>
 

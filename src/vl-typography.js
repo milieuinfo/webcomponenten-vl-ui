@@ -45,7 +45,7 @@ export class VlTypography extends vlElement(HTMLElement) {
   __processSlotElements() {
     this.__clearChildren();
     const parameters = this.dataset.vlParameters ? JSON.parse(this.dataset.vlParameters) : {};
-    const template = this.__processTemplateParameters(this.innerHTML, parameters);
+    const template = VlTypography.replaceTemplateParameters(this.innerHTML, parameters);
     this._element.insertAdjacentHTML('afterbegin', template);
   }
 
@@ -61,7 +61,15 @@ export class VlTypography extends vlElement(HTMLElement) {
     return observer;
   }
 
-  __processTemplateParameters(template, params) {
+  /**
+   * Dit vormt een template met placeholders voor parameters om in een tekst waarin deze placeholders vervangen
+   * zijn met hun waarden.
+   *
+   * @param {string} template De template waarin placeholders zitten in de vorm van "${parameter.parameterNaam}"
+   * @param {object} params Een object met keys die de naam van de parameter voorstellen (bv. "parameterNaam") en hun waarden
+   * @return {string} De resulterende tekst
+   */
+  static replaceTemplateParameters(template, params) {
     Object.keys(params).forEach((key) => template = template.replaceAll('${parameter.' + key + '}', params[key]));
     template = template.replace(/\${parameter.\w+}/g, '');
     return template;

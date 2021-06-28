@@ -86,9 +86,11 @@
 											<li><a href="VlElement.html">VlElement</a></li>
 											<li><a href="VlFooter.html">VlFooter</a></li>
 											<li><a href="VlForm.html">VlForm</a></li>
-											<li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li>
+											<li><a href="VlFormAnnotationParagraph.html">VlFormAnnotationParagraph</a></li>
+											<li><a href="VlFormAnnotationSpan.html">VlFormAnnotationSpan</a></li>
 											<li><a href="VlFormColumn.html">VlFormColumn</a></li>
 											<li><a href="VlFormGrid.html">VlFormGrid</a></li>
+											<li><a href="VlFormGroup.html">VlFormGroup</a></li>
 											<li><a href="VlFormLabel.html">VlFormLabel</a></li>
 											<li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li>
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
@@ -144,6 +146,7 @@
 											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmsStyle.html">VlMapWmsStyle</a></li>
 											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
@@ -203,6 +206,7 @@
 									<a href="list_mixin.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 											<li><a href="vlButtonElement.html">vlButtonElement</a></li>
+											<li><a href="vlFormAnnotationElement.html">vlFormAnnotationElement</a></li>
 											<li><a href="vlFormValidation.html">vlFormValidation</a></li>
 											<li><a href="vlFormValidationElement.html">vlFormValidationElement</a></li>
 											<li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li>
@@ -277,9 +281,7 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
 
   async connectedCallback() {
     await super.connectedCallback();
-    if (this.mapElement) {
-      this._autoZoomToExtent();
-    }
+    this._autoZoomToExtent();
   }
 
   /**
@@ -288,7 +290,7 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @return {object}
    */
   get features() {
-    return this.source ? this.source.getFeatures() : this._featuresFromAttribute;
+    return this.__featuresSource ? this.__featuresSource.getFeatures() : this._featuresFromAttribute;
   }
 
   get _featuresFromAttribute() {
@@ -325,8 +327,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * Verwijdert de stijl van al de kaartlaag features.
    */
   removeFeaturesStyle() {
-    if (this.source &amp;&amp; this.source.getFeatures()) {
-      this.source.getFeatures().forEach((feature) => {
+    if (this.__featuresSource &amp;&amp; this.__featuresSource.getFeatures()) {
+      this.__featuresSource.getFeatures().forEach((feature) => {
         feature.setStyle(null);
       });
     }
@@ -339,8 +341,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @return {Object}
    */
   getFeature(id) {
-    if (this.source &amp;&amp; this.source.getFeatures()) {
-      return this.source.getFeatures().filter((feature) => {
+    if (this.__featuresSource &amp;&amp; this.__featuresSource.getFeatures()) {
+      return this.__featuresSource.getFeatures().filter((feature) => {
         return feature.getId() === id;
       })[0];
     }
@@ -373,15 +375,17 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {number} maxZoom - Hoe diep er maximaal ingezoomd mag worden.
    */
   async zoomToExtent(maxZoom) {
-    this.mapElement.zoomTo(this.__boundingBox, maxZoom);
+    if (this.mapElement &amp;&amp; this.boundingBox) {
+      this.mapElement.zoomTo(this.boundingBox, maxZoom);
+    }
   }
 
   /**
    * Verwijdert alle features van de laag
    */
   clearFeatures() {
-    if (this._source) {
-      this._source.clear();
+    if (this.__featuresSource) {
+      this.__featuresSource.clear();
       this._featuresChanged();
     }
   }
@@ -392,8 +396,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {string} feature
    */
   addFeature(feature) {
-    if (this._source) {
-      this._source.addFeatures([this._geoJSON.readFeature(feature)]);
+    if (this.__featuresSource) {
+      this.__featuresSource.addFeatures([this._geoJSON.readFeature(feature)]);
       this._featuresChanged();
     }
   }
@@ -404,8 +408,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
    * @param {string} featureCollection
    */
   addFeatureCollection(featureCollection) {
-    if (this._source) {
-      this._source.addFeatures(this._geoJSON.readFeatures(featureCollection));
+    if (this.__featuresSource) {
+      this.__featuresSource.addFeatures(this._geoJSON.readFeatures(featureCollection));
       this._featuresChanged();
     }
   }
@@ -416,8 +420,8 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
 
   _featuresChangedCallback(oldValue, newValue) {
     if (newValue &amp;&amp; this._layer) {
-      this.source.clear();
-      this.source.addFeatures(this.__readGeoJsonFeatures(newValue));
+      this.__featuresSource.clear();
+      this.__featuresSource.addFeatures(this.__readGeoJsonFeatures(newValue));
       this._featuresChanged();
     }
   }
@@ -433,9 +437,9 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
     }
   }
 
-  get __boundingBox() {
-    if (this.source &amp;&amp; this.source.getFeatures().length > 0) {
-      return this.source.getExtent();
+  get boundingBox() {
+    if (this.__featuresSource &amp;&amp; this.__featuresSource.getFeatures().length > 0) {
+      return this.__featuresSource.getExtent();
     }
   }
 
@@ -461,6 +465,13 @@ export class VlMapFeaturesLayer extends VlMapVectorLayer {
     });
   }
 
+  get __featuresSource() {
+    if (this.cluster &amp;&amp; this.source) {
+      return this.source.getSource();
+    }
+    return this.source;
+  }
+
   __ignoreClustering() {
     return null;
   }
@@ -477,7 +488,7 @@ define('vl-map-features-layer', VlMapFeaturesLayer);
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 22nd Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on 28th Jun 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

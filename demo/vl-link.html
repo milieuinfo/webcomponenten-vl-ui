@@ -3,11 +3,11 @@
 
 <head>
     <title>vl-link voorbeeld</title>
+    <script type="module" src="/vl-link.js"></script>
+
     <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
     <script type="module" src="/node_modules/vl-ui-body/dist/vl-body.js"></script>
     <script type="module" src="/node_modules/vl-ui-icon/dist/vl-icon.js"></script>
-
-    <script type="module" src="/vl-link.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/vl-link.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/vl-ui-body/dist/style.css" />
@@ -47,6 +47,10 @@
             <a is="vl-link" href="#">
                 <span is="vl-icon" data-vl-icon="cross" data-vl-before></span>Venster sluiten
             </a>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Link error">
+            <button id="link-error" is="vl-button-link" type="button" data-vl-error>Verwijderen</button>
         </vl-demo>
 
         <vl-demo data-vl-title="Button link">

@@ -85,9 +85,11 @@
 											<li><a href="VlElement.html">VlElement</a></li>
 											<li><a href="VlFooter.html">VlFooter</a></li>
 											<li><a href="VlForm.html">VlForm</a></li>
-											<li><a href="VlFormAnnotation.html">VlFormAnnotation</a></li>
+											<li><a href="VlFormAnnotationParagraph.html">VlFormAnnotationParagraph</a></li>
+											<li><a href="VlFormAnnotationSpan.html">VlFormAnnotationSpan</a></li>
 											<li><a href="VlFormColumn.html">VlFormColumn</a></li>
 											<li><a href="VlFormGrid.html">VlFormGrid</a></li>
+											<li><a href="VlFormGroup.html">VlFormGroup</a></li>
 											<li><a href="VlFormLabel.html">VlFormLabel</a></li>
 											<li><a href="VlFormValidationMessage.html">VlFormValidationMessage</a></li>
 											<li><a href="VlFunctionalHeader.html">VlFunctionalHeader</a></li>
@@ -143,6 +145,7 @@
 											<li><a href="VlMapWfsLayer.html">VlMapWfsLayer</a></li>
 											<li><a href="VlMapWithActions.html">VlMapWithActions</a></li>
 											<li><a href="VlMapWmsLayer.html">VlMapWmsLayer</a></li>
+											<li><a href="VlMapWmsStyle.html">VlMapWmsStyle</a></li>
 											<li><a href="VlMapWmtsLayer.html">VlMapWmtsLayer</a></li>
 											<li><a href="VlModal.html">VlModal</a></li>
 											<li><a href="VlMultiSelect.html">VlMultiSelect</a></li>
@@ -202,6 +205,7 @@
 									<a href="list_mixin.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 											<li><a href="vlButtonElement.html">vlButtonElement</a></li>
+											<li><a href="vlFormAnnotationElement.html">vlFormAnnotationElement</a></li>
 											<li><a href="vlFormValidation.html">vlFormValidation</a></li>
 											<li><a href="vlFormValidationElement.html">vlFormValidationElement</a></li>
 											<li><a href="vlInputAddonElement.html">vlInputAddonElement</a></li>
@@ -246,7 +250,9 @@
 </dt>
 <dd class="symbol-details class  collapsible-symbol expanded" style="max-height: 9999px;">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description classdesc"><p>Gebruik de vl-tabs navigatie om veel maar gerelateerde informatie in kleinere stukken te verdelen. Wanneer er met tabs gewerkt wordt, zal een deel van de informatie verborgen worden. Het is daardoor belangrijk om de gebruiker hier attent op te maken en duidelijk over te brengen welke informatie in een tab zichtbaar zal zijn. Op mobiele toestellen zal de tab navigatie gevisualiseerd worden via een dropdown menu.</p></div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description classdesc"><p>Gebruik de vl-tabs navigatie om veel maar gerelateerde informatie in kleinere stukken te verdelen. Wanneer er met tabs gewerkt wordt,
+			zal een deel van de informatie verborgen worden. Het is daardoor belangrijk om de gebruiker hier attent op te maken en duidelijk over te brengen
+			welke informatie in een tab zichtbaar zal zijn. Op mobiele toestellen zal de tab navigatie gevisualiseerd worden via een dropdown menu.</p></div>
 			</div>			<div class="callout callout-info">
 				<h5>Properties</h5>
 				<table class="params table table-striped">
@@ -262,14 +268,16 @@
 								<td><code>data-vl-alt</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
-									<p>Attribuut om de alt variant van de tabs te tonen. Deze variant dient gebruikt te worden als subnavigatie onder de functional header.</p>
+									<p>Attribuut om de alt variant van de tabs te tonen. Deze variant dient gebruikt te worden als subnavigatie onder
+			de functional header.</p>
 							</td>
 						</tr>
 						<tr>
 								<td><code>data-vl-responsive-label</code></td>
 							<td><span class="param-type">boolean</span></td>
 							<td class="last">
-									<p>Attribuut om de waarde in de tabs in responsive mode te veranderen. Enkel van toepassing wanneer geen tab is gekozen.</p>
+									<p>Attribuut om de waarde in de tabs in responsive mode te veranderen. Enkel van toepassing wanneer
+			geen tab is gekozen.</p>
 							</td>
 						</tr>
 					</tbody>
@@ -309,7 +317,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-tabs.js.html">vl-tabs.js</a>, <a href="vl-tabs.js.html#line-22">line 22</a></p>
+									<p class="form-control-static"><a href="vl-tabs.js.html">vl-tabs.js</a>, <a href="vl-tabs.js.html#line-26">line 26</a></p>
 								</div>
 							</div>
 			
@@ -380,7 +388,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="vl-tabs.js.html">vl-tabs.js</a>, <a href="vl-tabs.js.html#line-79">line 79</a></p>
+									<p class="form-control-static"><a href="vl-tabs.js.html">vl-tabs.js</a>, <a href="vl-tabs.js.html#line-83">line 83</a></p>
 								</div>
 							</div>
 			
@@ -400,7 +408,7 @@
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on 22nd Apr 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on 28th Jun 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "copyfiles": "^2.4.1",
-    "fetch-mock": "^9.11.0",
+    "fetch-mock": "^1.0.0-art-external1",
     "jsdoc": "3.6.11",
     "replace": "^1.2.1",
     "vl-ui-util": "^5.3.11",
